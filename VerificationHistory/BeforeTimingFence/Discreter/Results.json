@@ -1,0 +1,66 @@
+{
+  "module": "Discreter",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "80e39d3c0e78609718b2acdc157e64f3d45d61d48afb39a09edbb8bb15a45f85",
+    "Final.hpp": "3850127e797a30b6d6aceba7c371496b293f111d2c1564a4f79a0e7fa277ef7d",
+    "Test.cpp": "61774b3c31350fe4bb4fd6a51bbbc067e275cf36262f725ce65faa5abb0768be",
+    "Benchmark.cpp": "68d8ac096b58304a2ccbba9edb7512c3f43a589c3dda641d9b748674d46a22a7",
+    "Final.code-snippets": "fba1d6764a79c583c2b175cf43f5f5374c1170f39ae67e5f1a89e7ab64081f52"
+  },
+  "dependencySha256": {
+    "ListHelper/Final.hpp": "b7e82c8d217eaeb6288da2311d84e6c34fe6baa22c6cda8dc813064e84e1e8bc"
+  },
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8"
+  },
+  "includeSha256": {
+    "Discreter/Final.hpp": "3850127e797a30b6d6aceba7c371496b293f111d2c1564a4f79a0e7fa277ef7d",
+    "ListHelper/Final.hpp": "b7e82c8d217eaeb6288da2311d84e6c34fe6baa22c6cda8dc813064e84e1e8bc",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8",
+    "ListHelper/Original.hpp": "2bccb27d002a5bf9457c864807b8f0a4bc6abd24d0c51fc1464d395630139a39",
+    "Discreter/Original.hpp": "80e39d3c0e78609718b2acdc157e64f3d45d61d48afb39a09edbb8bb15a45f85"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/Discreter/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/Discreter/Build/optimized"
+      ],
+      "output": "Discreter: sort/lower/upper-bound oracles, CTAD, empty, extremes, owning/borrowed bases, move-only, bool, temporary lifetime PASS"
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/Discreter/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/Discreter/Build/sanitized"
+      ],
+      "output": "Discreter: sort/lower/upper-bound oracles, CTAD, empty, extremes, owning/borrowed bases, move-only, bool, temporary lifetime PASS"
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/Discreter/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/Discreter/Build/benchmark"
+  ],
+  "benchmark": "borrowed-basis,10.12,9.071,1.11564,2669393181805475\ncached-owned-basis-100x,1.941,1.043,1.86098,6798216069300"
+}

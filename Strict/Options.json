@@ -1,0 +1,42 @@
+{
+  "modules": [
+    "DisjointSetUnion",
+    "AcAutomaton",
+    "CentroidDecomposition",
+    "ExSuffixAutomaton",
+    "SuffixAutomaton",
+    "StronglyConnectedComponent",
+    "RingTree",
+    "LinearBasis",
+    "FastFourierTransform"
+  ],
+  "command": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-Weffc++",
+    "-O0",
+    "-g",
+    "-rdynamic",
+    "-fno-omit-frame-pointer",
+    "/Users/bytedance/acm_compete/cpp17/Strict/Build/Options.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/Strict/Build/Options"
+  ],
+  "output": "Original commented options enabled: compile and behavior PASS\n",
+  "variants": "Disabled Original feature comments enabled only in generated Options.cpp; default module behavior unchanged",
+  "sourceSha256": {
+    "DisjointSetUnion": "2d3400260fd0a919636433849e70387667646498c201a9a689794b33273358d4",
+    "AcAutomaton": "25e1593e02757201ab278935b9dfda0ca016168ac888a4d559c78a56054b169e",
+    "CentroidDecomposition": "ebdc234ac6891b14f4081ebdd086e710ab69ac716903e4265121f0470e0c12a8",
+    "ExSuffixAutomaton": "04d67147496ede8345ab4bfde0e5e2f55e4fea99bd9057e11c9fb292c83de2d6",
+    "SuffixAutomaton": "e6f50f4e623a9bb6c10cb5d37c580a49118d2219fe7f9622f9501b493d3bc989",
+    "StronglyConnectedComponent": "1ff86d520a7364a81e7224ed75ec4c083fcf5608777d59ed4d7714d023ba540b",
+    "RingTree": "6121416dc713f95c80ae94e665edda03d8517c5982eaef68d707992bfa0a91aa",
+    "LinearBasis": "5db8e3e35cc072ecde9e3084cbdf144f34e8edd61c038c283372ae8b92865c09",
+    "FastFourierTransform": "fe00347623954d77ac78fbdde5aeed2b9c4e690c7e61c726702324da38dadfd5"
+  },
+  "generatedSourceSha256": "78ced0dfe26799c2a69c08ed93e90e4bf17a1c7c3ddd57dd8909f3c894c8c52b"
+}

@@ -1,0 +1,4 @@
+scenario,beforeMs,afterMs,speedup,checksum
+linear-build-200K-x20,7.862,7.611,1.03298,4000000
+modify-query-200K,4.168,4.1,1.01659,29996765577
+select-200K,7.461,7.035,1.06055,20018575793

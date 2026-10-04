@@ -1,0 +1,140 @@
+{
+  "formatVersion": 2,
+  "module": "FloatPointNumber",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "9e5bf44ea11b5b79abd0fc4e900432b2f54ff6d56b884c8a74de832cd9fb6baf",
+    "Final.hpp": "b8b016a2aaff1b26cef35bb8783511263149d75c540702bc11486a18d250742f",
+    "Test.cpp": "2c16bd89f8aa406b662b033d4d85809e3c0214233db74da3d69383170d0bef4b",
+    "Benchmark.cpp": "7b88426acccc62f03e845b224491cc3c16a9a76ce0455fbaabeb59f435406e8f",
+    "Final.code-snippets": "6ded23642df0322a8c051f355ce0faf0fb63ce56d2476fcf265db289f9707e38",
+    "TestExtra.cpp": "dae72bb1fb66f88a6410b519a1b0928283e5e454886c246f5d4c119b092c7b55"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "FloatPointNumber/Final.hpp": "b8b016a2aaff1b26cef35bb8783511263149d75c540702bc11486a18d250742f",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "FloatPointNumber/BenchmarkBaseline.hpp": "5e28245c496925fb9c41a0d7e16e1d2b031fc3fa97ed38438f57378816999691",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/FloatPointNumber/Test.cpp",
+        "/Users/bytedance/acm_compete/cpp17/FloatPointNumber/TestExtra.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/FloatPointNumber/Build/optimized"
+      ],
+      "output": "FloatPointNumber constexpr/mixed scalar, 100K raw-math oracle, signed rounding, stream errors, parallel parsing, two-TU precision PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/FloatPointNumber/Test.cpp",
+        "/Users/bytedance/acm_compete/cpp17/FloatPointNumber/TestExtra.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/FloatPointNumber/Build/sanitized"
+      ],
+      "output": "FloatPointNumber constexpr/mixed scalar, 100K raw-math oracle, signed rounding, stream errors, parallel parsing, two-TU precision PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/FloatPointNumber/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/FloatPointNumber/Build/benchmark"
+  ],
+  "benchmark": "arithmetic-1M,0.897,0.864,1.03819,70372780064\nparse-30K,1.289,1.559,0.826812,2163817714\nformat-30K,3.724,3.619,1.02901,15164711",
+  "benchmarkSamples": [
+    {
+      "scenario": "arithmetic-1M",
+      "original": [
+        1.009,
+        1.023,
+        1.006,
+        0.897,
+        0.893,
+        0.895,
+        0.893
+      ],
+      "final": [
+        0.903,
+        0.895,
+        0.909,
+        0.864,
+        0.815,
+        0.821,
+        0.829
+      ],
+      "checksum": 70372780064,
+      "first": "original"
+    },
+    {
+      "scenario": "parse-30K",
+      "original": [
+        1.289,
+        1.289,
+        1.32,
+        1.296,
+        1.258,
+        1.244,
+        1.245
+      ],
+      "final": [
+        1.628,
+        1.628,
+        1.613,
+        1.553,
+        1.559,
+        1.551,
+        1.514
+      ],
+      "checksum": 2163817714,
+      "first": "final"
+    },
+    {
+      "scenario": "format-30K",
+      "original": [
+        3.815,
+        3.785,
+        3.733,
+        3.724,
+        3.642,
+        3.518,
+        3.596
+      ],
+      "final": [
+        3.654,
+        3.593,
+        3.613,
+        3.61,
+        3.619,
+        3.659,
+        3.62
+      ],
+      "checksum": 15164711,
+      "first": "original"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

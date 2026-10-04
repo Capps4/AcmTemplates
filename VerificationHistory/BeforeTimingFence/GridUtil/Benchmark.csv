@@ -1,0 +1,3 @@
+scenario,originalMs,finalMs,speedup,checksum
+owning-neighbors,5.383,5.364,1.00354,124749501000
+callback-neighbors,5.656,0.261,21.6705,124749501000

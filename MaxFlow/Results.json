@@ -1,0 +1,137 @@
+{
+  "formatVersion": 2,
+  "module": "MaxFlow",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "abfabb152445e865796a91465374a52acdb5193e1708ced524e5646981eca0af",
+    "Final.hpp": "cff349504f51104bc1302ce7288252117891989dd8cc5c30cd5f674172023eb8",
+    "Test.cpp": "d79f390396ab3d16fd243b4dc093507e6f2b2edb8b7856208fe1b80c83c718c4",
+    "Benchmark.cpp": "97e6ef1699fa8aa2757b250e2c5be1634dbbda2dc46129f7f5cb10edacdfa64d",
+    "Final.code-snippets": "34422b1cfcecb482db51aa686a86b8eae929b70eb09ced0842cd4509b93ae105"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "MaxFlow/Final.hpp": "cff349504f51104bc1302ce7288252117891989dd8cc5c30cd5f674172023eb8",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "MaxFlow/Original.hpp": "abfabb152445e865796a91465374a52acdb5193e1708ced524e5646981eca0af"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/MaxFlow/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/MaxFlow/Build/optimized"
+      ],
+      "output": "MaxFlow exhaustive cut oracle, bidirectional/parallel/self edges, limits/reuse, uint64 max, fractional, recursive 2K chain PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/MaxFlow/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/MaxFlow/Build/sanitized"
+      ],
+      "output": "MaxFlow exhaustive cut oracle, bidirectional/parallel/self edges, limits/reuse, uint64 max, fractional, recursive 2K chain PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/MaxFlow/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/MaxFlow/Build/benchmark"
+  ],
+  "benchmark": "chain-10K,1.078,1.031,1.04559,7\nwide-depth2-50K,3.61,4.422,0.816373,349986\nlayered-60x100,14.098,14.05,1.00342,622",
+  "benchmarkSamples": [
+    {
+      "scenario": "chain-10K",
+      "original": [
+        0.883,
+        1.009,
+        1.078,
+        1.055,
+        1.253,
+        1.132,
+        1.089
+      ],
+      "final": [
+        1.035,
+        1.111,
+        1.031,
+        1.033,
+        0.978,
+        0.938,
+        0.939
+      ],
+      "checksum": 7,
+      "first": "original"
+    },
+    {
+      "scenario": "wide-depth2-50K",
+      "original": [
+        3.844,
+        3.524,
+        3.531,
+        3.647,
+        3.61,
+        3.658,
+        3.388
+      ],
+      "final": [
+        4.7,
+        4.422,
+        4.47,
+        4.211,
+        4.489,
+        4.362,
+        4.067
+      ],
+      "checksum": 349986,
+      "first": "final"
+    },
+    {
+      "scenario": "layered-60x100",
+      "original": [
+        14.073,
+        14.316,
+        14.332,
+        14.386,
+        13.96,
+        14.098,
+        13.863
+      ],
+      "final": [
+        14.134,
+        14.078,
+        14.078,
+        14.05,
+        13.858,
+        13.783,
+        13.735
+      ],
+      "checksum": 622,
+      "first": "original"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

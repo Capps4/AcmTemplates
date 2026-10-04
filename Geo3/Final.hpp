@@ -1,0 +1,362 @@
+#pragma once
+#include "../FloatPointNumber/Final.hpp"
+#include <algorithm>
+#include <cassert>
+#include <cmath>
+#include <string>
+#include <type_traits>
+#include <vector>
+
+// SNIPPET BEGIN
+template <class T, class G, class F>
+struct Point3Impl {
+    typedef T Value;
+    typedef G Wide;
+    typedef F Real;
+    typedef typename std::conditional<
+        std::is_integral<T>::value, __int128, G>::type Wide3;
+    typedef Point3Impl<Wide, Wide3, Real> CrossType;
+
+    T x, y, z;
+    constexpr Point3Impl() : x(), y(), z() {}
+    constexpr Point3Impl(T x, T y, T z) : x(x), y(y), z(z) {}
+
+    Point3Impl operator+() const {
+        return *this;
+    }
+
+    Point3Impl operator-() const {
+        return Point3Impl(-x, -y, -z);
+    }
+
+    Point3Impl &operator+=(Point3Impl p) {
+        x += p.x;
+        y += p.y;
+        z += p.z;
+        return *this;
+    }
+
+    Point3Impl &operator-=(Point3Impl p) {
+        x -= p.x;
+        y -= p.y;
+        z -= p.z;
+        return *this;
+    }
+
+    Point3Impl &operator*=(T k) {
+        x *= k;
+        y *= k;
+        z *= k;
+        return *this;
+    }
+
+    friend Point3Impl operator+(Point3Impl a, Point3Impl b) {
+        return a += b;
+    }
+
+    friend Point3Impl operator-(Point3Impl a, Point3Impl b) {
+        return a -= b;
+    }
+
+    friend Point3Impl operator*(Point3Impl p, T k) {
+        return p *= k;
+    }
+
+    friend Point3Impl operator*(T k, Point3Impl p) {
+        return p *= k;
+    }
+
+    Point3Impl to(Point3Impl p) const {
+        return p - *this;
+    }
+
+    Wide dot(Point3Impl p) const {
+        return Wide(x) * p.x + Wide(y) * p.y + Wide(z) * p.z;
+    }
+
+    CrossType cross(Point3Impl p) const {
+        return CrossType(
+            Wide(y) * p.z - Wide(z) * p.y,
+            Wide(z) * p.x - Wide(x) * p.z,
+            Wide(x) * p.y - Wide(y) * p.x);
+    }
+
+    // 返回三个向量的混合积。
+    Wide3 triple(Point3Impl b, Point3Impl c) const {
+        return Wide3(x) * (Wide3(b.y) * c.z - Wide3(b.z) * c.y) +
+               Wide3(y) * (Wide3(b.z) * c.x - Wide3(b.x) * c.z) +
+               Wide3(z) * (Wide3(b.x) * c.y - Wide3(b.y) * c.x);
+    }
+
+    Wide len2() const {
+        return dot(*this);
+    }
+
+    Real len() const {
+        Real v(len2());
+        return std::sqrt(v);
+    }
+
+    Wide dist2(Point3Impl p) const {
+        return to(p).len2();
+    }
+
+    Real dist(Point3Impl p) const {
+        Real v(dist2(p));
+        return std::sqrt(v);
+    }
+
+    template <class U, class V, class W>
+    bool operator==(Point3Impl<U, V, W> p) const {
+        return x == p.x and y == p.y and z == p.z;
+    }
+
+    template <class U, class V, class W>
+    bool operator!=(Point3Impl<U, V, W> p) const {
+        return !(*this == p);
+    }
+
+    bool operator<(Point3Impl p) const {
+        if (x < p.x) return true;
+        if (p.x < x) return false;
+        if (y < p.y) return true;
+        if (p.y < y) return false;
+        return z < p.z;
+    }
+
+    template <class Input>
+    friend Input &operator>>(Input &in, Point3Impl &p) {
+        return in >> p.x >> p.y >> p.z;
+    }
+
+    template <class Output>
+    friend Output &operator<<(Output &out, Point3Impl p) {
+        return out << '(' << p.x << ", " << p.y << ", " << p.z << ')';
+    }
+
+    static const Point3Impl O;
+};
+
+template <class T, class G, class F>
+const Point3Impl<T, G, F> Point3Impl<T, G, F>::O =
+    Point3Impl<T, G, F>();
+
+using Point3 = Point3Impl<int, long long, Float>;
+using Vec3 = Point3;
+
+
+template <class P>
+struct Hit3Impl {
+    typedef Point3Impl<typename P::Real, typename P::Real,
+                       typename P::Real> PointType;
+
+    std::string type;
+    std::vector<PointType> ps;
+
+    explicit Hit3Impl(const std::string &type = "NO") : type(type), ps() {}
+    Hit3Impl(const std::string &type, PointType p) : type(type), ps(1, p) {}
+};
+
+template <class P>
+struct Line3Impl {
+    typedef P PointType;
+    typedef typename P::Value Value;
+    typedef typename P::Real Real;
+
+    P a, b;
+
+    Line3Impl(P a, P b) : a(a), b(b) {
+        assert(a != b);
+    }
+
+    P vec() const {
+        return a.to(b);
+    }
+
+    // 判断点在三维直线上或直线外。
+    std::string loc(P p) const {
+        typename P::CrossType c = vec().cross(a.to(p));
+        return c == typename P::CrossType() ? "ON" : "OUT";
+    }
+
+    Real dist(P p) const {
+        return vec().cross(a.to(p)).len() / vec().len();
+    }
+
+    // 返回点在三维直线上的垂足。
+    P foot(P p) const {
+        static_assert(!std::is_integral<typename P::Value>::value,
+                      "Line3::foot needs floating Point");
+        P v = vec();
+        Real k(v.dot(a.to(p)));
+        k /= v.len2();
+        return a + v * Value(k);
+    }
+};
+
+template <class P>
+struct Seg3Impl {
+    typedef typename P::Wide Wide;
+    typedef typename P::Real Real;
+
+    P a, b;
+
+    Seg3Impl() : a(), b() {}
+    Seg3Impl(P a, P b) : a(a), b(b) {}
+
+    P vec() const {
+        return a.to(b);
+    }
+
+    Line3Impl<P> line() const {
+        assert(a != b);
+        return Line3Impl<P>(a, b);
+    }
+
+    // 判断点在三维线段上或线段外。
+    std::string loc(P p) const {
+        if (a == b) return a == p ? "ON" : "OUT";
+        if (line().loc(p) == "OUT") return "OUT";
+        Wide x = a.to(p).dot(b.to(p));
+        return x <= 0 ? "ON" : "OUT";
+    }
+
+    Real dist(P p) const {
+        if (a == b) return a.dist(p);
+        P v = vec();
+        Wide x = v.dot(a.to(p));
+        if (x <= 0) return a.dist(p);
+        x = v.dot(b.to(p));
+        if (x >= 0) return b.dist(p);
+        return line().dist(p);
+    }
+};
+
+template <class P>
+struct Plane3Impl {
+    typedef typename P::Value Value;
+    typedef typename P::Wide Wide;
+    typedef typename P::Wide3 Wide3;
+    typedef typename P::Real Real;
+    typedef typename P::CrossType Normal;
+
+    P p;
+    Normal n;
+
+    Plane3Impl(P a, P b, P c) : p(a), n(a.to(b).cross(a.to(c))) {
+        assert(n != Normal::O);
+    }
+
+    // 返回点代入平面方程后的有符号值。
+    Wide3 eval(P q) const {
+        return Wide3(n.x) * (q.x - p.x) +
+               Wide3(n.y) * (q.y - p.y) +
+               Wide3(n.z) * (q.z - p.z);
+    }
+
+    // 返回点在平面正侧、平面上或负侧的符号。
+    int side(P q) const {
+        Wide3 x = eval(q);
+        if (x == 0) return 0;
+        return x < 0 ? -1 : 1;
+    }
+
+    Real dist(P q) const {
+        Real ans(eval(q));
+        if (ans < 0) ans = -ans;
+        return ans / n.len();
+    }
+
+    P foot(P q) const {
+        static_assert(!std::is_integral<typename P::Value>::value,
+                      "Plane3::foot needs floating Point");
+        Real k(eval(q));
+        k /= n.len2();
+        P v(Value(n.x), Value(n.y), Value(n.z));
+        return q - v * Value(k);
+    }
+
+    // 返回平面法向量与给定向量的点积。
+    Wide3 dot(P v) const {
+        return Wide3(n.x) * v.x + Wide3(n.y) * v.y + Wide3(n.z) * v.z;
+    }
+
+    // 返回平面与直线的关系及交点。
+    Hit3Impl<P> relation(Line3Impl<P> l) const {
+        Wide3 den = dot(l.vec());
+        if (den == 0)
+            return Hit3Impl<P>(side(l.a) == 0 ? "SAME" : "NO");
+
+        typedef typename Hit3Impl<P>::PointType Q;
+        Q a(l.a.x, l.a.y, l.a.z);
+        Q v(l.b.x - l.a.x, l.b.y - l.a.y, l.b.z - l.a.z);
+        Real k(-eval(l.a));
+        k /= den;
+        return Hit3Impl<P>("ONE", a + v * k);
+    }
+};
+
+using Hit3 = Hit3Impl<Point3>;
+using Line3 = Line3Impl<Point3>;
+using Seg3 = Seg3Impl<Point3>;
+using Plane3 = Plane3Impl<Point3>;
+
+struct Face3 {
+    int a, b, c;
+
+    Face3() : a(), b(), c() {}
+    Face3(int a, int b, int c) : a(a), b(b), c(c) {}
+};
+
+template <class P>
+struct Polyhedron3Impl {
+    typedef typename P::Wide3 Wide3;
+    typedef typename P::Real Real;
+
+    std::vector<P> ps;
+    std::vector<Face3> fs;
+
+    Real area() const {
+        Real ans(0);
+        for (auto i = 0U; i < fs.size(); i++) {
+            const Face3 &f = fs[i];
+            assert(f.a >= 0 and f.b >= 0 and f.c >= 0);
+            std::size_t a = static_cast<std::size_t>(f.a);
+            std::size_t b = static_cast<std::size_t>(f.b);
+            std::size_t c = static_cast<std::size_t>(f.c);
+            assert(a < ps.size() and b < ps.size() and c < ps.size());
+            ans += ps[a].to(ps[b]).cross(ps[a].to(ps[c])).len() /
+                   2;
+        }
+        return ans;
+    }
+
+    // 返回六倍有符号体积。
+    Wide3 vol6() const {
+        Wide3 ans = 0;
+        for (auto i = 0U; i < fs.size(); i++) {
+            const Face3 &f = fs[i];
+            assert(f.a >= 0 and f.b >= 0 and f.c >= 0);
+            std::size_t a = static_cast<std::size_t>(f.a);
+            std::size_t b = static_cast<std::size_t>(f.b);
+            std::size_t c = static_cast<std::size_t>(f.c);
+            assert(a < ps.size() and b < ps.size() and c < ps.size());
+            ans += ps[a].triple(ps[b], ps[c]);
+        }
+        return ans;
+    }
+
+    Real vol() const {
+        Real ans(vol6());
+        if (ans < 0) ans = -ans;
+        return ans / 6;
+    }
+
+    // 反转所有三角面的方向。
+    void reverse() {
+        for (auto i = 0U; i < fs.size(); i++)
+            std::swap(fs[i].b, fs[i].c);
+    }
+};
+
+using Polyhedron3 = Polyhedron3Impl<Point3>;

@@ -1,0 +1,3 @@
+scenario,originalMs,finalMs,speedup,checksum
+random-merge-query,6.636,6.122,1.08396,38446586370
+ordered-merge-query,1.29,1.199,1.0759,40000000000

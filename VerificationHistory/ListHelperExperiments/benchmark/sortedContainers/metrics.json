@@ -1,0 +1,6630 @@
+{
+  "gcc": [
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 40601000.0,
+        "4": 40777000.0,
+        "5": 40718000.0
+      },
+      "ratio": 1.0043348685992957,
+      "cmpRatio": 1.0028817024211227
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 40080000.0,
+        "4": 40230000.0,
+        "5": 40082000.0
+      },
+      "ratio": 1.0037425149700598,
+      "cmpRatio": 1.0000499001996008
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 40164000.0,
+        "4": 40088000.0,
+        "5": 39961000.0
+      },
+      "ratio": 0.9981077581914152,
+      "cmpRatio": 0.9949457225375958
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 39051000.0,
+        "4": 38988000.0,
+        "5": 39117000.0
+      },
+      "ratio": 0.9983867250518552,
+      "cmpRatio": 1.0016900975647232
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 39199000.0,
+        "4": 39110000.0,
+        "5": 39078000.0
+      },
+      "ratio": 0.9977295339166815,
+      "cmpRatio": 0.9969131865608817
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 38939000.0,
+        "4": 38868000.0,
+        "5": 38890000.0
+      },
+      "ratio": 0.9981766352500064,
+      "cmpRatio": 0.9987416215105678
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 21456000.0,
+        "4": 21383000.0,
+        "5": 21498000.0
+      },
+      "ratio": 0.9965976882923192,
+      "cmpRatio": 1.0019574944071588
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 21474000.0,
+        "4": 21503000.0,
+        "5": 21502000.0
+      },
+      "ratio": 1.0013504703362206,
+      "cmpRatio": 1.0013039023935923
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 21521000.0,
+        "4": 21471000.0,
+        "5": 21474000.0
+      },
+      "ratio": 0.9976766878862506,
+      "cmpRatio": 0.9978160866130756
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 13962000.0,
+        "4": 14025000.0,
+        "5": 14007000.0
+      },
+      "ratio": 1.0045122475290074,
+      "cmpRatio": 1.003223033949291
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 8764000.0,
+        "4": 8981000.0,
+        "5": 8774000.0
+      },
+      "ratio": 1.0247603833865815,
+      "cmpRatio": 1.0011410314924691
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 8752000.0,
+        "4": 8965000.0,
+        "5": 8857000.0
+      },
+      "ratio": 1.024337294332724,
+      "cmpRatio": 1.0119972577696525
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 5167000.0,
+        "4": 5186000.0,
+        "5": 5207000.0
+      },
+      "ratio": 1.0036771821172827,
+      "cmpRatio": 1.0077414360363848
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 7140000.0,
+        "4": 7196000.0,
+        "5": 7133000.0
+      },
+      "ratio": 1.007843137254902,
+      "cmpRatio": 0.9990196078431373
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 7134000.0,
+        "4": 7193000.0,
+        "5": 7167000.0
+      },
+      "ratio": 1.0082702551163443,
+      "cmpRatio": 1.0046257359125315
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 7163000.0,
+        "4": 7268000.0,
+        "5": 7229000.0
+      },
+      "ratio": 1.0146586625715481,
+      "cmpRatio": 1.0092140164735446
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 5175000.0,
+        "4": 5156000.0,
+        "5": 5146000.0
+      },
+      "ratio": 0.9963285024154589,
+      "cmpRatio": 0.9943961352657005
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 5125000.0,
+        "4": 5098000.0,
+        "5": 5163000.0
+      },
+      "ratio": 0.9947317073170732,
+      "cmpRatio": 1.0074146341463415
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 468.75,
+        "4": 462.891,
+        "5": 476.562
+      },
+      "ratio": 0.9875008000000001,
+      "cmpRatio": 1.0166656
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 505.859,
+        "4": 507.812,
+        "5": 509.766
+      },
+      "ratio": 1.0038607596187872,
+      "cmpRatio": 1.0077234960730164
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 490.234,
+        "4": 507.812,
+        "5": 474.609
+      },
+      "ratio": 1.0358563461530617,
+      "cmpRatio": 0.9681274656592566
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 462.891,
+        "4": 453.125,
+        "5": 457.031
+      },
+      "ratio": 0.9789021605518361,
+      "cmpRatio": 0.9873404321967807
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 458.984,
+        "4": 462.891,
+        "5": 451.172
+      },
+      "ratio": 1.0085122792951389,
+      "cmpRatio": 0.9829797988600911
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 476.562,
+        "4": 494.141,
+        "5": 470.703
+      },
+      "ratio": 1.0368871206684545,
+      "cmpRatio": 0.9877056920190866
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 455.078,
+        "4": 494.141,
+        "5": 472.656
+      },
+      "ratio": 1.0858380321615198,
+      "cmpRatio": 1.03862634537376
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 449.219,
+        "4": 417.969,
+        "5": 421.875
+      },
+      "ratio": 0.9304348213232299,
+      "cmpRatio": 0.9391299121363967
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 468.75,
+        "4": 464.844,
+        "5": 470.703
+      },
+      "ratio": 0.9916672,
+      "cmpRatio": 1.0041664
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 326.172,
+        "4": 328.125,
+        "5": 320.312
+      },
+      "ratio": 1.005987638423899,
+      "cmpRatio": 0.9820340188612143
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "nearly",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 310.547,
+        "4": 306.641,
+        "5": 304.688
+      },
+      "ratio": 0.98742219374201,
+      "cmpRatio": 0.981133290613015
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 371.094,
+        "4": 373.047,
+        "5": 378.906
+      },
+      "ratio": 1.0052628175071545,
+      "cmpRatio": 1.021051270028618
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 242.188,
+        "4": 259.766,
+        "5": 238.281
+      },
+      "ratio": 1.0725799791897206,
+      "cmpRatio": 0.9838679042727139
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "ordered",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 306.641,
+        "4": 306.641,
+        "5": 306.641
+      },
+      "ratio": 1.0,
+      "cmpRatio": 1.0
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 359.375,
+        "4": 371.094,
+        "5": 357.422
+      },
+      "ratio": 1.0326093913043477,
+      "cmpRatio": 0.9945655652173914
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 316.406,
+        "4": 335.938,
+        "5": 314.453
+      },
+      "ratio": 1.061730814207063,
+      "cmpRatio": 0.9938275506785584
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "reverse",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 267.578,
+        "4": 246.094,
+        "5": 273.438
+      },
+      "ratio": 0.9197093931489136,
+      "cmpRatio": 1.0219001562161314
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 275.391,
+        "4": 273.438,
+        "5": 259.766
+      },
+      "ratio": 0.9929082649759795,
+      "cmpRatio": 0.9432624886071077
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 26631.579,
+        "4": 27081.081,
+        "5": 26789.474
+      },
+      "ratio": 1.0168785335634811,
+      "cmpRatio": 1.0059288636246464
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 26342.105,
+        "4": 26394.737,
+        "5": 26421.053
+      },
+      "ratio": 1.0019980180019783,
+      "cmpRatio": 1.0029970270029673
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 26051.282,
+        "4": 26421.053,
+        "5": 25923.077
+      },
+      "ratio": 1.0141939655791221,
+      "cmpRatio": 0.9950787450690527
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 26631.579,
+        "4": 26684.211,
+        "5": 26605.263
+      },
+      "ratio": 1.001976300391351,
+      "cmpRatio": 0.9990118498043243
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 27135.135,
+        "4": 26815.789,
+        "5": 27027.027
+      },
+      "ratio": 0.9882312728497574,
+      "cmpRatio": 0.9960159402192029
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 28083.333,
+        "4": 34482.759,
+        "5": 28166.667
+      },
+      "ratio": 1.2278727386097654,
+      "cmpRatio": 1.0029673828245387
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 23720.93,
+        "4": 23857.143,
+        "5": 23809.524
+      },
+      "ratio": 1.0057423128013951,
+      "cmpRatio": 1.0037348451346555
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 24829.268,
+        "4": 24878.049,
+        "5": 24829.268
+      },
+      "ratio": 1.0019646571940823,
+      "cmpRatio": 1.0
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 23833.333,
+        "4": 23952.381,
+        "5": 23674.419
+      },
+      "ratio": 1.0049950210488816,
+      "cmpRatio": 0.993332279627025
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 19784.314,
+        "4": 20080.0,
+        "5": 19764.706
+      },
+      "ratio": 1.0149454765022432,
+      "cmpRatio": 0.9990089118076068
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "nearly",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 18870.37,
+        "4": 20240.0,
+        "5": 18759.259
+      },
+      "ratio": 1.0725809827788222,
+      "cmpRatio": 0.9941118801592125
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 18703.704,
+        "4": 20000.0,
+        "5": 19576.923
+      },
+      "ratio": 1.0693069137535538,
+      "cmpRatio": 1.046686955696048
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 13698.63,
+        "4": 13794.521,
+        "5": 13527.027
+      },
+      "ratio": 1.0070000430700006,
+      "cmpRatio": 0.9874729808747299
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "ordered",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 18181.818,
+        "4": 18071.429,
+        "5": 17824.561
+      },
+      "ratio": 0.9939286049392861,
+      "cmpRatio": 0.9803508648035087
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 18218.182,
+        "4": 18327.273,
+        "5": 17964.286
+      },
+      "ratio": 1.005988028882355,
+      "cmpRatio": 0.9860635929534571
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 17964.286,
+        "4": 18071.429,
+        "5": 17842.105
+      },
+      "ratio": 1.0059642225691574,
+      "cmpRatio": 0.993198672076363
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "reverse",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 13726.027,
+        "4": 13466.667,
+        "5": 13440.0
+      },
+      "ratio": 0.9811045104311684,
+      "cmpRatio": 0.979161704985718
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 13400.0,
+        "4": 13466.667,
+        "5": 13453.333
+      },
+      "ratio": 1.0049751492537313,
+      "cmpRatio": 1.0039800746268657
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 2657.825,
+        "4": 2511.278,
+        "5": 2527.778
+      },
+      "ratio": 0.9448620582619247,
+      "cmpRatio": 0.9510701419393677
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 2604.167,
+        "4": 2666.667,
+        "5": 2627.297
+      },
+      "ratio": 1.0239999969280005,
+      "cmpRatio": 1.0088819188631144
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 2437.956,
+        "4": 2530.303,
+        "5": 2500.0
+      },
+      "ratio": 1.0378788624569104,
+      "cmpRatio": 1.0254491877622074
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 2666.667,
+        "4": 2655.172,
+        "5": 2673.797
+      },
+      "ratio": 0.9956893755388281,
+      "cmpRatio": 1.0026737496657814
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 2517.588,
+        "4": 2500.0,
+        "5": 2450.98
+      },
+      "ratio": 0.9930139482711229,
+      "cmpRatio": 0.9735429307734228
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 2511.278,
+        "4": 2556.122,
+        "5": 2531.646
+      },
+      "ratio": 1.0178570433062368,
+      "cmpRatio": 1.0081106114098082
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 2582.474,
+        "4": 2447.433,
+        "5": 2508.772
+      },
+      "ratio": 0.9477086700582464,
+      "cmpRatio": 0.9714607000883648
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 2662.234,
+        "4": 2617.801,
+        "5": 2634.211
+      },
+      "ratio": 0.983309881851107,
+      "cmpRatio": 0.9894738779536284
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 2683.646,
+        "4": 2631.579,
+        "5": 2604.167
+      },
+      "ratio": 0.9805984097753578,
+      "cmpRatio": 0.9703839478083174
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 1589.844,
+        "4": 1585.938,
+        "5": 1580.078
+      },
+      "ratio": 0.9975431551774891,
+      "cmpRatio": 0.9938572589511927
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "nearly",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 1710.938,
+        "4": 1753.906,
+        "5": 1742.188
+      },
+      "ratio": 1.0251137095558107,
+      "cmpRatio": 1.0182648348449799
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 1710.938,
+        "4": 1759.766,
+        "5": 1769.531
+      },
+      "ratio": 1.0285387313859415,
+      "cmpRatio": 1.0342461269783008
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 1398.438,
+        "4": 1375.0,
+        "5": 1367.188
+      },
+      "ratio": 0.9832398719142357,
+      "cmpRatio": 0.9776536392746764
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "ordered",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 1736.328,
+        "4": 1767.578,
+        "5": 1750.0
+      },
+      "ratio": 1.017997751576891,
+      "cmpRatio": 1.007874088305896
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 1787.109,
+        "4": 1738.281,
+        "5": 1755.859
+      },
+      "ratio": 0.9726776598405581,
+      "cmpRatio": 0.9825136575329205
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 1720.703,
+        "4": 1693.359,
+        "5": 1689.453
+      },
+      "ratio": 0.9841088206390063,
+      "cmpRatio": 0.981838818203955
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "reverse",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 1349.609,
+        "4": 1414.062,
+        "5": 1312.5
+      },
+      "ratio": 1.0477567947457374,
+      "cmpRatio": 0.9725038881631644
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 1347.656,
+        "4": 1388.672,
+        "5": 1347.656
+      },
+      "ratio": 1.0304350665154907,
+      "cmpRatio": 1.0
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 40069000.0,
+        "4": 40225000.0,
+        "5": 40174000.0
+      },
+      "ratio": 1.0038932840849535,
+      "cmpRatio": 1.0026204796725648
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 40403000.0,
+        "4": 40410000.0,
+        "5": 40416000.0
+      },
+      "ratio": 1.0001732544613025,
+      "cmpRatio": 1.000321758285276
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 43768000.0,
+        "4": 46068000.0,
+        "5": 44878000.0
+      },
+      "ratio": 1.0525498080789617,
+      "cmpRatio": 1.0253609943337598
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 39777000.0,
+        "4": 39972000.0,
+        "5": 39916000.0
+      },
+      "ratio": 1.0049023304924956,
+      "cmpRatio": 1.0034944817356763
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 40465000.0,
+        "4": 40625000.0,
+        "5": 40455000.0
+      },
+      "ratio": 1.0039540343506734,
+      "cmpRatio": 0.9997528728530829
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 40586000.0,
+        "4": 40750000.0,
+        "5": 40691000.0
+      },
+      "ratio": 1.0040408022470804,
+      "cmpRatio": 1.002587098999655
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 23538000.0,
+        "4": 23054000.0,
+        "5": 23245000.0
+      },
+      "ratio": 0.9794375053105616,
+      "cmpRatio": 0.987552043504121
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 23071000.0,
+        "4": 22936000.0,
+        "5": 23129000.0
+      },
+      "ratio": 0.9941484981145161,
+      "cmpRatio": 1.0025139785878376
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 21540000.0,
+        "4": 21759000.0,
+        "5": 21659000.0
+      },
+      "ratio": 1.01016713091922,
+      "cmpRatio": 1.0055246053853297
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 13162000.0,
+        "4": 13131000.0,
+        "5": 13152000.0
+      },
+      "ratio": 0.9976447348427291,
+      "cmpRatio": 0.9992402370460416
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 8996000.0,
+        "4": 9039000.0,
+        "5": 9010000.0
+      },
+      "ratio": 1.004779902178746,
+      "cmpRatio": 1.0015562472209871
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 8986000.0,
+        "4": 9093000.0,
+        "5": 8986000.0
+      },
+      "ratio": 1.0119074115290452,
+      "cmpRatio": 1.0
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 5772000.0,
+        "4": 5728000.0,
+        "5": 5728000.0
+      },
+      "ratio": 0.9923769923769924,
+      "cmpRatio": 0.9923769923769924
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 7837000.0,
+        "4": 8083000.0,
+        "5": 8091000.0
+      },
+      "ratio": 1.031389562332525,
+      "cmpRatio": 1.0324103611075666
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 7431000.0,
+        "4": 7694000.0,
+        "5": 7512000.0
+      },
+      "ratio": 1.035392275602207,
+      "cmpRatio": 1.0109002825999192
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 7233000.0,
+        "4": 7273000.0,
+        "5": 7228000.0
+      },
+      "ratio": 1.0055302087653808,
+      "cmpRatio": 0.9993087239043273
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 5271000.0,
+        "4": 5269000.0,
+        "5": 5277000.0
+      },
+      "ratio": 0.9996205653576171,
+      "cmpRatio": 1.0011383039271486
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 5251000.0,
+        "4": 5274000.0,
+        "5": 5237000.0
+      },
+      "ratio": 1.004380118072748,
+      "cmpRatio": 0.9973338411731099
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 435.547,
+        "4": 408.203,
+        "5": 416.016
+      },
+      "ratio": 0.9372191749684878,
+      "cmpRatio": 0.9551575375332627
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 423.828,
+        "4": 419.922,
+        "5": 416.016
+      },
+      "ratio": 0.9907839972819164,
+      "cmpRatio": 0.9815679945638326
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 402.344,
+        "4": 392.578,
+        "5": 384.766
+      },
+      "ratio": 0.9757272383830752,
+      "cmpRatio": 0.9563110174378144
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 404.297,
+        "4": 412.109,
+        "5": 416.016
+      },
+      "ratio": 1.0193224288085243,
+      "cmpRatio": 1.0289861166419736
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 408.203,
+        "4": 414.062,
+        "5": 408.203
+      },
+      "ratio": 1.0143531527205827,
+      "cmpRatio": 1.0
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 417.969,
+        "4": 394.531,
+        "5": 408.203
+      },
+      "ratio": 0.9439240709239203,
+      "cmpRatio": 0.9766346307979777
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 447.266,
+        "4": 425.781,
+        "5": 427.734
+      },
+      "ratio": 0.9519637083972401,
+      "cmpRatio": 0.9563302374873117
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 425.781,
+        "4": 437.5,
+        "5": 421.875
+      },
+      "ratio": 1.02752353909639,
+      "cmpRatio": 0.9908262698429474
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 464.844,
+        "4": 451.172,
+        "5": 476.562
+      },
+      "ratio": 0.9705879822047827,
+      "cmpRatio": 1.0252084570307458
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 308.594,
+        "4": 320.312,
+        "5": 310.547
+      },
+      "ratio": 1.0379722224022503,
+      "cmpRatio": 1.0063287037337085
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "nearly",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 343.75,
+        "4": 341.797,
+        "5": 326.172
+      },
+      "ratio": 0.9943185454545456,
+      "cmpRatio": 0.948864
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 357.422,
+        "4": 345.703,
+        "5": 330.078
+      },
+      "ratio": 0.9672124267672386,
+      "cmpRatio": 0.9234965950613
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 246.094,
+        "4": 259.766,
+        "5": 259.766
+      },
+      "ratio": 1.0555560070542152,
+      "cmpRatio": 1.0555560070542152
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "ordered",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 320.312,
+        "4": 316.406,
+        "5": 328.125
+      },
+      "ratio": 0.987805639501486,
+      "cmpRatio": 1.0243918429531207
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 316.406,
+        "4": 324.219,
+        "5": 304.688
+      },
+      "ratio": 1.02469295778209,
+      "cmpRatio": 0.9629653040713513
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 308.594,
+        "4": 324.219,
+        "5": 316.406
+      },
+      "ratio": 1.050632870373371,
+      "cmpRatio": 1.0253148149348335
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "reverse",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 267.578,
+        "4": 250.0,
+        "5": 263.672
+      },
+      "ratio": 0.9343070058076525,
+      "cmpRatio": 0.9854023873412614
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 271.484,
+        "4": 257.812,
+        "5": 259.766
+      },
+      "ratio": 0.9496397577757807,
+      "cmpRatio": 0.9568372353435195
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 27054.054,
+        "4": 26102.564,
+        "5": 27297.297
+      },
+      "ratio": 0.9648300398897702,
+      "cmpRatio": 1.008991000017964
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 27054.054,
+        "4": 28333.333,
+        "5": 27540.541
+      },
+      "ratio": 1.0472860370575146,
+      "cmpRatio": 1.0179820369989652
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 26500.0,
+        "4": 26102.564,
+        "5": 25923.077
+      },
+      "ratio": 0.9850024150943396,
+      "cmpRatio": 0.978229320754717
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 25550.0,
+        "4": 26368.421,
+        "5": 26473.684
+      },
+      "ratio": 1.032032133072407,
+      "cmpRatio": 1.0361520156555772
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 27216.216,
+        "4": 28222.222,
+        "5": 26921.053
+      },
+      "ratio": 1.0369634779500574,
+      "cmpRatio": 0.9891548847201976
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 25923.077,
+        "4": 26368.421,
+        "5": 26128.205
+      },
+      "ratio": 1.017179442085521,
+      "cmpRatio": 1.0079129495314156
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 24634.146,
+        "4": 23581.395,
+        "5": 24333.333
+      },
+      "ratio": 0.9572645627739642,
+      "cmpRatio": 0.9877887790386563
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 24853.659,
+        "4": 24414.634,
+        "5": 24214.286
+      },
+      "ratio": 0.9823355989554696,
+      "cmpRatio": 0.9742744921381596
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 24261.905,
+        "4": 24756.098,
+        "5": 24804.878
+      },
+      "ratio": 1.0203690930287628,
+      "cmpRatio": 1.0223796523809652
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 20080.0,
+        "4": 21229.167,
+        "5": 20653.061
+      },
+      "ratio": 1.0572294322709164,
+      "cmpRatio": 1.0285388944223108
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "nearly",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 19607.843,
+        "4": 20000.0,
+        "5": 19764.706
+      },
+      "ratio": 1.02000000714,
+      "cmpRatio": 1.008000013056
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 19823.529,
+        "4": 19882.353,
+        "5": 18814.815
+      },
+      "ratio": 1.0029673828509547,
+      "cmpRatio": 0.9491153164504665
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 13413.333,
+        "4": 13453.333,
+        "5": 13493.333
+      },
+      "ratio": 1.002982107429973,
+      "cmpRatio": 1.0059642148599457
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "ordered",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 18035.714,
+        "4": 18611.111,
+        "5": 18666.667
+      },
+      "ratio": 1.0319032005053972,
+      "cmpRatio": 1.034983533227462
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 18218.182,
+        "4": 18611.111,
+        "5": 18200.0
+      },
+      "ratio": 1.0215679588665871,
+      "cmpRatio": 0.9990019860379042
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 18017.857,
+        "4": 18400.0,
+        "5": 18107.143
+      },
+      "ratio": 1.0212091260353549,
+      "cmpRatio": 1.0049554172840867
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "reverse",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 13466.667,
+        "4": 13635.135,
+        "5": 13386.667
+      },
+      "ratio": 1.0125099996903466,
+      "cmpRatio": 0.9940594060876384
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 13493.333,
+        "4": 13360.0,
+        "5": 13608.108
+      },
+      "ratio": 0.9901186015345504,
+      "cmpRatio": 1.0085060525816711
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 2406.25,
+        "4": 2444.988,
+        "5": 2394.737
+      },
+      "ratio": 1.016098909090909,
+      "cmpRatio": 0.9952153766233767
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 2295.872,
+        "4": 2325.581,
+        "5": 2306.452
+      },
+      "ratio": 1.0129401813341512,
+      "cmpRatio": 1.0046082708443678
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 2453.431,
+        "4": 2421.308,
+        "5": 2500.0
+      },
+      "ratio": 0.9869069071027471,
+      "cmpRatio": 1.018981173711427
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 2338.785,
+        "4": 2352.941,
+        "5": 2333.333
+      },
+      "ratio": 1.0060527154056487,
+      "cmpRatio": 0.9976688750782993
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 2403.846,
+        "4": 2417.874,
+        "5": 2471.605
+      },
+      "ratio": 1.0058356483734814,
+      "cmpRatio": 1.0281877458040158
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 2505.0,
+        "4": 2420.29,
+        "5": 2477.723
+      },
+      "ratio": 0.9661836327345309,
+      "cmpRatio": 0.9891109780439121
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 2333.333,
+        "4": 2257.336,
+        "5": 2309.469
+      },
+      "ratio": 0.9674298524899788,
+      "cmpRatio": 0.98977256996751
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 2232.143,
+        "4": 2204.846,
+        "5": 2237.136
+      },
+      "ratio": 0.9877709447826595,
+      "cmpRatio": 1.0022368638568406
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 2259.594,
+        "4": 2221.729,
+        "5": 2239.374
+      },
+      "ratio": 0.9832425648147409,
+      "cmpRatio": 0.9910514897809074
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 1675.781,
+        "4": 1705.078,
+        "5": 1701.172
+      },
+      "ratio": 1.0174825946827182,
+      "cmpRatio": 1.0151517411881386
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "nearly",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 1722.656,
+        "4": 1763.672,
+        "5": 1767.578
+      },
+      "ratio": 1.0238097449519812,
+      "cmpRatio": 1.0260771738524697
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 1726.562,
+        "4": 1736.328,
+        "5": 1699.219
+      },
+      "ratio": 1.0056563274298866,
+      "cmpRatio": 0.984163325730556
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 1287.109,
+        "4": 1291.016,
+        "5": 1314.453
+      },
+      "ratio": 1.003035484951158,
+      "cmpRatio": 1.021244509983226
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "ordered",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 1728.516,
+        "4": 1730.469,
+        "5": 1718.75
+      },
+      "ratio": 1.0011298709413161,
+      "cmpRatio": 0.9943500667624714
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 1703.125,
+        "4": 1748.047,
+        "5": 1734.375
+      },
+      "ratio": 1.0263762201834863,
+      "cmpRatio": 1.018348623853211
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 1732.422,
+        "4": 1779.297,
+        "5": 1746.094
+      },
+      "ratio": 1.0270574952292224,
+      "cmpRatio": 1.0078918415951772
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "reverse",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 1332.031,
+        "4": 1353.516,
+        "5": 1343.75
+      },
+      "ratio": 1.0161295044935141,
+      "cmpRatio": 1.0087978432934368
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 1351.562,
+        "4": 1349.609,
+        "5": 1353.516
+      },
+      "ratio": 0.9985550052457823,
+      "cmpRatio": 1.0014457346388845
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i32",
+      "n": "65536",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 2138000.0,
+        "1": 157857.143,
+        "2": 165000.0,
+        "6": 170500.0
+      },
+      "ratio": 0.07974742750233864,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i32",
+      "n": "65536",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2146000.0,
+        "1": 154000.0,
+        "2": 165857.143,
+        "6": 153428.571
+      },
+      "ratio": 0.07149514026095061,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i32",
+      "n": "65536",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 2172000.0,
+        "1": 220200.0,
+        "2": 222800.0,
+        "6": 218000.0
+      },
+      "ratio": 0.1003683241252302,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i32",
+      "n": "65536",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2255000.0,
+        "1": 209600.0,
+        "2": 224000.0,
+        "6": 217800.0
+      },
+      "ratio": 0.09658536585365854,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i32",
+      "n": "65536",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 1391000.0,
+        "1": 286000.0,
+        "2": 268500.0,
+        "6": 273750.0
+      },
+      "ratio": 0.19680086268871316,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i32",
+      "n": "65536",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 1427000.0,
+        "1": 275500.0,
+        "2": 276000.0,
+        "6": 267000.0
+      },
+      "ratio": 0.18710581639803783,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i64",
+      "n": "65536",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 2163000.0,
+        "1": 194500.0,
+        "2": 186666.667,
+        "6": 183833.333
+      },
+      "ratio": 0.08498998289412853,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i64",
+      "n": "65536",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2151000.0,
+        "1": 189500.0,
+        "2": 180166.667,
+        "6": 202600.0
+      },
+      "ratio": 0.09418874941887494,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i64",
+      "n": "65536",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 2148000.0,
+        "1": 401666.667,
+        "2": 415666.667,
+        "6": 408000.0
+      },
+      "ratio": 0.18994413407821228,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i64",
+      "n": "65536",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2111000.0,
+        "1": 415000.0,
+        "2": 414333.333,
+        "6": 404000.0
+      },
+      "ratio": 0.19137849360492656,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i64",
+      "n": "65536",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 1569000.0,
+        "1": 328750.0,
+        "2": 326000.0,
+        "6": 338333.333
+      },
+      "ratio": 0.21563628616953473,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i64",
+      "n": "65536",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 1390000.0,
+        "1": 298750.0,
+        "2": 285000.0,
+        "6": 298250.0
+      },
+      "ratio": 0.214568345323741,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 2997000.0,
+        "1": 2978000.0,
+        "2": 3008000.0,
+        "6": 2968000.0
+      },
+      "ratio": 0.9903236569903237,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2973000.0,
+        "1": 2984000.0,
+        "2": 2974000.0,
+        "6": 2976000.0
+      },
+      "ratio": 1.0010090817356205,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 3722000.0,
+        "1": 3764000.0,
+        "2": 3815000.0,
+        "6": 3807000.0
+      },
+      "ratio": 1.022837184309511,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 3687000.0,
+        "1": 3755000.0,
+        "2": 3741000.0,
+        "6": 3747000.0
+      },
+      "ratio": 1.016273393002441,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 3885000.0,
+        "1": 2847000.0,
+        "2": 2866000.0,
+        "6": 2891000.0
+      },
+      "ratio": 0.7441441441441441,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 3870000.0,
+        "1": 2840000.0,
+        "2": 2752000.0,
+        "6": 2748000.0
+      },
+      "ratio": 0.710077519379845,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 2750000.0,
+        "1": 2736000.0,
+        "2": 2843000.0,
+        "6": 2789000.0
+      },
+      "ratio": 1.014181818181818,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2873000.0,
+        "1": 2806000.0,
+        "2": 2787000.0,
+        "6": 2810000.0
+      },
+      "ratio": 0.9780717020536025,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 401333.333,
+        "1": 393666.667,
+        "2": 394333.333,
+        "6": 389666.667
+      },
+      "ratio": 0.9709302341951248,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 246000.0,
+        "1": 251000.0,
+        "2": 252250.0,
+        "6": 250500.0
+      },
+      "ratio": 1.0182926829268293,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 252500.0,
+        "1": 250250.0,
+        "2": 254500.0,
+        "6": 240800.0
+      },
+      "ratio": 0.9536633663366336,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 386000.0,
+        "1": 378333.333,
+        "2": 393333.333,
+        "6": 388666.667
+      },
+      "ratio": 1.00690846373057,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 476.562,
+        "1": 478.516,
+        "2": 464.844,
+        "6": 482.422
+      },
+      "ratio": 1.0122964063437707,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 453.125,
+        "1": 486.328,
+        "2": 515.625,
+        "6": 500.0
+      },
+      "ratio": 1.103448275862069,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 460.938,
+        "1": 431.641,
+        "2": 462.891,
+        "6": 470.703
+      },
+      "ratio": 1.0211850617653566,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 476.562,
+        "1": 480.469,
+        "2": 484.375,
+        "6": 466.797
+      },
+      "ratio": 0.9795094866984779,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 470.703,
+        "1": 478.516,
+        "2": 482.422,
+        "6": 458.984
+      },
+      "ratio": 0.9751031967079029,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 484.375,
+        "1": 457.031,
+        "2": 451.172,
+        "6": 458.984
+      },
+      "ratio": 0.9475798709677419,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 9109.091,
+        "1": 9100.0,
+        "2": 9136.364,
+        "6": 9238.532
+      },
+      "ratio": 1.014210089678542,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 9392.523,
+        "1": 9345.794,
+        "2": 9247.706,
+        "6": 9314.815
+      },
+      "ratio": 0.9917266106242169,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 12243.902,
+        "1": 12419.753,
+        "2": 12395.062,
+        "6": 12358.025
+      },
+      "ratio": 1.0093208031230567,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 12329.268,
+        "1": 12280.488,
+        "2": 12358.025,
+        "6": 12512.5
+      },
+      "ratio": 1.0148615473359814,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 17310.345,
+        "1": 17551.724,
+        "2": 17220.339,
+        "6": 17482.759
+      },
+      "ratio": 1.009960171215536,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 17614.035,
+        "1": 17578.947,
+        "2": 17482.759,
+        "6": 17413.793
+      },
+      "ratio": 0.9886316792262535,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 3051.829,
+        "1": 3021.148,
+        "2": 3054.878,
+        "6": 3024.169
+      },
+      "ratio": 0.9909365826197993,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 3039.514,
+        "1": 3006.006,
+        "2": 3099.071,
+        "6": 3070.552
+      },
+      "ratio": 1.010211500917581,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 3128.125,
+        "1": 3089.506,
+        "2": 3086.42,
+        "6": 3064.22
+      },
+      "ratio": 0.9795708291708292,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2921.283,
+        "1": 2865.33,
+        "2": 2970.326,
+        "6": 2890.173
+      },
+      "ratio": 0.9893505695956194,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 2727.52,
+        "1": 2775.623,
+        "2": 2806.723,
+        "6": 2762.431
+      },
+      "ratio": 1.012799539508418,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 3111.801,
+        "1": 3125.0,
+        "2": 3000.0,
+        "6": 3003.003
+      },
+      "ratio": 0.9650369673382071,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 3338000.0,
+        "1": 3360000.0,
+        "2": 3376000.0,
+        "6": 3538000.0
+      },
+      "ratio": 1.0599161174355902,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 3364000.0,
+        "1": 3447000.0,
+        "2": 3466000.0,
+        "6": 3440000.0
+      },
+      "ratio": 1.0225921521997623,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 6966000.0,
+        "1": 7608000.0,
+        "2": 7542000.0,
+        "6": 7620000.0
+      },
+      "ratio": 1.0938845822566752,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 6942000.0,
+        "1": 6837000.0,
+        "2": 6830000.0,
+        "6": 6808000.0
+      },
+      "ratio": 0.9806972054163066,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 4738000.0,
+        "1": 3608000.0,
+        "2": 3572000.0,
+        "6": 3601000.0
+      },
+      "ratio": 0.7600253271422541,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 4601000.0,
+        "1": 3399000.0,
+        "2": 3482000.0,
+        "6": 3397000.0
+      },
+      "ratio": 0.7383177570093458,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 6087000.0,
+        "1": 6072000.0,
+        "2": 6083000.0,
+        "6": 6648000.0
+      },
+      "ratio": 1.0921636274026614,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 6204000.0,
+        "1": 6086000.0,
+        "2": 6007000.0,
+        "6": 6220000.0
+      },
+      "ratio": 1.0025789813023855,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 428000.0,
+        "1": 422000.0,
+        "2": 428333.333,
+        "6": 425666.667
+      },
+      "ratio": 0.9945482873831776,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 251800.0,
+        "1": 253500.0,
+        "2": 255750.0,
+        "6": 252500.0
+      },
+      "ratio": 1.0027799841143765,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 241600.0,
+        "1": 240800.0,
+        "2": 242000.0,
+        "6": 240200.0
+      },
+      "ratio": 0.9942052980132451,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 409000.0,
+        "1": 406333.333,
+        "2": 409000.0,
+        "6": 408666.667
+      },
+      "ratio": 0.9991850048899756,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 455.078,
+        "1": 414.062,
+        "2": 402.344,
+        "6": 416.016
+      },
+      "ratio": 0.9141641652639768,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 419.922,
+        "1": 402.344,
+        "2": 416.016,
+        "6": 414.062
+      },
+      "ratio": 0.9860450274098522,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 396.484,
+        "1": 404.297,
+        "2": 414.062,
+        "6": 408.203
+      },
+      "ratio": 1.0295573087438585,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 406.25,
+        "1": 416.016,
+        "2": 394.531,
+        "6": 419.922
+      },
+      "ratio": 1.033654153846154,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 486.328,
+        "1": 455.078,
+        "2": 451.172,
+        "6": 462.891
+      },
+      "ratio": 0.9518082446414766,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 429.688,
+        "1": 441.406,
+        "2": 441.406,
+        "6": 437.5
+      },
+      "ratio": 1.0181806333898085,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 9940.594,
+        "1": 9852.941,
+        "2": 9950.495,
+        "6": 10680.851
+      },
+      "ratio": 1.074468085106383,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 9960.396,
+        "1": 9940.594,
+        "2": 9970.297,
+        "6": 9910.891
+      },
+      "ratio": 0.9950298160836174,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 23720.93,
+        "1": 23857.143,
+        "2": 23904.762,
+        "6": 26815.789
+      },
+      "ratio": 1.1304695473575446,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 22863.636,
+        "1": 22711.111,
+        "2": 22577.778,
+        "6": 22355.556
+      },
+      "ratio": 0.977777812767838,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 17684.211,
+        "1": 17842.105,
+        "2": 17910.714,
+        "6": 17701.754
+      },
+      "ratio": 1.0009920148543807,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 17614.035,
+        "1": 18089.286,
+        "2": 17807.018,
+        "6": 17771.93
+      },
+      "ratio": 1.0089641584111761,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 2724.796,
+        "1": 2752.747,
+        "2": 2712.737,
+        "6": 2673.797
+      },
+      "ratio": 0.9812833694705954,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2698.113,
+        "1": 2673.797,
+        "2": 2683.646,
+        "6": 2662.234
+      },
+      "ratio": 0.9867021877882802,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 2700.809,
+        "1": 2720.109,
+        "2": 2737.705,
+        "6": 2722.826
+      },
+      "ratio": 1.0081520018631454,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2754.821,
+        "1": 2793.296,
+        "2": 2830.508,
+        "6": 2801.12
+      },
+      "ratio": 1.0168065366134496,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 2734.973,
+        "1": 2690.86,
+        "2": 2717.391,
+        "6": 2772.853
+      },
+      "ratio": 1.0138502281375357,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2506.266,
+        "1": 2534.177,
+        "2": 2536.709,
+        "6": 2531.646
+      },
+      "ratio": 1.010126618643033,
+      "cmpRatio": null
+    }
+  ],
+  "clang": [
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 13952083.0,
+        "4": 39936084.0,
+        "5": 13807625.0
+      },
+      "ratio": 2.862374313570239,
+      "cmpRatio": 0.9896461338425238
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 39268333.0,
+        "4": 40319833.0,
+        "5": 39148125.0
+      },
+      "ratio": 1.0267773017000748,
+      "cmpRatio": 0.996938805627425
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 39337750.0,
+        "4": 40312292.0,
+        "5": 39316708.0
+      },
+      "ratio": 1.0247737097317462,
+      "cmpRatio": 0.9994650939619069
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 13682083.0,
+        "4": 39703625.0,
+        "5": 13896875.0
+      },
+      "ratio": 2.901869912644149,
+      "cmpRatio": 1.0156987791990444
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 39084041.0,
+        "4": 39897333.0,
+        "5": 39046917.0
+      },
+      "ratio": 1.0208088001954558,
+      "cmpRatio": 0.9990501493947364
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 39675416.0,
+        "4": 39968959.0,
+        "5": 39270458.0
+      },
+      "ratio": 1.0073986117751104,
+      "cmpRatio": 0.9897932261126134
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 5072000.0,
+        "4": 16936708.0,
+        "5": 4971708.0
+      },
+      "ratio": 3.339256309148265,
+      "cmpRatio": 0.9802263406940063
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 17013208.0,
+        "4": 17107875.0,
+        "5": 17126916.0
+      },
+      "ratio": 1.0055643239064613,
+      "cmpRatio": 1.0066835131857554
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 17128542.0,
+        "4": 17265209.0,
+        "5": 17051917.0
+      },
+      "ratio": 1.0079789044508283,
+      "cmpRatio": 0.9955264727143734
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 10941209.0,
+        "4": 12279792.0,
+        "5": 11006500.0
+      },
+      "ratio": 1.1223432437859473,
+      "cmpRatio": 1.0059674392473446
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 5894583.0,
+        "4": 6046875.0,
+        "5": 5877459.0
+      },
+      "ratio": 1.0258359242714878,
+      "cmpRatio": 0.9970949598979266
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 5868625.0,
+        "4": 5989125.0,
+        "5": 5904208.0
+      },
+      "ratio": 1.0205329186990137,
+      "cmpRatio": 1.0060632601333361
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 885187.5,
+        "4": 627604.0,
+        "5": 905666.5
+      },
+      "ratio": 0.7090068488314623,
+      "cmpRatio": 1.023135211466497
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 697791.5,
+        "4": 470930.667,
+        "5": 680000.0
+      },
+      "ratio": 0.6748873653519712,
+      "cmpRatio": 0.9745031287999352
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 683479.5,
+        "4": 463847.333,
+        "5": 688291.5
+      },
+      "ratio": 0.6786558089891503,
+      "cmpRatio": 1.0070404452511013
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 472638.333,
+        "4": 472638.667,
+        "5": 475639.0
+      },
+      "ratio": 1.000000706671416,
+      "cmpRatio": 1.0063487592742504
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 862062.5,
+        "4": 641208.5,
+        "5": 856542.0
+      },
+      "ratio": 0.7438074385557891,
+      "cmpRatio": 0.9935961719712898
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 895895.5,
+        "4": 662167.0,
+        "5": 894333.5
+      },
+      "ratio": 0.7391118718645199,
+      "cmpRatio": 0.9982564930842939
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 549.146,
+        "4": 376.236,
+        "5": 548.182
+      },
+      "ratio": 0.6851292734536899,
+      "cmpRatio": 0.9982445469875043
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 420.094,
+        "4": 454.662,
+        "5": 426.979
+      },
+      "ratio": 1.0822863454369736,
+      "cmpRatio": 1.0163891890862522
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 459.24,
+        "4": 503.822,
+        "5": 460.637
+      },
+      "ratio": 1.0970777806811254,
+      "cmpRatio": 1.0030419824057137
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 749.516,
+        "4": 573.49,
+        "5": 759.125
+      },
+      "ratio": 0.7651471082672018,
+      "cmpRatio": 1.0128202733497351
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 744.139,
+        "4": 729.822,
+        "5": 749.26
+      },
+      "ratio": 0.9807603149411602,
+      "cmpRatio": 1.006881778807454
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 841.309,
+        "4": 1002.039,
+        "5": 896.242
+      },
+      "ratio": 1.1910475223728738,
+      "cmpRatio": 1.0652946776986814
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 454.385,
+        "4": 346.842,
+        "5": 457.693
+      },
+      "ratio": 0.7633218526139727,
+      "cmpRatio": 1.0072801698999747
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 395.682,
+        "4": 391.928,
+        "5": 384.846
+      },
+      "ratio": 0.9905125833371242,
+      "cmpRatio": 0.9726143721473304
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 397.465,
+        "4": 408.289,
+        "5": 385.416
+      },
+      "ratio": 1.0272325865170517,
+      "cmpRatio": 0.9696853811027386
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 240.23,
+        "4": 185.529,
+        "5": 242.605
+      },
+      "ratio": 0.7722973816758939,
+      "cmpRatio": 1.0098863589060483
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "nearly",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 191.998,
+        "4": 174.807,
+        "5": 191.959
+      },
+      "ratio": 0.9104626089855102,
+      "cmpRatio": 0.9997968728840926
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 193.361,
+        "4": 187.82,
+        "5": 193.785
+      },
+      "ratio": 0.9713437559797478,
+      "cmpRatio": 1.0021927896525153
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 152.836,
+        "4": 110.832,
+        "5": 144.453
+      },
+      "ratio": 0.7251694626920359,
+      "cmpRatio": 0.9451503572456751
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "ordered",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 99.855,
+        "4": 67.299,
+        "5": 109.861
+      },
+      "ratio": 0.6739672525161484,
+      "cmpRatio": 1.1002052976816383
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 98.387,
+        "4": 67.283,
+        "5": 104.17
+      },
+      "ratio": 0.683860672649842,
+      "cmpRatio": 1.0587780906014006
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 75.355,
+        "4": 74.068,
+        "5": 77.223
+      },
+      "ratio": 0.9829208413509388,
+      "cmpRatio": 1.024789330502289
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "reverse",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 143.559,
+        "4": 108.484,
+        "5": 137.857
+      },
+      "ratio": 0.7556753669223106,
+      "cmpRatio": 0.9602811387652463
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 135.662,
+        "4": 105.562,
+        "5": 142.58
+      },
+      "ratio": 0.7781250460703808,
+      "cmpRatio": 1.050994383099173
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 25317.7,
+        "4": 29651.971,
+        "5": 25210.5
+      },
+      "ratio": 1.1711952902514842,
+      "cmpRatio": 0.9957658081105314
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 27163.351,
+        "4": 41848.958,
+        "5": 24737.878
+      },
+      "ratio": 1.5406404754700553,
+      "cmpRatio": 0.9107078872558839
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 26524.053,
+        "4": 49730.048,
+        "5": 27935.167
+      },
+      "ratio": 1.8749038090068664,
+      "cmpRatio": 1.0532012961970783
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 24090.31,
+        "4": 37191.444,
+        "5": 23454.326
+      },
+      "ratio": 1.5438341806311335,
+      "cmpRatio": 0.9736000076379258
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 26530.684,
+        "4": 33729.2,
+        "5": 27640.838
+      },
+      "ratio": 1.2713279461622624,
+      "cmpRatio": 1.0418441529815061
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 29591.882,
+        "4": 56937.5,
+        "5": 29219.0
+      },
+      "ratio": 1.9240918843891037,
+      "cmpRatio": 0.9873991792749105
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 20691.347,
+        "4": 22564.8,
+        "5": 20974.833
+      },
+      "ratio": 1.0905428244956694,
+      "cmpRatio": 1.0137007030040142
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 22554.711,
+        "4": 22167.565,
+        "5": 22570.333
+      },
+      "ratio": 0.9828352489198376,
+      "cmpRatio": 1.0006926269194936
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 21597.532,
+        "4": 23158.068,
+        "5": 22304.622
+      },
+      "ratio": 1.0722552928732783,
+      "cmpRatio": 1.0327393889264755
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 22187.565,
+        "4": 19322.077,
+        "5": 22223.2
+      },
+      "ratio": 0.8708516234205963,
+      "cmpRatio": 1.001606079801907
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "nearly",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 12760.506,
+        "4": 11985.619,
+        "5": 12669.291
+      },
+      "ratio": 0.9392745867601175,
+      "cmpRatio": 0.9928517724924074
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 12665.051,
+        "4": 11874.482,
+        "5": 12859.538
+      },
+      "ratio": 0.9375786958931315,
+      "cmpRatio": 1.0153561955652608
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 3883.547,
+        "4": 2984.14,
+        "5": 4070.589
+      },
+      "ratio": 0.7684057898616908,
+      "cmpRatio": 1.0481626719079233
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "ordered",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 2951.298,
+        "4": 2031.454,
+        "5": 2942.05
+      },
+      "ratio": 0.688325611307296,
+      "cmpRatio": 0.9968664635018221
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 3086.418,
+        "4": 2000.996,
+        "5": 2923.58
+      },
+      "ratio": 0.6483230722475051,
+      "cmpRatio": 0.9472404580325801
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 2140.28,
+        "4": 2149.232,
+        "5": 2140.938
+      },
+      "ratio": 1.0041826303100527,
+      "cmpRatio": 1.0003074364101894
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "reverse",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 4066.89,
+        "4": 3029.843,
+        "5": 4105.18
+      },
+      "ratio": 0.7450024465869497,
+      "cmpRatio": 1.0094150567140987
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 4095.592,
+        "4": 3010.628,
+        "5": 4012.864
+      },
+      "ratio": 0.7350898234003778,
+      "cmpRatio": 0.9798007223375765
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 2219.976,
+        "4": 2180.477,
+        "5": 2175.743
+      },
+      "ratio": 0.9822074653059312,
+      "cmpRatio": 0.9800750098199259
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 2207.596,
+        "4": 2209.62,
+        "5": 2214.235
+      },
+      "ratio": 1.0009168344207906,
+      "cmpRatio": 1.0030073437349951
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 2203.753,
+        "4": 2214.354,
+        "5": 2218.308
+      },
+      "ratio": 1.0048104302070149,
+      "cmpRatio": 1.006604642171786
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 2433.82,
+        "4": 2221.368,
+        "5": 2435.628
+      },
+      "ratio": 0.9127084172206654,
+      "cmpRatio": 1.000742865125605
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 2029.154,
+        "4": 2123.51,
+        "5": 2036.258
+      },
+      "ratio": 1.046500167064698,
+      "cmpRatio": 1.0035009664126036
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 2123.153,
+        "4": 2230.136,
+        "5": 2151.495
+      },
+      "ratio": 1.0503887378818202,
+      "cmpRatio": 1.01334901441394
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 2299.766,
+        "4": 2308.555,
+        "5": 2204.749
+      },
+      "ratio": 1.0038216931635653,
+      "cmpRatio": 0.9586840574214941
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 2490.784,
+        "4": 2647.474,
+        "5": 2475.658
+      },
+      "ratio": 1.0629079036961857,
+      "cmpRatio": 0.9939272132790318
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 2463.192,
+        "4": 2564.731,
+        "5": 2506.466
+      },
+      "ratio": 1.0412225275171405,
+      "cmpRatio": 1.0175682610206593
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 1562.195,
+        "4": 1359.941,
+        "5": 1544.691
+      },
+      "ratio": 0.8705321678791701,
+      "cmpRatio": 0.9887952528333531
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "nearly",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 1216.574,
+        "4": 1142.088,
+        "5": 1252.764
+      },
+      "ratio": 0.9387739668939168,
+      "cmpRatio": 1.0297474711772567
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 1289.217,
+        "4": 1146.012,
+        "5": 1254.795
+      },
+      "ratio": 0.8889209496927204,
+      "cmpRatio": 0.9733000728349067
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 549.072,
+        "4": 415.453,
+        "5": 522.539
+      },
+      "ratio": 0.7566457586618877,
+      "cmpRatio": 0.9516766471428155
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "ordered",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 466.146,
+        "4": 326.512,
+        "5": 469.65
+      },
+      "ratio": 0.7004500735820965,
+      "cmpRatio": 1.007516958206227
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 463.943,
+        "4": 327.625,
+        "5": 467.043
+      },
+      "ratio": 0.7061751120288484,
+      "cmpRatio": 1.0066818553141228
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 318.357,
+        "4": 325.852,
+        "5": 331.949
+      },
+      "ratio": 1.0235427523189373,
+      "cmpRatio": 1.042694208074583
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "reverse",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 592.234,
+        "4": 454.904,
+        "5": 584.127
+      },
+      "ratio": 0.7681153057744067,
+      "cmpRatio": 0.9863111540370866
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 520.404,
+        "4": 411.943,
+        "5": 514.332
+      },
+      "ratio": 0.7915830777626612,
+      "cmpRatio": 0.9883321419512533
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 13804833.0,
+        "4": 39501833.0,
+        "5": 13621166.0
+      },
+      "ratio": 2.8614495372743733,
+      "cmpRatio": 0.986695456583937
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 39412250.0,
+        "4": 39401250.0,
+        "5": 39409625.0
+      },
+      "ratio": 0.99972089895908,
+      "cmpRatio": 0.9999333963425078
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 39462959.0,
+        "4": 39664458.0,
+        "5": 39449875.0
+      },
+      "ratio": 1.0051060286685547,
+      "cmpRatio": 0.9996684485823782
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 13725708.0,
+        "4": 39741791.0,
+        "5": 13714792.0
+      },
+      "ratio": 2.895427397989233,
+      "cmpRatio": 0.999204704048782
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 39994625.0,
+        "4": 40031792.0,
+        "5": 40037625.0
+      },
+      "ratio": 1.0009292998746706,
+      "cmpRatio": 1.0010751444725385
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 39856500.0,
+        "4": 39852667.0,
+        "5": 39874917.0
+      },
+      "ratio": 0.9999038299900894,
+      "cmpRatio": 1.0004620827217643
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 5028042.0,
+        "4": 17002000.0,
+        "5": 5063792.0
+      },
+      "ratio": 3.381435556823113,
+      "cmpRatio": 1.0071101235828976
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 16679917.0,
+        "4": 16614000.0,
+        "5": 16645792.0
+      },
+      "ratio": 0.9960481218221889,
+      "cmpRatio": 0.9979541265103418
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 16700166.0,
+        "4": 16595959.0,
+        "5": 16680041.0
+      },
+      "ratio": 0.9937601219053751,
+      "cmpRatio": 0.9987949221582588
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 10984042.0,
+        "4": 12444209.0,
+        "5": 11003125.0
+      },
+      "ratio": 1.1329353074214392,
+      "cmpRatio": 1.0017373385862873
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 6372375.0,
+        "4": 6204167.0,
+        "5": 6364792.0
+      },
+      "ratio": 0.973603562251123,
+      "cmpRatio": 0.9988100198120795
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 7033292.0,
+        "4": 6302708.0,
+        "5": 6814541.0
+      },
+      "ratio": 0.8961248871794317,
+      "cmpRatio": 0.9688977793044851
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 912521.0,
+        "4": 683583.5,
+        "5": 915875.0
+      },
+      "ratio": 0.7491153628245267,
+      "cmpRatio": 1.0036755318507737
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 695854.0,
+        "4": 471069.0,
+        "5": 697729.0
+      },
+      "ratio": 0.676965282947285,
+      "cmpRatio": 1.0026945307492663
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 676791.5,
+        "4": 466666.667,
+        "5": 681750.0
+      },
+      "ratio": 0.6895279668849269,
+      "cmpRatio": 1.0073264809029072
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 526312.5,
+        "4": 530000.0,
+        "5": 523979.5
+      },
+      "ratio": 1.0070062937893363,
+      "cmpRatio": 0.9955672722954518
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 934645.5,
+        "4": 709437.5,
+        "5": 949041.0
+      },
+      "ratio": 0.7590444719415008,
+      "cmpRatio": 1.0154020963028227
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 978229.0,
+        "4": 692083.5,
+        "5": 967604.0
+      },
+      "ratio": 0.7074861816609403,
+      "cmpRatio": 0.9891385350464973
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 490.898,
+        "4": 403.076,
+        "5": 484.625
+      },
+      "ratio": 0.8210992915025117,
+      "cmpRatio": 0.9872213779644651
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 347.938,
+        "4": 320.496,
+        "5": 350.746
+      },
+      "ratio": 0.9211296265426598,
+      "cmpRatio": 1.0080704033477228
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 355.805,
+        "4": 347.424,
+        "5": 347.012
+      },
+      "ratio": 0.976444962830764,
+      "cmpRatio": 0.9752870251963857
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 431.475,
+        "4": 358.398,
+        "5": 450.691
+      },
+      "ratio": 0.8306344515904746,
+      "cmpRatio": 1.0445356046120864
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 382.414,
+        "4": 358.152,
+        "5": 381.256
+      },
+      "ratio": 0.9365556700330009,
+      "cmpRatio": 0.9969718681847421
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 359.621,
+        "4": 357.096,
+        "5": 377.51
+      },
+      "ratio": 0.9929787192627795,
+      "cmpRatio": 1.0497440360824313
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 484.441,
+        "4": 348.635,
+        "5": 466.967
+      },
+      "ratio": 0.7196645205504901,
+      "cmpRatio": 0.9639295600496243
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 331.631,
+        "4": 344.414,
+        "5": 333.994
+      },
+      "ratio": 1.0385458536747167,
+      "cmpRatio": 1.0071253893634795
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 330.898,
+        "4": 341.705,
+        "5": 351.623
+      },
+      "ratio": 1.032659611118834,
+      "cmpRatio": 1.0626325937297898
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 287.832,
+        "4": 250.809,
+        "5": 293.688
+      },
+      "ratio": 0.8713728841824397,
+      "cmpRatio": 1.0203452013674643
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "nearly",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 203.367,
+        "4": 163.902,
+        "5": 196.133
+      },
+      "ratio": 0.8059419669857941,
+      "cmpRatio": 0.9644288404706762
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 198.16,
+        "4": 169.025,
+        "5": 195.949
+      },
+      "ratio": 0.8529723455793299,
+      "cmpRatio": 0.9888423496164717
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 149.012,
+        "4": 106.773,
+        "5": 135.24
+      },
+      "ratio": 0.7165396075483853,
+      "cmpRatio": 0.9075779131881997
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "ordered",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 100.016,
+        "4": 70.668,
+        "5": 99.697
+      },
+      "ratio": 0.7065669492881139,
+      "cmpRatio": 0.996810510318349
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 100.342,
+        "4": 69.475,
+        "5": 100.178
+      },
+      "ratio": 0.6923820533774491,
+      "cmpRatio": 0.9983655896832832
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 80.186,
+        "4": 81.127,
+        "5": 81.381
+      },
+      "ratio": 1.0117352156236747,
+      "cmpRatio": 1.014902850871723
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "reverse",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 136.479,
+        "4": 109.781,
+        "5": 142.502
+      },
+      "ratio": 0.804380161050418,
+      "cmpRatio": 1.0441313315601668
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 132.969,
+        "4": 109.467,
+        "5": 137.125
+      },
+      "ratio": 0.8232520361888862,
+      "cmpRatio": 1.0312554053952425
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 21397.979,
+        "4": 30337.091,
+        "5": 21530.979
+      },
+      "ratio": 1.4177549664853863,
+      "cmpRatio": 1.0062155402620032
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 35375.069,
+        "4": 30925.424,
+        "5": 41430.12
+      },
+      "ratio": 0.8742152276791317,
+      "cmpRatio": 1.1711671855678925
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 24313.571,
+        "4": 40223.4,
+        "5": 24321.357
+      },
+      "ratio": 1.6543600279860167,
+      "cmpRatio": 1.00032023267993
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 21062.479,
+        "4": 25235.35,
+        "5": 21560.277
+      },
+      "ratio": 1.198118701981851,
+      "cmpRatio": 1.023634349973714
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 42671.708,
+        "4": 24212.405,
+        "5": 43577.913
+      },
+      "ratio": 0.5674111990080172,
+      "cmpRatio": 1.021236670442158
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 42925.292,
+        "4": 24292.619,
+        "5": 42364.625
+      },
+      "ratio": 0.565927868353231,
+      "cmpRatio": 0.986938539637657
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 18482.6,
+        "4": 19338.25,
+        "5": 18282.527
+      },
+      "ratio": 1.0462948935755794,
+      "cmpRatio": 0.9891750619501585
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 19350.904,
+        "4": 18103.375,
+        "5": 19563.308
+      },
+      "ratio": 0.935531228928633,
+      "cmpRatio": 1.010976438103357
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 21492.064,
+        "4": 18334.8,
+        "5": 23298.465
+      },
+      "ratio": 0.8530962870760109,
+      "cmpRatio": 1.0840496752661821
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 16582.705,
+        "4": 16746.567,
+        "5": 16321.242
+      },
+      "ratio": 1.0098815000327146,
+      "cmpRatio": 0.9842327895237839
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "nearly",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 10803.731,
+        "4": 10090.84,
+        "5": 10952.837
+      },
+      "ratio": 0.9340143696654425,
+      "cmpRatio": 1.0138013432581763
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 11239.778,
+        "4": 10380.144,
+        "5": 11301.483
+      },
+      "ratio": 0.9235185961857966,
+      "cmpRatio": 1.0054898771132312
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 3757.794,
+        "4": 2856.348,
+        "5": 3757.494
+      },
+      "ratio": 0.7601129811799157,
+      "cmpRatio": 0.9999201659271371
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "ordered",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 2970.19,
+        "4": 2008.301,
+        "5": 2957.103
+      },
+      "ratio": 0.6761523673569704,
+      "cmpRatio": 0.9955938845663073
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 2798.156,
+        "4": 1936.533,
+        "5": 2856.584
+      },
+      "ratio": 0.6920747092013454,
+      "cmpRatio": 1.0208808944176093
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 2026.518,
+        "4": 2042.422,
+        "5": 2030.085
+      },
+      "ratio": 1.007847944109058,
+      "cmpRatio": 1.0017601620118843
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "reverse",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 3851.142,
+        "4": 2836.518,
+        "5": 3831.874
+      },
+      "ratio": 0.7365394472600595,
+      "cmpRatio": 0.9949968087388105
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 3800.822,
+        "4": 2804.036,
+        "5": 3778.125
+      },
+      "ratio": 0.7377446247153905,
+      "cmpRatio": 0.994028397015172
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 2077.961,
+        "4": 2229.029,
+        "5": 2048.648
+      },
+      "ratio": 1.0727001132360041,
+      "cmpRatio": 0.9858933829845702
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 2246.726,
+        "4": 2278.563,
+        "5": 2291.281
+      },
+      "ratio": 1.014170397280309,
+      "cmpRatio": 1.019831078645104
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 2232.056,
+        "4": 2047.62,
+        "5": 2221.993
+      },
+      "ratio": 0.9173694566802982,
+      "cmpRatio": 0.9954916005691613
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 2213.347,
+        "4": 2193.175,
+        "5": 2216.803
+      },
+      "ratio": 0.9908862008532778,
+      "cmpRatio": 1.0015614361417344
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 2170.202,
+        "4": 2137.733,
+        "5": 2169.57
+      },
+      "ratio": 0.9850387198979634,
+      "cmpRatio": 0.9997087828690601
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 2183.196,
+        "4": 2134.358,
+        "5": 2188.325
+      },
+      "ratio": 0.9776300432943265,
+      "cmpRatio": 1.002349308078615
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 2116.55,
+        "4": 2025.057,
+        "5": 2141.957
+      },
+      "ratio": 0.956772578016111,
+      "cmpRatio": 1.0120039687226854
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 2133.716,
+        "4": 2015.501,
+        "5": 2113.135
+      },
+      "ratio": 0.9445966567247001,
+      "cmpRatio": 0.990354386431934
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 2207.592,
+        "4": 2146.105,
+        "5": 2197.634
+      },
+      "ratio": 0.9721474801503176,
+      "cmpRatio": 0.9954892027149944
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 1370.943,
+        "4": 1138.168,
+        "5": 1374.43
+      },
+      "ratio": 0.8302081122264018,
+      "cmpRatio": 1.002543504726309
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "nearly",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 894.867,
+        "4": 746.145,
+        "5": 892.965
+      },
+      "ratio": 0.83380547053361,
+      "cmpRatio": 0.9978745444853817
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 891.031,
+        "4": 750.406,
+        "5": 893.057
+      },
+      "ratio": 0.8421772082003881,
+      "cmpRatio": 1.0022737704973228
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 551.426,
+        "4": 423.01,
+        "5": 541.268
+      },
+      "ratio": 0.7671201575551387,
+      "cmpRatio": 0.9815786705741114
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "ordered",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 420.24,
+        "4": 295.641,
+        "5": 424.561
+      },
+      "ratio": 0.7035051399200457,
+      "cmpRatio": 1.01028221968399
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 425.619,
+        "4": 287.033,
+        "5": 429.941
+      },
+      "ratio": 0.6743895361814205,
+      "cmpRatio": 1.0101546218566368
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "3": 300.531,
+        "4": 309.734,
+        "5": 301.766
+      },
+      "ratio": 1.030622464903787,
+      "cmpRatio": 1.0041093930409841
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "reverse",
+      "comparator": "lessTyped",
+      "timesNs": {
+        "3": 546.785,
+        "4": 413.652,
+        "5": 545.014
+      },
+      "ratio": 0.7565167296103588,
+      "cmpRatio": 0.9967610669641633
+    },
+    {
+      "kind": "fallback",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "3": 547.445,
+        "4": 413.008,
+        "5": 546.385
+      },
+      "ratio": 0.7544282987332059,
+      "cmpRatio": 0.9980637324297417
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i32",
+      "n": "65536",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 787396.0,
+        "1": 147541.857,
+        "2": 156386.714,
+        "6": 148624.857
+      },
+      "ratio": 0.18875490477472578,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i32",
+      "n": "65536",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2049291.0,
+        "1": 167305.5,
+        "2": 176354.0,
+        "6": 185403.0
+      },
+      "ratio": 0.09047177780022457,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i32",
+      "n": "65536",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 795520.5,
+        "1": 201758.4,
+        "2": 211725.2,
+        "6": 202858.4
+      },
+      "ratio": 0.2550008453584791,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i32",
+      "n": "65536",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2098292.0,
+        "1": 219274.8,
+        "2": 225516.8,
+        "6": 236375.2
+      },
+      "ratio": 0.11265124205782609,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i32",
+      "n": "65536",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 306896.0,
+        "1": 275479.25,
+        "2": 266833.25,
+        "6": 282124.75
+      },
+      "ratio": 0.9192845459048016,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i32",
+      "n": "65536",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 1075375.0,
+        "1": 297021.25,
+        "2": 293979.5,
+        "6": 296458.25
+      },
+      "ratio": 0.2756789492037661,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i64",
+      "n": "65536",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 782562.5,
+        "1": 175118.167,
+        "2": 173367.833,
+        "6": 172729.5
+      },
+      "ratio": 0.22072294545164126,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i64",
+      "n": "65536",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2079250.0,
+        "1": 191632.0,
+        "2": 185944.5,
+        "6": 179812.5
+      },
+      "ratio": 0.0864794998196465,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i64",
+      "n": "65536",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 821020.5,
+        "1": 399319.333,
+        "2": 396806.0,
+        "6": 396597.667
+      },
+      "ratio": 0.48305452421711764,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i64",
+      "n": "65536",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2071541.0,
+        "1": 408916.667,
+        "2": 418194.667,
+        "6": 404583.0
+      },
+      "ratio": 0.195305330669294,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i64",
+      "n": "65536",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 299240.0,
+        "1": 281406.0,
+        "2": 281479.25,
+        "6": 289125.0
+      },
+      "ratio": 0.9661977008421334,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "array",
+      "type": "i64",
+      "n": "65536",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 1138875.0,
+        "1": 298844.0,
+        "2": 299219.0,
+        "6": 287583.25
+      },
+      "ratio": 0.2525152014048952,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 2936500.0,
+        "1": 2972458.0,
+        "2": 2957250.0,
+        "6": 2957833.0
+      },
+      "ratio": 1.0072647709858675,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 3001166.0,
+        "1": 2994542.0,
+        "2": 3010542.0,
+        "6": 2969833.0
+      },
+      "ratio": 0.9895597244537623,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 3729000.0,
+        "1": 3760667.0,
+        "2": 3759167.0,
+        "6": 3772625.0
+      },
+      "ratio": 1.011698846875838,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 3738750.0,
+        "1": 3757500.0,
+        "2": 3783375.0,
+        "6": 3771625.0
+      },
+      "ratio": 1.0087930458040788,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 3904792.0,
+        "1": 3975209.0,
+        "2": 3967042.0,
+        "6": 3963833.0
+      },
+      "ratio": 1.0151201395618512,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 3632834.0,
+        "1": 3881875.0,
+        "2": 3904375.0,
+        "6": 3894083.0
+      },
+      "ratio": 1.0719132776229248,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 2842166.0,
+        "1": 2779500.0,
+        "2": 2807083.0,
+        "6": 2952834.0
+      },
+      "ratio": 1.038937908623212,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2778416.0,
+        "1": 2882292.0,
+        "2": 2825458.0,
+        "6": 2898792.0
+      },
+      "ratio": 1.0433254055548198,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 296937.5,
+        "1": 292562.5,
+        "2": 292021.0,
+        "6": 284166.5
+      },
+      "ratio": 0.9569909492738371,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 230383.6,
+        "1": 231433.2,
+        "2": 232591.6,
+        "6": 233091.4
+      },
+      "ratio": 1.0117534407831112,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 230424.8,
+        "1": 236108.4,
+        "2": 234908.0,
+        "6": 236025.2
+      },
+      "ratio": 1.024304675538397,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 300552.0,
+        "1": 294156.0,
+        "2": 295947.75,
+        "6": 300989.75
+      },
+      "ratio": 1.0014564867310816,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 539.879,
+        "1": 536.051,
+        "2": 423.404,
+        "6": 529.621
+      },
+      "ratio": 0.9809994461721978,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 397.557,
+        "1": 396.314,
+        "2": 429.49,
+        "6": 396.164
+      },
+      "ratio": 0.9964960999303244,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 601.879,
+        "1": 610.346,
+        "2": 434.844,
+        "6": 609.725
+      },
+      "ratio": 1.0130358427524468,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 550.217,
+        "1": 550.451,
+        "2": 569.016,
+        "6": 559.352
+      },
+      "ratio": 1.0166025404522216,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 485.119,
+        "1": 458.814,
+        "2": 354.244,
+        "6": 474.305
+      },
+      "ratio": 0.9777085622290613,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 361.242,
+        "1": 361.008,
+        "2": 359.375,
+        "6": 359.375
+      },
+      "ratio": 0.994831719456763,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 8966.152,
+        "1": 8864.655,
+        "2": 8934.884,
+        "6": 8859.531
+      },
+      "ratio": 0.9881084996105354,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 8900.805,
+        "1": 8896.381,
+        "2": 8897.858,
+        "6": 8846.184
+      },
+      "ratio": 0.9938633640440386,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 11408.67,
+        "1": 11987.607,
+        "2": 11752.442,
+        "6": 12091.807
+      },
+      "ratio": 1.0598787588737337,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 11986.583,
+        "1": 12077.819,
+        "2": 12074.301,
+        "6": 12163.108
+      },
+      "ratio": 1.0147268825485962,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 19517.596,
+        "1": 19995.961,
+        "2": 20045.02,
+        "6": 19737.706
+      },
+      "ratio": 1.0112775159399752,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 20579.939,
+        "1": 18791.63,
+        "2": 17892.893,
+        "6": 19408.635
+      },
+      "ratio": 0.9430851568607662,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 2655.101,
+        "1": 2656.265,
+        "2": 2644.662,
+        "6": 2680.005
+      },
+      "ratio": 1.009379680848299,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2431.658,
+        "1": 2395.045,
+        "2": 2505.21,
+        "6": 2404.041
+      },
+      "ratio": 0.988642728541596,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 2639.945,
+        "1": 2642.929,
+        "2": 2354.927,
+        "6": 2672.803
+      },
+      "ratio": 1.0124464714227,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2420.684,
+        "1": 2405.139,
+        "2": 2342.328,
+        "6": 2417.254
+      },
+      "ratio": 0.9985830451227834,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 2539.746,
+        "1": 2576.257,
+        "2": 2683.879,
+        "6": 2555.931
+      },
+      "ratio": 1.0063726845125458,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i32",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2525.879,
+        "1": 2747.253,
+        "2": 2596.49,
+        "6": 2692.32
+      },
+      "ratio": 1.065894288681287,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 3562333.0,
+        "1": 3442334.0,
+        "2": 3532541.0,
+        "6": 3451708.0
+      },
+      "ratio": 0.968945912692609,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 3420500.0,
+        "1": 3411541.0,
+        "2": 3534541.0,
+        "6": 3408667.0
+      },
+      "ratio": 0.9965405642449934,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 6816750.0,
+        "1": 6828666.0,
+        "2": 6892458.0,
+        "6": 6771500.0
+      },
+      "ratio": 0.9933619393405949,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 6785208.0,
+        "1": 6959208.0,
+        "2": 6857625.0,
+        "6": 6816166.0
+      },
+      "ratio": 1.0045625719948452,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 4410167.0,
+        "1": 4453083.0,
+        "2": 4296000.0,
+        "6": 4367500.0
+      },
+      "ratio": 0.9903253096764817,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 4207917.0,
+        "1": 4420125.0,
+        "2": 4409209.0,
+        "6": 4301584.0
+      },
+      "ratio": 1.0222597071187478,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 5980709.0,
+        "1": 5913417.0,
+        "2": 5822083.0,
+        "6": 5885167.0
+      },
+      "ratio": 0.9840249709524406,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "nearly",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 5929333.0,
+        "1": 5965000.0,
+        "2": 5963459.0,
+        "6": 5921709.0
+      },
+      "ratio": 0.9987141892688436,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 376889.0,
+        "1": 378111.0,
+        "2": 375888.667,
+        "6": 375875.0
+      },
+      "ratio": 0.9973095526799668,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "ordered",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 260239.5,
+        "1": 263052.0,
+        "2": 257469.0,
+        "6": 259791.5
+      },
+      "ratio": 0.9982785088351307,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 256770.5,
+        "1": 247116.8,
+        "2": 262166.75,
+        "6": 259969.0
+      },
+      "ratio": 1.012456649030944,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "1000000",
+      "distribution": "reverse",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 384889.0,
+        "1": 383569.333,
+        "2": 378805.333,
+        "6": 382458.667
+      },
+      "ratio": 0.993685626245489,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 498.457,
+        "1": 464.627,
+        "2": 372.879,
+        "6": 460.928
+      },
+      "ratio": 0.92470965399222,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 372.479,
+        "1": 358.25,
+        "2": 342.344,
+        "6": 376.955
+      },
+      "ratio": 1.0120167848388768,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 436.77,
+        "1": 457.355,
+        "2": 398.338,
+        "6": 447.166
+      },
+      "ratio": 1.0238020010531859,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 385.178,
+        "1": 389.889,
+        "2": 354.986,
+        "6": 384.107
+      },
+      "ratio": 0.9972194673631413,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 442.537,
+        "1": 432.707,
+        "2": 363.852,
+        "6": 432.457
+      },
+      "ratio": 0.977222243563815,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "128",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 348.711,
+        "1": 355.699,
+        "2": 359.377,
+        "6": 345.512
+      },
+      "ratio": 0.9908262142576517,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 9113.655,
+        "1": 9176.908,
+        "2": 9068.333,
+        "6": 9104.209
+      },
+      "ratio": 0.998963533291528,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 8932.652,
+        "1": 8945.402,
+        "2": 8962.42,
+        "6": 8954.991
+      },
+      "ratio": 1.0025008250629264,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 21634.702,
+        "1": 21702.191,
+        "2": 21809.87,
+        "6": 22085.196
+      },
+      "ratio": 1.0208227504127396,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 21820.543,
+        "1": 21614.319,
+        "2": 22123.174,
+        "6": 21801.565
+      },
+      "ratio": 0.9991302691230002,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 17245.69,
+        "1": 17784.404,
+        "2": 17685.667,
+        "6": 17740.544
+      },
+      "ratio": 1.0286943578366539,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "4096",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 17209.78,
+        "1": 17382.121,
+        "2": 17551.14,
+        "6": 17647.632
+      },
+      "ratio": 1.0254420451626924,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 2362.333,
+        "1": 2354.515,
+        "2": 2543.47,
+        "6": 2357.348
+      },
+      "ratio": 0.99788979792434,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "bits22",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2507.664,
+        "1": 2490.672,
+        "2": 2447.232,
+        "6": 2525.378
+      },
+      "ratio": 1.0070639447709102,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 2434.299,
+        "1": 2397.519,
+        "2": 2411.354,
+        "6": 2393.256
+      },
+      "ratio": 0.9831397046952737,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "full",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2457.113,
+        "1": 2473.553,
+        "2": 2429.716,
+        "6": 2454.765
+      },
+      "ratio": 0.9990444069930849,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "greaterTyped",
+      "timesNs": {
+        "0": 2401.077,
+        "1": 2431.716,
+        "2": 2332.138,
+        "6": 2407.041
+      },
+      "ratio": 1.0024838853564462,
+      "cmpRatio": null
+    },
+    {
+      "kind": "pipeline",
+      "container": "vector",
+      "type": "i64",
+      "n": "512",
+      "distribution": "gaps",
+      "comparator": "lessVoid",
+      "timesNs": {
+        "0": 2399.487,
+        "1": 2399.48,
+        "2": 2376.691,
+        "6": 2395.038
+      },
+      "ratio": 0.9981458536762232,
+      "cmpRatio": null
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "module": "SuffixArray",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "fde299c5d7c880c496ebfdad0c0830d1f12af7c8be100d67ed17f9bc8d64bfd7",
+    "Final.hpp": "e8517fe46d2790fc7635b3d26e215f7fd1af74a3e798e4bfbdee240f23dbdd33",
+    "Test.cpp": "70d3ac8c9a97342404280c7d6a06abcccb3790dcf839f9ce5edbe5b1a2fe07b4",
+    "Benchmark.cpp": "952493174e56f8d85f0a31092dfc69d1ed6f73f4e9fdf57c700765b4047aca02",
+    "Final.code-snippets": "b51f1dae295689d14e2ea728c7d5a621d5596c22a1b107fe0b4c82a95d0906b7"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8"
+  },
+  "includeSha256": {
+    "SuffixArray/Final.hpp": "e8517fe46d2790fc7635b3d26e215f7fd1af74a3e798e4bfbdee240f23dbdd33",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8",
+    "SuffixArray/Original.hpp": "fde299c5d7c880c496ebfdad0c0830d1f12af7c8be100d67ed17f9bc8d64bfd7"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/SuffixArray/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/SuffixArray/Build/optimized"
+      ],
+      "output": "SuffixArray: naive suffix ordering/LCP, exhaustive binary, bytes, signed extremes, custom comparator, empty PASS"
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/SuffixArray/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/SuffixArray/Build/sanitized"
+      ],
+      "output": "SuffixArray: naive suffix ordering/LCP, exhaustive binary, bytes, signed extremes, custom comparator, empty PASS"
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/SuffixArray/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/SuffixArray/Build/benchmark"
+  ],
+  "benchmark": "alphabet-1,11.22,8.006,1.40145,1501199875702784\nalphabet-2,4.825,4.21,1.14608,1126598537414597\nalphabet-26,2.508,2.231,1.12416,1127254984915573"
+}

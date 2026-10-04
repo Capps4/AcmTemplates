@@ -1,0 +1,5 @@
+scenario,originalMs,finalMs,speedup,checksum
+alphabet-1,10.637,5.036,2.11219,1000000500000
+alphabet-2,14.116,10.162,1.3891,8834945
+alphabet-26,11.765,4.121,2.85489,2204411
+substring-view,10.234,4.846,2.11184,1000000

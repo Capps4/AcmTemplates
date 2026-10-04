@@ -1,0 +1,232 @@
+{
+  "formatVersion": 2,
+  "module": "StringHash",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "591750dd6888b1140613dbd382bb71cbe3f61f1d5c0629a7cc80c2e5cf395717",
+    "Final.hpp": "a8e497a006cffed57ed0360067fbf8efda5b460c1b4f9824b1f2247a4c50b137",
+    "Test.cpp": "70b0f3465c58ce0dcc1d5de013b69ec694a3b0f755d4866134b56c74b1432b70",
+    "Benchmark.cpp": "44d4621b10f8dbeb2961a68ccabd905874373de8489de245b3470e90075b8407",
+    "Final.code-snippets": "61924c12a0763f07c582dd711abb49c7d4492b49d60daf10ab848824420f569b",
+    "TestExtra.cpp": "bfb960ba81ceb2bfd6fcf443251bcaf22055c4ed9835cb4f232c027661166986"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "StringHash/Final.hpp": "a8e497a006cffed57ed0360067fbf8efda5b460c1b4f9824b1f2247a4c50b137",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "StringHash/BenchmarkBefore.hpp": "7e32b2c23ee33b40a4c1d2977d590d4f864acc098106e1bb2f0defd57895e06c"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/StringHash/Test.cpp",
+        "/Users/bytedance/acm_compete/cpp17/StringHash/TestExtra.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/StringHash/Build/optimized"
+      ],
+      "output": "StringHash: independent polynomial oracle, empty intervals first, bytes, numeric extremes, dimensions, multi-TU PASS; bases=641634219,641088953",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/StringHash/Test.cpp",
+        "/Users/bytedance/acm_compete/cpp17/StringHash/TestExtra.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/StringHash/Build/sanitized"
+      ],
+      "output": "StringHash: independent polynomial oracle, empty intervals first, bytes, numeric extremes, dimensions, multi-TU PASS; bases=910215454,888591411",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/StringHash/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/StringHash/Build/benchmark"
+  ],
+  "benchmark": "cold-string-build-545293179-925358085,3.74,5.12,0.730469,500000\ncold-build-full-query-545293179-925358085,4.604,4.62,0.996537,20501623433827625\nwarm-string-build-545293179-925358085,2.471,2.468,1.00122,20501623433827625\nwarm-c-string-build-545293179-925358085,2.67,2.637,1.01251,20501623433827625\nsubstring-queries-545293179-925358085,1.822,1.558,1.16945,7122025461168375947\nshort-substring-queries-545293179-925358085,1.561,1.315,1.18707,13435739738966576789\nwarm-build-and-queries-545293179-925358085,4.549,4.272,1.06484,7122025461168375947",
+  "benchmarkSamples": [
+    {
+      "scenario": "cold-string-build-545293179-925358085",
+      "original": [
+        4.031,
+        4.051,
+        3.77,
+        3.74,
+        3.458,
+        3.438,
+        3.247
+      ],
+      "final": [
+        5.568,
+        5.352,
+        5.375,
+        5.12,
+        5.029,
+        4.939,
+        4.988
+      ],
+      "checksum": 500000,
+      "first": "original"
+    },
+    {
+      "scenario": "cold-build-full-query-545293179-925358085",
+      "original": [
+        4.604,
+        4.709,
+        4.404,
+        4.586,
+        4.548,
+        4.69,
+        4.631
+      ],
+      "final": [
+        4.62,
+        4.554,
+        4.538,
+        4.576,
+        4.628,
+        4.66,
+        4.768
+      ],
+      "checksum": 20501623433827625,
+      "first": "final"
+    },
+    {
+      "scenario": "warm-string-build-545293179-925358085",
+      "original": [
+        2.693,
+        2.45,
+        2.56,
+        2.491,
+        2.453,
+        2.462,
+        2.471
+      ],
+      "final": [
+        2.463,
+        2.49,
+        2.45,
+        2.465,
+        2.501,
+        2.634,
+        2.468
+      ],
+      "checksum": 20501623433827625,
+      "first": "original"
+    },
+    {
+      "scenario": "warm-c-string-build-545293179-925358085",
+      "original": [
+        2.818,
+        2.67,
+        2.798,
+        2.505,
+        2.493,
+        2.57,
+        3.003
+      ],
+      "final": [
+        2.602,
+        2.677,
+        2.587,
+        2.657,
+        2.831,
+        2.604,
+        2.637
+      ],
+      "checksum": 20501623433827625,
+      "first": "final"
+    },
+    {
+      "scenario": "substring-queries-545293179-925358085",
+      "original": [
+        1.822,
+        1.835,
+        1.823,
+        1.768,
+        1.813,
+        1.801,
+        2.006
+      ],
+      "final": [
+        1.483,
+        1.532,
+        1.558,
+        1.982,
+        1.579,
+        1.494,
+        1.561
+      ],
+      "checksum": 7122025461168375947,
+      "first": "original"
+    },
+    {
+      "scenario": "short-substring-queries-545293179-925358085",
+      "original": [
+        1.469,
+        1.595,
+        1.481,
+        1.538,
+        1.561,
+        1.566,
+        1.564
+      ],
+      "final": [
+        1.315,
+        1.288,
+        1.32,
+        1.385,
+        1.62,
+        1.247,
+        1.189
+      ],
+      "checksum": 13435739738966576789,
+      "first": "final"
+    },
+    {
+      "scenario": "warm-build-and-queries-545293179-925358085",
+      "original": [
+        4.617,
+        4.51,
+        4.481,
+        4.681,
+        4.549,
+        4.807,
+        4.43
+      ],
+      "final": [
+        4.127,
+        4.387,
+        3.974,
+        4.15,
+        4.469,
+        4.296,
+        4.272
+      ],
+      "checksum": 7122025461168375947,
+      "first": "original"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

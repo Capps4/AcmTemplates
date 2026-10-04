@@ -1,0 +1,51 @@
+{
+  "module": "GridUtil",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "d3d688d8a8f92546baa911fc3a8607ac2ccbc94c935f3cda90602807577eb511",
+    "Final.hpp": "a12589aaa00320557d9b905d229e6af4b1daed8a77e828e8e1d3b93231b4c60c",
+    "Test.cpp": "073cad997185a2bf2d9c7a33aa35cdfc81be711b938180a94c0b09d057cd26d8",
+    "Benchmark.cpp": "13fa464da60b04a7e5769d0e306fd52daef23395d3622281df15411a997cb883",
+    "Final.code-snippets": "378efbb4980657ddef7a34a73d013c980cb073b9a01eb1ae4a413117939e2b7b"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/GridUtil/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/GridUtil/Build/optimized"
+      ],
+      "output": "All cells in 0..20 grids, direction order and move-only callback passed"
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/GridUtil/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/GridUtil/Build/sanitized"
+      ],
+      "output": "All cells in 0..20 grids, direction order and move-only callback passed"
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/GridUtil/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/GridUtil/Build/benchmark"
+  ],
+  "benchmark": "owning-neighbors,5.383,5.364,1.00354,124749501000\ncallback-neighbors,5.656,0.261,21.6705,124749501000"
+}

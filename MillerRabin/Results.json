@@ -1,0 +1,116 @@
+{
+  "formatVersion": 2,
+  "module": "MillerRabin",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "137696b5e106366bc3487df187e169902229ee82bee853ba69aacbc6602213e3",
+    "Final.hpp": "e7f0324f298c836a2a02a37820d050f66fec52f3a67ae425739df5f294f00088",
+    "Test.cpp": "801243a940a83969f263ca64e96420f7d2b56096d6f764a28e324c5503817008",
+    "Benchmark.cpp": "f261b284caec90e01b9a8b2826d7ebe58131a9df025f5c29ab9400749019dcb6",
+    "Final.code-snippets": "515205a41fda6f75c95a9c402b267571189eff06574b00c06dfb89716a9a7a76"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "MillerRabin/Final.hpp": "e7f0324f298c836a2a02a37820d050f66fec52f3a67ae425739df5f294f00088",
+    "ModuloInteger/Final.hpp": "6a25fe4f578005b1e77de88c29fbda7677542eac5a785496ca2505ee009360a0",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "ModuloInteger/Original.hpp": "fc4adb04a090f17e76453052c27a6ee6efacf4245f2f3944b16670d7f13a29b3",
+    "MillerRabin/Original.hpp": "137696b5e106366bc3487df187e169902229ee82bee853ba69aacbc6602213e3"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/MillerRabin/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/MillerRabin/Build/optimized"
+      ],
+      "output": "MillerRabin: exhaustive sieve, pseudoprimes, independent uint64 arithmetic, constexpr, mod isolation PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/MillerRabin/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/MillerRabin/Build/sanitized"
+      ],
+      "output": "MillerRabin: exhaustive sieve, pseudoprimes, independent uint64 arithmetic, constexpr, mod isolation PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/MillerRabin/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/MillerRabin/Build/benchmark"
+  ],
+  "benchmark": "mixed-32bit,7.957,6.125,1.2991,15595\nmixed-small-64bit,30.344,19.953,1.52077,15595",
+  "benchmarkSamples": [
+    {
+      "scenario": "mixed-32bit",
+      "original": [
+        9.333,
+        8.757,
+        8.297,
+        7.957,
+        7.689,
+        7.521,
+        7.264
+      ],
+      "final": [
+        6.326,
+        6.15,
+        6.125,
+        6.066,
+        6.08,
+        6.027,
+        6.152
+      ],
+      "checksum": 15595,
+      "first": "original"
+    },
+    {
+      "scenario": "mixed-small-64bit",
+      "original": [
+        31.124,
+        30.369,
+        30.243,
+        30.344,
+        30.329,
+        30.225,
+        30.419
+      ],
+      "final": [
+        19.896,
+        19.908,
+        20.033,
+        19.953,
+        20.007,
+        19.895,
+        20.725
+      ],
+      "checksum": 15595,
+      "first": "final"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

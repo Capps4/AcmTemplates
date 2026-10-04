@@ -1,0 +1,137 @@
+{
+  "formatVersion": 2,
+  "module": "FenwickTree",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "e395db46f7697a6efd1730855ec9bef09b0d051c289f327e6b9866881e4ca7ce",
+    "Final.hpp": "aacd04a42c84f2ee1eb5bface865077aefdefeb0d71fee2a016da56826c1b91f",
+    "Test.cpp": "5fd3180b3fb75ffbc4501b7091ff3a5a102176113160eab20d6a6605df0c9b90",
+    "Benchmark.cpp": "786ac0fa757e93ccf37619c25c5dc4883566a1b1ea5536c690366967e2d7ec2a",
+    "Final.code-snippets": "f6c6d4d5cc13759b02e098816359d1e6763882cde53b63b6e54518bb612b1fef"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "FenwickTree/Final.hpp": "aacd04a42c84f2ee1eb5bface865077aefdefeb0d71fee2a016da56826c1b91f",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "FenwickTree/Original.hpp": "e395db46f7697a6efd1730855ec9bef09b0d051c289f327e6b9866881e4ca7ce"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/FenwickTree/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/FenwickTree/Build/optimized"
+      ],
+      "output": "Random sum/update/select oracles, O(n) build, explicit max identity, move-only XOR and vector<bool> passed",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/FenwickTree/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/FenwickTree/Build/sanitized"
+      ],
+      "output": "Random sum/update/select oracles, O(n) build, explicit max identity, move-only XOR and vector<bool> passed",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/FenwickTree/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/FenwickTree/Build/benchmark"
+  ],
+  "benchmark": "linear-build-200K-x20,9.141,8.453,1.08139,4000000\nmodify-query-200K,4.326,4.318,1.00185,29996765577\nselect-200K,7.2,7.464,0.96463,20018575793",
+  "benchmarkSamples": [
+    {
+      "scenario": "linear-build-200K-x20",
+      "original": [
+        10.461,
+        9.929,
+        9.361,
+        9.141,
+        8.809,
+        8.716,
+        8.586
+      ],
+      "final": [
+        8.532,
+        8.365,
+        8.453,
+        8.44,
+        8.481,
+        8.467,
+        8.364
+      ],
+      "checksum": 4000000,
+      "first": "original"
+    },
+    {
+      "scenario": "modify-query-200K",
+      "original": [
+        4.326,
+        4.284,
+        4.361,
+        4.285,
+        4.341,
+        4.313,
+        4.384
+      ],
+      "final": [
+        4.346,
+        4.287,
+        4.305,
+        4.298,
+        4.336,
+        4.318,
+        4.368
+      ],
+      "checksum": 29996765577,
+      "first": "final"
+    },
+    {
+      "scenario": "select-200K",
+      "original": [
+        7.189,
+        7.237,
+        7.2,
+        7.183,
+        7.201,
+        7.242,
+        7.179
+      ],
+      "final": [
+        7.363,
+        7.417,
+        7.464,
+        7.405,
+        7.47,
+        7.647,
+        7.471
+      ],
+      "checksum": 20018575793,
+      "first": "original"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

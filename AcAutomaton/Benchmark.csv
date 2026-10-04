@@ -1,0 +1,4 @@
+scenario,originalMs,finalMs,speedup,checksum
+pattern-length-10,0.298,0.623,0.478331,611369941
+pattern-length-1000,41.51,42.869,0.968299,8328693123424
+duplicate-patterns,7.216,2.065,3.49443,100

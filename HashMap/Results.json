@@ -1,0 +1,183 @@
+{
+  "formatVersion": 2,
+  "module": "HashMap",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "dd2830679653ad3dbf69b1e15b8292c114c63253fed0ffd9939e7e7000b9f5aa",
+    "Final.hpp": "b098bb1471905dd5c23fcbe7be2b54d00e995e097b7be351d20428f20f79e1f7",
+    "Test.cpp": "f50aa038aff0f0fe4129e6d6264ce64cce414c6c8702f2240bf453a3ffbfe687",
+    "Benchmark.cpp": "35859a7eddd01ddeff57425b37c24128c96552fae753e0a44b2f117a6446da92",
+    "Final.code-snippets": "607901d5676ef4f9638a02685e790333ac6d6b0842f5773859ba37a01e118530"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "HashMap/Final.hpp": "b098bb1471905dd5c23fcbe7be2b54d00e995e097b7be351d20428f20f79e1f7",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "HashMap/Original.hpp": "dd2830679653ad3dbf69b1e15b8292c114c63253fed0ffd9939e7e7000b9f5aa",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/HashMap/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/HashMap/Build/optimized"
+      ],
+      "output": "HashMap 150K interleaved-owner oracle, moves/clears/collisions/full pool, Original iterator copies, resource reset, optional lookup PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/HashMap/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/HashMap/Build/sanitized"
+      ],
+      "output": "HashMap 150K interleaved-owner oracle, moves/clears/collisions/full pool, Original iterator copies, resource reset, optional lookup PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/HashMap/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/HashMap/Build/benchmark"
+  ],
+  "benchmark": "random-keys-300K,11.792,12.885,0.915173,9630910339958219374\ninterleaved-random-300K,12.433,13.373,0.929709,9630910339958219374\nrepeated-keys-300K,0.709,0.969,0.731682,240198601\ninterleaved-repeated-300K,0.957,1.199,0.798165,240198601\nsparse-clear-10K,0.378,0.329,1.14894,50065000",
+  "benchmarkSamples": [
+    {
+      "scenario": "random-keys-300K",
+      "original": [
+        12.99,
+        12.142,
+        11.737,
+        11.838,
+        11.783,
+        11.792,
+        11.721
+      ],
+      "final": [
+        12.904,
+        12.787,
+        12.712,
+        12.838,
+        12.952,
+        12.945,
+        12.885
+      ],
+      "checksum": 9630910339958219374,
+      "first": "original"
+    },
+    {
+      "scenario": "interleaved-random-300K",
+      "original": [
+        12.414,
+        12.433,
+        12.504,
+        12.408,
+        12.346,
+        12.499,
+        12.472
+      ],
+      "final": [
+        13.437,
+        13.181,
+        13.373,
+        13.466,
+        13.29,
+        13.566,
+        13.271
+      ],
+      "checksum": 9630910339958219374,
+      "first": "final"
+    },
+    {
+      "scenario": "repeated-keys-300K",
+      "original": [
+        0.708,
+        0.709,
+        0.709,
+        0.71,
+        0.704,
+        0.707,
+        0.724
+      ],
+      "final": [
+        0.975,
+        0.961,
+        0.965,
+        0.966,
+        0.97,
+        0.969,
+        0.969
+      ],
+      "checksum": 240198601,
+      "first": "original"
+    },
+    {
+      "scenario": "interleaved-repeated-300K",
+      "original": [
+        0.951,
+        0.954,
+        0.957,
+        0.966,
+        0.96,
+        0.956,
+        0.959
+      ],
+      "final": [
+        1.203,
+        1.199,
+        1.198,
+        1.199,
+        1.22,
+        1.203,
+        1.198
+      ],
+      "checksum": 240198601,
+      "first": "final"
+    },
+    {
+      "scenario": "sparse-clear-10K",
+      "original": [
+        0.379,
+        0.378,
+        0.378,
+        0.379,
+        0.378,
+        0.379,
+        0.378
+      ],
+      "final": [
+        0.329,
+        0.318,
+        0.32,
+        0.33,
+        0.316,
+        0.344,
+        0.342
+      ],
+      "checksum": 50065000,
+      "first": "original"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

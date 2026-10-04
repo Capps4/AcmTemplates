@@ -1,0 +1,65 @@
+{
+  "module": "StringHash",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "591750dd6888b1140613dbd382bb71cbe3f61f1d5c0629a7cc80c2e5cf395717",
+    "Final.hpp": "afacf698de388f5803a4a69df882ba9942fb9fb3ba754f78532d07b235f559ae",
+    "Test.cpp": "f67d81b5af306b40cb7af0b74a3464edc588bc0969ad53038eb63a6d2a78ea51",
+    "Benchmark.cpp": "dc74ee16065e8a4fb1c098f81a79806bec84475772d0315b2d23f1592f61cd66",
+    "Final.code-snippets": "fccb18c6b63125253125b9a1e0f97e44dc0652f6cf7af1fb87c0c2d7ba0ca580",
+    "TestExtra.cpp": "ed41ec0aaec218e9390f2ebd47907d9f60f3479010d0fa8bb0c979e9e340c783"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8"
+  },
+  "includeSha256": {
+    "StringHash/Final.hpp": "afacf698de388f5803a4a69df882ba9942fb9fb3ba754f78532d07b235f559ae",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8",
+    "StringHash/Original.hpp": "591750dd6888b1140613dbd382bb71cbe3f61f1d5c0629a7cc80c2e5cf395717"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/StringHash/Test.cpp",
+        "/Users/bytedance/acm_compete/cpp17/StringHash/TestExtra.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/StringHash/Build/optimized"
+      ],
+      "output": "StringHash: independent polynomial oracle, empty intervals first, bytes, numeric extremes, dimensions, multi-TU PASS; bases=26271735,228457025"
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/StringHash/Test.cpp",
+        "/Users/bytedance/acm_compete/cpp17/StringHash/TestExtra.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/StringHash/Build/sanitized"
+      ],
+      "output": "StringHash: independent polynomial oracle, empty intervals first, bytes, numeric extremes, dimensions, multi-TU PASS; bases=440112177,257497267"
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/StringHash/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/StringHash/Build/benchmark"
+  ],
+  "benchmark": "string-build-36041423-116105706,3.538,2.876,1.23018,3907890524810307642\nc-string-build-36041423-116105706,2.665,2.497,1.06728,3907890524810307642\nsubstring-queries-36041423-116105706,1.779,1.657,1.07363,16481309886621288462"
+}

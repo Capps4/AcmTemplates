@@ -1,0 +1,125 @@
+#pragma once
+#include <bits/stdc++.h>
+using i64 = long long;
+class Sieve {
+    std::vector<int> _mpf; // minimum prime factor
+    std::vector<int> _primes;
+
+    Sieve(std::size_t n) : _mpf{}, _primes{} {
+        init(n + 1);
+    }
+
+public:
+    static Sieve &shared(std::size_t m = 128) {
+        static Sieve instance(m);
+        return instance;
+    }
+
+    void init(std::size_t n) {
+        n = std::max(n, 2 * _mpf.size());
+        if (_mpf.size() >= n) {
+            return;
+        }
+        _mpf.assign(n, 0);
+        _primes.clear();
+        _primes.reserve(n / 10);
+        for (auto i = 2U; i < n; i++) {
+            if (_mpf[i] == 0) {
+                _primes.push_back(i);
+                _mpf[i] = i;
+            }
+            for (auto j = 0U; j < _primes.size() and i * _primes[j] < n; j++) {
+                _mpf[i * _primes[j]] = _primes[j];
+                if (_primes[j] == _mpf[i]) {
+                    break;
+                }
+            }
+        }
+    }
+
+    constexpr std::size_t size() const {
+        return _mpf.size();
+    }
+
+    int mpf(std::size_t n) {
+        if (n >= this->size()) {
+            init(n);
+        }
+        return _mpf[n];
+    }
+
+    const std::vector<int> &primes() const {
+        return _primes;
+    }
+
+    template <class T>
+    std::vector<std::pair<T, int>> primeFactorize(T x) const {
+        assert(1 <= x);
+        const T n = static_cast<T>(this->size());
+        std::vector<std::pair<T, int>> ps;
+        auto process = [&](int d) {
+            assert(d >= 2);
+            int cnt = 0;
+            while (x % d == 0) {
+                x /= d;
+                cnt += 1;
+            }
+            ps.emplace_back(d, cnt);
+        };
+
+        for (int d : _primes) {
+            if (x < n or 1LL * d * d > x) {
+                break;
+            }
+
+            if (x % d == 0) {
+                process(d);
+            }
+        }
+
+        for (int d = n; 1LL * d * d <= x and x >= n; d++) {
+            if (x % d == 0) {
+                process(d);
+            }
+        }
+
+        if (x < n) {
+            while (x > 1) {
+                int d = _mpf[x];
+                process(d);
+            }
+        }
+
+        if (x > 1) {
+            ps.emplace_back(x, 1);
+        }
+
+        return ps;
+    }
+
+    template <class T>
+    std::vector<T> allFactors(T x) const {
+        return allFactors(primeFactorize(x));
+    }
+
+    template <class T>
+    static std::vector<T> allFactors(const std::vector<std::pair<T, int>> &ps) {
+        std::vector<T> ds = {1};
+        for (auto pr : ps) {
+            T d = pr.first;
+            int cnt = pr.second;
+            int l = 0, r = ds.size();
+            while (cnt--) {
+                for (int k = l; k < r; k++) {
+                    ds.push_back(ds[k] * d);
+                }
+                l = r, r = ds.size();
+            }
+        }
+
+        return ds;
+    }
+};
+
+auto siv = Sieve::shared(10000);
+

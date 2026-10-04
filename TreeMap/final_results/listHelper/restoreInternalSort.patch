@@ -1,0 +1,104 @@
+--- a/treeMap.hpp
++++ b/treeMap.hpp
+@@ -1,10 +1,10 @@
+ #pragma once
+-#include "../list_helper_cpp17/ListHelperAdaptive.hpp"
+ #include <algorithm>
+ #include <cstddef>
+ #include <cstdint>
+ #include <functional>
+ #include <limits>
++#include <numeric>
+ #include <optional>
+ #include <stdexcept>
+ #include <type_traits>
+@@ -16,6 +16,70 @@
+ using u32 = std::uint32_t;
+ 
+ constexpr int maxTreeCapacity = std::numeric_limits<int>::max();
++
++// Sorting is private to the offline candidate vector.
++template<class Key, class Compare>
++void sortKeys(std::vector<Key>& a, Compare compare) {
++    if (std::is_sorted(a.begin(), a.end(), compare))
++        return;
++    if (std::is_sorted(a.begin(), a.end(), [&](const Key& x, const Key& y) {
++        return compare(y, x);
++    })) {
++        std::reverse(a.begin(), a.end());
++        return;
++    }
++    constexpr bool ascending = std::is_same_v<Compare, std::less<Key>> ||
++                               std::is_same_v<Compare, std::less<>>;
++    constexpr bool descending = std::is_same_v<Compare, std::greater<Key>> ||
++                                std::is_same_v<Compare, std::greater<>>;
++    if constexpr (std::is_integral_v<Key> && !std::is_same_v<Key, bool> &&
++                  (ascending || descending)) {
++        const size_t n = a.size();
++        int logN = 0;
++        for (size_t size = n; size > 1; size >>= 1)
++            ++logN;
++        const double sortWork = double(n) * logN;
++        if (sortWork > 2.0 * n + 256) {
++            using Unsigned = std::make_unsigned_t<Key>;
++            auto bounds = std::minmax_element(a.begin(), a.end());
++            Unsigned minValue = static_cast<Unsigned>(*bounds.first);
++            Unsigned range = static_cast<Unsigned>(*bounds.second) - minValue;
++            int bits = 0;
++            for (Unsigned value = range; value; value >>= 1)
++                ++bits;
++            auto radixSort = [&](auto wide) {
++                constexpr int B = decltype(wide)::value ? 11 : 8;
++                constexpr unsigned buckets = 1u << B, mask = buckets - 1;
++                std::vector<Key> buffer(a.size());
++                std::vector<size_t> positions(buckets);
++                for (int shift = 0; range; shift += B) {
++                    auto digit = [&](Key value) {
++                        Unsigned key = static_cast<Unsigned>(value) - minValue;
++                        unsigned index = (key >> shift) & mask;
++                        return descending ? index ^ mask : index;
++                    };
++                    std::fill(positions.begin(), positions.end(), 0);
++                    for (Key value : a)
++                        ++positions[digit(value)];
++                    if (positions[digit(a.front())] != a.size()) {
++                        std::exclusive_scan(positions.begin(), positions.end(), positions.begin(), size_t{0});
++                        for (Key value : a)
++                            buffer[positions[digit(value)]++] = value;
++                        a.swap(buffer);
++                    }
++                    range = +range >> B; // Integer promotion makes 8/11-bit shifts safe for byte keys.
++                }
++            };
++            double work8 = n + double((bits + 7) / 8) * (n + 256.0);
++            double work11 = n + double((bits + 10) / 11) * (n + 2048.0);
++            if (work11 < work8 && work11 < sortWork)
++                return radixSort(std::true_type{});
++            if (work8 < sortWork)
++                return radixSort(std::false_type{});
++        }
++    }
++    std::sort(a.begin(), a.end(), compare);
++}
+ 
+ struct TreePath {
+     u32 path[128]; // Only [0, top) is initialized, read or copied.
+@@ -509,17 +573,7 @@
+ public:
+     explicit TreeMapOff(std::vector<Key> candidates, Compare cmp = {})
+         : compare(std::move(cmp)), keys(std::move(candidates)) {
+-        if constexpr (std::is_integral_v<Key> &&
+-                      (std::is_same_v<Compare, std::less<Key>> ||
+-                       std::is_same_v<Compare, std::less<>> ||
+-                       std::is_same_v<Compare, std::greater<Key>> ||
+-                       std::is_same_v<Compare, std::greater<>>)) {
+-            keys = std::move(keys) | seq::sorted();
+-            if constexpr (std::is_same_v<Compare, std::greater<Key>> ||
+-                          std::is_same_v<Compare, std::greater<>>)
+-                std::reverse(keys.begin(), keys.end());
+-        } else
+-            keys = std::move(keys) | seq::sorted(compare);
++        sortKeys(keys, compare);
+         keys.erase(
+             std::unique(keys.begin(), keys.end(), [&](const Key& a, const Key& b) {
+                 return !compare(a, b) && !compare(b, a);

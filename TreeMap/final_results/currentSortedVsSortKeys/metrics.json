@@ -1,0 +1,2766 @@
+{
+  "gcc": [
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 825000.0,
+        "sortedDirect": 803000.0,
+        "sortedBridge": 795000.0
+      },
+      "newRatio": 0.9733333333333334,
+      "bridgeRatio": 0.9900373599003736
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 953000.0,
+        "sortedDirect": 946000.0,
+        "sortedBridge": 945000.0
+      },
+      "newRatio": 0.9926547743966422,
+      "bridgeRatio": 0.9989429175475687
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 1015000.0,
+        "sortedDirect": 981000.0,
+        "sortedBridge": 968000.0
+      },
+      "newRatio": 0.9665024630541872,
+      "bridgeRatio": 0.9867482161060143
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 800000.0,
+        "sortedDirect": 786000.0,
+        "sortedBridge": 1083000.0
+      },
+      "newRatio": 0.9825,
+      "bridgeRatio": 1.3778625954198473
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 2937000.0,
+        "sortedDirect": 2985000.0,
+        "sortedBridge": 3016000.0
+      },
+      "newRatio": 1.0163432073544434,
+      "bridgeRatio": 1.0103852596314908
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 3153000.0,
+        "sortedDirect": 3223000.0,
+        "sortedBridge": 3350000.0
+      },
+      "newRatio": 1.0222010783380906,
+      "bridgeRatio": 1.0394042817251008
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 4244000.0,
+        "sortedDirect": 4231000.0,
+        "sortedBridge": 4220000.0
+      },
+      "newRatio": 0.9969368520263902,
+      "bridgeRatio": 0.9974001418104467
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 4415000.0,
+        "sortedDirect": 4354000.0,
+        "sortedBridge": 4489000.0
+      },
+      "newRatio": 0.9861834654586636,
+      "bridgeRatio": 1.031005971520441
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 3481000.0,
+        "sortedDirect": 4635000.0,
+        "sortedBridge": 4649000.0
+      },
+      "newRatio": 1.3315139327779373,
+      "bridgeRatio": 1.0030204962243796
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 3441000.0,
+        "sortedDirect": 4548000.0,
+        "sortedBridge": 4732000.0
+      },
+      "newRatio": 1.3217088055797732,
+      "bridgeRatio": 1.040457343887423
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 5636000.0,
+        "sortedDirect": 5722000.0,
+        "sortedBridge": 5554000.0
+      },
+      "newRatio": 1.0152590489709012,
+      "bridgeRatio": 0.9706396364907375
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 5857000.0,
+        "sortedDirect": 5615000.0,
+        "sortedBridge": 5796000.0
+      },
+      "newRatio": 0.9586819190711968,
+      "bridgeRatio": 1.0322350845948354
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 4360000.0,
+        "sortedDirect": 4431000.0,
+        "sortedBridge": 4428000.0
+      },
+      "newRatio": 1.0162844036697247,
+      "bridgeRatio": 0.999322951929587
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 4732000.0,
+        "sortedDirect": 4688000.0,
+        "sortedBridge": 4869000.0
+      },
+      "newRatio": 0.9907016060862215,
+      "bridgeRatio": 1.038609215017065
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "2000000",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 9096000.0,
+        "sortedDirect": 9099000.0,
+        "sortedBridge": 9099000.0
+      },
+      "newRatio": 1.0003298153034301,
+      "bridgeRatio": 1.0
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "2000000",
+      "distribution": "range22",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 9361000.0,
+        "sortedDirect": 9556000.0,
+        "sortedBridge": 9323000.0
+      },
+      "newRatio": 1.0208311077876295,
+      "bridgeRatio": 0.9756174131435748
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 970000.0,
+        "sortedDirect": 1016000.0,
+        "sortedBridge": 993000.0
+      },
+      "newRatio": 1.0474226804123712,
+      "bridgeRatio": 0.9773622047244095
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 1121000.0,
+        "sortedDirect": 1135000.0,
+        "sortedBridge": 1106000.0
+      },
+      "newRatio": 1.0124888492417485,
+      "bridgeRatio": 0.9744493392070485
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 1232000.0,
+        "sortedDirect": 1222000.0,
+        "sortedBridge": 1212000.0
+      },
+      "newRatio": 0.9918831168831169,
+      "bridgeRatio": 0.9918166939443536
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 980000.0,
+        "sortedDirect": 998000.0,
+        "sortedBridge": 1296000.0
+      },
+      "newRatio": 1.0183673469387755,
+      "bridgeRatio": 1.2985971943887775
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 3355000.0,
+        "sortedDirect": 3419000.0,
+        "sortedBridge": 3448000.0
+      },
+      "newRatio": 1.0190760059612518,
+      "bridgeRatio": 1.0084820122842937
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 3327000.0,
+        "sortedDirect": 3442000.0,
+        "sortedBridge": 3576000.0
+      },
+      "newRatio": 1.034565674782086,
+      "bridgeRatio": 1.0389308541545612
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 7428000.0,
+        "sortedDirect": 7553000.0,
+        "sortedBridge": 7564000.0
+      },
+      "newRatio": 1.0168282175551966,
+      "bridgeRatio": 1.001456374950351
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 7643000.0,
+        "sortedDirect": 7543000.0,
+        "sortedBridge": 7783000.0
+      },
+      "newRatio": 0.98691613240874,
+      "bridgeRatio": 1.0318175792125148
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 3822000.0,
+        "sortedDirect": 5188000.0,
+        "sortedBridge": 4979000.0
+      },
+      "newRatio": 1.357404500261643,
+      "bridgeRatio": 0.9597147262914418
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 3812000.0,
+        "sortedDirect": 5158000.0,
+        "sortedBridge": 5221000.0
+      },
+      "newRatio": 1.3530954879328436,
+      "bridgeRatio": 1.0122140364482357
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 7235000.0,
+        "sortedDirect": 7323000.0,
+        "sortedBridge": 7234000.0
+      },
+      "newRatio": 1.0121630960608154,
+      "bridgeRatio": 0.9878465109927625
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 7336000.0,
+        "sortedDirect": 7447000.0,
+        "sortedBridge": 7448000.0
+      },
+      "newRatio": 1.0151308615049073,
+      "bridgeRatio": 1.0001342822613133
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 4961000.0,
+        "sortedDirect": 5175000.0,
+        "sortedBridge": 5182000.0
+      },
+      "newRatio": 1.0431364644224954,
+      "bridgeRatio": 1.001352657004831
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 4633000.0,
+        "sortedDirect": 4731000.0,
+        "sortedBridge": 4850000.0
+      },
+      "newRatio": 1.0211526009065401,
+      "bridgeRatio": 1.025153244557176
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 630000.0,
+        "sortedDirect": 623000.0,
+        "sortedBridge": 657000.0
+      },
+      "newRatio": 0.9888888888888889,
+      "bridgeRatio": 1.0545746388443018
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 800000.0,
+        "sortedDirect": 789000.0,
+        "sortedBridge": 769000.0
+      },
+      "newRatio": 0.98625,
+      "bridgeRatio": 0.9746514575411914
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 811000.0,
+        "sortedDirect": 799000.0,
+        "sortedBridge": 801000.0
+      },
+      "newRatio": 0.9852034525277436,
+      "bridgeRatio": 1.002503128911139
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 634000.0,
+        "sortedDirect": 626000.0,
+        "sortedBridge": 927000.0
+      },
+      "newRatio": 0.9873817034700315,
+      "bridgeRatio": 1.4808306709265175
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 2794000.0,
+        "sortedDirect": 2800000.0,
+        "sortedBridge": 2853000.0
+      },
+      "newRatio": 1.0021474588403723,
+      "bridgeRatio": 1.0189285714285714
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 2937000.0,
+        "sortedDirect": 2996000.0,
+        "sortedBridge": 3098000.0
+      },
+      "newRatio": 1.0200885257065033,
+      "bridgeRatio": 1.034045393858478
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 4116000.0,
+        "sortedDirect": 4130000.0,
+        "sortedBridge": 4132000.0
+      },
+      "newRatio": 1.0034013605442176,
+      "bridgeRatio": 1.0004842615012106
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 4198000.0,
+        "sortedDirect": 4358000.0,
+        "sortedBridge": 4391000.0
+      },
+      "newRatio": 1.0381133873272987,
+      "bridgeRatio": 1.0075722808627812
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 3263000.0,
+        "sortedDirect": 4552000.0,
+        "sortedBridge": 4512000.0
+      },
+      "newRatio": 1.3950352436408213,
+      "bridgeRatio": 0.9912126537785588
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 3250000.0,
+        "sortedDirect": 4354000.0,
+        "sortedBridge": 4526000.0
+      },
+      "newRatio": 1.3396923076923077,
+      "bridgeRatio": 1.0395039044556729
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 5470000.0,
+        "sortedDirect": 5601000.0,
+        "sortedBridge": 5379000.0
+      },
+      "newRatio": 1.023948811700183,
+      "bridgeRatio": 0.9603642206748795
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 5648000.0,
+        "sortedDirect": 5384000.0,
+        "sortedBridge": 5588000.0
+      },
+      "newRatio": 0.953257790368272,
+      "bridgeRatio": 1.0378900445765231
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 4079000.0,
+        "sortedDirect": 4190000.0,
+        "sortedBridge": 4148000.0
+      },
+      "newRatio": 1.027212552096102,
+      "bridgeRatio": 0.9899761336515513
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 4571000.0,
+        "sortedDirect": 4648000.0,
+        "sortedBridge": 4771000.0
+      },
+      "newRatio": 1.0168453292496171,
+      "bridgeRatio": 1.0264629948364887
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "2000000",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 8670000.0,
+        "sortedDirect": 8755000.0,
+        "sortedBridge": 8751000.0
+      },
+      "newRatio": 1.0098039215686274,
+      "bridgeRatio": 0.999543118218161
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "2000000",
+      "distribution": "range22",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 9154000.0,
+        "sortedDirect": 9179000.0,
+        "sortedBridge": 9023000.0
+      },
+      "newRatio": 1.002731046537033,
+      "bridgeRatio": 0.9830046846061663
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 665000.0,
+        "sortedDirect": 660000.0,
+        "sortedBridge": 646000.0
+      },
+      "newRatio": 0.9924812030075187,
+      "bridgeRatio": 0.9787878787878788
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 786000.0,
+        "sortedDirect": 797000.0,
+        "sortedBridge": 809000.0
+      },
+      "newRatio": 1.0139949109414759,
+      "bridgeRatio": 1.015056461731493
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 792000.0,
+        "sortedDirect": 798000.0,
+        "sortedBridge": 816000.0
+      },
+      "newRatio": 1.0075757575757576,
+      "bridgeRatio": 1.0225563909774436
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 639000.0,
+        "sortedDirect": 633000.0,
+        "sortedBridge": 957000.0
+      },
+      "newRatio": 0.9906103286384976,
+      "bridgeRatio": 1.5118483412322274
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 3031000.0,
+        "sortedDirect": 3097000.0,
+        "sortedBridge": 3103000.0
+      },
+      "newRatio": 1.021774991751897,
+      "bridgeRatio": 1.001937358734259
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 3103000.0,
+        "sortedDirect": 3150000.0,
+        "sortedBridge": 3309000.0
+      },
+      "newRatio": 1.015146632291331,
+      "bridgeRatio": 1.0504761904761906
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 7218000.0,
+        "sortedDirect": 7265000.0,
+        "sortedBridge": 7248000.0
+      },
+      "newRatio": 1.0065114990302022,
+      "bridgeRatio": 0.9976600137646249
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 7293000.0,
+        "sortedDirect": 7203000.0,
+        "sortedBridge": 7397000.0
+      },
+      "newRatio": 0.9876593994241053,
+      "bridgeRatio": 1.0269332222684993
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 3491000.0,
+        "sortedDirect": 4679000.0,
+        "sortedBridge": 4664000.0
+      },
+      "newRatio": 1.3403036379260957,
+      "bridgeRatio": 0.9967941867920496
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 3473000.0,
+        "sortedDirect": 4631000.0,
+        "sortedBridge": 4805000.0
+      },
+      "newRatio": 1.3334293118341491,
+      "bridgeRatio": 1.0375728784279854
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 7001000.0,
+        "sortedDirect": 7046000.0,
+        "sortedBridge": 7105000.0
+      },
+      "newRatio": 1.006427653192401,
+      "bridgeRatio": 1.0083735452739142
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 7159000.0,
+        "sortedDirect": 7227000.0,
+        "sortedBridge": 7208000.0
+      },
+      "newRatio": 1.0094985333147088,
+      "bridgeRatio": 0.9973709699737097
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 4266000.0,
+        "sortedDirect": 4360000.0,
+        "sortedBridge": 4336000.0
+      },
+      "newRatio": 1.0220346929207689,
+      "bridgeRatio": 0.9944954128440368
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 4303000.0,
+        "sortedDirect": 4341000.0,
+        "sortedBridge": 4481000.0
+      },
+      "newRatio": 1.0088310481059726,
+      "bridgeRatio": 1.0322506334945865
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 252750.0,
+        "sortedDirect": 243200.0,
+        "sortedBridge": 252250.0,
+        "stdSort": 7276000.0
+      },
+      "newRatio": 0.962215628090999,
+      "bridgeRatio": 1.0372121710526316
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 372000.0,
+        "sortedDirect": 367333.333,
+        "sortedBridge": 375333.333,
+        "stdSort": 5182000.0
+      },
+      "newRatio": 0.9874551962365591,
+      "bridgeRatio": 1.0217785844117773
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 373000.0,
+        "sortedDirect": 377333.333,
+        "sortedBridge": 376666.667,
+        "stdSort": 5226000.0
+      },
+      "newRatio": 1.0116175147453084,
+      "bridgeRatio": 0.9982332173129269
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 240800.0,
+        "sortedDirect": 241600.0,
+        "sortedBridge": 532500.0,
+        "stdSort": 7282000.0
+      },
+      "newRatio": 1.0033222591362125,
+      "bridgeRatio": 2.2040562913907285
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 2370000.0,
+        "sortedDirect": 2385000.0,
+        "sortedBridge": 2375000.0,
+        "stdSort": 14265000.0
+      },
+      "newRatio": 1.0063291139240507,
+      "bridgeRatio": 0.9958071278825996
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 2408000.0,
+        "sortedDirect": 2407000.0,
+        "sortedBridge": 2547000.0,
+        "stdSort": 14196000.0
+      },
+      "newRatio": 0.9995847176079734,
+      "bridgeRatio": 1.0581636892397175
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 3814000.0,
+        "sortedDirect": 3783000.0,
+        "sortedBridge": 3805000.0,
+        "stdSort": 40130000.0
+      },
+      "newRatio": 0.9918720503408495,
+      "bridgeRatio": 1.0058154903515728
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 3845000.0,
+        "sortedDirect": 3942000.0,
+        "sortedBridge": 3958000.0,
+        "stdSort": 41965000.0
+      },
+      "newRatio": 1.0252275682704812,
+      "bridgeRatio": 1.0040588533739219
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 2957000.0,
+        "sortedDirect": 4214000.0,
+        "sortedBridge": 4289000.0,
+        "stdSort": 21662000.0
+      },
+      "newRatio": 1.4250929996618193,
+      "bridgeRatio": 1.017797816801139
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 2794000.0,
+        "sortedDirect": 4074000.0,
+        "sortedBridge": 4143000.0,
+        "stdSort": 21221000.0
+      },
+      "newRatio": 1.4581245526127415,
+      "bridgeRatio": 1.0169366715758468
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 5032000.0,
+        "sortedDirect": 5061000.0,
+        "sortedBridge": 5099000.0,
+        "stdSort": 9077000.0
+      },
+      "newRatio": 1.0057631160572338,
+      "bridgeRatio": 1.0075083975498913
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 5329000.0,
+        "sortedDirect": 5092000.0,
+        "sortedBridge": 5192000.0,
+        "stdSort": 13397000.0
+      },
+      "newRatio": 0.955526365171702,
+      "bridgeRatio": 1.0196386488609583
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 2959000.0,
+        "sortedDirect": 2953000.0,
+        "sortedBridge": 2976000.0,
+        "stdSort": 40733000.0
+      },
+      "newRatio": 0.9979722879351132,
+      "bridgeRatio": 1.0077886894683372
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 3371000.0,
+        "sortedDirect": 3363000.0,
+        "sortedBridge": 3533000.0,
+        "stdSort": 43242000.0
+      },
+      "newRatio": 0.9976268169682587,
+      "bridgeRatio": 1.0505501040737437
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "128",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 474.609,
+        "sortedDirect": 408.203,
+        "sortedBridge": 439.453,
+        "stdSort": 402.344
+      },
+      "newRatio": 0.8600827207237958,
+      "bridgeRatio": 1.076555047366139
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "2000000",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 7750000.0,
+        "sortedDirect": 7952000.0,
+        "sortedBridge": 7962000.0,
+        "stdSort": 83025000.0
+      },
+      "newRatio": 1.0260645161290323,
+      "bridgeRatio": 1.0012575452716297
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "2000000",
+      "distribution": "range22",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 6244000.0,
+        "sortedDirect": 6314000.0,
+        "sortedBridge": 6299000.0,
+        "stdSort": 83357000.0
+      },
+      "newRatio": 1.0112107623318385,
+      "bridgeRatio": 0.9976243268926196
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "4096",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 12432.099,
+        "sortedDirect": 11303.371,
+        "sortedBridge": 11211.111,
+        "stdSort": 25350.0
+      },
+      "newRatio": 0.9092085737090735,
+      "bridgeRatio": 0.9918378331561445
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "512",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 1890.625,
+        "sortedDirect": 2717.391,
+        "sortedBridge": 2698.113,
+        "stdSort": 2459.459
+      },
+      "newRatio": 1.4372977190082645,
+      "bridgeRatio": 0.9929056952054378
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 231400.0,
+        "sortedDirect": 228800.0,
+        "sortedBridge": 228000.0,
+        "stdSort": 7323000.0
+      },
+      "newRatio": 0.9887640449438202,
+      "bridgeRatio": 0.9965034965034965
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 393666.667,
+        "sortedDirect": 390666.667,
+        "sortedBridge": 395333.333,
+        "stdSort": 5239000.0
+      },
+      "newRatio": 0.9923793395492131,
+      "bridgeRatio": 1.0119453907747906
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 393666.667,
+        "sortedDirect": 392333.333,
+        "sortedBridge": 396000.0,
+        "stdSort": 5244000.0
+      },
+      "newRatio": 0.9966130381061701,
+      "bridgeRatio": 1.0093457952500815
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 228000.0,
+        "sortedDirect": 230600.0,
+        "sortedBridge": 556000.0,
+        "stdSort": 7305000.0
+      },
+      "newRatio": 1.0114035087719297,
+      "bridgeRatio": 2.4111014744145707
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 2643000.0,
+        "sortedDirect": 2736000.0,
+        "sortedBridge": 2672000.0,
+        "stdSort": 13797000.0
+      },
+      "newRatio": 1.0351872871736663,
+      "bridgeRatio": 0.9766081871345029
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 2617000.0,
+        "sortedDirect": 2768000.0,
+        "sortedBridge": 2862000.0,
+        "stdSort": 14069000.0
+      },
+      "newRatio": 1.057699656094765,
+      "bridgeRatio": 1.0339595375722543
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 6734000.0,
+        "sortedDirect": 6844000.0,
+        "sortedBridge": 6891000.0,
+        "stdSort": 39578000.0
+      },
+      "newRatio": 1.0163350163350164,
+      "bridgeRatio": 1.0068673290473407
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 6888000.0,
+        "sortedDirect": 6884000.0,
+        "sortedBridge": 7086000.0,
+        "stdSort": 39655000.0
+      },
+      "newRatio": 0.9994192799070848,
+      "bridgeRatio": 1.0293434049970946
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 3002000.0,
+        "sortedDirect": 4487000.0,
+        "sortedBridge": 4353000.0,
+        "stdSort": 21292000.0
+      },
+      "newRatio": 1.494670219853431,
+      "bridgeRatio": 0.9701359482950747
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 3019000.0,
+        "sortedDirect": 4249000.0,
+        "sortedBridge": 4455000.0,
+        "stdSort": 20840000.0
+      },
+      "newRatio": 1.4074196753892017,
+      "bridgeRatio": 1.048481995763709
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 6594000.0,
+        "sortedDirect": 6641000.0,
+        "sortedBridge": 6511000.0,
+        "stdSort": 9214000.0
+      },
+      "newRatio": 1.0071276918410677,
+      "bridgeRatio": 0.98042463484415
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 6653000.0,
+        "sortedDirect": 6648000.0,
+        "sortedBridge": 6896000.0,
+        "stdSort": 13645000.0
+      },
+      "newRatio": 0.9992484593416504,
+      "bridgeRatio": 1.0373044524669073
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 3368000.0,
+        "sortedDirect": 3420000.0,
+        "sortedBridge": 3401000.0,
+        "stdSort": 41008000.0
+      },
+      "newRatio": 1.015439429928741,
+      "bridgeRatio": 0.9944444444444445
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 3450000.0,
+        "sortedDirect": 3382000.0,
+        "sortedBridge": 3766000.0,
+        "stdSort": 40790000.0
+      },
+      "newRatio": 0.9802898550724638,
+      "bridgeRatio": 1.1135422826729746
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "128",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 492.188,
+        "sortedDirect": 455.078,
+        "sortedBridge": 476.562,
+        "stdSort": 458.984
+      },
+      "newRatio": 0.9246019813567173,
+      "bridgeRatio": 1.0472094893622632
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "4096",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 24071.429,
+        "sortedDirect": 22377.778,
+        "sortedBridge": 22466.667,
+        "stdSort": 25575.0
+      },
+      "newRatio": 0.9296406125286537,
+      "bridgeRatio": 1.0039721995633348
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "512",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 2579.897,
+        "sortedDirect": 2570.694,
+        "sortedBridge": 2627.297,
+        "stdSort": 2360.849
+      },
+      "newRatio": 0.996432803325094,
+      "bridgeRatio": 1.0220185677486313
+    }
+  ],
+  "clang": [
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 857875.0,
+        "sortedDirect": 924541.0,
+        "sortedBridge": 913167.0
+      },
+      "newRatio": 1.0777106221768906,
+      "bridgeRatio": 0.9876976791726921
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 1014292.0,
+        "sortedDirect": 1051375.0,
+        "sortedBridge": 988333.0
+      },
+      "newRatio": 1.0365604776533779,
+      "bridgeRatio": 0.9400385209844252
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 866292.0,
+        "sortedDirect": 854583.0,
+        "sortedBridge": 860208.0
+      },
+      "newRatio": 0.9864837722153731,
+      "bridgeRatio": 1.0065821576137133
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 773625.0,
+        "sortedDirect": 797167.0,
+        "sortedBridge": 914167.0
+      },
+      "newRatio": 1.0304307642591695,
+      "bridgeRatio": 1.1467697483714203
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 2732958.0,
+        "sortedDirect": 2704500.0,
+        "sortedBridge": 2704625.0
+      },
+      "newRatio": 0.9895871067173371,
+      "bridgeRatio": 1.0000462192641892
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 2750375.0,
+        "sortedDirect": 2702125.0,
+        "sortedBridge": 2813375.0
+      },
+      "newRatio": 0.982456937690315,
+      "bridgeRatio": 1.041171300365453
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 4238750.0,
+        "sortedDirect": 4218417.0,
+        "sortedBridge": 4191000.0
+      },
+      "newRatio": 0.9952030669419051,
+      "bridgeRatio": 0.9935006425396067
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 4256875.0,
+        "sortedDirect": 4233958.0,
+        "sortedBridge": 4349583.0
+      },
+      "newRatio": 0.9946164733519307,
+      "bridgeRatio": 1.02730896244129
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 4184042.0,
+        "sortedDirect": 3146375.0,
+        "sortedBridge": 3146792.0
+      },
+      "newRatio": 0.7519941243419641,
+      "bridgeRatio": 1.000132533471058
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 4494417.0,
+        "sortedDirect": 3333500.0,
+        "sortedBridge": 3460250.0
+      },
+      "newRatio": 0.7416979777354883,
+      "bridgeRatio": 1.0380230988450578
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 5706000.0,
+        "sortedDirect": 5578750.0,
+        "sortedBridge": 5498625.0
+      },
+      "newRatio": 0.9776989134244655,
+      "bridgeRatio": 0.9856374635895138
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 5997833.0,
+        "sortedDirect": 5689792.0,
+        "sortedBridge": 5649584.0
+      },
+      "newRatio": 0.9486412842771714,
+      "bridgeRatio": 0.9929333093371427
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 4675084.0,
+        "sortedDirect": 4319584.0,
+        "sortedBridge": 4699791.0
+      },
+      "newRatio": 0.9239585855569654,
+      "bridgeRatio": 1.0880193555675732
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 4437042.0,
+        "sortedDirect": 4615916.0,
+        "sortedBridge": 4637250.0
+      },
+      "newRatio": 1.0403137946406638,
+      "bridgeRatio": 1.00462183453945
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "2000000",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 8987292.0,
+        "sortedDirect": 8980291.0,
+        "sortedBridge": 8970916.0
+      },
+      "newRatio": 0.9992210111788957,
+      "bridgeRatio": 0.99895604719268
+    },
+    {
+      "work": "ctorCopy",
+      "type": "int",
+      "n": "2000000",
+      "distribution": "range22",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 9162125.0,
+        "sortedDirect": 9352667.0,
+        "sortedBridge": 9313041.0
+      },
+      "newRatio": 1.0207967038214387,
+      "bridgeRatio": 0.9957631336601634
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 1093000.0,
+        "sortedDirect": 1004084.0,
+        "sortedBridge": 975375.0
+      },
+      "newRatio": 0.9186495882891126,
+      "bridgeRatio": 0.9714077706646057
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 1098417.0,
+        "sortedDirect": 1082250.0,
+        "sortedBridge": 1109333.0
+      },
+      "newRatio": 0.9852815460794944,
+      "bridgeRatio": 1.025024717024717
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 1046750.0,
+        "sortedDirect": 1082042.0,
+        "sortedBridge": 1092458.0
+      },
+      "newRatio": 1.033715786959637,
+      "bridgeRatio": 1.0096262437132755
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 980084.0,
+        "sortedDirect": 997708.0,
+        "sortedBridge": 1168083.0
+      },
+      "newRatio": 1.0179821321437754,
+      "bridgeRatio": 1.1707663965809636
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 3156250.0,
+        "sortedDirect": 3148250.0,
+        "sortedBridge": 3142042.0
+      },
+      "newRatio": 0.9974653465346535,
+      "bridgeRatio": 0.998028110855237
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 3116833.0,
+        "sortedDirect": 3107209.0,
+        "sortedBridge": 3260209.0
+      },
+      "newRatio": 0.9969122503515587,
+      "bridgeRatio": 1.049240331113871
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 7520750.0,
+        "sortedDirect": 7447625.0,
+        "sortedBridge": 7389708.0
+      },
+      "newRatio": 0.9902769005750757,
+      "bridgeRatio": 0.9922234269314043
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 7761041.0,
+        "sortedDirect": 7520125.0,
+        "sortedBridge": 7783750.0
+      },
+      "newRatio": 0.968958287941012,
+      "bridgeRatio": 1.0350559332457905
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 4673000.0,
+        "sortedDirect": 4768000.0,
+        "sortedBridge": 4877041.0
+      },
+      "newRatio": 1.0203295527498395,
+      "bridgeRatio": 1.0228693372483222
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 3578917.0,
+        "sortedDirect": 4798375.0,
+        "sortedBridge": 4966708.0
+      },
+      "newRatio": 1.3407338029912401,
+      "bridgeRatio": 1.0350812514653398
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 7399417.0,
+        "sortedDirect": 7228334.0,
+        "sortedBridge": 7344291.0
+      },
+      "newRatio": 0.9768788541043166,
+      "bridgeRatio": 1.016042009126861
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 7256916.0,
+        "sortedDirect": 7281250.0,
+        "sortedBridge": 7305250.0
+      },
+      "newRatio": 1.003353215057195,
+      "bridgeRatio": 1.0032961373390559
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 4720709.0,
+        "sortedDirect": 4606875.0,
+        "sortedBridge": 4808625.0
+      },
+      "newRatio": 0.975886249290096,
+      "bridgeRatio": 1.0437932437932438
+    },
+    {
+      "work": "ctorCopy",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 4788584.0,
+        "sortedDirect": 4561375.0,
+        "sortedBridge": 4716625.0
+      },
+      "newRatio": 0.9525519443743704,
+      "bridgeRatio": 1.0340357896467622
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 681917.0,
+        "sortedDirect": 703875.0,
+        "sortedBridge": 674834.0
+      },
+      "newRatio": 1.0322003997553955,
+      "bridgeRatio": 0.9587412537737524
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 727042.0,
+        "sortedDirect": 729500.0,
+        "sortedBridge": 715792.0
+      },
+      "newRatio": 1.003380822565959,
+      "bridgeRatio": 0.9812090472926662
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 665291.0,
+        "sortedDirect": 696750.0,
+        "sortedBridge": 657584.0
+      },
+      "newRatio": 1.0472860748153816,
+      "bridgeRatio": 0.9437875852170793
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 621875.0,
+        "sortedDirect": 617000.0,
+        "sortedBridge": 736333.0
+      },
+      "newRatio": 0.9921608040201005,
+      "bridgeRatio": 1.1934084278768233
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 2593125.0,
+        "sortedDirect": 2558375.0,
+        "sortedBridge": 2579958.0
+      },
+      "newRatio": 0.9865991805254278,
+      "bridgeRatio": 1.0084362143939023
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 2591500.0,
+        "sortedDirect": 2528250.0,
+        "sortedBridge": 2578833.0
+      },
+      "newRatio": 0.9755932857418483,
+      "bridgeRatio": 1.0200071195490952
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 4099292.0,
+        "sortedDirect": 4059125.0,
+        "sortedBridge": 4069791.0
+      },
+      "newRatio": 0.9902014786943697,
+      "bridgeRatio": 1.0026276599020725
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 4124084.0,
+        "sortedDirect": 4081750.0,
+        "sortedBridge": 4170709.0
+      },
+      "newRatio": 0.989734932654136,
+      "bridgeRatio": 1.0217943284130582
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 4031333.0,
+        "sortedDirect": 2952625.0,
+        "sortedBridge": 2953584.0
+      },
+      "newRatio": 0.7324190286438753,
+      "bridgeRatio": 1.000324795732611
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 4463083.0,
+        "sortedDirect": 3200875.0,
+        "sortedBridge": 3457542.0
+      },
+      "newRatio": 0.7171892165124422,
+      "bridgeRatio": 1.0801865115007616
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 5571125.0,
+        "sortedDirect": 5470000.0,
+        "sortedBridge": 5355250.0
+      },
+      "newRatio": 0.9818483699432341,
+      "bridgeRatio": 0.9790219378427788
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 5564708.0,
+        "sortedDirect": 5518584.0,
+        "sortedBridge": 5527083.0
+      },
+      "newRatio": 0.9917113350781389,
+      "bridgeRatio": 1.001540068974215
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 4527167.0,
+        "sortedDirect": 4574417.0,
+        "sortedBridge": 4471583.0
+      },
+      "newRatio": 1.0104369907273136,
+      "bridgeRatio": 0.977519758255533
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 4490125.0,
+        "sortedDirect": 4281750.0,
+        "sortedBridge": 4342250.0
+      },
+      "newRatio": 0.9535926059964923,
+      "bridgeRatio": 1.0141297366730893
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "2000000",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 8597084.0,
+        "sortedDirect": 8709584.0,
+        "sortedBridge": 8635958.0
+      },
+      "newRatio": 1.013085832358972,
+      "bridgeRatio": 0.9915465537734064
+    },
+    {
+      "work": "ctorMove",
+      "type": "int",
+      "n": "2000000",
+      "distribution": "range22",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 8832458.0,
+        "sortedDirect": 8929250.0,
+        "sortedBridge": 8966750.0
+      },
+      "newRatio": 1.0109586708479112,
+      "bridgeRatio": 1.0041996808242573
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 637333.0,
+        "sortedDirect": 623917.0,
+        "sortedBridge": 694084.0
+      },
+      "newRatio": 0.9789497797854497,
+      "bridgeRatio": 1.1124620742823164
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 787083.0,
+        "sortedDirect": 750708.0,
+        "sortedBridge": 772125.0
+      },
+      "newRatio": 0.9537850518941459,
+      "bridgeRatio": 1.02852906855928
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 756250.0,
+        "sortedDirect": 740458.0,
+        "sortedBridge": 773500.0
+      },
+      "newRatio": 0.9791180165289256,
+      "bridgeRatio": 1.04462373287884
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 638541.0,
+        "sortedDirect": 682250.0,
+        "sortedBridge": 855208.0
+      },
+      "newRatio": 1.0684513602102292,
+      "bridgeRatio": 1.2535111762550384
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 2803542.0,
+        "sortedDirect": 2824500.0,
+        "sortedBridge": 2825833.0
+      },
+      "newRatio": 1.0074755434375515,
+      "bridgeRatio": 1.000471941936626
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 2797708.0,
+        "sortedDirect": 2819958.0,
+        "sortedBridge": 2871375.0
+      },
+      "newRatio": 1.0079529386197559,
+      "bridgeRatio": 1.018233250282451
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 7273208.0,
+        "sortedDirect": 7178459.0,
+        "sortedBridge": 7129125.0
+      },
+      "newRatio": 0.9869728735930555,
+      "bridgeRatio": 0.9931274943549863
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 7325125.0,
+        "sortedDirect": 7100458.0,
+        "sortedBridge": 7195333.0
+      },
+      "newRatio": 0.9693292605928227,
+      "bridgeRatio": 1.0133618141252296
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 4315542.0,
+        "sortedDirect": 4625709.0,
+        "sortedBridge": 4472750.0
+      },
+      "newRatio": 1.0718720846651475,
+      "bridgeRatio": 0.9669328528880654
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 3309333.0,
+        "sortedDirect": 4717833.0,
+        "sortedBridge": 4688917.0
+      },
+      "newRatio": 1.425614466721844,
+      "bridgeRatio": 0.9938709148882549
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 6965334.0,
+        "sortedDirect": 6909708.0,
+        "sortedBridge": 6864917.0
+      },
+      "newRatio": 0.9920138790185797,
+      "bridgeRatio": 0.9935176710795883
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 7047666.0,
+        "sortedDirect": 6769584.0,
+        "sortedBridge": 7066375.0
+      },
+      "newRatio": 0.9605426817899713,
+      "bridgeRatio": 1.0438418372532197
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 4239334.0,
+        "sortedDirect": 4303500.0,
+        "sortedBridge": 4409958.0
+      },
+      "newRatio": 1.0151358680396496,
+      "bridgeRatio": 1.024737539212269
+    },
+    {
+      "work": "ctorMove",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 4368917.0,
+        "sortedDirect": 4442417.0,
+        "sortedBridge": 4463250.0
+      },
+      "newRatio": 1.0168233912431845,
+      "bridgeRatio": 1.0046895642619773
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 230674.6,
+        "sortedDirect": 231716.8,
+        "sortedBridge": 236208.2,
+        "stdSort": 749208.0
+      },
+      "newRatio": 1.0045180527028117,
+      "bridgeRatio": 1.0193831435614509
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 292645.75,
+        "sortedDirect": 291937.5,
+        "sortedBridge": 287343.75,
+        "stdSort": 904000.0
+      },
+      "newRatio": 0.997579838422393,
+      "bridgeRatio": 0.9842646114322415
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 295218.5,
+        "sortedDirect": 289833.25,
+        "sortedBridge": 293354.25,
+        "stdSort": 871250.5
+      },
+      "newRatio": 0.9817584263858803,
+      "bridgeRatio": 1.0121483646200014
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 229025.0,
+        "sortedDirect": 234808.4,
+        "sortedBridge": 333513.667,
+        "stdSort": 474319.667
+      },
+      "newRatio": 1.025252265036568,
+      "bridgeRatio": 1.4203651445178282
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 2341333.0,
+        "sortedDirect": 2310875.0,
+        "sortedBridge": 2315208.0,
+        "stdSort": 8206125.0
+      },
+      "newRatio": 0.9869911712686747,
+      "bridgeRatio": 1.0018750473305567
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 2371583.0,
+        "sortedDirect": 2344167.0,
+        "sortedBridge": 2336917.0,
+        "stdSort": 3445458.0
+      },
+      "newRatio": 0.988439788951093,
+      "bridgeRatio": 0.9969072169346297
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 3708708.0,
+        "sortedDirect": 3744959.0,
+        "sortedBridge": 3746125.0,
+        "stdSort": 39611166.0
+      },
+      "newRatio": 1.009774563001455,
+      "bridgeRatio": 1.0003113518732782
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 3735125.0,
+        "sortedDirect": 3692417.0,
+        "sortedBridge": 3837917.0,
+        "stdSort": 13919750.0
+      },
+      "newRatio": 0.9885658445165825,
+      "bridgeRatio": 1.039405083445342
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 3811167.0,
+        "sortedDirect": 2714792.0,
+        "sortedBridge": 2728292.0,
+        "stdSort": 16719084.0
+      },
+      "newRatio": 0.7123256472361352,
+      "bridgeRatio": 1.004972756660547
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 3821667.0,
+        "sortedDirect": 2833375.0,
+        "sortedBridge": 3060709.0,
+        "stdSort": 4930459.0
+      },
+      "newRatio": 0.7413976675623491,
+      "bridgeRatio": 1.0802343494948603
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 5146750.0,
+        "sortedDirect": 5004125.0,
+        "sortedBridge": 5050500.0,
+        "stdSort": 5848959.0
+      },
+      "newRatio": 0.972288337300238,
+      "bridgeRatio": 1.0092673544325932
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 5467208.0,
+        "sortedDirect": 5338334.0,
+        "sortedBridge": 5347500.0,
+        "stdSort": 11205708.0
+      },
+      "newRatio": 0.9764278220254287,
+      "bridgeRatio": 1.001717015083732
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 3227459.0,
+        "sortedDirect": 2957750.0,
+        "sortedBridge": 3198625.0,
+        "stdSort": 39359917.0
+      },
+      "newRatio": 0.9164330205279138,
+      "bridgeRatio": 1.081438593525484
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 3296917.0,
+        "sortedDirect": 3314166.0,
+        "sortedBridge": 3462959.0,
+        "stdSort": 14822750.0
+      },
+      "newRatio": 1.0052318575202226,
+      "bridgeRatio": 1.0448960613318705
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "128",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 409.908,
+        "sortedDirect": 365.902,
+        "sortedBridge": 369.639,
+        "stdSort": 383.551
+      },
+      "newRatio": 0.8926442030894737,
+      "bridgeRatio": 1.010213117173451
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "2000000",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 7832625.0,
+        "sortedDirect": 7888542.0,
+        "sortedBridge": 7838375.0,
+        "stdSort": 82958417.0
+      },
+      "newRatio": 1.0071389859721358,
+      "bridgeRatio": 0.9936405231790615
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "2000000",
+      "distribution": "range22",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 6114125.0,
+        "sortedDirect": 6267583.0,
+        "sortedBridge": 6135333.0,
+        "stdSort": 81408458.0
+      },
+      "newRatio": 1.025098930754605,
+      "bridgeRatio": 0.9788993620028645
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "4096",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 13012.403,
+        "sortedDirect": 11765.741,
+        "sortedBridge": 12083.349,
+        "stdSort": 25980.744
+      },
+      "newRatio": 0.90419432905667,
+      "bridgeRatio": 1.0269943049060828
+    },
+    {
+      "work": "sort",
+      "type": "int",
+      "n": "512",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 1974.308,
+        "sortedDirect": 2407.745,
+        "sortedBridge": 2388.031,
+        "stdSort": 2249.029
+      },
+      "newRatio": 1.2195386940639454,
+      "bridgeRatio": 0.9918122558659659
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 232550.0,
+        "sortedDirect": 233216.8,
+        "sortedBridge": 230083.6,
+        "stdSort": 682020.5
+      },
+      "newRatio": 1.0028673403569124,
+      "bridgeRatio": 0.9865652903221381
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "ascending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 327333.5,
+        "sortedDirect": 358986.0,
+        "sortedBridge": 334389.0,
+        "stdSort": 899229.0
+      },
+      "newRatio": 1.0966980159378739,
+      "bridgeRatio": 0.9314820076548946
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 338361.0,
+        "sortedDirect": 341097.333,
+        "sortedBridge": 346708.0,
+        "stdSort": 886271.0
+      },
+      "newRatio": 1.0080870224405294,
+      "bridgeRatio": 1.0164488738468092
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "descending",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 227166.6,
+        "sortedDirect": 229475.0,
+        "sortedBridge": 444694.333,
+        "stdSort": 461708.0
+      },
+      "newRatio": 1.010161705109818,
+      "bridgeRatio": 1.937877036714239
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 2584208.0,
+        "sortedDirect": 2582791.0,
+        "sortedBridge": 2545291.0,
+        "stdSort": 8614250.0
+      },
+      "newRatio": 0.9994516695250537,
+      "bridgeRatio": 0.9854808228772672
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fewValues",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 2509625.0,
+        "sortedDirect": 2644583.0,
+        "sortedBridge": 2638541.0,
+        "stdSort": 3371750.0
+      },
+      "newRatio": 1.053776161777158,
+      "bridgeRatio": 0.9977153297892333
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 6696209.0,
+        "sortedDirect": 6763209.0,
+        "sortedBridge": 6775000.0,
+        "stdSort": 39318291.0
+      },
+      "newRatio": 1.0100056614123005,
+      "bridgeRatio": 1.0017434031685255
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "fullWidth",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 6976292.0,
+        "sortedDirect": 6780500.0,
+        "sortedBridge": 6891625.0,
+        "stdSort": 13864209.0
+      },
+      "newRatio": 0.9719346609918278,
+      "bridgeRatio": 1.0163889093724652
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 4147917.0,
+        "sortedDirect": 4354750.0,
+        "sortedBridge": 4161000.0,
+        "stdSort": 17460292.0
+      },
+      "newRatio": 1.0498643053850885,
+      "bridgeRatio": 0.9555083529479305
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "gaps",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 3039625.0,
+        "sortedDirect": 4479666.0,
+        "sortedBridge": 4452042.0,
+        "stdSort": 5184875.0
+      },
+      "newRatio": 1.4737561376814574,
+      "bridgeRatio": 0.9938334688345069
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 6700708.0,
+        "sortedDirect": 6505833.0,
+        "sortedBridge": 6601000.0,
+        "stdSort": 6150042.0
+      },
+      "newRatio": 0.9709172523261721,
+      "bridgeRatio": 1.014627950025769
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "nearly",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 6667750.0,
+        "sortedDirect": 6520417.0,
+        "sortedBridge": 6665541.0,
+        "stdSort": 10410333.0
+      },
+      "newRatio": 0.977903640658393,
+      "bridgeRatio": 1.0222568587254466
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 3300833.0,
+        "sortedDirect": 3374167.0,
+        "sortedBridge": 3404958.0,
+        "stdSort": 40135041.0
+      },
+      "newRatio": 1.0222168161794312,
+      "bridgeRatio": 1.0091255115707076
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "1000000",
+      "distribution": "range22",
+      "direction": "desc",
+      "timesNs": {
+        "sortKeys": 3447833.0,
+        "sortedDirect": 3520542.0,
+        "sortedBridge": 3620000.0,
+        "stdSort": 13531917.0
+      },
+      "newRatio": 1.0210883183727286,
+      "bridgeRatio": 1.0282507636608227
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "128",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 382.256,
+        "sortedDirect": 344.418,
+        "sortedBridge": 342.203,
+        "stdSort": 349.445
+      },
+      "newRatio": 0.901013980159893,
+      "bridgeRatio": 0.9935688610932064
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "4096",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 23674.465,
+        "sortedDirect": 21439.596,
+        "sortedBridge": 21269.979,
+        "stdSort": 25205.2
+      },
+      "newRatio": 0.9056000209508431,
+      "bridgeRatio": 0.9920886102517975
+    },
+    {
+      "work": "sort",
+      "type": "longLong",
+      "n": "512",
+      "distribution": "fullWidth",
+      "direction": "asc",
+      "timesNs": {
+        "sortKeys": 2195.351,
+        "sortedDirect": 2209.702,
+        "sortedBridge": 2324.638,
+        "stdSort": 2058.041
+      },
+      "newRatio": 1.0065369956785954,
+      "bridgeRatio": 1.0520142535056762
+    }
+  ]
+}

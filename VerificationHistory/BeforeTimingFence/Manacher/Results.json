@@ -1,0 +1,62 @@
+{
+  "module": "Manacher",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "b89fbe3ba81a8bbd3a209972168ca122a7c15bce2457fd3b5b87a6c42e254c35",
+    "Final.hpp": "b55726f2038897cf3618acd12840144fd493aba3ca247bcc747d299e4b9dc1fe",
+    "Test.cpp": "225b0405fb0eb53701eaedb0b24a56683bfbeb4e95d0d8ad754510ceb5dc35f3",
+    "Benchmark.cpp": "40fedbc789216b87e87cd072cfe9bc437645206dd04b48870731b4fcb999e7a1",
+    "Final.code-snippets": "09825316becf8641dc724fac513f43dd23e87263dc67dc151c8058ffa2639010"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8"
+  },
+  "includeSha256": {
+    "Manacher/Final.hpp": "b55726f2038897cf3618acd12840144fd493aba3ca247bcc747d299e4b9dc1fe",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8",
+    "Manacher/Original.hpp": "b89fbe3ba81a8bbd3a209972168ca122a7c15bce2457fd3b5b87a6c42e254c35"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/Manacher/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/Manacher/Build/optimized"
+      ],
+      "output": "Manacher: exhaustive binary, sentinel bytes, all intervals, naive center/tail, million bytes PASS"
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/Manacher/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/Manacher/Build/sanitized"
+      ],
+      "output": "Manacher: exhaustive binary, sentinel bytes, all intervals, naive center/tail, million bytes PASS"
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/Manacher/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/Manacher/Build/benchmark"
+  ],
+  "benchmark": "alphabet-1,11.016,4.931,2.23403,1000000500000\nalphabet-2,13.458,10.861,1.23911,8834945\nalphabet-26,11.764,4.09,2.87628,2204411\nsubstring-view,9.944,4.649,2.13895,1000000"
+}

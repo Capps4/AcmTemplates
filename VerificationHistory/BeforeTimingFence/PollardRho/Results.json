@@ -1,0 +1,68 @@
+{
+  "module": "PollardRho",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "ca65fc387833b816d6df85b1628bff7f791b7bc3980f7d422507fe551567d97b",
+    "Final.hpp": "59b816fefddda171ac5f8e48750ef10ef308aa5d29d3ebc58858b1f6be76d406",
+    "Test.cpp": "2a757663a34c034e0eb9cb09a31de0e7696c1399b8ba7a66e3e9910c9707f756",
+    "Benchmark.cpp": "b08616359a34f59bd8b1f683fe799613717330e2dd3461994ea8f30ff1d827ec",
+    "Final.code-snippets": "f3066f712231a74f65a9eaceb8f01f2d2f0f5a9c30d7fadde174c885e533c00a"
+  },
+  "dependencySha256": {
+    "MillerRabin/Final.hpp": "743d7272dcd4606f90632d3f65e0a5fb89bf0cc63208b1f39ceb054249a524ed"
+  },
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8"
+  },
+  "includeSha256": {
+    "PollardRho/Final.hpp": "59b816fefddda171ac5f8e48750ef10ef308aa5d29d3ebc58858b1f6be76d406",
+    "MillerRabin/Final.hpp": "743d7272dcd4606f90632d3f65e0a5fb89bf0cc63208b1f39ceb054249a524ed",
+    "ModuloInteger/Final.hpp": "300d2de701688d692a8f287993afcdf32cde8682e9d43c769208c6c94ffa3c81",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8",
+    "ModuloInteger/Original.hpp": "fc4adb04a090f17e76453052c27a6ee6efacf4245f2f3944b16670d7f13a29b3",
+    "MillerRabin/Original.hpp": "137696b5e106366bc3487df187e169902229ee82bee853ba69aacbc6602213e3",
+    "PollardRho/Original.hpp": "ca65fc387833b816d6df85b1628bff7f791b7bc3980f7d422507fe551567d97b"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/PollardRho/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/PollardRho/Build/optimized"
+      ],
+      "output": "PollardRho: four seeds, exhaustive trial, proper factors, large semiprimes, uint64, mod isolation PASS"
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/PollardRho/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/PollardRho/Build/sanitized"
+      ],
+      "output": "PollardRho: four seeds, exhaustive trial, proper factors, large semiprimes, uint64, mod isolation PASS"
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/PollardRho/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/PollardRho/Build/benchmark"
+  ],
+  "benchmark": "mixed-small,6.213,3.113,1.99582,334253180\ncomposites-small,1.595,1.295,1.23166,605777"
+}

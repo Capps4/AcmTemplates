@@ -1,0 +1,137 @@
+{
+  "formatVersion": 2,
+  "module": "ModuloInteger",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "fc4adb04a090f17e76453052c27a6ee6efacf4245f2f3944b16670d7f13a29b3",
+    "Final.hpp": "6a25fe4f578005b1e77de88c29fbda7677542eac5a785496ca2505ee009360a0",
+    "Test.cpp": "e1a88759f4f2bb274ad56b9f827b8489e8d090197b62afa9e13e5b89142f041a",
+    "Benchmark.cpp": "92d98f27d4362282de51873b2acfde6a5d89d28adc46ad1ddcf220c36662722c",
+    "Final.code-snippets": "47db309198f489c3adce8730c5b0affa16fb99f71b25d047e9279081396afb22"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "ModuloInteger/Final.hpp": "6a25fe4f578005b1e77de88c29fbda7677542eac5a785496ca2505ee009360a0",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "ModuloInteger/Original.hpp": "fc4adb04a090f17e76453052c27a6ee6efacf4245f2f3944b16670d7f13a29b3"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/ModuloInteger/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/ModuloInteger/Build/optimized"
+      ],
+      "output": "constexpr arithmetic, 200K wide-integer oracles, extreme moduli, inverse and I/O failures passed",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/ModuloInteger/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/ModuloInteger/Build/sanitized"
+      ],
+      "output": "constexpr arithmetic, 200K wide-integer oracles, extreme moduli, inverse and I/O failures passed",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/ModuloInteger/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/ModuloInteger/Build/benchmark"
+  ],
+  "benchmark": "fixed-int-arithmetic-1M,5.78,4.611,1.25352,185663206\ndynamic-int-arithmetic-1M,4.897,4.787,1.02298,406075427\nsafe-dynamic-long-long-1M,12.128,9.255,1.31043,432193",
+  "benchmarkSamples": [
+    {
+      "scenario": "fixed-int-arithmetic-1M",
+      "original": [
+        6.743,
+        6.373,
+        5.986,
+        5.78,
+        5.561,
+        5.419,
+        5.244
+      ],
+      "final": [
+        4.785,
+        4.666,
+        4.681,
+        4.611,
+        4.426,
+        4.355,
+        4.5
+      ],
+      "checksum": 185663206,
+      "first": "original"
+    },
+    {
+      "scenario": "dynamic-int-arithmetic-1M",
+      "original": [
+        4.897,
+        4.802,
+        4.901,
+        4.986,
+        4.822,
+        4.951,
+        4.844
+      ],
+      "final": [
+        4.732,
+        4.852,
+        4.733,
+        4.787,
+        4.75,
+        4.859,
+        4.791
+      ],
+      "checksum": 406075427,
+      "first": "final"
+    },
+    {
+      "scenario": "safe-dynamic-long-long-1M",
+      "original": [
+        12.137,
+        12.128,
+        12.105,
+        12.133,
+        12.182,
+        12.112,
+        12.033
+      ],
+      "final": [
+        9.283,
+        9.195,
+        9.193,
+        9.255,
+        9.269,
+        9.29,
+        9.219
+      ],
+      "checksum": 432193,
+      "first": "original"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

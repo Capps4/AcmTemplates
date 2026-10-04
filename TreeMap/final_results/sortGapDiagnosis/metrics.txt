@@ -1,0 +1,34 @@
+gcc
+('int', 'fewValues', 'asc') {'legacy': 2.276, 'current': 2.3, 'swap': 2.245, 'forward': 2.365, 'forwardSwap': 2.266, 'heapBuckets': 2.32, 'invertedDigits': 2.317, 'combined': 2.254}
+('int', 'fewValues', 'desc') {'legacy': 2.354, 'current': 2.399, 'swap': 2.342, 'forward': 2.39, 'forwardSwap': 2.324, 'heapBuckets': 2.446, 'invertedDigits': 2.318, 'combined': 2.375}
+('int', 'fullWidth', 'asc') {'legacy': 3.575, 'current': 3.621, 'swap': 3.591, 'forward': 3.643, 'forwardSwap': 3.574, 'heapBuckets': 3.63, 'invertedDigits': 3.619, 'combined': 3.569}
+('int', 'fullWidth', 'desc') {'legacy': 3.693, 'current': 3.596, 'swap': 3.593, 'forward': 3.651, 'forwardSwap': 3.544, 'heapBuckets': 3.638, 'invertedDigits': 3.699, 'combined': 3.661}
+('int', 'gaps', 'asc') {'legacy': 3.906, 'current': 3.828, 'swap': 3.779, 'forward': 2.694, 'forwardSwap': 2.661, 'heapBuckets': 3.811, 'invertedDigits': 2.798, 'combined': 3.809}
+('int', 'gaps', 'desc') {'legacy': 2.665, 'current': 3.759, 'swap': 3.727, 'forward': 2.682, 'forwardSwap': 2.645, 'heapBuckets': 3.754, 'invertedDigits': 2.708, 'combined': 2.656}
+('int', 'range22', 'asc') {'legacy': 3.033, 'current': 2.999, 'swap': 3.106, 'forward': 3.055, 'forwardSwap': 3.132, 'heapBuckets': 3.218, 'invertedDigits': 3.144, 'combined': 3.208}
+('int', 'range22', 'desc') {'legacy': 2.975, 'current': 2.867, 'swap': 2.859, 'forward': 2.833, 'forwardSwap': 2.872, 'heapBuckets': 2.876, 'invertedDigits': 2.985, 'combined': 2.943}
+('longLong', 'fewValues', 'asc') {'legacy': 2.492, 'current': 2.593, 'swap': 2.496, 'forward': 2.547, 'forwardSwap': 2.472, 'heapBuckets': 2.587, 'invertedDigits': 2.62, 'combined': 2.516}
+('longLong', 'fewValues', 'desc') {'legacy': 2.477, 'current': 2.557, 'swap': 2.451, 'forward': 2.565, 'forwardSwap': 2.504, 'heapBuckets': 2.595, 'invertedDigits': 2.523, 'combined': 2.469}
+('longLong', 'fullWidth', 'asc') {'legacy': 6.634, 'current': 6.715, 'swap': 6.709, 'forward': 6.648, 'forwardSwap': 6.631, 'heapBuckets': 6.753, 'invertedDigits': 6.679, 'combined': 6.615}
+('longLong', 'fullWidth', 'desc') {'legacy': 6.781, 'current': 6.802, 'swap': 6.753, 'forward': 6.654, 'forwardSwap': 6.663, 'heapBuckets': 6.755, 'invertedDigits': 6.864, 'combined': 6.812}
+('longLong', 'gaps', 'asc') {'legacy': 3.992, 'current': 4.14, 'swap': 4.147, 'forward': 2.989, 'forwardSwap': 2.843, 'heapBuckets': 4.299, 'invertedDigits': 4.178, 'combined': 3.97}
+('longLong', 'gaps', 'desc') {'legacy': 2.898, 'current': 4.119, 'swap': 4.062, 'forward': 2.969, 'forwardSwap': 2.836, 'heapBuckets': 4.195, 'invertedDigits': 3.12, 'combined': 2.962}
+('longLong', 'range22', 'asc') {'legacy': 3.36, 'current': 3.599, 'swap': 3.338, 'forward': 3.39, 'forwardSwap': 3.335, 'heapBuckets': 3.476, 'invertedDigits': 3.503, 'combined': 3.267}
+('longLong', 'range22', 'desc') {'legacy': 3.507, 'current': 3.667, 'swap': 3.706, 'forward': 3.473, 'forwardSwap': 3.413, 'heapBuckets': 3.638, 'invertedDigits': 3.666, 'combined': 3.521}
+clang
+('int', 'fewValues', 'asc') {'legacy': 2.7134, 'current': 2.6968, 'swap': 2.6405, 'forward': 2.7726, 'forwardSwap': 2.6202, 'heapBuckets': 2.6255, 'invertedDigits': 2.7167, 'combined': 2.727}
+('int', 'fewValues', 'desc') {'legacy': 2.7213, 'current': 2.65, 'swap': 2.6889, 'forward': 2.7649, 'forwardSwap': 2.5943, 'heapBuckets': 2.6784, 'invertedDigits': 2.6382, 'combined': 2.6333}
+('int', 'fullWidth', 'asc') {'legacy': 4.172, 'current': 4.1327, 'swap': 4.0147, 'forward': 4.2001, 'forwardSwap': 4.0575, 'heapBuckets': 4.2138, 'invertedDigits': 4.1966, 'combined': 3.8602}
+('int', 'fullWidth', 'desc') {'legacy': 3.795, 'current': 3.9161, 'swap': 3.744, 'forward': 3.7837, 'forwardSwap': 3.7532, 'heapBuckets': 3.8148, 'invertedDigits': 3.8172, 'combined': 3.7458}
+('int', 'gaps', 'asc') {'legacy': 3.8366, 'current': 3.874, 'swap': 3.835, 'forward': 3.844, 'forwardSwap': 3.8454, 'heapBuckets': 3.8726, 'invertedDigits': 3.9162, 'combined': 3.8603}
+('int', 'gaps', 'desc') {'legacy': 4.4741, 'current': 4.4215, 'swap': 4.4988, 'forward': 4.5336, 'forwardSwap': 4.1481, 'heapBuckets': 4.6217, 'invertedDigits': 4.5498, 'combined': 4.5457}
+('int', 'range22', 'asc') {'legacy': 3.0293, 'current': 2.9653, 'swap': 2.9716, 'forward': 2.9975, 'forwardSwap': 3.0257, 'heapBuckets': 2.966, 'invertedDigits': 3.0052, 'combined': 2.9598}
+('int', 'range22', 'desc') {'legacy': 3.2997, 'current': 3.3423, 'swap': 3.3024, 'forward': 3.22, 'forwardSwap': 3.2621, 'heapBuckets': 3.3867, 'invertedDigits': 3.3075, 'combined': 3.0638}
+('longLong', 'fewValues', 'asc') {'legacy': 2.8981, 'current': 2.7383, 'swap': 2.6597, 'forward': 2.6974, 'forwardSwap': 2.7427, 'heapBuckets': 2.7663, 'invertedDigits': 2.7391, 'combined': 2.6631}
+('longLong', 'fewValues', 'desc') {'legacy': 2.6955, 'current': 2.7787, 'swap': 2.6489, 'forward': 2.7934, 'forwardSwap': 2.6463, 'heapBuckets': 2.6767, 'invertedDigits': 2.6912, 'combined': 2.6507}
+('longLong', 'fullWidth', 'asc') {'legacy': 7.0994, 'current': 7.2102, 'swap': 7.32, 'forward': 6.967, 'forwardSwap': 6.9995, 'heapBuckets': 7.7499, 'invertedDigits': 7.5207, 'combined': 7.01}
+('longLong', 'fullWidth', 'desc') {'legacy': 7.2296, 'current': 7.3326, 'swap': 7.321, 'forward': 6.8214, 'forwardSwap': 6.882, 'heapBuckets': 7.2673, 'invertedDigits': 7.469, 'combined': 7.1522}
+('longLong', 'gaps', 'asc') {'legacy': 4.2542, 'current': 4.6429, 'swap': 4.52, 'forward': 4.3637, 'forwardSwap': 4.2321, 'heapBuckets': 4.6598, 'invertedDigits': 4.6186, 'combined': 4.2589}
+('longLong', 'gaps', 'desc') {'legacy': 3.17, 'current': 4.6837, 'swap': 4.5357, 'forward': 4.3513, 'forwardSwap': 4.2542, 'heapBuckets': 4.6969, 'invertedDigits': 3.5211, 'combined': 3.167}
+('longLong', 'range22', 'asc') {'legacy': 3.5058, 'current': 3.5778, 'swap': 3.6753, 'forward': 3.4946, 'forwardSwap': 3.4162, 'heapBuckets': 3.6354, 'invertedDigits': 3.6917, 'combined': 3.5138}
+('longLong', 'range22', 'desc') {'legacy': 3.5802, 'current': 3.8105, 'swap': 3.7988, 'forward': 3.3661, 'forwardSwap': 3.597, 'heapBuckets': 3.7682, 'invertedDigits': 3.8778, 'combined': 3.5887}

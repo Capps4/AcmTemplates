@@ -1,0 +1,21 @@
+--- before/treeMap.hpp
++++ after/treeMap.hpp
+@@ -509,17 +509,7 @@
+ public:
+     explicit TreeMapOff(std::vector<Key> candidates, Compare cmp = {})
+         : compare(std::move(cmp)), keys(std::move(candidates)) {
+-        if constexpr (std::is_integral_v<Key> &&
+-                      (std::is_same_v<Compare, std::less<Key>> ||
+-                       std::is_same_v<Compare, std::less<>> ||
+-                       std::is_same_v<Compare, std::greater<Key>> ||
+-                       std::is_same_v<Compare, std::greater<>>)) {
+-            keys = std::move(keys) | seq::sorted();
+-            if constexpr (std::is_same_v<Compare, std::greater<Key>> ||
+-                          std::is_same_v<Compare, std::greater<>>)
+-                std::reverse(keys.begin(), keys.end());
+-        } else
+-            keys = std::move(keys) | seq::sorted(compare);
++        keys = std::move(keys) | seq::sorted(compare);
+         keys.erase(
+             std::unique(keys.begin(), keys.end(), [&](const Key& a, const Key& b) {
+                 return !compare(a, b) && !compare(b, a);

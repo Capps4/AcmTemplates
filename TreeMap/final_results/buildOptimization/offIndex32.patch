@@ -1,0 +1,19 @@
+--- a/before.hpp
++++ b/offIndex32.hpp
+@@ -439,7 +439,15 @@
+     const Key& keyFromIndex(u32 u) const { return keys[u - 1]; }
+ 
+     size_t lowerIndex(const Key& key) const {
+-        return std::lower_bound(keys.begin(), keys.end(), key, compare) - keys.begin();
++        u32 first = 0, last = static_cast<u32>(keys.size());
++        while (first < last) {
++            u32 middle = first + (last - first) / 2;
++            if (compare(keys[middle], key))
++                first = middle + 1;
++            else
++                last = middle;
++        }
++        return first;
+     }
+ 
+     bool registered(size_t p, const Key& key) const {

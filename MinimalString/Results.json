@@ -1,0 +1,141 @@
+{
+  "formatVersion": 2,
+  "module": "MinimalString",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "ad3c5026bb53e537fb98639918623732b18682b28bcdbbcee5236c0e61c4ad57",
+    "Final.hpp": "0cee332d9375915feef175e976292b6b912b023373f05717f66b51faf412b2a5",
+    "Test.cpp": "1a0140e7e39d2f2a8551e9723f18abeb13908dd729337301de2ea9e52fa532f1",
+    "Benchmark.cpp": "96b132a8cf1228c4ab443918b1d19dbbbe750ecf604cf32eb9cf4f53f2131ba0",
+    "Final.code-snippets": "16c5f8029e00f1411e50e0e60180ff6a8a218c713d0c568cc82a4c9a0f56b637"
+  },
+  "dependencySha256": {
+    "ListHelper/Final.hpp": "393fd045dee05861777b00c5c0fe546f86348d0f9e8551592b915f7826540e9c"
+  },
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "MinimalString/Final.hpp": "0cee332d9375915feef175e976292b6b912b023373f05717f66b51faf412b2a5",
+    "ListHelper/Final.hpp": "393fd045dee05861777b00c5c0fe546f86348d0f9e8551592b915f7826540e9c",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "ListHelper/Original.hpp": "2bccb27d002a5bf9457c864807b8f0a4bc6abd24d0c51fc1464d395630139a39",
+    "MinimalString/Original.hpp": "ad3c5026bb53e537fb98639918623732b18682b28bcdbbcee5236c0e61c4ad57"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/MinimalString/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/MinimalString/Build/optimized"
+      ],
+      "output": "MinimalString: exhaustive rotations, arbitrary bytes, empty/views, integer/bool and million repetition PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/MinimalString/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/MinimalString/Build/sanitized"
+      ],
+      "output": "MinimalString: exhaustive rotations, arbitrary bytes, empty/views, integer/bool and million repetition PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/MinimalString/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/MinimalString/Build/benchmark"
+  ],
+  "benchmark": "alphabet-1,1.232,0.709,1.73766,12125024250000\nalphabet-2,4.076,3.574,1.14046,12187472628842\nalphabet-26,1.043,0.951,1.09674,13685113585701",
+  "benchmarkSamples": [
+    {
+      "scenario": "alphabet-1",
+      "original": [
+        1.232,
+        1.233,
+        1.232,
+        1.238,
+        1.106,
+        1.094,
+        1.094
+      ],
+      "final": [
+        0.788,
+        0.782,
+        0.721,
+        0.705,
+        0.703,
+        0.704,
+        0.709
+      ],
+      "checksum": 12125024250000,
+      "first": "original"
+    },
+    {
+      "scenario": "alphabet-2",
+      "original": [
+        4.475,
+        4.266,
+        4.131,
+        4.076,
+        4.033,
+        4.012,
+        3.853
+      ],
+      "final": [
+        4.186,
+        3.843,
+        3.712,
+        3.574,
+        3.464,
+        3.405,
+        3.44
+      ],
+      "checksum": 12187472628842,
+      "first": "final"
+    },
+    {
+      "scenario": "alphabet-26",
+      "original": [
+        1.051,
+        1.043,
+        1.029,
+        1.022,
+        1.08,
+        1.049,
+        1.027
+      ],
+      "final": [
+        0.978,
+        0.942,
+        0.974,
+        0.945,
+        0.969,
+        0.951,
+        0.936
+      ],
+      "checksum": 13685113585701,
+      "first": "original"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

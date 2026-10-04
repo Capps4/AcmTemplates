@@ -1,0 +1,127 @@
+--- a/treeMap.hpp
++++ b/treeMap.hpp
+@@ -5,7 +5,6 @@
+ #include <cstdint>
+ #include <functional>
+ #include <limits>
+-#include <optional>
+ #include <stdexcept>
+ #include <type_traits>
+ #include <utility>
+@@ -14,6 +13,7 @@
+ namespace _treemap {
+ 
+ using u32 = std::uint32_t;
++using u64 = std::uint64_t;
+ 
+ constexpr int maxTreeCapacity = std::numeric_limits<int>::max();
+ 
+@@ -73,10 +73,12 @@
+         return self().values[self().template write<2>(key, nullptr).first];
+     }
+ 
+-    std::optional<Value> operator()(const Key& key) const {
++    decltype(auto) operator()(const Key& key) const {
+         if (u32 u = self().findIndex(key))
+             return self().values[u];
+-        return std::nullopt;
++        // Also supports libc++'s read-only vector<bool> proxy.
++        static const std::vector<Value> missing(1);
++        return missing[0];
+     }
+ 
+     bool contains(const Key& key) const { return self().findIndex(key) != 0; }
+@@ -150,13 +152,19 @@
+     int capacity() const { return nodes.empty() ? 0 : static_cast<int>(nodes.size() - 1); }
+     void pull(u32 u) { nodes[u].sz = nodes[nodes[u].l].sz + nodes[nodes[u].r].sz + 1; }
+ 
+-    template<bool Right>
+-    u32 rotate(u32 u) {
+-        u32& child = Right ? nodes[u].l : nodes[u].r;
+-        u32 v = child;
+-        u32& inner = Right ? nodes[v].r : nodes[v].l;
+-        child = inner;
+-        inner = u;
++    u32 rotateLeft(u32 u) {
++        u32 v = nodes[u].r;
++        nodes[u].r = nodes[v].l;
++        nodes[v].l = u;
++        nodes[v].sz = nodes[u].sz;
++        pull(u);
++        return v;
++    }
++
++    u32 rotateRight(u32 u) {
++        u32 v = nodes[u].l;
++        nodes[u].l = nodes[v].r;
++        nodes[v].r = u;
+         nodes[v].sz = nodes[u].sz;
+         pull(u);
+         return v;
+@@ -166,18 +174,18 @@
+         u32 l = nodes[u].l, r = nodes[u].r;
+         if (!right) {
+             if (nodes[nodes[l].l].sz > nodes[r].sz)
+-                u = rotate<true>(u);
++                u = rotateRight(u);
+             else if (nodes[nodes[l].r].sz > nodes[r].sz) {
+-                nodes[u].l = rotate<false>(l);
+-                u = rotate<true>(u);
++                nodes[u].l = rotateLeft(l);
++                u = rotateRight(u);
+             } else
+                 return u;
+         } else {
+             if (nodes[nodes[r].r].sz > nodes[l].sz)
+-                u = rotate<false>(u);
++                u = rotateLeft(u);
+             else if (nodes[nodes[r].l].sz > nodes[l].sz) {
+-                nodes[u].r = rotate<true>(r);
+-                u = rotate<false>(u);
++                nodes[u].r = rotateRight(r);
++                u = rotateLeft(u);
+             } else
+                 return u;
+         }
+@@ -223,19 +231,22 @@
+             added = true;
+             return target;
+         }
+-        auto insertSide = [&](auto side) {
+-            constexpr bool right = decltype(side)::value;
+-            u32 child = insertNode<Mode>(right ? nodes[u].r : nodes[u].l, key, value, target, added);
++        if (compare(key, nodes[u].key)) {
++            u32 child = insertNode<Mode>(nodes[u].l, key, value, target, added);
+             if (!added)
+                 return u;
+-            (right ? nodes[u].r : nodes[u].l) = child;
++            nodes[u].l = child;
+             ++nodes[u].sz;
+-            return maintain(u, right);
+-        };
+-        if (compare(key, nodes[u].key))
+-            return insertSide(std::false_type{});
+-        if (compare(nodes[u].key, key))
+-            return insertSide(std::true_type{});
++            return maintain(u, false);
++        }
++        if (compare(nodes[u].key, key)) {
++            u32 child = insertNode<Mode>(nodes[u].r, key, value, target, added);
++            if (!added)
++                return u;
++            nodes[u].r = child;
++            ++nodes[u].sz;
++            return maintain(u, true);
++        }
+         target = u;
+         if constexpr (Mode == 1)
+             values[u] = std::move(*value);
+@@ -435,7 +446,7 @@
+     }
+ 
+     void addCount(u32 u, int delta) {
+-        for (u32 i = u; i < bit.size(); i += i & -i)
++        for (u64 i = u; i < bit.size(); i += i & -i)
+             bit[i] += delta;
+     }
+ 

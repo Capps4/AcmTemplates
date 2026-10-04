@@ -1,0 +1,3 @@
+scenario,originalMs,finalMs,speedup,checksum
+mixed-32bit,7.957,6.125,1.2991,15595
+mixed-small-64bit,30.344,19.953,1.52077,15595

@@ -1,0 +1,295 @@
+{
+  "date": "2026-10-02",
+  "platform": "macOS arm64",
+  "method": "Three serial complete runs; each row has five self-benchmark / seven KACTL sample medians; final median of three; generation outside timing; release O3 NDEBUG",
+  "runs": [
+    {
+      "compiler": "Clang 17",
+      "version": "before",
+      "round": 0,
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-numeric-perf-before/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-benchmark-final-Clang-before"
+      ],
+      "output": "operation,n,repeats,median_ms\ninter_predicate,1024,40000,14.322\nnear_line,1024,40000,11.482\ntangents,1024,40000,0.854\ncalipers,1024,20,0.414\nnear_convex,1024,20,0.307\ninter_convex_predicate,1024,20,0.393\nminkowski,1024,20,0.417\nconvex_intersection,1024,20,0.526\ncircle_polygon_area,1024,20,0.147\ninter_predicate,8192,40000,16.862\nnear_line,8192,40000,16.545\ntangents,8192,40000,4.219\ncalipers,8192,20,3.301\nnear_convex,8192,20,2.314\ninter_convex_predicate,8192,20,2.898\nminkowski,8192,20,3.251\nconvex_intersection,8192,20,4.221\ncircle_polygon_area,8192,20,1.126\ninter_predicate,65536,40000,25.698\nnear_line,65536,40000,22.184\ntangents,65536,40000,5.908\ncalipers,65536,20,49.343\nnear_convex,65536,20,18.775\ninter_convex_predicate,65536,20,25.076\nminkowski,65536,20,26.189\nconvex_intersection,65536,20,49.082\ncircle_polygon_area,65536,20,8.612\n",
+      "stderr": "checksum=267736\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "version": "after",
+      "round": 0,
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-benchmark-final-Clang-after"
+      ],
+      "output": "operation,n,repeats,median_ms\ninter_predicate,1024,40000,5.572\nnear_line,1024,40000,4.710\ntangents,1024,40000,0.765\ncalipers,1024,20,0.208\nnear_convex,1024,20,0.252\ninter_convex_predicate,1024,20,0.252\nminkowski,1024,20,0.350\nconvex_intersection,1024,20,0.553\ncircle_polygon_area,1024,20,0.103\ninter_predicate,8192,40000,5.564\nnear_line,8192,40000,5.610\ntangents,8192,40000,3.115\ncalipers,8192,20,1.581\nnear_convex,8192,20,1.705\ninter_convex_predicate,8192,20,1.828\nminkowski,8192,20,2.592\nconvex_intersection,8192,20,5.879\ncircle_polygon_area,8192,20,0.836\ninter_predicate,65536,40000,9.944\nnear_line,65536,40000,10.137\ntangents,65536,40000,5.675\ncalipers,65536,20,33.385\nnear_convex,65536,20,11.348\ninter_convex_predicate,65536,20,11.430\nminkowski,65536,20,19.075\nconvex_intersection,65536,20,53.941\ncircle_polygon_area,65536,20,6.530\n",
+      "stderr": "checksum=267736\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "version": "reference",
+      "round": 0,
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/BenchmarkCompare.cpp",
+        "-o",
+        "/tmp/geo2-benchmark-final-Clang-reference"
+      ],
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,line_predicate_public,1024,40000,2.761208\nKACTL,line_predicate_public,1024,40000,6.680208\nGeo2,line_predicate_kernel,1024,40000,2.441917\nKACTL-adapted,line_predicate_kernel,1024,40000,2.016958\nGeo2,near_line_disjoint,1024,40000,3.843583\nKACTL-adapted,near_line_disjoint,1024,40000,1.919750\nGeo2,line_predicate_public,8192,40000,3.765833\nKACTL,line_predicate_public,8192,40000,12.784292\nGeo2,line_predicate_kernel,8192,40000,3.792209\nKACTL-adapted,line_predicate_kernel,8192,40000,8.868667\nGeo2,near_line_disjoint,8192,40000,5.621125\nKACTL-adapted,near_line_disjoint,8192,40000,8.689208\nGeo2,line_predicate_public,65536,40000,6.574791\nKACTL,line_predicate_public,65536,40000,22.979708\nGeo2,line_predicate_kernel,65536,40000,6.561958\nKACTL-adapted,line_predicate_kernel,65536,40000,15.649375\nGeo2,near_line_disjoint,65536,40000,9.901417\nKACTL-adapted,near_line_disjoint,65536,40000,15.492792\nGeo2,diameter_public,1025,30,0.086708\nKACTL,diameter_public,1025,30,0.115333\nGeo2,diameter_kernel,1025,30,0.095667\nKACTL-adapted,diameter_kernel,1025,30,0.123542\nGeo2,diameter_public,8193,30,0.732375\nKACTL,diameter_public,8193,30,1.014375\nGeo2,diameter_kernel,8193,30,0.725416\nKACTL-adapted,diameter_kernel,8193,30,0.962000\nGeo2,diameter_public,60001,30,5.387333\nKACTL,diameter_public,60001,30,7.666708\nGeo2,diameter_kernel,60001,30,5.378125\nKACTL-adapted,diameter_kernel,60001,30,7.295459\nGeo2,segment_intersection,40000,40000,0.207333\nKACTL,segment_intersection,40000,40000,2.012708\n",
+      "stderr": "checksum=40000\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "version": "before",
+      "round": 0,
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-numeric-perf-before/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-benchmark-final-GCC-before"
+      ],
+      "output": "operation,n,repeats,median_ms\ninter_predicate,1024,40000,7.956\nnear_line,1024,40000,8.974\ntangents,1024,40000,1.600\ncalipers,1024,20,0.359\nnear_convex,1024,20,0.286\ninter_convex_predicate,1024,20,0.362\nminkowski,1024,20,0.400\nconvex_intersection,1024,20,0.734\ncircle_polygon_area,1024,20,0.139\ninter_predicate,8192,40000,13.190\nnear_line,8192,40000,17.411\ntangents,8192,40000,9.820\ncalipers,8192,20,2.941\nnear_convex,8192,20,2.174\ninter_convex_predicate,8192,20,2.817\nminkowski,8192,20,3.163\nconvex_intersection,8192,20,6.523\ncircle_polygon_area,8192,20,1.058\ninter_predicate,65536,40000,17.189\nnear_line,65536,40000,23.174\ntangents,65536,40000,13.217\ncalipers,65536,20,57.225\nnear_convex,65536,20,19.949\ninter_convex_predicate,65536,20,25.953\nminkowski,65536,20,27.337\nconvex_intersection,65536,20,67.025\ncircle_polygon_area,65536,20,8.413\n",
+      "stderr": "checksum=267736\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "version": "after",
+      "round": 0,
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-benchmark-final-GCC-after"
+      ],
+      "output": "operation,n,repeats,median_ms\ninter_predicate,1024,40000,4.562\nnear_line,1024,40000,4.421\ntangents,1024,40000,1.768\ncalipers,1024,20,0.273\nnear_convex,1024,20,0.240\ninter_convex_predicate,1024,20,0.241\nminkowski,1024,20,0.312\nconvex_intersection,1024,20,0.738\ncircle_polygon_area,1024,20,0.099\ninter_predicate,8192,40000,4.507\nnear_line,8192,40000,4.732\ntangents,8192,40000,7.115\ncalipers,8192,20,2.327\nnear_convex,8192,20,1.657\ninter_convex_predicate,8192,20,1.573\nminkowski,8192,20,2.173\nconvex_intersection,8192,20,6.645\ncircle_polygon_area,8192,20,0.730\ninter_predicate,65536,40000,7.824\nnear_line,65536,40000,8.516\ntangents,65536,40000,12.491\ncalipers,65536,20,33.434\nnear_convex,65536,20,12.719\ninter_convex_predicate,65536,20,11.980\nminkowski,65536,20,18.912\nconvex_intersection,65536,20,61.715\ncircle_polygon_area,65536,20,5.884\n",
+      "stderr": "checksum=267736\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "version": "reference",
+      "round": 0,
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/BenchmarkCompare.cpp",
+        "-o",
+        "/tmp/geo2-benchmark-final-GCC-reference"
+      ],
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,line_predicate_public,1024,40000,2.489000\nKACTL,line_predicate_public,1024,40000,6.133000\nGeo2,line_predicate_kernel,1024,40000,2.282000\nKACTL-adapted,line_predicate_kernel,1024,40000,2.091000\nGeo2,near_line_disjoint,1024,40000,2.674000\nKACTL-adapted,near_line_disjoint,1024,40000,2.047000\nGeo2,line_predicate_public,8192,40000,3.559000\nKACTL,line_predicate_public,8192,40000,11.750000\nGeo2,line_predicate_kernel,8192,40000,3.504000\nKACTL-adapted,line_predicate_kernel,8192,40000,7.575000\nGeo2,near_line_disjoint,8192,40000,4.190000\nKACTL-adapted,near_line_disjoint,8192,40000,8.061000\nGeo2,line_predicate_public,65536,40000,6.446000\nKACTL,line_predicate_public,65536,40000,17.619000\nGeo2,line_predicate_kernel,65536,40000,6.328000\nKACTL-adapted,line_predicate_kernel,65536,40000,12.147000\nGeo2,near_line_disjoint,65536,40000,7.425000\nKACTL-adapted,near_line_disjoint,65536,40000,14.380000\nGeo2,diameter_public,1025,30,0.073000\nKACTL,diameter_public,1025,30,0.144000\nGeo2,diameter_kernel,1025,30,0.080000\nKACTL-adapted,diameter_kernel,1025,30,0.122000\nGeo2,diameter_public,8193,30,0.635000\nKACTL,diameter_public,8193,30,1.131000\nGeo2,diameter_kernel,8193,30,0.636000\nKACTL-adapted,diameter_kernel,8193,30,1.042000\nGeo2,diameter_public,60001,30,4.560000\nKACTL,diameter_public,60001,30,8.134000\nGeo2,diameter_kernel,60001,30,4.675000\nKACTL-adapted,diameter_kernel,60001,30,7.931000\nGeo2,segment_intersection,40000,40000,0.134000\nKACTL,segment_intersection,40000,40000,2.046000\n",
+      "stderr": "checksum=40000\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "version": "reference",
+      "round": 1,
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/BenchmarkCompare.cpp",
+        "-o",
+        "/tmp/geo2-benchmark-final-GCC-reference"
+      ],
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,line_predicate_public,1024,40000,2.339000\nKACTL,line_predicate_public,1024,40000,4.749000\nGeo2,line_predicate_kernel,1024,40000,2.224000\nKACTL-adapted,line_predicate_kernel,1024,40000,2.285000\nGeo2,near_line_disjoint,1024,40000,2.635000\nKACTL-adapted,near_line_disjoint,1024,40000,2.031000\nGeo2,line_predicate_public,8192,40000,3.460000\nKACTL,line_predicate_public,8192,40000,11.768000\nGeo2,line_predicate_kernel,8192,40000,3.466000\nKACTL-adapted,line_predicate_kernel,8192,40000,7.609000\nGeo2,near_line_disjoint,8192,40000,4.177000\nKACTL-adapted,near_line_disjoint,8192,40000,7.736000\nGeo2,line_predicate_public,65536,40000,6.573000\nKACTL,line_predicate_public,65536,40000,17.754000\nGeo2,line_predicate_kernel,65536,40000,6.589000\nKACTL-adapted,line_predicate_kernel,65536,40000,12.589000\nGeo2,near_line_disjoint,65536,40000,7.465000\nKACTL-adapted,near_line_disjoint,65536,40000,14.628000\nGeo2,diameter_public,1025,30,0.080000\nKACTL,diameter_public,1025,30,0.139000\nGeo2,diameter_kernel,1025,30,0.080000\nKACTL-adapted,diameter_kernel,1025,30,0.136000\nGeo2,diameter_public,8193,30,0.635000\nKACTL,diameter_public,8193,30,1.120000\nGeo2,diameter_kernel,8193,30,0.625000\nKACTL-adapted,diameter_kernel,8193,30,0.998000\nGeo2,diameter_public,60001,30,4.689000\nKACTL,diameter_public,60001,30,8.264000\nGeo2,diameter_kernel,60001,30,4.699000\nKACTL-adapted,diameter_kernel,60001,30,7.930000\nGeo2,segment_intersection,40000,40000,0.134000\nKACTL,segment_intersection,40000,40000,2.169000\n",
+      "stderr": "checksum=40000\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "version": "after",
+      "round": 1,
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-benchmark-final-GCC-after"
+      ],
+      "output": "operation,n,repeats,median_ms\ninter_predicate,1024,40000,2.569\nnear_line,1024,40000,3.183\ntangents,1024,40000,1.570\ncalipers,1024,20,0.241\nnear_convex,1024,20,0.221\ninter_convex_predicate,1024,20,0.218\nminkowski,1024,20,0.281\nconvex_intersection,1024,20,0.686\ncircle_polygon_area,1024,20,0.094\ninter_predicate,8192,40000,4.123\nnear_line,8192,40000,4.614\ntangents,8192,40000,8.089\ncalipers,8192,20,2.293\nnear_convex,8192,20,1.665\ninter_convex_predicate,8192,20,1.605\nminkowski,8192,20,2.279\nconvex_intersection,8192,20,6.790\ncircle_polygon_area,8192,20,0.724\ninter_predicate,65536,40000,7.649\nnear_line,65536,40000,8.048\ntangents,65536,40000,12.341\ncalipers,65536,20,33.175\nnear_convex,65536,20,12.719\ninter_convex_predicate,65536,20,12.390\nminkowski,65536,20,19.646\nconvex_intersection,65536,20,62.503\ncircle_polygon_area,65536,20,5.800\n",
+      "stderr": "checksum=267736\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "version": "before",
+      "round": 1,
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-numeric-perf-before/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-benchmark-final-GCC-before"
+      ],
+      "output": "operation,n,repeats,median_ms\ninter_predicate,1024,40000,6.250\nnear_line,1024,40000,8.466\ntangents,1024,40000,1.607\ncalipers,1024,20,0.363\nnear_convex,1024,20,0.286\ninter_convex_predicate,1024,20,0.362\nminkowski,1024,20,0.406\nconvex_intersection,1024,20,0.731\ncircle_polygon_area,1024,20,0.138\ninter_predicate,8192,40000,13.104\nnear_line,8192,40000,16.881\ntangents,8192,40000,9.482\ncalipers,8192,20,3.099\nnear_convex,8192,20,2.131\ninter_convex_predicate,8192,20,2.826\nminkowski,8192,20,3.206\nconvex_intersection,8192,20,6.554\ncircle_polygon_area,8192,20,1.061\ninter_predicate,65536,40000,17.086\nnear_line,65536,40000,22.959\ntangents,65536,40000,13.155\ncalipers,65536,20,59.982\nnear_convex,65536,20,20.217\ninter_convex_predicate,65536,20,26.135\nminkowski,65536,20,27.739\nconvex_intersection,65536,20,64.056\ncircle_polygon_area,65536,20,8.287\n",
+      "stderr": "checksum=267736\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "version": "reference",
+      "round": 1,
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/BenchmarkCompare.cpp",
+        "-o",
+        "/tmp/geo2-benchmark-final-Clang-reference"
+      ],
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,line_predicate_public,1024,40000,2.407375\nKACTL,line_predicate_public,1024,40000,5.133750\nGeo2,line_predicate_kernel,1024,40000,2.419250\nKACTL-adapted,line_predicate_kernel,1024,40000,2.438167\nGeo2,near_line_disjoint,1024,40000,3.821750\nKACTL-adapted,near_line_disjoint,1024,40000,1.904750\nGeo2,line_predicate_public,8192,40000,3.825208\nKACTL,line_predicate_public,8192,40000,14.055875\nGeo2,line_predicate_kernel,8192,40000,3.877458\nKACTL-adapted,line_predicate_kernel,8192,40000,8.568416\nGeo2,near_line_disjoint,8192,40000,5.569875\nKACTL-adapted,near_line_disjoint,8192,40000,8.255209\nGeo2,line_predicate_public,65536,40000,6.647208\nKACTL,line_predicate_public,65536,40000,23.511667\nGeo2,line_predicate_kernel,65536,40000,6.604667\nKACTL-adapted,line_predicate_kernel,65536,40000,15.317583\nGeo2,near_line_disjoint,65536,40000,9.800875\nKACTL-adapted,near_line_disjoint,65536,40000,15.582666\nGeo2,diameter_public,1025,30,0.095500\nKACTL,diameter_public,1025,30,0.128417\nGeo2,diameter_kernel,1025,30,0.095750\nKACTL-adapted,diameter_kernel,1025,30,0.124625\nGeo2,diameter_public,8193,30,0.729625\nKACTL,diameter_public,8193,30,1.023417\nGeo2,diameter_kernel,8193,30,0.734667\nKACTL-adapted,diameter_kernel,8193,30,0.952041\nGeo2,diameter_public,60001,30,5.393458\nKACTL,diameter_public,60001,30,7.738125\nGeo2,diameter_kernel,60001,30,5.391333\nKACTL-adapted,diameter_kernel,60001,30,7.242375\nGeo2,segment_intersection,40000,40000,0.207375\nKACTL,segment_intersection,40000,40000,2.001334\n",
+      "stderr": "checksum=40000\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "version": "after",
+      "round": 1,
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-benchmark-final-Clang-after"
+      ],
+      "output": "operation,n,repeats,median_ms\ninter_predicate,1024,40000,3.664\nnear_line,1024,40000,3.829\ntangents,1024,40000,0.719\ncalipers,1024,20,0.201\nnear_convex,1024,20,0.238\ninter_convex_predicate,1024,20,0.245\nminkowski,1024,20,0.348\nconvex_intersection,1024,20,0.553\ncircle_polygon_area,1024,20,0.105\ninter_predicate,8192,40000,5.378\nnear_line,8192,40000,5.665\ntangents,8192,40000,2.922\ncalipers,8192,20,2.047\nnear_convex,8192,20,1.717\ninter_convex_predicate,8192,20,1.789\nminkowski,8192,20,2.535\nconvex_intersection,8192,20,5.475\ncircle_polygon_area,8192,20,0.821\ninter_predicate,65536,40000,9.596\nnear_line,65536,40000,10.053\ntangents,65536,40000,5.724\ncalipers,65536,20,32.724\nnear_convex,65536,20,11.571\ninter_convex_predicate,65536,20,11.985\nminkowski,65536,20,19.092\nconvex_intersection,65536,20,51.601\ncircle_polygon_area,65536,20,6.573\n",
+      "stderr": "checksum=267736\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "version": "before",
+      "round": 1,
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-numeric-perf-before/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-benchmark-final-Clang-before"
+      ],
+      "output": "operation,n,repeats,median_ms\ninter_predicate,1024,40000,11.991\nnear_line,1024,40000,11.385\ntangents,1024,40000,0.831\ncalipers,1024,20,0.422\nnear_convex,1024,20,0.314\ninter_convex_predicate,1024,20,0.383\nminkowski,1024,20,0.413\nconvex_intersection,1024,20,0.530\ncircle_polygon_area,1024,20,0.145\ninter_predicate,8192,40000,16.616\nnear_line,8192,40000,17.619\ntangents,8192,40000,4.208\ncalipers,8192,20,3.472\nnear_convex,8192,20,2.306\ninter_convex_predicate,8192,20,2.851\nminkowski,8192,20,3.247\nconvex_intersection,8192,20,4.993\ncircle_polygon_area,8192,20,1.126\ninter_predicate,65536,40000,25.773\nnear_line,65536,40000,22.288\ntangents,65536,40000,6.013\ncalipers,65536,20,52.347\nnear_convex,65536,20,19.623\ninter_convex_predicate,65536,20,24.449\nminkowski,65536,20,25.494\nconvex_intersection,65536,20,50.127\ncircle_polygon_area,65536,20,8.749\n",
+      "stderr": "checksum=267736\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "version": "before",
+      "round": 2,
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-numeric-perf-before/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-benchmark-final-Clang-before"
+      ],
+      "output": "operation,n,repeats,median_ms\ninter_predicate,1024,40000,12.065\nnear_line,1024,40000,11.836\ntangents,1024,40000,0.831\ncalipers,1024,20,0.418\nnear_convex,1024,20,0.308\ninter_convex_predicate,1024,20,0.384\nminkowski,1024,20,0.416\nconvex_intersection,1024,20,0.526\ncircle_polygon_area,1024,20,0.144\ninter_predicate,8192,40000,16.571\nnear_line,8192,40000,16.544\ntangents,8192,40000,3.951\ncalipers,8192,20,3.583\nnear_convex,8192,20,2.235\ninter_convex_predicate,8192,20,2.739\nminkowski,8192,20,3.120\nconvex_intersection,8192,20,4.501\ncircle_polygon_area,8192,20,1.104\ninter_predicate,65536,40000,25.800\nnear_line,65536,40000,22.213\ntangents,65536,40000,5.933\ncalipers,65536,20,54.951\nnear_convex,65536,20,18.874\ninter_convex_predicate,65536,20,25.055\nminkowski,65536,20,26.566\nconvex_intersection,65536,20,50.153\ncircle_polygon_area,65536,20,9.006\n",
+      "stderr": "checksum=267736\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "version": "after",
+      "round": 2,
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-benchmark-final-Clang-after"
+      ],
+      "output": "operation,n,repeats,median_ms\ninter_predicate,1024,40000,3.645\nnear_line,1024,40000,3.827\ntangents,1024,40000,0.736\ncalipers,1024,20,0.197\nnear_convex,1024,20,0.233\ninter_convex_predicate,1024,20,0.243\nminkowski,1024,20,0.311\nconvex_intersection,1024,20,0.540\ncircle_polygon_area,1024,20,0.106\ninter_predicate,8192,40000,5.298\nnear_line,8192,40000,5.509\ntangents,8192,40000,3.204\ncalipers,8192,20,1.743\nnear_convex,8192,20,1.696\ninter_convex_predicate,8192,20,1.779\nminkowski,8192,20,2.497\nconvex_intersection,8192,20,5.220\ncircle_polygon_area,8192,20,0.809\ninter_predicate,65536,40000,9.629\nnear_line,65536,40000,9.890\ntangents,65536,40000,5.616\ncalipers,65536,20,30.630\nnear_convex,65536,20,11.478\ninter_convex_predicate,65536,20,11.215\nminkowski,65536,20,19.260\nconvex_intersection,65536,20,53.458\ncircle_polygon_area,65536,20,6.527\n",
+      "stderr": "checksum=267736\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "version": "reference",
+      "round": 2,
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/BenchmarkCompare.cpp",
+        "-o",
+        "/tmp/geo2-benchmark-final-Clang-reference"
+      ],
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,line_predicate_public,1024,40000,2.431625\nKACTL,line_predicate_public,1024,40000,4.804375\nGeo2,line_predicate_kernel,1024,40000,2.467584\nKACTL-adapted,line_predicate_kernel,1024,40000,2.043333\nGeo2,near_line_disjoint,1024,40000,3.844042\nKACTL-adapted,near_line_disjoint,1024,40000,1.908000\nGeo2,line_predicate_public,8192,40000,3.783542\nKACTL,line_predicate_public,8192,40000,14.060000\nGeo2,line_predicate_kernel,8192,40000,3.767291\nKACTL-adapted,line_predicate_kernel,8192,40000,9.194167\nGeo2,near_line_disjoint,8192,40000,5.537375\nKACTL-adapted,near_line_disjoint,8192,40000,7.544500\nGeo2,line_predicate_public,65536,40000,6.632917\nKACTL,line_predicate_public,65536,40000,23.181416\nGeo2,line_predicate_kernel,65536,40000,6.774167\nKACTL-adapted,line_predicate_kernel,65536,40000,15.485459\nGeo2,near_line_disjoint,65536,40000,9.728958\nKACTL-adapted,near_line_disjoint,65536,40000,15.443667\nGeo2,diameter_public,1025,30,0.086875\nKACTL,diameter_public,1025,30,0.128250\nGeo2,diameter_kernel,1025,30,0.096084\nKACTL-adapted,diameter_kernel,1025,30,0.120375\nGeo2,diameter_public,8193,30,0.721834\nKACTL,diameter_public,8193,30,0.993208\nGeo2,diameter_kernel,8193,30,0.722250\nKACTL-adapted,diameter_kernel,8193,30,0.955625\nGeo2,diameter_public,60001,30,5.283167\nKACTL,diameter_public,60001,30,7.546667\nGeo2,diameter_kernel,60001,30,5.388083\nKACTL-adapted,diameter_kernel,60001,30,7.233292\nGeo2,segment_intersection,40000,40000,0.207250\nKACTL,segment_intersection,40000,40000,2.017208\n",
+      "stderr": "checksum=40000\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "version": "before",
+      "round": 2,
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-numeric-perf-before/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-benchmark-final-GCC-before"
+      ],
+      "output": "operation,n,repeats,median_ms\ninter_predicate,1024,40000,6.938\nnear_line,1024,40000,8.449\ntangents,1024,40000,1.611\ncalipers,1024,20,0.365\nnear_convex,1024,20,0.287\ninter_convex_predicate,1024,20,0.362\nminkowski,1024,20,0.401\nconvex_intersection,1024,20,0.735\ncircle_polygon_area,1024,20,0.140\ninter_predicate,8192,40000,13.196\nnear_line,8192,40000,16.980\ntangents,8192,40000,10.108\ncalipers,8192,20,3.247\nnear_convex,8192,20,2.110\ninter_convex_predicate,8192,20,2.764\nminkowski,8192,20,3.151\nconvex_intersection,8192,20,6.523\ncircle_polygon_area,8192,20,1.064\ninter_predicate,65536,40000,16.905\nnear_line,65536,40000,22.868\ntangents,65536,40000,13.056\ncalipers,65536,20,57.029\nnear_convex,65536,20,19.559\ninter_convex_predicate,65536,20,26.330\nminkowski,65536,20,28.205\nconvex_intersection,65536,20,64.397\ncircle_polygon_area,65536,20,8.497\n",
+      "stderr": "checksum=267736\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "version": "after",
+      "round": 2,
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-benchmark-final-GCC-after"
+      ],
+      "output": "operation,n,repeats,median_ms\ninter_predicate,1024,40000,2.577\nnear_line,1024,40000,3.189\ntangents,1024,40000,1.575\ncalipers,1024,20,0.245\nnear_convex,1024,20,0.220\ninter_convex_predicate,1024,20,0.208\nminkowski,1024,20,0.257\nconvex_intersection,1024,20,0.672\ncircle_polygon_area,1024,20,0.094\ninter_predicate,8192,40000,4.038\nnear_line,8192,40000,4.656\ntangents,8192,40000,7.640\ncalipers,8192,20,2.323\nnear_convex,8192,20,1.621\ninter_convex_predicate,8192,20,1.535\nminkowski,8192,20,2.147\nconvex_intersection,8192,20,6.562\ncircle_polygon_area,8192,20,0.727\ninter_predicate,65536,40000,7.651\nnear_line,65536,40000,8.115\ntangents,65536,40000,12.103\ncalipers,65536,20,32.372\nnear_convex,65536,20,12.459\ninter_convex_predicate,65536,20,12.325\nminkowski,65536,20,19.440\nconvex_intersection,65536,20,60.544\ncircle_polygon_area,65536,20,5.897\n",
+      "stderr": "checksum=267736\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "version": "reference",
+      "round": 2,
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/BenchmarkCompare.cpp",
+        "-o",
+        "/tmp/geo2-benchmark-final-GCC-reference"
+      ],
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,line_predicate_public,1024,40000,2.285000\nKACTL,line_predicate_public,1024,40000,4.726000\nGeo2,line_predicate_kernel,1024,40000,2.328000\nKACTL-adapted,line_predicate_kernel,1024,40000,2.098000\nGeo2,near_line_disjoint,1024,40000,2.744000\nKACTL-adapted,near_line_disjoint,1024,40000,2.048000\nGeo2,line_predicate_public,8192,40000,3.503000\nKACTL,line_predicate_public,8192,40000,12.323000\nGeo2,line_predicate_kernel,8192,40000,3.510000\nKACTL-adapted,line_predicate_kernel,8192,40000,7.989000\nGeo2,near_line_disjoint,8192,40000,4.155000\nKACTL-adapted,near_line_disjoint,8192,40000,7.933000\nGeo2,line_predicate_public,65536,40000,6.323000\nKACTL,line_predicate_public,65536,40000,17.822000\nGeo2,line_predicate_kernel,65536,40000,6.562000\nKACTL-adapted,line_predicate_kernel,65536,40000,12.426000\nGeo2,near_line_disjoint,65536,40000,7.548000\nKACTL-adapted,near_line_disjoint,65536,40000,14.482000\nGeo2,diameter_public,1025,30,0.080000\nKACTL,diameter_public,1025,30,0.126000\nGeo2,diameter_kernel,1025,30,0.072000\nKACTL-adapted,diameter_kernel,1025,30,0.122000\nGeo2,diameter_public,8193,30,0.629000\nKACTL,diameter_public,8193,30,1.113000\nGeo2,diameter_kernel,8193,30,0.637000\nKACTL-adapted,diameter_kernel,8193,30,1.040000\nGeo2,diameter_public,60001,30,4.666000\nKACTL,diameter_public,60001,30,8.270000\nGeo2,diameter_kernel,60001,30,4.668000\nKACTL-adapted,diameter_kernel,60001,30,7.947000\nGeo2,segment_intersection,40000,40000,0.139000\nKACTL,segment_intersection,40000,40000,2.183000\n",
+      "stderr": "checksum=40000\n"
+    }
+  ]
+}

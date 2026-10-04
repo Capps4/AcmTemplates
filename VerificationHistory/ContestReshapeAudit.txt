@@ -1,0 +1,59 @@
+AcAutomaton: delivery and verification hashes CURRENT
+CentroidDecomposition: delivery and verification hashes CURRENT
+Combinatorics: delivery and verification hashes CURRENT
+CostFlow: delivery and verification hashes CURRENT
+CountingSortOrder: delivery and verification hashes CURRENT
+Debuger: delivery and verification hashes CURRENT
+DeletableHeap: delivery and verification hashes CURRENT
+Dijkstra: delivery and verification hashes CURRENT
+Discreter: delivery and verification hashes CURRENT
+DisjointSetUnion: delivery and verification hashes CURRENT
+EdgeBiconnectedComponent: delivery and verification hashes CURRENT
+ExGcd: delivery and verification hashes CURRENT
+ExSuffixAutomaton: delivery and verification hashes CURRENT
+FastFourierTransform: delivery and verification hashes CURRENT
+FastInputOutput: delivery and verification hashes CURRENT
+FenwickTree: delivery and verification hashes CURRENT
+FloatPointNumber: delivery and verification hashes CURRENT
+GaussianElimination: delivery and verification hashes CURRENT
+GridUtil: delivery and verification hashes CURRENT
+HashMap: delivery and verification hashes CURRENT
+Kmp: delivery and verification hashes CURRENT
+LazySegmentTree: delivery and verification hashes CURRENT
+LinearBasis: delivery and verification hashes CURRENT
+ListHelper: delivery and verification hashes CURRENT
+Manacher: delivery and verification hashes CURRENT
+MaxFlow: delivery and verification hashes CURRENT
+MillerRabin: delivery and verification hashes CURRENT
+MinimalString: delivery and verification hashes CURRENT
+MoSort: delivery and verification hashes CURRENT
+ModuloInteger: delivery and verification hashes CURRENT
+MultipleBackpacks: delivery and verification hashes CURRENT
+NumberTheoreticTransform: delivery and verification hashes CURRENT
+PalindromeAutomaton: delivery and verification hashes CURRENT
+PersistentTree: delivery and verification hashes CURRENT
+Point: delivery and verification hashes CURRENT
+PollardRho: delivery and verification hashes CURRENT
+RandomNumber: delivery and verification hashes CURRENT
+RingTree: delivery and verification hashes CURRENT
+Sieve: delivery and verification hashes CURRENT
+SparseTable: delivery and verification hashes CURRENT
+StringHash: delivery and verification hashes CURRENT
+StronglyConnectedComponent: delivery and verification hashes CURRENT
+SuffixArray: delivery and verification hashes CURRENT
+SuffixAutomaton: delivery and verification hashes CURRENT
+TopSort: delivery and verification hashes CURRENT
+Tree: delivery and verification hashes CURRENT
+TwoSat: delivery and verification hashes CURRENT
+VertexBiconnectedComponent: delivery and verification hashes CURRENT
+ZFunction: delivery and verification hashes CURRENT
+init_: delivery and verification hashes CURRENT
+init_case: delivery and verification hashes CURRENT
+Exported snippets: cross-module integration CURRENT
+49 modules and commented options: strict warning checks CURRENT
+ReadyToInstall package: exact final snippet copies CURRENT
+51/51 modules verified; Geo2/Geo3 excluded
+
+Strict debug flags: 49 modules, 50 test programs, actual library snippet and two entrypoints PASS.
+Original optional comments: nine enabled variants PASS.
+Geometry and PersistentTree source/test/snippet hashes unchanged.

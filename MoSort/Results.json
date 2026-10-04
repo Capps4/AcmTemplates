@@ -1,0 +1,91 @@
+{
+  "formatVersion": 2,
+  "module": "MoSort",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "546f7524499d4a8e38a27a208d5f531d662002665e27a1a26dfd40c5cf5b0945",
+    "Final.hpp": "92d5f90f1c83c3d434c276d3809cfcd57d767f2f4c95bc23aa5f14b9c7e12c60",
+    "Test.cpp": "5ffce62bf58c53cbb67fa0a901172058bd1453e4a1f522304daedd4579a35a2e",
+    "Benchmark.cpp": "8feb3400c92e029cd57d75a02178a5462951573a14544e4be1a851ea0959250a",
+    "Final.code-snippets": "2002b99c9f743a9f571776d656d47369385b3b661ebeea2417b0bb75ec014253"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "MoSort/Final.hpp": "92d5f90f1c83c3d434c276d3809cfcd57d767f2f4c95bc23aa5f14b9c7e12c60",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "MoSort/Original.hpp": "546f7524499d4a8e38a27a208d5f531d662002665e27a1a26dfd40c5cf5b0945"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/MoSort/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/MoSort/Build/optimized"
+      ],
+      "output": "Snake-order oracle, strict weak order and INT_MAX scaling passed",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/MoSort/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/MoSort/Build/sanitized"
+      ],
+      "output": "Snake-order oracle, strict weak order and INT_MAX scaling passed",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/MoSort/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/MoSort/Build/benchmark"
+  ],
+  "benchmark": "sort-200K,12.544,12.312,1.01884,697107992361890510",
+  "benchmarkSamples": [
+    {
+      "scenario": "sort-200K",
+      "original": [
+        14.287,
+        13.482,
+        12.827,
+        12.544,
+        12.538,
+        12.435,
+        12.511
+      ],
+      "final": [
+        12.266,
+        12.312,
+        12.36,
+        12.345,
+        12.656,
+        12.246,
+        12.2
+      ],
+      "checksum": 697107992361890510,
+      "first": "original"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

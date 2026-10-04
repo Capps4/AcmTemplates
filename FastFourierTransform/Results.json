@@ -1,0 +1,214 @@
+{
+  "formatVersion": 2,
+  "module": "FastFourierTransform",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "0f3681268735a1c4cc05a14e091915f00c5fbf6c4140a595dec6c4ba0dd642b1",
+    "Final.hpp": "fe00347623954d77ac78fbdde5aeed2b9c4e690c7e61c726702324da38dadfd5",
+    "Test.cpp": "c959f14bdecdfb979d3eec97bebb74d4b1b408277a2644e070e3d64b74a32de8",
+    "Benchmark.cpp": "59d65630c8ae034160dd1c4bef0b6a568fff8e37548032671d5f0dc35b893894",
+    "Final.code-snippets": "21d8976be9494cf36b3e5d9bcbe1a8be6304d8ef713d70b56c767ff82991d8da",
+    "TestExtra.cpp": "4553e58ed31bc42da949dcfdf32ab9cb11fa72875eba47539f60e3f1dc51ab03"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "FastFourierTransform/Final.hpp": "fe00347623954d77ac78fbdde5aeed2b9c4e690c7e61c726702324da38dadfd5",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "FastFourierTransform/Original.hpp": "0f3681268735a1c4cc05a14e091915f00c5fbf6c4140a595dec6c4ba0dd642b1",
+    "AcAutomaton/Final.hpp": "25e1593e02757201ab278935b9dfda0ca016168ac888a4d559c78a56054b169e",
+    "CentroidDecomposition/Final.hpp": "ebdc234ac6891b14f4081ebdd086e710ab69ac716903e4265121f0470e0c12a8",
+    "Combinatorics/Final.hpp": "1f5408e779f2c80b4776e72cec9fc7790023d45e4fd804af0f0c63428a018db7",
+    "ModuloInteger/Final.hpp": "6a25fe4f578005b1e77de88c29fbda7677542eac5a785496ca2505ee009360a0",
+    "CostFlow/Final.hpp": "c22b382d4468a4b1b69814cf3e25e18f9660de05360d6714e3bd185950c72287",
+    "CountingSortOrder/Final.hpp": "6d152164fec66d50cacf6e992424dc1d24444382066317bd9c7053ca4839c961",
+    "Debuger/Final.hpp": "062485eb6f43bcfe063422f038f93c59363ecedf007c225c02ee2030c23f9ce5",
+    "DeletableHeap/Final.hpp": "0a941f41ee5f24644a4681e2636390b5ca7ea0b5125dc69f145fbbfc86a49aeb",
+    "Dijkstra/Final.hpp": "fdd62312f24f4d529ffbc4ceeb3d9fc8ce782485391c737948a80a8c020c9752",
+    "Discreter/Final.hpp": "068b3489690a351316fb667628e50054b6dbecbc8ebbbe0c172dbc448a701376",
+    "ListHelper/Final.hpp": "393fd045dee05861777b00c5c0fe546f86348d0f9e8551592b915f7826540e9c",
+    "DisjointSetUnion/Final.hpp": "2d3400260fd0a919636433849e70387667646498c201a9a689794b33273358d4",
+    "EdgeBiconnectedComponent/Final.hpp": "64afa78f2b49de6b159358739a39b2db3d2220f8ca73844e039a2a646de70998",
+    "ExGcd/Final.hpp": "495e39a57a015d5bd9e9dd76212a0cb038f192b961dd499e53dc7461a62415b4",
+    "ExSuffixAutomaton/Final.hpp": "04d67147496ede8345ab4bfde0e5e2f55e4fea99bd9057e11c9fb292c83de2d6",
+    "FastInputOutput/Final.hpp": "67f0888310b62e76a6c60b599235aff64a4fb5727dabf8a757d82f68273c99c2",
+    "FenwickTree/Final.hpp": "aacd04a42c84f2ee1eb5bface865077aefdefeb0d71fee2a016da56826c1b91f",
+    "FloatPointNumber/Final.hpp": "b8b016a2aaff1b26cef35bb8783511263149d75c540702bc11486a18d250742f",
+    "GaussianElimination/Final.hpp": "aa9c651944fa4f50058f3ae88fccf83517ccfb5d9a16446d623542e7b6094da9",
+    "GridUtil/Final.hpp": "f6700edf56c3c083d95f8ca64b865ed292ec6ad3ecd9fdeadc84086a309e5b8e",
+    "HashMap/Final.hpp": "b098bb1471905dd5c23fcbe7be2b54d00e995e097b7be351d20428f20f79e1f7",
+    "Kmp/Final.hpp": "2293806e9f226f41adbe7ed581eab9a9a6c535fa7fd528b79a50645498200248",
+    "LazySegmentTree/Final.hpp": "dae5fbe4c23965c339ada1abbc06e93ffff078ae8404e888104eb7c5700af893",
+    "LinearBasis/Final.hpp": "5db8e3e35cc072ecde9e3084cbdf144f34e8edd61c038c283372ae8b92865c09",
+    "Manacher/Final.hpp": "57317dd39fb526ab8b7c4d0fd52b22ea78235bf72d4e6bfaf1d30932d5585a73",
+    "MaxFlow/Final.hpp": "cff349504f51104bc1302ce7288252117891989dd8cc5c30cd5f674172023eb8",
+    "MillerRabin/Final.hpp": "e7f0324f298c836a2a02a37820d050f66fec52f3a67ae425739df5f294f00088",
+    "MinimalString/Final.hpp": "0cee332d9375915feef175e976292b6b912b023373f05717f66b51faf412b2a5",
+    "MoSort/Final.hpp": "92d5f90f1c83c3d434c276d3809cfcd57d767f2f4c95bc23aa5f14b9c7e12c60",
+    "MultipleBackpacks/Final.hpp": "24f827ccc0df586bff3dec64969b88356735aecc71e54b8bf70d3aadfaca1022",
+    "NumberTheoreticTransform/Final.hpp": "04c439194b2b42e01685d64d7a9e45ba98e98b261ffff70cf773c30fbc93e28f",
+    "PalindromeAutomaton/Final.hpp": "28c2cc39c817eb1171d71fe897362d65f06b6884046be85b1611ed58c2b4e859",
+    "PersistentTree/Final.hpp": "8c61f617b6a9461fa1ce9f57a3adcf99f67507d02c81764cdae712cbbf8515e4",
+    "Point/Final.hpp": "3a4c88dc97fb8f7fb01e413798d8848030a1126bc2e65ec85afb87969e59036b",
+    "PollardRho/Final.hpp": "2767adf49dee317922e8d4064f860c851addcd0d15dfc8327c40fdf9affc692a",
+    "RandomNumber/Final.hpp": "82dac3f65f653b497ba930eda7184d3f6e3d34a4a225a46f4362cbe85d217e9d",
+    "RingTree/Final.hpp": "6121416dc713f95c80ae94e665edda03d8517c5982eaef68d707992bfa0a91aa",
+    "Sieve/Final.hpp": "2b38c25efb8984a72f1a7ec271dad3c8ff71f13ab8d19aa67d6e2e2dca0ad515",
+    "SparseTable/Final.hpp": "b56780f8966afcee8c41c38fc6833dc451ac896808d6452d52631e731d37e244",
+    "StringHash/Final.hpp": "7e32b2c23ee33b40a4c1d2977d590d4f864acc098106e1bb2f0defd57895e06c",
+    "StronglyConnectedComponent/Final.hpp": "1ff86d520a7364a81e7224ed75ec4c083fcf5608777d59ed4d7714d023ba540b",
+    "SuffixArray/Final.hpp": "4d922b0469811307149391a3389594bdb80c785dcb851d7adf7a6abf563ea559",
+    "SuffixAutomaton/Final.hpp": "e6f50f4e623a9bb6c10cb5d37c580a49118d2219fe7f9622f9501b493d3bc989",
+    "TopSort/Final.hpp": "bb86a8cd098e6ffa55f220daf588c74a46236c81f6d5965f59efd3b70b122281",
+    "Tree/Final.hpp": "700b0201524f0ad1734dc76eaa9ebfe934540720c9d0641cfb87286e640f9347",
+    "TwoSat/Final.hpp": "8dc5a74dc4e609779aac19a7dac46150ee79b5243160e88b960769a19cb1038b",
+    "VertexBiconnectedComponent/Final.hpp": "6772dc4782adb07e95079d37a885837bca2dc1047afeb3bb62eee32fdbb01d1d",
+    "ZFunction/Final.hpp": "54b980acb1bcb3d5bdfa5b9e76f82391388d8f00c6318d062d8feb2e359a32a4",
+    "Integration/Test.hpp": "e2a6d1d1cf8a05947f5596b9959849d267f6088eef15e5a7399ed1672760432e",
+    "GeometryCompatibility/Geo2.hpp": "41f596f4998b9b505a213d918a72ee0801ea168046cf044df403cf284eef456c",
+    "GeometryCompatibility/Geo3.hpp": "a9415563f4182e3958a1f37e581cbcbcb413d0481d6b780ab06f29cf93077284"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/FastFourierTransform/Test.cpp",
+        "/Users/bytedance/acm_compete/cpp17/FastFourierTransform/TestExtra.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/FastFourierTransform/Build/optimized"
+      ],
+      "output": "Exported snippets coexist; convolution oracle + compression + graph + stream integration PASS\n49 final library headers plus unchanged Geo2/Geo3 coexist; real cross-module runtime checks PASS\nFFT: naive long-double oracle, empty, threshold, alternating sizes, impulse, long-double PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/FastFourierTransform/Test.cpp",
+        "/Users/bytedance/acm_compete/cpp17/FastFourierTransform/TestExtra.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/FastFourierTransform/Build/sanitized"
+      ],
+      "output": "Exported snippets coexist; convolution oracle + compression + graph + stream integration PASS\n49 final library headers plus unchanged Geo2/Geo3 coexist; real cross-module runtime checks PASS\nFFT: naive long-double oracle, empty, threshold, alternating sizes, impulse, long-double PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/FastFourierTransform/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/FastFourierTransform/Build/benchmark"
+  ],
+  "benchmark": "equal-64-100x,0.214,0.214,1,2175978800\nequal-4096,0.254,0.238,1.06723,6266356790067\nequal-16384,1.361,1.145,1.18865,394868771687786\nalternating-cold-cache,0.859,0.715,1.2014,2267742732288",
+  "benchmarkSamples": [
+    {
+      "scenario": "equal-64-100x",
+      "original": [
+        0.224,
+        0.215,
+        0.216,
+        0.214,
+        0.213,
+        0.213,
+        0.212
+      ],
+      "final": [
+        0.212,
+        0.214,
+        0.215,
+        0.214,
+        0.217,
+        0.211,
+        0.212
+      ],
+      "checksum": 2175978800,
+      "first": "original"
+    },
+    {
+      "scenario": "equal-4096",
+      "original": [
+        0.258,
+        0.258,
+        0.253,
+        0.257,
+        0.254,
+        0.23,
+        0.235
+      ],
+      "final": [
+        0.24,
+        0.238,
+        0.238,
+        0.242,
+        0.238,
+        0.241,
+        0.238
+      ],
+      "checksum": 6266356790067,
+      "first": "final"
+    },
+    {
+      "scenario": "equal-16384",
+      "original": [
+        1.392,
+        1.359,
+        1.361,
+        1.38,
+        1.387,
+        1.352,
+        1.298
+      ],
+      "final": [
+        1.145,
+        1.177,
+        1.203,
+        1.171,
+        1.112,
+        1.121,
+        1.093
+      ],
+      "checksum": 394868771687786,
+      "first": "original"
+    },
+    {
+      "scenario": "alternating-cold-cache",
+      "original": [
+        0.893,
+        0.9,
+        0.861,
+        0.855,
+        0.852,
+        0.859,
+        0.847
+      ],
+      "final": [
+        0.715,
+        0.719,
+        0.703,
+        0.715,
+        0.708,
+        0.745,
+        0.719
+      ],
+      "checksum": 2267742732288,
+      "first": "final"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

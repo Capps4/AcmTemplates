@@ -1,0 +1,5 @@
+scenario,originalMs,finalMs,speedup,checksum
+floating-inverse-40,0.075,0.076,0.986842,55424743
+modular-inverse-40,0.614,0.155,3.96129,334049611076569
+floating-inverse-100,0.699,0.69,1.01304,338073391
+modular-inverse-100,3.107,1.338,2.32212,12499269565675282

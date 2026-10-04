@@ -1,0 +1,50 @@
+#pragma once
+#include <bits/stdc++.h>
+using i64 = long long;
+template <class T, class G>
+class Dijkstra {
+    const std::vector<std::vector<std::pair<int, T>>> &adj;
+    std::vector<std::vector<G>> dis;
+
+    std::vector<G> get(int s) {
+        std::vector<G> dis(adj.size(), std::numeric_limits<G>::max() / 2);
+
+        using Pair = std::pair<G, int>;
+        std::priority_queue<Pair, std::vector<Pair>, std::greater<Pair>> q;
+
+        dis[s] = G();
+        q.push({dis[s], s});
+
+        while (!q.empty()) {
+            auto _pr = q.top();
+            G nearDist = _pr.first;
+            int x = _pr.second;
+            q.pop();
+
+            if (nearDist > dis[x]){
+                continue;
+            }
+
+            for (auto pr : adj[x]) {
+                int y = pr.first;
+                T w = pr.second;
+                if (dis[y] > dis[x] + w) {
+                    dis[y] = dis[x] + w;
+                    q.push({dis[y], y});
+                }
+            }
+        }
+        return dis;
+    }
+
+public:
+    Dijkstra(const std::vector<std::vector<std::pair<int, T>>> &g)
+        : adj(g), dis(g.size()) {}
+
+    G operator()(int x, int y) {
+        if (dis[x].empty())
+            dis[x] = get(x);
+        return dis[x][y];
+    }
+};
+

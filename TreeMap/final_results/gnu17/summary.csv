@@ -1,0 +1,17 @@
+workload,backend,payload,variant,median_ms,min_ms,max_ms
+eraseAll,TreeMap,bool,before,196.262,187.515,207.885
+eraseAll,TreeMap,bool,after,203.932,187.041,211.269
+eraseAll,TreeMap,int,before,226.589,203.513,240.047
+eraseAll,TreeMap,int,after,210.927,198.537,244.368
+eraseAll,TreeMapOff,bool,before,100.008,99.774,100.167
+eraseAll,TreeMapOff,bool,after,98.268,97.658,98.968
+eraseAll,TreeMapOff,int,before,99.189,98.219,99.931
+eraseAll,TreeMapOff,int,after,98.79,98.077,98.96
+clear,TreeMap,bool,before,1.576,1.552,1.661
+clear,TreeMap,bool,after,0.0,0.0,0.0
+clear,TreeMap,int,before,0.238,0.232,0.241
+clear,TreeMap,int,after,0.0,0.0,0.0
+clear,TreeMapOff,bool,before,1.609,1.57,1.622
+clear,TreeMapOff,bool,after,0.02,0.018,0.023
+clear,TreeMapOff,int,before,0.266,0.259,0.319
+clear,TreeMapOff,int,after,0.019,0.018,0.022

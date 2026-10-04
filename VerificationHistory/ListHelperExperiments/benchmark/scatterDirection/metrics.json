@@ -1,0 +1,8642 @@
+[
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "11",
+    "compiler": "gcc",
+    "backwardMs": 1.643,
+    "forwardMs": 1.649,
+    "ratio": 1.006198544301529,
+    "launchRatios": [
+      0.9890444309190505,
+      1.0153940886699508,
+      1.0143798681845417
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "15",
+    "compiler": "gcc",
+    "backwardMs": 2.482,
+    "forwardMs": 2.433,
+    "ratio": 0.9976287661486103,
+    "launchRatios": [
+      0.9389017788089714,
+      1.0309322033898305,
+      1.025785656728445
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "8",
+    "compiler": "gcc",
+    "backwardMs": 2.414,
+    "forwardMs": 2.494,
+    "ratio": 1.011438294953886,
+    "launchRatios": [
+      1.024501661129568,
+      1.0331400165700082,
+      0.9775665399239544
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "11",
+    "compiler": "gcc",
+    "backwardMs": 1.734,
+    "forwardMs": 1.686,
+    "ratio": 0.9741070041914827,
+    "launchRatios": [
+      0.9851239669421488,
+      0.9649851632047478,
+      0.972318339100346
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "15",
+    "compiler": "gcc",
+    "backwardMs": 2.469,
+    "forwardMs": 2.45,
+    "ratio": 0.9968246505531124,
+    "launchRatios": [
+      0.9847266881028939,
+      1.0113406237343054,
+      0.9945878434637802
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "8",
+    "compiler": "gcc",
+    "backwardMs": 2.486,
+    "forwardMs": 2.497,
+    "ratio": 1.0076455684733197,
+    "launchRatios": [
+      1.018992568125516,
+      1.0044247787610618,
+      0.9996200607902735
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "11",
+    "compiler": "gcc",
+    "backwardMs": 1.122,
+    "forwardMs": 1.131,
+    "ratio": 1.0115911982268473,
+    "launchRatios": [
+      1.0080213903743316,
+      1.009049773755656,
+      1.0177304964539007
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "15",
+    "compiler": "gcc",
+    "backwardMs": 1.128,
+    "forwardMs": 1.149,
+    "ratio": 1.0043107478436881,
+    "launchRatios": [
+      0.9770408163265306,
+      1.0212765957446808,
+      1.0151921358355676
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "8",
+    "compiler": "gcc",
+    "backwardMs": 1.119,
+    "forwardMs": 1.125,
+    "ratio": 1.009437690767013,
+    "launchRatios": [
+      1.0249077490774907,
+      0.9946949602122016,
+      1.0089365504915102
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "11",
+    "compiler": "gcc",
+    "backwardMs": 1.12,
+    "forwardMs": 1.125,
+    "ratio": 0.975324032224924,
+    "launchRatios": [
+      1.0351668169522092,
+      0.9392857142857143,
+      0.9541984732824428
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "15",
+    "compiler": "gcc",
+    "backwardMs": 1.129,
+    "forwardMs": 1.131,
+    "ratio": 1.0104887114128218,
+    "launchRatios": [
+      1.0272479564032697,
+      1.0,
+      1.004428697962799
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "8",
+    "compiler": "gcc",
+    "backwardMs": 1.121,
+    "forwardMs": 1.121,
+    "ratio": 0.9975343787828543,
+    "launchRatios": [
+      0.99,
+      1.0,
+      1.002647837599294
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "11",
+    "compiler": "gcc",
+    "backwardMs": 2.472,
+    "forwardMs": 2.458,
+    "ratio": 0.9927774240398611,
+    "launchRatios": [
+      1.0070480928689884,
+      0.9771743408107044,
+      0.9943365695792881
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "15",
+    "compiler": "gcc",
+    "backwardMs": 4.862,
+    "forwardMs": 4.855,
+    "ratio": 0.9891106259439747,
+    "launchRatios": [
+      0.986603462489695,
+      0.9822401614530777,
+      0.9985602632661457
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "8",
+    "compiler": "gcc",
+    "backwardMs": 3.12,
+    "forwardMs": 3.255,
+    "ratio": 1.0200872548874167,
+    "launchRatios": [
+      1.0432692307692308,
+      0.9969400244798041,
+      1.0205787781350482
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "11",
+    "compiler": "gcc",
+    "backwardMs": 2.556,
+    "forwardMs": 2.466,
+    "ratio": 0.9805197499603173,
+    "launchRatios": [
+      0.9617784711388455,
+      0.9761345852895149,
+      1.0041169205434335
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "15",
+    "compiler": "gcc",
+    "backwardMs": 4.843,
+    "forwardMs": 4.802,
+    "ratio": 0.9967426369449869,
+    "launchRatios": [
+      1.0167095115681235,
+      0.9915341730332439,
+      0.9823008849557522
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "8",
+    "compiler": "gcc",
+    "backwardMs": 3.14,
+    "forwardMs": 3.211,
+    "ratio": 1.0243600370967916,
+    "launchRatios": [
+      1.022937241159605,
+      1.0339790409653857,
+      1.0162420382165605
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "11",
+    "compiler": "gcc",
+    "backwardMs": 3.796,
+    "forwardMs": 3.248,
+    "ratio": 0.8633648100935052,
+    "launchRatios": [
+      0.8594494441503441,
+      0.8556375131717597,
+      0.8751306165099269
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "15",
+    "compiler": "gcc",
+    "backwardMs": 1.214,
+    "forwardMs": 1.793,
+    "ratio": 1.4790374962011812,
+    "launchRatios": [
+      1.4710676446617768,
+      1.4941666666666666,
+      1.471993410214168
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "8",
+    "compiler": "gcc",
+    "backwardMs": 2.618,
+    "forwardMs": 2.633,
+    "ratio": 0.9812512642472904,
+    "launchRatios": [
+      0.9329824561403509,
+      1.0091989267918742,
+      1.0034377387318565
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "11",
+    "compiler": "gcc",
+    "backwardMs": 3.804,
+    "forwardMs": 3.313,
+    "ratio": 0.8691932896796369,
+    "launchRatios": [
+      0.8815859499733901,
+      0.8554153522607781,
+      0.8707778915046059
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "15",
+    "compiler": "gcc",
+    "backwardMs": 1.783,
+    "forwardMs": 1.786,
+    "ratio": 1.0039563672315779,
+    "launchRatios": [
+      1.0090857467348098,
+      1.0005602240896359,
+      1.0022434099831745
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "8",
+    "compiler": "gcc",
+    "backwardMs": 2.604,
+    "forwardMs": 2.623,
+    "ratio": 1.0075933944286612,
+    "launchRatios": [
+      1.0178640776699028,
+      1.0072964669738864,
+      0.9977203647416414
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "11",
+    "compiler": "gcc",
+    "backwardMs": 2.031,
+    "forwardMs": 2.02,
+    "ratio": 0.9875817434578941,
+    "launchRatios": [
+      1.0024618414574102,
+      0.9774887443721861,
+      0.9829683698296837
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "15",
+    "compiler": "gcc",
+    "backwardMs": 2.706,
+    "forwardMs": 2.71,
+    "ratio": 0.9970757645672074,
+    "launchRatios": [
+      1.0014781966001478,
+      0.9817158931082982,
+      1.0082242990654207
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "8",
+    "compiler": "gcc",
+    "backwardMs": 2.827,
+    "forwardMs": 2.822,
+    "ratio": 1.0111638530003941,
+    "launchRatios": [
+      0.996462681287584,
+      1.022463768115942,
+      1.0147420147420148
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "11",
+    "compiler": "gcc",
+    "backwardMs": 2.004,
+    "forwardMs": 1.974,
+    "ratio": 0.9852786464170965,
+    "launchRatios": [
+      1.010531594784353,
+      0.9810379241516967,
+      0.9648093841642229
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "15",
+    "compiler": "gcc",
+    "backwardMs": 2.682,
+    "forwardMs": 2.684,
+    "ratio": 0.9880208246738807,
+    "launchRatios": [
+      1.0189825360668185,
+      0.9423076923076923,
+      1.0044742729306488
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "8",
+    "compiler": "gcc",
+    "backwardMs": 2.857,
+    "forwardMs": 2.848,
+    "ratio": 0.9868160502046,
+    "launchRatios": [
+      1.0035701535166013,
+      0.9515536251252924,
+      1.0063003150157508
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "11",
+    "compiler": "gcc",
+    "backwardMs": 1.371,
+    "forwardMs": 1.386,
+    "ratio": 0.9834556932901121,
+    "launchRatios": [
+      0.977761304670126,
+      0.9622895622895623,
+      1.0109409190371992
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "15",
+    "compiler": "gcc",
+    "backwardMs": 1.465,
+    "forwardMs": 1.363,
+    "ratio": 0.9256865235337883,
+    "launchRatios": [
+      0.910580204778157,
+      0.9247967479674797,
+      0.9419488597097443
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "8",
+    "compiler": "gcc",
+    "backwardMs": 1.397,
+    "forwardMs": 1.392,
+    "ratio": 0.9578812223156827,
+    "launchRatios": [
+      0.9712437095614666,
+      0.9081632653061225,
+      0.9964209019327129
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "11",
+    "compiler": "gcc",
+    "backwardMs": 1.413,
+    "forwardMs": 1.357,
+    "ratio": 0.964401943949567,
+    "launchRatios": [
+      0.9934065934065934,
+      0.9401767505098573,
+      0.9603680113234253
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "15",
+    "compiler": "gcc",
+    "backwardMs": 1.399,
+    "forwardMs": 1.396,
+    "ratio": 0.9934353150630133,
+    "launchRatios": [
+      0.997855611150822,
+      1.0,
+      0.9825418994413407
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "8",
+    "compiler": "gcc",
+    "backwardMs": 1.419,
+    "forwardMs": 1.398,
+    "ratio": 0.9681570892287579,
+    "launchRatios": [
+      0.9478505990133897,
+      0.9567243675099867,
+      1.0007158196134573
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "11",
+    "compiler": "gcc",
+    "backwardMs": 5.747,
+    "forwardMs": 5.379,
+    "ratio": 0.9571416710743016,
+    "launchRatios": [
+      0.9942603221625624,
+      0.9299792531120332,
+      0.9483208630589873
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "15",
+    "compiler": "gcc",
+    "backwardMs": 8.127,
+    "forwardMs": 7.959,
+    "ratio": 0.9835349996769507,
+    "launchRatios": [
+      0.9893521488133419,
+      0.98195211786372,
+      0.979328165374677
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "8",
+    "compiler": "gcc",
+    "backwardMs": 6.861,
+    "forwardMs": 6.723,
+    "ratio": 0.9633649312557522,
+    "launchRatios": [
+      0.9794803661056982,
+      0.979886313948404,
+      0.9315390645414162
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "11",
+    "compiler": "gcc",
+    "backwardMs": 5.516,
+    "forwardMs": 5.399,
+    "ratio": 0.9813731559204032,
+    "launchRatios": [
+      0.9945494186046512,
+      0.9748005801305294,
+      0.9749006861682918
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "15",
+    "compiler": "gcc",
+    "backwardMs": 7.843,
+    "forwardMs": 7.811,
+    "ratio": 0.991505339717321,
+    "launchRatios": [
+      0.9949664429530202,
+      0.9959199285987504,
+      0.9836765444500251
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "8",
+    "compiler": "gcc",
+    "backwardMs": 6.944,
+    "forwardMs": 6.765,
+    "ratio": 0.987741828191279,
+    "launchRatios": [
+      0.9864884711411367,
+      0.9742223502304147,
+      1.0027212832999142
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "11",
+    "compiler": "gcc",
+    "backwardMs": 4.114,
+    "forwardMs": 3.565,
+    "ratio": 0.8702269586460312,
+    "launchRatios": [
+      0.8700467634752646,
+      0.8665532328633933,
+      0.8740972556571979
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "15",
+    "compiler": "gcc",
+    "backwardMs": 1.835,
+    "forwardMs": 2.07,
+    "ratio": 1.10593482054461,
+    "launchRatios": [
+      1.040915733073551,
+      1.1781445645987478,
+      1.1029972752043598
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "8",
+    "compiler": "gcc",
+    "backwardMs": 2.84,
+    "forwardMs": 2.898,
+    "ratio": 1.0089522916209461,
+    "launchRatios": [
+      1.028169014084507,
+      0.9996477632969355,
+      0.9993103448275862
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "11",
+    "compiler": "gcc",
+    "backwardMs": 3.568,
+    "forwardMs": 3.549,
+    "ratio": 1.0075966546532242,
+    "launchRatios": [
+      0.9907511210762332,
+      1.0236515719642343,
+      1.0086567997765987
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "15",
+    "compiler": "gcc",
+    "backwardMs": 2.082,
+    "forwardMs": 2.055,
+    "ratio": 1.0003374214276486,
+    "launchRatios": [
+      1.0121779859484779,
+      0.9807877041306436,
+      1.008341511285574
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "8",
+    "compiler": "gcc",
+    "backwardMs": 2.891,
+    "forwardMs": 2.85,
+    "ratio": 0.9878756993981086,
+    "launchRatios": [
+      0.9810671256454389,
+      0.9806295399515739,
+      1.0020818875780708
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.15825,
+    "forwardMs": 0.149,
+    "ratio": 0.9562876387589636,
+    "launchRatios": [
+      0.990521327014218,
+      0.9717607973421927,
+      0.9085365853658537
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.15375,
+    "forwardMs": 0.15325,
+    "ratio": 0.9923711000082063,
+    "launchRatios": [
+      0.9736434108527132,
+      1.0070175438596491,
+      0.9967479674796748
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.022478261,
+    "forwardMs": 0.022173913,
+    "ratio": 0.9877036270311235,
+    "launchRatios": [
+      0.9864603405040987,
+      0.9716171349906874,
+      1.005321917445981
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.022347826,
+    "forwardMs": 0.02175,
+    "ratio": 0.9933427828341765,
+    "launchRatios": [
+      0.9727626302442126,
+      1.0116279069767442,
+      0.9960238607717513
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.1062,
+    "forwardMs": 0.112,
+    "ratio": 1.0333732246675338,
+    "launchRatios": [
+      1.0035650623885919,
+      1.054613935969868,
+      1.0426356589147288
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.1068,
+    "forwardMs": 0.103,
+    "ratio": 0.9673101759146598,
+    "launchRatios": [
+      0.9366852886405959,
+      1.001930501930502,
+      0.9644194756554307
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.206,
+    "forwardMs": 0.198,
+    "ratio": 0.9634396478925543,
+    "launchRatios": [
+      0.9712918660287081,
+      0.9611650485436893,
+      0.9579124595959595
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.208,
+    "forwardMs": 0.193,
+    "ratio": 0.9317027072313189,
+    "launchRatios": [
+      0.8957703929066912,
+      0.9747474747474747,
+      0.9262820528846153
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.26066666699999996,
+    "forwardMs": 0.2675,
+    "ratio": 0.9812410121482578,
+    "launchRatios": [
+      0.9602763385146805,
+      0.9587217056707346,
+      1.0262148324472957
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.261,
+    "forwardMs": 0.263666667,
+    "ratio": 0.999612860293994,
+    "launchRatios": [
+      0.9675840990825688,
+      0.9960474308300395,
+      1.0363984674329503
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.179,
+    "forwardMs": 0.175666667,
+    "ratio": 0.9852068998952169,
+    "launchRatios": [
+      1.0134615423335798,
+      1.0018621955307263,
+      0.9418181853487602
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.18766666699999998,
+    "forwardMs": 0.18466666699999998,
+    "ratio": 0.9784013162936621,
+    "launchRatios": [
+      1.0235081410913347,
+      0.943161632427777,
+      0.9702276742035509
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.022727273000000003,
+    "forwardMs": 0.022652174,
+    "ratio": 1.0244683766652138,
+    "launchRatios": [
+      1.0829457574214294,
+      0.990956504108522,
+      1.0019230653550297
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.0262,
+    "forwardMs": 0.0261,
+    "ratio": 0.9994218241617556,
+    "launchRatios": [
+      1.0078393842912452,
+      0.9942965779467681,
+      0.9961832061068703
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.0258,
+    "forwardMs": 0.02585,
+    "ratio": 1.0111166298797598,
+    "launchRatios": [
+      1.0258157310877871,
+      0.9923224568138196,
+      1.0155038759689923
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.022347826,
+    "forwardMs": 0.022565217000000002,
+    "ratio": 1.0091167796465488,
+    "launchRatios": [
+      0.9773156956521738,
+      1.0251149709148442,
+      1.0256916818181818
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.173333333,
+    "forwardMs": 0.17866666699999997,
+    "ratio": 1.0224812245256134,
+    "launchRatios": [
+      1.030769234674556,
+      0.9506398536574768,
+      1.0909090909090908
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.178,
+    "forwardMs": 0.17866666699999997,
+    "ratio": 1.0132069052126258,
+    "launchRatios": [
+      1.0433090043795619,
+      0.9558011049723757,
+      1.0430711629213483
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.027833333,
+    "forwardMs": 0.027944444,
+    "ratio": 1.0026274107187156,
+    "launchRatios": [
+      1.0039920120238564,
+      1.0019230923113907,
+      1.0019685197005395
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.027944444,
+    "forwardMs": 0.028166667000000003,
+    "ratio": 1.0045808461162995,
+    "launchRatios": [
+      1.0271912971394643,
+      0.9850371687481061,
+      1.0019608000230682
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.138,
+    "forwardMs": 0.139,
+    "ratio": 1.0054519014805756,
+    "launchRatios": [
+      1.0830188679245283,
+      0.9317773788150808,
+      1.0072463768115942
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.13975,
+    "forwardMs": 0.138,
+    "ratio": 0.9826436386574207,
+    "launchRatios": [
+      0.9874776386404294,
+      0.8913043478260869,
+      1.0780399274047188
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.391,
+    "forwardMs": 0.3995,
+    "ratio": 1.020471877617899,
+    "launchRatios": [
+      1.0063532401524777,
+      1.0217391304347827,
+      1.0335051546391754
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.3965,
+    "forwardMs": 0.394,
+    "ratio": 0.9962152021704912,
+    "launchRatios": [
+      0.9924337957124842,
+      0.9813200498132005,
+      1.0151898734177216
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.2825,
+    "forwardMs": 0.2935,
+    "ratio": 1.0310704104208686,
+    "launchRatios": [
+      1.0770642201834861,
+      0.9716814159292035,
+      1.0473684210526315
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.281,
+    "forwardMs": 0.279,
+    "ratio": 0.9809280151174432,
+    "launchRatios": [
+      0.9733096085409253,
+      1.0017953321364452,
+      0.968013468013468
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.3725,
+    "forwardMs": 0.3785,
+    "ratio": 1.013843031759477,
+    "launchRatios": [
+      1.0161073825503355,
+      1.0145888594164456,
+      1.010840108401084
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.375,
+    "forwardMs": 0.38,
+    "ratio": 1.010701834070445,
+    "launchRatios": [
+      1.016,
+      1.0054945054945055,
+      1.0106382978723405
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.028333333,
+    "forwardMs": 0.028444444,
+    "ratio": 1.0098960815448883,
+    "launchRatios": [
+      1.0279441078402078,
+      1.0039215647520185,
+      0.9980694826403902
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.038615385,
+    "forwardMs": 0.038615385,
+    "ratio": 0.9930652990035438,
+    "launchRatios": [
+      0.9851576883116884,
+      1.0059760895819114,
+      0.9881889881657263
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.038846154,
+    "forwardMs": 0.039153846,
+    "ratio": 1.00329599943257,
+    "launchRatios": [
+      1.0079207841270463,
+      1.0019841249881898,
+      1.0
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.028555556,
+    "forwardMs": 0.028666667,
+    "ratio": 0.9999745596206681,
+    "launchRatios": [
+      0.9941176705190315,
+      1.003891046632046,
+      1.001941763114337
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 2.849,
+    "forwardMs": 2.852,
+    "ratio": 0.9978627740509478,
+    "launchRatios": [
+      1.007181328545781,
+      1.001053001053001,
+      0.985479797979798
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 2.851,
+    "forwardMs": 2.845,
+    "ratio": 0.9974482626192962,
+    "launchRatios": [
+      1.0106799572801708,
+      0.9978954752718344,
+      0.9839486356340289
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.232666667,
+    "forwardMs": 0.235666667,
+    "ratio": 1.0092244887700148,
+    "launchRatios": [
+      1.0128939827895502,
+      0.9985632198275861,
+      1.0163043478482396
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.24533333300000001,
+    "forwardMs": 0.237333333,
+    "ratio": 0.9873160077756687,
+    "launchRatios": [
+      1.00187617260788,
+      0.9930069957944153,
+      0.9673913043035208
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 2.298,
+    "forwardMs": 2.322,
+    "ratio": 1.006525455151231,
+    "launchRatios": [
+      1.010443864229765,
+      1.0048224462954845,
+      1.0043215211754537
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 2.27,
+    "forwardMs": 2.288,
+    "ratio": 1.002770296751788,
+    "launchRatios": [
+      0.9842657342657343,
+      1.0137350465219317,
+      1.0105726872246696
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 3.769,
+    "forwardMs": 3.686,
+    "ratio": 0.989716600513286,
+    "launchRatios": [
+      0.9825765575501584,
+      1.0088740987243483,
+      0.9779782435659327
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 3.868,
+    "forwardMs": 3.723,
+    "ratio": 0.9787795765542966,
+    "launchRatios": [
+      0.957315505271278,
+      0.9912099276111686,
+      0.9881752217145928
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 3.877,
+    "forwardMs": 3.886,
+    "ratio": 0.9903827322917578,
+    "launchRatios": [
+      0.979667741135631,
+      1.0023213825122517,
+      0.9892894461859979
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 3.823,
+    "forwardMs": 3.807,
+    "ratio": 1.011667515637956,
+    "launchRatios": [
+      1.0258350730688934,
+      0.9958148051268637,
+      1.0135782747603834
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 2.919,
+    "forwardMs": 2.913,
+    "ratio": 0.9967224376161783,
+    "launchRatios": [
+      0.9993072393488049,
+      0.9979445015416238,
+      0.9929269114179858
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 2.949,
+    "forwardMs": 2.926,
+    "ratio": 0.9651605946304107,
+    "launchRatios": [
+      0.9968847352024922,
+      0.9089798411728772,
+      0.9922007460155985
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.236666667,
+    "forwardMs": 0.24166666699999997,
+    "ratio": 1.0134143867226575,
+    "launchRatios": [
+      1.0283687957446808,
+      1.0178082219422029,
+      0.9943661943741322
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.362,
+    "forwardMs": 0.3625,
+    "ratio": 1.000463356944659,
+    "launchRatios": [
+      1.0055248618784531,
+      0.9945130315500685,
+      1.0013831258644537
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.3665,
+    "forwardMs": 0.3605,
+    "ratio": 0.9867919077733522,
+    "launchRatios": [
+      0.993103448275862,
+      0.9836289222373806,
+      0.9836734693877551
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.237,
+    "forwardMs": 0.237333333,
+    "ratio": 0.9999712520751975,
+    "launchRatios": [
+      1.0014064683544304,
+      0.9805555541666667,
+      1.0183098577206904
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.00043945299999999997,
+    "forwardMs": 0.000433594,
+    "ratio": 0.9886219503257525,
+    "launchRatios": [
+      1.009288921930257,
+      0.9702963772175064,
+      0.9866675162076491
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.00041992200000000004,
+    "forwardMs": 0.000400391,
+    "ratio": 0.9836999929005958,
+    "launchRatios": [
+      1.0032677660727911,
+      1.009854117694535,
+      0.9395340086968532
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 3.9062e-05,
+    "forwardMs": 4.1015999999999995e-05,
+    "ratio": 1.0315751899752725,
+    "launchRatios": [
+      1.0454513719192906,
+      1.0500230402949158,
+      1.0
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 4.1015999999999995e-05,
+    "forwardMs": 3.9062e-05,
+    "ratio": 0.9369326900535313,
+    "launchRatios": [
+      0.90907398356955,
+      0.9047444899551396,
+      1.0
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000396484,
+    "forwardMs": 0.000396484,
+    "ratio": 0.9978462492918325,
+    "launchRatios": [
+      1.0038478807117595,
+      1.0,
+      0.9897442360558631
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000416016,
+    "forwardMs": 0.000408203,
+    "ratio": 1.0100710230890948,
+    "launchRatios": [
+      0.988462265562846,
+      0.9812194723279872,
+      1.0625013333333333
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.00043945299999999997,
+    "forwardMs": 0.000433594,
+    "ratio": 1.0036687859471842,
+    "launchRatios": [
+      1.0054641292365887,
+      1.0191399867222928,
+      0.9866675162076491
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000455078,
+    "forwardMs": 0.00045898399999999995,
+    "ratio": 0.9959837681994096,
+    "launchRatios": [
+      0.9795916539537438,
+      1.0,
+      1.0085831439885031
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000427734,
+    "forwardMs": 0.0004375,
+    "ratio": 1.0151871571564652,
+    "launchRatios": [
+      1.0031345949824009,
+      1.019705713219197,
+      1.0228319469576888
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000443359,
+    "forwardMs": 0.00041992200000000004,
+    "ratio": 0.9724407006111658,
+    "launchRatios": [
+      1.0032677660727911,
+      0.9677416310390065,
+      0.947137646918186
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000333984,
+    "forwardMs": 0.000337891,
+    "ratio": 1.0129285830737131,
+    "launchRatios": [
+      0.9896913746417317,
+      1.0379722224022503,
+      1.0116981651815657
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000279297,
+    "forwardMs": 0.000275391,
+    "ratio": 0.9843193574901886,
+    "launchRatios": [
+      0.988096,
+      0.9929582035306336,
+      0.9720261943379268
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 4.1015999999999995e-05,
+    "forwardMs": 3.9062e-05,
+    "ratio": 0.9662891993295517,
+    "launchRatios": [
+      1.0,
+      0.947371257646393,
+      0.952360054612834
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 5.6640999999999995e-05,
+    "forwardMs": 5.4688e-05,
+    "ratio": 0.9788682667376796,
+    "launchRatios": [
+      0.9714302432744776,
+      1.076938224926646,
+      0.8965413746226232
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 6.0546999999999995e-05,
+    "forwardMs": 5.6640999999999995e-05,
+    "ratio": 0.9549911826444464,
+    "launchRatios": [
+      1.0,
+      0.9354881331857896,
+      0.9310216980632404
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 4.2969e-05,
+    "forwardMs": 3.9062e-05,
+    "ratio": 0.935293830738353,
+    "launchRatios": [
+      1.0,
+      0.9000051200655369,
+      0.90907398356955
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.009127273,
+    "forwardMs": 0.009109091,
+    "ratio": 1.0089710981941844,
+    "launchRatios": [
+      1.0317894507284218,
+      0.9980079482666949,
+      0.997495844371357
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.008877192999999999,
+    "forwardMs": 0.00862069,
+    "ratio": 0.9919782885610122,
+    "launchRatios": [
+      0.9711053933377365,
+      1.0091680613806024,
+      0.9960396731889045
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.0009375,
+    "forwardMs": 0.000947266,
+    "ratio": 1.0001885654619236,
+    "launchRatios": [
+      1.0020832,
+      0.9861330977812957,
+      1.0125263615831166
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.0009375,
+    "forwardMs": 0.000947266,
+    "ratio": 1.0081789518968307,
+    "launchRatios": [
+      1.0104170666666665,
+      1.0078745640317768,
+      1.0062496
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.005715909,
+    "forwardMs": 0.005781609,
+    "ratio": 1.012180387244652,
+    "launchRatios": [
+      1.0114942347752562,
+      1.0073582736607394,
+      1.0177154884467359
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.006532468,
+    "forwardMs": 0.005964286,
+    "ratio": 0.9230387384537518,
+    "launchRatios": [
+      0.8806022321428572,
+      0.974245955251847,
+      0.9166665646123334
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.0115,
+    "forwardMs": 0.011311111,
+    "ratio": 0.9908010733339687,
+    "launchRatios": [
+      1.013916508448316,
+      0.9835748695652174,
+      0.975325966971033
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.011363636,
+    "forwardMs": 0.011244444,
+    "ratio": 0.9854858174853807,
+    "launchRatios": [
+      0.9787233773884033,
+      0.9882583714523168,
+      0.9895111036643552
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.017275862,
+    "forwardMs": 0.017586207,
+    "ratio": 1.0033464409185113,
+    "launchRatios": [
+      1.01796408190804,
+      0.9961089882511478,
+      0.9961240599798697
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.018285714,
+    "forwardMs": 0.017448276000000002,
+    "ratio": 0.9730619860304224,
+    "launchRatios": [
+      0.9542026086594159,
+      0.9838603538825268,
+      0.9814031777348737
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.011860465,
+    "forwardMs": 0.011720930000000001,
+    "ratio": 0.988787888645691,
+    "launchRatios": [
+      0.9870064625914147,
+      0.9882352841983851,
+      0.9911264413518888
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.011952381,
+    "forwardMs": 0.011883721,
+    "ratio": 0.9803980997731218,
+    "launchRatios": [
+      0.971478593223574,
+      0.9942555378714919,
+      0.9756097425742575
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000947266,
+    "forwardMs": 0.0009492190000000001,
+    "ratio": 1.005995540943352,
+    "launchRatios": [
+      0.9917520527497028,
+      1.010395410946583,
+      1.0159999674880011
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.001412429,
+    "forwardMs": 0.001408451,
+    "ratio": 0.9941094772227218,
+    "launchRatios": [
+      0.9943820184943808,
+      1.0008157447259047,
+      0.987177506257068
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.0014044939999999998,
+    "forwardMs": 0.0014044939999999998,
+    "ratio": 1.0040542228103888,
+    "launchRatios": [
+      0.9971905305899885,
+      1.0150638360336364,
+      1.0
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000951172,
+    "forwardMs": 0.0009550779999999999,
+    "ratio": 1.0061043967414125,
+    "launchRatios": [
+      0.9877297979850861,
+      1.0205336153713522,
+      1.010330980670932
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.002609375,
+    "forwardMs": 0.002604167,
+    "ratio": 0.9938856507086838,
+    "launchRatios": [
+      0.9887006005649699,
+      0.9949749101194602,
+      0.998004119760479
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.002631579,
+    "forwardMs": 0.002543147,
+    "ratio": 0.9941457337692043,
+    "launchRatios": [
+      0.9899498534689501,
+      1.0270271194594576,
+      0.9663958406720831
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000132812,
+    "forwardMs": 0.000132812,
+    "ratio": 1.0048074466746288,
+    "launchRatios": [
+      1.0,
+      1.0,
+      1.0144917857619875
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000136719,
+    "forwardMs": 0.000134766,
+    "ratio": 0.9953554379895583,
+    "launchRatios": [
+      0.9718328141225338,
+      1.0294175225130258,
+      0.9857152261207294
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.00096875,
+    "forwardMs": 0.0009746090000000001,
+    "ratio": 1.009437643293298,
+    "launchRatios": [
+      1.010308614475765,
+      1.006048,
+      1.0119655548607556
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.0009726559999999999,
+    "forwardMs": 0.000992063,
+    "ratio": 1.0038600029098648,
+    "launchRatios": [
+      1.0040647783727983,
+      0.9878198240060407,
+      1.0199525834416279
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.002582474,
+    "forwardMs": 0.00257732,
+    "ratio": 1.0084606119121242,
+    "launchRatios": [
+      0.9980041754654534,
+      0.9980042393456817,
+      1.029703233901007
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.0024487800000000002,
+    "forwardMs": 0.00245098,
+    "ratio": 1.0023617880395497,
+    "launchRatios": [
+      1.0033165354271418,
+      1.0008984065534674,
+      1.002872075653392
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.002636842,
+    "forwardMs": 0.002623037,
+    "ratio": 0.9954902291953446,
+    "launchRatios": [
+      0.9947645706492841,
+      0.9966090717209211,
+      0.9950980153809998
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.002717391,
+    "forwardMs": 0.002702703,
+    "ratio": 0.999355412321859,
+    "launchRatios": [
+      0.9980081013872933,
+      1.0054943830690304,
+      0.9945948153946192
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.002109705,
+    "forwardMs": 0.002100418,
+    "ratio": 0.9937700836356256,
+    "launchRatios": [
+      0.9920319992365988,
+      0.993683493392206,
+      0.9955979627483464
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.0022070479999999996,
+    "forwardMs": 0.0022222220000000003,
+    "ratio": 1.010404999623757,
+    "launchRatios": [
+      1.0068752469361792,
+      1.001593808316427,
+      1.022866991940769
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000134766,
+    "forwardMs": 0.000132812,
+    "ratio": 0.9811263215934546,
+    "launchRatios": [
+      1.0,
+      0.9855007939688053,
+      0.958336
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000195312,
+    "forwardMs": 0.000203125,
+    "ratio": 1.0316976161067442,
+    "launchRatios": [
+      0.9797992335500286,
+      1.0400026624068157,
+      1.0776698546517407
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000199219,
+    "forwardMs": 0.00020703100000000002,
+    "ratio": 1.035564267998941,
+    "launchRatios": [
+      1.0,
+      1.039213127261958,
+      1.0686279923099704
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000134766,
+    "forwardMs": 0.000132812,
+    "ratio": 0.9763499299224044,
+    "launchRatios": [
+      0.9855007939688053,
+      0.9710090082068179,
+      0.9726044691326853
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.1465,
+    "forwardMs": 0.14725,
+    "ratio": 0.9955430576693974,
+    "launchRatios": [
+      1.0102389078498293,
+      0.9717138103161398,
+      1.0051194539249146
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.1365,
+    "forwardMs": 0.138,
+    "ratio": 1.0003806283199217,
+    "launchRatios": [
+      1.0274725274725274,
+      1.0132075471698114,
+      0.9616724738675958
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.01603125,
+    "forwardMs": 0.01584375,
+    "ratio": 0.9911142805060729,
+    "launchRatios": [
+      0.9883040935672515,
+      0.9792600867850099,
+      1.0059642645795221
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.0156875,
+    "forwardMs": 0.015424242,
+    "ratio": 0.9868038235628994,
+    "launchRatios": [
+      0.9928770039840638,
+      0.9735297391304348,
+      0.9941405665893573
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.09583333299999999,
+    "forwardMs": 0.096833333,
+    "ratio": 1.0035564191516309,
+    "launchRatios": [
+      0.9830795228426396,
+      1.0227670682214813,
+      1.0052173913224953
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.098666667,
+    "forwardMs": 0.0985,
+    "ratio": 1.0110751575362504,
+    "launchRatios": [
+      0.9983108074381392,
+      0.9880137054384032,
+      1.0479041916167664
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.19266666699999999,
+    "forwardMs": 0.19433333300000002,
+    "ratio": 1.0061067134647421,
+    "launchRatios": [
+      1.024096382058354,
+      0.9705882336148993,
+      1.024604565861855
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.184,
+    "forwardMs": 0.186,
+    "ratio": 1.0076540035223391,
+    "launchRatios": [
+      0.9963768097826088,
+      1.0158172231707958,
+      1.0108695652173914
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.271,
+    "forwardMs": 0.264333333,
+    "ratio": 0.9868132366463316,
+    "launchRatios": [
+      0.9427860708955224,
+      1.0449826989619377,
+      0.9753997527675277
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.268,
+    "forwardMs": 0.26066666699999996,
+    "ratio": 1.0107977644739246,
+    "launchRatios": [
+      0.9259917122557726,
+      1.009784735812133,
+      1.1044776119402986
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.18466666699999998,
+    "forwardMs": 0.18566666699999998,
+    "ratio": 1.0030340759751297,
+    "launchRatios": [
+      1.0054151624450989,
+      1.0090909109256199,
+      0.9946524064171123
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.18466666699999998,
+    "forwardMs": 0.18366666699999998,
+    "ratio": 1.0023286799813702,
+    "launchRatios": [
+      0.9963570109289618,
+      1.0198555920219214,
+      0.9910071978255524
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.016483871,
+    "forwardMs": 0.0160625,
+    "ratio": 0.9836025781237331,
+    "launchRatios": [
+      0.9744373757838799,
+      1.0019646365422397,
+      0.974658888888889
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.025,
+    "forwardMs": 0.02452381,
+    "ratio": 0.992309699472859,
+    "launchRatios": [
+      1.001926801548851,
+      0.9809524000000001,
+      0.9941634241245136
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.024761904999999997,
+    "forwardMs": 0.0252,
+    "ratio": 1.0139247645350364,
+    "launchRatios": [
+      1.0237499901562501,
+      1.0139442091077921,
+      1.0041745768659376
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.01640625,
+    "forwardMs": 0.016483871,
+    "ratio": 0.997084370790649,
+    "launchRatios": [
+      1.0296724470134875,
+      0.9850691047619048,
+      0.977304585428763
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 3.211,
+    "forwardMs": 3.264,
+    "ratio": 0.9940045986380751,
+    "launchRatios": [
+      0.9873697505525734,
+      1.0221114917471192,
+      0.9731663685152058
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 3.273,
+    "forwardMs": 3.16,
+    "ratio": 0.9824552685204991,
+    "launchRatios": [
+      0.9560036663611365,
+      0.994023277760302,
+      0.9978890229191797
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.22733333300000003,
+    "forwardMs": 0.225,
+    "ratio": 0.9951173228895769,
+    "launchRatios": [
+      1.0074626880708397,
+      0.9838945812827312,
+      0.9941348988183796
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.228,
+    "forwardMs": 0.227,
+    "ratio": 0.9966396724334947,
+    "launchRatios": [
+      1.0045045045045045,
+      0.9985380131578947,
+      0.9869565217391304
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 2.608,
+    "forwardMs": 2.65,
+    "ratio": 1.0156007521930435,
+    "launchRatios": [
+      1.0371819960861057,
+      1.0053571428571428,
+      1.0046012269938651
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 2.6,
+    "forwardMs": 2.599,
+    "ratio": 0.9860749099037939,
+    "launchRatios": [
+      0.975609756097561,
+      0.9831519831519832,
+      0.9996153846153846
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 6.828,
+    "forwardMs": 6.705,
+    "ratio": 0.9800802764316261,
+    "launchRatios": [
+      0.9911328543036233,
+      0.9819859402460457,
+      0.9672701949860725
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 6.77,
+    "forwardMs": 6.696,
+    "ratio": 0.9790260849513384,
+    "launchRatios": [
+      0.9816888619854721,
+      0.9890694239290989,
+      0.9664561403508772
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 4.065,
+    "forwardMs": 4.07,
+    "ratio": 1.0003641135274388,
+    "launchRatios": [
+      1.001230012300123,
+      0.9926017262638718,
+      1.0073152889539136
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 4.077,
+    "forwardMs": 4.068,
+    "ratio": 1.0005887780589862,
+    "launchRatios": [
+      1.006935843448105,
+      0.9970681651600293,
+      0.9977924944812362
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 6.064,
+    "forwardMs": 5.932,
+    "ratio": 0.9792598311127503,
+    "launchRatios": [
+      0.9658641160949868,
+      0.9913101604278075,
+      0.980772391125719
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 5.978,
+    "forwardMs": 5.915,
+    "ratio": 0.989664566699704,
+    "launchRatios": [
+      0.9853411962931761,
+      0.9894613583138173,
+      0.9942110486271916
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.22366666699999999,
+    "forwardMs": 0.224,
+    "ratio": 0.9961963425220546,
+    "launchRatios": [
+      1.0,
+      1.0014903114731888,
+      0.9871611983064748
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.3835,
+    "forwardMs": 0.388,
+    "ratio": 1.0074434080406574,
+    "launchRatios": [
+      1.0119205298013245,
+      0.9987325728770595,
+      1.0117340286831813
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.3865,
+    "forwardMs": 0.3795,
+    "ratio": 0.990939369659718,
+    "launchRatios": [
+      0.9973404255319149,
+      0.981888745148771,
+      0.9936548223350253
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.229666667,
+    "forwardMs": 0.228,
+    "ratio": 0.9947309932928579,
+    "launchRatios": [
+      1.0254872579092762,
+      0.994194481866191,
+      0.9654178673853283
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.00041406200000000003,
+    "forwardMs": 0.00043945299999999997,
+    "ratio": 1.0477984341795326,
+    "launchRatios": [
+      1.0892845714285715,
+      0.9950498186454295,
+      1.0613217344262453
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.00041210899999999997,
+    "forwardMs": 0.00041796899999999997,
+    "ratio": 1.0011261696012272,
+    "launchRatios": [
+      1.0331756889560773,
+      1.0142195390054574,
+      0.9575474204346208
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 3.9062e-05,
+    "forwardMs": 4.1015999999999995e-05,
+    "ratio": 1.0007654314873689,
+    "launchRatios": [
+      1.0500230402949158,
+      1.0500230402949158,
+      0.90907398356955
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 3.9062e-05,
+    "forwardMs": 4.1015999999999995e-05,
+    "ratio": 1.0476949951251517,
+    "launchRatios": [
+      1.150017920229379,
+      0.952360054612834,
+      1.0500230402949158
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000378906,
+    "forwardMs": 0.00037304700000000005,
+    "ratio": 0.9936664866927316,
+    "launchRatios": [
+      1.0154655772144014,
+      1.016761582224714,
+      0.9502493771938316
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.00037304700000000005,
+    "forwardMs": 0.000375,
+    "ratio": 0.9999339646402106,
+    "launchRatios": [
+      0.9945949386706816,
+      1.0,
+      1.0052352652614818
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000408203,
+    "forwardMs": 0.00041406200000000003,
+    "ratio": 1.0171292063533999,
+    "launchRatios": [
+      1.0143531527205827,
+      1.0,
+      1.0373831552100754
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000472656,
+    "forwardMs": 0.000451172,
+    "ratio": 0.9744509751029007,
+    "launchRatios": [
+      0.9876040926170407,
+      0.9855778461538462,
+      0.950618298430919
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000408203,
+    "forwardMs": 0.000427734,
+    "ratio": 1.018153204815858,
+    "launchRatios": [
+      1.0225210680959607,
+      0.9850755773374973,
+      1.047846292163458
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000402344,
+    "forwardMs": 0.000408203,
+    "ratio": 1.001085813962653,
+    "launchRatios": [
+      0.9695649560681985,
+      0.9951459447636849,
+      1.0398010076978332
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.00032226600000000003,
+    "forwardMs": 0.000333984,
+    "ratio": 1.0024614888417527,
+    "launchRatios": [
+      0.9780205868866202,
+      0.9939028197507429,
+      1.0363612667796167
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000291016,
+    "forwardMs": 0.000292969,
+    "ratio": 1.0066083404576862,
+    "launchRatios": [
+      1.0,
+      1.013157052631579,
+      1.0067109712180773
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 4.1015999999999995e-05,
+    "forwardMs": 3.9062e-05,
+    "ratio": 0.9679823699711535,
+    "launchRatios": [
+      0.952360054612834,
+      0.952360054612834,
+      1.0
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 6.4453e-05,
+    "forwardMs": 5.8594e-05,
+    "ratio": 0.9216323902165401,
+    "launchRatios": [
+      0.861119012401866,
+      1.0,
+      0.9090965509751291
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 5.4688e-05,
+    "forwardMs": 5.2734e-05,
+    "ratio": 0.9867616824496627,
+    "launchRatios": [
+      0.9642700409596255,
+      0.9642700409596255,
+      1.0333310577874868
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 4.1015999999999995e-05,
+    "forwardMs": 3.9062e-05,
+    "ratio": 0.9838609505266247,
+    "launchRatios": [
+      1.0476155646576946,
+      1.0,
+      0.90907398356955
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.009351852,
+    "forwardMs": 0.009314815,
+    "ratio": 0.9933565988227233,
+    "launchRatios": [
+      0.9880357398803574,
+      0.996039607983531,
+      0.9960159202711065
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.009528301999999999,
+    "forwardMs": 0.00954717,
+    "ratio": 0.998496759892235,
+    "launchRatios": [
+      0.9935296621564679,
+      1.0,
+      1.0019802059170668
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000976562,
+    "forwardMs": 0.0009609379999999999,
+    "ratio": 0.9880128626271588,
+    "launchRatios": [
+      0.9551481251294801,
+      1.0138618950972904,
+      0.9959516771623184
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000970703,
+    "forwardMs": 0.000966797,
+    "ratio": 1.0047123130078395,
+    "launchRatios": [
+      1.002040686247363,
+      1.0162273898701808,
+      0.9959761121578897
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.0062875,
+    "forwardMs": 0.0063,
+    "ratio": 1.0033262371727785,
+    "launchRatios": [
+      1.0,
+      1.008,
+      1.001995972103696
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.006329113999999999,
+    "forwardMs": 0.006275,
+    "ratio": 0.988169633072839,
+    "launchRatios": [
+      0.9672925627611015,
+      0.9935803200000001,
+      1.0039999279520009
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.022863636,
+    "forwardMs": 0.021956522,
+    "ratio": 0.9739456588076439,
+    "launchRatios": [
+      0.9565217448353359,
+      0.978682165100505,
+      0.9868875198933035
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.022,
+    "forwardMs": 0.022434783,
+    "ratio": 1.0132107540048934,
+    "launchRatios": [
+      1.0079051363636364,
+      1.0320000386400008,
+      1.0
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.018178571,
+    "forwardMs": 0.018518519,
+    "ratio": 1.002317207754692,
+    "launchRatios": [
+      1.005859369129181,
+      1.0187004798121921,
+      0.9827244987362296
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.018214286,
+    "forwardMs": 0.018357143,
+    "ratio": 1.0015487930839675,
+    "launchRatios": [
+      1.0078431292887353,
+      0.9873363548591635,
+      1.0096207502423833
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.021956522,
+    "forwardMs": 0.021291667,
+    "ratio": 0.9867220465014341,
+    "launchRatios": [
+      0.9659240657513971,
+      1.0256410414201185,
+      0.9697194756072934
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.02226087,
+    "forwardMs": 0.021956522,
+    "ratio": 0.9928677752879483,
+    "launchRatios": [
+      0.9770507621669774,
+      0.9904214692752603,
+      1.0114328907705628
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000970703,
+    "forwardMs": 0.000970703,
+    "ratio": 1.0053198005414201,
+    "launchRatios": [
+      1.0159853219779893,
+      1.0020702616925263,
+      0.9979920958694544
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.001488095,
+    "forwardMs": 0.0014577260000000001,
+    "ratio": 0.99300765894789,
+    "launchRatios": [
+      0.9689073814975689,
+      1.0145770200350508,
+      0.996071487371438
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.001464912,
+    "forwardMs": 0.001439655,
+    "ratio": 0.9952078217302397,
+    "launchRatios": [
+      0.9827586913070546,
+      1.0,
+      1.002985024477604
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.0009570309999999999,
+    "forwardMs": 0.0009589840000000001,
+    "ratio": 0.9973086158575178,
+    "launchRatios": [
+      0.9979425190604064,
+      0.9919683834778176,
+      1.002040686247363
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.00273224,
+    "forwardMs": 0.002656085,
+    "ratio": 0.9845514081386945,
+    "launchRatios": [
+      0.9721272655403626,
+      0.9879517283505266,
+      0.9937024110328045
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.002798883,
+    "forwardMs": 0.002820225,
+    "ratio": 1.0059686914009496,
+    "launchRatios": [
+      1.0,
+      1.0076251847612065,
+      1.010309367080288
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000146484,
+    "forwardMs": 0.00014843799999999998,
+    "ratio": 1.030431080721775,
+    "launchRatios": [
+      1.013339340815379,
+      1.0512786850811322,
+      1.027032262974725
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.00014843799999999998,
+    "forwardMs": 0.000146484,
+    "ratio": 0.9957651532050449,
+    "launchRatios": [
+      1.0405449349966442,
+      0.9615344220973587,
+      0.9868362548673522
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.0009726559999999999,
+    "forwardMs": 0.001008065,
+    "ratio": 1.0132020691258579,
+    "launchRatios": [
+      1.0364044430919053,
+      1.0163265348771355,
+      0.9874740086388755
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.001033058,
+    "forwardMs": 0.0010351969999999999,
+    "ratio": 1.0109386951671042,
+    "launchRatios": [
+      1.0,
+      1.0310415347229391,
+      1.0020705517018405
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.0026648939999999997,
+    "forwardMs": 0.0026791439999999996,
+    "ratio": 1.0001400692162246,
+    "launchRatios": [
+      1.0053473046207466,
+      1.0074755528372619,
+      0.9877154491017964
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.002824859,
+    "forwardMs": 0.002717391,
+    "ratio": 0.99662879670357,
+    "launchRatios": [
+      0.9600365022815693,
+      1.0311279253229986,
+      1.0
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.002762431,
+    "forwardMs": 0.002752747,
+    "ratio": 0.9988300905646876,
+    "launchRatios": [
+      0.9964943920771233,
+      0.9980039422591978,
+      1.002000033947999
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.002595855,
+    "forwardMs": 0.002595855,
+    "ratio": 0.9891374022191953,
+    "launchRatios": [
+      0.972677357303052,
+      0.9949495644569504,
+      1.0
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.002136752,
+    "forwardMs": 0.0020875,
+    "ratio": 0.9874234773773002,
+    "launchRatios": [
+      0.9896871416342288,
+      0.976950062524804,
+      0.9957264738642413
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.001937984,
+    "forwardMs": 0.00194186,
+    "ratio": 0.9938115851909946,
+    "launchRatios": [
+      1.0020000165120042,
+      0.9795902114142118,
+      1.0
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000154297,
+    "forwardMs": 0.00014843799999999998,
+    "ratio": 0.9833379654160123,
+    "launchRatios": [
+      0.9620277775977497,
+      0.9883728545148212,
+      1.0
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000222656,
+    "forwardMs": 0.000230469,
+    "ratio": 1.0102442948685526,
+    "launchRatios": [
+      1.0350900043115838,
+      1.0333354666666665,
+      0.9639616784365098
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000216797,
+    "forwardMs": 0.000212891,
+    "ratio": 0.9910936784884911,
+    "launchRatios": [
+      0.9913798430451708,
+      0.9819831455232314,
+      1.0
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.000152344,
+    "forwardMs": 0.000150391,
+    "ratio": 0.9952518118894909,
+    "launchRatios": [
+      0.987180328729717,
+      1.0117639263685427,
+      0.9870138505628661
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.1555,
+    "forwardMs": 0.15725,
+    "ratio": 1.0015313312687586,
+    "launchRatios": [
+      1.0112540192926045,
+      0.993421052631579,
+      1.0
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.1535,
+    "forwardMs": 0.153,
+    "ratio": 1.0017203287895409,
+    "launchRatios": [
+      0.9804878048780488,
+      1.028523489932886,
+      0.996742671009772
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.015212120999999999,
+    "forwardMs": 0.015058824,
+    "ratio": 0.9946780631254974,
+    "launchRatios": [
+      0.9783220236021,
+      1.0039216,
+      1.001996007984032
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.015117647000000001,
+    "forwardMs": 0.015272727000000002,
+    "ratio": 1.0067882325793027,
+    "launchRatios": [
+      1.0181580042146643,
+      1.0102582101566466,
+      0.9921259842519685
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.1186,
+    "forwardMs": 0.12,
+    "ratio": 0.9947064973577816,
+    "launchRatios": [
+      0.9745916515426497,
+      1.0118043844856661,
+      0.9980806142034548
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.12,
+    "forwardMs": 0.1208,
+    "ratio": 1.0014317083648085,
+    "launchRatios": [
+      1.0411985018726593,
+      1.0066666666666666,
+      0.9581749049429658
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.3765,
+    "forwardMs": 0.379,
+    "ratio": 0.997896005443357,
+    "launchRatios": [
+      1.0,
+      0.974293059125964,
+      1.0199203187250996
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.369,
+    "forwardMs": 0.3745,
+    "ratio": 1.0143950588177895,
+    "launchRatios": [
+      1.0027359781121752,
+      1.0256739409499358,
+      1.0149051490514904
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.261,
+    "forwardMs": 0.264,
+    "ratio": 1.033766701818157,
+    "launchRatios": [
+      1.0864197530864197,
+      1.0188323917137476,
+      0.9980842911877394
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.2605,
+    "forwardMs": 0.2595,
+    "ratio": 0.9991686395287782,
+    "launchRatios": [
+      0.9917197439595927,
+      1.0,
+      1.0058365758754864
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.368,
+    "forwardMs": 0.3755,
+    "ratio": 1.0233828363492032,
+    "launchRatios": [
+      1.0203804347826086,
+      1.030942334739803,
+      1.0188679245283019
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.369,
+    "forwardMs": 0.3685,
+    "ratio": 0.992364796769488,
+    "launchRatios": [
+      0.9986449864498645,
+      0.9826666666666667,
+      0.9958563535911602
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.015,
+    "forwardMs": 0.015181818,
+    "ratio": 1.0042529060001524,
+    "launchRatios": [
+      1.0059055592411201,
+      1.0121212,
+      0.9948086693227092
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.02585,
+    "forwardMs": 0.0257,
+    "ratio": 0.9916701489130612,
+    "launchRatios": [
+      0.9827963273453093,
+      0.9865642994241842,
+      1.0058027079303675
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.0254,
+    "forwardMs": 0.02525,
+    "ratio": 1.002550814270369,
+    "launchRatios": [
+      1.005905505952012,
+      0.9940944881889764,
+      1.0077071290944124
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "gcc",
+    "backwardMs": 0.015363636,
+    "forwardMs": 0.015272727000000002,
+    "ratio": 0.9967122472015301,
+    "launchRatios": [
+      0.9940828460137952,
+      1.0,
+      0.9960629921259843
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "11",
+    "compiler": "clang",
+    "backwardMs": 1.666834,
+    "forwardMs": 1.81975,
+    "ratio": 1.1029539771878938,
+    "launchRatios": [
+      1.116333821376281,
+      1.0917403892649178,
+      1.1009274822392758
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "15",
+    "compiler": "clang",
+    "backwardMs": 2.409,
+    "forwardMs": 2.4245,
+    "ratio": 0.9963641068605664,
+    "launchRatios": [
+      1.016277628017657,
+      0.9997924449979244,
+      0.973491146806647
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "8",
+    "compiler": "clang",
+    "backwardMs": 2.370458,
+    "forwardMs": 2.419625,
+    "ratio": 1.0068105761878405,
+    "launchRatios": [
+      1.0226606974833907,
+      1.0207415613354043,
+      0.9776782262844577
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "11",
+    "compiler": "clang",
+    "backwardMs": 1.676375,
+    "forwardMs": 1.665083,
+    "ratio": 0.9936171970646362,
+    "launchRatios": [
+      0.9994184687760832,
+      0.9932640369845649,
+      0.9882008346386906
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "15",
+    "compiler": "clang",
+    "backwardMs": 2.392666,
+    "forwardMs": 2.425458,
+    "ratio": 1.003102258223773,
+    "launchRatios": [
+      1.0012613214107629,
+      1.0137052141836762,
+      0.9944352357103199
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "8",
+    "compiler": "clang",
+    "backwardMs": 2.440792,
+    "forwardMs": 2.439,
+    "ratio": 1.0059614621339183,
+    "launchRatios": [
+      0.9959197670264406,
+      1.0255439924314096,
+      0.9967021224683325
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "11",
+    "compiler": "clang",
+    "backwardMs": 1.10775,
+    "forwardMs": 1.15325,
+    "ratio": 1.0548498136332412,
+    "launchRatios": [
+      1.0569282414449341,
+      1.0667058684054536,
+      1.0410742496050553
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "15",
+    "compiler": "clang",
+    "backwardMs": 1.062333,
+    "forwardMs": 1.127,
+    "ratio": 1.0513085884418463,
+    "launchRatios": [
+      1.0681624099715379,
+      1.0325152282758796,
+      1.0535541950990317
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "8",
+    "compiler": "clang",
+    "backwardMs": 1.12075,
+    "forwardMs": 1.112917,
+    "ratio": 1.0005396922200693,
+    "launchRatios": [
+      1.0038439346853099,
+      1.0048071997230876,
+      0.9930109301806825
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "11",
+    "compiler": "clang",
+    "backwardMs": 1.09925,
+    "forwardMs": 1.139208,
+    "ratio": 1.0280662896585804,
+    "launchRatios": [
+      1.013026245808764,
+      1.0363502387991812,
+      1.0349898896402483
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "15",
+    "compiler": "clang",
+    "backwardMs": 1.103875,
+    "forwardMs": 1.145542,
+    "ratio": 1.0488007986677212,
+    "launchRatios": [
+      1.0424539263178592,
+      1.037746121617031,
+      1.0664267734360482
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "8",
+    "compiler": "clang",
+    "backwardMs": 1.092458,
+    "forwardMs": 1.186375,
+    "ratio": 1.0884912754482516,
+    "launchRatios": [
+      1.1249860406532792,
+      1.0751546683609718,
+      1.0662444379135896
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "11",
+    "compiler": "clang",
+    "backwardMs": 2.437041,
+    "forwardMs": 2.673417,
+    "ratio": 1.0788025793092375,
+    "launchRatios": [
+      1.0969930337651275,
+      1.0557154337729568,
+      1.0841145871902342
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "15",
+    "compiler": "clang",
+    "backwardMs": 4.957041,
+    "forwardMs": 4.91675,
+    "ratio": 1.0018347738217823,
+    "launchRatios": [
+      0.9802025476502582,
+      1.0065081419328477,
+      1.0191900773061995
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "8",
+    "compiler": "clang",
+    "backwardMs": 3.08375,
+    "forwardMs": 3.144208,
+    "ratio": 1.00311308915193,
+    "launchRatios": [
+      1.0276887294709274,
+      0.9632876502564888,
+      1.0196053506282934
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "11",
+    "compiler": "clang",
+    "backwardMs": 2.4705,
+    "forwardMs": 2.483417,
+    "ratio": 1.0188092093594892,
+    "launchRatios": [
+      1.0052284962558187,
+      1.0477752507351912,
+      1.004027617016956
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "15",
+    "compiler": "clang",
+    "backwardMs": 4.951,
+    "forwardMs": 4.976792,
+    "ratio": 1.0040274782644816,
+    "launchRatios": [
+      0.9963668775279763,
+      1.0105573162784127,
+      1.005209452635831
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "8",
+    "compiler": "clang",
+    "backwardMs": 3.063542,
+    "forwardMs": 3.141292,
+    "ratio": 1.0194331906264509,
+    "launchRatios": [
+      1.0262685320526206,
+      1.0067712973837282,
+      1.025379119985951
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "11",
+    "compiler": "clang",
+    "backwardMs": 3.882791,
+    "forwardMs": 4.003292,
+    "ratio": 1.0057634151227695,
+    "launchRatios": [
+      0.9921793408301557,
+      0.9945441512628757,
+      1.031034634622363
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "15",
+    "compiler": "clang",
+    "backwardMs": 1.778458,
+    "forwardMs": 1.85625,
+    "ratio": 1.0091297967533204,
+    "launchRatios": [
+      0.9869609707170622,
+      0.9975812031456256,
+      1.0437412634990537
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "8",
+    "compiler": "clang",
+    "backwardMs": 2.590833,
+    "forwardMs": 2.633792,
+    "ratio": 0.9893811588893977,
+    "launchRatios": [
+      0.9887129745918268,
+      1.016581153628968,
+      0.9635596821712347
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "11",
+    "compiler": "clang",
+    "backwardMs": 3.874,
+    "forwardMs": 3.946333,
+    "ratio": 1.014840887438038,
+    "launchRatios": [
+      1.0169636490949843,
+      1.0089144145413556,
+      1.018671399070728
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "15",
+    "compiler": "clang",
+    "backwardMs": 1.778833,
+    "forwardMs": 1.786292,
+    "ratio": 1.0100939208184907,
+    "launchRatios": [
+      1.005140725864295,
+      1.0210361686206035,
+      1.0041931985745711
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "8",
+    "compiler": "clang",
+    "backwardMs": 2.615084,
+    "forwardMs": 2.6205,
+    "ratio": 0.9971328831062758,
+    "launchRatios": [
+      1.0158195411976267,
+      0.9739665282496539,
+      1.0020710615796662
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "11",
+    "compiler": "clang",
+    "backwardMs": 2.008917,
+    "forwardMs": 2.041042,
+    "ratio": 0.9724105149935277,
+    "launchRatios": [
+      1.0159912032204417,
+      0.9750698492334424,
+      0.9281608884741308
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "15",
+    "compiler": "clang",
+    "backwardMs": 2.661166,
+    "forwardMs": 2.712167,
+    "ratio": 1.032146672852186,
+    "launchRatios": [
+      1.024369058533996,
+      1.0191649074127658,
+      1.0532302827380953
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "8",
+    "compiler": "clang",
+    "backwardMs": 3.088834,
+    "forwardMs": 2.772667,
+    "ratio": 0.9252476966183942,
+    "launchRatios": [
+      1.0195971500804413,
+      0.888185962728978,
+      0.8746645395386736
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "11",
+    "compiler": "clang",
+    "backwardMs": 2.244125,
+    "forwardMs": 1.989875,
+    "ratio": 0.8990045785643553,
+    "launchRatios": [
+      0.9501421005284841,
+      0.8631796357154793,
+      0.8859229715568175
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "15",
+    "compiler": "clang",
+    "backwardMs": 2.685792,
+    "forwardMs": 2.848417,
+    "ratio": 1.0603553599365592,
+    "launchRatios": [
+      1.0727900468143805,
+      1.066615731970309,
+      1.0419133136515655
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "8",
+    "compiler": "clang",
+    "backwardMs": 2.776708,
+    "forwardMs": 2.842542,
+    "ratio": 0.9841774537685205,
+    "launchRatios": [
+      1.0162250931543453,
+      1.0237093709529415,
+      0.9163336637647842
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "11",
+    "compiler": "clang",
+    "backwardMs": 1.378833,
+    "forwardMs": 1.417541,
+    "ratio": 1.0357968091993068,
+    "launchRatios": [
+      1.0280730153687938,
+      1.0459873961553807,
+      1.0334115115653577
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "15",
+    "compiler": "clang",
+    "backwardMs": 1.324,
+    "forwardMs": 1.375375,
+    "ratio": 1.0355844807514143,
+    "launchRatios": [
+      1.017696372984162,
+      1.0388028700906344,
+      1.050522196050009
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "8",
+    "compiler": "clang",
+    "backwardMs": 1.312667,
+    "forwardMs": 1.368625,
+    "ratio": 1.035997895791125,
+    "launchRatios": [
+      1.0480183656388575,
+      1.0258382362015652,
+      1.0342578932918458
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "11",
+    "compiler": "clang",
+    "backwardMs": 1.348625,
+    "forwardMs": 1.426458,
+    "ratio": 1.0654988512731307,
+    "launchRatios": [
+      1.057712855686347,
+      1.0449432783353785,
+      1.0944563816072197
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "15",
+    "compiler": "clang",
+    "backwardMs": 1.381125,
+    "forwardMs": 1.417417,
+    "ratio": 1.031389352511608,
+    "launchRatios": [
+      1.0141790207258576,
+      1.0325699274718294,
+      1.0476925024871122
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "8",
+    "compiler": "clang",
+    "backwardMs": 1.32275,
+    "forwardMs": 1.39075,
+    "ratio": 1.0345179740015158,
+    "launchRatios": [
+      1.017025035163453,
+      1.0514080514080515,
+      1.0354071979115764
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "11",
+    "compiler": "clang",
+    "backwardMs": 5.97225,
+    "forwardMs": 5.613541,
+    "ratio": 0.9418498002733461,
+    "launchRatios": [
+      0.901264177714624,
+      0.9862656793678292,
+      0.9399373770354557
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "15",
+    "compiler": "clang",
+    "backwardMs": 7.867041,
+    "forwardMs": 7.9185,
+    "ratio": 1.0016527296754099,
+    "launchRatios": [
+      0.9777500841803163,
+      1.0212203883487634,
+      1.0064777949829669
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "8",
+    "compiler": "clang",
+    "backwardMs": 7.1165,
+    "forwardMs": 6.76475,
+    "ratio": 0.9583579441869328,
+    "launchRatios": [
+      0.9452739408417059,
+      0.9814535421626406,
+      0.9487587831887874
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "11",
+    "compiler": "clang",
+    "backwardMs": 5.670458,
+    "forwardMs": 5.361,
+    "ratio": 0.9474274079947589,
+    "launchRatios": [
+      0.9300687880943656,
+      0.9615065575608116,
+      0.950978091601425
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "15",
+    "compiler": "clang",
+    "backwardMs": 7.859083,
+    "forwardMs": 8.038208,
+    "ratio": 1.0101426773074198,
+    "launchRatios": [
+      1.0036277430100746,
+      1.0270971816940984,
+      0.9999170281911337
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "8",
+    "compiler": "clang",
+    "backwardMs": 6.977083,
+    "forwardMs": 6.771667,
+    "ratio": 0.9838063921901318,
+    "launchRatios": [
+      0.9703349867876044,
+      0.9818516701796317,
+      0.9994506300125712
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "11",
+    "compiler": "clang",
+    "backwardMs": 3.605125,
+    "forwardMs": 4.210125,
+    "ratio": 1.1689029933820019,
+    "launchRatios": [
+      1.178301818966137,
+      1.1678166499081168,
+      1.1606578189922365
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "15",
+    "compiler": "clang",
+    "backwardMs": 2.289375,
+    "forwardMs": 2.070417,
+    "ratio": 0.9313177187841725,
+    "launchRatios": [
+      0.9107771578319463,
+      0.8799528255528255,
+      1.0079107492234078
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "8",
+    "compiler": "clang",
+    "backwardMs": 2.857625,
+    "forwardMs": 2.967875,
+    "ratio": 0.888418417137283,
+    "launchRatios": [
+      1.0313031766379144,
+      0.648222906946034,
+      1.0489189449280434
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "11",
+    "compiler": "clang",
+    "backwardMs": 3.576417,
+    "forwardMs": 4.160167,
+    "ratio": 1.1619181072712799,
+    "launchRatios": [
+      1.135913401597185,
+      1.1810405742125032,
+      1.169274606381032
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "15",
+    "compiler": "clang",
+    "backwardMs": 2.099375,
+    "forwardMs": 2.105542,
+    "ratio": 1.0089243644999089,
+    "launchRatios": [
+      0.9969025853138417,
+      1.0017716425445395,
+      1.0283817802917534
+    ]
+  },
+  {
+    "stage": "kernel",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "8",
+    "compiler": "clang",
+    "backwardMs": 2.90325,
+    "forwardMs": 2.91275,
+    "ratio": 0.9595619601907487,
+    "launchRatios": [
+      0.8776915913883406,
+      1.003363630725457,
+      1.003272194953931
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.1656455,
+    "forwardMs": 0.169611,
+    "ratio": 1.022228865446891,
+    "launchRatios": [
+      0.9688993593814134,
+      1.0507066031401715,
+      1.0492628353924494
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.1471045,
+    "forwardMs": 0.152802,
+    "ratio": 1.030171132818573,
+    "launchRatios": [
+      1.0387309701606682,
+      1.0004925428333313,
+      1.051988982941802
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.024333429,
+    "forwardMs": 0.025072900000000002,
+    "ratio": 1.0188472988604729,
+    "launchRatios": [
+      1.0005556280160626,
+      1.0258522145446924,
+      1.0303890997031286
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.024240143,
+    "forwardMs": 0.024448429,
+    "ratio": 1.0020932202202897,
+    "launchRatios": [
+      1.0095842752079764,
+      1.0084639423552357,
+      0.9883742435017813
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.1144332,
+    "forwardMs": 0.1222,
+    "ratio": 1.0254251907230985,
+    "launchRatios": [
+      1.0738929762829592,
+      0.9872154576241465,
+      1.0170422569673836
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.127073,
+    "forwardMs": 0.133344,
+    "ratio": 1.029234351184851,
+    "launchRatios": [
+      1.0858266508227554,
+      0.9770505765306878,
+      1.0276974418161045
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.213375,
+    "forwardMs": 0.213111,
+    "ratio": 0.9970178014057176,
+    "launchRatios": [
+      0.9836017143517938,
+      1.0090482343292324,
+      0.9985677454141856
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.20584733300000002,
+    "forwardMs": 0.212875,
+    "ratio": 1.0374266338578664,
+    "launchRatios": [
+      1.0733874662904825,
+      1.0341401897104006,
+      1.0058570034336478
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.265513667,
+    "forwardMs": 0.272264,
+    "ratio": 1.0419050185563965,
+    "launchRatios": [
+      0.993853438489574,
+      1.0786890774018645,
+      1.0550323196733975
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.267639,
+    "forwardMs": 0.273271,
+    "ratio": 1.0262338816229537,
+    "launchRatios": [
+      1.021043270973214,
+      1.0060964034581221,
+      1.0520958389992643
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.18255533300000001,
+    "forwardMs": 0.18305566699999998,
+    "ratio": 1.0004016947224557,
+    "launchRatios": [
+      0.9881495371216356,
+      1.002740725191523,
+      1.010443259395993
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.18925,
+    "forwardMs": 0.188514,
+    "ratio": 0.9801863806901896,
+    "launchRatios": [
+      0.9451279658180524,
+      0.9896475331520427,
+      1.0068269484808454
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.02491281,
+    "forwardMs": 0.024627048,
+    "ratio": 0.9990706810942522,
+    "launchRatios": [
+      1.0042569978562386,
+      1.0045097006875963,
+      0.9885295155383916
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.035516599999999995,
+    "forwardMs": 0.035135932999999994,
+    "ratio": 0.9935696503431883,
+    "launchRatios": [
+      1.014793157913418,
+      0.977006188422313,
+      0.989281997713745
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.034955599999999996,
+    "forwardMs": 0.0343916,
+    "ratio": 0.9728805590866328,
+    "launchRatios": [
+      0.964149452375509,
+      0.970730323571392,
+      0.9838652461980341
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.023976189999999998,
+    "forwardMs": 0.023902761999999998,
+    "ratio": 0.9980066762644403,
+    "launchRatios": [
+      0.9897091263957045,
+      0.9969374617068016,
+      1.0074531263668438
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.188486,
+    "forwardMs": 0.176972333,
+    "ratio": 0.962392400690592,
+    "launchRatios": [
+      0.9162201277548464,
+      1.0271651208413624,
+      0.9471449829172143
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.18172266699999998,
+    "forwardMs": 0.171833,
+    "ratio": 0.9625383753460987,
+    "launchRatios": [
+      0.9455782420362563,
+      1.0161906584481006,
+      0.9280716180093844
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.034680800000000005,
+    "forwardMs": 0.0345834,
+    "ratio": 1.0036942614146227,
+    "launchRatios": [
+      1.0264033906904595,
+      0.9995117471338607,
+      0.9855946616914135
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.033411688,
+    "forwardMs": 0.033738867,
+    "ratio": 1.0050641616610363,
+    "launchRatios": [
+      1.0097923517063847,
+      1.0064894321712705,
+      0.9989415225414615
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.16302075,
+    "forwardMs": 0.1524895,
+    "ratio": 0.9281872691240368,
+    "launchRatios": [
+      0.9099314670000328,
+      0.9000956783893208,
+      0.9763588377553164
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.155479,
+    "forwardMs": 0.1395315,
+    "ratio": 0.8893923377557136,
+    "launchRatios": [
+      0.8908262015818292,
+      0.8800080485210843,
+      0.8974298779899537
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.4030215,
+    "forwardMs": 0.3938955,
+    "ratio": 0.9919809930060765,
+    "launchRatios": [
+      0.9826077717330122,
+      0.976802231866088,
+      1.0170052962435006
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.4046665,
+    "forwardMs": 0.3951665,
+    "ratio": 0.9765346918439488,
+    "launchRatios": [
+      0.9766276674743276,
+      0.9898737252917644,
+      0.9632836944013118
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.2891875,
+    "forwardMs": 0.276667,
+    "ratio": 0.9571418824715798,
+    "launchRatios": [
+      0.9551611890536156,
+      0.9436645774800086,
+      0.9728248161451218
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.2907085,
+    "forwardMs": 0.2892705,
+    "ratio": 1.0103750691758417,
+    "launchRatios": [
+      0.9615869505019633,
+      0.9682694560669456,
+      1.1078043632273566
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.374979,
+    "forwardMs": 0.3739165,
+    "ratio": 0.9872109619249316,
+    "launchRatios": [
+      0.9733443272586381,
+      0.9971665079911142,
+      0.9912785799290175
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.3731455,
+    "forwardMs": 0.3737085,
+    "ratio": 1.002503020356586,
+    "launchRatios": [
+      1.0076206911958536,
+      1.001508794826683,
+      0.9984014998664611
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.0346998,
+    "forwardMs": 0.034863867,
+    "ratio": 1.0043127461576253,
+    "launchRatios": [
+      1.0048629832600549,
+      1.0088146617559755,
+      0.9992834390408837
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.047583091,
+    "forwardMs": 0.047356091,
+    "ratio": 1.00229328849021,
+    "launchRatios": [
+      1.0148511534041684,
+      0.9952293977707333,
+      0.9969168145862716
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.046450727,
+    "forwardMs": 0.046568273,
+    "ratio": 0.9939711236206346,
+    "launchRatios": [
+      0.9805546529262468,
+      1.0025305524281676,
+      0.9989687009357462
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "array",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.034866667000000004,
+    "forwardMs": 0.034711133,
+    "ratio": 0.9949914605419339,
+    "launchRatios": [
+      0.9847627810034204,
+      0.993720839747147,
+      1.0066118450610722
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 3.082166,
+    "forwardMs": 3.204791,
+    "ratio": 1.0468756861834305,
+    "launchRatios": [
+      1.0397853327822058,
+      1.056247900978101,
+      1.0446619925198442
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 3.079333,
+    "forwardMs": 3.160416,
+    "ratio": 1.0232029590156468,
+    "launchRatios": [
+      1.0174239897601385,
+      1.0100185034385585,
+      1.0424471793079866
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.22236133300000002,
+    "forwardMs": 0.22349966699999999,
+    "ratio": 1.0122281104875437,
+    "launchRatios": [
+      1.0054991392217216,
+      1.001560523114871,
+      1.0298554703341072
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.222472,
+    "forwardMs": 0.22269433300000002,
+    "ratio": 1.0061641473599292,
+    "launchRatios": [
+      0.9990635540652306,
+      1.0001856386394974,
+      1.0193721957245185
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 2.423417,
+    "forwardMs": 2.407708,
+    "ratio": 0.9960722620334391,
+    "launchRatios": [
+      0.9573775375843282,
+      0.9947108915831547,
+      1.0377492591993966
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 2.377125,
+    "forwardMs": 2.411166,
+    "ratio": 1.0284500858235777,
+    "launchRatios": [
+      0.9864609040771094,
+      1.0143202397854552,
+      1.087163059123332
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 3.656667,
+    "forwardMs": 3.848375,
+    "ratio": 1.0380086678108165,
+    "launchRatios": [
+      1.029956515044985,
+      1.0229151153697718,
+      1.061559778087216
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 3.703125,
+    "forwardMs": 3.723042,
+    "ratio": 1.0048181881167837,
+    "launchRatios": [
+      1.0151019387116949,
+      0.9940843621399177,
+      1.0053784303797468
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 3.83925,
+    "forwardMs": 3.806042,
+    "ratio": 0.9980603246001132,
+    "launchRatios": [
+      1.0033611965543385,
+      0.9906231685876148,
+      1.0002408622869874
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 3.843833,
+    "forwardMs": 3.858834,
+    "ratio": 1.0070786028445695,
+    "launchRatios": [
+      1.0074563004447372,
+      1.0039026149158925,
+      1.0098858880080013
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 2.737542,
+    "forwardMs": 2.917791,
+    "ratio": 1.0412048872180981,
+    "launchRatios": [
+      1.066655737838379,
+      1.065843373361943,
+      0.9928666667896128
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 2.754708,
+    "forwardMs": 2.704417,
+    "ratio": 0.9850443425048867,
+    "launchRatios": [
+      0.9817436185613866,
+      0.9918823138843561,
+      0.9815425014918018
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.222653,
+    "forwardMs": 0.223291667,
+    "ratio": 0.999995191949884,
+    "launchRatios": [
+      1.0032454336375263,
+      1.0003742729718441,
+      0.9963777704396641
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.2819165,
+    "forwardMs": 0.2840205,
+    "ratio": 1.0094174995358507,
+    "launchRatios": [
+      1.0122083702580882,
+      0.9924263071826911,
+      1.0238687696534257
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.27625,
+    "forwardMs": 0.2758745,
+    "ratio": 1.0019391298020415,
+    "launchRatios": [
+      1.0051791590493602,
+      0.9986407239819004,
+      1.0020081773809646
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "1000000",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.223708667,
+    "forwardMs": 0.224972667,
+    "ratio": 1.005817537662046,
+    "launchRatios": [
+      1.0004387025090982,
+      1.0056502057651615,
+      1.011393551540914
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.00036254500000000003,
+    "forwardMs": 0.00036532,
+    "ratio": 1.0039603874756482,
+    "launchRatios": [
+      1.0061493451082908,
+      0.9981039048773357,
+      1.007654222234481
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000504893,
+    "forwardMs": 0.0005071499999999999,
+    "ratio": 0.9890926624517239,
+    "launchRatios": [
+      1.003042203811416,
+      0.9604055326485599,
+      1.0044702540934416
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 4.3789000000000004e-05,
+    "forwardMs": 4.4105e-05,
+    "ratio": 0.9997659330201036,
+    "launchRatios": [
+      1.008926116293335,
+      0.9833606809557994,
+      1.0072164242161272
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 4.1672e-05,
+    "forwardMs": 4.2082e-05,
+    "ratio": 1.0000568645516754,
+    "launchRatios": [
+      0.9848253680260607,
+      1.0056869881710646,
+      1.009838740641198
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000302076,
+    "forwardMs": 0.000301117,
+    "ratio": 1.0151542499086519,
+    "launchRatios": [
+      1.0105325339066755,
+      1.0385484411075274,
+      0.99682530224182
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000456146,
+    "forwardMs": 0.00045980500000000003,
+    "ratio": 1.007707855041482,
+    "launchRatios": [
+      1.0062669352151044,
+      1.008836787289698,
+      1.0080215545022866
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000340018,
+    "forwardMs": 0.000341553,
+    "ratio": 1.0000216441238587,
+    "launchRatios": [
+      0.9860027935526877,
+      1.0097034921196648,
+      1.0045144668811652
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000441666,
+    "forwardMs": 0.000428463,
+    "ratio": 0.9981902739358068,
+    "launchRatios": [
+      0.997460025554985,
+      1.0319262440180441,
+      0.9662641000212832
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000351574,
+    "forwardMs": 0.000372572,
+    "ratio": 1.0366515567733539,
+    "launchRatios": [
+      1.0003040048937373,
+      1.0782093318709176,
+      1.032911990078902
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000485373,
+    "forwardMs": 0.0004945570000000001,
+    "ratio": 1.0344742119455108,
+    "launchRatios": [
+      0.9971073684210526,
+      1.0896231996040036,
+      1.0189215304518382
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000184572,
+    "forwardMs": 0.00018408600000000003,
+    "ratio": 1.0027148503485848,
+    "launchRatios": [
+      1.0039016100258475,
+      1.006899783022183,
+      0.997366881217086
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.00023325399999999999,
+    "forwardMs": 0.00025846100000000003,
+    "ratio": 1.0321357337689174,
+    "launchRatios": [
+      1.0035081809777038,
+      0.9888344871345638,
+      1.1080667426925155
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 4.2727e-05,
+    "forwardMs": 4.0045e-05,
+    "ratio": 0.9498233189059093,
+    "launchRatios": [
+      1.008513597323761,
+      0.9065689233865172,
+      0.9372293865705527
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 4.9969e-05,
+    "forwardMs": 4.9797e-05,
+    "ratio": 0.9871127222485566,
+    "launchRatios": [
+      0.9961262998416087,
+      0.9965578658768436,
+      0.9689097360033676
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 4.9881e-05,
+    "forwardMs": 4.9727e-05,
+    "ratio": 1.016459592953848,
+    "launchRatios": [
+      1.01147240990991,
+      1.0414998411185257,
+      0.9969126521120265
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "128",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 4.1422e-05,
+    "forwardMs": 4.2977e-05,
+    "ratio": 1.006083991360414,
+    "launchRatios": [
+      0.9698420484646325,
+      1.0733248420369121,
+      0.9782965573849647
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.008385450000000001,
+    "forwardMs": 0.009028232,
+    "ratio": 1.0681338038865076,
+    "launchRatios": [
+      1.0460682587480137,
+      1.0766544431127727,
+      1.0820332779219597
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.008169355,
+    "forwardMs": 0.007891921999999999,
+    "ratio": 0.9796809246198308,
+    "launchRatios": [
+      0.9884760648322654,
+      0.9660397913911196,
+      0.9846747076689326
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.0009513179999999999,
+    "forwardMs": 0.000968922,
+    "ratio": 1.0287544095795595,
+    "launchRatios": [
+      1.0294838767084664,
+      1.0727380329185403,
+      0.9858751083634174
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.0009536,
+    "forwardMs": 0.000973965,
+    "ratio": 1.0094441411028097,
+    "launchRatios": [
+      1.0041060345809802,
+      1.0029751889208947,
+      1.02135591442953
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.0052435,
+    "forwardMs": 0.00524351,
+    "ratio": 1.0122930190393455,
+    "launchRatios": [
+      1.0255594761268993,
+      1.0000019071231048,
+      1.0114794076759668
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.0053412979999999995,
+    "forwardMs": 0.0055939219999999994,
+    "ratio": 1.0454191477665102,
+    "launchRatios": [
+      1.0442179037410642,
+      1.0383097848047906,
+      1.0537880492719185
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.011038935,
+    "forwardMs": 0.011624091,
+    "ratio": 1.0528821841821256,
+    "launchRatios": [
+      1.0636805357168797,
+      1.0420685619288668,
+      1.0530083744491656
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.011478136,
+    "forwardMs": 0.011446136,
+    "ratio": 0.9784209251828652,
+    "launchRatios": [
+      0.9732569012083835,
+      0.9650774528171042,
+      0.9972120908830493
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.0170361,
+    "forwardMs": 0.0170208,
+    "ratio": 1.0079827050316463,
+    "launchRatios": [
+      1.0161068799117927,
+      0.9991019071266312,
+      1.008811586871564
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.016965400000000002,
+    "forwardMs": 0.017000067,
+    "ratio": 1.0105021361254118,
+    "launchRatios": [
+      1.0290600487256576,
+      1.0095711121272766,
+      0.993193971259151
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.011021696,
+    "forwardMs": 0.011587113999999999,
+    "ratio": 1.0596560284730239,
+    "launchRatios": [
+      1.0565967614047105,
+      1.0711705224136503,
+      1.0513004532151857
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.010511353999999999,
+    "forwardMs": 0.010388611999999998,
+    "ratio": 0.9667867990758655,
+    "launchRatios": [
+      0.9622127007769564,
+      0.9883229125381944,
+      0.9502156659943601
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000957844,
+    "forwardMs": 0.0009557519999999999,
+    "ratio": 0.9986505421614046,
+    "launchRatios": [
+      0.9978159282722446,
+      1.00247160995631,
+      0.9956761670075283
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.001115076,
+    "forwardMs": 0.0011229839999999998,
+    "ratio": 0.9907474303012871,
+    "launchRatios": [
+      0.9782317593768758,
+      1.007091893287991,
+      0.9871383060529496
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.0010978820000000001,
+    "forwardMs": 0.001089211,
+    "ratio": 1.0062007084770301,
+    "launchRatios": [
+      1.0192258565593522,
+      1.009041490264016,
+      0.9905454320227491
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "4096",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000959484,
+    "forwardMs": 0.000982566,
+    "ratio": 1.0077195313361427,
+    "launchRatios": [
+      1.0050596344224076,
+      1.0242140567221547,
+      0.9941146296526752
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.002430777,
+    "forwardMs": 0.002420449,
+    "ratio": 1.0000671789118798,
+    "launchRatios": [
+      1.0032243747704526,
+      1.0012410109426397,
+      0.9957511528206825
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.002570723,
+    "forwardMs": 0.002586572,
+    "ratio": 1.0141287275187594,
+    "launchRatios": [
+      1.0070839833141616,
+      1.0061651916600896,
+      1.029305463576159
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.00013265199999999998,
+    "forwardMs": 0.00013272900000000002,
+    "ratio": 1.0082583239015948,
+    "launchRatios": [
+      1.025103277749299,
+      0.9992847462731517,
+      1.000595552205051
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000132674,
+    "forwardMs": 0.000132891,
+    "ratio": 1.001350304102475,
+    "launchRatios": [
+      1.0024319759804843,
+      1.0016355879825738,
+      0.9999849045210959
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000800965,
+    "forwardMs": 0.000811764,
+    "ratio": 1.0086809988989733,
+    "launchRatios": [
+      1.0061233578267648,
+      1.0064542535104843,
+      1.0134824867503573
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.0007951309999999999,
+    "forwardMs": 0.000839275,
+    "ratio": 1.0316007512970726,
+    "launchRatios": [
+      1.074328380753422,
+      1.0027418468465807,
+      1.0190811325429394
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.002363816,
+    "forwardMs": 0.0023680990000000002,
+    "ratio": 1.0097350454457248,
+    "launchRatios": [
+      1.0355187280460216,
+      0.9923803246995762,
+      1.0018119007570812
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.0022630140000000003,
+    "forwardMs": 0.00232966,
+    "ratio": 1.0180431635256335,
+    "launchRatios": [
+      1.0117691546959944,
+      1.000001767554244,
+      1.0428368586064949
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.002237929,
+    "forwardMs": 0.00229342,
+    "ratio": 1.0214138659363032,
+    "launchRatios": [
+      1.028945950402335,
+      1.0105909248952099,
+      1.0247956928034803
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.002361613,
+    "forwardMs": 0.0023875100000000002,
+    "ratio": 1.005856343403343,
+    "launchRatios": [
+      0.9907272467732512,
+      1.0474743321619588,
+      0.980641753892193
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.001077067,
+    "forwardMs": 0.001107144,
+    "ratio": 0.9971619024519844,
+    "launchRatios": [
+      0.9700446758308048,
+      0.9868775235531628,
+      1.0357192263805315
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.001572213,
+    "forwardMs": 0.0016549829999999998,
+    "ratio": 1.0092358446960978,
+    "launchRatios": [
+      1.0526455384861975,
+      0.9738654957508057,
+      1.002759689934104
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.00013509200000000001,
+    "forwardMs": 0.000136904,
+    "ratio": 1.0106636190233238,
+    "launchRatios": [
+      1.0134130814556006,
+      1.0161399631675876,
+      1.0024895635673625
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000153314,
+    "forwardMs": 0.00015291,
+    "ratio": 0.9879605434739313,
+    "launchRatios": [
+      0.9973648851376913,
+      0.9637184658165694,
+      1.0032624246232835
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000150299,
+    "forwardMs": 0.000150234,
+    "ratio": 0.9985115206622931,
+    "launchRatios": [
+      1.0006594065341194,
+      0.9948057454815284,
+      1.0000798408505711
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "512",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.00013272999999999998,
+    "forwardMs": 0.000132631,
+    "ratio": 0.9898266162115014,
+    "launchRatios": [
+      1.0,
+      0.9945302493784375,
+      0.9751229683878607
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.15478125,
+    "forwardMs": 0.16258325,
+    "ratio": 1.0497169294509139,
+    "launchRatios": [
+      1.0366295065598472,
+      1.08944074298405,
+      1.024210973919617
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.14354125,
+    "forwardMs": 0.14829175,
+    "ratio": 1.041415339202429,
+    "launchRatios": [
+      1.067405782522867,
+      1.0567558952653855,
+      1.0013079863802217
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.014901882,
+    "forwardMs": 0.014841881999999999,
+    "ratio": 0.9974898253988381,
+    "launchRatios": [
+      0.995973662923918,
+      1.0239786897323255,
+      0.9731653799602966
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.015046559,
+    "forwardMs": 0.014898294,
+    "ratio": 0.9988641320365605,
+    "launchRatios": [
+      1.0082102752993154,
+      0.9816745476490673,
+      1.0069330716693556
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.11185,
+    "forwardMs": 0.10324119999999999,
+    "ratio": 0.9425271951654455,
+    "launchRatios": [
+      0.9332072326899685,
+      0.9720453306194279,
+      0.9230326329906124
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.10137460000000001,
+    "forwardMs": 0.1213084,
+    "ratio": 1.1153492607336237,
+    "launchRatios": [
+      1.0676579734963194,
+      1.2132538555397756,
+      1.0711463773938663
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.19319433300000002,
+    "forwardMs": 0.206111,
+    "ratio": 1.0628953116809035,
+    "launchRatios": [
+      1.0692427758723377,
+      1.066858415562324,
+      1.0526605858876377
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.2,
+    "forwardMs": 0.202861,
+    "ratio": 1.0327082296529375,
+    "launchRatios": [
+      1.0663649361845287,
+      0.999653335,
+      1.0331839196606991
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.2647915,
+    "forwardMs": 0.267646,
+    "ratio": 1.0286887071458457,
+    "launchRatios": [
+      0.9680207121825185,
+      1.1125269739078503,
+      1.0107801798773752
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.294458,
+    "forwardMs": 0.2682085,
+    "ratio": 0.9762802908220293,
+    "launchRatios": [
+      0.8623389111111471,
+      1.0866014847618337,
+      0.9930595409559284
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.172166333,
+    "forwardMs": 0.183541667,
+    "ratio": 1.0739132858671356,
+    "launchRatios": [
+      1.0660717679338618,
+      1.0769441695569313,
+      1.0787678975226633
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.172694667,
+    "forwardMs": 0.17365266699999998,
+    "ratio": 1.0105066471069268,
+    "launchRatios": [
+      1.0127153690735635,
+      0.9856837848964961,
+      1.0336952266474049
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.015180206,
+    "forwardMs": 0.015597303,
+    "ratio": 1.007407345703827,
+    "launchRatios": [
+      1.0,
+      1.0274763728502763,
+      0.9950467736969967
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.018837963,
+    "forwardMs": 0.018966,
+    "ratio": 0.9979599422167524,
+    "launchRatios": [
+      1.0067967539802471,
+      1.0010465271561209,
+      0.9861506325361262
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.018526295999999998,
+    "forwardMs": 0.018805556,
+    "ratio": 1.0140354891680547,
+    "launchRatios": [
+      1.0197377284698463,
+      1.0052743671061501,
+      1.0171531946313406
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i32",
+    "n": "65536",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.015069794,
+    "forwardMs": 0.015074706,
+    "ratio": 0.9963064094769177,
+    "launchRatios": [
+      1.0103929318871794,
+      0.9784687007600489,
+      1.0003259500428474
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 3.598291,
+    "forwardMs": 3.403625,
+    "ratio": 0.9479708181275426,
+    "launchRatios": [
+      0.977168350407048,
+      0.9459004288424699,
+      0.921658623270776
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 3.26875,
+    "forwardMs": 3.211125,
+    "ratio": 0.97364006813578,
+    "launchRatios": [
+      0.9698386886252831,
+      0.9823709369024857,
+      0.9687691574143451
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.227708333,
+    "forwardMs": 0.22715266699999997,
+    "ratio": 0.9947973557752049,
+    "launchRatios": [
+      0.9860333042796461,
+      0.9968310006721426,
+      1.0015917692425622
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.23015266699999998,
+    "forwardMs": 0.228555,
+    "ratio": 0.992223885039189,
+    "launchRatios": [
+      1.0037343685622753,
+      0.9800213163163216,
+      0.9930582294751337
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 2.57175,
+    "forwardMs": 2.568917,
+    "ratio": 1.0061195242240257,
+    "launchRatios": [
+      0.9852077379216487,
+      1.0044806209916253,
+      1.029151600139093
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 2.58725,
+    "forwardMs": 2.609541,
+    "ratio": 1.0146322536166905,
+    "launchRatios": [
+      1.017993170834086,
+      1.0047830708280994,
+      1.0211953239763107
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 6.816833,
+    "forwardMs": 6.6465,
+    "ratio": 0.9813655671501658,
+    "launchRatios": [
+      0.9869954920066859,
+      0.9821253579328735,
+      0.9750128835487095
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 7.222333,
+    "forwardMs": 6.89925,
+    "ratio": 0.9691029823882895,
+    "launchRatios": [
+      0.9552661169181759,
+      0.9700384418169296,
+      0.9821921782582167
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 4.342375,
+    "forwardMs": 3.147542,
+    "ratio": 0.7790384850520741,
+    "launchRatios": [
+      0.8920809464866577,
+      0.7091986398889452,
+      0.7473165158303016
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 4.175666,
+    "forwardMs": 4.1605,
+    "ratio": 0.9982322917192414,
+    "launchRatios": [
+      1.016684045131962,
+      0.9946872031664512,
+      0.9836085727261573
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 5.855917,
+    "forwardMs": 5.762958,
+    "ratio": 0.9816295957311165,
+    "launchRatios": [
+      0.9737546902046325,
+      0.9841256288297802,
+      0.987058349810186
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 5.898042,
+    "forwardMs": 5.747167,
+    "ratio": 0.9760378833908192,
+    "launchRatios": [
+      0.9910367518420101,
+      0.9744194768365502,
+      0.9628625757199967
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.228250333,
+    "forwardMs": 0.231888667,
+    "ratio": 1.0003502103815811,
+    "launchRatios": [
+      0.9974271504035799,
+      1.0269557854270468,
+      0.9772895879607681
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.338625,
+    "forwardMs": 0.3332295,
+    "ratio": 0.9942697983335114,
+    "launchRatios": [
+      1.0086401816118047,
+      0.9825884090070136,
+      0.9917560095355584
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.3289375,
+    "forwardMs": 0.331688,
+    "ratio": 1.0030284877342264,
+    "launchRatios": [
+      1.0071219522709114,
+      1.0083617708531256,
+      0.9936681486445942
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "1000000",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.231875,
+    "forwardMs": 0.232028,
+    "ratio": 1.0090063256086805,
+    "launchRatios": [
+      1.0073955099009457,
+      1.0006598382749325,
+      1.0190492795143469
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000349375,
+    "forwardMs": 0.000344891,
+    "ratio": 0.9938949977895172,
+    "launchRatios": [
+      0.981818962432916,
+      1.0525723305091055,
+      0.9500318154647951
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000476645,
+    "forwardMs": 0.00046956200000000003,
+    "ratio": 1.0021862181098966,
+    "launchRatios": [
+      1.0156445608656672,
+      0.9851398839807405,
+      1.0060177170025222
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 4.1926000000000005e-05,
+    "forwardMs": 4.0529000000000004e-05,
+    "ratio": 0.9519199861684067,
+    "launchRatios": [
+      0.9168773553403616,
+      0.9784886528247224,
+      0.9614668060162674
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 4.3296999999999996e-05,
+    "forwardMs": 4.3457e-05,
+    "ratio": 0.9679608693009368,
+    "launchRatios": [
+      0.9137465062022131,
+      0.9888848807322902,
+      1.0036954061482322
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.00032473399999999997,
+    "forwardMs": 0.00032513299999999997,
+    "ratio": 0.9989701969516637,
+    "launchRatios": [
+      1.0012286979497065,
+      1.0011078774586304,
+      0.9945884863668296
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000354053,
+    "forwardMs": 0.00034056799999999997,
+    "ratio": 1.0159641226586322,
+    "launchRatios": [
+      0.9619124820295266,
+      1.012563214373818,
+      1.0766571010398625
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000354486,
+    "forwardMs": 0.000365963,
+    "ratio": 1.0141511475691123,
+    "launchRatios": [
+      0.9905781237799712,
+      1.0323764549234666,
+      1.0199555263961857
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000438697,
+    "forwardMs": 0.000445166,
+    "ratio": 1.0143299125352363,
+    "launchRatios": [
+      1.050483591180245,
+      0.9959192608124611,
+      0.9975261612924912
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000363283,
+    "forwardMs": 0.000370789,
+    "ratio": 1.0320194101893636,
+    "launchRatios": [
+      1.0776074782790286,
+      1.0206615778883128,
+      0.9993583229201526
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000430627,
+    "forwardMs": 0.000422861,
+    "ratio": 0.9807078465048502,
+    "launchRatios": [
+      1.016160110761796,
+      0.9819658312182004,
+      0.9452799170546944
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000183184,
+    "forwardMs": 0.000188643,
+    "ratio": 1.0118386760583256,
+    "launchRatios": [
+      0.9853260188873024,
+      1.057955571507888,
+      0.9937712900690017
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.00025276599999999997,
+    "forwardMs": 0.000234627,
+    "ratio": 0.9639241362265083,
+    "launchRatios": [
+      0.9886912593759303,
+      0.9759072362608558,
+      0.928237975044112
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 3.9375e-05,
+    "forwardMs": 4.0119e-05,
+    "ratio": 1.0050261104683327,
+    "launchRatios": [
+      1.018895238095238,
+      0.9921617960131605,
+      1.0041995022812111
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 5.2243999999999996e-05,
+    "forwardMs": 5.0213e-05,
+    "ratio": 0.9727226531867149,
+    "launchRatios": [
+      0.9899906416568335,
+      0.9718436566878493,
+      0.9566203086302153
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 5.1915999999999996e-05,
+    "forwardMs": 5.1424e-05,
+    "ratio": 0.9786707415071255,
+    "launchRatios": [
+      0.9552022834942219,
+      0.9907174922011718,
+      0.9905231527852686
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "128",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 3.9814e-05,
+    "forwardMs": 4.0115000000000005e-05,
+    "ratio": 0.9945189498219521,
+    "launchRatios": [
+      0.9626367824918411,
+      1.0264920751282893,
+      0.9954538604510976
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.00895175,
+    "forwardMs": 0.008885174999999999,
+    "ratio": 0.9823648842596623,
+    "launchRatios": [
+      0.965316446817507,
+      0.9938779568240846,
+      0.9881337318412455
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.008985,
+    "forwardMs": 0.009369629999999999,
+    "ratio": 1.0519484228272147,
+    "launchRatios": [
+      1.0676900793474369,
+      1.0428080133555926,
+      1.045523438496231
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000973447,
+    "forwardMs": 0.000969967,
+    "ratio": 0.9992992780128014,
+    "launchRatios": [
+      0.9970934254582299,
+      1.0043988811051137,
+      0.9964250750169243
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.001004468,
+    "forwardMs": 0.0010159049999999999,
+    "ratio": 1.0016651781740757,
+    "launchRatios": [
+      0.997773521393172,
+      0.9959069475411854,
+      1.0113861267855222
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.005865779000000001,
+    "forwardMs": 0.005962810000000001,
+    "ratio": 1.0232846947386427,
+    "launchRatios": [
+      1.0311014398584721,
+      1.0165418778989117,
+      1.0222632945395822
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.005753805000000001,
+    "forwardMs": 0.006052795,
+    "ratio": 1.042347116407334,
+    "launchRatios": [
+      1.051963874340545,
+      1.038689865717971,
+      1.0364548488456404
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.020949625,
+    "forwardMs": 0.0206966,
+    "ratio": 0.9892249631220406,
+    "launchRatios": [
+      0.9889902996129402,
+      0.9822782030704608,
+      0.9964572304316478
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.02107475,
+    "forwardMs": 0.022019957,
+    "ratio": 1.0441761945847816,
+    "launchRatios": [
+      1.0403578344887237,
+      1.0473325143981085,
+      1.044850211746284
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.017457,
+    "forwardMs": 0.017304483,
+    "ratio": 0.9897746119367632,
+    "launchRatios": [
+      0.9852017528785015,
+      0.9872329225225551,
+      0.9969287570142125
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.017441138,
+    "forwardMs": 0.017366414,
+    "ratio": 0.9989313528098531,
+    "launchRatios": [
+      0.9957156465363671,
+      0.9976970168993773,
+      1.0033972986292756
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.021178832999999998,
+    "forwardMs": 0.02079332,
+    "ratio": 0.9819751072396325,
+    "launchRatios": [
+      0.9800333150437605,
+      0.9840989886198138,
+      0.981797250112884
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.021088667000000002,
+    "forwardMs": 0.022244477999999998,
+    "ratio": 1.0519740136756093,
+    "launchRatios": [
+      1.053169624937824,
+      1.057412904103922,
+      1.0453749874280815
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000983301,
+    "forwardMs": 0.0009753479999999999,
+    "ratio": 1.0064904964028298,
+    "launchRatios": [
+      0.9919119374433667,
+      0.998857581885,
+      1.0290876068082062
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.001266051,
+    "forwardMs": 0.001281749,
+    "ratio": 1.0112942700965544,
+    "launchRatios": [
+      1.002215361989302,
+      1.0123991845510174,
+      1.0193417156858897
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.001269769,
+    "forwardMs": 0.001285558,
+    "ratio": 1.0105852663210206,
+    "launchRatios": [
+      1.0036401708117435,
+      1.0115956443939436,
+      1.0165620675886715
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "4096",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.00100007,
+    "forwardMs": 0.000979536,
+    "ratio": 0.9916940047026371,
+    "launchRatios": [
+      1.0057405705660996,
+      0.9972411931164818,
+      0.9724043299283427
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.002330033,
+    "forwardMs": 0.002446537,
+    "ratio": 1.0189728363763684,
+    "launchRatios": [
+      1.0017608477456632,
+      1.0058519222489284,
+      1.0500010085694065
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.002361094,
+    "forwardMs": 0.002363816,
+    "ratio": 1.009712375144933,
+    "launchRatios": [
+      0.9851992339144482,
+      1.0228516557775809,
+      1.0215422166598673
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000132156,
+    "forwardMs": 0.00013249,
+    "ratio": 0.9894181890773839,
+    "launchRatios": [
+      1.0049607087593677,
+      1.0006810133478616,
+      0.9631522155313446
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.00013225,
+    "forwardMs": 0.000132656,
+    "ratio": 0.9900636158777049,
+    "launchRatios": [
+      0.997578729135455,
+      1.003069943289225,
+      0.9698641468167734
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.0008796660000000001,
+    "forwardMs": 0.000885385,
+    "ratio": 1.0202612889596807,
+    "launchRatios": [
+      1.006501331187064,
+      1.0352629903669004,
+      1.019222926630334
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.0008983519999999999,
+    "forwardMs": 0.000893855,
+    "ratio": 1.0204303007381916,
+    "launchRatios": [
+      0.9990188378654745,
+      0.9949941670970844,
+      1.0689461464384182
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.002322731,
+    "forwardMs": 0.00232062,
+    "ratio": 0.9799037700889263,
+    "launchRatios": [
+      0.9875983680821573,
+      0.9990911560572445,
+      0.9535968493166024
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.002367358,
+    "forwardMs": 0.00237855,
+    "ratio": 0.9954325659356323,
+    "launchRatios": [
+      1.021418197652398,
+      0.9926677756384965,
+      0.9728099844553878
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.0024068369999999998,
+    "forwardMs": 0.002459147,
+    "ratio": 1.0226785257344855,
+    "launchRatios": [
+      1.0830538171051882,
+      0.9988217801745781,
+      0.9887337727085584
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.0024849499999999997,
+    "forwardMs": 0.00248248,
+    "ratio": 1.004025715900932,
+    "launchRatios": [
+      0.9990060162176302,
+      0.9992590871702781,
+      1.0138840694674962
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.0010976010000000001,
+    "forwardMs": 0.0010784780000000001,
+    "ratio": 1.0062518188282472,
+    "launchRatios": [
+      0.9958187138557976,
+      1.0412930155897224,
+      0.9825774575642696
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.001352373,
+    "forwardMs": 0.001347419,
+    "ratio": 0.9969951839806896,
+    "launchRatios": [
+      0.9963368094453232,
+      0.9946332330605634,
+      1.0000231178728323
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.00013834800000000002,
+    "forwardMs": 0.000135406,
+    "ratio": 0.9995897029029686,
+    "launchRatios": [
+      0.9787347847457136,
+      1.0097853369797325,
+      1.0105812525583298
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.00017789599999999998,
+    "forwardMs": 0.000172041,
+    "ratio": 1.0000849975274289,
+    "launchRatios": [
+      1.0218092404183667,
+      0.9435957696827261,
+      1.037420740207762
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.000176027,
+    "forwardMs": 0.000181967,
+    "ratio": 1.0195853730149291,
+    "launchRatios": [
+      0.9911686477866842,
+      1.0344509087222695,
+      1.0337448232373445
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "512",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.00013453100000000002,
+    "forwardMs": 0.000136797,
+    "ratio": 0.989944234548366,
+    "launchRatios": [
+      0.9970052634763145,
+      1.047082085169961,
+      0.9292958798953839
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "bits22",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.167917,
+    "forwardMs": 0.166938,
+    "ratio": 0.9544789246636101,
+    "launchRatios": [
+      1.050059913385059,
+      0.8149110899165023,
+      1.016189546025715
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "bits22",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.1575,
+    "forwardMs": 0.1566565,
+    "ratio": 0.9932587847811999,
+    "launchRatios": [
+      1.0011311385836483,
+      1.019442857142857,
+      0.9601374012681994
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "equal",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.015439424,
+    "forwardMs": 0.014936175999999999,
+    "ratio": 0.981582621528382,
+    "launchRatios": [
+      0.9956615341655187,
+      0.9818847724196434,
+      0.9674050016373666
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "equal",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.015004881999999999,
+    "forwardMs": 0.015193212,
+    "ratio": 1.0081491675174865,
+    "launchRatios": [
+      0.9998330327923596,
+      1.0121150739650262,
+      1.01255124832038
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "few",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.12603319999999998,
+    "forwardMs": 0.128302,
+    "ratio": 1.0355210757016433,
+    "launchRatios": [
+      1.032474868358066,
+      1.0564498234815536,
+      1.0180016059260577
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "few",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.12785425,
+    "forwardMs": 0.12309160000000001,
+    "ratio": 1.0094881968392897,
+    "launchRatios": [
+      0.9313354855235552,
+      1.086103630710154,
+      1.0170125687365907
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "full",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.3801665,
+    "forwardMs": 0.3849165,
+    "ratio": 1.0080007393723196,
+    "launchRatios": [
+      1.0191835179968438,
+      0.9925159086015302,
+      1.012494525425044
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "full",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.376229,
+    "forwardMs": 0.373562,
+    "ratio": 1.0051747064180079,
+    "launchRatios": [
+      1.0286840949426608,
+      0.9957759120744925,
+      0.9914732782427723
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "gaps",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.2729375,
+    "forwardMs": 0.267013667,
+    "ratio": 0.9825303427586745,
+    "launchRatios": [
+      0.9782960091596062,
+      1.0269779058597504,
+      0.9440750743877317
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "gaps",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.26970833299999997,
+    "forwardMs": 0.2674995,
+    "ratio": 0.989036463877137,
+    "launchRatios": [
+      1.0138198919830455,
+      0.9918102901181033,
+      0.9621604309493913
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "nearly",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.345479,
+    "forwardMs": 0.3503745,
+    "ratio": 1.0108383043196187,
+    "launchRatios": [
+      1.0312078519190515,
+      0.9876157865069283,
+      1.0141701811108634
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "nearly",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.3460415,
+    "forwardMs": 0.3513955,
+    "ratio": 1.0095966331984294,
+    "launchRatios": [
+      0.9908444025513656,
+      1.022751701898961,
+      1.015472132677728
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "ordered",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.015190667,
+    "forwardMs": 0.014923912000000001,
+    "ratio": 0.9849963147128513,
+    "launchRatios": [
+      1.0026484218035345,
+      0.9701732731944411,
+      0.982439546597921
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "ordered",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.022105,
+    "forwardMs": 0.021974651999999997,
+    "ratio": 0.9982441865544426,
+    "launchRatios": [
+      1.0076343094849796,
+      0.9959088441529065,
+      0.9912605745721463
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "reverse",
+    "direction": "asc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.022177565,
+    "forwardMs": 0.022063304,
+    "ratio": 0.9914487414364693,
+    "launchRatios": [
+      0.9948479014715998,
+      0.988265491582915,
+      0.9912437873337095
+    ]
+  },
+  {
+    "stage": "sorted",
+    "container": "vector",
+    "type": "i64",
+    "n": "65536",
+    "distribution": "reverse",
+    "direction": "desc",
+    "bits": "0",
+    "compiler": "clang",
+    "backwardMs": 0.015765562,
+    "forwardMs": 0.015852875,
+    "ratio": 1.006878160637683,
+    "launchRatios": [
+      1.0079435946167514,
+      1.011819686478668,
+      1.0009016583163886
+    ]
+  }
+]

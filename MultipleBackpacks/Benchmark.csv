@@ -1,0 +1,3 @@
+scenario,originalMs,finalMs,speedup,checksum
+positive-items-capacity-20K,4.673,3.716,1.25753,13834415911555
+oversized-items-100x,906.472,0.078,11621.4,0

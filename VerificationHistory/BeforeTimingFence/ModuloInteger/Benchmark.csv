@@ -1,0 +1,4 @@
+scenario,originalMs,finalMs,speedup,checksum
+fixed-int-arithmetic-1M,5.752,4.523,1.27172,185663206
+dynamic-int-arithmetic-1M,4.835,4.881,0.990576,406075427
+safe-dynamic-long-long-1M,12.285,9.206,1.33446,432193

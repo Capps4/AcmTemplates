@@ -1,0 +1,62 @@
+{
+  "module": "SuffixAutomaton",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "59405ae7ba23c19251d6264752b570deccfac69be968d43a90170aa9bbce3efd",
+    "Final.hpp": "b557584975b2f49a1b40198a11bb9553fa48b71468e3eefbe5e80133dd54c17a",
+    "Test.cpp": "76b12ceb02c635b6dabf55200458bf0a4c716641b0d2022d4184cfe22455bbea",
+    "Benchmark.cpp": "aa409b040ae571883b6f5db7967cd9681fd46c97bd68b2e837020ae390b5a8a4",
+    "Final.code-snippets": "88d1deef50cb9f1c67ed543c5a8ebb5b66b1b058b5e1122edff035f82f85c7de"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8"
+  },
+  "includeSha256": {
+    "SuffixAutomaton/Final.hpp": "b557584975b2f49a1b40198a11bb9553fa48b71468e3eefbe5e80133dd54c17a",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8",
+    "SuffixAutomaton/Original.hpp": "59405ae7ba23c19251d6264752b570deccfac69be968d43a90170aa9bbce3efd"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/SuffixAutomaton/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/SuffixAutomaton/Build/optimized"
+      ],
+      "output": "SAM: exhaustive substring set, online prefixes, clone invariants, empty, bytes, adaptive capacity PASS"
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/SuffixAutomaton/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/SuffixAutomaton/Build/sanitized"
+      ],
+      "output": "SAM: exhaustive substring set, online prefixes, clone invariants, empty, bytes, adaptive capacity PASS"
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/SuffixAutomaton/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/SuffixAutomaton/Build/benchmark"
+  ],
+  "benchmark": "build-alphabet-1,1.207,0.946,1.2759,10000000000\nbuild-alphabet-2,2.774,2.57,1.07938,24994797824\nbuild-alphabet-26,2.134,1.675,1.27403,10193520323"
+}

@@ -1,0 +1,66 @@
+{
+  "module": "MinimalString",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "ad3c5026bb53e537fb98639918623732b18682b28bcdbbcee5236c0e61c4ad57",
+    "Final.hpp": "5dd65bc359a0893798ebcdfec3a21236e4ec501b49339080f86668963df66967",
+    "Test.cpp": "1d1324963fe45cdca3c100e7ab498ec827082895e2bb5483c580ee362c32dee1",
+    "Benchmark.cpp": "96b132a8cf1228c4ab443918b1d19dbbbe750ecf604cf32eb9cf4f53f2131ba0",
+    "Final.code-snippets": "00cc1b9b082ba227bbacde6a5c84e761713d2de8d54d8f44ae2a787f8c3de0aa"
+  },
+  "dependencySha256": {
+    "ListHelper/Final.hpp": "b7e82c8d217eaeb6288da2311d84e6c34fe6baa22c6cda8dc813064e84e1e8bc"
+  },
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8"
+  },
+  "includeSha256": {
+    "MinimalString/Final.hpp": "5dd65bc359a0893798ebcdfec3a21236e4ec501b49339080f86668963df66967",
+    "ListHelper/Final.hpp": "b7e82c8d217eaeb6288da2311d84e6c34fe6baa22c6cda8dc813064e84e1e8bc",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8",
+    "ListHelper/Original.hpp": "2bccb27d002a5bf9457c864807b8f0a4bc6abd24d0c51fc1464d395630139a39",
+    "MinimalString/Original.hpp": "ad3c5026bb53e537fb98639918623732b18682b28bcdbbcee5236c0e61c4ad57"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/MinimalString/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/MinimalString/Build/optimized"
+      ],
+      "output": "MinimalString: exhaustive rotations, periodic tie index, arbitrary bytes/views, custom move-only comparator, proxies PASS"
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/MinimalString/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/MinimalString/Build/sanitized"
+      ],
+      "output": "MinimalString: exhaustive rotations, periodic tie index, arbitrary bytes/views, custom move-only comparator, proxies PASS"
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/MinimalString/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/MinimalString/Build/benchmark"
+  ],
+  "benchmark": "alphabet-1,1.125,0.791,1.42225,12125024250000\nalphabet-2,4.324,4.229,1.02246,12187472628842\nalphabet-26,1.163,1.017,1.14356,13685113585701"
+}

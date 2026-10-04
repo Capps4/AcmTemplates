@@ -1,0 +1,137 @@
+{
+  "formatVersion": 2,
+  "module": "SuffixAutomaton",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "59405ae7ba23c19251d6264752b570deccfac69be968d43a90170aa9bbce3efd",
+    "Final.hpp": "e6f50f4e623a9bb6c10cb5d37c580a49118d2219fe7f9622f9501b493d3bc989",
+    "Test.cpp": "76b12ceb02c635b6dabf55200458bf0a4c716641b0d2022d4184cfe22455bbea",
+    "Benchmark.cpp": "aa409b040ae571883b6f5db7967cd9681fd46c97bd68b2e837020ae390b5a8a4",
+    "Final.code-snippets": "ee7657c9abc3dfba7a84c5e6064092160713b9b8bb2f2b1a2e7921b557cdb94e"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "SuffixAutomaton/Final.hpp": "e6f50f4e623a9bb6c10cb5d37c580a49118d2219fe7f9622f9501b493d3bc989",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "SuffixAutomaton/Original.hpp": "59405ae7ba23c19251d6264752b570deccfac69be968d43a90170aa9bbce3efd"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/SuffixAutomaton/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/SuffixAutomaton/Build/optimized"
+      ],
+      "output": "SAM: exhaustive substring set, online prefixes, clone invariants, empty, bytes, adaptive capacity PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/SuffixAutomaton/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/SuffixAutomaton/Build/sanitized"
+      ],
+      "output": "SAM: exhaustive substring set, online prefixes, clone invariants, empty, bytes, adaptive capacity PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/SuffixAutomaton/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/SuffixAutomaton/Build/benchmark"
+  ],
+  "benchmark": "build-alphabet-1,1.056,0.942,1.12102,10000000000\nbuild-alphabet-2,2.41,2.313,1.04194,24994797824\nbuild-alphabet-26,1.966,1.528,1.28665,10193520323",
+  "benchmarkSamples": [
+    {
+      "scenario": "build-alphabet-1",
+      "original": [
+        1.196,
+        1.116,
+        1.067,
+        0.987,
+        1.012,
+        1.012,
+        1.056
+      ],
+      "final": [
+        0.956,
+        0.828,
+        0.945,
+        0.95,
+        0.826,
+        0.937,
+        0.942
+      ],
+      "checksum": 10000000000,
+      "first": "original"
+    },
+    {
+      "scenario": "build-alphabet-2",
+      "original": [
+        2.578,
+        2.513,
+        2.476,
+        2.41,
+        2.397,
+        2.354,
+        2.329
+      ],
+      "final": [
+        2.576,
+        2.539,
+        2.435,
+        2.308,
+        2.313,
+        2.21,
+        2.2
+      ],
+      "checksum": 24994797824,
+      "first": "final"
+    },
+    {
+      "scenario": "build-alphabet-26",
+      "original": [
+        2.08,
+        2.045,
+        1.988,
+        1.966,
+        1.921,
+        1.931,
+        1.909
+      ],
+      "final": [
+        1.673,
+        1.497,
+        1.537,
+        1.505,
+        1.516,
+        1.528,
+        1.547
+      ],
+      "checksum": 10193520323,
+      "first": "original"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

@@ -1,0 +1,91 @@
+{
+  "formatVersion": 2,
+  "module": "ExGcd",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "55a8d2e207a2738381699c336cbf1ecf3153f0244f17b893557711a244f32bfa",
+    "Final.hpp": "495e39a57a015d5bd9e9dd76212a0cb038f192b961dd499e53dc7461a62415b4",
+    "Test.cpp": "260c61db61b2871b329f9119ca273ba5175db6cbfaf66a01bb89d306fdfa8299",
+    "Benchmark.cpp": "82e22d2bf67619d515a5339023cdb041c1223cfff3eb114018c6c2212ee20e96",
+    "Final.code-snippets": "2ffed4d1662e760798e07136bd1071890e6dcaf13bbcca69d5a916496290140b"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "ExGcd/Final.hpp": "495e39a57a015d5bd9e9dd76212a0cb038f192b961dd499e53dc7461a62415b4",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "ExGcd/Original.hpp": "55a8d2e207a2738381699c336cbf1ecf3153f0244f17b893557711a244f32bfa"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/ExGcd/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/ExGcd/Build/optimized"
+      ],
+      "output": "100K Bezout/gcd oracles, zero/extreme inputs and constexpr passed",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/ExGcd/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/ExGcd/Build/sanitized"
+      ],
+      "output": "100K Bezout/gcd oracles, zero/extreme inputs and constexpr passed",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/ExGcd/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/ExGcd/Build/benchmark"
+  ],
+  "benchmark": "random-1e9,10.696,10.158,1.05296,18446744015752928614",
+  "benchmarkSamples": [
+    {
+      "scenario": "random-1e9",
+      "original": [
+        12.544,
+        11.734,
+        11.319,
+        10.696,
+        10.502,
+        10.209,
+        10.224
+      ],
+      "final": [
+        10.311,
+        10.314,
+        10.204,
+        10.158,
+        10.134,
+        10.123,
+        10.129
+      ],
+      "checksum": 18446744015752928614,
+      "first": "original"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

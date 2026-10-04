@@ -1,0 +1,483 @@
+[
+  {
+    "module": "AcAutomaton",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/AcAutomaton.code-snippets",
+    "originalSha256": "1aa6abc862b715978a65ace548fc0981b91384a9a999af3a828a92240cd2ab5b",
+    "prefix": "_T_AcAutomaton",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original trie/fail 构建保留；unsigned byte 编码与按块初始化修复字节问题并减少重复模式初始化。保留常用计数接口，删除不可达容量检查。"
+  },
+  {
+    "module": "CentroidDecomposition",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/CentroidDecomposition.code-snippets",
+    "originalSha256": "784f43552a73775018e517de9163657a11e043f7dec199fc92b1110b093795bb",
+    "prefix": "_T_CentroidDecomposition",
+    "status": "verified",
+    "dependencies": [],
+    "review": "保留重心拆分算法；仅组件遍历改显式栈以处理长链。恢复仅 dfsOrder 输出，删除 centroidParent 常驻数组与对应 pending pair。"
+  },
+  {
+    "module": "Combinatorics",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/Combinatorics.code-snippets",
+    "originalSha256": "1895462490bd6c93dc79d7da18d785f1e71ffecffc356b288715a1880c2eefcb",
+    "prefix": "_T_Combinatorics",
+    "status": "verified",
+    "dependencies": [
+      "ModuloInteger"
+    ],
+    "review": "Original factorial/inverse-factorial 缓存与 A/C 接口保留；inline shared 引用和动态模重置避免复制/旧模缓存。删除 INT_MAX limit 包装。"
+  },
+  {
+    "module": "CostFlow",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/CostFlow.code-snippets",
+    "originalSha256": "67fdd0d5ea58aa9eb55a6fffe3eff9160e51e1f005970929f8102bc2c9764943",
+    "prefix": "_T_CostFlow",
+    "status": "verified",
+    "dependencies": [],
+    "review": "保留 Original primal-dual/三模式。负边初始势、宽整数及结果溢出检查是正确性修复；删除超大边数/负规模异常框架，保留实用流量上限与重复 work。"
+  },
+  {
+    "module": "CountingSortOrder",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/CountingSortOrder.code-snippets",
+    "originalSha256": "352e77213368de83fbdade537138f5cd4e078b325401db55cefe364b9c3da03e",
+    "prefix": "_T_CountingSortOrder",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original 稳定计数排序；空输入修复与短 IdentityKey 避免大对象复制。局部名恢复 maxV/cnt/res。"
+  },
+  {
+    "module": "Debuger",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/Debuger.code-snippets",
+    "originalSha256": "6f069afd68418a658f283a5bd2bc7654ab43095fc7bb290fe8df4f932d7049be",
+    "prefix": "_T_Debuger",
+    "status": "verified",
+    "dependencies": [],
+    "review": "保留 Original 的真实调试器配置与 debug 宏，静态配置替代 strdup 泄漏；原插件存在时继续注册。"
+  },
+  {
+    "module": "DeletableHeap",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/DeletableHeap.code-snippets",
+    "originalSha256": "3d3246fcdc6fceffc86d362d9fa6e990a0042b9eff07a4370d8b379144a69b6b",
+    "prefix": "_T_DeletableHeap",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original 双堆无新增状态；短 move/emplace 与批量 heapify 有效率/使用价值，保留。"
+  },
+  {
+    "module": "Dijkstra",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/Dijkstra.code-snippets",
+    "originalSha256": "59c57ec0c5fd6136811b436155b7ebe5063245b057852c19b9b65bed7760939f",
+    "prefix": "_T_Dijkstra",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original 借用图及按源缓存，保留宽距离和溢出前判断。删除额外类型限制、每边诊断和 clearCache；保留短全源距离接口。"
+  },
+  {
+    "module": "Discreter",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/Discreter.code-snippets",
+    "originalSha256": "d3ca8bf63e94640bd9731c00ba61f2a0dcaf05b1f32f375e67d3e004839e60fd",
+    "prefix": "_T_Discreter",
+    "status": "verified",
+    "dependencies": [
+      "ListHelper"
+    ],
+    "review": "恢复 Original discreteFrom 管道；为 Original PersistentTree 缺失类型补最小 Discreter(size/rankOf/at/begin/end)。删除比较器容器框架、upperRankOf/contains/traits dispatch/引用返回分支。"
+  },
+  {
+    "module": "DisjointSetUnion",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/DisjointSetUnion.code-snippets",
+    "originalSha256": "816abf22bee766793f0d21e31d1dc58875fc0e291c4c057a0df787cc25674f7a",
+    "prefix": "_T_DisjointSetUnion",
+    "status": "verified",
+    "dependencies": [],
+    "review": "恢复 Original DSU/Union 合并方向和 f/size/path halving；删除策略模板、DirectionalDSU、merge/same/count 包装及 components 状态。"
+  },
+  {
+    "module": "EdgeBiconnectedComponent",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/EdgeBiconnectedComponent.code-snippets",
+    "originalSha256": "1bd7302955679490f54ebc3133bc62c7b49551c81c2e25d876d68c9a623060d0",
+    "prefix": "_T_EdgeBiconnectedComponent",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original low-link/父边跳过保留；显式栈处理长链，补平行边及真实桥/cutDeg。删除超大图容量断言。"
+  },
+  {
+    "module": "ExGcd",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/ExGcd.code-snippets",
+    "originalSha256": "863fbd1a9b7d700f550ed4f38885ec94eb72ee385f332eb99c2db7fdbf7bac3f",
+    "prefix": "_T_ExGcd",
+    "status": "verified",
+    "dependencies": [],
+    "review": "恢复 Original 四参数递归 exgcd(a,b,x,y)，删除 Result 结构体及额外重载，只加 constexpr。"
+  },
+  {
+    "module": "ExSuffixAutomaton",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/ExSuffixAutomaton.code-snippets",
+    "originalSha256": "3342b606d3571a57be0f92e19154e12bd1f79f3351df2352bb315dc6f3a5c214",
+    "prefix": "_T_ExSuffixAutomaton",
+    "status": "verified",
+    "dependencies": [],
+    "review": "保留 Original 两种 exadd/clone 分支；根哨兵和实际节点增长修复空输入/重复串空间。删除容量 guard，短名与展开分支。"
+  },
+  {
+    "module": "FastFourierTransform",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/FastFourierTransform.code-snippets",
+    "originalSha256": "1594e3357e4caf77dd01c519d9bc5892328c335dc30fabe123a7f1ca6f785633",
+    "prefix": "_T_FastFourierTransform",
+    "status": "verified",
+    "dependencies": [],
+    "review": "保留 Original radix-2 FFT/小规模朴素乘法；inline cache、半份根表、if constexpr inverse 简化并减少初始化。删除极大容量检查；无冲突 FftPoly 名保留。"
+  },
+  {
+    "module": "FastInputOutput",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/FastInputOutput.code-snippets",
+    "originalSha256": "8f41ae8d1959746cab5d168a8ece0c4f4f7fca95239b87bf0ad6b5b93eed4b4a",
+    "prefix": "_T_FastInputOutput",
+    "status": "verified",
+    "dependencies": [],
+    "review": "保留 Original 缓冲区、sentinel 和双位读写内核。删除 Checked 模板/readChecked 数值范围框架；保留常用标量/浮点/视图和显式流，避免全局 cin/cout 宏。"
+  },
+  {
+    "module": "FenwickTree",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/FenwickTree.code-snippets",
+    "originalSha256": "d6c65f3319c08d81518c033a23ae90a095a70945b23b0e37101f7a7bce3e631f",
+    "prefix": "_T_FenwickTree",
+    "status": "verified",
+    "dependencies": [],
+    "review": "恢复 Original posQuery/select 热接口；删除 size/prefixQuery/maxPrefix 包装和 merge 类型验证。保留显式 identity、线性构建和缓存起始步长，空树 select 安全。"
+  },
+  {
+    "module": "FloatPointNumber",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/FloatPointNumber.code-snippets",
+    "originalSha256": "d801fd0b69b1a3545cd16edfd48767c8d81ecc4f930a561398e130a37924d248",
+    "prefix": "_T_FloatPointNumber",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original 单标量包装保留。constexpr、inline static、if constexpr 解析、ADL 数学函数修复使用问题；保留已有实测较快缓存解析，删除 round/setprecision 异常范围框架。"
+  },
+  {
+    "module": "GaussianElimination",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/GaussianElimination.code-snippets",
+    "originalSha256": "3616a0f98819c6356e4add75685d1af78e8456541670b961c75fc9ab3c430b2f",
+    "prefix": "_T_GaussianElimination",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original 主元/消元/回代保留；空输入、多 RHS 无解判定与浮点择主元是修复。四行 void_t 检测支持一行一次 inv 的已测加速；删除巨型矩阵 guard。"
+  },
+  {
+    "module": "GridUtil",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/GridUtil.code-snippets",
+    "originalSha256": "b8da15476afac0b76964e47a3afd120d22ec94574f8947e66c7ac2c0e3afd0e6",
+    "prefix": "_T_GridUtil",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original 四方向与 neighbors；短 forEachNeighbor 无分配接口具有实测收益，不增加状态，保留。"
+  },
+  {
+    "module": "HashMap",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/HashMap.code-snippets",
+    "originalSha256": "4095158669fe5d3bc849d5c04bb890745633e80da287e4f5dc07c7a30b5f435b",
+    "prefix": "_T_HashMap",
+    "status": "verified",
+    "dependencies": [],
+    "review": "保留用户确认的 Original 简洁版：原迭代器、无 count/额外查询、sqrt、optional、_hashmap。仅格式/明确 namespace alias 作用域。"
+  },
+  {
+    "module": "Kmp",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/Kmp.code-snippets",
+    "originalSha256": "3e0cca991250c894dfbc5a089ebb893ed7a0f5fb81d682d8d79779681c279393",
+    "prefix": "_T_Kmp",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original 内核不动；inline/string_view 是直接可用的 C++17 升级。"
+  },
+  {
+    "module": "LazySegmentTree",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/LazySegmentTree.code-snippets",
+    "originalSha256": "662660f613f615b04278e80a5045e52981a4cecf62adacfa7a6ce058e5034236",
+    "prefix": "_T_LazySegmentTree",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original 递归区间树及 Tag/Node 保留；泛型递归 lambda 替代 std::function、谓词按引用递归减少复制，空输入/空更新修复。"
+  },
+  {
+    "module": "LinearBasis",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/LinearBasis.code-snippets",
+    "originalSha256": "dabc233f2bd8d75ca5278ac6689669e7f261de7f4507b26f99fbbf836cabb5ac",
+    "prefix": "_T_LinearBasis",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original 基底、秩与 canZero 保留，非负值直接用 T 移位，删除多余 Unsigned alias，findByOrder(T)；补回允许空集的注释开关。"
+  },
+  {
+    "module": "ListHelper",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/ListHelper.code-snippets",
+    "originalSha256": "11e7356d7859ae9740a89ea9e86d097fb1423b895a7f21e605dcc439d89aa108",
+    "prefix": "_T_ListHelper",
+    "status": "verified",
+    "dependencies": [],
+    "review": "保留用户已确认的当前 sorted 优化；Original 管道结构保留，引用 Op 防复制、string_view 物化与临时成员结果安全必要。排序的 8/11 位与反向散射有既有完整测量依据。",
+    "observedSourceSha256": "c10123fbb0e89f8ec9a5424d305f44e3f70f216e7ae6de02029bdfc370130e1f",
+    "sourceDrift": "Sorting evolved since initial snapshot: generic/descending radix, adaptive 11-bit digits and skipping uniform digits. CurrentSource snapshot preserved and merged into Final; benchmark uses this latest source."
+  },
+  {
+    "module": "Manacher",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/Manacher.code-snippets",
+    "originalSha256": "9148bf2e19957c2a4fdd295e96280b20a6f20dd79da4ece0d9f6b06d392d709f",
+    "prefix": "_T_Manacher",
+    "status": "verified",
+    "dependencies": [],
+    "review": "保留已验证且较快的 odd/even 内核：Original 字符哨兵与越界不安全。去掉 checkedSize，保留短回文区间查询，不增加对象 metadata。"
+  },
+  {
+    "module": "MaxFlow",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/MaxFlow.code-snippets",
+    "originalSha256": "a375c733d7c4e70c48eac097407a8eae78646a183782740447e51486e426440b",
+    "prefix": "_T_MaxFlow",
+    "status": "verified",
+    "dependencies": [],
+    "review": "恢复 Original 递归 bfs/dfs/work 与当前弧、残量更新；删除 Frame/stk/blockingFlow。DFS 累计已送流量修复浮点返回值消减，保留实用限流防返回值溢出；递归深度取决于路径长度。"
+  },
+  {
+    "module": "MillerRabin",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/MillerRabin.code-snippets",
+    "originalSha256": "b258b322a7dc4127e5d30acd7faf33001254b281382f5a61716673e97604e0bb",
+    "prefix": "_T_MillerRabin",
+    "status": "verified",
+    "dependencies": [],
+    "review": "保留 Original Miller-Rabin 判定流程；if constexpr 选择完整 32/64 位 witness、精确宽乘，不污染共享 ModuloInteger 模数。"
+  },
+  {
+    "module": "MinimalString",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/MinimalString.code-snippets",
+    "originalSha256": "4300dad8c8b665818f4fe36858f40b4fb78b054abd58e425f38d505884a45972",
+    "prefix": "_T_MinimalString",
+    "status": "verified",
+    "dependencies": [
+      "ListHelper"
+    ],
+    "review": "恢复 Original 最小轮转管道与 i/j/k；删除额外索引接口及自定义比较器框架。保留空输入、拥有 string_view 内容、unsigned 字节顺序及一次回绕优化。"
+  },
+  {
+    "module": "MoSort",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/MoSort.code-snippets",
+    "originalSha256": "d5dd5ce60e000fe3baede2aebf6b9d019730e189c0d664b3c8872d5492de5069",
+    "prefix": "_T_MoSort",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original 蛇形比较保留；inline static 块参数和乘法前转 double 是 C++17/溢出修复。"
+  },
+  {
+    "module": "ModuloInteger",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/ModuloInteger.code-snippets",
+    "originalSha256": "45f18502128aa4d712e37b7b06914c1452df2539ee08aca1fd10c309753da570",
+    "prefix": "_T_ModuloInteger",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original 单值、四则运算与 power/inv 保留；inline static/if constexpr/constexpr，unsigned 加法与精确宽乘修复溢出，负指数最小值和输入失败正确。"
+  },
+  {
+    "module": "MultipleBackpacks",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/MultipleBackpacks.code-snippets",
+    "originalSha256": "c9b262374efe002896e10c4775e1929bb21df1ae72b7a6bbd6ada993109f2dae",
+    "prefix": "_T_MultipleBackpacks",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original 单调队列 DP/结构化绑定保留；零重量处理与大重量跳过有正确性/性能价值。删除 INT_MAX 容量防线。"
+  },
+  {
+    "module": "NumberTheoreticTransform",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/NumberTheoreticTransform.code-snippets",
+    "originalSha256": "965a60b9f7334defa2ab39a448cbe03ea7b9a98c3aa01429933ac2e9bbbf2b09",
+    "prefix": "_T_NumberTheoreticTransform",
+    "status": "verified",
+    "dependencies": [
+      "ModuloInteger"
+    ],
+    "review": "Original NTT/Newton 多项式结构保留。inline cache、截断拷贝、原地算术与泛型递归用于实际收益；删除 MaxSize 饱和框架，保留模域/变换长度契约与空序列修复。"
+  },
+  {
+    "module": "PalindromeAutomaton",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/PalindromeAutomaton.code-snippets",
+    "originalSha256": "8ede912b8f9372cb60335114a25d343fb633cd6e4b3f36f54335f3f5a88616a2",
+    "prefix": "_T_PalindromeAutomaton",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original 两根/失配链接/后缀计数保留；string_view、追加时增长和半开实际节点数组，删除容量 helper。短 occurrences 使用现成 cnt/link，不加常驻状态。"
+  },
+  {
+    "module": "PersistentTree",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/PersistentTree.code-snippets",
+    "originalSha256": "097f041d61e72c802553a392b78bcd5876df97faa3bd6f7dac688361edf4cddb",
+    "prefix": "_T_PersistentTree",
+    "status": "verified",
+    "dependencies": [
+      "Discreter"
+    ],
+    "review": "恢复 Original 字段与递归 range/upTo；删除计数扩展、checkedSize、比较器模板与引用/右值 overload。保留空输入/区间、节点预留和沿路 +1。",
+    "deferred": "几何与持久化树按用户要求暂缓"
+  },
+  {
+    "module": "Point",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/Point.code-snippets",
+    "originalSha256": "ea932a11b8e2c53fe34ae06bb706444443a2a92aceb585f55db639527e6f234c",
+    "prefix": "_T_Point",
+    "status": "verified",
+    "dependencies": [
+      "FloatPointNumber"
+    ],
+    "review": "Original API/公式不动；constexpr、conditional_t/inline 常量，三点叉积/距离先宽化再减避免早溢出。",
+    "deferred": "几何与持久化树按用户要求暂缓"
+  },
+  {
+    "module": "PollardRho",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/PollardRho.code-snippets",
+    "originalSha256": "8787e03305617f72914cb2bdece91003e614b8e8171e642d958993d702565180",
+    "prefix": "_T_PollardRho",
+    "status": "verified",
+    "dependencies": [
+      "MillerRabin"
+    ],
+    "review": "Original 分解栈与打包因子保留；精确宽乘、proper factor 重试修复错误，Brent/batched gcd 是已验证性能内核，不改其它模数。"
+  },
+  {
+    "module": "RandomNumber",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/RandomNumber.code-snippets",
+    "originalSha256": "43ab83e5a5452648934725f3ceb99fee9054720dbe2b046ff12f9c6450aa62ce",
+    "prefix": "_T_RandomNumber",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original RNG 不动；inline 变量避免多 TU 多份/重复定义。"
+  },
+  {
+    "module": "RingTree",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/RingTree.code-snippets",
+    "originalSha256": "a0af0da5d7a3e89554d8868374383e7e3b720d8d456e6131b2c203af368740c9",
+    "prefix": "_T_RingTree",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original 剥叶/找环与 g/rings 输出保留；修复纯树末边丢失。删除新增 parent 常驻数组与容量断言。"
+  },
+  {
+    "module": "Sieve",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/Sieve.code-snippets",
+    "originalSha256": "bceec1eeb1d648a1044b0719a1a61759f2778cbe0637c0dce02085755a749cd9",
+    "prefix": "_T_Sieve",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original 线性筛/试除与因子枚举保留；no-op init、mpf 边界、uint64 乘法和除法边界修复正确性。删除 MaxSize 防线；scalar overload 的一行 SFINAE 在 Clang 中消除真实重载歧义，保留。"
+  },
+  {
+    "module": "SparseTable",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/SparseTable.code-snippets",
+    "originalSha256": "a25fb520551abafa958e48790aac530b50cf5c9d6e78a766380a105eea3012a0",
+    "prefix": "_T_SparseTable",
+    "status": "verified",
+    "dependencies": [],
+    "review": "恢复 Original RMQ 字段/层数组/resize/按值查询；删除非默认构造分支及引用返回框架。保留空输入、状态比较器和 cref 避免昂贵复制。"
+  },
+  {
+    "module": "StringHash",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/StringHash.code-snippets",
+    "originalSha256": "1ce3f20aad46eca4261fecad75268283d6f326a089d2862a9ea191cccf3605a9",
+    "prefix": "_T_StringHash",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original 多模前缀哈希/按长度复用幂保留；inline 缓存及 byte/负整数规范化修复正确性。删除超大序列 guard；模板约束仅用于 literal 重载及 bool proxy。"
+  },
+  {
+    "module": "StronglyConnectedComponent",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/StronglyConnectedComponent.code-snippets",
+    "originalSha256": "8266cc5e3542f5be4516bf1e25d8d5ad0e7aeba13c4446b409237050faab2765",
+    "prefix": "_T_StronglyConnectedComponent",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original Tarjan 内核/缩点输出保留；显式栈支持长链。可跳过缩图供 TwoSat 使用，不增加对象状态。删除极大图 guard。"
+  },
+  {
+    "module": "SuffixArray",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/SuffixArray.code-snippets",
+    "originalSha256": "5dfaaa1784d875789eb2282b033479a544a00955dcbb9912ec17feaf1c0fd6a4",
+    "prefix": "_T_SuffixArray",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original 倍增/计数排序/Kasai 保留；修复空输入、初始负数 rank、字符有符号与 LCP 越界。byte 快路径与必要坐标离散化保留，删除 checkedSize。"
+  },
+  {
+    "module": "SuffixAutomaton",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/SuffixAutomaton.code-snippets",
+    "originalSha256": "7826a03be1f18aa2e2f36eef2cc6d39e33aeca28bcf80ff0e893206753d8b886",
+    "prefix": "_T_SuffixAutomaton",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original add/clone/len/link 保留；追加增长补空输入及容量安全；删除 checkedLength/极大容量 assert。"
+  },
+  {
+    "module": "TopSort",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/TopSort.code-snippets",
+    "originalSha256": "717579f75387fe7695c1ae3db5be0e5f05bdfd359d39857b5bb3adbdafeb54f3",
+    "prefix": "_T_TopSort",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original Kahn 与 endPoint 保留；单队列直接形成输出，引用边避免复制；删除超大图 guard。"
+  },
+  {
+    "module": "Tree",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/Tree.code-snippets",
+    "originalSha256": "aa28e4d663821d7a69ba4cbda93cb98fbcbaff0326efc304627d5abd92e9f687",
+    "prefix": "_T_Tree",
+    "status": "verified",
+    "dependencies": [],
+    "review": "保留 Original 属性/Stage/Ability 结构，不引入额外依赖框架。仅 Stage DFS 用显式栈保障长链；删除不用 visit 与 checkedSize，命名空间恢复 _tree。"
+  },
+  {
+    "module": "TwoSat",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/TwoSat.code-snippets",
+    "originalSha256": "26c11760b3fb1c62e87569baddbda0c04f64d00275119ce5e746afcb55cf5f48",
+    "prefix": "_T_TwoSat",
+    "status": "verified",
+    "dependencies": [
+      "StronglyConnectedComponent"
+    ],
+    "review": "Original 蕴含图/赋值保留；不建无用缩图，重复 work/无解结果清理。删除 checkedSize。"
+  },
+  {
+    "module": "VertexBiconnectedComponent",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/VertexBiconnectedComponent.code-snippets",
+    "originalSha256": "d2470971e12dc8a629f6b40409c875e9f4414125a7c95e5eba2d7c0e4698fb50",
+    "prefix": "_T_VertexBiconnectedComponent",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original low-link/圆方树保留；显式栈/父边一次跳过修复长链和平行边，删除极大图 guard。"
+  },
+  {
+    "module": "ZFunction",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/ZFunction.code-snippets",
+    "originalSha256": "2f2b8be2462f6502b2a6ca37c03982e397fe7fdec794379bb2073f9888f5de2a",
+    "prefix": "_T_ZFunction",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original 内核不动；inline/string_view 直接 C++17 升级。"
+  },
+  {
+    "module": "init_",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/init_.code-snippets",
+    "originalSha256": "59f4fae0e3fcdd5126035284403c4725dce7ffdfb195dca715e7f099ea1fafd3",
+    "prefix": "_T_",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original main/fast iostream 设置保留；删除多余 I64 中转 alias，仅 i64。",
+    "role": "entrypoint"
+  },
+  {
+    "module": "init_case",
+    "source": "/Users/bytedance/Library/Application Support/Code/User/snippets/init_case.code-snippets",
+    "originalSha256": "832804559cfd6fd7ea55fa2740ac9dc9350ba60d04aa875bd9a77aa13594c83a",
+    "prefix": "_T_case",
+    "status": "verified",
+    "dependencies": [],
+    "review": "Original solve/重复入口保留；删除多余 I64 与 index-for 包装；提前过滤非正数，再用 Original 的 while(cases--)，避免最小负数的递减溢出。",
+    "role": "entrypoint"
+  }
+]

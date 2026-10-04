@@ -1,0 +1,51 @@
+{
+  "module": "Kmp",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "d7a5ba63a144c1b838655a487ba96dff3387865a7bf5c17b561614afeccb6119",
+    "Final.hpp": "3a50adc8a38643f7118c47d3aa5405188779eaab067b513fc894bc9cde28cea5",
+    "Test.cpp": "bac0c25f9650442dca87aeccdcebf14015c3ad690c690b9af131d5e594316e8e",
+    "Benchmark.cpp": "85a60b4f06062056ea61017972fc268fa592477d3b1684ac77266692c0a1d631",
+    "Final.code-snippets": "5f59cbeb0740e5baaa5ea593fa49cbc9b11568991a4eb9877817b2cb96a6227b"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/Kmp/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/Kmp/Build/optimized"
+      ],
+      "output": "Exhaustive binary strings, random slices, embedded NUL and 1M repeated characters passed"
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/Kmp/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/Kmp/Build/sanitized"
+      ],
+      "output": "Exhaustive binary strings, random slices, embedded NUL and 1M repeated characters passed"
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/Kmp/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/Kmp/Build/benchmark"
+  ],
+  "benchmark": "full-alphabet-1,2.168,2.101,1.03189,499999500000\nslice-alphabet-1,1.873,1.817,1.03082,404999550000\nfull-alphabet-2,3.989,3.955,1.0086,1663127\nslice-alphabet-2,3.429,3.235,1.05997,1345467\nfull-alphabet-26,1.093,1.108,0.986462,41641\nslice-alphabet-26,1.027,0.996,1.03112,37272"
+}

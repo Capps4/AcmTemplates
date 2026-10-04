@@ -1,0 +1,51 @@
+{
+  "module": "SparseTable",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "eca1e22479455ddeea13af10750832e664fa6791ea5115835c0a59070aa80056",
+    "Final.hpp": "13bc400594620e6b15b39a1edd91e8f756ebf2c44d32251581517e63688c1c82",
+    "Test.cpp": "3dca933741ba33c4fcf1ef612d24d9b944510c7999be531e3ba0fac8c8589ac1",
+    "Benchmark.cpp": "6ef2adc66abd918de6d1e62c19035f0296258ffdd5bac23a60c321f7af87e88b",
+    "Final.code-snippets": "153dc1ac97eb8d002870fbb078baa8bb702bb7ef55f5c1c1b2668835738a9201"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/SparseTable/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/SparseTable/Build/optimized"
+      ],
+      "output": "All random intervals vs min/max oracles, move-only comparator, empty table and non-default values passed"
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/SparseTable/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/SparseTable/Build/sanitized"
+      ],
+      "output": "All random intervals vs min/max oracles, move-only comparator, empty table and non-default values passed"
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/SparseTable/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/SparseTable/Build/benchmark"
+  ],
+  "benchmark": "build-100K,1.114,0.921,1.20955,0\nquery-300K,0.486,0.517,0.940039,187669429\nbuild-stateful-comparator-30K,8.869,0.108,82.1204,10"
+}

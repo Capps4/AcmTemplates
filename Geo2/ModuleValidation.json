@@ -1,0 +1,3125 @@
+{
+  "date": "2026-10-04",
+  "scope": "Four Geo2 modules, container API, Point/FloatPointNumber compatibility; not the full-repository runner",
+  "records": [
+    {
+      "profile": "Clang 17",
+      "case": "cpp17-Geo2-Test",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/Test.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-cpp17-Geo2-Test"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2: 65536-vertex hull, 6561 segment pairs, 6000 area oracles, 2000 bounded HPI, 6000 predicate + 4000 construction rounds, 6000 nearest-point + 20000 circle-predicate oracles PASS; seed=20261001",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "cpp17-Geo2-Test",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/Test.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-cpp17-Geo2-Test"
+      ],
+      "arguments": [],
+      "seed": 7,
+      "status": "PASS",
+      "output": "Geo2: 65536-vertex hull, 6561 segment pairs, 6000 area oracles, 2000 bounded HPI, 6000 predicate + 4000 construction rounds, 6000 nearest-point + 20000 circle-predicate oracles PASS; seed=7",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "cpp17-Geo2-Test",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/Test.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-cpp17-Geo2-Test"
+      ],
+      "arguments": [],
+      "seed": 42,
+      "status": "PASS",
+      "output": "Geo2: 65536-vertex hull, 6561 segment pairs, 6000 area oracles, 2000 bounded HPI, 6000 predicate + 4000 construction rounds, 6000 nearest-point + 20000 circle-predicate oracles PASS; seed=42",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "cpp17-Geo2-Test",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/Test.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-cpp17-Geo2-Test"
+      ],
+      "arguments": [],
+      "seed": 20261002,
+      "status": "PASS",
+      "output": "Geo2: 65536-vertex hull, 6561 segment pairs, 6000 area oracles, 2000 bounded HPI, 6000 predicate + 4000 construction rounds, 6000 nearest-point + 20000 circle-predicate oracles PASS; seed=20261002",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "cpp17-Geo2-TestCaseBounds",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseBounds.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-cpp17-Geo2-TestCaseBounds"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 bounds: 250000 exact segment/circle/turn rounds, 12000 exact hull rounds, 20000 cancellation cases, 15000 boundary/capacity cases + 300000 exact line queries, 16000 scaled constructions PASS; seed=20261001",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "cpp17-Geo2-TestCaseBounds",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseBounds.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-cpp17-Geo2-TestCaseBounds"
+      ],
+      "arguments": [],
+      "seed": 7,
+      "status": "PASS",
+      "output": "Geo2 bounds: 250000 exact segment/circle/turn rounds, 12000 exact hull rounds, 20000 cancellation cases, 15000 boundary/capacity cases + 300000 exact line queries, 16000 scaled constructions PASS; seed=7",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "cpp17-Geo2-TestCaseBounds",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseBounds.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-cpp17-Geo2-TestCaseBounds"
+      ],
+      "arguments": [],
+      "seed": 42,
+      "status": "PASS",
+      "output": "Geo2 bounds: 250000 exact segment/circle/turn rounds, 12000 exact hull rounds, 20000 cancellation cases, 15000 boundary/capacity cases + 300000 exact line queries, 16000 scaled constructions PASS; seed=42",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "cpp17-Geo2-TestCaseBounds",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseBounds.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-cpp17-Geo2-TestCaseBounds"
+      ],
+      "arguments": [],
+      "seed": 20261002,
+      "status": "PASS",
+      "output": "Geo2 bounds: 250000 exact segment/circle/turn rounds, 12000 exact hull rounds, 20000 cancellation cases, 15000 boundary/capacity cases + 300000 exact line queries, 16000 scaled constructions PASS; seed=20261002",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "cpp17-Geo2-TestCaseTypes",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseTypes.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-cpp17-Geo2-TestCaseTypes"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2: native/wrapped double/long-double near matrix, integer inter matrix, private API PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "cpp17-Geo2-TestCaseHalfPlane",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "cpp17/Geo2/HalfPlaneRegression.txt"
+      ],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=cpp17/Geo2/HalfPlaneRegression.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "cpp17-Geo2-TestCaseHalfPlane",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "/tmp/geo2-four-validation/hpi-20261001.txt"
+      ],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=/tmp/geo2-four-validation/hpi-20261001.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "cpp17-Geo2-TestCaseHalfPlane",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "/tmp/geo2-four-validation/hpi-7.txt"
+      ],
+      "seed": 7,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=/tmp/geo2-four-validation/hpi-7.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "cpp17-Geo2-TestCaseHalfPlane",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "/tmp/geo2-four-validation/hpi-42.txt"
+      ],
+      "seed": 42,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=/tmp/geo2-four-validation/hpi-42.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "cpp17-Geo2-TestCaseHalfPlane",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "/tmp/geo2-four-validation/hpi-20261002.txt"
+      ],
+      "seed": 20261002,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=/tmp/geo2-four-validation/hpi-20261002.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "cpp17-Point-Test",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-include",
+        "/tmp/geo2-four-validation/i64.hpp",
+        "cpp17/Point/Test.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-cpp17-Point-Test"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Point/Vec affine semantics, 100K independent algebra/distance oracle, native/wrapped floating math and IO PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "cpp17-Point-TestCaseGeometry",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Point/TestCaseGeometry.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-cpp17-Point-TestCaseGeometry"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 + Geo3 compatibility PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "cpp17-FloatPointNumber-Test",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/FloatPointNumber/Test.cpp",
+        "cpp17/FloatPointNumber/TestExtra.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-cpp17-FloatPointNumber-Test"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "round: EPS boundaries, negative ties toward +infinity, integer limits, 16385 dyadic cases PASS\nstreams: stod parsing/errors/EOF, signed zero, precision and two-TU sharing PASS\nFloat=FloatPointNumber<double>: constexpr/types, IEEE boundaries, comparisons, all std math, 100K random oracles and 10K exponent-range cases PASS; TEST_SEED=20261001",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "layer-1",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-DGEO2_TEST_LAYER=1",
+        "cpp17/Geo2/TestCaseModules.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-layer-1"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 layer 1: global API, scalar types, container access PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "layer-2",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-DGEO2_TEST_LAYER=2",
+        "cpp17/Geo2/TestCaseModules.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-layer-2"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 layer 2: global API, scalar types, container access PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "layer-3",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-DGEO2_TEST_LAYER=3",
+        "cpp17/Geo2/TestCaseModules.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-layer-3"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 layer 3: global API, scalar types, container access PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "layer-4",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-DGEO2_TEST_LAYER=4",
+        "cpp17/Geo2/TestCaseModules.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-layer-4"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 layer 4: global API, scalar types, container access PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "multitu",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-DGEO2_TEST_MULTITU",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "cpp17/Geo2/TestCaseModules.cpp",
+        "/tmp/geo2-four-validation/point-extra.cpp",
+        "/tmp/geo2-four-validation/circle-extra.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/0-multitu"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 layer 4: global API, scalar types, container access PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "PointVec.hpp",
+        "SegLine.hpp",
+        "PolygonConvex.hpp",
+        "Circle.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-0.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "PointVec.hpp",
+        "SegLine.hpp",
+        "Circle.hpp",
+        "PolygonConvex.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-1.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "PointVec.hpp",
+        "PolygonConvex.hpp",
+        "SegLine.hpp",
+        "Circle.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-2.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "PointVec.hpp",
+        "PolygonConvex.hpp",
+        "Circle.hpp",
+        "SegLine.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-3.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "PointVec.hpp",
+        "Circle.hpp",
+        "SegLine.hpp",
+        "PolygonConvex.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-4.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "PointVec.hpp",
+        "Circle.hpp",
+        "PolygonConvex.hpp",
+        "SegLine.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-5.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "SegLine.hpp",
+        "PointVec.hpp",
+        "PolygonConvex.hpp",
+        "Circle.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-6.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "SegLine.hpp",
+        "PointVec.hpp",
+        "Circle.hpp",
+        "PolygonConvex.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-7.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "SegLine.hpp",
+        "PolygonConvex.hpp",
+        "PointVec.hpp",
+        "Circle.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-8.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "SegLine.hpp",
+        "PolygonConvex.hpp",
+        "Circle.hpp",
+        "PointVec.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-9.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "SegLine.hpp",
+        "Circle.hpp",
+        "PointVec.hpp",
+        "PolygonConvex.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-10.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "SegLine.hpp",
+        "Circle.hpp",
+        "PolygonConvex.hpp",
+        "PointVec.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-11.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "PolygonConvex.hpp",
+        "PointVec.hpp",
+        "SegLine.hpp",
+        "Circle.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-12.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "PolygonConvex.hpp",
+        "PointVec.hpp",
+        "Circle.hpp",
+        "SegLine.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-13.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "PolygonConvex.hpp",
+        "SegLine.hpp",
+        "PointVec.hpp",
+        "Circle.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-14.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "PolygonConvex.hpp",
+        "SegLine.hpp",
+        "Circle.hpp",
+        "PointVec.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-15.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "PolygonConvex.hpp",
+        "Circle.hpp",
+        "PointVec.hpp",
+        "SegLine.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-16.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "PolygonConvex.hpp",
+        "Circle.hpp",
+        "SegLine.hpp",
+        "PointVec.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-17.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "Circle.hpp",
+        "PointVec.hpp",
+        "SegLine.hpp",
+        "PolygonConvex.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-18.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "Circle.hpp",
+        "PointVec.hpp",
+        "PolygonConvex.hpp",
+        "SegLine.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-19.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "Circle.hpp",
+        "SegLine.hpp",
+        "PointVec.hpp",
+        "PolygonConvex.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-20.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "Circle.hpp",
+        "SegLine.hpp",
+        "PolygonConvex.hpp",
+        "PointVec.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-21.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "Circle.hpp",
+        "PolygonConvex.hpp",
+        "PointVec.hpp",
+        "SegLine.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-22.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "include-order",
+      "headers": [
+        "Circle.hpp",
+        "PolygonConvex.hpp",
+        "SegLine.hpp",
+        "PointVec.hpp"
+      ],
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-0-23.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "integer-inter",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-0-integer-inter.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/Circle.hpp\"\nint main(){auto x=::inter(Seg<long long>{{0,0},{2,2}},Seg<long long>{{0,1},{2,0}});(void)x;}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "intersection coordinates need floating T"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "integer-near",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-0-integer-near.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/Circle.hpp\"\nint main(){auto x=::near(Point<long long>{1,2},Seg<long long>{{0,0},{3,0}});(void)x;}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "nearest coordinates need floating T"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "private-support",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-0-private-support.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/Circle.hpp\"\nint main(){auto h=::convexHull<double>({{0,0},{1,0},{0,1}});return h.support({1,0});}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "private"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "private-edge",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-0-private-edge.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/Circle.hpp\"\nint main(){auto h=::convexHull<double>({{0,0},{1,0},{0,1}});auto x=h.edge(0);(void)x;}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "private"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "no-shape-dist",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-0-no-shape-dist.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/Circle.hpp\"\nint main(){Line<double> l({0,0},{1,0});return int(l.dist({1,2}));}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "dist"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "no-fake-circle-region",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-0-no-fake-circle-region.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/Circle.hpp\"\nint main(){Circle<double> c({0,0},1);auto h=::convexHull<double>({{0,0},{1,0},{0,1}});auto x=::inter(c,h);(void)x;}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "matching function"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "readonly-hull-index",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-0-readonly-hull-index.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/Circle.hpp\"\nint main(){auto h=::convexHull<double>({{0,0},{1,0},{0,1}});h[0]={9,9};}\n",
+      "status": "PASS",
+      "expectedDiagnostic": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "readonly-hull-iterator",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-0-readonly-hull-iterator.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/Circle.hpp\"\nint main(){auto h=::convexHull<double>({{0,0},{1,0},{0,1}});*h.begin()={9,9};}\n",
+      "status": "PASS",
+      "expectedDiagnostic": ""
+    },
+    {
+      "profile": "Clang 17",
+      "case": "no-global-Coord",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-0-no-global-Coord.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/Circle.hpp\"\nint main(){::Coord<double,true> p;(void)p;}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "Coord"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "point-no-line",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-0-point-no-line.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/PointVec.hpp\"\nint main(){Line<double> l({0,0},{1,0});(void)l;}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "Line"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "line-no-polygon",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-0-line-no-polygon.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/SegLine.hpp\"\nint main(){Polygon<double> p;(void)p;}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "Polygon"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "polygon-no-circle",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-0-polygon-no-circle.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/PolygonConvex.hpp\"\nint main(){Circle<double> c({0,0},1);(void)c;}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "Circle"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "cpp17-Geo2-Test",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/Test.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-cpp17-Geo2-Test"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2: 65536-vertex hull, 6561 segment pairs, 6000 area oracles, 2000 bounded HPI, 6000 predicate + 4000 construction rounds, 6000 nearest-point + 20000 circle-predicate oracles PASS; seed=20261001",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "cpp17-Geo2-Test",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/Test.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-cpp17-Geo2-Test"
+      ],
+      "arguments": [],
+      "seed": 7,
+      "status": "PASS",
+      "output": "Geo2: 65536-vertex hull, 6561 segment pairs, 6000 area oracles, 2000 bounded HPI, 6000 predicate + 4000 construction rounds, 6000 nearest-point + 20000 circle-predicate oracles PASS; seed=7",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "cpp17-Geo2-Test",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/Test.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-cpp17-Geo2-Test"
+      ],
+      "arguments": [],
+      "seed": 42,
+      "status": "PASS",
+      "output": "Geo2: 65536-vertex hull, 6561 segment pairs, 6000 area oracles, 2000 bounded HPI, 6000 predicate + 4000 construction rounds, 6000 nearest-point + 20000 circle-predicate oracles PASS; seed=42",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "cpp17-Geo2-Test",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/Test.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-cpp17-Geo2-Test"
+      ],
+      "arguments": [],
+      "seed": 20261002,
+      "status": "PASS",
+      "output": "Geo2: 65536-vertex hull, 6561 segment pairs, 6000 area oracles, 2000 bounded HPI, 6000 predicate + 4000 construction rounds, 6000 nearest-point + 20000 circle-predicate oracles PASS; seed=20261002",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "cpp17-Geo2-TestCaseBounds",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseBounds.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-cpp17-Geo2-TestCaseBounds"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 bounds: 250000 exact segment/circle/turn rounds, 12000 exact hull rounds, 20000 cancellation cases, 15000 boundary/capacity cases + 300000 exact line queries, 16000 scaled constructions PASS; seed=20261001",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "cpp17-Geo2-TestCaseBounds",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseBounds.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-cpp17-Geo2-TestCaseBounds"
+      ],
+      "arguments": [],
+      "seed": 7,
+      "status": "PASS",
+      "output": "Geo2 bounds: 250000 exact segment/circle/turn rounds, 12000 exact hull rounds, 20000 cancellation cases, 15000 boundary/capacity cases + 300000 exact line queries, 16000 scaled constructions PASS; seed=7",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "cpp17-Geo2-TestCaseBounds",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseBounds.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-cpp17-Geo2-TestCaseBounds"
+      ],
+      "arguments": [],
+      "seed": 42,
+      "status": "PASS",
+      "output": "Geo2 bounds: 250000 exact segment/circle/turn rounds, 12000 exact hull rounds, 20000 cancellation cases, 15000 boundary/capacity cases + 300000 exact line queries, 16000 scaled constructions PASS; seed=42",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "cpp17-Geo2-TestCaseBounds",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseBounds.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-cpp17-Geo2-TestCaseBounds"
+      ],
+      "arguments": [],
+      "seed": 20261002,
+      "status": "PASS",
+      "output": "Geo2 bounds: 250000 exact segment/circle/turn rounds, 12000 exact hull rounds, 20000 cancellation cases, 15000 boundary/capacity cases + 300000 exact line queries, 16000 scaled constructions PASS; seed=20261002",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "cpp17-Geo2-TestCaseTypes",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseTypes.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-cpp17-Geo2-TestCaseTypes"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2: native/wrapped double/long-double near matrix, integer inter matrix, private API PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "cpp17-Geo2-TestCaseHalfPlane",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "cpp17/Geo2/HalfPlaneRegression.txt"
+      ],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=cpp17/Geo2/HalfPlaneRegression.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "cpp17-Geo2-TestCaseHalfPlane",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "/tmp/geo2-four-validation/hpi-20261001.txt"
+      ],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=/tmp/geo2-four-validation/hpi-20261001.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "cpp17-Geo2-TestCaseHalfPlane",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "/tmp/geo2-four-validation/hpi-7.txt"
+      ],
+      "seed": 7,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=/tmp/geo2-four-validation/hpi-7.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "cpp17-Geo2-TestCaseHalfPlane",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "/tmp/geo2-four-validation/hpi-42.txt"
+      ],
+      "seed": 42,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=/tmp/geo2-four-validation/hpi-42.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "cpp17-Geo2-TestCaseHalfPlane",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "/tmp/geo2-four-validation/hpi-20261002.txt"
+      ],
+      "seed": 20261002,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=/tmp/geo2-four-validation/hpi-20261002.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "cpp17-Point-Test",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "-include",
+        "/tmp/geo2-four-validation/i64.hpp",
+        "cpp17/Point/Test.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-cpp17-Point-Test"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Point/Vec affine semantics, 100K independent algebra/distance oracle, native/wrapped floating math and IO PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "cpp17-Point-TestCaseGeometry",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "cpp17/Point/TestCaseGeometry.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-cpp17-Point-TestCaseGeometry"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 + Geo3 compatibility PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "cpp17-FloatPointNumber-Test",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/FloatPointNumber/Test.cpp",
+        "cpp17/FloatPointNumber/TestExtra.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-cpp17-FloatPointNumber-Test"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "round: EPS boundaries, negative ties toward +infinity, integer limits, 16385 dyadic cases PASS\nstreams: stod parsing/errors/EOF, signed zero, precision and two-TU sharing PASS\nFloat=FloatPointNumber<double>: constexpr/types, IEEE boundaries, comparisons, all std math, 100K random oracles and 10K exponent-range cases PASS; TEST_SEED=20261001",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "layer-1",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "-DGEO2_TEST_LAYER=1",
+        "cpp17/Geo2/TestCaseModules.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-layer-1"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 layer 1: global API, scalar types, container access PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "layer-2",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "-DGEO2_TEST_LAYER=2",
+        "cpp17/Geo2/TestCaseModules.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-layer-2"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 layer 2: global API, scalar types, container access PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "layer-3",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "-DGEO2_TEST_LAYER=3",
+        "cpp17/Geo2/TestCaseModules.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-layer-3"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 layer 3: global API, scalar types, container access PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "layer-4",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "-DGEO2_TEST_LAYER=4",
+        "cpp17/Geo2/TestCaseModules.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-layer-4"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 layer 4: global API, scalar types, container access PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "multitu",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "-DGEO2_TEST_MULTITU",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "cpp17/Geo2/TestCaseModules.cpp",
+        "/tmp/geo2-four-validation/point-extra.cpp",
+        "/tmp/geo2-four-validation/circle-extra.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/1-multitu"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 layer 4: global API, scalar types, container access PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "PointVec.hpp",
+        "SegLine.hpp",
+        "PolygonConvex.hpp",
+        "Circle.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-0.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "PointVec.hpp",
+        "SegLine.hpp",
+        "Circle.hpp",
+        "PolygonConvex.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-1.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "PointVec.hpp",
+        "PolygonConvex.hpp",
+        "SegLine.hpp",
+        "Circle.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-2.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "PointVec.hpp",
+        "PolygonConvex.hpp",
+        "Circle.hpp",
+        "SegLine.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-3.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "PointVec.hpp",
+        "Circle.hpp",
+        "SegLine.hpp",
+        "PolygonConvex.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-4.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "PointVec.hpp",
+        "Circle.hpp",
+        "PolygonConvex.hpp",
+        "SegLine.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-5.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "SegLine.hpp",
+        "PointVec.hpp",
+        "PolygonConvex.hpp",
+        "Circle.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-6.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "SegLine.hpp",
+        "PointVec.hpp",
+        "Circle.hpp",
+        "PolygonConvex.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-7.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "SegLine.hpp",
+        "PolygonConvex.hpp",
+        "PointVec.hpp",
+        "Circle.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-8.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "SegLine.hpp",
+        "PolygonConvex.hpp",
+        "Circle.hpp",
+        "PointVec.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-9.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "SegLine.hpp",
+        "Circle.hpp",
+        "PointVec.hpp",
+        "PolygonConvex.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-10.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "SegLine.hpp",
+        "Circle.hpp",
+        "PolygonConvex.hpp",
+        "PointVec.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-11.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "PolygonConvex.hpp",
+        "PointVec.hpp",
+        "SegLine.hpp",
+        "Circle.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-12.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "PolygonConvex.hpp",
+        "PointVec.hpp",
+        "Circle.hpp",
+        "SegLine.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-13.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "PolygonConvex.hpp",
+        "SegLine.hpp",
+        "PointVec.hpp",
+        "Circle.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-14.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "PolygonConvex.hpp",
+        "SegLine.hpp",
+        "Circle.hpp",
+        "PointVec.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-15.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "PolygonConvex.hpp",
+        "Circle.hpp",
+        "PointVec.hpp",
+        "SegLine.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-16.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "PolygonConvex.hpp",
+        "Circle.hpp",
+        "SegLine.hpp",
+        "PointVec.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-17.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "Circle.hpp",
+        "PointVec.hpp",
+        "SegLine.hpp",
+        "PolygonConvex.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-18.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "Circle.hpp",
+        "PointVec.hpp",
+        "PolygonConvex.hpp",
+        "SegLine.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-19.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "Circle.hpp",
+        "SegLine.hpp",
+        "PointVec.hpp",
+        "PolygonConvex.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-20.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "Circle.hpp",
+        "SegLine.hpp",
+        "PolygonConvex.hpp",
+        "PointVec.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-21.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "Circle.hpp",
+        "PolygonConvex.hpp",
+        "PointVec.hpp",
+        "SegLine.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-22.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "include-order",
+      "headers": [
+        "Circle.hpp",
+        "PolygonConvex.hpp",
+        "SegLine.hpp",
+        "PointVec.hpp"
+      ],
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/order-1-23.cpp"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "integer-inter",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-1-integer-inter.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/Circle.hpp\"\nint main(){auto x=::inter(Seg<long long>{{0,0},{2,2}},Seg<long long>{{0,1},{2,0}});(void)x;}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "intersection coordinates need floating T"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "integer-near",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-1-integer-near.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/Circle.hpp\"\nint main(){auto x=::near(Point<long long>{1,2},Seg<long long>{{0,0},{3,0}});(void)x;}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "nearest coordinates need floating T"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "private-support",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-1-private-support.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/Circle.hpp\"\nint main(){auto h=::convexHull<double>({{0,0},{1,0},{0,1}});return h.support({1,0});}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "private"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "private-edge",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-1-private-edge.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/Circle.hpp\"\nint main(){auto h=::convexHull<double>({{0,0},{1,0},{0,1}});auto x=h.edge(0);(void)x;}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "private"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "no-shape-dist",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-1-no-shape-dist.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/Circle.hpp\"\nint main(){Line<double> l({0,0},{1,0});return int(l.dist({1,2}));}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "dist"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "no-fake-circle-region",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-1-no-fake-circle-region.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/Circle.hpp\"\nint main(){Circle<double> c({0,0},1);auto h=::convexHull<double>({{0,0},{1,0},{0,1}});auto x=::inter(c,h);(void)x;}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "matching function"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "readonly-hull-index",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-1-readonly-hull-index.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/Circle.hpp\"\nint main(){auto h=::convexHull<double>({{0,0},{1,0},{0,1}});h[0]={9,9};}\n",
+      "status": "PASS",
+      "expectedDiagnostic": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "readonly-hull-iterator",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-1-readonly-hull-iterator.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/Circle.hpp\"\nint main(){auto h=::convexHull<double>({{0,0},{1,0},{0,1}});*h.begin()={9,9};}\n",
+      "status": "PASS",
+      "expectedDiagnostic": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "no-global-Coord",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-1-no-global-Coord.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/Circle.hpp\"\nint main(){::Coord<double,true> p;(void)p;}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "Coord"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "point-no-line",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-1-point-no-line.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/PointVec.hpp\"\nint main(){Line<double> l({0,0},{1,0});(void)l;}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "Line"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "line-no-polygon",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-1-line-no-polygon.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/SegLine.hpp\"\nint main(){Polygon<double> p;(void)p;}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "Polygon"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "polygon-no-circle",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "-fsyntax-only",
+        "/tmp/geo2-four-validation/negative-1-polygon-no-circle.cpp"
+      ],
+      "source": "#include \"cpp17/Geo2/PolygonConvex.hpp\"\nint main(){Circle<double> c({0,0},1);(void)c;}\n",
+      "status": "PASS",
+      "expectedDiagnostic": "Circle"
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "case": "cpp17-Geo2-Test",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/Test.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/2-cpp17-Geo2-Test"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2: 65536-vertex hull, 6561 segment pairs, 6000 area oracles, 2000 bounded HPI, 6000 predicate + 4000 construction rounds, 6000 nearest-point + 20000 circle-predicate oracles PASS; seed=20261001",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "case": "cpp17-Geo2-TestCaseBounds",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseBounds.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/2-cpp17-Geo2-TestCaseBounds"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 bounds: 250000 exact segment/circle/turn rounds, 12000 exact hull rounds, 20000 cancellation cases, 15000 boundary/capacity cases + 300000 exact line queries, 16000 scaled constructions PASS; seed=20261001",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "case": "cpp17-Geo2-TestCaseTypes",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseTypes.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/2-cpp17-Geo2-TestCaseTypes"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2: native/wrapped double/long-double near matrix, integer inter matrix, private API PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "case": "cpp17-Geo2-TestCaseHalfPlane",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/2-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "cpp17/Geo2/HalfPlaneRegression.txt"
+      ],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=cpp17/Geo2/HalfPlaneRegression.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "case": "cpp17-Geo2-TestCaseHalfPlane",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/2-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "/tmp/geo2-four-validation/hpi-20261001.txt"
+      ],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=/tmp/geo2-four-validation/hpi-20261001.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "case": "cpp17-Point-Test",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-include",
+        "/tmp/geo2-four-validation/i64.hpp",
+        "cpp17/Point/Test.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/2-cpp17-Point-Test"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Point/Vec affine semantics, 100K independent algebra/distance oracle, native/wrapped floating math and IO PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "case": "cpp17-Point-TestCaseGeometry",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Point/TestCaseGeometry.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/2-cpp17-Point-TestCaseGeometry"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 + Geo3 compatibility PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "case": "cpp17-FloatPointNumber-Test",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/FloatPointNumber/Test.cpp",
+        "cpp17/FloatPointNumber/TestExtra.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/2-cpp17-FloatPointNumber-Test"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "round: EPS boundaries, negative ties toward +infinity, integer limits, 16385 dyadic cases PASS\nstreams: stod parsing/errors/EOF, signed zero, precision and two-TU sharing PASS\nFloat=FloatPointNumber<double>: constexpr/types, IEEE boundaries, comparisons, all std math, 100K random oracles and 10K exponent-range cases PASS; TEST_SEED=20261001",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "case": "layer-1",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-DGEO2_TEST_LAYER=1",
+        "cpp17/Geo2/TestCaseModules.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/2-layer-1"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 layer 1: global API, scalar types, container access PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "case": "layer-2",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-DGEO2_TEST_LAYER=2",
+        "cpp17/Geo2/TestCaseModules.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/2-layer-2"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 layer 2: global API, scalar types, container access PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "case": "layer-3",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-DGEO2_TEST_LAYER=3",
+        "cpp17/Geo2/TestCaseModules.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/2-layer-3"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 layer 3: global API, scalar types, container access PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "case": "layer-4",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-DGEO2_TEST_LAYER=4",
+        "cpp17/Geo2/TestCaseModules.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/2-layer-4"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 layer 4: global API, scalar types, container access PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "case": "multitu",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-DGEO2_TEST_MULTITU",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "cpp17/Geo2/TestCaseModules.cpp",
+        "/tmp/geo2-four-validation/point-extra.cpp",
+        "/tmp/geo2-four-validation/circle-extra.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/2-multitu"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 layer 4: global API, scalar types, container access PASS",
+      "stderr": ""
+    },
+    {
+      "case": "strict-layer-dependencies",
+      "status": "PASS",
+      "headers": [
+        "PointVec.hpp",
+        "SegLine.hpp",
+        "PolygonConvex.hpp",
+        "Circle.hpp"
+      ]
+    },
+    {
+      "profile": "Clang 17",
+      "case": "README demo: empty",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "/tmp/geo2-four-validation/demo.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/demo-Cla"
+      ],
+      "source": "#include <iostream>\n#include \"cpp17/Geo2/PolygonConvex.hpp\"\n\nusing i64 = long long;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n;\n    std::cin >> n;\n    std::vector<Point<i64>> points(n);\n    for (auto &p : points) std::cin >> p;\n    auto hull = convexHull(std::move(points));\n    std::cout << hull.size() << '\\n';\n    for (const auto &p : hull)\n        std::cout << p.x << ' ' << p.y << '\\n';\n}\n",
+      "input": "0\n",
+      "expected": "0\n",
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "README demo: singleton",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "/tmp/geo2-four-validation/demo.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/demo-Cla"
+      ],
+      "source": "#include <iostream>\n#include \"cpp17/Geo2/PolygonConvex.hpp\"\n\nusing i64 = long long;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n;\n    std::cin >> n;\n    std::vector<Point<i64>> points(n);\n    for (auto &p : points) std::cin >> p;\n    auto hull = convexHull(std::move(points));\n    std::cout << hull.size() << '\\n';\n    for (const auto &p : hull)\n        std::cout << p.x << ' ' << p.y << '\\n';\n}\n",
+      "input": "1\n3 4\n",
+      "expected": "1\n3 4\n",
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "README demo: duplicates",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "/tmp/geo2-four-validation/demo.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/demo-Cla"
+      ],
+      "source": "#include <iostream>\n#include \"cpp17/Geo2/PolygonConvex.hpp\"\n\nusing i64 = long long;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n;\n    std::cin >> n;\n    std::vector<Point<i64>> points(n);\n    for (auto &p : points) std::cin >> p;\n    auto hull = convexHull(std::move(points));\n    std::cout << hull.size() << '\\n';\n    for (const auto &p : hull)\n        std::cout << p.x << ' ' << p.y << '\\n';\n}\n",
+      "input": "3\n5 7\n5 7\n5 7\n",
+      "expected": "1\n5 7\n",
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "README demo: collinear",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "/tmp/geo2-four-validation/demo.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/demo-Cla"
+      ],
+      "source": "#include <iostream>\n#include \"cpp17/Geo2/PolygonConvex.hpp\"\n\nusing i64 = long long;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n;\n    std::cin >> n;\n    std::vector<Point<i64>> points(n);\n    for (auto &p : points) std::cin >> p;\n    auto hull = convexHull(std::move(points));\n    std::cout << hull.size() << '\\n';\n    for (const auto &p : hull)\n        std::cout << p.x << ' ' << p.y << '\\n';\n}\n",
+      "input": "5\n2 2\n0 0\n1 1\n2 2\n-1 -1\n",
+      "expected": "2\n-1 -1\n2 2\n",
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "README demo: square",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "/tmp/geo2-four-validation/demo.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/demo-Cla"
+      ],
+      "source": "#include <iostream>\n#include \"cpp17/Geo2/PolygonConvex.hpp\"\n\nusing i64 = long long;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n;\n    std::cin >> n;\n    std::vector<Point<i64>> points(n);\n    for (auto &p : points) std::cin >> p;\n    auto hull = convexHull(std::move(points));\n    std::cout << hull.size() << '\\n';\n    for (const auto &p : hull)\n        std::cout << p.x << ' ' << p.y << '\\n';\n}\n",
+      "input": "6\n2 2\n0 0\n2 0\n0 2\n1 1\n0 0\n",
+      "expected": "4\n0 0\n2 0\n2 2\n0 2\n",
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "README demo: large",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "/tmp/geo2-four-validation/demo.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/demo-Cla"
+      ],
+      "source": "#include <iostream>\n#include \"cpp17/Geo2/PolygonConvex.hpp\"\n\nusing i64 = long long;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n;\n    std::cin >> n;\n    std::vector<Point<i64>> points(n);\n    for (auto &p : points) std::cin >> p;\n    auto hull = convexHull(std::move(points));\n    std::cout << hull.size() << '\\n';\n    for (const auto &p : hull)\n        std::cout << p.x << ' ' << p.y << '\\n';\n}\n",
+      "input": "4\n-1000000000 -1000000000\n1000000000 1000000000\n1000000000 -1000000000\n-1000000000 1000000000\n",
+      "expected": "4\n-1000000000 -1000000000\n1000000000 -1000000000\n1000000000 1000000000\n-1000000000 1000000000\n",
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "README demo: empty",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "/tmp/geo2-four-validation/demo.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/demo-GCC"
+      ],
+      "source": "#include <iostream>\n#include \"cpp17/Geo2/PolygonConvex.hpp\"\n\nusing i64 = long long;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n;\n    std::cin >> n;\n    std::vector<Point<i64>> points(n);\n    for (auto &p : points) std::cin >> p;\n    auto hull = convexHull(std::move(points));\n    std::cout << hull.size() << '\\n';\n    for (const auto &p : hull)\n        std::cout << p.x << ' ' << p.y << '\\n';\n}\n",
+      "input": "0\n",
+      "expected": "0\n",
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "README demo: singleton",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "/tmp/geo2-four-validation/demo.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/demo-GCC"
+      ],
+      "source": "#include <iostream>\n#include \"cpp17/Geo2/PolygonConvex.hpp\"\n\nusing i64 = long long;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n;\n    std::cin >> n;\n    std::vector<Point<i64>> points(n);\n    for (auto &p : points) std::cin >> p;\n    auto hull = convexHull(std::move(points));\n    std::cout << hull.size() << '\\n';\n    for (const auto &p : hull)\n        std::cout << p.x << ' ' << p.y << '\\n';\n}\n",
+      "input": "1\n3 4\n",
+      "expected": "1\n3 4\n",
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "README demo: duplicates",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "/tmp/geo2-four-validation/demo.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/demo-GCC"
+      ],
+      "source": "#include <iostream>\n#include \"cpp17/Geo2/PolygonConvex.hpp\"\n\nusing i64 = long long;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n;\n    std::cin >> n;\n    std::vector<Point<i64>> points(n);\n    for (auto &p : points) std::cin >> p;\n    auto hull = convexHull(std::move(points));\n    std::cout << hull.size() << '\\n';\n    for (const auto &p : hull)\n        std::cout << p.x << ' ' << p.y << '\\n';\n}\n",
+      "input": "3\n5 7\n5 7\n5 7\n",
+      "expected": "1\n5 7\n",
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "README demo: collinear",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "/tmp/geo2-four-validation/demo.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/demo-GCC"
+      ],
+      "source": "#include <iostream>\n#include \"cpp17/Geo2/PolygonConvex.hpp\"\n\nusing i64 = long long;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n;\n    std::cin >> n;\n    std::vector<Point<i64>> points(n);\n    for (auto &p : points) std::cin >> p;\n    auto hull = convexHull(std::move(points));\n    std::cout << hull.size() << '\\n';\n    for (const auto &p : hull)\n        std::cout << p.x << ' ' << p.y << '\\n';\n}\n",
+      "input": "5\n2 2\n0 0\n1 1\n2 2\n-1 -1\n",
+      "expected": "2\n-1 -1\n2 2\n",
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "README demo: square",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "/tmp/geo2-four-validation/demo.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/demo-GCC"
+      ],
+      "source": "#include <iostream>\n#include \"cpp17/Geo2/PolygonConvex.hpp\"\n\nusing i64 = long long;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n;\n    std::cin >> n;\n    std::vector<Point<i64>> points(n);\n    for (auto &p : points) std::cin >> p;\n    auto hull = convexHull(std::move(points));\n    std::cout << hull.size() << '\\n';\n    for (const auto &p : hull)\n        std::cout << p.x << ' ' << p.y << '\\n';\n}\n",
+      "input": "6\n2 2\n0 0\n2 0\n0 2\n1 1\n0 0\n",
+      "expected": "4\n0 0\n2 0\n2 2\n0 2\n",
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "README demo: large",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I",
+        "/Users/bytedance/acm_compete",
+        "/tmp/geo2-four-validation/demo.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/demo-GCC"
+      ],
+      "source": "#include <iostream>\n#include \"cpp17/Geo2/PolygonConvex.hpp\"\n\nusing i64 = long long;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n;\n    std::cin >> n;\n    std::vector<Point<i64>> points(n);\n    for (auto &p : points) std::cin >> p;\n    auto hull = convexHull(std::move(points));\n    std::cout << hull.size() << '\\n';\n    for (const auto &p : hull)\n        std::cout << p.x << ' ' << p.y << '\\n';\n}\n",
+      "input": "4\n-1000000000 -1000000000\n1000000000 1000000000\n1000000000 -1000000000\n-1000000000 1000000000\n",
+      "expected": "4\n-1000000000 -1000000000\n1000000000 -1000000000\n1000000000 1000000000\n-1000000000 1000000000\n",
+      "status": "PASS"
+    },
+    {
+      "profile": "Clang 17",
+      "case": "reference benchmark harness build",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "cpp17/Geo2/BenchmarkCompare.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/reference-Cla"
+      ],
+      "status": "PASS"
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "reference benchmark harness build",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "cpp17/Geo2/BenchmarkCompare.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/reference-GCC"
+      ],
+      "status": "PASS"
+    }
+  ],
+  "sha256": {
+    "cpp17/Geo2/PointVec.hpp": "fa2250e349b748b9d154f8fd4ec0c301e3004807740f04817a0c26033965fe05",
+    "cpp17/Geo2/SegLine.hpp": "c315f6298c1afb24bf9f71200844e8f5524179d851efb05a5aac1daf87453167",
+    "cpp17/Geo2/PolygonConvex.hpp": "779ca4450f854bf99730648d43a34dca460b4e691c46ec57b320f6813fc25f45",
+    "cpp17/Geo2/Circle.hpp": "621eb04fe8ac296af851d6cbedcd204868e8598bf279975d68d6a4ff5844a864",
+    "cpp17/Geo2/Test.cpp": "1cd24edce928db98c2ca53a0b610590789903252936c2d68b3989ce7973d4261",
+    "cpp17/Geo2/TestCaseBounds.cpp": "c54b3032e81779f505ab0912ae581fb0f462552452eaa699815752054ac0e273",
+    "cpp17/Geo2/TestCaseTypes.cpp": "4ab09bad358289900db98961d86c1fc2270315b4aa4afd08e09ff17f21570126",
+    "cpp17/Geo2/TestCaseHalfPlane.cpp": "5537468ad4b9fb03aa89c38a84dbdce2b40ea1406d2d3415cbd4533a68a9489f",
+    "cpp17/Point/Test.cpp": "f6d448c95dc7709aa3aff303e467cd2d763df539932b27717b1d0100e8b7c110",
+    "cpp17/Point/TestCaseGeometry.cpp": "9112db1bb7b0f2d83b691b3089a169c2378813e855a5e1ec93174a2443787b29",
+    "cpp17/FloatPointNumber/Test.cpp": "c02f32ce4ca994da1142f4ed8abcbff0d009b00bbcc3febc3e6841758066965c",
+    "cpp17/Geo2/TestCaseModules.cpp": "dc7b51089dfe362ff24fa4185ee4018e2992dea489caff2d09603f891c11a42b",
+    "cpp17/Geo2/Benchmark.cpp": "fc436b1efe1bcbd3ab43ec6009dbce9091d4e8a8ae2b02e6fb9d814378224fca",
+    "cpp17/Geo2/BenchmarkCompare.cpp": "4ca0f90ad1461d23b69a9a9b63b1091bca4eb2f2221b094fda70482b85777ba0",
+    "cpp17/Geo2/GenerateHalfPlaneCases.py": "4dcad98c5a43b1b153f6da30da58996686c5675ba3232ad65016fdab6549125c",
+    "cpp17/Geo2/HalfPlaneRegression.txt": "e43ae611dca8bad321cd8cc65fe454d801c07be97baf565d68d74382c3e9f862",
+    "cpp17/Point/Final.hpp": "a70414f5ba9cdad92e3d9c3089aa3f6bb310fc16ab70a918dea3d1ad629f1874",
+    "cpp17/GeometryCompatibility/Geo2.hpp": "bb75c7f86b7d69324aeae74d94e38dce69cfbe9c90d350c413c92cda154e806b",
+    "cpp17/FloatPointNumber/Final.hpp": "02042cdce573c2a8569535a71d9fbe33da332c15a247077aacadc18b34c28ca5",
+    "cpp17/FloatPointNumber/TestExtra.cpp": "dae72bb1fb66f88a6410b519a1b0928283e5e454886c246f5d4c119b092c7b55"
+  },
+  "oracles": {
+    "20261001": "80d35c5484d767ca805feb9ed667a6e5c5d854b237d463915a4d05caf5659f45",
+    "7": "aca21fe7c0311107cd0993edd8a4a3262a2c5d8f1f759afc1360bbe2a249636b",
+    "42": "f58ffd4c291f87af020d1c467fcdfe13e660185c8b2eb0d75a063beff5f48d71",
+    "20261002": "39f6975d33aea2336d6421043b83e4a4453f6955a6be3ef2a5857a98c8731bd9"
+  },
+  "unchanged": [
+    "cpp17/GeometryCompatibility/Geo3.hpp"
+  ],
+  "baselineFingerprints": {
+    "cpp17/Geo2/ConvexOptimization.md": "e6402957998a37d7614d90df39cad16702b5007117213d4c25872a99bc0882b2",
+    "cpp17/Geo2/Final.hpp": "5e34fc16a7ee9543c2b74b56d2e379507f2e7b09637900073c183c43510a98c0",
+    "cpp17/Geo2/NumericOptimization.md": "1d4e592545199b70ac3d9522a1595ad718509679eb2a2ef37236f8aa3c976612",
+    "cpp17/Geo2/LICENSE": "c2c21921843dae396709fa746c92f28241306a209d29d083c9bb253aadc867f2",
+    "cpp17/Geo2/Validation.md": "b50af8124d596ce06b8765502c9918182c5ebf5003872183479da8d38272bb11",
+    "cpp17/Geo2/Test.cpp": "7c9adb6c07bcce8385d4c1dd06bf7ba9fb2818f2569826be16c654239d06f800",
+    "cpp17/Geo2/BenchmarkComparison.csv": "72e604254afe9606fff99c2559e66b823954707c52b71aba4f24585c8cbab963",
+    "cpp17/Geo2/Benchmark.cpp": "424066589c663880160dd49bb191965e0a8352611f1bd70438da4ef9aadc0d59",
+    "cpp17/Geo2/Benchmark.csv": "7421a8b3010d6373ef30bd8d2e0e98a56a7aaa4387c391baa81878f65244af6c",
+    "cpp17/Geo2/NumericValidation.json": "3ddaadfb6dec3d0e014f38fed48b992fc649be2893b9d7d9104a579bb0227474",
+    "cpp17/Geo2/README.md": "b3c11b6eb95788ddd14faf8fa0a1811945aa1ddc0d3b9213996165c0e6a101aa",
+    "cpp17/Geo2/GenerateHalfPlaneCases.py": "4dcad98c5a43b1b153f6da30da58996686c5675ba3232ad65016fdab6549125c",
+    "cpp17/Geo2/BenchmarkFriend.csv": "37a319ce8375d6d56bab63e1b317a0b9982551cebcc62e9f35c7e60b816d396a",
+    "cpp17/Geo2/BenchmarkBeforeAfter.csv": "31407d523dca2f9bf1a185af0d3a3f303ce05621c575d8049483d14096d13232",
+    "cpp17/Geo2/TestCaseBounds.cpp": "9c76835eba46865fb35d8b00f94eedf89a92439ec5db0143d4ae25ecb0535875",
+    "cpp17/Geo2/Validation.json": "c7cf2bddc3411d7d84d737cd4db701cfd19c485838291756c3a4280f90c34c18",
+    "cpp17/Geo2/BenchmarkSamples.json": "ff2d1e7754cadf1ff36701a5e7657a6aaa6975f37af2561ebc2c686a437f70df",
+    "cpp17/Geo2/TestCaseTypes.cpp": "485b0bcf177780d214148799edbebddeadcadaad79c4f019a375c2c19b9eb849",
+    "cpp17/Geo2/Algorithms.hpp": "65b02b228a8f69201038c1c75f168124975b7f1bef8beab8d4b820b794a4c441",
+    "cpp17/Geo2/BenchmarkConvex.csv": "7c2855b57e3789705cbc5fa7eb150c485c0c2d31cdc000e63a8ee7e05d5f2222",
+    "cpp17/Geo2/HalfPlaneRegression.txt": "e43ae611dca8bad321cd8cc65fe454d801c07be97baf565d68d74382c3e9f862",
+    "cpp17/Geo2/BenchmarkConvexSamples.json": "ffd273f72377a56fdcc8faaa9ecad9b0a336e565e34faec9df7ce3695a178db7",
+    "cpp17/Geo2/BenchmarkCompare.cpp": "09b94cd787a880c113046684e8f85c8437c1e95b93280c73296baf3de258e337",
+    "cpp17/Geo2/TestCaseHalfPlane.cpp": "285cb452141a175e0e5b46f3a07efa5a11f6495afbe72e269132fbaff751f4da",
+    "cpp17/Geo2/References/LineHullIntersection.h": "84a745992d7e7f62f35b8f38bd8c05a23d7f3e01ea0798a3bfafb53b2b5b2584",
+    "cpp17/Geo2/References/Point.h": "16131a9989f928542c29e6a616a1d99e166c5671d50813778d4d817de60bbdd2",
+    "cpp17/Geo2/References/OnSegment.h": "a7332c17d1a6fa474befaf2eb02537443290f77381da9ae47cff4833a7308386",
+    "cpp17/Geo2/References/SegmentIntersection.h": "84d06d9e219716705f661d0f7f18977065bd57db92f2e3d9f92b6782ca914662",
+    "cpp17/Geo2/References/HullDiameter.h": "9766066cf5b84092683054731153a857221897199d388196351afae42967d570",
+    "cpp17/Geo2/References/README.md": "429a54a559e39f6b9ed31be37b82d74b529f6045f3568cbb7561ba13188de831",
+    "cpp17/Point/Final.hpp": "03ea3dad4f3314a7ab475c5dc324be27ea0679355b61b0f7766f503d65b89210",
+    "cpp17/Point/Original.code-snippets": "ea932a11b8e2c53fe34ae06bb706444443a2a92aceb585f55db639527e6f234c",
+    "cpp17/Point/Original.hpp": "b67a9c51ca6c44dada357a9044cdaa476f4ada80935c9f1edfea2d89f6ba6c67",
+    "cpp17/Point/Test.cpp": "5289945f9ee075359fd3fad6c87281c2f671acc406d872ace71c828da03ed225",
+    "cpp17/Point/Results.json": "1baf1dfbf32cc46256eb6daee7c3c6a24bcf7636ce14eda3045b659189c310b6",
+    "cpp17/Point/TestCaseGeometry.cpp": "9112db1bb7b0f2d83b691b3089a169c2378813e855a5e1ec93174a2443787b29",
+    "cpp17/Point/Benchmark.cpp": "e7e21c4f97811796079d97fd4a50a70aab3574c487c8b48d3a310ee159554835",
+    "cpp17/Point/Benchmark.csv": "67eca72b5be4bb724a3c2995e185d074966e20c34e4f7570b950a0e24480da4f",
+    "cpp17/Point/Performance.md": "396533df13449e43de7e206edb3497aed3469b1c125b1a6af5757a75d102eea4",
+    "cpp17/Point/README.md": "ef28d727c289a4f25d2bc918957be2875a90b05fbd37ae875941ca2110b9d787",
+    "cpp17/FloatPointNumber/Final.hpp": "bf4c0075d2c97a61f2717fc5af2508719464602c62004aab627fa7ea72957b4e",
+    "cpp17/FloatPointNumber/Original.code-snippets": "d801fd0b69b1a3545cd16edfd48767c8d81ecc4f930a561398e130a37924d248",
+    "cpp17/FloatPointNumber/Original.hpp": "9e5bf44ea11b5b79abd0fc4e900432b2f54ff6d56b884c8a74de832cd9fb6baf",
+    "cpp17/FloatPointNumber/Test.cpp": "0c93e78c86dfa1f111ddc933c2d37755f10a47e1131bc0a8f9e059b373f2d5b7",
+    "cpp17/FloatPointNumber/Results.json": "c928b305ae042ffdab4c72d8d10e7e39a7c534512687c68fa86b42d9b4967038",
+    "cpp17/FloatPointNumber/Benchmark.cpp": "90865de89d6746434403f150c791163578d38a71ea4a60e4272570fdc4dc5719",
+    "cpp17/FloatPointNumber/TestExtra.cpp": "9b552f889646a570dd29eea51a18e8b107ea1bf2bca16f5c38507e95ac3b8357",
+    "cpp17/FloatPointNumber/Benchmark.csv": "980dfeda1a3f8aaaae6ee5b9036a7e98fd088cd8cff2a2162688a15f396eceed",
+    "cpp17/FloatPointNumber/Performance.md": "97bbcefd45fc4238ef9629f8b98d8325b440757894891244a89fc779c1bb88c6",
+    "cpp17/FloatPointNumber/README.md": "0fc5b164c6d6f965a8337c75d2d6280748ee89fdd5336c19d83eebc421b93fcd",
+    "cpp17/FloatPointNumber/BenchmarkBaseline.hpp": "5e28245c496925fb9c41a0d7e16e1d2b031fc3fa97ed38438f57378816999691",
+    "cpp17/GeometryCompatibility/Geo2.code-snippets": "5b8747857dcae2668cd638415d11e6c08c09dc1e421c8c1276dbedcdd7948be7",
+    "cpp17/GeometryCompatibility/Sources.json": "f42a503685398f827ad3d2b8f8fee1cd5c8f082285fd17bb7991667e9c97213f",
+    "cpp17/GeometryCompatibility/Geo3.hpp": "745093f11430e44287e29eadc1239a88def195e8d86cd2f4f4035ad53b04fba5",
+    "cpp17/GeometryCompatibility/Geo2.hpp": "da12b5a8284574e2e85db3a228814951dd3b4b43949ce67e7aa7dc4c67ad09e1",
+    "cpp17/GeometryCompatibility/Geo3.code-snippets": "31158a85f7eb5c11f2764c905a11b4290f3d12e18edaa6a5da9534d764a6e5d8"
+  },
+  "externalChange": {
+    "path": "cpp17/FloatPointNumber/Final.hpp",
+    "before": "return G(std::round(x));",
+    "after": "floor plus fractional threshold, EPS-aware ties toward +infinity",
+    "otherChanges": [
+      "default precision 6 -> 10",
+      "Float alias double -> FloatPointNumber<double>"
+    ],
+    "preserved": true
+  },
+  "generatedSources": {
+    "point-extra.cpp": "#include \"cpp17/Geo2/PointVec.hpp\"\nint geometryPointWitness() { return ::orient(Point<int>{0,0},Point<int>{1,0},Point<int>{0,1}); }\n",
+    "circle-extra.cpp": "#include \"cpp17/Geo2/Circle.hpp\"\nint geometryCircleWitness() { return ::convexHull<double>({{0,0},{2,0},{2,2},{0,2}}).size(); }\n",
+    "i64.hpp": "using i64 = long long;\n",
+    "demo.cpp": "#include <iostream>\n#include \"cpp17/Geo2/PolygonConvex.hpp\"\n\nusing i64 = long long;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n;\n    std::cin >> n;\n    std::vector<Point<i64>> points(n);\n    for (auto &p : points) std::cin >> p;\n    auto hull = convexHull(std::move(points));\n    std::cout << hull.size() << '\\n';\n    for (const auto &p : hull)\n        std::cout << p.x << ' ' << p.y << '\\n';\n}\n"
+  },
+  "review": {
+    "coordinateImplementation": "preserved verbatim",
+    "convexAlgorithms": "preserved verbatim except wrapper integer extraction uses llround(val())",
+    "containerStorage": "unchanged; no added fields or virtual functions",
+    "implementationHeaders": [
+      "PointVec.hpp",
+      "SegLine.hpp",
+      "PolygonConvex.hpp",
+      "Circle.hpp"
+    ],
+    "historicalSources": "Original, reference sources, Geo3 and manifest unchanged",
+    "scope": "Geo2 refactoring, scoped tests and documentation; Float implementation left unchanged after user resumed"
+  }
+}

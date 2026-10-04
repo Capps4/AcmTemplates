@@ -1,0 +1,15 @@
+#pragma once
+#include <bits/stdc++.h>
+using i64 = long long;
+// The basis must be sorted: borrow lvalues and own rvalues.
+template<class List>
+auto discreteFrom(List&& values) {
+    return seq::Op{[values = std::tuple<List>(std::forward<List>(values))](const auto& a) {
+        const auto& basis = std::get<0>(values);
+        std::vector<int> result(a.size());
+        for (std::size_t i = 0; i < a.size(); ++i)
+            result[i] = std::lower_bound(basis.begin(), basis.end(), a[i]) - basis.begin();
+        return result;
+    }};
+}
+

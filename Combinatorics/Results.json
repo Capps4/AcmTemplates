@@ -1,0 +1,118 @@
+{
+  "formatVersion": 2,
+  "module": "Combinatorics",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "c4d77d524231af13be476aef40fc07a7a771fa80fdd9231ff2fb846c7650a0d8",
+    "Final.hpp": "1f5408e779f2c80b4776e72cec9fc7790023d45e4fd804af0f0c63428a018db7",
+    "Test.cpp": "0ee8d70462d20773b788d115a50fa2f3c779b0a56c3c16512671f8dc1d31cbea",
+    "Benchmark.cpp": "1bf573197d0a0c0534bbb3c17f9625bed27282cfa4cd0b6ec4555812bee20ceb",
+    "Final.code-snippets": "34608724fe1847e77a390b55a2bee34553df66ff95def146c6030e4af48048ca"
+  },
+  "dependencySha256": {
+    "ModuloInteger/Final.hpp": "6a25fe4f578005b1e77de88c29fbda7677542eac5a785496ca2505ee009360a0"
+  },
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "Combinatorics/Final.hpp": "1f5408e779f2c80b4776e72cec9fc7790023d45e4fd804af0f0c63428a018db7",
+    "ModuloInteger/Final.hpp": "6a25fe4f578005b1e77de88c29fbda7677542eac5a785496ca2505ee009360a0",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "ModuloInteger/Original.hpp": "fc4adb04a090f17e76453052c27a6ee6efacf4245f2f3944b16670d7f13a29b3",
+    "Combinatorics/Original.hpp": "c4d77d524231af13be476aef40fc07a7a771fa80fdd9231ff2fb846c7650a0d8"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/Combinatorics/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/Combinatorics/Build/optimized"
+      ],
+      "output": "Combinatorics: Pascal oracle, factorials, 64-bit mod, dynamic reset PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/Combinatorics/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/Combinatorics/Build/sanitized"
+      ],
+      "output": "Combinatorics: Pascal oracle, factorials, 64-bit mod, dynamic reset PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/Combinatorics/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/Combinatorics/Build/benchmark"
+  ],
+  "benchmark": "factorial-build,3.373,2.748,1.22744,1173919140\ncombination-queries,0.849,0.919,0.92383,249835730492809",
+  "benchmarkSamples": [
+    {
+      "scenario": "factorial-build",
+      "original": [
+        3.725,
+        3.699,
+        3.483,
+        3.373,
+        3.152,
+        3.124,
+        3.037
+      ],
+      "final": [
+        2.877,
+        2.788,
+        2.792,
+        2.748,
+        2.664,
+        2.668,
+        2.591
+      ],
+      "checksum": 1173919140,
+      "first": "original"
+    },
+    {
+      "scenario": "combination-queries",
+      "original": [
+        0.855,
+        0.863,
+        0.849,
+        0.847,
+        0.858,
+        0.841,
+        0.839
+      ],
+      "final": [
+        0.931,
+        0.921,
+        0.938,
+        0.91,
+        0.911,
+        0.906,
+        0.919
+      ],
+      "checksum": 249835730492809,
+      "first": "final"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

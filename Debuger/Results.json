@@ -1,0 +1,124 @@
+{
+  "formatVersion": 2,
+  "module": "Debuger",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "87f9bcab30dfee4f1051343bc749a2c8f5552a4cc9e03454216da447f0dbc77f",
+    "Final.hpp": "062485eb6f43bcfe063422f038f93c59363ecedf007c225c02ee2030c23f9ce5",
+    "Test.cpp": "6135840d97e2b761fce3614a630d1707480da0b2ce6bb3b5991a9dc4f56b1360",
+    "Benchmark.cpp": "441e49dd7dc20502cdedf1982c5634e637455fd5d07cea077139f0e1b1210c94",
+    "Final.code-snippets": "1b89790acaffc90b7647a3c5ca042c4e295046c40bf7682d3a070303a9defc14",
+    "TestExtra.cpp": "945423bb24f79fcf204512b07f7eecdc8866e161313645dc154a1af45bee25b3",
+    "TestCasePlugin.cpp": "28161a07322e5c16f8401924a1dd2cb4dd6780594fd74c9822fa4ff102e62ed2"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "Debuger/Final.hpp": "062485eb6f43bcfe063422f038f93c59363ecedf007c225c02ee2030c23f9ce5",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "Debuger/Original.hpp": "87f9bcab30dfee4f1051343bc749a2c8f5552a4cc9e03454216da447f0dbc77f",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/Debuger/Test.cpp",
+        "/Users/bytedance/acm_compete/cpp17/Debuger/TestExtra.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/Debuger/Build/optimized"
+      ],
+      "output": "Debuger disabled side effects, writable options, enabled macro, shared two-TU state PASS",
+      "additionalCases": [
+        {
+          "command": [
+            "/opt/homebrew/bin/g++-15",
+            "-std=gnu++17",
+            "-O2",
+            "-Wall",
+            "-Wextra",
+            "/Users/bytedance/acm_compete/cpp17/Debuger/TestCasePlugin.cpp",
+            "-o",
+            "/Users/bytedance/acm_compete/cpp17/Debuger/Build/optimized-TestCasePlugin"
+          ],
+          "output": "Debuger actual local GNU plugin / Clang registration fixture PASS"
+        }
+      ]
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/Debuger/Test.cpp",
+        "/Users/bytedance/acm_compete/cpp17/Debuger/TestExtra.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/Debuger/Build/sanitized"
+      ],
+      "output": "Debuger disabled side effects, writable options, enabled macro, shared two-TU state PASS",
+      "additionalCases": [
+        {
+          "command": [
+            "/usr/bin/clang++",
+            "-std=gnu++17",
+            "-O1",
+            "-g",
+            "-fsanitize=address,undefined",
+            "-fno-omit-frame-pointer",
+            "/Users/bytedance/acm_compete/cpp17/Debuger/TestCasePlugin.cpp",
+            "-o",
+            "/Users/bytedance/acm_compete/cpp17/Debuger/Build/sanitized-TestCasePlugin"
+          ],
+          "output": "Debuger actual local GNU plugin / Clang registration fixture PASS"
+        }
+      ]
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/Debuger/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/Debuger/Build/benchmark"
+  ],
+  "benchmark": "options-scan-100K,1.691,2.188,0.772852,356100000",
+  "benchmarkSamples": [
+    {
+      "scenario": "options-scan-100K",
+      "original": [
+        1.872,
+        1.875,
+        1.686,
+        1.696,
+        1.682,
+        1.691,
+        1.613
+      ],
+      "final": [
+        2.342,
+        2.337,
+        2.228,
+        2.188,
+        2.165,
+        2.045,
+        2.035
+      ],
+      "checksum": 356100000,
+      "first": "original"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

@@ -1,0 +1,26 @@
+eraseAll TreeMap<bool> starting
+eraseAll TreeMap<bool> before median total=196.262000 ms, min=187.515000, max=207.885000
+eraseAll TreeMap<bool> after median total=203.932000 ms, min=187.041000, max=211.269000
+eraseAll TreeMap<int> starting
+eraseAll TreeMap<int> before median total=226.589000 ms, min=203.513000, max=240.047000
+eraseAll TreeMap<int> after median total=210.927000 ms, min=198.537000, max=244.368000
+eraseAll TreeMapOff<bool> starting
+eraseAll TreeMapOff<bool> before median total=100.008000 ms, min=99.774000, max=100.167000
+eraseAll TreeMapOff<bool> after median total=98.268000 ms, min=97.658000, max=98.968000
+eraseAll TreeMapOff<int> starting
+eraseAll TreeMapOff<int> before median total=99.189000 ms, min=98.219000, max=99.931000
+eraseAll TreeMapOff<int> after median total=98.790000 ms, min=98.077000, max=98.960000
+clear TreeMap<bool> starting
+clear TreeMap<bool> before median total=1.576000 ms, min=1.552000, max=1.661000
+clear TreeMap<bool> after median total=0.000000 ms, min=0.000000, max=0.000000
+clear TreeMap<int> starting
+clear TreeMap<int> before median total=0.238000 ms, min=0.232000, max=0.241000
+clear TreeMap<int> after median total=0.000000 ms, min=0.000000, max=0.000000
+clear TreeMapOff<bool> starting
+clear TreeMapOff<bool> before median total=1.609000 ms, min=1.570000, max=1.622000
+clear TreeMapOff<bool> after median total=0.020000 ms, min=0.018000, max=0.023000
+clear TreeMapOff<int> starting
+clear TreeMapOff<int> before median total=0.266000 ms, min=0.259000, max=0.319000
+clear TreeMapOff<int> after median total=0.019000 ms, min=0.018000, max=0.022000
+All initial states, empty states, return hashes and zero-default slot reuse checks passed.
+Single-call clear uses total ms only; very short samples approach clock/barrier overhead.

@@ -1,0 +1,41 @@
+--- a/treeMap.hpp
++++ b/treeMap.hpp
+@@ -223,23 +223,22 @@
+             added = true;
+             return target;
+         }
+-        auto insertSide = [&](auto side) {
+-            constexpr bool right = decltype(side)::value;
+-            u32 child = insertNode<Mode>(right ? nodes[u].r : nodes[u].l, key, value, target, added);
+-            if (!added)
++        bool right = false;
++        if (!compare(key, nodes[u].key)) {
++            if (!compare(nodes[u].key, key)) {
++                target = u;
++                if constexpr (Mode == 1)
++                    values[u] = std::move(*value);
+                 return u;
+-            (right ? nodes[u].r : nodes[u].l) = child;
+-            ++nodes[u].sz;
+-            return maintain(u, right);
+-        };
+-        if (compare(key, nodes[u].key))
+-            return insertSide(std::false_type{});
+-        if (compare(nodes[u].key, key))
+-            return insertSide(std::true_type{});
+-        target = u;
+-        if constexpr (Mode == 1)
+-            values[u] = std::move(*value);
+-        return u;
++            }
++            right = true;
++        }
++        u32 child = insertNode<Mode>(right ? nodes[u].r : nodes[u].l, key, value, target, added);
++        if (!added)
++            return u;
++        (right ? nodes[u].r : nodes[u].l) = child;
++        ++nodes[u].sz;
++        return right ? maintain(u, true) : maintain(u, false);
+     }
+ 
+     template<int Mode>

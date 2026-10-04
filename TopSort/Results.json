@@ -1,0 +1,114 @@
+{
+  "formatVersion": 2,
+  "module": "TopSort",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "0bf7beaf9376f227188b964d4896d690fa20556291c95472a7420dbc628641f3",
+    "Final.hpp": "bb86a8cd098e6ffa55f220daf588c74a46236c81f6d5965f59efd3b70b122281",
+    "Test.cpp": "c20b85a379aa1352097c4fe6acafce334904eff429365af591f4e97ad7078c7c",
+    "Benchmark.cpp": "b2143473edd7fa7c175c26b5bd38f28be1b1b115f8bfaed12258f424c4145a3a",
+    "Final.code-snippets": "7872074f936a8bbabb9e9bfef4137923ba5989527f49f4fe8b3d1931be3b7c85"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "TopSort/Final.hpp": "bb86a8cd098e6ffa55f220daf588c74a46236c81f6d5965f59efd3b70b122281",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "TopSort/Original.hpp": "0bf7beaf9376f227188b964d4896d690fa20556291c95472a7420dbc628641f3"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/TopSort/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/TopSort/Build/optimized"
+      ],
+      "output": "TopSort exhaustive/Floyd oracle, multigraph, move-only edges, 200K chain PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/TopSort/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/TopSort/Build/sanitized"
+      ],
+      "output": "TopSort exhaustive/Floyd oracle, multigraph, move-only edges, 200K chain PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/TopSort/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/TopSort/Build/benchmark"
+  ],
+  "benchmark": "chain,1.388,1.323,1.04913,2666666666600000\ndag-degree6,1.954,2.291,0.852903,2666666666600000",
+  "benchmarkSamples": [
+    {
+      "scenario": "chain",
+      "original": [
+        1.49,
+        1.499,
+        1.292,
+        1.38,
+        1.505,
+        1.178,
+        1.388
+      ],
+      "final": [
+        1.323,
+        1.382,
+        1.41,
+        1.29,
+        1.326,
+        1.28,
+        1.293
+      ],
+      "checksum": 2666666666600000,
+      "first": "original"
+    },
+    {
+      "scenario": "dag-degree6",
+      "original": [
+        1.947,
+        1.965,
+        1.954,
+        1.997,
+        1.977,
+        1.922,
+        1.924
+      ],
+      "final": [
+        2.373,
+        2.291,
+        2.233,
+        1.995,
+        2.039,
+        2.393,
+        2.363
+      ],
+      "checksum": 2666666666600000,
+      "first": "final"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

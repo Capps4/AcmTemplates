@@ -1,0 +1,2540 @@
+{
+  "date": "2026-10-04",
+  "method": "O3 NDEBUG; three serial complete runs in alternating order; each benchmark row already uses the median of five samples",
+  "jobs": [
+    {
+      "profile": "Clang 17",
+      "phase": "before",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-four-perf-current-float/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/bench-Cla-before"
+      ],
+      "binary": "/tmp/geo2-four-validation/bench-Cla-before",
+      "samples": [
+        {
+          "rows": [
+            {
+              "operation": "boundary_dense",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.151"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.115"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "5.594"
+            },
+            {
+              "operation": "near_line",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "4.160"
+            },
+            {
+              "operation": "tangents",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "0.894"
+            },
+            {
+              "operation": "calipers",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.232"
+            },
+            {
+              "operation": "near_convex",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.291"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.296"
+            },
+            {
+              "operation": "minkowski",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.403"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.625"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.119"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.457"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.346"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "4.414"
+            },
+            {
+              "operation": "near_line",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "4.438"
+            },
+            {
+              "operation": "tangents",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "2.887"
+            },
+            {
+              "operation": "calipers",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.065"
+            },
+            {
+              "operation": "near_convex",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.706"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.753"
+            },
+            {
+              "operation": "minkowski",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.616"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "5.447"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.818"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "3.195"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "2.330"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "7.865"
+            },
+            {
+              "operation": "near_line",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "8.347"
+            },
+            {
+              "operation": "tangents",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "5.573"
+            },
+            {
+              "operation": "calipers",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "29.156"
+            },
+            {
+              "operation": "near_convex",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "11.353"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "11.660"
+            },
+            {
+              "operation": "minkowski",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "18.835"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "53.285"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "6.536"
+            }
+          ],
+          "stderr": "sparse_capacity n=1024 vertices=4 capacity=4\nsparse_capacity n=8192 vertices=4 capacity=4\nsparse_capacity n=65536 vertices=4 capacity=4\nchecksum=267736\n"
+        },
+        {
+          "rows": [
+            {
+              "operation": "boundary_dense",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.041"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.034"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "2.676"
+            },
+            {
+              "operation": "near_line",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "2.915"
+            },
+            {
+              "operation": "tangents",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "0.778"
+            },
+            {
+              "operation": "calipers",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.179"
+            },
+            {
+              "operation": "near_convex",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.229"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.229"
+            },
+            {
+              "operation": "minkowski",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.341"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.567"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.106"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.369"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.308"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "3.997"
+            },
+            {
+              "operation": "near_line",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "4.326"
+            },
+            {
+              "operation": "tangents",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "2.964"
+            },
+            {
+              "operation": "calipers",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.071"
+            },
+            {
+              "operation": "near_convex",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.743"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.753"
+            },
+            {
+              "operation": "minkowski",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.626"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "5.465"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.830"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "3.152"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "2.316"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "7.985"
+            },
+            {
+              "operation": "near_line",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "8.447"
+            },
+            {
+              "operation": "tangents",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "5.750"
+            },
+            {
+              "operation": "calipers",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "31.157"
+            },
+            {
+              "operation": "near_convex",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "11.510"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "11.558"
+            },
+            {
+              "operation": "minkowski",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "18.765"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "50.696"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "6.546"
+            }
+          ],
+          "stderr": "sparse_capacity n=1024 vertices=4 capacity=4\nsparse_capacity n=8192 vertices=4 capacity=4\nsparse_capacity n=65536 vertices=4 capacity=4\nchecksum=267736\n"
+        },
+        {
+          "rows": [
+            {
+              "operation": "boundary_dense",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.042"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.033"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "2.653"
+            },
+            {
+              "operation": "near_line",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "2.921"
+            },
+            {
+              "operation": "tangents",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "0.720"
+            },
+            {
+              "operation": "calipers",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.200"
+            },
+            {
+              "operation": "near_convex",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.253"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.244"
+            },
+            {
+              "operation": "minkowski",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.345"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.551"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.105"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.411"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.310"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "4.013"
+            },
+            {
+              "operation": "near_line",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "4.402"
+            },
+            {
+              "operation": "tangents",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "2.914"
+            },
+            {
+              "operation": "calipers",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.603"
+            },
+            {
+              "operation": "near_convex",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.744"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.808"
+            },
+            {
+              "operation": "minkowski",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.520"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "5.391"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.826"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "3.203"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "2.329"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "7.878"
+            },
+            {
+              "operation": "near_line",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "8.319"
+            },
+            {
+              "operation": "tangents",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "5.651"
+            },
+            {
+              "operation": "calipers",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "32.591"
+            },
+            {
+              "operation": "near_convex",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "11.453"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "11.682"
+            },
+            {
+              "operation": "minkowski",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "18.260"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "47.737"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "6.566"
+            }
+          ],
+          "stderr": "sparse_capacity n=1024 vertices=4 capacity=4\nsparse_capacity n=8192 vertices=4 capacity=4\nsparse_capacity n=65536 vertices=4 capacity=4\nchecksum=267736\n"
+        }
+      ]
+    },
+    {
+      "profile": "Clang 17",
+      "phase": "after",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/bench-Cla-after"
+      ],
+      "binary": "/tmp/geo2-four-validation/bench-Cla-after",
+      "samples": [
+        {
+          "rows": [
+            {
+              "operation": "boundary_dense",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.175"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.115"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "5.534"
+            },
+            {
+              "operation": "near_line",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "4.242"
+            },
+            {
+              "operation": "tangents",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "0.886"
+            },
+            {
+              "operation": "calipers",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.236"
+            },
+            {
+              "operation": "near_convex",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.292"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.292"
+            },
+            {
+              "operation": "minkowski",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.395"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.633"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.117"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.456"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.338"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "4.433"
+            },
+            {
+              "operation": "near_line",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "4.437"
+            },
+            {
+              "operation": "tangents",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "2.894"
+            },
+            {
+              "operation": "calipers",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.029"
+            },
+            {
+              "operation": "near_convex",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.704"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.782"
+            },
+            {
+              "operation": "minkowski",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.602"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "5.250"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.818"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "3.163"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "2.321"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "7.863"
+            },
+            {
+              "operation": "near_line",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "8.413"
+            },
+            {
+              "operation": "tangents",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "5.645"
+            },
+            {
+              "operation": "calipers",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "30.819"
+            },
+            {
+              "operation": "near_convex",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "11.540"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "11.567"
+            },
+            {
+              "operation": "minkowski",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "18.029"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "53.167"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "6.568"
+            }
+          ],
+          "stderr": "sparse_capacity n=1024 vertices=4 capacity=4\nsparse_capacity n=8192 vertices=4 capacity=4\nsparse_capacity n=65536 vertices=4 capacity=4\nchecksum=267736\n"
+        },
+        {
+          "rows": [
+            {
+              "operation": "boundary_dense",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.042"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.034"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "2.702"
+            },
+            {
+              "operation": "near_line",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "2.956"
+            },
+            {
+              "operation": "tangents",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "0.727"
+            },
+            {
+              "operation": "calipers",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.198"
+            },
+            {
+              "operation": "near_convex",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.240"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.246"
+            },
+            {
+              "operation": "minkowski",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.336"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.567"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.105"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.400"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.309"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "4.031"
+            },
+            {
+              "operation": "near_line",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "4.394"
+            },
+            {
+              "operation": "tangents",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "2.944"
+            },
+            {
+              "operation": "calipers",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.104"
+            },
+            {
+              "operation": "near_convex",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.730"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.815"
+            },
+            {
+              "operation": "minkowski",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.546"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "5.304"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.813"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "3.173"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "2.318"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "7.785"
+            },
+            {
+              "operation": "near_line",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "8.298"
+            },
+            {
+              "operation": "tangents",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "5.770"
+            },
+            {
+              "operation": "calipers",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "30.293"
+            },
+            {
+              "operation": "near_convex",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "11.579"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "12.098"
+            },
+            {
+              "operation": "minkowski",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "18.481"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "50.595"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "6.550"
+            }
+          ],
+          "stderr": "sparse_capacity n=1024 vertices=4 capacity=4\nsparse_capacity n=8192 vertices=4 capacity=4\nsparse_capacity n=65536 vertices=4 capacity=4\nchecksum=267736\n"
+        },
+        {
+          "rows": [
+            {
+              "operation": "boundary_dense",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.043"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.033"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "2.736"
+            },
+            {
+              "operation": "near_line",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "2.974"
+            },
+            {
+              "operation": "tangents",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "0.716"
+            },
+            {
+              "operation": "calipers",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.199"
+            },
+            {
+              "operation": "near_convex",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.233"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.247"
+            },
+            {
+              "operation": "minkowski",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.342"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.551"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.104"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.389"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.307"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "4.033"
+            },
+            {
+              "operation": "near_line",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "4.386"
+            },
+            {
+              "operation": "tangents",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "2.982"
+            },
+            {
+              "operation": "calipers",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.134"
+            },
+            {
+              "operation": "near_convex",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.746"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.793"
+            },
+            {
+              "operation": "minkowski",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.555"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "5.466"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.824"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "3.138"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "2.322"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "8.201"
+            },
+            {
+              "operation": "near_line",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "8.379"
+            },
+            {
+              "operation": "tangents",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "5.596"
+            },
+            {
+              "operation": "calipers",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "29.430"
+            },
+            {
+              "operation": "near_convex",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "11.327"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "11.489"
+            },
+            {
+              "operation": "minkowski",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "18.377"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "51.087"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "6.654"
+            }
+          ],
+          "stderr": "sparse_capacity n=1024 vertices=4 capacity=4\nsparse_capacity n=8192 vertices=4 capacity=4\nsparse_capacity n=65536 vertices=4 capacity=4\nchecksum=267736\n"
+        }
+      ]
+    },
+    {
+      "profile": "GCC 15.2",
+      "phase": "before",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-four-perf-current-float/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/bench-GCC-before"
+      ],
+      "binary": "/tmp/geo2-four-validation/bench-GCC-before",
+      "samples": [
+        {
+          "rows": [
+            {
+              "operation": "boundary_dense",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.070"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.052"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "3.620"
+            },
+            {
+              "operation": "near_line",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "3.998"
+            },
+            {
+              "operation": "tangents",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "1.995"
+            },
+            {
+              "operation": "calipers",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.278"
+            },
+            {
+              "operation": "near_convex",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.248"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.241"
+            },
+            {
+              "operation": "minkowski",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.378"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.769"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.102"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.548"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.394"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "4.049"
+            },
+            {
+              "operation": "near_line",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "3.845"
+            },
+            {
+              "operation": "tangents",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "7.678"
+            },
+            {
+              "operation": "calipers",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.262"
+            },
+            {
+              "operation": "near_convex",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.670"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.590"
+            },
+            {
+              "operation": "minkowski",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.584"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "6.421"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.728"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "3.808"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "2.703"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "7.404"
+            },
+            {
+              "operation": "near_line",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "7.937"
+            },
+            {
+              "operation": "tangents",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "12.233"
+            },
+            {
+              "operation": "calipers",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "32.876"
+            },
+            {
+              "operation": "near_convex",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "12.739"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "12.385"
+            },
+            {
+              "operation": "minkowski",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "21.027"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "58.741"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "5.877"
+            }
+          ],
+          "stderr": "sparse_capacity n=1024 vertices=4 capacity=4\nsparse_capacity n=8192 vertices=4 capacity=4\nsparse_capacity n=65536 vertices=4 capacity=4\nchecksum=267736\n"
+        },
+        {
+          "rows": [
+            {
+              "operation": "boundary_dense",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.060"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.043"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "2.509"
+            },
+            {
+              "operation": "near_line",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "2.600"
+            },
+            {
+              "operation": "tangents",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "1.613"
+            },
+            {
+              "operation": "calipers",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.234"
+            },
+            {
+              "operation": "near_convex",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.221"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.213"
+            },
+            {
+              "operation": "minkowski",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.326"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.678"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.094"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.496"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.359"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "3.718"
+            },
+            {
+              "operation": "near_line",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "3.933"
+            },
+            {
+              "operation": "tangents",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "8.226"
+            },
+            {
+              "operation": "calipers",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.240"
+            },
+            {
+              "operation": "near_convex",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.679"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.608"
+            },
+            {
+              "operation": "minkowski",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.647"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "6.605"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.733"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "3.804"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "2.711"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "7.390"
+            },
+            {
+              "operation": "near_line",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "7.964"
+            },
+            {
+              "operation": "tangents",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "12.120"
+            },
+            {
+              "operation": "calipers",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "31.845"
+            },
+            {
+              "operation": "near_convex",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "12.931"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "12.315"
+            },
+            {
+              "operation": "minkowski",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "21.091"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "57.338"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "5.891"
+            }
+          ],
+          "stderr": "sparse_capacity n=1024 vertices=4 capacity=4\nsparse_capacity n=8192 vertices=4 capacity=4\nsparse_capacity n=65536 vertices=4 capacity=4\nchecksum=267736\n"
+        },
+        {
+          "rows": [
+            {
+              "operation": "boundary_dense",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.056"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.044"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "2.495"
+            },
+            {
+              "operation": "near_line",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "2.659"
+            },
+            {
+              "operation": "tangents",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "1.609"
+            },
+            {
+              "operation": "calipers",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.235"
+            },
+            {
+              "operation": "near_convex",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.221"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.213"
+            },
+            {
+              "operation": "minkowski",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.323"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.672"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.094"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.481"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.359"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "3.685"
+            },
+            {
+              "operation": "near_line",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "3.878"
+            },
+            {
+              "operation": "tangents",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "7.313"
+            },
+            {
+              "operation": "calipers",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.268"
+            },
+            {
+              "operation": "near_convex",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.678"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.520"
+            },
+            {
+              "operation": "minkowski",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.523"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "6.562"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.749"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "3.794"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "2.747"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "7.399"
+            },
+            {
+              "operation": "near_line",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "7.993"
+            },
+            {
+              "operation": "tangents",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "12.429"
+            },
+            {
+              "operation": "calipers",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "32.891"
+            },
+            {
+              "operation": "near_convex",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "12.923"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "12.236"
+            },
+            {
+              "operation": "minkowski",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "20.852"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "59.228"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "5.867"
+            }
+          ],
+          "stderr": "sparse_capacity n=1024 vertices=4 capacity=4\nsparse_capacity n=8192 vertices=4 capacity=4\nsparse_capacity n=65536 vertices=4 capacity=4\nchecksum=267736\n"
+        }
+      ]
+    },
+    {
+      "profile": "GCC 15.2",
+      "phase": "after",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-four-validation/bench-GCC-after"
+      ],
+      "binary": "/tmp/geo2-four-validation/bench-GCC-after",
+      "samples": [
+        {
+          "rows": [
+            {
+              "operation": "boundary_dense",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.117"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.088"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "4.380"
+            },
+            {
+              "operation": "near_line",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "3.621"
+            },
+            {
+              "operation": "tangents",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "1.868"
+            },
+            {
+              "operation": "calipers",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.269"
+            },
+            {
+              "operation": "near_convex",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.246"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.236"
+            },
+            {
+              "operation": "minkowski",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.358"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.739"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.099"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.533"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.375"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "3.921"
+            },
+            {
+              "operation": "near_line",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "3.753"
+            },
+            {
+              "operation": "tangents",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "7.044"
+            },
+            {
+              "operation": "calipers",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.237"
+            },
+            {
+              "operation": "near_convex",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.652"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.588"
+            },
+            {
+              "operation": "minkowski",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.578"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "6.480"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.732"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "3.870"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "2.633"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "7.390"
+            },
+            {
+              "operation": "near_line",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "8.168"
+            },
+            {
+              "operation": "tangents",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "12.735"
+            },
+            {
+              "operation": "calipers",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "32.345"
+            },
+            {
+              "operation": "near_convex",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "12.821"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "12.376"
+            },
+            {
+              "operation": "minkowski",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "21.064"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "60.695"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "5.874"
+            }
+          ],
+          "stderr": "sparse_capacity n=1024 vertices=4 capacity=4\nsparse_capacity n=8192 vertices=4 capacity=4\nsparse_capacity n=65536 vertices=4 capacity=4\nchecksum=267736\n"
+        },
+        {
+          "rows": [
+            {
+              "operation": "boundary_dense",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.060"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.044"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "2.553"
+            },
+            {
+              "operation": "near_line",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "2.716"
+            },
+            {
+              "operation": "tangents",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "1.602"
+            },
+            {
+              "operation": "calipers",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.236"
+            },
+            {
+              "operation": "near_convex",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.228"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.207"
+            },
+            {
+              "operation": "minkowski",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.331"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.666"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.087"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.482"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.351"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "3.598"
+            },
+            {
+              "operation": "near_line",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "3.817"
+            },
+            {
+              "operation": "tangents",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "7.084"
+            },
+            {
+              "operation": "calipers",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.262"
+            },
+            {
+              "operation": "near_convex",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.667"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.589"
+            },
+            {
+              "operation": "minkowski",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.600"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "6.510"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.722"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "3.888"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "2.704"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "7.475"
+            },
+            {
+              "operation": "near_line",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "8.098"
+            },
+            {
+              "operation": "tangents",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "12.742"
+            },
+            {
+              "operation": "calipers",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "33.837"
+            },
+            {
+              "operation": "near_convex",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "12.701"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "12.108"
+            },
+            {
+              "operation": "minkowski",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "21.286"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "60.460"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "5.880"
+            }
+          ],
+          "stderr": "sparse_capacity n=1024 vertices=4 capacity=4\nsparse_capacity n=8192 vertices=4 capacity=4\nsparse_capacity n=65536 vertices=4 capacity=4\nchecksum=267736\n"
+        },
+        {
+          "rows": [
+            {
+              "operation": "boundary_dense",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.062"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.047"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "2.501"
+            },
+            {
+              "operation": "near_line",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "2.751"
+            },
+            {
+              "operation": "tangents",
+              "n": "1024",
+              "repeats": "40000",
+              "median_ms": "1.609"
+            },
+            {
+              "operation": "calipers",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.243"
+            },
+            {
+              "operation": "near_convex",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.220"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.212"
+            },
+            {
+              "operation": "minkowski",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.331"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.653"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "1024",
+              "repeats": "20",
+              "median_ms": "0.085"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.465"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.347"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "3.653"
+            },
+            {
+              "operation": "near_line",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "3.885"
+            },
+            {
+              "operation": "tangents",
+              "n": "8192",
+              "repeats": "40000",
+              "median_ms": "7.172"
+            },
+            {
+              "operation": "calipers",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.282"
+            },
+            {
+              "operation": "near_convex",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.675"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "1.613"
+            },
+            {
+              "operation": "minkowski",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "2.612"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "6.571"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "8192",
+              "repeats": "20",
+              "median_ms": "0.732"
+            },
+            {
+              "operation": "boundary_dense",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "3.892"
+            },
+            {
+              "operation": "boundary_sparse",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "2.702"
+            },
+            {
+              "operation": "inter_predicate",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "7.395"
+            },
+            {
+              "operation": "near_line",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "7.946"
+            },
+            {
+              "operation": "tangents",
+              "n": "65536",
+              "repeats": "40000",
+              "median_ms": "11.962"
+            },
+            {
+              "operation": "calipers",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "33.709"
+            },
+            {
+              "operation": "near_convex",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "12.869"
+            },
+            {
+              "operation": "inter_convex_predicate",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "12.331"
+            },
+            {
+              "operation": "minkowski",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "20.645"
+            },
+            {
+              "operation": "convex_intersection",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "59.997"
+            },
+            {
+              "operation": "circle_polygon_area",
+              "n": "65536",
+              "repeats": "20",
+              "median_ms": "5.881"
+            }
+          ],
+          "stderr": "sparse_capacity n=1024 vertices=4 capacity=4\nsparse_capacity n=8192 vertices=4 capacity=4\nsparse_capacity n=65536 vertices=4 capacity=4\nchecksum=267736\n"
+        }
+      ]
+    }
+  ],
+  "assembly": [
+    {
+      "profile": "Clang 17",
+      "case": "representative-kernel-assembly",
+      "identical": true,
+      "kernels": [
+        "hull_location",
+        "hull_line_hit",
+        "vector_cross",
+        "hull_area",
+        "circle_intersection_area"
+      ]
+    },
+    {
+      "profile": "GCC 15.2",
+      "case": "representative-kernel-assembly",
+      "identical": true,
+      "kernels": [
+        "hull_location",
+        "hull_line_hit",
+        "vector_cross",
+        "hull_area",
+        "circle_intersection_area"
+      ]
+    }
+  ],
+  "baseline": "/tmp/geo2-four-perf-current-float",
+  "floatSha256": "02042cdce573c2a8569535a71d9fbe33da332c15a247077aacadc18b34c28ca5",
+  "sha256": {
+    "cpp17/Geo2/SegLine.hpp": "c315f6298c1afb24bf9f71200844e8f5524179d851efb05a5aac1daf87453167",
+    "cpp17/Geo2/Circle.hpp": "621eb04fe8ac296af851d6cbedcd204868e8598bf279975d68d6a4ff5844a864",
+    "cpp17/Geo2/PointVec.hpp": "fa2250e349b748b9d154f8fd4ec0c301e3004807740f04817a0c26033965fe05",
+    "cpp17/Geo2/PolygonConvex.hpp": "779ca4450f854bf99730648d43a34dca460b4e691c46ec57b320f6813fc25f45"
+  }
+}

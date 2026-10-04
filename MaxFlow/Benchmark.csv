@@ -1,0 +1,4 @@
+scenario,originalMs,finalMs,speedup,checksum
+chain-10K,1.078,1.031,1.04559,7
+wide-depth2-50K,3.61,4.422,0.816373,349986
+layered-60x100,14.098,14.05,1.00342,622

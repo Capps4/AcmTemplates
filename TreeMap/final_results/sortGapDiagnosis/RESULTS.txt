@@ -1,0 +1,52 @@
+TreeMap 接入最新 ListHelper 与间隔值域性能诊断
+日期：2026-10-01。macOS arm64，GCC 15.2 / Apple Clang 17，-O2 -DNDEBUG。
+
+正式修改：
+ListHelperAdaptive.hpp 与当前安装的 ListHelper.code-snippets 展开内容完全一致。
+TreeMapOff 直接调用 keys = std::move(keys) | seq::sorted(compare)，删除升序再反转适配。
+GCC GNU++17 回归及 Clang C++17 ASan/UBSan 回归均通过。
+
+诊断方法：
+仅在实验副本中改变单个因素，正式 sorted 保持当前安装版本。
+百万 int/long long，gaps/fewValues/range22/fullWidth，升降序，共 16 个配置。
+预热一轮，正式九轮，随机打乱 8 个方法，同进程，取中位数；输出逐次完整检查。
+每种编译器 1152 条正式记录，总计 2304 条；GCC 同一程序另重复运行一次验证。
+计入排序扫描、临时缓冲分配、处理及回写，输入副本准备在计时外。
+实验 swap 版本仅用于 vector 测量，不是可直接替换通用 array 排序的代码。
+
+gaps 的工作量：
+元素值为 random(0..255) << 16，min=0，max=255<<16，range 有效位数 24。
+新旧版本此处均选 8 位，计划 3 轮；低两个字节全部相同，只计数、不散射；最高字节散射一次。
+旧版每次散射后 swap vector；新版只一次有效散射时结果在临时缓冲，最后回写一次。
+但是恒定字节跳过的是散射，不是前面的整个直方图统计；两轮都会遍历百万元素。
+
+百万 long long gaps 降序，单位 ms：
+compiler,legacy,current,onlySwap,forwardScatter,invertedDigits,combined
+gcc,2.898000,4.119000,4.062000,2.969000,3.120000,2.962000
+clang,3.170042,4.683667,4.535708,4.351292,3.521084,3.167042
+
+解释边界：
+1. onlySwap 只把最后的 move 回写换成 a.swap(b)，GCC 4.119->4.062ms，Clang 4.684->4.536ms。
+   小于整个约 1.2～1.5ms 差距，额外回写不是主因；不能把不支持 vector swap 当成主要退化解释。
+2. forwardScatter 将桶末尾偏移+反向散射改为桶起始偏移+前向散射，GCC 明显改善，Clang 只改善部分。
+   这会改变整个模板实例的生成代码，不能仅凭此断言 CPU 对逆向写入一定慢。
+3. invertedDigits 将 descending 的 max-x 改为 x-min 后对当前 digit 做 xor mask。
+   保持比较顺序和散射次数；该配置 GCC 4.119->3.120ms，Clang 4.684->3.521ms。
+   对 gaps 的恒定低字节，新映射反复更新桶 0，旧映射反复更新桶 255。循环算式、活跃寄存器及访存位置也变化。
+4. 单独把桶从 stack array 改成 heap vector 没有稳定优势；组合为近似旧内核后该配置基本恢复旧耗时。
+5. 同一旧实现并非所有方向都快：GCC 本轮 long long gaps 升序 legacy=3.992ms，current=4.140ms；
+   上轮 legacy=3.002ms。必须区分代码生成/测试上下文/运行状态影响与稳定算法代价。
+6. 直方图独立探针不做排序、不分配元素缓冲、不回写。固定二进制，变动 runtime 的桶 xor 参数。
+   大多数百万元素计数约 0.3～0.4ms，但某些轮次可到 1.3～1.7ms；重启程序后异常组别也变化。
+   同一输入、同一循环可有较大变化，说明不能把所有差距归因于固定的额外指令或容器泛化。
+   连续更新同一桶形成 load/add/store 的读改写依赖；具体 CPU 访存预测、转发、调度或地址因素尚未确定。
+   未测硬件性能计数器，不能宣称已经定位某种缓存/TLB/store-forwarding 故障。
+
+本轮支持的结论：
+性能差距主要来自具体 radix 热循环在该数据上的表现；回写是小成本，管道移动与 array 支持不是必然的大成本。
+保留通用迭代器也能实验前向散射/旧 digit 映射，不需要增加 isVector。
+但多项改动组合并非单调变快，必须继续以普通随机、重复值、升降序和 array 的数据共同筛选，不能只优化一个样本。
+
+原始结果：gcc.csv、clang.csv、gcc-repeat.csv；逐项中位数 metrics.json。
+直方图探针：histogram-*.csv；固定循环汇编见 histogram-gcc.s。
+正式文件修改补丁：production.patch。复现：bash run.sh。

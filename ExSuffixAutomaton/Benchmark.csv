@@ -1,0 +1,4 @@
+scenario,originalMs,finalMs,speedup,checksum
+build-alphabet-1,0.768,0.659,1.1654,100
+build-alphabet-2,2.257,2.244,1.00579,3635718
+build-alphabet-26,1.962,1.711,1.1467,4761239

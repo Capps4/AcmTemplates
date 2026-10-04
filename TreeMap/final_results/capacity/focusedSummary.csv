@@ -1,0 +1,7 @@
+distribution,mode,rounds,median_total_ms,median_construct_ms,median_insert_ms,min_total_ms,max_total_ms
+random,fixed,7,194.386,0.429,193.862,190.155,252.692
+random,automatic,7,193.866,0.0,193.866,191.391,291.159
+random,reserved,7,201.475,0.417,201.049,189.471,294.639
+ascending,fixed,7,140.576,0.417,140.151,139.21,144.83
+ascending,automatic,7,140.698,0.0,140.698,136.862,143.938
+ascending,reserved,7,142.102,0.421,141.703,138.539,144.237

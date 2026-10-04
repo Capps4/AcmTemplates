@@ -1,0 +1,138 @@
+{
+  "formatVersion": 2,
+  "module": "VertexBiconnectedComponent",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "1ec9c6887979b2b2a2eec035f8693926f3ff152e9704ef3d66873bc2b14ba369",
+    "Final.hpp": "6772dc4782adb07e95079d37a885837bca2dc1047afeb3bb62eee32fdbb01d1d",
+    "Test.cpp": "6af729b7cfcd962e59cccaf5999d89720730dd6650a38947c4708a78d8c208a1",
+    "Benchmark.cpp": "15c548672259f76372e6ed0053801f95ad8f16f246c7095e63400c60d926a06b",
+    "Final.code-snippets": "e6759a4915df98707efc3a36dd9b1379f41fb3ed0b95455955f5e905b3bfc746"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "VertexBiconnectedComponent/Final.hpp": "6772dc4782adb07e95079d37a885837bca2dc1047afeb3bb62eee32fdbb01d1d",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "GraphTestSupport.hpp": "36e43dbf7e3c2938656b23ce3ba6eea578655965d1d778eaf2f0d83b3d098fed",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "VertexBiconnectedComponent/Original.hpp": "1ec9c6887979b2b2a2eec035f8693926f3ff152e9704ef3d66873bc2b14ba369"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/VertexBiconnectedComponent/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/VertexBiconnectedComponent/Build/optimized"
+      ],
+      "output": "VertexBC exhaustive vertex-removal/maximal-block oracle, multigraph, 200K chain/cycle PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/VertexBiconnectedComponent/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/VertexBiconnectedComponent/Build/sanitized"
+      ],
+      "output": "VertexBC exhaustive vertex-removal/maximal-block oracle, multigraph, 200K chain/cycle PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/VertexBiconnectedComponent/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/VertexBiconnectedComponent/Build/benchmark"
+  ],
+  "benchmark": "chain-10K,1.34,1.258,1.06518,2666766630001\nstar-50K,5.63,5.943,0.947333,208343333050001\nrandom-multigraph-50K,3.821,4.739,0.806288,125009003560949",
+  "benchmarkSamples": [
+    {
+      "scenario": "chain-10K",
+      "original": [
+        1.219,
+        1.312,
+        1.359,
+        1.36,
+        1.372,
+        1.273,
+        1.34
+      ],
+      "final": [
+        1.258,
+        1.231,
+        1.226,
+        1.226,
+        1.293,
+        1.349,
+        1.406
+      ],
+      "checksum": 2666766630001,
+      "first": "original"
+    },
+    {
+      "scenario": "star-50K",
+      "original": [
+        5.889,
+        4.895,
+        5.042,
+        5.63,
+        5.76,
+        5.65,
+        5.556
+      ],
+      "final": [
+        6.239,
+        5.604,
+        6.075,
+        6.774,
+        5.614,
+        5.283,
+        5.943
+      ],
+      "checksum": 208343333050001,
+      "first": "final"
+    },
+    {
+      "scenario": "random-multigraph-50K",
+      "original": [
+        4.335,
+        3.896,
+        3.807,
+        3.715,
+        3.726,
+        3.842,
+        3.821
+      ],
+      "final": [
+        5.186,
+        5.159,
+        4.769,
+        4.739,
+        4.584,
+        4.216,
+        4.505
+      ],
+      "checksum": 125009003560949,
+      "first": "original"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

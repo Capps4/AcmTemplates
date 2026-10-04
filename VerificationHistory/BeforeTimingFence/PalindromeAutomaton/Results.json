@@ -1,0 +1,62 @@
+{
+  "module": "PalindromeAutomaton",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "90516487992bccd59ec20936e63eeae93f4cd6165882fce5a0c3d845ffac6be7",
+    "Final.hpp": "3790a2c7afda943c356a8595e7ea7c6d22e8512845b1fe4ea59e293b9c23eeb8",
+    "Test.cpp": "acc6ab2cdbad047c6f28db3c1f46ca2d618747d6fcc0d6db59ec2c403e9d8039",
+    "Benchmark.cpp": "eb87fd88720ff99caecb492403cfbcd9ae72833ae5109d9f45912bfda99285e8",
+    "Final.code-snippets": "af7e6044220709f4500119fdf2f0fd8075ea31af6c857452ee1580a1d060dac5"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8"
+  },
+  "includeSha256": {
+    "PalindromeAutomaton/Final.hpp": "3790a2c7afda943c356a8595e7ea7c6d22e8512845b1fe4ea59e293b9c23eeb8",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8",
+    "PalindromeAutomaton/Original.hpp": "90516487992bccd59ec20936e63eeae93f4cd6165882fce5a0c3d845ffac6be7"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/PalindromeAutomaton/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/PalindromeAutomaton/Build/optimized"
+      ],
+      "output": "PAM: exhaustive palindromes, naive frequencies/suffix depth, roots, bytes, empty, append PASS"
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/PalindromeAutomaton/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/PalindromeAutomaton/Build/sanitized"
+      ],
+      "output": "PAM: exhaustive palindromes, naive frequencies/suffix depth, roots, bytes, empty, append PASS"
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/PalindromeAutomaton/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/PalindromeAutomaton/Build/benchmark"
+  ],
+  "benchmark": "build-alphabet-1,1.434,1.071,1.33894,10000099999\nbuild-alphabet-2,1.095,1.003,1.09172,139493\nbuild-alphabet-26,1.015,0.913,1.11172,26237"
+}

@@ -1,0 +1,138 @@
+{
+  "formatVersion": 2,
+  "module": "RingTree",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "87a2f080d7520cc3f30a8e49811a3449d842b7ac58f67d5a225a8230f325097a",
+    "Final.hpp": "6121416dc713f95c80ae94e665edda03d8517c5982eaef68d707992bfa0a91aa",
+    "Test.cpp": "6290bf020e9a080eae98ddce8e224b2cc6b06e6872510266a5903fae387e9e42",
+    "Benchmark.cpp": "bca560f18cb567ca1fbd1b82d55aebe447aae809dd316ecf0503ca14d7663a7c",
+    "Final.code-snippets": "894198e7c86361fb23c76acb85b1e4166f81acefc7dc7931c806e3a54c98f33b"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "RingTree/Final.hpp": "6121416dc713f95c80ae94e665edda03d8517c5982eaef68d707992bfa0a91aa",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "GraphTestSupport.hpp": "36e43dbf7e3c2938656b23ce3ba6eea578655965d1d778eaf2f0d83b3d098fed",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "RingTree/Original.hpp": "87a2f080d7520cc3f30a8e49811a3449d842b7ac58f67d5a225a8230f325097a"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/RingTree/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/RingTree/Build/optimized"
+      ],
+      "output": "RingTree exhaustive functional graph + physical-edge conservation oracle, forests/loops/parallel, 200K chain PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/RingTree/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/RingTree/Build/sanitized"
+      ],
+      "output": "RingTree exhaustive functional graph + physical-edge conservation oracle, forests/loops/parallel, 200K chain PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/RingTree/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/RingTree/Build/benchmark"
+  ],
+  "benchmark": "functional-chain-200K,8.695,8.04,1.08147,2666666666800000\nfunctional-random-200K,11.375,11.552,0.984678,1995249188582363\nundirected-chain-triangle-200K,8.55,8.472,1.00921,2666586668599994",
+  "benchmarkSamples": [
+    {
+      "scenario": "functional-chain-200K",
+      "original": [
+        10.003,
+        9.445,
+        8.99,
+        8.695,
+        8.553,
+        8.444,
+        8.469
+      ],
+      "final": [
+        8.233,
+        8.04,
+        8.101,
+        7.986,
+        8.169,
+        7.889,
+        7.976
+      ],
+      "checksum": 2666666666800000,
+      "first": "original"
+    },
+    {
+      "scenario": "functional-random-200K",
+      "original": [
+        11.5,
+        11.593,
+        11.275,
+        11.375,
+        11.203,
+        11.258,
+        11.382
+      ],
+      "final": [
+        11.109,
+        12.019,
+        11.671,
+        11.552,
+        11.665,
+        11.46,
+        11.399
+      ],
+      "checksum": 1995249188582363,
+      "first": "final"
+    },
+    {
+      "scenario": "undirected-chain-triangle-200K",
+      "original": [
+        8.692,
+        8.536,
+        8.531,
+        8.205,
+        8.55,
+        8.696,
+        8.769
+      ],
+      "final": [
+        8.472,
+        8.492,
+        8.607,
+        8.471,
+        8.477,
+        8.463,
+        8.289
+      ],
+      "checksum": 2666586668599994,
+      "first": "original"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

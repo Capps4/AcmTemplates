@@ -1,0 +1,114 @@
+{
+  "formatVersion": 2,
+  "module": "DisjointSetUnion",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "2c7cc8518bc52d24ffa7f46d170bfc59a0d20c0bcfefc36e462790ac971ec30d",
+    "Final.hpp": "2d3400260fd0a919636433849e70387667646498c201a9a689794b33273358d4",
+    "Test.cpp": "a1154a4bb2a85092a09f3b50ecdbe088d5c22a39fbc3fa3b953c217a34bd3f9e",
+    "Benchmark.cpp": "66fea4cba4430243f5cf6e627d59a31bc992a9839060514d85124e437fb95de8",
+    "Final.code-snippets": "1bd58500d8e825886fb95621b39843e98562905f1edb8c927136448660c5cbc6"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "DisjointSetUnion/Final.hpp": "2d3400260fd0a919636433849e70387667646498c201a9a689794b33273358d4",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "DisjointSetUnion/Original.hpp": "2c7cc8518bc52d24ffa7f46d170bfc59a0d20c0bcfefc36e462790ac971ec30d"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/DisjointSetUnion/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/DisjointSetUnion/Build/optimized"
+      ],
+      "output": "DSU: label/size oracle, Original directional leaders, reset, empty and 200K chain PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/DisjointSetUnion/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/DisjointSetUnion/Build/sanitized"
+      ],
+      "output": "DSU: label/size oracle, Original directional leaders, reset, empty and 200K chain PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/DisjointSetUnion/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/DisjointSetUnion/Build/benchmark"
+  ],
+  "benchmark": "random-merge-query,6.636,6.122,1.08396,38446586370\nordered-merge-query,1.29,1.199,1.0759,40000000000",
+  "benchmarkSamples": [
+    {
+      "scenario": "random-merge-query",
+      "original": [
+        7.562,
+        7.14,
+        6.853,
+        6.636,
+        6.428,
+        6.493,
+        6.285
+      ],
+      "final": [
+        5.978,
+        6.096,
+        6.143,
+        6.122,
+        6.128,
+        6.049,
+        6.128
+      ],
+      "checksum": 38446586370,
+      "first": "original"
+    },
+    {
+      "scenario": "ordered-merge-query",
+      "original": [
+        1.288,
+        1.305,
+        1.274,
+        1.322,
+        1.278,
+        1.29,
+        1.318
+      ],
+      "final": [
+        1.152,
+        1.143,
+        1.198,
+        1.219,
+        1.21,
+        1.23,
+        1.199
+      ],
+      "checksum": 40000000000,
+      "first": "final"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

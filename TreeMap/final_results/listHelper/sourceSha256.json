@@ -1,0 +1,18 @@
+{
+  "baselineTreeMap.hpp": "b1f0e3a2a5b37e852a57863ba9d07b734d7517895d83badf9b00eec6b487d042",
+  "tree_map_experiments/treeMap.hpp": "eedfec904ac76228ccf2adfb7326d3b00dc751efa8f3b8eebb3da248f742aff2",
+  "list_helper_cpp17/ListHelperAdaptive.hpp": "07cd4bdbddacd5696a56bb875bc849a6092b7461855fee1452a4b5630eeb1760",
+  "tree_map_experiments/check.cpp": "bd8f568bba99a59499d4f123fa53288fbe52268b9c1cfd1c149e1e39fb2e2594",
+  "tree_map_experiments/benchmark.cpp": "c8b7b043d0e0d52e92fcb2f74246fc5ba66118130fc5addbc5a34732c929c27d",
+  "tree_map_experiments/runBenchmark.sh": "70cf233cfcb8c29103b2be266f2c8764eba00d6f2a6c0f4e4d6a4f9c12aeb580",
+  "tree_map_experiments/final_results/listHelper/compare.cpp": "a6f0e212a354528cea79230c14dbaf1d8ff105f626fe0b3f466266d37b38098c",
+  "tree_map_experiments/final_results/listHelper/restoreInternalSort.patch": "75072cc319dd440411005c75a5d0d1d1df19aeea59df977e28685f9c640d490e",
+  "VSCodeSnippet": "11e7356d7859ae9740a89ea9e86d097fb1423b895a7f21e605dcc439d89aa108",
+  "tree_map_experiments/final_results/listHelper/prepareComparison.py": "972ec08b6d4cef001351b3102f81d9638796930dd55cfb3f3899c301ce51e22b",
+  "measuredVariants": {
+    "baseline.hpp": "b1f0e3a2a5b37e852a57863ba9d07b734d7517895d83badf9b00eec6b487d042",
+    "candidate.hpp": "e74c928d64a55a6d2cbf1cfa49c72c0ac647e10a87e68f6f44acc4f1e3930a29",
+    "direct.hpp": "37fccee75c6d218d4bdec4985d3f51afb09939a6797ca1fcfc6438db75d1c90e",
+    "compare.cpp": "a6f0e212a354528cea79230c14dbaf1d8ff105f626fe0b3f466266d37b38098c"
+  }
+}

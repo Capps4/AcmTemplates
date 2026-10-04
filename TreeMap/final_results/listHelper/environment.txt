@@ -1,0 +1,7 @@
+macOS-15.7.4-arm64-arm-64bit
+g++-15 (Homebrew GCC 15.2.0_1) 15.2.0
+Apple clang version 17.0.0 (clang-1700.3.19.1)
+Benchmark: -std=gnu++17 -O2 -DNDEBUG -Wall -Wextra -Wpedantic -Werror
+8 input/comparator cases; one warmup and five measured rounds; shuffled methods; serial execution.
+Sort-only timer excludes input preparation; constructor timer includes by-value candidate copy, sorting, deduplication and arrays.
+Sort complete-output verification and constructor sample checks are outside timing.

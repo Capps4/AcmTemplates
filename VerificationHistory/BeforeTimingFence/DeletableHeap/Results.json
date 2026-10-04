@@ -1,0 +1,51 @@
+{
+  "module": "DeletableHeap",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "eeb0478fc53451d7c2c41b83a195c997258864672a4728e2238729fa01922314",
+    "Final.hpp": "9731a761b3fed850b334cdc7ee0de3e1ec9f8a981ea70f5b51f6c0ff6b5f0d01",
+    "Test.cpp": "9c3d64e2690e250dc657172ba4be9e612b9ec499b6f7b7cb7167725194688c22",
+    "Benchmark.cpp": "290768a3bf5298dcbeb67d524661ea0d61de7cff7ec058aa761de4a64472ada9",
+    "Final.code-snippets": "70f776f83128a865cabb66a817ede56b321cc447913182bbc52af5375cf0173d"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/DeletableHeap/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/DeletableHeap/Build/optimized"
+      ],
+      "output": "50K multiset oracle operations, duplicates, captured comparator/CTAD, bulk build and string emplace passed"
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/DeletableHeap/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/DeletableHeap/Build/sanitized"
+      ],
+      "output": "50K multiset oracle operations, duplicates, captured comparator/CTAD, bulk build and string emplace passed"
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/DeletableHeap/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/DeletableHeap/Build/benchmark"
+  ],
+  "benchmark": "push-erase-top-100K,1.012,1.019,0.993131,9993864185\nbulk-string-build-30K,4.25,2.921,1.45498,30265"
+}

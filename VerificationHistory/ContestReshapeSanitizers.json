@@ -1,0 +1,622 @@
+{
+  "environment": {
+    "UBSAN_OPTIONS": "halt_on_error=1",
+    "ASAN_OPTIONS": "halt_on_error=1"
+  },
+  "executions": [
+    {
+      "module": "AcAutomaton",
+      "executions": [
+        {
+          "binary": "AcAutomaton/Build/sanitized",
+          "sha256": "af1716053f397a01fbd4bec42bb0df199aac5b6d2bdaf30cc36e3049f0057040",
+          "status": 0,
+          "output": "AC: exhaustive patterns/text, naive overlapping counts, duplicates, empty, 256 bytes, views PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "CentroidDecomposition",
+      "executions": [
+        {
+          "binary": "CentroidDecomposition/Build/sanitized",
+          "sha256": "42e10d474b5d8ef54d46d095dde7222c30b9040a97b605852b8ac2d1095cf871",
+          "status": 0,
+          "output": "CentroidDecomposition independent component balance oracle, forests/empty, 200K chain PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "Combinatorics",
+      "executions": [
+        {
+          "binary": "Combinatorics/Build/sanitized",
+          "sha256": "efffec3db6e68b60d8dd3b94e228d97549fdf5ce00c9e89ae005d900a75826bc",
+          "status": 0,
+          "output": "Combinatorics: Pascal oracle, factorials, 64-bit mod, dynamic reset PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "CostFlow",
+      "executions": [
+        {
+          "binary": "CostFlow/Build/sanitized",
+          "sha256": "956e0c16ea1fb130673df4b9f485ab4d06a0e6758e59749ce571a8691072bc85",
+          "status": 0,
+          "output": "CostFlow 5000 exhaustive-flow graph oracles, 3 modes, limits/repeated/rerouting, numeric errors, negative cycles, 200K chain PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "CountingSortOrder",
+      "executions": [
+        {
+          "binary": "CountingSortOrder/Build/sanitized",
+          "sha256": "d5703f1a15fc48de3b9fe02171be453f4c33ae90b7e74c93266d964ab2d04102",
+          "status": 0,
+          "output": "Stable-sort oracle, empty/sparse keys, large records and move-only key passed\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "Debuger",
+      "executions": [
+        {
+          "binary": "Debuger/Build/sanitized",
+          "sha256": "e943ec7e376a5b2020f80baa9766fdef3d56cb6003fd3d3072d9054f4051b52d",
+          "status": 0,
+          "output": "Debuger disabled side effects, writable options, enabled macro, shared two-TU state PASS\n",
+          "stderr": ""
+        },
+        {
+          "binary": "Debuger/Build/sanitized-TestCasePlugin",
+          "sha256": "cf6d99834258c041f7ce7e66a959caf4551564e2406042b070b3b36bb753d5f2",
+          "status": 0,
+          "output": "Debuger actual local GNU plugin / Clang registration fixture PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "DeletableHeap",
+      "executions": [
+        {
+          "binary": "DeletableHeap/Build/sanitized",
+          "sha256": "82f0275452b5ec0cfcbf22e3251b805704b966dc209cecfe9e22cc2d22eab8a5",
+          "status": 0,
+          "output": "50K multiset oracle operations, duplicates, captured comparator/CTAD, bulk build and string emplace passed\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "Dijkstra",
+      "executions": [
+        {
+          "binary": "Dijkstra/Build/sanitized",
+          "sha256": "11420beaa0f983f20511bdeaab2ce4c18e727d59c52ef5ef3ab13d04df91f5b2",
+          "status": 0,
+          "output": "300 Floyd-Warshall oracles, CTAD, unreachable/overflow paths and cached source queries passed\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "Discreter",
+      "executions": [
+        {
+          "binary": "Discreter/Build/sanitized",
+          "sha256": "760427e7c75a2e2cbc73de551ee765bd656363944baa86693894c5e7cabefe44",
+          "status": 0,
+          "output": "Discreter: sort/lower-bound oracle, empty/extremes, borrowed/owned pipe and bool PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "DisjointSetUnion",
+      "executions": [
+        {
+          "binary": "DisjointSetUnion/Build/sanitized",
+          "sha256": "f0643b3d5a1a27c994f1a1db3a62a7959784c85ae3a9dedc5fd4c1c45d7a329a",
+          "status": 0,
+          "output": "DSU: label/size oracle, Original directional leaders, reset, empty and 200K chain PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "EdgeBiconnectedComponent",
+      "executions": [
+        {
+          "binary": "EdgeBiconnectedComponent/Build/sanitized",
+          "sha256": "69939b71f3d11c96d735a07e7a34782ebc778df94056268290142e3977a248dd",
+          "status": 0,
+          "output": "EdgeBC exhaustive edge-removal oracle, loops/parallel edges, 200K chain/cycle PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "ExGcd",
+      "executions": [
+        {
+          "binary": "ExGcd/Build/sanitized",
+          "sha256": "458ea131d292e1cf42d49ec1327d83bc370642fa9e32ab855355022ab5fcd988",
+          "status": 0,
+          "output": "100K Bezout/gcd oracles, zero/extreme inputs and constexpr passed\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "ExSuffixAutomaton",
+      "executions": [
+        {
+          "binary": "ExSuffixAutomaton/Build/sanitized",
+          "sha256": "d0170432e4f230143dba530d1f6c0e384c0e07cb4c7fff29459f24d463d19334",
+          "status": 0,
+          "output": "ExSAM: substring-union oracle, duplicates, empty collections, boundaries, byte alphabet, append PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "FastFourierTransform",
+      "executions": [
+        {
+          "binary": "FastFourierTransform/Build/sanitized",
+          "sha256": "0d5c13ec8f6149a1dfb33cf0dcfbb704be2b2dc177e8dc0fb1d146ee470670b4",
+          "status": 0,
+          "output": "Exported snippets coexist; convolution oracle + compression + graph + stream integration PASS\n49 final library headers plus unchanged Geo2/Geo3 coexist; real cross-module runtime checks PASS\nFFT: naive long-double oracle, empty, threshold, alternating sizes, impulse, long-double PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "FastInputOutput",
+      "executions": [
+        {
+          "binary": "FastInputOutput/Build/sanitized",
+          "sha256": "eabec22596d32a51865e2eff029e1ef83a6a01030593ee75efa1aefb8a000462",
+          "status": 0,
+          "output": "FastInputOutput 100K integer/128-bit roundtrip, 1MB boundaries, EOF/errors/lines, Float/Point/ListHelper integration PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "FenwickTree",
+      "executions": [
+        {
+          "binary": "FenwickTree/Build/sanitized",
+          "sha256": "4ab66c97d170e133fc12fbd6e10c0de5faa9d8b32d2dedcfab42718ed50dcc39",
+          "status": 0,
+          "output": "Random sum/update/select oracles, O(n) build, explicit max identity, move-only XOR and vector<bool> passed\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "FloatPointNumber",
+      "executions": [
+        {
+          "binary": "FloatPointNumber/Build/sanitized",
+          "sha256": "cce9cf5f793201fe1ad9d49c42a61a8a90795762f2e1c15903002c19959c9481",
+          "status": 0,
+          "output": "FloatPointNumber constexpr/mixed scalar, 100K raw-math oracle, signed rounding, stream errors, parallel parsing, two-TU precision PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "GaussianElimination",
+      "executions": [
+        {
+          "binary": "GaussianElimination/Build/sanitized",
+          "sha256": "fdab4c89048ee18ebeb3f0baf1bd42e37a6b63079f8ea4b18c205c0f853d1c07",
+          "status": 0,
+          "output": "GaussianElimination finite-field exhaustive solution oracle, two-sided inverse, pivot stability, empty/multi-RHS PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "GridUtil",
+      "executions": [
+        {
+          "binary": "GridUtil/Build/sanitized",
+          "sha256": "0b2670286b406e0426f1c917068a406b2ab96bb9c5dd5392d44173952559f8a8",
+          "status": 0,
+          "output": "All cells in 0..20 grids, direction order and move-only callback passed\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "HashMap",
+      "executions": [
+        {
+          "binary": "HashMap/Build/sanitized",
+          "sha256": "4bbfe3006d5fad0464800ae7b1306c77001aa5bda5121de8ec3faea944c870cc",
+          "status": 0,
+          "output": "HashMap 150K interleaved-owner oracle, moves/clears/collisions/full pool, Original iterator copies, resource reset, optional lookup PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "Kmp",
+      "executions": [
+        {
+          "binary": "Kmp/Build/sanitized",
+          "sha256": "f811b870592a47a8061149532f50778c4a7b47333178c910283a57546c794cd2",
+          "status": 0,
+          "output": "Exhaustive binary strings, random slices, embedded NUL and 1M repeated characters passed\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "LazySegmentTree",
+      "executions": [
+        {
+          "binary": "LazySegmentTree/Build/sanitized",
+          "sha256": "e35d0027b48217d96769869287fbfc2153372799729f4b3d8ca83ec2186fc660",
+          "status": 0,
+          "output": "Random range/point updates, max searches, move-only predicates and affine composition passed\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "LinearBasis",
+      "executions": [
+        {
+          "binary": "LinearBasis/Build/sanitized",
+          "sha256": "8f8888463f700b10d52f1863252e3c2b9a0a78fd48e9f1486522d1119de6cd20",
+          "status": 0,
+          "output": "LinearBasis exhaustive subset XOR oracle, reduced-then-insert, empty, full 64-bit rank/kth limits PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "ListHelper",
+      "executions": [
+        {
+          "binary": "ListHelper/Build/sanitized",
+          "sha256": "b6301d311db5cdcc57380d57c3e6bcba4b85f73034bd8835beb8fba76c94db27",
+          "status": 0,
+          "output": "ListHelper: sort/radix oracles, ownership/views, reusable move-only ops, proxies, streams, member result lifetime PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "Manacher",
+      "executions": [
+        {
+          "binary": "Manacher/Build/sanitized",
+          "sha256": "689747b59fbeb93347d8fd9e619252a647bcfea8e73a060852e8779266e4d2da",
+          "status": 0,
+          "output": "Manacher: exhaustive binary, sentinel bytes, all intervals, naive center/tail, million bytes PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "MaxFlow",
+      "executions": [
+        {
+          "binary": "MaxFlow/Build/sanitized",
+          "sha256": "86e78f610ea92b33466df1cb42e3a66fe84068364e5fbf0b77e897d32b80d276",
+          "status": 0,
+          "output": "MaxFlow exhaustive cut oracle, bidirectional/parallel/self edges, limits/reuse, uint64 max, fractional, recursive 2K chain PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "MillerRabin",
+      "executions": [
+        {
+          "binary": "MillerRabin/Build/sanitized",
+          "sha256": "bdc0b62f75bc422b8906d54503a3c7dbd89839cb91044931650617acfaa96fae",
+          "status": 0,
+          "output": "MillerRabin: exhaustive sieve, pseudoprimes, independent uint64 arithmetic, constexpr, mod isolation PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "MinimalString",
+      "executions": [
+        {
+          "binary": "MinimalString/Build/sanitized",
+          "sha256": "79caca307850c922d3bcb3769f2f74cf06b58d5ecee7dc5c510ec944228e9d89",
+          "status": 0,
+          "output": "MinimalString: exhaustive rotations, arbitrary bytes, empty/views, integer/bool and million repetition PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "MoSort",
+      "executions": [
+        {
+          "binary": "MoSort/Build/sanitized",
+          "sha256": "aa5bf34ecb2146ab46fa5179210854bead5987f833bd9062fbbe140c34a9ba43",
+          "status": 0,
+          "output": "Snake-order oracle, strict weak order and INT_MAX scaling passed\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "ModuloInteger",
+      "executions": [
+        {
+          "binary": "ModuloInteger/Build/sanitized",
+          "sha256": "3e2971881042c5e8ce9b48d2bc4b974c299ba43dfee14af389d8950c575545df",
+          "status": 0,
+          "output": "constexpr arithmetic, 200K wide-integer oracles, extreme moduli, inverse and I/O failures passed\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "MultipleBackpacks",
+      "executions": [
+        {
+          "binary": "MultipleBackpacks/Build/sanitized",
+          "sha256": "59d9c313298c71dcf638feb6d19c164bdecfb7c8b30104b2a7d46d0464d939f5",
+          "status": 0,
+          "output": "MultipleBackpacks exhaustive count oracle, zero weight/capacity, negative values, INT_MAX bounds PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "NumberTheoreticTransform",
+      "executions": [
+        {
+          "binary": "NumberTheoreticTransform/Build/sanitized",
+          "sha256": "2efd5ea5bf4799ce6fecb068ea4c324d5df43562f0047d11c343b6812f3fb546",
+          "status": 0,
+          "output": "NTT: naive products and series recurrences, roots, fallback, empty, large exponents, aliasing, IO PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "PalindromeAutomaton",
+      "executions": [
+        {
+          "binary": "PalindromeAutomaton/Build/sanitized",
+          "sha256": "220fdc4885e98268bafb2ba9c0704f4b6d898c69d89185d429525947a10bf02f",
+          "status": 0,
+          "output": "PAM: exhaustive palindromes, naive frequencies/suffix depth, roots, bytes, empty, append PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "PersistentTree",
+      "executions": [
+        {
+          "binary": "PersistentTree/Build/sanitized",
+          "sha256": "e22e8dd874e2db48c684e31ff200958be2a3c6eb2492b7259710936ef40da1ae",
+          "status": 0,
+          "output": "PersistentTree: 150K sorted-subarray/count oracles, empty intervals, extremes/bool, temporary values, repeated keys PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "Point",
+      "executions": [
+        {
+          "binary": "Point/Build/sanitized",
+          "sha256": "9e85fcfb6b5f50f1071b6237871246b48ff851719cabaa58a5718d367287ee9a",
+          "status": 0,
+          "output": "Point constexpr, 100K independent wide algebra/distance oracle, wide-before-subtract, rotation/angle/IO PASS\n",
+          "stderr": ""
+        },
+        {
+          "binary": "Point/Build/sanitized-TestCaseGeometry",
+          "sha256": "4f8d4284424db5fb5966564e1f1a391a010bd92d2e3eb155a6e20057583bc785",
+          "status": 0,
+          "output": "Unchanged Geo2/Geo3 snapshots + final Float/Point: hull, circle/line/tangents, 3D plane/polyhedron compatibility PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "PollardRho",
+      "executions": [
+        {
+          "binary": "PollardRho/Build/sanitized",
+          "sha256": "570a2416cd9877ae18540eb8085ec6933b5d60bbe14bc4cea1ff4eda1f031aa8",
+          "status": 0,
+          "output": "PollardRho: four seeds, exhaustive trial, proper factors, large semiprimes, uint64, mod isolation PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "RandomNumber",
+      "executions": [
+        {
+          "binary": "RandomNumber/Build/sanitized",
+          "sha256": "03adf91656bcba587ba5b09d1616da25ea86efe777eb417a64023e5b919a60bf",
+          "status": 0,
+          "output": "RandomNumber engine/reference sequence, seed replay, shared engine across two TUs PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "RingTree",
+      "executions": [
+        {
+          "binary": "RingTree/Build/sanitized",
+          "sha256": "0dbaa52b102cfb1e84548edd2f99ec8c50d62340a351ad9d08eccd0995fcb8a3",
+          "status": 0,
+          "output": "RingTree exhaustive functional graph + physical-edge conservation oracle, forests/loops/parallel, 200K chain PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "Sieve",
+      "executions": [
+        {
+          "binary": "Sieve/Build/sanitized",
+          "sha256": "bd960d13dd3394a31c855917cefe11a04500f887955a39aff81bb02b3d58f598",
+          "status": 0,
+          "output": "Sieve: trial oracle, divisors, boundaries, no-op init, full uint64 PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "SparseTable",
+      "executions": [
+        {
+          "binary": "SparseTable/Build/sanitized",
+          "sha256": "db2faee40b5e9f37f1a78e6b921769d8453b33c916af59bd0c0fc40ceb9a067d",
+          "status": 0,
+          "output": "All random intervals vs min/max oracles, move-only comparator, empty table and record values passed\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "StringHash",
+      "executions": [
+        {
+          "binary": "StringHash/Build/sanitized",
+          "sha256": "94394d6f26278999f4ca81b68f8470b096c5e70ae24aa306402f6ace42eb0db9",
+          "status": 0,
+          "output": "StringHash: independent polynomial oracle, empty intervals first, bytes, numeric extremes, dimensions, multi-TU PASS; bases=727782980,861561204\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "StronglyConnectedComponent",
+      "executions": [
+        {
+          "binary": "StronglyConnectedComponent/Build/sanitized",
+          "sha256": "2210a3f0fb6598f82b07704ddabb506aa1d5f12cb3f11c346f26b7891b432f62",
+          "status": 0,
+          "output": "SCC exhaustive/Floyd oracle, condensation integration, 200K chain/cycle PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "SuffixArray",
+      "executions": [
+        {
+          "binary": "SuffixArray/Build/sanitized",
+          "sha256": "91824668eeb4333c83284a036ab83e889c1f985810aedea0b4193d878da91136",
+          "status": 0,
+          "output": "SuffixArray: naive suffix ordering/LCP, exhaustive binary, bytes, signed extremes, custom comparator, empty PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "SuffixAutomaton",
+      "executions": [
+        {
+          "binary": "SuffixAutomaton/Build/sanitized",
+          "sha256": "564e0ef93f5c81dd3e31cb37940178ac163897075e1b6a345c2933f172a3ccd9",
+          "status": 0,
+          "output": "SAM: exhaustive substring set, online prefixes, clone invariants, empty, bytes, adaptive capacity PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "TopSort",
+      "executions": [
+        {
+          "binary": "TopSort/Build/sanitized",
+          "sha256": "546ad4c0ba37182f07b3c096545f0d5e5cae900abf76e8cfb5983d2a760f4ba4",
+          "status": 0,
+          "output": "TopSort exhaustive/Floyd oracle, multigraph, move-only edges, 200K chain PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "Tree",
+      "executions": [
+        {
+          "binary": "Tree/Build/sanitized",
+          "sha256": "cabd2e95d5f1c249d63bbb29af934ff63c8e53775ca481c9f018594820e9a8cb",
+          "status": 0,
+          "output": "Tree independent parent/path/LCA/virtual closure oracle, stage hook order, move-only weights, empty, 200K chain PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "TwoSat",
+      "executions": [
+        {
+          "binary": "TwoSat/Build/sanitized",
+          "sha256": "bb49db10901bc0ac1b79c45432e8c19ae3149c4bfd6c154a4f8e9d88d1744a91",
+          "status": 0,
+          "output": "TwoSat exhaustive assignment oracle, repeated work, 200K implication chain PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "VertexBiconnectedComponent",
+      "executions": [
+        {
+          "binary": "VertexBiconnectedComponent/Build/sanitized",
+          "sha256": "4d21f892aa7379f1a97a55144404a4c3620be5c04bd719f3941d00f543ba1264",
+          "status": 0,
+          "output": "VertexBC exhaustive vertex-removal/maximal-block oracle, multigraph, 200K chain/cycle PASS\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "ZFunction",
+      "executions": [
+        {
+          "binary": "ZFunction/Build/sanitized",
+          "sha256": "4d18947cc4562399a96ad8eb354b8709f48cbb916fb111b97cc71a8a203e6fb9",
+          "status": 0,
+          "output": "Exhaustive binary strings, random slices, embedded NUL and 1M repeated characters passed\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "module": "init_",
+      "executions": [
+        {
+          "binary": "init_/Build/sanitized",
+          "sha256": "02be3330890464575dc1dae9ecd4b8bbb87a890dbbe53bd02d8994483694a090",
+          "status": 0,
+          "output": "init_ final entry settings/return/type aliases PASS; actual exported cursor expansion verified by Integration.py\n",
+          "stderr": ""
+        }
+      ]
+    }
+  ]
+}

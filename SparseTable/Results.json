@@ -1,0 +1,137 @@
+{
+  "formatVersion": 2,
+  "module": "SparseTable",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "eca1e22479455ddeea13af10750832e664fa6791ea5115835c0a59070aa80056",
+    "Final.hpp": "b56780f8966afcee8c41c38fc6833dc451ac896808d6452d52631e731d37e244",
+    "Test.cpp": "c1703804076aec79e525812e4672a784adde4231bd7d17c1fe09209c91ff6014",
+    "Benchmark.cpp": "6ef2adc66abd918de6d1e62c19035f0296258ffdd5bac23a60c321f7af87e88b",
+    "Final.code-snippets": "5be05a638532c317abe050df77893ee06c2c86480a7cb1b8cacee0c8d06969c3"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "SparseTable/Final.hpp": "b56780f8966afcee8c41c38fc6833dc451ac896808d6452d52631e731d37e244",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "SparseTable/Original.hpp": "eca1e22479455ddeea13af10750832e664fa6791ea5115835c0a59070aa80056"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/SparseTable/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/SparseTable/Build/optimized"
+      ],
+      "output": "All random intervals vs min/max oracles, move-only comparator, empty table and record values passed",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/SparseTable/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/SparseTable/Build/sanitized"
+      ],
+      "output": "All random intervals vs min/max oracles, move-only comparator, empty table and record values passed",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/SparseTable/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/SparseTable/Build/benchmark"
+  ],
+  "benchmark": "build-100K,0.769,0.764,1.00654,0\nquery-300K,0.415,0.42,0.988095,187669429\nbuild-stateful-comparator-30K,9.254,0.152,60.8816,10",
+  "benchmarkSamples": [
+    {
+      "scenario": "build-100K",
+      "original": [
+        0.869,
+        0.843,
+        0.793,
+        0.766,
+        0.769,
+        0.764,
+        0.762
+      ],
+      "final": [
+        0.787,
+        0.768,
+        0.764,
+        0.769,
+        0.745,
+        0.718,
+        0.713
+      ],
+      "checksum": 0,
+      "first": "original"
+    },
+    {
+      "scenario": "query-300K",
+      "original": [
+        0.409,
+        0.413,
+        0.414,
+        0.426,
+        0.426,
+        0.415,
+        0.419
+      ],
+      "final": [
+        0.439,
+        0.415,
+        0.42,
+        0.414,
+        0.418,
+        0.42,
+        0.43
+      ],
+      "checksum": 187669429,
+      "first": "final"
+    },
+    {
+      "scenario": "build-stateful-comparator-30K",
+      "original": [
+        10.016,
+        9.555,
+        9.254,
+        9.185,
+        9.24,
+        9.209,
+        9.364
+      ],
+      "final": [
+        0.155,
+        0.15,
+        0.155,
+        0.152,
+        0.154,
+        0.143,
+        0.151
+      ],
+      "checksum": 10,
+      "first": "original"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

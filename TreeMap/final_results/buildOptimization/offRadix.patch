@@ -1,0 +1,59 @@
+--- a/before.hpp
++++ b/offRadix.hpp
+@@ -438,6 +438,47 @@
+ 
+     const Key& keyFromIndex(u32 u) const { return keys[u - 1]; }
+ 
++    void sortKeys() {
++        if (keys.size() < 1024) {
++            std::sort(keys.begin(), keys.end(), compare);
++            return;
++        }
++        if constexpr (std::is_integral_v<Key> && !std::is_same_v<Key, bool> &&
++                      (std::is_same_v<Compare, std::less<Key>> ||
++                       std::is_same_v<Compare, std::greater<Key>>)) {
++            using Unsigned = std::make_unsigned_t<Key>;
++            constexpr int bits = std::numeric_limits<Unsigned>::digits;
++            std::vector<Key> buffer(keys.size());
++            for (int shift = 0; shift < bits; shift += 8) {
++                auto bucket = [shift](Key key) {
++                    Unsigned ordered = static_cast<Unsigned>(key);
++                    if constexpr (std::is_signed_v<Key>)
++                        ordered ^= Unsigned(1) << (bits - 1);
++                    unsigned digit = (ordered >> shift) & 255;
++                    if constexpr (std::is_same_v<Compare, std::greater<Key>>)
++                        digit ^= 255;
++                    return digit;
++                };
++                size_t positions[256]{};
++                for (Key key : keys)
++                    ++positions[bucket(key)];
++                if (positions[bucket(keys.front())] == keys.size())
++                    continue;
++                size_t total = 0;
++                for (size_t& position : positions) {
++                    size_t count = position;
++                    position = total;
++                    total += count;
++                }
++                for (Key key : keys)
++                    buffer[positions[bucket(key)]++] = key;
++                keys.swap(buffer);
++            }
++        } else {
++            std::sort(keys.begin(), keys.end(), compare);
++        }
++    }
++
+     size_t lowerIndex(const Key& key) const {
+         return std::lower_bound(keys.begin(), keys.end(), key, compare) - keys.begin();
+     }
+@@ -522,7 +563,7 @@
+     explicit TreeMapOff(std::vector<Key> candidates, Compare cmp = {})
+         : compare(std::move(cmp)), keys(std::move(candidates)) {
+         if (!std::is_sorted(keys.begin(), keys.end(), compare))
+-            std::sort(keys.begin(), keys.end(), compare);
++            sortKeys();
+         keys.erase(
+             std::unique(keys.begin(), keys.end(), [&](const Key& a, const Key& b) {
+                 return !compare(a, b) && !compare(b, a);

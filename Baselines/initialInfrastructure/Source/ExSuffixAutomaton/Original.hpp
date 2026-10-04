@@ -1,0 +1,83 @@
+#pragma once
+#include <bits/stdc++.h>
+using i64 = long long;
+template <int Z, char Base>
+class ExSam {
+public:
+    std::vector<std::array<int, Z>> son{};
+    std::vector<int> len{}, link{};
+    // std::vector<std::set<int>> ID;
+    int tot = 0, last = 0;
+
+    ExSam(const std::vector<std::string> &strs) {
+        int sizeSum = 0;
+        for (const auto &str : strs) {
+            sizeSum += str.size();
+        }
+
+        len.resize(sizeSum * 2);
+        link.resize(sizeSum * 2);
+        link[0] = -1;
+        son.resize(sizeSum * 2);
+        // ID.resize(sizeSum * 2);
+
+        for (auto i = 0U; i < strs.size(); i++) {
+            last = 0;
+            for (char c : strs[i]) {
+                exadd(c, i);
+            }
+        }
+    }
+    void exadd(char c, int id) {
+        c -= Base;
+        if (son[last][c]) {
+            int v = last, q = son[v][c];
+            if (len[q] != len[v] + 1) {
+                int cl = ++tot;
+                len[cl] = len[v] + 1;
+                link[cl] = link[q];
+                son[cl] = son[q];
+
+                while (v != -1 and son[v][c] == q)
+                    son[v][c] = cl, v = link[v];
+                link[q] = cl;
+                q = cl;
+            }
+            int cur = last = q;
+            assign(cur, id);
+            return;
+        }
+
+        int cur = ++tot;
+        len[cur] = len[last] + 1;
+        assign(cur, id);
+
+        int v = last;
+        while (v != -1 and son[v][c] == 0)
+            son[v][c] = cur, v = link[v];
+        if (v == -1)
+            link[cur] = 0;
+        else {
+            int q = son[v][c];
+            if (len[q] == len[v] + 1)
+                link[cur] = q;
+            else {
+                int cl = ++tot;
+                len[cl] = len[v] + 1;
+                link[cl] = link[q];
+                son[cl] = son[q];
+
+                while (v != -1 and son[v][c] == q)
+                    son[v][c] = cl, v = link[v];
+                link[q] = link[cur] = cl;
+            }
+        }
+        last = cur;
+    }
+
+private:
+    void assign(int cur, int id) {
+        // ID[cur].insert(id);
+    }
+};
+

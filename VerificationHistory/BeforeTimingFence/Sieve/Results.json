@@ -1,0 +1,62 @@
+{
+  "module": "Sieve",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "31381d076b205c79d4f9b50906caa6070add43a39e3cb146c22783413efd077c",
+    "Final.hpp": "2c44e117cce7435311f5d352878361c2a2349f32d010c2b496c799ab9edd20fb",
+    "Test.cpp": "4f15e893445da837e0a006d616c853f3d9567d004ad1dfb488db9ed05f3d7b29",
+    "Benchmark.cpp": "5437859cd0faf1062ea3ce798a623c31dd81d7c49aab12fa2463aef1a7d19b51",
+    "Final.code-snippets": "b5f29a51071f8895c11a1d4467fa7bba1caded22371cee838cb603886c747039"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8"
+  },
+  "includeSha256": {
+    "Sieve/Final.hpp": "2c44e117cce7435311f5d352878361c2a2349f32d010c2b496c799ab9edd20fb",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8",
+    "Sieve/Original.hpp": "31381d076b205c79d4f9b50906caa6070add43a39e3cb146c22783413efd077c"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/Sieve/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/Sieve/Build/optimized"
+      ],
+      "output": "Sieve: trial oracle, divisors, boundaries, no-op init, full uint64 PASS"
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/Sieve/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/Sieve/Build/sanitized"
+      ],
+      "output": "Sieve: trial oracle, divisors, boundaries, no-op init, full uint64 PASS"
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/Sieve/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/Sieve/Build/benchmark"
+  ],
+  "benchmark": "linear-build,3.034,2.286,1.32721,78501\ntable-factorization,9.647,8.907,1.08308,6507877677"
+}

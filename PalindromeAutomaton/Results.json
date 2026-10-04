@@ -1,0 +1,137 @@
+{
+  "formatVersion": 2,
+  "module": "PalindromeAutomaton",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "90516487992bccd59ec20936e63eeae93f4cd6165882fce5a0c3d845ffac6be7",
+    "Final.hpp": "28c2cc39c817eb1171d71fe897362d65f06b6884046be85b1611ed58c2b4e859",
+    "Test.cpp": "acc6ab2cdbad047c6f28db3c1f46ca2d618747d6fcc0d6db59ec2c403e9d8039",
+    "Benchmark.cpp": "eb87fd88720ff99caecb492403cfbcd9ae72833ae5109d9f45912bfda99285e8",
+    "Final.code-snippets": "37d55ad9d8b12b1bcb3bf9c91e52f93c9c7670674b33ce1d98f37c3a0e492b2c"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "PalindromeAutomaton/Final.hpp": "28c2cc39c817eb1171d71fe897362d65f06b6884046be85b1611ed58c2b4e859",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "PalindromeAutomaton/Original.hpp": "90516487992bccd59ec20936e63eeae93f4cd6165882fce5a0c3d845ffac6be7"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/PalindromeAutomaton/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/PalindromeAutomaton/Build/optimized"
+      ],
+      "output": "PAM: exhaustive palindromes, naive frequencies/suffix depth, roots, bytes, empty, append PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/PalindromeAutomaton/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/PalindromeAutomaton/Build/sanitized"
+      ],
+      "output": "PAM: exhaustive palindromes, naive frequencies/suffix depth, roots, bytes, empty, append PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/PalindromeAutomaton/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/PalindromeAutomaton/Build/benchmark"
+  ],
+  "benchmark": "build-alphabet-1,1.468,1.132,1.29682,10000099999\nbuild-alphabet-2,1.1,1.008,1.09127,139493\nbuild-alphabet-26,1.033,0.889,1.16198,26237",
+  "benchmarkSamples": [
+    {
+      "scenario": "build-alphabet-1",
+      "original": [
+        1.629,
+        1.638,
+        1.486,
+        1.468,
+        1.437,
+        1.451,
+        1.322
+      ],
+      "final": [
+        1.168,
+        1.145,
+        1.132,
+        1.155,
+        1.117,
+        1.045,
+        1.026
+      ],
+      "checksum": 10000099999,
+      "first": "original"
+    },
+    {
+      "scenario": "build-alphabet-2",
+      "original": [
+        1.15,
+        1.107,
+        1.104,
+        1.1,
+        1.093,
+        1.072,
+        1.032
+      ],
+      "final": [
+        1.143,
+        1.039,
+        1.022,
+        1.008,
+        1.002,
+        0.997,
+        1
+      ],
+      "checksum": 139493,
+      "first": "final"
+    },
+    {
+      "scenario": "build-alphabet-26",
+      "original": [
+        1.077,
+        1.08,
+        1.071,
+        1.033,
+        1.023,
+        1.023,
+        1.023
+      ],
+      "final": [
+        0.914,
+        0.889,
+        0.893,
+        0.885,
+        0.892,
+        0.884,
+        0.884
+      ],
+      "checksum": 26237,
+      "first": "original"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

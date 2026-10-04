@@ -1,0 +1,67 @@
+{
+  "module": "PersistentTree",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "cb49295cc50d7bfefa6423dd7eef056e502c10ba8cee519ce4147ebffeba0960",
+    "Final.hpp": "63d10d7291471ce8ddab5861d380b757fc9af218a7766d9bcafd530e6d2035f3",
+    "Test.cpp": "ff749adf7e9ee28b3a5d8967afd025d106d504442e952ba7c2b6b88ce120b8ee",
+    "Benchmark.cpp": "e44c3e3f74458a9b590b4c63814b6e11ffeee031292d939c5c934031f4cedb14",
+    "Final.code-snippets": "1f57840ebbb524d1df501aa590e43b12ffe294af4071412329f379ce35317051"
+  },
+  "dependencySha256": {
+    "Discreter/Final.hpp": "3850127e797a30b6d6aceba7c371496b293f111d2c1564a4f79a0e7fa277ef7d",
+    "ListHelper/Final.hpp": "b7e82c8d217eaeb6288da2311d84e6c34fe6baa22c6cda8dc813064e84e1e8bc"
+  },
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8"
+  },
+  "includeSha256": {
+    "PersistentTree/Final.hpp": "63d10d7291471ce8ddab5861d380b757fc9af218a7766d9bcafd530e6d2035f3",
+    "Discreter/Final.hpp": "3850127e797a30b6d6aceba7c371496b293f111d2c1564a4f79a0e7fa277ef7d",
+    "ListHelper/Final.hpp": "b7e82c8d217eaeb6288da2311d84e6c34fe6baa22c6cda8dc813064e84e1e8bc",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "e2f4a58f665c72aaf4bf00d9a3f5d34181df961385e6c6c12a5587e5244858e8",
+    "PersistentTree/Original.hpp": "cb49295cc50d7bfefa6423dd7eef056e502c10ba8cee519ce4147ebffeba0960"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/PersistentTree/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/PersistentTree/Build/optimized"
+      ],
+      "output": "PersistentTree: sorted-subarray/count oracles, empty intervals/input, kth edges, extremes, bool, custom comparator, lifetime, integration PASS"
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/PersistentTree/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/PersistentTree/Build/sanitized"
+      ],
+      "output": "PersistentTree: sorted-subarray/count oracles, empty intervals/input, kth edges, extremes, bool, custom comparator, lifetime, integration PASS"
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/PersistentTree/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/PersistentTree/Build/benchmark"
+  ],
+  "benchmark": "build,16.918,15.19,1.11376,496672\nrange-count,50.003,45.927,1.08875,628262264\nkth-query,23.173,23.248,0.996774,49772152172"
+}

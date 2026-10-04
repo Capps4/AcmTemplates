@@ -1,0 +1,527 @@
+{
+  "date": "2026-10-02",
+  "platform": "macOS arm64",
+  "method": "Three serial runs, reverse complete job order in middle round; self rows have 5-sample medians, friend/KACTL rows have 7-sample medians; final median of three; O3 NDEBUG. Friend C++20 due to span; self/KACTL C++17.",
+  "sha256": {
+    "/Users/bytedance/acm_compete/cpp17/Geo2/Final.hpp": "5e34fc16a7ee9543c2b74b56d2e379507f2e7b09637900073c183c43510a98c0",
+    "/Users/bytedance/acm_compete/cpp17/Geo2/Algorithms.hpp": "65b02b228a8f69201038c1c75f168124975b7f1bef8beab8d4b820b794a4c441",
+    "/Users/bytedance/acm_compete/cpp17/Geo2/Benchmark.cpp": "424066589c663880160dd49bb191965e0a8352611f1bd70438da4ef9aadc0d59",
+    "/Users/bytedance/acm_compete/cpp17/Geo2/TestCaseBounds.cpp": "9c76835eba46865fb35d8b00f94eedf89a92439ec5db0143d4ae25ecb0535875",
+    "/Users/bytedance/Downloads/静态凸包.cpp": "02feecb811a0fc94b8fe879b2949da72a6509b92a6f4ed3b9debd69654705bc9",
+    "/tmp/geo2-friend-compare/reference.hpp": "8b7894fb4a4ff2ccf9e40c4c814973b4712cd2f634e38d6a410dba2cc9adacf5",
+    "/tmp/geo2-convex-friend-before.cpp": "8561cd74e478224da4525dbc647a3273c894abcac5ab8a63aa4d5338329c8f53",
+    "/tmp/geo2-convex-friend-after.cpp": "39be765f0647c9d23c46629990a88dcf0460188125fc1038e6ce41eeeb9a93be"
+  },
+  "runs": [
+    {
+      "compiler": "Clang 17",
+      "kind": "self",
+      "version": "before",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-convex-before/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-Clang-self-before"
+      ],
+      "round": 1,
+      "output": "operation,n,repeats,median_ms\nboundary_dense,1024,20,0.125\nboundary_sparse,1024,20,0.086\ninter_predicate,1024,40000,6.316\nnear_line,1024,40000,5.047\ntangents,1024,40000,0.864\ncalipers,1024,20,0.217\nnear_convex,1024,20,0.265\ninter_convex_predicate,1024,20,0.277\nminkowski,1024,20,0.371\nconvex_intersection,1024,20,0.573\ncircle_polygon_area,1024,20,0.109\nboundary_dense,8192,20,0.422\nboundary_sparse,8192,20,0.317\ninter_predicate,8192,40000,5.791\nnear_line,8192,40000,5.638\ntangents,8192,40000,2.856\ncalipers,8192,20,1.613\nnear_convex,8192,20,1.682\ninter_convex_predicate,8192,20,1.719\nminkowski,8192,20,2.504\nconvex_intersection,8192,20,5.267\ncircle_polygon_area,8192,20,0.808\nboundary_dense,65536,20,3.073\nboundary_sparse,65536,20,2.345\ninter_predicate,65536,40000,9.489\nnear_line,65536,40000,10.035\ntangents,65536,40000,5.224\ncalipers,65536,20,31.945\nnear_convex,65536,20,10.774\ninter_convex_predicate,65536,20,11.419\nminkowski,65536,20,18.982\nconvex_intersection,65536,20,53.584\ncircle_polygon_area,65536,20,6.477\n",
+      "validation": "sparse_capacity n=1024 vertices=4 capacity=1024\nsparse_capacity n=8192 vertices=4 capacity=8192\nsparse_capacity n=65536 vertices=4 capacity=65536\nchecksum=267736\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "kind": "self",
+      "version": "after",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-Clang-self-after"
+      ],
+      "round": 1,
+      "output": "operation,n,repeats,median_ms\nboundary_dense,1024,20,0.162\nboundary_sparse,1024,20,0.105\ninter_predicate,1024,40000,5.581\nnear_line,1024,40000,4.252\ntangents,1024,40000,0.889\ncalipers,1024,20,0.233\nnear_convex,1024,20,0.292\ninter_convex_predicate,1024,20,0.291\nminkowski,1024,20,0.410\nconvex_intersection,1024,20,0.613\ncircle_polygon_area,1024,20,0.118\nboundary_dense,8192,20,0.452\nboundary_sparse,8192,20,0.337\ninter_predicate,8192,40000,4.435\nnear_line,8192,40000,4.450\ntangents,8192,40000,2.744\ncalipers,8192,20,1.969\nnear_convex,8192,20,1.649\ninter_convex_predicate,8192,20,1.733\nminkowski,8192,20,2.381\nconvex_intersection,8192,20,4.784\ncircle_polygon_area,8192,20,0.753\nboundary_dense,65536,20,3.083\nboundary_sparse,65536,20,2.293\ninter_predicate,65536,40000,8.071\nnear_line,65536,40000,8.435\ntangents,65536,40000,5.546\ncalipers,65536,20,30.534\nnear_convex,65536,20,11.193\ninter_convex_predicate,65536,20,12.181\nminkowski,65536,20,17.978\nconvex_intersection,65536,20,50.635\ncircle_polygon_area,65536,20,6.348\n",
+      "validation": "sparse_capacity n=1024 vertices=4 capacity=4\nsparse_capacity n=8192 vertices=4 capacity=4\nsparse_capacity n=65536 vertices=4 capacity=4\nchecksum=267736\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "kind": "friend",
+      "version": "before",
+      "command": [
+        "clang++",
+        "-std=c++20",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-convex-friend-before.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-Clang-friend-before"
+      ],
+      "round": 1,
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,build_and_area_parabola,1025,10,0.191709\nFriend,build_and_area_parabola,1025,10,0.162625\nGeo2,location,1025,40000,1.677291\nFriend,location,1025,40000,2.793250\nGeo2,tangents_original,1025,40000,2.114916\nFriend,tangents_original,1025,40000,3.162292\nGeo2,tangents_fast,1025,40000,1.854166\nFriend,tangents_fast,1025,40000,2.483917\nGeo2,line_predicate,1025,40000,3.136917\nFriend,line_predicate,1025,40000,2.340833\nGeo2,diameter2,1025,30,0.096334\nFriend,diameter2,1025,30,0.156792\nGeo2,area2_cached_vs_scan,1025,1000,0.307542\nFriend,area2_cached_vs_scan,1025,1000,0.001083\nGeo2,build_and_area_parabola,8193,10,1.772250\nFriend,build_and_area_parabola,8193,10,2.115250\nGeo2,location,8193,40000,1.590000\nFriend,location,8193,40000,3.176334\nGeo2,tangents_original,8193,40000,2.627250\nFriend,tangents_original,8193,40000,4.833084\nGeo2,tangents_fast,8193,40000,2.591042\nFriend,tangents_fast,8193,40000,4.188292\nGeo2,line_predicate,8193,40000,4.309042\nFriend,line_predicate,8193,40000,3.407708\nGeo2,diameter2,8193,30,0.704917\nFriend,diameter2,8193,30,1.203167\nGeo2,area2_cached_vs_scan,8193,1000,2.442625\nFriend,area2_cached_vs_scan,8193,1000,0.001125\nGeo2,build_and_area_parabola,60001,10,23.003791\nFriend,build_and_area_parabola,60001,10,23.750334\nGeo2,location,60001,40000,2.375000\nFriend,location,60001,40000,4.330459\nGeo2,tangents_original,60001,40000,3.704250\nFriend,tangents_original,60001,40000,5.955375\nGeo2,tangents_fast,60001,40000,3.511542\nFriend,tangents_fast,60001,40000,6.779208\nGeo2,line_predicate,60001,40000,5.640458\nFriend,line_predicate,60001,40000,3.245459\nGeo2,diameter2,60001,30,5.389333\nFriend,diameter2,60001,30,8.414375\nGeo2,area2_cached_vs_scan,60001,1000,18.434208\nFriend,area2_cached_vs_scan,60001,1000,0.001000\nGeo2,build_and_area_random,1024,10,0.142875\nFriend,build_and_area_random,1024,10,0.107916\nGeo2,build_and_area_random,8192,10,2.734375\nFriend,build_and_area_random,8192,10,1.947875\nGeo2,build_and_area_random,65536,10,30.487375\nFriend,build_and_area_random,65536,10,32.209959\n",
+      "validation": "validated all 40000 queries, both tangent algorithms, hull/area/diameter; n=1025\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=8193\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=60001\nchecksum=7.99585e+19\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "kind": "friend",
+      "version": "after",
+      "command": [
+        "clang++",
+        "-std=c++20",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-convex-friend-after.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-Clang-friend-after"
+      ],
+      "round": 1,
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,build_and_area_parabola,1025,10,0.191959\nFriend,build_and_area_parabola,1025,10,0.162208\nGeo2,location,1025,40000,1.675791\nFriend,location,1025,40000,2.818625\nGeo2,tangents_original,1025,40000,2.030709\nFriend,tangents_original,1025,40000,3.116167\nGeo2,tangents_fast,1025,40000,1.779084\nFriend,tangents_fast,1025,40000,2.304541\nGeo2,line_predicate,1025,40000,2.227041\nFriend,line_predicate,1025,40000,2.386042\nGeo2,diameter2,1025,30,0.096875\nFriend,diameter2,1025,30,0.157916\nGeo2,area2_cached_vs_scan,1025,1000,0.304334\nFriend,area2_cached_vs_scan,1025,1000,0.001375\nGeo2,build_and_area_parabola,8193,10,1.929667\nFriend,build_and_area_parabola,8193,10,1.118375\nGeo2,location,8193,40000,1.599875\nFriend,location,8193,40000,3.293458\nGeo2,tangents_original,8193,40000,2.678750\nFriend,tangents_original,8193,40000,4.892750\nGeo2,tangents_fast,8193,40000,2.672041\nFriend,tangents_fast,8193,40000,4.233083\nGeo2,line_predicate,8193,40000,3.077750\nFriend,line_predicate,8193,40000,3.559708\nGeo2,diameter2,8193,30,0.698166\nFriend,diameter2,8193,30,1.181833\nGeo2,area2_cached_vs_scan,8193,1000,2.436625\nFriend,area2_cached_vs_scan,8193,1000,0.001125\nGeo2,build_and_area_parabola,60001,10,22.372458\nFriend,build_and_area_parabola,60001,10,23.630666\nGeo2,location,60001,40000,2.357042\nFriend,location,60001,40000,4.317209\nGeo2,tangents_original,60001,40000,3.571500\nFriend,tangents_original,60001,40000,5.786292\nGeo2,tangents_fast,60001,40000,3.528125\nFriend,tangents_fast,60001,40000,6.699833\nGeo2,line_predicate,60001,40000,3.895208\nFriend,line_predicate,60001,40000,3.280459\nGeo2,diameter2,60001,30,5.343917\nFriend,diameter2,60001,30,8.482750\nGeo2,area2_cached_vs_scan,60001,1000,18.466000\nFriend,area2_cached_vs_scan,60001,1000,0.001000\nGeo2,build_and_area_random,1024,10,0.124750\nFriend,build_and_area_random,1024,10,0.102208\nGeo2,build_and_area_random,8192,10,2.115708\nFriend,build_and_area_random,8192,10,2.208583\nGeo2,build_and_area_random,65536,10,30.256083\nFriend,build_and_area_random,65536,10,32.820750\n",
+      "validation": "validated all 40000 queries, both tangent algorithms, hull/area/diameter; n=1025\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=8193\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=60001\nchecksum=7.99585e+19\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "kind": "reference",
+      "version": "after",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/BenchmarkCompare.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-Clang-reference-after"
+      ],
+      "round": 1,
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,line_predicate_public,1024,40000,2.704042\nKACTL,line_predicate_public,1024,40000,6.941916\nGeo2,line_predicate_kernel,1024,40000,2.351250\nKACTL-adapted,line_predicate_kernel,1024,40000,2.030291\nGeo2,near_line_disjoint,1024,40000,2.832958\nKACTL-adapted,near_line_disjoint,1024,40000,1.845542\nGeo2,line_predicate_public,8192,40000,3.388208\nKACTL,line_predicate_public,8192,40000,12.257958\nGeo2,line_predicate_kernel,8192,40000,3.383875\nKACTL-adapted,line_predicate_kernel,8192,40000,8.775333\nGeo2,near_line_disjoint,8192,40000,4.332667\nKACTL-adapted,near_line_disjoint,8192,40000,7.312917\nGeo2,line_predicate_public,65536,40000,6.584125\nKACTL,line_predicate_public,65536,40000,22.844708\nGeo2,line_predicate_kernel,65536,40000,6.425167\nKACTL-adapted,line_predicate_kernel,65536,40000,14.812584\nGeo2,near_line_disjoint,65536,40000,8.382541\nKACTL-adapted,near_line_disjoint,65536,40000,14.933541\nGeo2,diameter_public,1025,30,0.086792\nKACTL,diameter_public,1025,30,0.115334\nGeo2,diameter_kernel,1025,30,0.093875\nKACTL-adapted,diameter_kernel,1025,30,0.118375\nGeo2,diameter_public,8193,30,0.701625\nKACTL,diameter_public,8193,30,0.948750\nGeo2,diameter_kernel,8193,30,0.719042\nKACTL-adapted,diameter_kernel,8193,30,0.938375\nGeo2,diameter_public,60001,30,5.389167\nKACTL,diameter_public,60001,30,7.498667\nGeo2,diameter_kernel,60001,30,5.196125\nKACTL-adapted,diameter_kernel,60001,30,7.046500\nGeo2,segment_intersection,40000,40000,0.207375\nKACTL,segment_intersection,40000,40000,2.003500\n",
+      "validation": "checksum=40000\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "kind": "self",
+      "version": "before",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-convex-before/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-GCC-self-before"
+      ],
+      "round": 1,
+      "output": "operation,n,repeats,median_ms\nboundary_dense,1024,20,0.072\nboundary_sparse,1024,20,0.047\ninter_predicate,1024,40000,3.476\nnear_line,1024,40000,3.753\ntangents,1024,40000,1.717\ncalipers,1024,20,0.249\nnear_convex,1024,20,0.237\ninter_convex_predicate,1024,20,0.233\nminkowski,1024,20,0.351\nconvex_intersection,1024,20,0.685\ncircle_polygon_area,1024,20,0.096\nboundary_dense,8192,20,0.541\nboundary_sparse,8192,20,0.338\ninter_predicate,8192,40000,4.263\nnear_line,8192,40000,4.657\ntangents,8192,40000,6.995\ncalipers,8192,20,2.256\nnear_convex,8192,20,1.628\ninter_convex_predicate,8192,20,1.539\nminkowski,8192,20,2.601\nconvex_intersection,8192,20,6.455\ncircle_polygon_area,8192,20,0.702\nboundary_dense,65536,20,3.982\nboundary_sparse,65536,20,2.564\ninter_predicate,65536,40000,7.696\nnear_line,65536,40000,8.397\ntangents,65536,40000,12.775\ncalipers,65536,20,32.787\nnear_convex,65536,20,12.204\ninter_convex_predicate,65536,20,11.871\nminkowski,65536,20,22.519\nconvex_intersection,65536,20,59.625\ncircle_polygon_area,65536,20,5.800\n",
+      "validation": "sparse_capacity n=1024 vertices=4 capacity=1024\nsparse_capacity n=8192 vertices=4 capacity=8192\nsparse_capacity n=65536 vertices=4 capacity=65536\nchecksum=267736\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "kind": "self",
+      "version": "after",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-GCC-self-after"
+      ],
+      "round": 1,
+      "output": "operation,n,repeats,median_ms\nboundary_dense,1024,20,0.135\nboundary_sparse,1024,20,0.097\ninter_predicate,1024,40000,4.251\nnear_line,1024,40000,3.583\ntangents,1024,40000,1.866\ncalipers,1024,20,0.263\nnear_convex,1024,20,0.248\ninter_convex_predicate,1024,20,0.238\nminkowski,1024,20,0.366\nconvex_intersection,1024,20,0.734\ncircle_polygon_area,1024,20,0.102\nboundary_dense,8192,20,0.533\nboundary_sparse,8192,20,0.380\ninter_predicate,8192,40000,3.927\nnear_line,8192,40000,3.767\ntangents,8192,40000,6.901\ncalipers,8192,20,2.219\nnear_convex,8192,20,1.627\ninter_convex_predicate,8192,20,1.545\nminkowski,8192,20,2.519\nconvex_intersection,8192,20,6.427\ncircle_polygon_area,8192,20,0.721\nboundary_dense,65536,20,3.804\nboundary_sparse,65536,20,2.557\ninter_predicate,65536,40000,7.281\nnear_line,65536,40000,7.901\ntangents,65536,40000,12.048\ncalipers,65536,20,32.711\nnear_convex,65536,20,12.716\ninter_convex_predicate,65536,20,11.911\nminkowski,65536,20,20.877\nconvex_intersection,65536,20,58.722\ncircle_polygon_area,65536,20,5.816\n",
+      "validation": "sparse_capacity n=1024 vertices=4 capacity=4\nsparse_capacity n=8192 vertices=4 capacity=4\nsparse_capacity n=65536 vertices=4 capacity=4\nchecksum=267736\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "kind": "friend",
+      "version": "before",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++20",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-convex-friend-before.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-GCC-friend-before"
+      ],
+      "round": 1,
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,build_and_area_parabola,1025,10,0.202000\nFriend,build_and_area_parabola,1025,10,0.150000\nGeo2,location,1025,40000,2.118000\nFriend,location,1025,40000,1.975000\nGeo2,tangents_original,1025,40000,2.315000\nFriend,tangents_original,1025,40000,3.067000\nGeo2,tangents_fast,1025,40000,2.091000\nFriend,tangents_fast,1025,40000,2.258000\nGeo2,line_predicate,1025,40000,2.921000\nFriend,line_predicate,1025,40000,2.526000\nGeo2,diameter2,1025,30,0.080000\nFriend,diameter2,1025,30,0.141000\nGeo2,area2_cached_vs_scan,1025,1000,0.367000\nFriend,area2_cached_vs_scan,1025,1000,0.001000\nGeo2,build_and_area_parabola,8193,10,2.284000\nFriend,build_and_area_parabola,8193,10,1.201000\nGeo2,location,8193,40000,2.130000\nFriend,location,8193,40000,2.416000\nGeo2,tangents_original,8193,40000,2.909000\nFriend,tangents_original,8193,40000,5.027000\nGeo2,tangents_fast,8193,40000,2.904000\nFriend,tangents_fast,8193,40000,3.498000\nGeo2,line_predicate,8193,40000,3.881000\nFriend,line_predicate,8193,40000,3.683000\nGeo2,diameter2,8193,30,0.634000\nFriend,diameter2,8193,30,1.184000\nGeo2,area2_cached_vs_scan,8193,1000,2.983000\nFriend,area2_cached_vs_scan,8193,1000,0.001000\nGeo2,build_and_area_parabola,60001,10,24.841000\nFriend,build_and_area_parabola,60001,10,21.526000\nGeo2,location,60001,40000,2.715000\nFriend,location,60001,40000,3.161000\nGeo2,tangents_original,60001,40000,3.857000\nFriend,tangents_original,60001,40000,5.700000\nGeo2,tangents_fast,60001,40000,3.772000\nFriend,tangents_fast,60001,40000,5.221000\nGeo2,line_predicate,60001,40000,4.789000\nFriend,line_predicate,60001,40000,3.429000\nGeo2,diameter2,60001,30,4.664000\nFriend,diameter2,60001,30,7.889000\nGeo2,area2_cached_vs_scan,60001,1000,21.652000\nFriend,area2_cached_vs_scan,60001,1000,0.001000\nGeo2,build_and_area_random,1024,10,0.164000\nFriend,build_and_area_random,1024,10,0.131000\nGeo2,build_and_area_random,8192,10,3.489000\nFriend,build_and_area_random,8192,10,2.015000\nGeo2,build_and_area_random,65536,10,31.984000\nFriend,build_and_area_random,65536,10,29.911000\n",
+      "validation": "validated all 40000 queries, both tangent algorithms, hull/area/diameter; n=1025\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=8193\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=60001\nchecksum=7.99674e+19\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "kind": "friend",
+      "version": "after",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++20",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-convex-friend-after.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-GCC-friend-after"
+      ],
+      "round": 1,
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,build_and_area_parabola,1025,10,0.218000\nFriend,build_and_area_parabola,1025,10,0.163000\nGeo2,location,1025,40000,2.032000\nFriend,location,1025,40000,1.911000\nGeo2,tangents_original,1025,40000,2.217000\nFriend,tangents_original,1025,40000,3.061000\nGeo2,tangents_fast,1025,40000,2.038000\nFriend,tangents_fast,1025,40000,2.164000\nGeo2,line_predicate,1025,40000,1.500000\nFriend,line_predicate,1025,40000,2.516000\nGeo2,diameter2,1025,30,0.080000\nFriend,diameter2,1025,30,0.138000\nGeo2,area2_cached_vs_scan,1025,1000,0.367000\nFriend,area2_cached_vs_scan,1025,1000,0.001000\nGeo2,build_and_area_parabola,8193,10,2.265000\nFriend,build_and_area_parabola,8193,10,1.174000\nGeo2,location,8193,40000,2.078000\nFriend,location,8193,40000,2.355000\nGeo2,tangents_original,8193,40000,2.837000\nFriend,tangents_original,8193,40000,5.012000\nGeo2,tangents_fast,8193,40000,2.925000\nFriend,tangents_fast,8193,40000,3.413000\nGeo2,line_predicate,8193,40000,1.962000\nFriend,line_predicate,8193,40000,3.533000\nGeo2,diameter2,8193,30,0.635000\nFriend,diameter2,8193,30,1.120000\nGeo2,area2_cached_vs_scan,8193,1000,2.988000\nFriend,area2_cached_vs_scan,8193,1000,0.001000\nGeo2,build_and_area_parabola,60001,10,23.864000\nFriend,build_and_area_parabola,60001,10,21.267000\nGeo2,location,60001,40000,2.811000\nFriend,location,60001,40000,3.227000\nGeo2,tangents_original,60001,40000,3.825000\nFriend,tangents_original,60001,40000,5.793000\nGeo2,tangents_fast,60001,40000,3.827000\nFriend,tangents_fast,60001,40000,5.226000\nGeo2,line_predicate,60001,40000,2.545000\nFriend,line_predicate,60001,40000,3.354000\nGeo2,diameter2,60001,30,4.570000\nFriend,diameter2,60001,30,8.069000\nGeo2,area2_cached_vs_scan,60001,1000,21.823000\nFriend,area2_cached_vs_scan,60001,1000,0.001000\nGeo2,build_and_area_random,1024,10,0.163000\nFriend,build_and_area_random,1024,10,0.129000\nGeo2,build_and_area_random,8192,10,3.346000\nFriend,build_and_area_random,8192,10,1.963000\nGeo2,build_and_area_random,65536,10,32.326000\nFriend,build_and_area_random,65536,10,29.430000\n",
+      "validation": "validated all 40000 queries, both tangent algorithms, hull/area/diameter; n=1025\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=8193\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=60001\nchecksum=7.99674e+19\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "kind": "reference",
+      "version": "after",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/BenchmarkCompare.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-GCC-reference-after"
+      ],
+      "round": 1,
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,line_predicate_public,1024,40000,2.291000\nKACTL,line_predicate_public,1024,40000,5.884000\nGeo2,line_predicate_kernel,1024,40000,2.001000\nKACTL-adapted,line_predicate_kernel,1024,40000,2.089000\nGeo2,near_line_disjoint,1024,40000,2.267000\nKACTL-adapted,near_line_disjoint,1024,40000,2.014000\nGeo2,line_predicate_public,8192,40000,2.975000\nKACTL,line_predicate_public,8192,40000,11.026000\nGeo2,line_predicate_kernel,8192,40000,3.039000\nKACTL-adapted,line_predicate_kernel,8192,40000,7.387000\nGeo2,near_line_disjoint,8192,40000,3.506000\nKACTL-adapted,near_line_disjoint,8192,40000,7.813000\nGeo2,line_predicate_public,65536,40000,5.926000\nKACTL,line_predicate_public,65536,40000,17.453000\nGeo2,line_predicate_kernel,65536,40000,5.949000\nKACTL-adapted,line_predicate_kernel,65536,40000,12.183000\nGeo2,near_line_disjoint,65536,40000,7.189000\nKACTL-adapted,near_line_disjoint,65536,40000,14.170000\nGeo2,diameter_public,1025,30,0.072000\nKACTL,diameter_public,1025,30,0.127000\nGeo2,diameter_kernel,1025,30,0.080000\nKACTL-adapted,diameter_kernel,1025,30,0.116000\nGeo2,diameter_public,8193,30,0.619000\nKACTL,diameter_public,8193,30,1.079000\nGeo2,diameter_kernel,8193,30,0.602000\nKACTL-adapted,diameter_kernel,8193,30,0.912000\nGeo2,diameter_public,60001,30,4.549000\nKACTL,diameter_public,60001,30,7.979000\nGeo2,diameter_kernel,60001,30,4.605000\nKACTL-adapted,diameter_kernel,60001,30,7.181000\nGeo2,segment_intersection,40000,40000,0.121000\nKACTL,segment_intersection,40000,40000,2.126000\n",
+      "validation": "checksum=40000\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "kind": "reference",
+      "version": "after",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/BenchmarkCompare.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-GCC-reference-after"
+      ],
+      "round": 2,
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,line_predicate_public,1024,40000,1.954000\nKACTL,line_predicate_public,1024,40000,5.710000\nGeo2,line_predicate_kernel,1024,40000,1.971000\nKACTL-adapted,line_predicate_kernel,1024,40000,2.081000\nGeo2,near_line_disjoint,1024,40000,2.420000\nKACTL-adapted,near_line_disjoint,1024,40000,2.031000\nGeo2,line_predicate_public,8192,40000,3.004000\nKACTL,line_predicate_public,8192,40000,11.553000\nGeo2,line_predicate_kernel,8192,40000,3.015000\nKACTL-adapted,line_predicate_kernel,8192,40000,7.408000\nGeo2,near_line_disjoint,8192,40000,3.530000\nKACTL-adapted,near_line_disjoint,8192,40000,7.865000\nGeo2,line_predicate_public,65536,40000,6.055000\nKACTL,line_predicate_public,65536,40000,17.683000\nGeo2,line_predicate_kernel,65536,40000,5.974000\nKACTL-adapted,line_predicate_kernel,65536,40000,12.593000\nGeo2,near_line_disjoint,65536,40000,7.271000\nKACTL-adapted,near_line_disjoint,65536,40000,14.149000\nGeo2,diameter_public,1025,30,0.072000\nKACTL,diameter_public,1025,30,0.125000\nGeo2,diameter_kernel,1025,30,0.072000\nKACTL-adapted,diameter_kernel,1025,30,0.114000\nGeo2,diameter_public,8193,30,0.624000\nKACTL,diameter_public,8193,30,1.051000\nGeo2,diameter_kernel,8193,30,0.610000\nKACTL-adapted,diameter_kernel,8193,30,0.918000\nGeo2,diameter_public,60001,30,4.587000\nKACTL,diameter_public,60001,30,7.930000\nGeo2,diameter_kernel,60001,30,4.644000\nKACTL-adapted,diameter_kernel,60001,30,7.194000\nGeo2,segment_intersection,40000,40000,0.123000\nKACTL,segment_intersection,40000,40000,2.078000\n",
+      "validation": "checksum=40000\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "kind": "friend",
+      "version": "after",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++20",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-convex-friend-after.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-GCC-friend-after"
+      ],
+      "round": 2,
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,build_and_area_parabola,1025,10,0.152000\nFriend,build_and_area_parabola,1025,10,0.113000\nGeo2,location,1025,40000,1.574000\nFriend,location,1025,40000,1.650000\nGeo2,tangents_original,1025,40000,2.143000\nFriend,tangents_original,1025,40000,3.057000\nGeo2,tangents_fast,1025,40000,2.101000\nFriend,tangents_fast,1025,40000,2.321000\nGeo2,line_predicate,1025,40000,1.468000\nFriend,line_predicate,1025,40000,2.478000\nGeo2,diameter2,1025,30,0.080000\nFriend,diameter2,1025,30,0.138000\nGeo2,area2_cached_vs_scan,1025,1000,0.375000\nFriend,area2_cached_vs_scan,1025,1000,0.001000\nGeo2,build_and_area_parabola,8193,10,2.087000\nFriend,build_and_area_parabola,8193,10,1.410000\nGeo2,location,8193,40000,2.130000\nFriend,location,8193,40000,2.448000\nGeo2,tangents_original,8193,40000,2.870000\nFriend,tangents_original,8193,40000,5.078000\nGeo2,tangents_fast,8193,40000,2.944000\nFriend,tangents_fast,8193,40000,3.523000\nGeo2,line_predicate,8193,40000,2.007000\nFriend,line_predicate,8193,40000,3.577000\nGeo2,diameter2,8193,30,0.614000\nFriend,diameter2,8193,30,1.117000\nGeo2,area2_cached_vs_scan,8193,1000,2.925000\nFriend,area2_cached_vs_scan,8193,1000,0.001000\nGeo2,build_and_area_parabola,60001,10,24.282000\nFriend,build_and_area_parabola,60001,10,21.157000\nGeo2,location,60001,40000,2.750000\nFriend,location,60001,40000,3.153000\nGeo2,tangents_original,60001,40000,3.842000\nFriend,tangents_original,60001,40000,5.770000\nGeo2,tangents_fast,60001,40000,3.938000\nFriend,tangents_fast,60001,40000,5.212000\nGeo2,line_predicate,60001,40000,2.501000\nFriend,line_predicate,60001,40000,3.408000\nGeo2,diameter2,60001,30,4.640000\nFriend,diameter2,60001,30,7.998000\nGeo2,area2_cached_vs_scan,60001,1000,22.013000\nFriend,area2_cached_vs_scan,60001,1000,0.001000\nGeo2,build_and_area_random,1024,10,0.163000\nFriend,build_and_area_random,1024,10,0.129000\nGeo2,build_and_area_random,8192,10,1.976000\nFriend,build_and_area_random,8192,10,1.576000\nGeo2,build_and_area_random,65536,10,32.680000\nFriend,build_and_area_random,65536,10,29.575000\n",
+      "validation": "validated all 40000 queries, both tangent algorithms, hull/area/diameter; n=1025\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=8193\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=60001\nchecksum=7.99674e+19\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "kind": "friend",
+      "version": "before",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++20",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-convex-friend-before.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-GCC-friend-before"
+      ],
+      "round": 2,
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,build_and_area_parabola,1025,10,0.145000\nFriend,build_and_area_parabola,1025,10,0.109000\nGeo2,location,1025,40000,1.623000\nFriend,location,1025,40000,1.701000\nGeo2,tangents_original,1025,40000,2.092000\nFriend,tangents_original,1025,40000,3.090000\nGeo2,tangents_fast,1025,40000,2.100000\nFriend,tangents_fast,1025,40000,2.293000\nGeo2,line_predicate,1025,40000,3.045000\nFriend,line_predicate,1025,40000,2.517000\nGeo2,diameter2,1025,30,0.072000\nFriend,diameter2,1025,30,0.138000\nGeo2,area2_cached_vs_scan,1025,1000,0.349000\nFriend,area2_cached_vs_scan,1025,1000,0.001000\nGeo2,build_and_area_parabola,8193,10,1.542000\nFriend,build_and_area_parabola,8193,10,1.213000\nGeo2,location,8193,40000,2.102000\nFriend,location,8193,40000,2.431000\nGeo2,tangents_original,8193,40000,2.942000\nFriend,tangents_original,8193,40000,4.964000\nGeo2,tangents_fast,8193,40000,2.923000\nFriend,tangents_fast,8193,40000,3.413000\nGeo2,line_predicate,8193,40000,3.907000\nFriend,line_predicate,8193,40000,3.534000\nGeo2,diameter2,8193,30,0.610000\nFriend,diameter2,8193,30,1.116000\nGeo2,area2_cached_vs_scan,8193,1000,2.933000\nFriend,area2_cached_vs_scan,8193,1000,0.001000\nGeo2,build_and_area_parabola,60001,10,25.064000\nFriend,build_and_area_parabola,60001,10,21.442000\nGeo2,location,60001,40000,2.717000\nFriend,location,60001,40000,3.187000\nGeo2,tangents_original,60001,40000,3.825000\nFriend,tangents_original,60001,40000,5.763000\nGeo2,tangents_fast,60001,40000,3.874000\nFriend,tangents_fast,60001,40000,5.245000\nGeo2,line_predicate,60001,40000,4.821000\nFriend,line_predicate,60001,40000,3.355000\nGeo2,diameter2,60001,30,4.496000\nFriend,diameter2,60001,30,8.030000\nGeo2,area2_cached_vs_scan,60001,1000,21.825000\nFriend,area2_cached_vs_scan,60001,1000,0.001000\nGeo2,build_and_area_random,1024,10,0.146000\nFriend,build_and_area_random,1024,10,0.130000\nGeo2,build_and_area_random,8192,10,2.169000\nFriend,build_and_area_random,8192,10,2.142000\nGeo2,build_and_area_random,65536,10,33.650000\nFriend,build_and_area_random,65536,10,29.863000\n",
+      "validation": "validated all 40000 queries, both tangent algorithms, hull/area/diameter; n=1025\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=8193\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=60001\nchecksum=7.99674e+19\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "kind": "self",
+      "version": "after",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-GCC-self-after"
+      ],
+      "round": 2,
+      "output": "operation,n,repeats,median_ms\nboundary_dense,1024,20,0.055\nboundary_sparse,1024,20,0.041\ninter_predicate,1024,40000,2.526\nnear_line,1024,40000,2.762\ntangents,1024,40000,1.629\ncalipers,1024,20,0.241\nnear_convex,1024,20,0.232\ninter_convex_predicate,1024,20,0.216\nminkowski,1024,20,0.337\nconvex_intersection,1024,20,0.700\ncircle_polygon_area,1024,20,0.095\nboundary_dense,8192,20,0.506\nboundary_sparse,8192,20,0.368\ninter_predicate,8192,40000,3.821\nnear_line,8192,40000,3.919\ntangents,8192,40000,7.125\ncalipers,8192,20,2.267\nnear_convex,8192,20,1.619\ninter_convex_predicate,8192,20,1.580\nminkowski,8192,20,2.583\nconvex_intersection,8192,20,6.764\ncircle_polygon_area,8192,20,0.739\nboundary_dense,65536,20,3.907\nboundary_sparse,65536,20,2.733\ninter_predicate,65536,40000,7.619\nnear_line,65536,40000,8.283\ntangents,65536,40000,12.406\ncalipers,65536,20,31.663\nnear_convex,65536,20,12.844\ninter_convex_predicate,65536,20,12.343\nminkowski,65536,20,21.277\nconvex_intersection,65536,20,62.970\ncircle_polygon_area,65536,20,5.886\n",
+      "validation": "sparse_capacity n=1024 vertices=4 capacity=4\nsparse_capacity n=8192 vertices=4 capacity=4\nsparse_capacity n=65536 vertices=4 capacity=4\nchecksum=267736\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "kind": "self",
+      "version": "before",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-convex-before/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-GCC-self-before"
+      ],
+      "round": 2,
+      "output": "operation,n,repeats,median_ms\nboundary_dense,1024,20,0.059\nboundary_sparse,1024,20,0.044\ninter_predicate,1024,40000,2.578\nnear_line,1024,40000,3.163\ntangents,1024,40000,1.608\ncalipers,1024,20,0.236\nnear_convex,1024,20,0.222\ninter_convex_predicate,1024,20,0.211\nminkowski,1024,20,0.325\nconvex_intersection,1024,20,0.611\ncircle_polygon_area,1024,20,0.085\nboundary_dense,8192,20,0.488\nboundary_sparse,8192,20,0.317\ninter_predicate,8192,40000,4.428\nnear_line,8192,40000,4.647\ntangents,8192,40000,7.951\ncalipers,8192,20,2.440\nnear_convex,8192,20,1.616\ninter_convex_predicate,8192,20,1.569\nminkowski,8192,20,2.549\nconvex_intersection,8192,20,6.509\ncircle_polygon_area,8192,20,0.719\nboundary_dense,65536,20,4.001\nboundary_sparse,65536,20,2.656\ninter_predicate,65536,40000,7.774\nnear_line,65536,40000,8.102\ntangents,65536,40000,11.972\ncalipers,65536,20,32.410\nnear_convex,65536,20,12.954\ninter_convex_predicate,65536,20,12.335\nminkowski,65536,20,23.965\nconvex_intersection,65536,20,66.430\ncircle_polygon_area,65536,20,5.933\n",
+      "validation": "sparse_capacity n=1024 vertices=4 capacity=1024\nsparse_capacity n=8192 vertices=4 capacity=8192\nsparse_capacity n=65536 vertices=4 capacity=65536\nchecksum=267736\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "kind": "reference",
+      "version": "after",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/BenchmarkCompare.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-Clang-reference-after"
+      ],
+      "round": 2,
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,line_predicate_public,1024,40000,2.429542\nKACTL,line_predicate_public,1024,40000,5.007209\nGeo2,line_predicate_kernel,1024,40000,2.423667\nKACTL-adapted,line_predicate_kernel,1024,40000,2.066458\nGeo2,near_line_disjoint,1024,40000,2.993542\nKACTL-adapted,near_line_disjoint,1024,40000,1.925084\nGeo2,line_predicate_public,8192,40000,3.759792\nKACTL,line_predicate_public,8192,40000,13.538459\nGeo2,line_predicate_kernel,8192,40000,3.588959\nKACTL-adapted,line_predicate_kernel,8192,40000,8.723667\nGeo2,near_line_disjoint,8192,40000,4.761792\nKACTL-adapted,near_line_disjoint,8192,40000,9.510583\nGeo2,line_predicate_public,65536,40000,6.782250\nKACTL,line_predicate_public,65536,40000,24.005042\nGeo2,line_predicate_kernel,65536,40000,6.795084\nKACTL-adapted,line_predicate_kernel,65536,40000,16.056875\nGeo2,near_line_disjoint,65536,40000,9.125875\nKACTL-adapted,near_line_disjoint,65536,40000,16.052208\nGeo2,diameter_public,1025,30,0.097583\nKACTL,diameter_public,1025,30,0.123792\nGeo2,diameter_kernel,1025,30,0.096917\nKACTL-adapted,diameter_kernel,1025,30,0.125375\nGeo2,diameter_public,8193,30,0.740000\nKACTL,diameter_public,8193,30,1.013542\nGeo2,diameter_kernel,8193,30,0.741625\nKACTL-adapted,diameter_kernel,8193,30,0.967708\nGeo2,diameter_public,60001,30,5.244333\nKACTL,diameter_public,60001,30,7.648917\nGeo2,diameter_kernel,60001,30,5.469750\nKACTL-adapted,diameter_kernel,60001,30,7.282209\nGeo2,segment_intersection,40000,40000,0.209167\nKACTL,segment_intersection,40000,40000,2.109083\n",
+      "validation": "checksum=40000\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "kind": "friend",
+      "version": "after",
+      "command": [
+        "clang++",
+        "-std=c++20",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-convex-friend-after.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-Clang-friend-after"
+      ],
+      "round": 2,
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,build_and_area_parabola,1025,10,0.140750\nFriend,build_and_area_parabola,1025,10,0.118875\nGeo2,location,1025,40000,1.340167\nFriend,location,1025,40000,2.293375\nGeo2,tangents_original,1025,40000,1.958000\nFriend,tangents_original,1025,40000,3.236792\nGeo2,tangents_fast,1025,40000,1.902917\nFriend,tangents_fast,1025,40000,2.462916\nGeo2,line_predicate,1025,40000,2.371125\nFriend,line_predicate,1025,40000,2.495416\nGeo2,diameter2,1025,30,0.097666\nFriend,diameter2,1025,30,0.159750\nGeo2,area2_cached_vs_scan,1025,1000,0.310041\nFriend,area2_cached_vs_scan,1025,1000,0.001167\nGeo2,build_and_area_parabola,8193,10,1.840417\nFriend,build_and_area_parabola,8193,10,1.966334\nGeo2,location,8193,40000,1.682458\nFriend,location,8193,40000,3.370458\nGeo2,tangents_original,8193,40000,2.764458\nFriend,tangents_original,8193,40000,4.973791\nGeo2,tangents_fast,8193,40000,2.765250\nFriend,tangents_fast,8193,40000,4.408834\nGeo2,line_predicate,8193,40000,3.357125\nFriend,line_predicate,8193,40000,3.539167\nGeo2,diameter2,8193,30,0.748083\nFriend,diameter2,8193,30,1.268500\nGeo2,area2_cached_vs_scan,8193,1000,2.521125\nFriend,area2_cached_vs_scan,8193,1000,0.001166\nGeo2,build_and_area_parabola,60001,10,22.684041\nFriend,build_and_area_parabola,60001,10,25.239625\nGeo2,location,60001,40000,2.420833\nFriend,location,60001,40000,4.501333\nGeo2,tangents_original,60001,40000,3.651208\nFriend,tangents_original,60001,40000,6.078917\nGeo2,tangents_fast,60001,40000,3.771375\nFriend,tangents_fast,60001,40000,7.039125\nGeo2,line_predicate,60001,40000,4.310750\nFriend,line_predicate,60001,40000,3.351708\nGeo2,diameter2,60001,30,5.468834\nFriend,diameter2,60001,30,8.593375\nGeo2,area2_cached_vs_scan,60001,1000,18.743833\nFriend,area2_cached_vs_scan,60001,1000,0.001042\nGeo2,build_and_area_random,1024,10,0.143458\nFriend,build_and_area_random,1024,10,0.109542\nGeo2,build_and_area_random,8192,10,2.211208\nFriend,build_and_area_random,8192,10,1.266208\nGeo2,build_and_area_random,65536,10,31.823708\nFriend,build_and_area_random,65536,10,34.545833\n",
+      "validation": "validated all 40000 queries, both tangent algorithms, hull/area/diameter; n=1025\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=8193\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=60001\nchecksum=7.99585e+19\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "kind": "friend",
+      "version": "before",
+      "command": [
+        "clang++",
+        "-std=c++20",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-convex-friend-before.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-Clang-friend-before"
+      ],
+      "round": 2,
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,build_and_area_parabola,1025,10,0.144375\nFriend,build_and_area_parabola,1025,10,0.115166\nGeo2,location,1025,40000,1.323125\nFriend,location,1025,40000,2.310834\nGeo2,tangents_original,1025,40000,1.973666\nFriend,tangents_original,1025,40000,3.247959\nGeo2,tangents_fast,1025,40000,1.978666\nFriend,tangents_fast,1025,40000,2.513875\nGeo2,line_predicate,1025,40000,3.326458\nFriend,line_predicate,1025,40000,2.464625\nGeo2,diameter2,1025,30,0.097458\nFriend,diameter2,1025,30,0.160000\nGeo2,area2_cached_vs_scan,1025,1000,0.308750\nFriend,area2_cached_vs_scan,1025,1000,0.001125\nGeo2,build_and_area_parabola,8193,10,1.904083\nFriend,build_and_area_parabola,8193,10,1.247750\nGeo2,location,8193,40000,1.736208\nFriend,location,8193,40000,3.331583\nGeo2,tangents_original,8193,40000,2.857167\nFriend,tangents_original,8193,40000,4.889042\nGeo2,tangents_fast,8193,40000,2.747083\nFriend,tangents_fast,8193,40000,4.105208\nGeo2,line_predicate,8193,40000,4.303083\nFriend,line_predicate,8193,40000,3.542625\nGeo2,diameter2,8193,30,0.761708\nFriend,diameter2,8193,30,1.270917\nGeo2,area2_cached_vs_scan,8193,1000,2.393750\nFriend,area2_cached_vs_scan,8193,1000,0.001167\nGeo2,build_and_area_parabola,60001,10,24.067292\nFriend,build_and_area_parabola,60001,10,25.068833\nGeo2,location,60001,40000,2.397125\nFriend,location,60001,40000,4.536208\nGeo2,tangents_original,60001,40000,3.832709\nFriend,tangents_original,60001,40000,6.159416\nGeo2,tangents_fast,60001,40000,3.705792\nFriend,tangents_fast,60001,40000,7.191666\nGeo2,line_predicate,60001,40000,5.944708\nFriend,line_predicate,60001,40000,3.297875\nGeo2,diameter2,60001,30,5.500916\nFriend,diameter2,60001,30,8.838708\nGeo2,area2_cached_vs_scan,60001,1000,18.535208\nFriend,area2_cached_vs_scan,60001,1000,0.001042\nGeo2,build_and_area_random,1024,10,0.141667\nFriend,build_and_area_random,1024,10,0.108083\nGeo2,build_and_area_random,8192,10,3.275000\nFriend,build_and_area_random,8192,10,1.973417\nGeo2,build_and_area_random,65536,10,33.139208\nFriend,build_and_area_random,65536,10,33.528375\n",
+      "validation": "validated all 40000 queries, both tangent algorithms, hull/area/diameter; n=1025\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=8193\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=60001\nchecksum=7.99585e+19\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "kind": "self",
+      "version": "after",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-Clang-self-after"
+      ],
+      "round": 2,
+      "output": "operation,n,repeats,median_ms\nboundary_dense,1024,20,0.043\nboundary_sparse,1024,20,0.033\ninter_predicate,1024,40000,2.723\nnear_line,1024,40000,2.942\ntangents,1024,40000,0.728\ncalipers,1024,20,0.202\nnear_convex,1024,20,0.253\ninter_convex_predicate,1024,20,0.244\nminkowski,1024,20,0.355\nconvex_intersection,1024,20,0.562\ncircle_polygon_area,1024,20,0.106\nboundary_dense,8192,20,0.409\nboundary_sparse,8192,20,0.320\ninter_predicate,8192,40000,4.086\nnear_line,8192,40000,4.480\ntangents,8192,40000,3.260\ncalipers,8192,20,1.624\nnear_convex,8192,20,1.772\ninter_convex_predicate,8192,20,1.801\nminkowski,8192,20,2.531\nconvex_intersection,8192,20,5.452\ncircle_polygon_area,8192,20,0.809\nboundary_dense,65536,20,3.135\nboundary_sparse,65536,20,2.342\ninter_predicate,65536,40000,8.338\nnear_line,65536,40000,8.846\ntangents,65536,40000,5.819\ncalipers,65536,20,34.544\nnear_convex,65536,20,11.661\ninter_convex_predicate,65536,20,12.046\nminkowski,65536,20,19.057\nconvex_intersection,65536,20,54.300\ncircle_polygon_area,65536,20,6.509\n",
+      "validation": "sparse_capacity n=1024 vertices=4 capacity=4\nsparse_capacity n=8192 vertices=4 capacity=4\nsparse_capacity n=65536 vertices=4 capacity=4\nchecksum=267736\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "kind": "self",
+      "version": "before",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-convex-before/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-Clang-self-before"
+      ],
+      "round": 2,
+      "output": "operation,n,repeats,median_ms\nboundary_dense,1024,20,0.042\nboundary_sparse,1024,20,0.040\ninter_predicate,1024,40000,3.792\nnear_line,1024,40000,3.856\ntangents,1024,40000,0.768\ncalipers,1024,20,0.201\nnear_convex,1024,20,0.247\ninter_convex_predicate,1024,20,0.240\nminkowski,1024,20,0.343\nconvex_intersection,1024,20,0.560\ncircle_polygon_area,1024,20,0.104\nboundary_dense,8192,20,0.397\nboundary_sparse,8192,20,0.313\ninter_predicate,8192,40000,5.447\nnear_line,8192,40000,5.638\ntangents,8192,40000,3.142\ncalipers,8192,20,1.706\nnear_convex,8192,20,1.797\ninter_convex_predicate,8192,20,1.808\nminkowski,8192,20,2.490\nconvex_intersection,8192,20,5.258\ncircle_polygon_area,8192,20,0.804\nboundary_dense,65536,20,3.146\nboundary_sparse,65536,20,2.477\ninter_predicate,65536,40000,10.537\nnear_line,65536,40000,10.210\ntangents,65536,40000,5.592\ncalipers,65536,20,32.348\nnear_convex,65536,20,11.628\ninter_convex_predicate,65536,20,11.471\nminkowski,65536,20,19.755\nconvex_intersection,65536,20,58.879\ncircle_polygon_area,65536,20,6.568\n",
+      "validation": "sparse_capacity n=1024 vertices=4 capacity=1024\nsparse_capacity n=8192 vertices=4 capacity=8192\nsparse_capacity n=65536 vertices=4 capacity=65536\nchecksum=267736\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "kind": "self",
+      "version": "before",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-convex-before/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-Clang-self-before"
+      ],
+      "round": 3,
+      "output": "operation,n,repeats,median_ms\nboundary_dense,1024,20,0.043\nboundary_sparse,1024,20,0.035\ninter_predicate,1024,40000,4.122\nnear_line,1024,40000,4.073\ntangents,1024,40000,0.782\ncalipers,1024,20,0.203\nnear_convex,1024,20,0.248\ninter_convex_predicate,1024,20,0.256\nminkowski,1024,20,0.361\nconvex_intersection,1024,20,0.548\ncircle_polygon_area,1024,20,0.105\nboundary_dense,8192,20,0.401\nboundary_sparse,8192,20,0.317\ninter_predicate,8192,40000,5.671\nnear_line,8192,40000,5.865\ntangents,8192,40000,3.253\ncalipers,8192,20,1.735\nnear_convex,8192,20,1.838\ninter_convex_predicate,8192,20,1.847\nminkowski,8192,20,2.595\nconvex_intersection,8192,20,5.571\ncircle_polygon_area,8192,20,0.834\nboundary_dense,65536,20,3.151\nboundary_sparse,65536,20,2.460\ninter_predicate,65536,40000,9.778\nnear_line,65536,40000,9.986\ntangents,65536,40000,5.619\ncalipers,65536,20,30.217\nnear_convex,65536,20,11.563\ninter_convex_predicate,65536,20,11.367\nminkowski,65536,20,20.377\nconvex_intersection,65536,20,56.106\ncircle_polygon_area,65536,20,6.590\n",
+      "validation": "sparse_capacity n=1024 vertices=4 capacity=1024\nsparse_capacity n=8192 vertices=4 capacity=8192\nsparse_capacity n=65536 vertices=4 capacity=65536\nchecksum=267736\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "kind": "self",
+      "version": "after",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-Clang-self-after"
+      ],
+      "round": 3,
+      "output": "operation,n,repeats,median_ms\nboundary_dense,1024,20,0.046\nboundary_sparse,1024,20,0.037\ninter_predicate,1024,40000,2.747\nnear_line,1024,40000,2.989\ntangents,1024,40000,0.724\ncalipers,1024,20,0.202\nnear_convex,1024,20,0.257\ninter_convex_predicate,1024,20,0.252\nminkowski,1024,20,0.350\nconvex_intersection,1024,20,0.540\ncircle_polygon_area,1024,20,0.104\nboundary_dense,8192,20,0.399\nboundary_sparse,8192,20,0.308\ninter_predicate,8192,40000,4.129\nnear_line,8192,40000,4.484\ntangents,8192,40000,3.299\ncalipers,8192,20,1.693\nnear_convex,8192,20,1.745\ninter_convex_predicate,8192,20,1.757\nminkowski,8192,20,2.472\nconvex_intersection,8192,20,5.460\ncircle_polygon_area,8192,20,0.808\nboundary_dense,65536,20,3.143\nboundary_sparse,65536,20,2.305\ninter_predicate,65536,40000,7.946\nnear_line,65536,40000,8.430\ntangents,65536,40000,5.754\ncalipers,65536,20,28.766\nnear_convex,65536,20,11.380\ninter_convex_predicate,65536,20,11.828\nminkowski,65536,20,18.840\nconvex_intersection,65536,20,51.460\ncircle_polygon_area,65536,20,6.543\n",
+      "validation": "sparse_capacity n=1024 vertices=4 capacity=4\nsparse_capacity n=8192 vertices=4 capacity=4\nsparse_capacity n=65536 vertices=4 capacity=4\nchecksum=267736\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "kind": "friend",
+      "version": "before",
+      "command": [
+        "clang++",
+        "-std=c++20",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-convex-friend-before.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-Clang-friend-before"
+      ],
+      "round": 3,
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,build_and_area_parabola,1025,10,0.134375\nFriend,build_and_area_parabola,1025,10,0.110667\nGeo2,location,1025,40000,1.188334\nFriend,location,1025,40000,2.243708\nGeo2,tangents_original,1025,40000,1.956083\nFriend,tangents_original,1025,40000,3.229541\nGeo2,tangents_fast,1025,40000,1.906333\nFriend,tangents_fast,1025,40000,2.379542\nGeo2,line_predicate,1025,40000,3.103375\nFriend,line_predicate,1025,40000,2.439833\nGeo2,diameter2,1025,30,0.096375\nFriend,diameter2,1025,30,0.157958\nGeo2,area2_cached_vs_scan,1025,1000,0.304250\nFriend,area2_cached_vs_scan,1025,1000,0.001084\nGeo2,build_and_area_parabola,8193,10,1.913916\nFriend,build_and_area_parabola,8193,10,2.348083\nGeo2,location,8193,40000,1.650750\nFriend,location,8193,40000,3.206958\nGeo2,tangents_original,8193,40000,2.785125\nFriend,tangents_original,8193,40000,4.938167\nGeo2,tangents_fast,8193,40000,2.811250\nFriend,tangents_fast,8193,40000,4.380583\nGeo2,line_predicate,8193,40000,4.426209\nFriend,line_predicate,8193,40000,3.523250\nGeo2,diameter2,8193,30,0.744333\nFriend,diameter2,8193,30,1.253583\nGeo2,area2_cached_vs_scan,8193,1000,2.459125\nFriend,area2_cached_vs_scan,8193,1000,0.001125\nGeo2,build_and_area_parabola,60001,10,24.328667\nFriend,build_and_area_parabola,60001,10,25.090458\nGeo2,location,60001,40000,2.386333\nFriend,location,60001,40000,4.521917\nGeo2,tangents_original,60001,40000,3.883916\nFriend,tangents_original,60001,40000,6.125833\nGeo2,tangents_fast,60001,40000,3.744125\nFriend,tangents_fast,60001,40000,7.276958\nGeo2,line_predicate,60001,40000,6.195208\nFriend,line_predicate,60001,40000,3.292459\nGeo2,diameter2,60001,30,5.480750\nFriend,diameter2,60001,30,8.695791\nGeo2,area2_cached_vs_scan,60001,1000,18.797209\nFriend,area2_cached_vs_scan,60001,1000,0.001041\nGeo2,build_and_area_random,1024,10,0.146750\nFriend,build_and_area_random,1024,10,0.108458\nGeo2,build_and_area_random,8192,10,2.507875\nFriend,build_and_area_random,8192,10,2.618417\nGeo2,build_and_area_random,65536,10,33.474625\nFriend,build_and_area_random,65536,10,35.344542\n",
+      "validation": "validated all 40000 queries, both tangent algorithms, hull/area/diameter; n=1025\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=8193\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=60001\nchecksum=7.99585e+19\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "kind": "friend",
+      "version": "after",
+      "command": [
+        "clang++",
+        "-std=c++20",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-convex-friend-after.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-Clang-friend-after"
+      ],
+      "round": 3,
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,build_and_area_parabola,1025,10,0.138667\nFriend,build_and_area_parabola,1025,10,0.117167\nGeo2,location,1025,40000,1.255416\nFriend,location,1025,40000,2.496333\nGeo2,tangents_original,1025,40000,1.991334\nFriend,tangents_original,1025,40000,3.234250\nGeo2,tangents_fast,1025,40000,2.033083\nFriend,tangents_fast,1025,40000,2.492750\nGeo2,line_predicate,1025,40000,2.395125\nFriend,line_predicate,1025,40000,2.506792\nGeo2,diameter2,1025,30,0.100708\nFriend,diameter2,1025,30,0.166417\nGeo2,area2_cached_vs_scan,1025,1000,0.320583\nFriend,area2_cached_vs_scan,1025,1000,0.001125\nGeo2,build_and_area_parabola,8193,10,1.983958\nFriend,build_and_area_parabola,8193,10,2.527917\nGeo2,location,8193,40000,1.615917\nFriend,location,8193,40000,3.307084\nGeo2,tangents_original,8193,40000,2.999500\nFriend,tangents_original,8193,40000,5.108333\nGeo2,tangents_fast,8193,40000,2.904291\nFriend,tangents_fast,8193,40000,4.516750\nGeo2,line_predicate,8193,40000,3.307167\nFriend,line_predicate,8193,40000,3.621792\nGeo2,diameter2,8193,30,0.746166\nFriend,diameter2,8193,30,1.209000\nGeo2,area2_cached_vs_scan,8193,1000,2.486334\nFriend,area2_cached_vs_scan,8193,1000,0.001125\nGeo2,build_and_area_parabola,60001,10,23.562833\nFriend,build_and_area_parabola,60001,10,26.284500\nGeo2,location,60001,40000,2.498541\nFriend,location,60001,40000,4.553000\nGeo2,tangents_original,60001,40000,3.787292\nFriend,tangents_original,60001,40000,5.979959\nGeo2,tangents_fast,60001,40000,3.650417\nFriend,tangents_fast,60001,40000,7.056542\nGeo2,line_predicate,60001,40000,4.058291\nFriend,line_predicate,60001,40000,3.332667\nGeo2,diameter2,60001,30,5.494042\nFriend,diameter2,60001,30,8.600792\nGeo2,area2_cached_vs_scan,60001,1000,18.818958\nFriend,area2_cached_vs_scan,60001,1000,0.001042\nGeo2,build_and_area_random,1024,10,0.142500\nFriend,build_and_area_random,1024,10,0.107416\nGeo2,build_and_area_random,8192,10,2.035750\nFriend,build_and_area_random,8192,10,1.762333\nGeo2,build_and_area_random,65536,10,32.443667\nFriend,build_and_area_random,65536,10,34.777083\n",
+      "validation": "validated all 40000 queries, both tangent algorithms, hull/area/diameter; n=1025\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=8193\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=60001\nchecksum=7.99585e+19\n"
+    },
+    {
+      "compiler": "Clang 17",
+      "kind": "reference",
+      "version": "after",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/BenchmarkCompare.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-Clang-reference-after"
+      ],
+      "round": 3,
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,line_predicate_public,1024,40000,2.483083\nKACTL,line_predicate_public,1024,40000,6.087708\nGeo2,line_predicate_kernel,1024,40000,2.399500\nKACTL-adapted,line_predicate_kernel,1024,40000,2.071250\nGeo2,near_line_disjoint,1024,40000,3.071750\nKACTL-adapted,near_line_disjoint,1024,40000,1.935250\nGeo2,line_predicate_public,8192,40000,3.598583\nKACTL,line_predicate_public,8192,40000,14.824792\nGeo2,line_predicate_kernel,8192,40000,3.638791\nKACTL-adapted,line_predicate_kernel,8192,40000,10.263584\nGeo2,near_line_disjoint,8192,40000,4.620792\nKACTL-adapted,near_line_disjoint,8192,40000,9.888375\nGeo2,line_predicate_public,65536,40000,6.991750\nKACTL,line_predicate_public,65536,40000,24.407250\nGeo2,line_predicate_kernel,65536,40000,6.886625\nKACTL-adapted,line_predicate_kernel,65536,40000,16.491458\nGeo2,near_line_disjoint,65536,40000,9.087083\nKACTL-adapted,near_line_disjoint,65536,40000,16.860459\nGeo2,diameter_public,1025,30,0.099291\nKACTL,diameter_public,1025,30,0.132959\nGeo2,diameter_kernel,1025,30,0.097875\nKACTL-adapted,diameter_kernel,1025,30,0.126333\nGeo2,diameter_public,8193,30,0.757834\nKACTL,diameter_public,8193,30,1.064875\nGeo2,diameter_kernel,8193,30,0.763833\nKACTL-adapted,diameter_kernel,8193,30,0.999083\nGeo2,diameter_public,60001,30,5.552250\nKACTL,diameter_public,60001,30,7.855709\nGeo2,diameter_kernel,60001,30,5.557084\nKACTL-adapted,diameter_kernel,60001,30,7.536666\nGeo2,segment_intersection,40000,40000,0.210375\nKACTL,segment_intersection,40000,40000,2.079667\n",
+      "validation": "checksum=40000\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "kind": "self",
+      "version": "before",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-convex-before/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-GCC-self-before"
+      ],
+      "round": 3,
+      "output": "operation,n,repeats,median_ms\nboundary_dense,1024,20,0.059\nboundary_sparse,1024,20,0.040\ninter_predicate,1024,40000,2.716\nnear_line,1024,40000,3.342\ntangents,1024,40000,1.658\ncalipers,1024,20,0.262\nnear_convex,1024,20,0.233\ninter_convex_predicate,1024,20,0.220\nminkowski,1024,20,0.338\nconvex_intersection,1024,20,0.710\ncircle_polygon_area,1024,20,0.101\nboundary_dense,8192,20,0.540\nboundary_sparse,8192,20,0.344\ninter_predicate,8192,40000,4.397\nnear_line,8192,40000,4.991\ntangents,8192,40000,8.329\ncalipers,8192,20,2.365\nnear_convex,8192,20,1.666\ninter_convex_predicate,8192,20,1.645\nminkowski,8192,20,2.677\nconvex_intersection,8192,20,7.021\ncircle_polygon_area,8192,20,0.759\nboundary_dense,65536,20,4.448\nboundary_sparse,65536,20,2.996\ninter_predicate,65536,40000,8.428\nnear_line,65536,40000,9.111\ntangents,65536,40000,12.667\ncalipers,65536,20,33.357\nnear_convex,65536,20,12.668\ninter_convex_predicate,65536,20,12.035\nminkowski,65536,20,23.424\nconvex_intersection,65536,20,63.639\ncircle_polygon_area,65536,20,5.964\n",
+      "validation": "sparse_capacity n=1024 vertices=4 capacity=1024\nsparse_capacity n=8192 vertices=4 capacity=8192\nsparse_capacity n=65536 vertices=4 capacity=65536\nchecksum=267736\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "kind": "self",
+      "version": "after",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/Benchmark.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-GCC-self-after"
+      ],
+      "round": 3,
+      "output": "operation,n,repeats,median_ms\nboundary_dense,1024,20,0.058\nboundary_sparse,1024,20,0.044\ninter_predicate,1024,40000,2.478\nnear_line,1024,40000,2.745\ntangents,1024,40000,2.133\ncalipers,1024,20,0.241\nnear_convex,1024,20,0.222\ninter_convex_predicate,1024,20,0.216\nminkowski,1024,20,0.342\nconvex_intersection,1024,20,0.693\ncircle_polygon_area,1024,20,0.095\nboundary_dense,8192,20,0.494\nboundary_sparse,8192,20,0.352\ninter_predicate,8192,40000,3.886\nnear_line,8192,40000,4.043\ntangents,8192,40000,8.216\ncalipers,8192,20,2.408\nnear_convex,8192,20,1.702\ninter_convex_predicate,8192,20,1.613\nminkowski,8192,20,2.671\nconvex_intersection,8192,20,6.798\ncircle_polygon_area,8192,20,0.744\nboundary_dense,65536,20,3.836\nboundary_sparse,65536,20,2.747\ninter_predicate,65536,40000,7.846\nnear_line,65536,40000,8.614\ntangents,65536,40000,12.743\ncalipers,65536,20,32.871\nnear_convex,65536,20,13.108\ninter_convex_predicate,65536,20,12.536\nminkowski,65536,20,22.026\nconvex_intersection,65536,20,63.639\ncircle_polygon_area,65536,20,5.962\n",
+      "validation": "sparse_capacity n=1024 vertices=4 capacity=4\nsparse_capacity n=8192 vertices=4 capacity=4\nsparse_capacity n=65536 vertices=4 capacity=4\nchecksum=267736\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "kind": "friend",
+      "version": "before",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++20",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-convex-friend-before.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-GCC-friend-before"
+      ],
+      "round": 3,
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,build_and_area_parabola,1025,10,0.155000\nFriend,build_and_area_parabola,1025,10,0.114000\nGeo2,location,1025,40000,1.623000\nFriend,location,1025,40000,1.770000\nGeo2,tangents_original,1025,40000,2.220000\nFriend,tangents_original,1025,40000,3.165000\nGeo2,tangents_fast,1025,40000,2.167000\nFriend,tangents_fast,1025,40000,2.380000\nGeo2,line_predicate,1025,40000,3.028000\nFriend,line_predicate,1025,40000,2.583000\nGeo2,diameter2,1025,30,0.081000\nFriend,diameter2,1025,30,0.140000\nGeo2,area2_cached_vs_scan,1025,1000,0.372000\nFriend,area2_cached_vs_scan,1025,1000,0.001000\nGeo2,build_and_area_parabola,8193,10,2.361000\nFriend,build_and_area_parabola,8193,10,1.265000\nGeo2,location,8193,40000,2.156000\nFriend,location,8193,40000,2.552000\nGeo2,tangents_original,8193,40000,3.194000\nFriend,tangents_original,8193,40000,5.219000\nGeo2,tangents_fast,8193,40000,3.089000\nFriend,tangents_fast,8193,40000,3.784000\nGeo2,line_predicate,8193,40000,4.169000\nFriend,line_predicate,8193,40000,3.789000\nGeo2,diameter2,8193,30,0.643000\nFriend,diameter2,8193,30,1.192000\nGeo2,area2_cached_vs_scan,8193,1000,3.019000\nFriend,area2_cached_vs_scan,8193,1000,0.001000\nGeo2,build_and_area_parabola,60001,10,26.524000\nFriend,build_and_area_parabola,60001,10,23.358000\nGeo2,location,60001,40000,2.879000\nFriend,location,60001,40000,3.362000\nGeo2,tangents_original,60001,40000,3.990000\nFriend,tangents_original,60001,40000,5.894000\nGeo2,tangents_fast,60001,40000,3.983000\nFriend,tangents_fast,60001,40000,5.304000\nGeo2,line_predicate,60001,40000,4.989000\nFriend,line_predicate,60001,40000,3.423000\nGeo2,diameter2,60001,30,4.619000\nFriend,diameter2,60001,30,7.957000\nGeo2,area2_cached_vs_scan,60001,1000,21.916000\nFriend,area2_cached_vs_scan,60001,1000,0.001000\nGeo2,build_and_area_random,1024,10,0.156000\nFriend,build_and_area_random,1024,10,0.123000\nGeo2,build_and_area_random,8192,10,2.736000\nFriend,build_and_area_random,8192,10,2.256000\nGeo2,build_and_area_random,65536,10,34.506000\nFriend,build_and_area_random,65536,10,29.544000\n",
+      "validation": "validated all 40000 queries, both tangent algorithms, hull/area/diameter; n=1025\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=8193\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=60001\nchecksum=7.99674e+19\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "kind": "friend",
+      "version": "after",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++20",
+        "-O3",
+        "-DNDEBUG",
+        "/tmp/geo2-convex-friend-after.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-GCC-friend-after"
+      ],
+      "round": 3,
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,build_and_area_parabola,1025,10,0.160000\nFriend,build_and_area_parabola,1025,10,0.118000\nGeo2,location,1025,40000,1.737000\nFriend,location,1025,40000,1.785000\nGeo2,tangents_original,1025,40000,2.087000\nFriend,tangents_original,1025,40000,3.074000\nGeo2,tangents_fast,1025,40000,2.129000\nFriend,tangents_fast,1025,40000,2.314000\nGeo2,line_predicate,1025,40000,1.574000\nFriend,line_predicate,1025,40000,2.519000\nGeo2,diameter2,1025,30,0.072000\nFriend,diameter2,1025,30,0.137000\nGeo2,area2_cached_vs_scan,1025,1000,0.367000\nFriend,area2_cached_vs_scan,1025,1000,0.001000\nGeo2,build_and_area_parabola,8193,10,2.195000\nFriend,build_and_area_parabola,8193,10,1.239000\nGeo2,location,8193,40000,2.200000\nFriend,location,8193,40000,2.824000\nGeo2,tangents_original,8193,40000,3.014000\nFriend,tangents_original,8193,40000,5.359000\nGeo2,tangents_fast,8193,40000,3.074000\nFriend,tangents_fast,8193,40000,3.670000\nGeo2,line_predicate,8193,40000,2.095000\nFriend,line_predicate,8193,40000,4.015000\nGeo2,diameter2,8193,30,0.642000\nFriend,diameter2,8193,30,1.193000\nGeo2,area2_cached_vs_scan,8193,1000,3.009000\nFriend,area2_cached_vs_scan,8193,1000,0.001000\nGeo2,build_and_area_parabola,60001,10,26.235000\nFriend,build_and_area_parabola,60001,10,23.216000\nGeo2,location,60001,40000,2.934000\nFriend,location,60001,40000,3.370000\nGeo2,tangents_original,60001,40000,4.001000\nFriend,tangents_original,60001,40000,6.053000\nGeo2,tangents_fast,60001,40000,4.022000\nFriend,tangents_fast,60001,40000,5.473000\nGeo2,line_predicate,60001,40000,2.770000\nFriend,line_predicate,60001,40000,3.471000\nGeo2,diameter2,60001,30,4.676000\nFriend,diameter2,60001,30,8.014000\nGeo2,area2_cached_vs_scan,60001,1000,22.219000\nFriend,area2_cached_vs_scan,60001,1000,0.001000\nGeo2,build_and_area_random,1024,10,0.161000\nFriend,build_and_area_random,1024,10,0.129000\nGeo2,build_and_area_random,8192,10,2.074000\nFriend,build_and_area_random,8192,10,1.607000\nGeo2,build_and_area_random,65536,10,33.883000\nFriend,build_and_area_random,65536,10,30.233000\n",
+      "validation": "validated all 40000 queries, both tangent algorithms, hull/area/diameter; n=1025\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=8193\nvalidated all 40000 queries, both tangent algorithms, hull/area/diameter; n=60001\nchecksum=7.99674e+19\n"
+    },
+    {
+      "compiler": "GCC 15.2",
+      "kind": "reference",
+      "version": "after",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/bytedance/acm_compete/cpp17/Geo2/BenchmarkCompare.cpp",
+        "-o",
+        "/tmp/geo2-convex-bench-GCC-reference-after"
+      ],
+      "round": 3,
+      "output": "implementation,operation,n,repeats,median_ms\nGeo2,line_predicate_public,1024,40000,2.017000\nKACTL,line_predicate_public,1024,40000,5.358000\nGeo2,line_predicate_kernel,1024,40000,2.029000\nKACTL-adapted,line_predicate_kernel,1024,40000,2.472000\nGeo2,near_line_disjoint,1024,40000,2.572000\nKACTL-adapted,near_line_disjoint,1024,40000,2.089000\nGeo2,line_predicate_public,8192,40000,3.227000\nKACTL,line_predicate_public,8192,40000,11.587000\nGeo2,line_predicate_kernel,8192,40000,3.158000\nKACTL-adapted,line_predicate_kernel,8192,40000,7.741000\nGeo2,near_line_disjoint,8192,40000,3.759000\nKACTL-adapted,near_line_disjoint,8192,40000,7.868000\nGeo2,line_predicate_public,65536,40000,6.513000\nKACTL,line_predicate_public,65536,40000,18.415000\nGeo2,line_predicate_kernel,65536,40000,6.182000\nKACTL-adapted,line_predicate_kernel,65536,40000,13.018000\nGeo2,near_line_disjoint,65536,40000,7.700000\nKACTL-adapted,near_line_disjoint,65536,40000,15.282000\nGeo2,diameter_public,1025,30,0.081000\nKACTL,diameter_public,1025,30,0.140000\nGeo2,diameter_kernel,1025,30,0.080000\nKACTL-adapted,diameter_kernel,1025,30,0.125000\nGeo2,diameter_public,8193,30,0.637000\nKACTL,diameter_public,8193,30,1.146000\nGeo2,diameter_kernel,8193,30,0.682000\nKACTL-adapted,diameter_kernel,8193,30,1.045000\nGeo2,diameter_public,60001,30,4.828000\nKACTL,diameter_public,60001,30,8.515000\nGeo2,diameter_kernel,60001,30,4.782000\nKACTL-adapted,diameter_kernel,60001,30,7.626000\nGeo2,segment_intersection,40000,40000,0.150000\nKACTL,segment_intersection,40000,40000,2.319000\n",
+      "validation": "checksum=40000\n"
+    }
+  ]
+}

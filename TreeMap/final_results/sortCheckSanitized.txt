@@ -1,0 +1,1 @@
+PASS: adaptive sort/sorted C++17 regression checks

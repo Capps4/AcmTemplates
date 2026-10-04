@@ -1,0 +1,160 @@
+{
+  "formatVersion": 2,
+  "module": "Tree",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "10163f3ef67dec6bcd0f7ac27d7724aa4db84ebf123e4c90c9764a11231b52d0",
+    "Final.hpp": "700b0201524f0ad1734dc76eaa9ebfe934540720c9d0641cfb87286e640f9347",
+    "Test.cpp": "c293990bb96454f10e8a658dc22d9ec92fb345e658744570fcc6ad658b90ecdd",
+    "Benchmark.cpp": "d6fdf2967533d355fcf8eff84c0742196539186eeea986a1f7e4fc7f3e3b59b9",
+    "Final.code-snippets": "80ef8cac3921cd7d133037e2dd425f64280116b0b3d775912661438f89e138b1"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "Tree/Final.hpp": "700b0201524f0ad1734dc76eaa9ebfe934540720c9d0641cfb87286e640f9347",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "Tree/Original.hpp": "10163f3ef67dec6bcd0f7ac27d7724aa4db84ebf123e4c90c9764a11231b52d0"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/Tree/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/Tree/Build/optimized"
+      ],
+      "output": "Tree independent parent/path/LCA/virtual closure oracle, stage hook order, move-only weights, empty, 200K chain PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/Tree/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/Tree/Build/sanitized"
+      ],
+      "output": "Tree independent parent/path/LCA/virtual closure oracle, stage hook order, move-only weights, empty, 200K chain PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/Tree/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/Tree/Build/benchmark"
+  ],
+  "benchmark": "chain-10K,0.751,0.755,0.994702,333383335000\nstar-100K,4.639,5.348,0.867427,333338333350000\nrandom-100K,7.122,7.863,0.905761,249977738765259\nlca-100K,4.451,4.837,0.920198,950257",
+  "benchmarkSamples": [
+    {
+      "scenario": "chain-10K",
+      "original": [
+        0.767,
+        0.753,
+        0.751,
+        0.768,
+        0.745,
+        0.667,
+        0.665
+      ],
+      "final": [
+        0.76,
+        0.761,
+        0.76,
+        0.755,
+        0.747,
+        0.683,
+        0.684
+      ],
+      "checksum": 333383335000,
+      "first": "original"
+    },
+    {
+      "scenario": "star-100K",
+      "original": [
+        4.639,
+        4.791,
+        4.567,
+        4.752,
+        4.61,
+        4.732,
+        4.595
+      ],
+      "final": [
+        5.877,
+        5.765,
+        5.424,
+        5.348,
+        5.091,
+        5.106,
+        4.91
+      ],
+      "checksum": 333338333350000,
+      "first": "final"
+    },
+    {
+      "scenario": "random-100K",
+      "original": [
+        7.16,
+        7.121,
+        7.122,
+        7.142,
+        7.12,
+        7.103,
+        7.154
+      ],
+      "final": [
+        7.907,
+        7.778,
+        7.972,
+        7.816,
+        7.826,
+        7.867,
+        7.863
+      ],
+      "checksum": 249977738765259,
+      "first": "original"
+    },
+    {
+      "scenario": "lca-100K",
+      "original": [
+        4.947,
+        4.943,
+        4.504,
+        4.436,
+        4.451,
+        4.305,
+        4.269
+      ],
+      "final": [
+        4.964,
+        4.88,
+        4.846,
+        4.785,
+        4.837,
+        4.785,
+        4.816
+      ],
+      "checksum": 950257,
+      "first": "final"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

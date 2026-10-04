@@ -1,0 +1,161 @@
+{
+  "formatVersion": 2,
+  "module": "StronglyConnectedComponent",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "efe23fcacb30a6228bd67cf7e2155fdd0af0510f06df2b6d65f3c9470570bd04",
+    "Final.hpp": "1ff86d520a7364a81e7224ed75ec4c083fcf5608777d59ed4d7714d023ba540b",
+    "Test.cpp": "7b9a7c4238624322e6aced7d6271813da2a0da18995325a8c46cd2831d8c65c5",
+    "Benchmark.cpp": "9633ddc4798402ff81769347e4cdfd6a6dbde15d9c4396d2268de649216a5d00",
+    "Final.code-snippets": "c18f04ec788466b560a5f0c36c33bb2a000edd7b13a77d806e59bf6770974be2"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "TopSort/Final.hpp": "bb86a8cd098e6ffa55f220daf588c74a46236c81f6d5965f59efd3b70b122281",
+    "StronglyConnectedComponent/Final.hpp": "1ff86d520a7364a81e7224ed75ec4c083fcf5608777d59ed4d7714d023ba540b",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "StronglyConnectedComponent/Original.hpp": "efe23fcacb30a6228bd67cf7e2155fdd0af0510f06df2b6d65f3c9470570bd04"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/StronglyConnectedComponent/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/StronglyConnectedComponent/Build/optimized"
+      ],
+      "output": "SCC exhaustive/Floyd oracle, condensation integration, 200K chain/cycle PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/StronglyConnectedComponent/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/StronglyConnectedComponent/Build/sanitized"
+      ],
+      "output": "SCC exhaustive/Floyd oracle, condensation integration, 200K chain/cycle PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/StronglyConnectedComponent/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/StronglyConnectedComponent/Build/benchmark"
+  ],
+  "benchmark": "chain-10K,0.343,0.349,0.982808,166666675000\nlabels-only-chain,0.332,0.06,5.53333,166666675000\nrandom-degree4-50K,1.548,1.689,0.916519,17499827537\nlabels-only-random,1.548,1.314,1.17808,17499827537",
+  "benchmarkSamples": [
+    {
+      "scenario": "chain-10K",
+      "original": [
+        0.351,
+        0.333,
+        0.319,
+        0.32,
+        0.351,
+        0.391,
+        0.343
+      ],
+      "final": [
+        0.365,
+        0.374,
+        0.336,
+        0.367,
+        0.349,
+        0.347,
+        0.33
+      ],
+      "checksum": 166666675000,
+      "first": "original"
+    },
+    {
+      "scenario": "labels-only-chain",
+      "original": [
+        0.319,
+        0.332,
+        0.333,
+        0.325,
+        0.336,
+        0.329,
+        0.366
+      ],
+      "final": [
+        0.063,
+        0.064,
+        0.063,
+        0.06,
+        0.047,
+        0.044,
+        0.051
+      ],
+      "checksum": 166666675000,
+      "first": "final"
+    },
+    {
+      "scenario": "random-degree4-50K",
+      "original": [
+        1.548,
+        1.485,
+        1.473,
+        1.424,
+        1.609,
+        1.604,
+        1.713
+      ],
+      "final": [
+        2.042,
+        1.912,
+        1.689,
+        1.693,
+        1.66,
+        1.588,
+        1.575
+      ],
+      "checksum": 17499827537,
+      "first": "original"
+    },
+    {
+      "scenario": "labels-only-random",
+      "original": [
+        1.616,
+        1.758,
+        1.548,
+        1.607,
+        1.489,
+        1.407,
+        1.39
+      ],
+      "final": [
+        1.397,
+        1.372,
+        1.289,
+        1.332,
+        1.305,
+        1.299,
+        1.314
+      ],
+      "checksum": 17499827537,
+      "first": "final"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

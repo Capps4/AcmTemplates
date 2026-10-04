@@ -1,0 +1,14 @@
+{
+    "Print to console": {
+        "scope": "cpp",
+        "prefix": "_T_Debuger",
+        "body": [
+            "auto $ = strdup(\"color: false, space: false, precision: 6\");",
+            "#ifndef COMPETITION_DEBUGER",
+            "    #define debug(...)",
+            "#endif",
+            "$0"
+        ],
+        "description": "Log output to console"
+    }
+}

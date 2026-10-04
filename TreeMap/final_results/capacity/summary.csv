@@ -1,0 +1,13 @@
+workload,mode,rounds,median_ns,min_ns,max_ns
+build,fixed,7,198.761,189.628,204.842
+build,automatic,7,199.343,191.305,206.551
+build,reserved,7,191.54,188.584,212.127
+build,fixedOnly,7,191.192,187.408,206.691
+containsHit,fixed,7,149.466,145.229,156.434
+containsHit,automatic,7,157.673,143.467,168.843
+containsHit,reserved,7,177.489,146.344,210.246
+containsHit,fixedOnly,7,159.662,147.177,182.434
+updateMixed,fixed,7,217.381,209.615,257.752
+updateMixed,automatic,7,223.659,217.262,280.437
+updateMixed,reserved,7,220.663,212.268,229.007
+updateMixed,fixedOnly,7,223.936,212.174,273.894

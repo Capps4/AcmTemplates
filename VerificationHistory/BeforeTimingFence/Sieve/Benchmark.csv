@@ -1,0 +1,3 @@
+scenario,originalMs,finalMs,speedup,checksum
+linear-build,3.034,2.286,1.32721,78501
+table-factorization,9.647,8.907,1.08308,6507877677

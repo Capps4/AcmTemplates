@@ -1,0 +1,3 @@
+scenario,originalMs,finalMs,speedup,checksum
+borrowed-basis,10.133,9.248,1.0957,2669393181805475
+cached-owned-basis-100x,2.029,1.039,1.95284,6798216069300

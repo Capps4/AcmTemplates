@@ -1,0 +1,114 @@
+{
+  "formatVersion": 2,
+  "module": "Dijkstra",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "a7a39b9a149d79a1c1fac028a04a9e12c8af4a4e53e4eba356ab8302b42e4d5a",
+    "Final.hpp": "fdd62312f24f4d529ffbc4ceeb3d9fc8ce782485391c737948a80a8c020c9752",
+    "Test.cpp": "6b15dcf94c6a92d500d97ba25371f767504b89607488c5c2e607f6b067b06b24",
+    "Benchmark.cpp": "f877ae6e1eb94e3744d1ba97bf06067a4802ef123219399833a0ee9bd1fe3c60",
+    "Final.code-snippets": "f40f4f06877212382984eb744f33b8068b32bf32cc7c8f3edbd986c249f8c8f7"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "Dijkstra/Final.hpp": "fdd62312f24f4d529ffbc4ceeb3d9fc8ce782485391c737948a80a8c020c9752",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "Dijkstra/Original.hpp": "a7a39b9a149d79a1c1fac028a04a9e12c8af4a4e53e4eba356ab8302b42e4d5a"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/Dijkstra/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/Dijkstra/Build/optimized"
+      ],
+      "output": "300 Floyd-Warshall oracles, CTAD, unreachable/overflow paths and cached source queries passed",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/Dijkstra/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/Dijkstra/Build/sanitized"
+      ],
+      "output": "300 Floyd-Warshall oracles, CTAD, unreachable/overflow paths and cached source queries passed",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/Dijkstra/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/Dijkstra/Build/benchmark"
+  ],
+  "benchmark": "20-sources-n5000-degree6,13.644,13.543,1.00746,3075294\n20-sources-n1000-degree30,4.271,4.188,1.01982,183888",
+  "benchmarkSamples": [
+    {
+      "scenario": "20-sources-n5000-degree6",
+      "original": [
+        15.221,
+        14.457,
+        13.758,
+        13.644,
+        13.552,
+        13.586,
+        13.643
+      ],
+      "final": [
+        13.556,
+        13.54,
+        13.549,
+        13.525,
+        13.524,
+        13.564,
+        13.543
+      ],
+      "checksum": 3075294,
+      "first": "original"
+    },
+    {
+      "scenario": "20-sources-n1000-degree30",
+      "original": [
+        4.316,
+        4.277,
+        4.272,
+        4.24,
+        4.255,
+        4.271,
+        4.217
+      ],
+      "final": [
+        4.187,
+        4.201,
+        4.17,
+        4.189,
+        4.158,
+        4.217,
+        4.188
+      ],
+      "checksum": 183888,
+      "first": "final"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

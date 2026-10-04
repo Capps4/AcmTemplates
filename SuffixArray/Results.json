@@ -1,0 +1,137 @@
+{
+  "formatVersion": 2,
+  "module": "SuffixArray",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "fde299c5d7c880c496ebfdad0c0830d1f12af7c8be100d67ed17f9bc8d64bfd7",
+    "Final.hpp": "4d922b0469811307149391a3389594bdb80c785dcb851d7adf7a6abf563ea559",
+    "Test.cpp": "70d3ac8c9a97342404280c7d6a06abcccb3790dcf839f9ce5edbe5b1a2fe07b4",
+    "Benchmark.cpp": "952493174e56f8d85f0a31092dfc69d1ed6f73f4e9fdf57c700765b4047aca02",
+    "Final.code-snippets": "fdd488c76e37b832bea253ab6b00054c51eafa1fbebab7689b2b2a4e1ae449e7"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "SuffixArray/Final.hpp": "4d922b0469811307149391a3389594bdb80c785dcb851d7adf7a6abf563ea559",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "SuffixArray/Original.hpp": "fde299c5d7c880c496ebfdad0c0830d1f12af7c8be100d67ed17f9bc8d64bfd7"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/SuffixArray/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/SuffixArray/Build/optimized"
+      ],
+      "output": "SuffixArray: naive suffix ordering/LCP, exhaustive binary, bytes, signed extremes, custom comparator, empty PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/SuffixArray/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/SuffixArray/Build/sanitized"
+      ],
+      "output": "SuffixArray: naive suffix ordering/LCP, exhaustive binary, bytes, signed extremes, custom comparator, empty PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/SuffixArray/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/SuffixArray/Build/benchmark"
+  ],
+  "benchmark": "alphabet-1,10.739,7.756,1.38461,1501199875702784\nalphabet-2,5.053,4.41,1.1458,1126598537414597\nalphabet-26,2.669,2.386,1.11861,1127254984915573",
+  "benchmarkSamples": [
+    {
+      "scenario": "alphabet-1",
+      "original": [
+        12.562,
+        11.748,
+        11.093,
+        10.739,
+        10.342,
+        10.385,
+        10.364
+      ],
+      "final": [
+        8.056,
+        7.756,
+        7.673,
+        7.833,
+        7.746,
+        7.612,
+        7.781
+      ],
+      "checksum": 1501199875702784,
+      "first": "original"
+    },
+    {
+      "scenario": "alphabet-2",
+      "original": [
+        5.037,
+        5.15,
+        5.14,
+        5.053,
+        5.052,
+        5.038,
+        5.156
+      ],
+      "final": [
+        4.42,
+        4.41,
+        4.343,
+        4.426,
+        4.378,
+        4.416,
+        4.265
+      ],
+      "checksum": 1126598537414597,
+      "first": "final"
+    },
+    {
+      "scenario": "alphabet-26",
+      "original": [
+        2.725,
+        2.737,
+        2.684,
+        2.669,
+        2.65,
+        2.588,
+        2.627
+      ],
+      "final": [
+        2.397,
+        2.357,
+        2.386,
+        2.407,
+        2.36,
+        2.361,
+        2.392
+      ],
+      "checksum": 1127254984915573,
+      "first": "original"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

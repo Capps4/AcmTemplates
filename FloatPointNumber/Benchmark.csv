@@ -1,0 +1,4 @@
+scenario,originalMs,finalMs,speedup,checksum
+arithmetic-1M,0.897,0.864,1.03819,70372780064
+parse-30K,1.289,1.559,0.826812,2163817714
+format-30K,3.724,3.619,1.02901,15164711

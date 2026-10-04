@@ -1,0 +1,283 @@
+{
+  "formatVersion": 2,
+  "module": "NumberTheoreticTransform",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "7b86ac18b3a9bb1d66d71a617ad76018c9161bd3af6db0813b562774d7b26cee",
+    "Final.hpp": "04c439194b2b42e01685d64d7a9e45ba98e98b261ffff70cf773c30fbc93e28f",
+    "Test.cpp": "5e53f16b43ff16c3e92659cb1329ed2ca09f6e63bf05a5f0991992f544d8521f",
+    "Benchmark.cpp": "f2e54fe9f504580036175516b2530b38948aaa43a7182199aa7e6957c850257c",
+    "Final.code-snippets": "2b253bddd3d9faef2a2ab81532fb439b2da185fd1abced324ea1d76b9416b5a0"
+  },
+  "dependencySha256": {
+    "ModuloInteger/Final.hpp": "6a25fe4f578005b1e77de88c29fbda7677542eac5a785496ca2505ee009360a0"
+  },
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "NumberTheoreticTransform/Final.hpp": "04c439194b2b42e01685d64d7a9e45ba98e98b261ffff70cf773c30fbc93e28f",
+    "ModuloInteger/Final.hpp": "6a25fe4f578005b1e77de88c29fbda7677542eac5a785496ca2505ee009360a0",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "Combinatorics/Final.hpp": "1f5408e779f2c80b4776e72cec9fc7790023d45e4fd804af0f0c63428a018db7",
+    "Sieve/Final.hpp": "2b38c25efb8984a72f1a7ec271dad3c8ff71f13ab8d19aa67d6e2e2dca0ad515",
+    "PollardRho/Final.hpp": "2767adf49dee317922e8d4064f860c851addcd0d15dfc8327c40fdf9affc692a",
+    "MillerRabin/Final.hpp": "e7f0324f298c836a2a02a37820d050f66fec52f3a67ae425739df5f294f00088",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "ModuloInteger/Original.hpp": "fc4adb04a090f17e76453052c27a6ee6efacf4245f2f3944b16670d7f13a29b3",
+    "NumberTheoreticTransform/LegacyBaseline.hpp": "7f36b6e21422c644dd1e9d0d60e81ad0b73ff5a5c4498908887d97f6eab71dfb"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/NumberTheoreticTransform/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/NumberTheoreticTransform/Build/optimized"
+      ],
+      "output": "NTT: naive products and series recurrences, roots, fallback, empty, large exponents, aliasing, IO PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/NumberTheoreticTransform/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/NumberTheoreticTransform/Build/sanitized"
+      ],
+      "output": "NTT: naive products and series recurrences, roots, fallback, empty, large exponents, aliasing, IO PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/NumberTheoreticTransform/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/NumberTheoreticTransform/Build/benchmark"
+  ],
+  "benchmark": "convolution-64-100x,0.762,0.634,1.20189,60134776700\nconvolution-4096,0.748,0.272,2.75,165883458753248\nconvolution-16384,3.425,0.879,3.89647,10677370433298689\nseries-inverse,5.14,1.548,3.32041,67182578590969114\nseries-exp,4.09,1.321,3.09614,4205933099522283\ntruncate-to-64-200x,32.26,0.01,3226,2912000\nscalar-compound,5.761,4.42,1.30339,22963522963500000\nconvolution-same-modint,0.809,0.807,1.00248,39580807888900\ninverse-same-modint,1.549,1.538,1.00715,66838783527891192",
+  "benchmarkSamples": [
+    {
+      "scenario": "convolution-64-100x",
+      "original": [
+        0.762,
+        0.762,
+        0.762,
+        0.762,
+        0.762,
+        0.761,
+        0.751
+      ],
+      "final": [
+        0.634,
+        0.646,
+        0.633,
+        0.634,
+        0.633,
+        0.634,
+        0.633
+      ],
+      "checksum": 60134776700,
+      "first": "original"
+    },
+    {
+      "scenario": "convolution-4096",
+      "original": [
+        0.821,
+        0.796,
+        0.762,
+        0.748,
+        0.723,
+        0.67,
+        0.666
+      ],
+      "final": [
+        0.299,
+        0.301,
+        0.276,
+        0.269,
+        0.27,
+        0.27,
+        0.272
+      ],
+      "checksum": 165883458753248,
+      "first": "final"
+    },
+    {
+      "scenario": "convolution-16384",
+      "original": [
+        3.891,
+        3.602,
+        3.477,
+        3.425,
+        3.37,
+        3.171,
+        3.137
+      ],
+      "final": [
+        0.889,
+        0.884,
+        0.879,
+        0.882,
+        0.876,
+        0.865,
+        0.854
+      ],
+      "checksum": 10677370433298689,
+      "first": "original"
+    },
+    {
+      "scenario": "series-inverse",
+      "original": [
+        5.13,
+        5.139,
+        5.12,
+        5.142,
+        5.144,
+        5.147,
+        5.14
+      ],
+      "final": [
+        1.576,
+        1.551,
+        1.548,
+        1.536,
+        1.546,
+        1.547,
+        1.55
+      ],
+      "checksum": 67182578590969114,
+      "first": "final"
+    },
+    {
+      "scenario": "series-exp",
+      "original": [
+        4.193,
+        4.145,
+        4.066,
+        4.09,
+        4.06,
+        4.155,
+        4.071
+      ],
+      "final": [
+        1.321,
+        1.32,
+        1.318,
+        1.321,
+        1.325,
+        1.329,
+        1.315
+      ],
+      "checksum": 4205933099522283,
+      "first": "original"
+    },
+    {
+      "scenario": "truncate-to-64-200x",
+      "original": [
+        32.26,
+        32.472,
+        32.536,
+        32.721,
+        32.117,
+        32.149,
+        31.925
+      ],
+      "final": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.009
+      ],
+      "checksum": 2912000,
+      "first": "final"
+    },
+    {
+      "scenario": "scalar-compound",
+      "original": [
+        6.262,
+        5.78,
+        5.704,
+        5.75,
+        5.791,
+        5.761,
+        5.723
+      ],
+      "final": [
+        4.405,
+        4.409,
+        4.412,
+        4.446,
+        4.42,
+        4.468,
+        4.453
+      ],
+      "checksum": 22963522963500000,
+      "first": "original"
+    },
+    {
+      "scenario": "convolution-same-modint",
+      "original": [
+        0.809,
+        0.811,
+        0.807,
+        0.803,
+        0.81,
+        0.802,
+        0.815
+      ],
+      "final": [
+        0.821,
+        0.801,
+        0.804,
+        0.812,
+        0.812,
+        0.805,
+        0.807
+      ],
+      "checksum": 39580807888900,
+      "first": "final"
+    },
+    {
+      "scenario": "inverse-same-modint",
+      "original": [
+        1.544,
+        1.549,
+        1.545,
+        1.548,
+        1.564,
+        1.558,
+        1.551
+      ],
+      "final": [
+        1.537,
+        1.543,
+        1.538,
+        1.539,
+        1.536,
+        1.545,
+        1.53
+      ],
+      "checksum": 66838783527891192,
+      "first": "original"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

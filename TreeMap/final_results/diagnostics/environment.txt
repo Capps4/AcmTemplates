@@ -1,0 +1,9 @@
+Profiling: GCC 15.2.0, macOS arm64
+Flags: -std=c++17 -O2 -DNDEBUG -Wall -Wextra -Wpedantic
+N=1000000 U=2000000 rounds=5 seed=0x20260930
+Each profile process shuffles component group order on every round; before and after are separate serial runs, not paired interleaved A/B.
+SBT candidate experiment uses one process with shuffled candidate order, one warmup and five measured rounds.
+Raw Fenwick receives precomputed coordinates and does not store mapped values; it is a diagnostic kernel.
+Component times are not strictly additive because cache states differ.
+Before header SHA256: 1856d95ae6e19d5b917c9e48563199127a75aaac32bf3a15af0683439f48427e
+After header SHA256: e97427514198287da1cf945c4ef976d1095a66e2a6b38755be05965a1d3cb253

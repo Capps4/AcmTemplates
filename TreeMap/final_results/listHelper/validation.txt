@@ -1,0 +1,3 @@
+GCC GNU++17 -O2 -Wall -Wextra -Wpedantic -Werror: PASS: TreeMap/TreeMapOff C++17 differential and regression checks
+Clang C++17 -O1 -g -Wall -Wextra -Wpedantic -Werror -fsanitize=address,undefined -fno-omit-frame-pointer: PASS: TreeMap/TreeMapOff C++17 differential and regression checks
+GCC GNU++17 benchmark -O2 -DNDEBUG -Wall -Wextra -Wpedantic -Werror: compiled successfully

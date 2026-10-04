@@ -1,0 +1,2 @@
+scenario,originalMs,finalMs,speedup,checksum
+options-scan-100K,1.691,2.188,0.772852,356100000

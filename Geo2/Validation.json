@@ -1,0 +1,1028 @@
+{
+  "date": "2026-10-02",
+  "scope": "Geo2, Point and FloatPointNumber targeted checks; not the full-repository runner",
+  "records": [
+    {
+      "profile": "Clang 17",
+      "source": "cpp17/Geo2/Test.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/Test.cpp",
+        "-o",
+        "/tmp/geo2-verified-0-cpp17-Geo2-Test"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2: 65536-vertex hull, 6561 segment pairs, 6000 area oracles, 2000 bounded HPI, 6000 predicate + 4000 construction rounds, 6000 nearest-point + 20000 circle-predicate oracles PASS; seed=20261001",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "source": "cpp17/Geo2/Test.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/Test.cpp",
+        "-o",
+        "/tmp/geo2-verified-0-cpp17-Geo2-Test"
+      ],
+      "arguments": [],
+      "seed": 7,
+      "status": "PASS",
+      "output": "Geo2: 65536-vertex hull, 6561 segment pairs, 6000 area oracles, 2000 bounded HPI, 6000 predicate + 4000 construction rounds, 6000 nearest-point + 20000 circle-predicate oracles PASS; seed=7",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "source": "cpp17/Geo2/Test.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/Test.cpp",
+        "-o",
+        "/tmp/geo2-verified-0-cpp17-Geo2-Test"
+      ],
+      "arguments": [],
+      "seed": 42,
+      "status": "PASS",
+      "output": "Geo2: 65536-vertex hull, 6561 segment pairs, 6000 area oracles, 2000 bounded HPI, 6000 predicate + 4000 construction rounds, 6000 nearest-point + 20000 circle-predicate oracles PASS; seed=42",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "source": "cpp17/Geo2/Test.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/Test.cpp",
+        "-o",
+        "/tmp/geo2-verified-0-cpp17-Geo2-Test"
+      ],
+      "arguments": [],
+      "seed": 20261002,
+      "status": "PASS",
+      "output": "Geo2: 65536-vertex hull, 6561 segment pairs, 6000 area oracles, 2000 bounded HPI, 6000 predicate + 4000 construction rounds, 6000 nearest-point + 20000 circle-predicate oracles PASS; seed=20261002",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "source": "cpp17/Geo2/TestCaseBounds.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseBounds.cpp",
+        "-o",
+        "/tmp/geo2-verified-0-cpp17-Geo2-TestCaseBounds"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 bounds: 250000 exact segment/circle/turn rounds, 12000 exact hull rounds, 20000 cancellation cases, 15000 boundary/capacity cases + 300000 exact line queries, 16000 scaled constructions PASS; seed=20261001",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "source": "cpp17/Geo2/TestCaseBounds.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseBounds.cpp",
+        "-o",
+        "/tmp/geo2-verified-0-cpp17-Geo2-TestCaseBounds"
+      ],
+      "arguments": [],
+      "seed": 7,
+      "status": "PASS",
+      "output": "Geo2 bounds: 250000 exact segment/circle/turn rounds, 12000 exact hull rounds, 20000 cancellation cases, 15000 boundary/capacity cases + 300000 exact line queries, 16000 scaled constructions PASS; seed=7",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "source": "cpp17/Geo2/TestCaseBounds.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseBounds.cpp",
+        "-o",
+        "/tmp/geo2-verified-0-cpp17-Geo2-TestCaseBounds"
+      ],
+      "arguments": [],
+      "seed": 42,
+      "status": "PASS",
+      "output": "Geo2 bounds: 250000 exact segment/circle/turn rounds, 12000 exact hull rounds, 20000 cancellation cases, 15000 boundary/capacity cases + 300000 exact line queries, 16000 scaled constructions PASS; seed=42",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "source": "cpp17/Geo2/TestCaseBounds.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseBounds.cpp",
+        "-o",
+        "/tmp/geo2-verified-0-cpp17-Geo2-TestCaseBounds"
+      ],
+      "arguments": [],
+      "seed": 20261002,
+      "status": "PASS",
+      "output": "Geo2 bounds: 250000 exact segment/circle/turn rounds, 12000 exact hull rounds, 20000 cancellation cases, 15000 boundary/capacity cases + 300000 exact line queries, 16000 scaled constructions PASS; seed=20261002",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "source": "cpp17/Geo2/TestCaseTypes.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseTypes.cpp",
+        "-o",
+        "/tmp/geo2-verified-0-cpp17-Geo2-TestCaseTypes"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2: native/wrapped double/long-double near matrix, integer inter matrix, private API PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "source": "cpp17/Geo2/TestCaseHalfPlane.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-verified-0-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "cpp17/Geo2/HalfPlaneRegression.txt"
+      ],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=cpp17/Geo2/HalfPlaneRegression.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "source": "cpp17/Geo2/TestCaseHalfPlane.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-verified-0-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "/tmp/geo2-halfplanes.txt"
+      ],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=/tmp/geo2-halfplanes.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "source": "cpp17/Geo2/TestCaseHalfPlane.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-verified-0-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "/tmp/geo2-halfplanes-7.txt"
+      ],
+      "seed": 7,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=/tmp/geo2-halfplanes-7.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "source": "cpp17/Geo2/TestCaseHalfPlane.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-verified-0-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "/tmp/geo2-halfplanes-42.txt"
+      ],
+      "seed": 42,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=/tmp/geo2-halfplanes-42.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "source": "cpp17/Geo2/TestCaseHalfPlane.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-verified-0-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "/tmp/geo2-halfplanes-20261002.txt"
+      ],
+      "seed": 20261002,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=/tmp/geo2-halfplanes-20261002.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "source": "cpp17/Point/Test.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-include",
+        "/tmp/geo2-i64.hpp",
+        "cpp17/Point/Test.cpp",
+        "-o",
+        "/tmp/geo2-verified-0-cpp17-Point-Test"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Point/Vec affine semantics, 100K independent algebra/distance oracle, native/wrapped floating math and IO PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "source": "cpp17/Point/TestCaseGeometry.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Point/TestCaseGeometry.cpp",
+        "-o",
+        "/tmp/geo2-verified-0-cpp17-Point-TestCaseGeometry"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 + Geo3 compatibility PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang 17",
+      "source": "cpp17/FloatPointNumber/Test.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/FloatPointNumber/Test.cpp",
+        "cpp17/FloatPointNumber/TestExtra.cpp",
+        "-o",
+        "/tmp/geo2-verified-0-cpp17-FloatPointNumber-Test"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "FloatPointNumber constexpr/mixed scalar without conversion, std math, 100K raw-math oracle, signed rounding, string parsing/EOF, two-TU precision PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "source": "cpp17/Geo2/Test.cpp",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/Test.cpp",
+        "-o",
+        "/tmp/geo2-verified-1-cpp17-Geo2-Test"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2: 65536-vertex hull, 6561 segment pairs, 6000 area oracles, 2000 bounded HPI, 6000 predicate + 4000 construction rounds, 6000 nearest-point + 20000 circle-predicate oracles PASS; seed=20261001",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "source": "cpp17/Geo2/Test.cpp",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/Test.cpp",
+        "-o",
+        "/tmp/geo2-verified-1-cpp17-Geo2-Test"
+      ],
+      "arguments": [],
+      "seed": 7,
+      "status": "PASS",
+      "output": "Geo2: 65536-vertex hull, 6561 segment pairs, 6000 area oracles, 2000 bounded HPI, 6000 predicate + 4000 construction rounds, 6000 nearest-point + 20000 circle-predicate oracles PASS; seed=7",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "source": "cpp17/Geo2/Test.cpp",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/Test.cpp",
+        "-o",
+        "/tmp/geo2-verified-1-cpp17-Geo2-Test"
+      ],
+      "arguments": [],
+      "seed": 42,
+      "status": "PASS",
+      "output": "Geo2: 65536-vertex hull, 6561 segment pairs, 6000 area oracles, 2000 bounded HPI, 6000 predicate + 4000 construction rounds, 6000 nearest-point + 20000 circle-predicate oracles PASS; seed=42",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "source": "cpp17/Geo2/Test.cpp",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/Test.cpp",
+        "-o",
+        "/tmp/geo2-verified-1-cpp17-Geo2-Test"
+      ],
+      "arguments": [],
+      "seed": 20261002,
+      "status": "PASS",
+      "output": "Geo2: 65536-vertex hull, 6561 segment pairs, 6000 area oracles, 2000 bounded HPI, 6000 predicate + 4000 construction rounds, 6000 nearest-point + 20000 circle-predicate oracles PASS; seed=20261002",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "source": "cpp17/Geo2/TestCaseBounds.cpp",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseBounds.cpp",
+        "-o",
+        "/tmp/geo2-verified-1-cpp17-Geo2-TestCaseBounds"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 bounds: 250000 exact segment/circle/turn rounds, 12000 exact hull rounds, 20000 cancellation cases, 15000 boundary/capacity cases + 300000 exact line queries, 16000 scaled constructions PASS; seed=20261001",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "source": "cpp17/Geo2/TestCaseBounds.cpp",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseBounds.cpp",
+        "-o",
+        "/tmp/geo2-verified-1-cpp17-Geo2-TestCaseBounds"
+      ],
+      "arguments": [],
+      "seed": 7,
+      "status": "PASS",
+      "output": "Geo2 bounds: 250000 exact segment/circle/turn rounds, 12000 exact hull rounds, 20000 cancellation cases, 15000 boundary/capacity cases + 300000 exact line queries, 16000 scaled constructions PASS; seed=7",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "source": "cpp17/Geo2/TestCaseBounds.cpp",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseBounds.cpp",
+        "-o",
+        "/tmp/geo2-verified-1-cpp17-Geo2-TestCaseBounds"
+      ],
+      "arguments": [],
+      "seed": 42,
+      "status": "PASS",
+      "output": "Geo2 bounds: 250000 exact segment/circle/turn rounds, 12000 exact hull rounds, 20000 cancellation cases, 15000 boundary/capacity cases + 300000 exact line queries, 16000 scaled constructions PASS; seed=42",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "source": "cpp17/Geo2/TestCaseBounds.cpp",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseBounds.cpp",
+        "-o",
+        "/tmp/geo2-verified-1-cpp17-Geo2-TestCaseBounds"
+      ],
+      "arguments": [],
+      "seed": 20261002,
+      "status": "PASS",
+      "output": "Geo2 bounds: 250000 exact segment/circle/turn rounds, 12000 exact hull rounds, 20000 cancellation cases, 15000 boundary/capacity cases + 300000 exact line queries, 16000 scaled constructions PASS; seed=20261002",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "source": "cpp17/Geo2/TestCaseTypes.cpp",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseTypes.cpp",
+        "-o",
+        "/tmp/geo2-verified-1-cpp17-Geo2-TestCaseTypes"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2: native/wrapped double/long-double near matrix, integer inter matrix, private API PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "source": "cpp17/Geo2/TestCaseHalfPlane.cpp",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-verified-1-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "cpp17/Geo2/HalfPlaneRegression.txt"
+      ],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=cpp17/Geo2/HalfPlaneRegression.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "source": "cpp17/Geo2/TestCaseHalfPlane.cpp",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-verified-1-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "/tmp/geo2-halfplanes.txt"
+      ],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=/tmp/geo2-halfplanes.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "source": "cpp17/Geo2/TestCaseHalfPlane.cpp",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-verified-1-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "/tmp/geo2-halfplanes-7.txt"
+      ],
+      "seed": 7,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=/tmp/geo2-halfplanes-7.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "source": "cpp17/Geo2/TestCaseHalfPlane.cpp",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-verified-1-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "/tmp/geo2-halfplanes-42.txt"
+      ],
+      "seed": 42,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=/tmp/geo2-halfplanes-42.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "source": "cpp17/Geo2/TestCaseHalfPlane.cpp",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-verified-1-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "/tmp/geo2-halfplanes-20261002.txt"
+      ],
+      "seed": 20261002,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=/tmp/geo2-halfplanes-20261002.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "source": "cpp17/Point/Test.cpp",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "-include",
+        "/tmp/geo2-i64.hpp",
+        "cpp17/Point/Test.cpp",
+        "-o",
+        "/tmp/geo2-verified-1-cpp17-Point-Test"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Point/Vec affine semantics, 100K independent algebra/distance oracle, native/wrapped floating math and IO PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "source": "cpp17/Point/TestCaseGeometry.cpp",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "cpp17/Point/TestCaseGeometry.cpp",
+        "-o",
+        "/tmp/geo2-verified-1-cpp17-Point-TestCaseGeometry"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 + Geo3 compatibility PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "GCC 15.2",
+      "source": "cpp17/FloatPointNumber/Test.cpp",
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Weffc++",
+        "cpp17/FloatPointNumber/Test.cpp",
+        "cpp17/FloatPointNumber/TestExtra.cpp",
+        "-o",
+        "/tmp/geo2-verified-1-cpp17-FloatPointNumber-Test"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "FloatPointNumber constexpr/mixed scalar without conversion, std math, 100K raw-math oracle, signed rounding, string parsing/EOF, two-TU precision PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "source": "cpp17/Geo2/Test.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/Test.cpp",
+        "-o",
+        "/tmp/geo2-verified-2-cpp17-Geo2-Test"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2: 65536-vertex hull, 6561 segment pairs, 6000 area oracles, 2000 bounded HPI, 6000 predicate + 4000 construction rounds, 6000 nearest-point + 20000 circle-predicate oracles PASS; seed=20261001",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "source": "cpp17/Geo2/TestCaseBounds.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseBounds.cpp",
+        "-o",
+        "/tmp/geo2-verified-2-cpp17-Geo2-TestCaseBounds"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 bounds: 250000 exact segment/circle/turn rounds, 12000 exact hull rounds, 20000 cancellation cases, 15000 boundary/capacity cases + 300000 exact line queries, 16000 scaled constructions PASS; seed=20261001",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "source": "cpp17/Geo2/TestCaseTypes.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseTypes.cpp",
+        "-o",
+        "/tmp/geo2-verified-2-cpp17-Geo2-TestCaseTypes"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2: native/wrapped double/long-double near matrix, integer inter matrix, private API PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "source": "cpp17/Geo2/TestCaseHalfPlane.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-verified-2-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "cpp17/Geo2/HalfPlaneRegression.txt"
+      ],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=cpp17/Geo2/HalfPlaneRegression.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "source": "cpp17/Geo2/TestCaseHalfPlane.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Geo2/TestCaseHalfPlane.cpp",
+        "-o",
+        "/tmp/geo2-verified-2-cpp17-Geo2-TestCaseHalfPlane"
+      ],
+      "arguments": [
+        "/tmp/geo2-halfplanes.txt"
+      ],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases=/tmp/geo2-halfplanes.txt",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "source": "cpp17/Point/Test.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-include",
+        "/tmp/geo2-i64.hpp",
+        "cpp17/Point/Test.cpp",
+        "-o",
+        "/tmp/geo2-verified-2-cpp17-Point-Test"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Point/Vec affine semantics, 100K independent algebra/distance oracle, native/wrapped floating math and IO PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "source": "cpp17/Point/TestCaseGeometry.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/Point/TestCaseGeometry.cpp",
+        "-o",
+        "/tmp/geo2-verified-2-cpp17-Point-TestCaseGeometry"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "Geo2 + Geo3 compatibility PASS",
+      "stderr": ""
+    },
+    {
+      "profile": "Clang ASan/UBSan",
+      "source": "cpp17/FloatPointNumber/Test.cpp",
+      "command": [
+        "clang++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "cpp17/FloatPointNumber/Test.cpp",
+        "cpp17/FloatPointNumber/TestExtra.cpp",
+        "-o",
+        "/tmp/geo2-verified-2-cpp17-FloatPointNumber-Test"
+      ],
+      "arguments": [],
+      "seed": 20261001,
+      "status": "PASS",
+      "output": "FloatPointNumber constexpr/mixed scalar without conversion, std math, 100K raw-math oracle, signed rounding, string parsing/EOF, two-TU precision PASS",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "cpp17/Geo2/Final.hpp": "5e34fc16a7ee9543c2b74b56d2e379507f2e7b09637900073c183c43510a98c0",
+    "cpp17/Geo2/Algorithms.hpp": "65b02b228a8f69201038c1c75f168124975b7f1bef8beab8d4b820b794a4c441",
+    "cpp17/Geo2/Test.cpp": "7c9adb6c07bcce8385d4c1dd06bf7ba9fb2818f2569826be16c654239d06f800",
+    "cpp17/Geo2/TestCaseBounds.cpp": "9c76835eba46865fb35d8b00f94eedf89a92439ec5db0143d4ae25ecb0535875",
+    "cpp17/Geo2/TestCaseTypes.cpp": "485b0bcf177780d214148799edbebddeadcadaad79c4f019a375c2c19b9eb849",
+    "cpp17/Geo2/TestCaseHalfPlane.cpp": "285cb452141a175e0e5b46f3a07efa5a11f6495afbe72e269132fbaff751f4da",
+    "cpp17/Point/Test.cpp": "5289945f9ee075359fd3fad6c87281c2f671acc406d872ace71c828da03ed225",
+    "cpp17/Point/TestCaseGeometry.cpp": "9112db1bb7b0f2d83b691b3089a169c2378813e855a5e1ec93174a2443787b29",
+    "cpp17/FloatPointNumber/Test.cpp": "0c93e78c86dfa1f111ddc933c2d37755f10a47e1131bc0a8f9e059b373f2d5b7",
+    "cpp17/Geo2/GenerateHalfPlaneCases.py": "4dcad98c5a43b1b153f6da30da58996686c5675ba3232ad65016fdab6549125c",
+    "cpp17/Geo2/HalfPlaneRegression.txt": "e43ae611dca8bad321cd8cc65fe454d801c07be97baf565d68d74382c3e9f862",
+    "cpp17/Geo2/Benchmark.cpp": "424066589c663880160dd49bb191965e0a8352611f1bd70438da4ef9aadc0d59",
+    "cpp17/Geo2/BenchmarkCompare.cpp": "09b94cd787a880c113046684e8f85c8437c1e95b93280c73296baf3de258e337",
+    "cpp17/Point/Final.hpp": "03ea3dad4f3314a7ab475c5dc324be27ea0679355b61b0f7766f503d65b89210",
+    "cpp17/FloatPointNumber/Final.hpp": "bf4c0075d2c97a61f2717fc5af2508719464602c62004aab627fa7ea72957b4e",
+    "cpp17/FloatPointNumber/TestExtra.cpp": "9b552f889646a570dd29eea51a18e8b107ea1bf2bca16f5c38507e95ac3b8357",
+    "cpp17/Geo2/References/LineHullIntersection.h": "84a745992d7e7f62f35b8f38bd8c05a23d7f3e01ea0798a3bfafb53b2b5b2584",
+    "cpp17/Geo2/References/Point.h": "16131a9989f928542c29e6a616a1d99e166c5671d50813778d4d817de60bbdd2",
+    "cpp17/Geo2/References/OnSegment.h": "a7332c17d1a6fa474befaf2eb02537443290f77381da9ae47cff4833a7308386",
+    "cpp17/Geo2/References/SegmentIntersection.h": "84d06d9e219716705f661d0f7f18977065bd57db92f2e3d9f92b6782ca914662",
+    "cpp17/Geo2/References/HullDiameter.h": "9766066cf5b84092683054731153a857221897199d388196351afae42967d570"
+  },
+  "oracles": {
+    "20261001": "80d35c5484d767ca805feb9ed667a6e5c5d854b237d463915a4d05caf5659f45",
+    "7": "aca21fe7c0311107cd0993edd8a4a3262a2c5d8f1f759afc1360bbe2a249636b",
+    "42": "f58ffd4c291f87af020d1c467fcdfe13e660185c8b2eb0d75a063beff5f48d71",
+    "20261002": "39f6975d33aea2336d6421043b83e4a4453f6955a6be3ef2a5857a98c8731bd9"
+  },
+  "negativeCompilation": [
+    {
+      "profile": "Clang 17 negative compilation",
+      "case": "integer-inter",
+      "status": "PASS",
+      "expected": "intersection coordinates need floating T"
+    },
+    {
+      "profile": "Clang 17 negative compilation",
+      "case": "integer-near",
+      "status": "PASS",
+      "expected": "nearest coordinates need floating T"
+    },
+    {
+      "profile": "Clang 17 negative compilation",
+      "case": "private-support",
+      "status": "PASS",
+      "expected": "private"
+    },
+    {
+      "profile": "Clang 17 negative compilation",
+      "case": "private-edge",
+      "status": "PASS",
+      "expected": "private"
+    },
+    {
+      "profile": "Clang 17 negative compilation",
+      "case": "no-shape-dist",
+      "status": "PASS",
+      "expected": "dist"
+    },
+    {
+      "profile": "Clang 17 negative compilation",
+      "case": "no-fake-circle-region",
+      "status": "PASS",
+      "expected": "no matching function"
+    }
+  ],
+  "compilers": {
+    "clang": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+    "gcc": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0"
+  },
+  "benchmarkFiles": [
+    "Benchmark.csv",
+    "BenchmarkConvex.csv",
+    "BenchmarkFriend.csv",
+    "BenchmarkComparison.csv",
+    "BenchmarkConvexSamples.json"
+  ],
+  "baselineSha256": {
+    "cpp17/Point/Final.hpp": "03ea3dad4f3314a7ab475c5dc324be27ea0679355b61b0f7766f503d65b89210",
+    "cpp17/Geo2/Final.hpp": "d519fc61159b286d13cdc01d48d94223fe0a09b300bfeef463aba1adba1880cc",
+    "cpp17/Geo2/Algorithms.hpp": "65b02b228a8f69201038c1c75f168124975b7f1bef8beab8d4b820b794a4c441",
+    "cpp17/FloatPointNumber/Final.hpp": "bf4c0075d2c97a61f2717fc5af2508719464602c62004aab627fa7ea72957b4e"
+  }
+}

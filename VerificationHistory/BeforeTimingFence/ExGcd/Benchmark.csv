@@ -1,0 +1,2 @@
+scenario,originalMs,finalMs,speedup,checksum
+random-1e9,10.717,10.716,1.00009,18446744015752928614

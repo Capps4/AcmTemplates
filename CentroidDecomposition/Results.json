@@ -1,0 +1,137 @@
+{
+  "formatVersion": 2,
+  "module": "CentroidDecomposition",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "9bcd86dfa1d56b7e7bd0246007763a8b20906b45137dbebf811ebd3503545c8c",
+    "Final.hpp": "ebdc234ac6891b14f4081ebdd086e710ab69ac716903e4265121f0470e0c12a8",
+    "Test.cpp": "cf4bef4961c1570236a362d8617284e2e3e45343c7c528cdc0a67739a7593647",
+    "Benchmark.cpp": "3bcac6ca67ac14bae323c8d329d64153583f2fc98675f423907efc5995e3b606",
+    "Final.code-snippets": "a543ac2608b927925b377c967f9c5bbc95a322d7e6647cadd321d95fa066929b"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "CentroidDecomposition/Final.hpp": "ebdc234ac6891b14f4081ebdd086e710ab69ac716903e4265121f0470e0c12a8",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "CentroidDecomposition/Original.hpp": "9bcd86dfa1d56b7e7bd0246007763a8b20906b45137dbebf811ebd3503545c8c"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/CentroidDecomposition/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/CentroidDecomposition/Build/optimized"
+      ],
+      "output": "CentroidDecomposition independent component balance oracle, forests/empty, 200K chain PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/CentroidDecomposition/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/CentroidDecomposition/Build/sanitized"
+      ],
+      "output": "CentroidDecomposition independent component balance oracle, forests/empty, 200K chain PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/CentroidDecomposition/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/CentroidDecomposition/Build/benchmark"
+  ],
+  "benchmark": "chain-10K,1.176,1.105,1.06425,333308364210\nstar-100K,0.744,1.139,0.653205,333333333300000\nrandom-tree-100K,8.051,7.178,1.12162,249945626585941",
+  "benchmarkSamples": [
+    {
+      "scenario": "chain-10K",
+      "original": [
+        1.155,
+        1.183,
+        1.176,
+        1.182,
+        1.196,
+        1.017,
+        1.041
+      ],
+      "final": [
+        1.236,
+        1.211,
+        1.181,
+        1.103,
+        1.105,
+        1.101,
+        1.066
+      ],
+      "checksum": 333308364210,
+      "first": "original"
+    },
+    {
+      "scenario": "star-100K",
+      "original": [
+        0.794,
+        0.792,
+        0.776,
+        0.738,
+        0.744,
+        0.736,
+        0.743
+      ],
+      "final": [
+        1.139,
+        1.203,
+        1.193,
+        1.122,
+        1.162,
+        1.119,
+        1.112
+      ],
+      "checksum": 333333333300000,
+      "first": "final"
+    },
+    {
+      "scenario": "random-tree-100K",
+      "original": [
+        8.306,
+        8.146,
+        7.839,
+        7.97,
+        8.007,
+        8.091,
+        8.051
+      ],
+      "final": [
+        7.178,
+        7.235,
+        7.15,
+        7.178,
+        7.231,
+        7.158,
+        7.224
+      ],
+      "checksum": 249945626585941,
+      "first": "original"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

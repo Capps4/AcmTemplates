@@ -1,0 +1,198 @@
+{
+  "gcc": {
+    "randomDefault": {
+      "cases": 68,
+      "timeRatioGeomean": 0.9327999564418928
+    },
+    "other": {
+      "cases": 46,
+      "timeRatioGeomean": 0.6026918525994395
+    },
+    "gaps": {
+      "cases": 18,
+      "timeRatioGeomean": 0.6645537381196965
+    },
+    "randomDefaultLarge": {
+      "cases": 44,
+      "timeRatioGeomean": 0.8927659528098925
+    },
+    "ordered": {
+      "cases": 16,
+      "timeRatioGeomean": 1.003278347586606
+    },
+    "randomTyped": {
+      "cases": 4,
+      "timeRatioGeomean": 0.07957494987991769
+    },
+    "worstDefault": [
+      [
+        1.064646456288135,
+        [
+          "holdout",
+          "gcc",
+          "i64",
+          "384",
+          "12",
+          "0",
+          "0",
+          "lessVoid",
+          "0"
+        ]
+      ],
+      [
+        1.0437636822776273,
+        [
+          "holdout",
+          "gcc",
+          "i64",
+          "384",
+          "20",
+          "0",
+          "0",
+          "lessVoid",
+          "0"
+        ]
+      ],
+      [
+        1.041757813906593,
+        [
+          "holdout",
+          "gcc",
+          "i32",
+          "384",
+          "20",
+          "0",
+          "0",
+          "lessVoid",
+          "0"
+        ]
+      ],
+      [
+        1.0316163410301953,
+        [
+          "holdout",
+          "gcc",
+          "i32",
+          "750000",
+          "24",
+          "0",
+          "0",
+          "lessVoid",
+          "0"
+        ]
+      ],
+      [
+        1.0260496332845146,
+        [
+          "holdout",
+          "gcc",
+          "i64",
+          "4097",
+          "12",
+          "0",
+          "0",
+          "lessVoid",
+          "0"
+        ]
+      ]
+    ]
+  },
+  "clang": {
+    "randomDefault": {
+      "cases": 68,
+      "timeRatioGeomean": 0.9322506751627191
+    },
+    "other": {
+      "cases": 46,
+      "timeRatioGeomean": 0.6400235731713944
+    },
+    "gaps": {
+      "cases": 18,
+      "timeRatioGeomean": 0.7143154019465237
+    },
+    "randomDefaultLarge": {
+      "cases": 44,
+      "timeRatioGeomean": 0.8991040384957705
+    },
+    "ordered": {
+      "cases": 16,
+      "timeRatioGeomean": 1.0053378177573438
+    },
+    "randomTyped": {
+      "cases": 4,
+      "timeRatioGeomean": 0.0785888305744517
+    },
+    "worstDefault": [
+      [
+        1.068430525393806,
+        [
+          "holdout",
+          "clang",
+          "i64",
+          "750000",
+          "8",
+          "16",
+          "0",
+          "lessVoid",
+          "0"
+        ]
+      ],
+      [
+        1.0556970722038492,
+        [
+          "holdout",
+          "clang",
+          "i64",
+          "131072",
+          "24",
+          "0",
+          "0",
+          "lessVoid",
+          "0"
+        ]
+      ],
+      [
+        1.0445421286796313,
+        [
+          "holdout",
+          "clang",
+          "i64",
+          "384",
+          "64",
+          "0",
+          "0",
+          "lessVoid",
+          "0"
+        ]
+      ],
+      [
+        1.041617291476396,
+        [
+          "holdout",
+          "clang",
+          "i64",
+          "131072",
+          "12",
+          "0",
+          "0",
+          "lessVoid",
+          "0"
+        ]
+      ],
+      [
+        1.0262349236066683,
+        [
+          "holdout",
+          "clang",
+          "i64",
+          "384",
+          "24",
+          "0",
+          "0",
+          "lessVoid",
+          "0"
+        ]
+      ]
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+scenario,originalMs,finalMs,speedup,checksum
+radix-sort,2.083,1.82,1.14451,7580060443908478208
+slice-lvalue,0,0,nan,5169969604044141554
+cached-heavy-comparator-5000x,1.966,0.592,3.32095,6962390000

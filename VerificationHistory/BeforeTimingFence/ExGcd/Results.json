@@ -1,0 +1,51 @@
+{
+  "module": "ExGcd",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "55a8d2e207a2738381699c336cbf1ecf3153f0244f17b893557711a244f32bfa",
+    "Final.hpp": "fc25783553a63e0d31bf151d7bbf805b35694ac564a2fd53d0265a66663737f2",
+    "Test.cpp": "ed25edc2d170ea7e5cfd0bbfe015ff443255aa132eaf29f238bd1402fde494d3",
+    "Benchmark.cpp": "be5ba186ba1c5cfd43ca0594a2de1d1ccf65864630433ece8a19de1ec989ec4f",
+    "Final.code-snippets": "93c18bb011d99e31c98dc2ac98f7973ae693a07e274cab9ce3801c193a4ebe27"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/ExGcd/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/ExGcd/Build/optimized"
+      ],
+      "output": "100K Bezout/gcd oracles, zero/extreme inputs and constexpr passed"
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/ExGcd/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/ExGcd/Build/sanitized"
+      ],
+      "output": "100K Bezout/gcd oracles, zero/extreme inputs and constexpr passed"
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/ExGcd/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/ExGcd/Build/benchmark"
+  ],
+  "benchmark": "random-1e9,10.717,10.716,1.00009,18446744015752928614"
+}

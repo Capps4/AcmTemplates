@@ -1,0 +1,137 @@
+{
+  "formatVersion": 2,
+  "module": "AcAutomaton",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "e6622018e0928f5e624ea8b75741e070a68c4b40f407b678790b3b049d7a91c8",
+    "Final.hpp": "25e1593e02757201ab278935b9dfda0ca016168ac888a4d559c78a56054b169e",
+    "Test.cpp": "43ba62be3f7ada0b6b40f3a4edbdb866bc1ff15f2161ac0487623fb0954b7aaf",
+    "Benchmark.cpp": "d90fabd3322cc30a095c975cd3859c6432f483dca7602749a1dbbd6a19b6eaf8",
+    "Final.code-snippets": "4f10c860825ed8122c2fdbd238b004764b5102af0e136e9c2f1f36e0992e4281"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "AcAutomaton/Final.hpp": "25e1593e02757201ab278935b9dfda0ca016168ac888a4d559c78a56054b169e",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "AcAutomaton/Original.hpp": "e6622018e0928f5e624ea8b75741e070a68c4b40f407b678790b3b049d7a91c8"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/AcAutomaton/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/AcAutomaton/Build/optimized"
+      ],
+      "output": "AC: exhaustive patterns/text, naive overlapping counts, duplicates, empty, 256 bytes, views PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/AcAutomaton/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/AcAutomaton/Build/sanitized"
+      ],
+      "output": "AC: exhaustive patterns/text, naive overlapping counts, duplicates, empty, 256 bytes, views PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/AcAutomaton/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/AcAutomaton/Build/benchmark"
+  ],
+  "benchmark": "pattern-length-10,0.298,0.623,0.478331,611369941\npattern-length-1000,41.51,42.869,0.968299,8328693123424\nduplicate-patterns,7.216,2.065,3.49443,100",
+  "benchmarkSamples": [
+    {
+      "scenario": "pattern-length-10",
+      "original": [
+        0.303,
+        0.298,
+        0.294,
+        0.292,
+        0.298,
+        0.289,
+        0.422
+      ],
+      "final": [
+        0.635,
+        0.629,
+        0.624,
+        0.623,
+        0.62,
+        0.617,
+        0.616
+      ],
+      "checksum": 611369941,
+      "first": "original"
+    },
+    {
+      "scenario": "pattern-length-1000",
+      "original": [
+        41.72,
+        41.123,
+        41.51,
+        41.757,
+        41.224,
+        41.38,
+        41.749
+      ],
+      "final": [
+        42.869,
+        42.415,
+        42.632,
+        42.971,
+        42.317,
+        43.236,
+        43.171
+      ],
+      "checksum": 8328693123424,
+      "first": "final"
+    },
+    {
+      "scenario": "duplicate-patterns",
+      "original": [
+        7.281,
+        6.744,
+        7.273,
+        7.197,
+        8.568,
+        6.905,
+        7.216
+      ],
+      "final": [
+        2.064,
+        2.08,
+        2.065,
+        2.082,
+        2.065,
+        2.055,
+        2.08
+      ],
+      "checksum": 100,
+      "first": "original"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}

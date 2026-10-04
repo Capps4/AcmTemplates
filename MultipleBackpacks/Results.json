@@ -1,0 +1,114 @@
+{
+  "formatVersion": 2,
+  "module": "MultipleBackpacks",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "compiler": "g++-15 (Homebrew GCC 15.2.0_1) 15.2.0",
+  "sanitizerCompiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)",
+  "sha256": {
+    "Original.hpp": "0bdafe8a7fee0a7348b55608135051ffe8c339ab69b68f386d8125808970098a",
+    "Final.hpp": "24f827ccc0df586bff3dec64969b88356735aecc71e54b8bf70d3aadfaca1022",
+    "Test.cpp": "69a69768ea9c8d36a629e6b8406ab6f2476d8f91270e542bffd2ee680695114b",
+    "Benchmark.cpp": "7a6a488d5392fc7fe768ef358612dada281f1a77de68f0bde6256dbe1024b530",
+    "Final.code-snippets": "0b659af86d71023765b42a58ddfd916de59a080c854c2098b327539066a79c8b"
+  },
+  "dependencySha256": {},
+  "supportSha256": {
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c"
+  },
+  "includeSha256": {
+    "MultipleBackpacks/Final.hpp": "24f827ccc0df586bff3dec64969b88356735aecc71e54b8bf70d3aadfaca1022",
+    "TestSupport.hpp": "26d150f4b2fbdd0be9b71cfdcdb9cf67c462cc2dbc40fc562f17699e10aeff05",
+    "BenchmarkSupport.hpp": "ace75f671aed8fc8d7a85014ab2e0e6fe4e359b262872b7c9cb1709928675d4c",
+    "MultipleBackpacks/Original.hpp": "0bdafe8a7fee0a7348b55608135051ffe8c339ab69b68f386d8125808970098a"
+  },
+  "tests": [
+    {
+      "command": [
+        "/opt/homebrew/bin/g++-15",
+        "-std=gnu++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/Users/bytedance/acm_compete/cpp17/MultipleBackpacks/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/MultipleBackpacks/Build/optimized"
+      ],
+      "output": "MultipleBackpacks exhaustive count oracle, zero weight/capacity, negative values, INT_MAX bounds PASS",
+      "additionalCases": []
+    },
+    {
+      "command": [
+        "/usr/bin/clang++",
+        "-std=gnu++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/Users/bytedance/acm_compete/cpp17/MultipleBackpacks/Test.cpp",
+        "-o",
+        "/Users/bytedance/acm_compete/cpp17/MultipleBackpacks/Build/sanitized"
+      ],
+      "output": "MultipleBackpacks exhaustive count oracle, zero weight/capacity, negative values, INT_MAX bounds PASS",
+      "additionalCases": []
+    }
+  ],
+  "benchmarkCommand": [
+    "/opt/homebrew/bin/g++-15",
+    "-std=gnu++17",
+    "-O2",
+    "/Users/bytedance/acm_compete/cpp17/MultipleBackpacks/Benchmark.cpp",
+    "-o",
+    "/Users/bytedance/acm_compete/cpp17/MultipleBackpacks/Build/benchmark"
+  ],
+  "benchmark": "positive-items-capacity-20K,4.673,3.716,1.25753,13834415911555\noversized-items-100x,906.472,0.078,11621.4,0",
+  "benchmarkSamples": [
+    {
+      "scenario": "positive-items-capacity-20K",
+      "original": [
+        5.4,
+        5.151,
+        4.848,
+        4.673,
+        4.484,
+        4.34,
+        4.217
+      ],
+      "final": [
+        3.92,
+        3.876,
+        3.778,
+        3.716,
+        3.661,
+        3.621,
+        3.606
+      ],
+      "checksum": 13834415911555,
+      "first": "original"
+    },
+    {
+      "scenario": "oversized-items-100x",
+      "original": [
+        905.671,
+        906.472,
+        906.607,
+        905.179,
+        906.397,
+        906.538,
+        907.451
+      ],
+      "final": [
+        0.077,
+        0.078,
+        0.077,
+        0.078,
+        0.077,
+        0.078,
+        0.08
+      ],
+      "checksum": 0,
+      "first": "final"
+    }
+  ],
+  "timingMethod": "compiler barriers; warmup + median of 7; alternating scenario order"
+}
