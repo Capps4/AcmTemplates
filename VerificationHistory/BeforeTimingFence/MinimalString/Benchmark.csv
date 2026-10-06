@@ -1,4 +1,0 @@
-scenario,originalMs,finalMs,speedup,checksum
-alphabet-1,1.125,0.791,1.42225,12125024250000
-alphabet-2,4.324,4.229,1.02246,12187472628842
-alphabet-26,1.163,1.017,1.14356,13685113585701

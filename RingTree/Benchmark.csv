@@ -1,4 +1,0 @@
-scenario,originalMs,finalMs,speedup,checksum
-functional-chain-200K,8.695,8.04,1.08147,2666666666800000
-functional-random-200K,11.375,11.552,0.984678,1995249188582363
-undirected-chain-triangle-200K,8.55,8.472,1.00921,2666586668599994

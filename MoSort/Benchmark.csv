@@ -1,2 +1,0 @@
-scenario,originalMs,finalMs,speedup,checksum
-sort-200K,12.544,12.312,1.01884,697107992361890510

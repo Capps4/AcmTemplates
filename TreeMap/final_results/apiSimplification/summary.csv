@@ -1,9 +1,0 @@
-workload,version,rounds,median_ns,min_ns,max_ns
-build,beforeSbt,5,188.069,187.757,197.256
-build,afterSbt,5,190.795,187.966,195.233
-build,beforeOff,5,112.626,112.249,113.552
-build,afterOff,5,112.922,112.737,113.793
-updateMixed,beforeSbt,5,214.884,208.731,217.56
-updateMixed,afterSbt,5,215.736,209.764,231.348
-updateMixed,beforeOff,5,103.194,102.919,105.422
-updateMixed,afterOff,5,104.745,102.632,107.87

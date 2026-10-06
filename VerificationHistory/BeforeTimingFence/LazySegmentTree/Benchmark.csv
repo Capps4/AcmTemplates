@@ -1,4 +1,0 @@
-scenario,originalMs,finalMs,speedup,checksum
-build-100K-x20,20.12,11.246,1.78908,2000000
-range-update-query-100K,33.828,34.337,0.985176,167350927347406
-search-vector-capture-20K,17.755,1.151,15.4257,199990000

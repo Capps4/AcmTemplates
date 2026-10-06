@@ -1,8 +1,0 @@
-int 1000000 range22 ascending verified
-int 1000000 fullWidth ascending verified
-int 1000000 fewValues ascending verified
-int 1000000 ascending ascending verified
-int 1000000 descending ascending verified
-int 2000000 range22 ascending verified
-int 1000000 range22 descending verified
-longLong 1000000 fullWidth ascending verified

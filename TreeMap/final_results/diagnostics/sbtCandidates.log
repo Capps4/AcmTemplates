@@ -1,9 +1,0 @@
-All four candidates passed independent std::map differential checks.
-build baseline median=203.375 min=190.312 max=276.96 ns/op
-build split median=185.772 min=183.596 max=193.133 ns/op
-build template median=203.878 min=191.236 max=257.611 ns/op
-build splitTemplate median=218.514 min=188.297 max=287.831 ns/op
-updateMixed baseline median=279.449 min=219.169 max=365.731 ns/op
-updateMixed split median=269.495 min=207.025 max=290.388 ns/op
-updateMixed template median=254.559 min=220.313 max=360.704 ns/op
-updateMixed splitTemplate median=273.959 min=252.547 max=315.497 ns/op

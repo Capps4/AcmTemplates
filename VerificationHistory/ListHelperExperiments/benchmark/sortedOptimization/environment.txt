@@ -1,7 +1,0 @@
-macOS-15.7.4-arm64-arm-64bit
-g++-15 (Homebrew GCC 15.2.0_1) 15.2.0
-Apple clang version 17.0.0 (clang-1700.3.19.1)
--std=gnu++17 / -std=c++17 -O2 -DNDEBUG -Wall -Wextra -Wpedantic -Werror
-Clang sanitizer: -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -Wextra -Wpedantic -Werror
-1 warmup + 5 rounds; shuffled method order; serial compiler runs; repeated identical inputs; complete output comparisons outside timer
-Final holdout repeated after compiler and correctness processes had completed; desktop not isolated.

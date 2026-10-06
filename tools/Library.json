@@ -1,0 +1,439 @@
+{
+  "headings": {
+    "1. Math": "a6i3b",
+    "1. Math/MathPackage": "80d6f6b4",
+    "1. Math/MathPackage/Sieve": "ac7c11a9",
+    "1. Math/MathPackage/ModuloInteger": "69c0b657",
+    "1. Math/MathPackage/Combinatorics": "a47kA",
+    "1. Math/MathPackage/FloatPointNumber": "ZMWk8",
+    "1. Math/MathPackage/ExGcd": "ki1fy",
+    "1. Math/Polynomial": "8b9b9392",
+    "1. Math/Polynomial/FastFourierTransform": "p0Hty",
+    "1. Math/Polynomial/NumberTheoreticTransform": "x9bBZ",
+    "1. Math/Linear Algebra": "74659e3e",
+    "1. Math/Linear Algebra/GaussianElimination": "25634846",
+    "1. Math/Linear Algebra/LinearBasis": "D5M3R",
+    "1. Math/Random Number Algorithm": "5599756b",
+    "1. Math/Random Number Algorithm/RandomNumber": "4067b740",
+    "1. Math/Random Number Algorithm/MillerRabin": "51780be9",
+    "1. Math/Random Number Algorithm/PollardRho": "2a0e6bc2",
+    "2. Dynamic Programming": "c46e8dea",
+    "2. Dynamic Programming/MultipleBackpacks": "bc338d83",
+    "3. Sorting": "jySco",
+    "3. Sorting/CountingSortOrder": "cf384e46",
+    "3. Sorting/Discreter": "aFsus",
+    "3. Sorting/MoSort": "TV45X",
+    "4. String": "cb9e5fb0",
+    "4. String/String F4": "FS2nN",
+    "4. String/String F4/StringHash": "eUNpl",
+    "4. String/String F4/Kmp": "567dadb5",
+    "4. String/String F4/Z-Function": "ed84b7ce",
+    "4. String/String F4/Manacher": "237ffca0",
+    "4. String/String F4/MinimalString": "ODLTK",
+    "4. String/Advanced Strings": "M9rbx",
+    "4. String/Advanced Strings/AcAutomaton": "9407a1e0",
+    "4. String/Advanced Strings/SuffixAutomaton": "RmpdO",
+    "4. String/Advanced Strings/ExSuffixAutomaton": "4330dc52",
+    "4. String/Advanced Strings/PalindromeAutomaton": "cUasZ",
+    "4. String/Advanced Strings/SuffixArray": "LHbeT",
+    "5. DataStructures": "LKTD2",
+    "5. DataStructures/BaseDataStructures": "Z8k6X",
+    "5. DataStructures/BaseDataStructures/HashMap": "5d3b92c1",
+    "5. DataStructures/BaseDataStructures/DisjointSetUnion": "kUmj4",
+    "5. DataStructures/BaseDataStructures/RMQ": "GcrNe",
+    "5. DataStructures/BaseDataStructures/DeletableHeap": "f007d20a",
+    "5. DataStructures/TreeDataStructures": "5be3e824",
+    "5. DataStructures/TreeDataStructures/TreeMap": "ihcuc",
+    "5. DataStructures/TreeDataStructures/SegTree": "ec15cfc4",
+    "5. DataStructures/TreeDataStructures/Trie": "JAK5F",
+    "5. DataStructures/TreeDataStructures/FenwickTree": "Hxcmj",
+    "5. DataStructures/TreeDataStructures/SparseSegTree": "440f0c4b",
+    "6. Tree Theory": "LJKxt",
+    "6. Tree Theory/Tree": "ZVO88",
+    "6. Tree Theory/CentroidDecomposition": "RDr69",
+    "7. Graph Theory": "ez7t0",
+    "7. Graph Theory/GridUtil": "TuXVe",
+    "7. Graph Theory/Dijkstra": "ur07d",
+    "7. Graph Theory/RingTree": "NzDoU",
+    "7. Graph Theory/TopSort": "JI2UC",
+    "7. Graph Theory/Connectivity": "LySs0",
+    "7. Graph Theory/Connectivity/StronglyConnectedComponent": "sD3EM",
+    "7. Graph Theory/Connectivity/TwoSat": "gRywk",
+    "7. Graph Theory/Connectivity/VertexBiconnectedComponent": "bKKdd",
+    "7. Graph Theory/Connectivity/EdgeBiconnectedComponent": "AXGB5",
+    "7. Graph Theory/Flow": "vc9GU",
+    "7. Graph Theory/Flow/MaxFlow": "PZfa1",
+    "7. Graph Theory/Flow/CostFlow": "QFNz9",
+    "8. Geometry": "Lvjzp",
+    "8. Geometry/Geo2": "u09afb900181d",
+    "8. Geometry/Geo2/PointVec": "FPRJh",
+    "8. Geometry/Geo2/SegLine": "W0C63",
+    "8. Geometry/Geo2/PolygonConvex": "q247X",
+    "8. Geometry/Geo2/Circle": "kF1TT",
+    "8. Geometry/Geo3": "C418Y",
+    "9. Clarketech": "DuqN0",
+    "9. Clarketech/ListHelper": "afwkF",
+    "9. Clarketech/Debuger": "Ztau5",
+    "9. Clarketech/DebugerHeadCopyToBitsStdC++": "Qn3ff",
+    "9. Clarketech/FastInputOutput": "I9LvY",
+    "last. CTL": "rNDfs"
+  },
+  "cards": {
+    "FastInputOutput": {
+      "search": "FastInputOutput",
+      "id": "wy1FK"
+    },
+    "Debuger": {
+      "search": "debuger",
+      "id": "jenKp"
+    },
+    "ListHelper": {
+      "search": "ListHelper",
+      "id": "dV3qe"
+    },
+    "Geo3": {
+      "search": "geo3",
+      "id": "lK3Re"
+    },
+    "Geo2/Circle": {
+      "search": "Circle",
+      "id": "AICMA"
+    },
+    "Geo2/PolygonConvex": {
+      "search": "PolygonConvex",
+      "id": "fH9cE"
+    },
+    "Geo2/SegLine": {
+      "search": "SegLine",
+      "id": "WFhGr"
+    },
+    "Geo2/PointVec": {
+      "search": "PointVec",
+      "id": "cjnyY"
+    },
+    "CostFlow": {
+      "search": "CostFlow",
+      "id": "Epvx5"
+    },
+    "MaxFlow": {
+      "search": "MaxFlow",
+      "id": "doESE"
+    },
+    "EdgeBiconnectedComponent": {
+      "search": "EdgeBiconnectedComponent",
+      "id": "UsBQi"
+    },
+    "VertexBiconnectedComponent": {
+      "search": "VertexBiconnectedComponent",
+      "id": "RWNX2"
+    },
+    "TwoSat": {
+      "search": "TwoSat",
+      "id": "A5Dmi"
+    },
+    "StronglyConnectedComponent": {
+      "search": "StronglyConnectedComponent",
+      "id": "sWwdD"
+    },
+    "TopSort": {
+      "search": "TopSort",
+      "id": "KQnt7"
+    },
+    "RingTree": {
+      "search": "RingTree",
+      "id": "ga4KW"
+    },
+    "Dijkstra": {
+      "search": "Dijkstra",
+      "id": "bjS1v"
+    },
+    "GridUtil": {
+      "search": "GridUtil",
+      "id": "sLLWC"
+    },
+    "CentroidDecomposition": {
+      "search": "CentroidDecomposition",
+      "id": "JaKgW"
+    },
+    "Tree": {
+      "search": "Tree",
+      "id": "ta9vZ"
+    },
+    "SparseSegTree": {
+      "search": "SparseSegTree",
+      "id": "1fe26ea5"
+    },
+    "FenwickTree": {
+      "search": "Fenwick",
+      "id": "eN4lc"
+    },
+    "Trie": {
+      "search": "Trie",
+      "id": "aNuvs"
+    },
+    "SegTree": {
+      "search": "SegTree",
+      "id": "53bd3779"
+    },
+    "TreeMap": {
+      "search": "TreeMap",
+      "id": "ufxfz"
+    },
+    "DeletableHeap": {
+      "search": "DeletableHeap",
+      "id": "4aa39dfa"
+    },
+    "RMQ": {
+      "search": "SparseTable",
+      "id": "d1ff98a3"
+    },
+    "DisjointSetUnion": {
+      "search": "DisjointSetUnion",
+      "id": "m5iQO"
+    },
+    "HashMap": {
+      "search": "HashMap",
+      "id": "Sfb5n"
+    },
+    "SuffixArray": {
+      "search": "SuffixArray",
+      "id": "al2Lm"
+    },
+    "PalindromeAutomaton": {
+      "search": "PalindromeAutomaton",
+      "id": "b0332f49"
+    },
+    "ExSuffixAutomaton": {
+      "search": "ExSuffixAutomaton",
+      "id": "5ebf983a"
+    },
+    "SuffixAutomaton": {
+      "search": "SuffixAutomaton",
+      "id": "676c1ae4"
+    },
+    "AcAutomaton": {
+      "search": "AcAutomaton",
+      "id": "185427f1"
+    },
+    "MinimalString": {
+      "search": "MinimalString",
+      "id": "FAl0T"
+    },
+    "Manacher": {
+      "search": "Manacher",
+      "id": "3f8b7e2d"
+    },
+    "ZFunction": {
+      "search": "Z-Function",
+      "id": "f6dd1f48"
+    },
+    "Kmp": {
+      "search": "Kmp",
+      "id": "a7e65c66"
+    },
+    "StringHash": {
+      "search": "StringHash",
+      "id": "KbkCd"
+    },
+    "MoSort": {
+      "search": "MoSort",
+      "id": "XiqHL"
+    },
+    "Discreter": {
+      "search": "Discreter",
+      "id": "k16Cu"
+    },
+    "CountingSortOrder": {
+      "search": "CountingSortOrder",
+      "id": "9be54720"
+    },
+    "MultipleBackpacks": {
+      "search": "MultipleBackpacks",
+      "id": "064a772b"
+    },
+    "PollardRho": {
+      "search": "PollardRho",
+      "id": "wdqNW"
+    },
+    "MillerRabin": {
+      "search": "MillerRabin",
+      "id": "lEe7O"
+    },
+    "RandomNumber": {
+      "search": "RandomNumber",
+      "id": "S5krG"
+    },
+    "LinearBasis": {
+      "search": "LinearBasis",
+      "id": "1ff0fb89"
+    },
+    "GaussianElimination": {
+      "search": "GaussianElimination",
+      "id": "2928d4b8"
+    },
+    "NumberTheoreticTransform": {
+      "search": "NumberTheoreticTransform",
+      "id": "9b099fde"
+    },
+    "FastFourierTransform": {
+      "search": "FastFourierTransform",
+      "id": "b703c12c"
+    },
+    "ExGcd": {
+      "search": "ExGcd ",
+      "id": "EujQk"
+    },
+    "FloatPointNumber": {
+      "search": "FloatPointNumber",
+      "id": "m7Jky"
+    },
+    "Combinatorics": {
+      "search": "Combinatorics",
+      "id": "kj9tX"
+    },
+    "ModuloInteger": {
+      "search": "ModuloInteger",
+      "id": "eG9j0"
+    },
+    "Sieve": {
+      "search": "Sieve",
+      "id": "4749e9ee"
+    },
+    "example/8": {
+      "search": "Primes whose root is 3",
+      "collapsed": false,
+      "id": "moc3z"
+    },
+    "example/239": {
+      "search": "copy to bits/stdc++.h",
+      "theme": "Darcula",
+      "id": "agQ2Y"
+    },
+    "tool/CTL": {
+      "search": "CTL",
+      "id": "rWAzU",
+      "name": "CTL"
+    }
+  },
+  "cardDefaults": {
+    "__spacing": "both",
+    "margin": {
+      "bottom": true,
+      "top": true
+    },
+    "heightLimit": true,
+    "autoWrap": false,
+    "lineNumbers": true,
+    "customStyle": [],
+    "hideToolbar": false,
+    "indentWithTab": false,
+    "lightLines": [],
+    "theme": "Github Light",
+    "fontSize": 14,
+    "collapsed": true,
+    "tabSize": null
+  },
+  "mathIds": {
+    "ax+by=c": [
+      "eLuYQ"
+    ],
+    "x_0": [
+      "B1tU4"
+    ],
+    "y_0": [
+      "T0ntu"
+    ],
+    "ax_0+by_0=\\gcd(a, b)": [
+      "YFanG"
+    ],
+    "\\gcd(a,b)\\mid c": [
+      "oHYIg"
+    ],
+    "x = x_0 \\times \\frac{c}{\\gcd(a, b)}+k\\times \\frac{b}{\\gcd(a, b)}\n\\\\ \\ \n\\\\  \\\\\ny = y_0 \\times \\frac{c}{\\gcd(a, b)}-k\\times \\frac{a}{\\gcd(a, b)}": [
+      "U2zu9"
+    ],
+    "n": [
+      "NzuEW",
+      "Nv8ck",
+      "JgNEO",
+      "oyKWr",
+      "eZKm0"
+    ],
+    "[2,n-1]": [
+      "gcip3"
+    ],
+    "O(n^{\\frac{1}{4}}\\log n)": [
+      "zZWPA"
+    ],
+    "O(n^{\\frac{1}{4}})": [
+      "AeFEa"
+    ],
+    "m": [
+      "r7N3k"
+    ],
+    "=": [
+      "zUrvd",
+      "wT00J",
+      "QjJg0",
+      "o34UD",
+      "sNHc2"
+    ],
+    "S": [
+      "acguG"
+    ],
+    "\\in S": [
+      "MTBJk",
+      "TmCir",
+      "gx9Qu"
+    ],
+    "\\notin S": [
+      "CN6tD",
+      "OHdip",
+      "gu9Qd"
+    ],
+    "\\{": [
+      "Ha703",
+      "JTpz7",
+      "jCZYj",
+      "GQrFm"
+    ],
+    "x \\rightarrow y": [
+      "FOWSW",
+      "vPgji"
+    ],
+    "|": [
+      "rr7tQ",
+      "rYbGT"
+    ],
+    "x\\in S \\wedge y \\notin S": [
+      "ZRhfk"
+    ],
+    "\\}": [
+      "fJcpA",
+      "IctEj",
+      "A9jZh",
+      "gWRnh"
+    ],
+    "\\cup": [
+      "JXzkU"
+    ],
+    "-": [
+      "SGwpW"
+    ],
+    "x_l\\rightarrow y_r": [
+      "uTPCn"
+    ],
+    "x": [
+      "Xoxct"
+    ],
+    "x_l": [
+      "zFsLn"
+    ],
+    "x_r": [
+      "PD81O"
+    ],
+    "\\in": [
+      "qNMnV"
+    ]
+  }
+}

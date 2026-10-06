@@ -1,5 +1,0 @@
-scenario,originalMs,finalMs,speedup,checksum
-chain-10K,0.343,0.349,0.982808,166666675000
-labels-only-chain,0.332,0.06,5.53333,166666675000
-random-degree4-50K,1.548,1.689,0.916519,17499827537
-labels-only-random,1.548,1.314,1.17808,17499827537

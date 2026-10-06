@@ -1,4 +1,0 @@
-scenario,originalMs,finalMs,speedup,checksum
-linear-build-200K-x20,8.283,7.821,1.05907,4000000
-modify-query-200K,4.144,4.153,0.997833,29996765577
-select-200K,6.716,6.904,0.972769,20018575793

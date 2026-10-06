@@ -1,3 +1,0 @@
-scenario,originalMs,finalMs,speedup,checksum
-forced-chain-20K,1.448,0.178,8.13483,200010001
-random-consistent-20K,1.013,0.958,1.05741,20001

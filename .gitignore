@@ -1,11 +1,11 @@
-.DS_Store
+# Local credentials, Yuque state and runtime dependencies
+/.yuque/
+
+# Generated output
+/.cache/
 __pycache__/
 *.py[cod]
-.venv/
-Build/
-build/
-*.dSYM/
-*.o
-*.bin
-Reports/
-ReadyHeaders/
+
+# Local system files and unsupported snippet exports
+.DS_Store
+*.code-snippets

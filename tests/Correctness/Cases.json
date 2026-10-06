@@ -1,0 +1,4405 @@
+{
+  "formatVersion": 1,
+  "addedCases": [
+    {
+      "id": "SuffixAutomaton/01-empty",
+      "module": "SuffixAutomaton",
+      "header": "src/String/AdvancedStrings/SuffixAutomaton/code.hpp",
+      "scenario": "empty",
+      "oracle": "Enumerated substring frequencies, representative positions, prefix callback/clone contributions and streaming suffix matching",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SuffixAutomaton/02-single",
+      "module": "SuffixAutomaton",
+      "header": "src/String/AdvancedStrings/SuffixAutomaton/code.hpp",
+      "scenario": "single",
+      "oracle": "Enumerated substring frequencies, representative positions, prefix callback/clone contributions and streaming suffix matching",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SuffixAutomaton/03-overlap",
+      "module": "SuffixAutomaton",
+      "header": "src/String/AdvancedStrings/SuffixAutomaton/code.hpp",
+      "scenario": "overlap",
+      "oracle": "Enumerated substring frequencies, representative positions, prefix callback/clone contributions and streaming suffix matching",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SuffixAutomaton/04-periodic-tail",
+      "module": "SuffixAutomaton",
+      "header": "src/String/AdvancedStrings/SuffixAutomaton/code.hpp",
+      "scenario": "periodic-tail",
+      "oracle": "Enumerated substring frequencies, representative positions, prefix callback/clone contributions and streaming suffix matching",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SuffixAutomaton/05-many-clones",
+      "module": "SuffixAutomaton",
+      "header": "src/String/AdvancedStrings/SuffixAutomaton/code.hpp",
+      "scenario": "many-clones",
+      "oracle": "Enumerated substring frequencies, representative positions, prefix callback/clone contributions and streaming suffix matching",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SuffixAutomaton/06-alphabet",
+      "module": "SuffixAutomaton",
+      "header": "src/String/AdvancedStrings/SuffixAutomaton/code.hpp",
+      "scenario": "alphabet",
+      "oracle": "Enumerated substring frequencies, representative positions, prefix callback/clone contributions and streaming suffix matching",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SuffixAutomaton/07-nested-palindromes",
+      "module": "SuffixAutomaton",
+      "header": "src/String/AdvancedStrings/SuffixAutomaton/code.hpp",
+      "scenario": "nested-palindromes",
+      "oracle": "Enumerated substring frequencies, representative positions, prefix callback/clone contributions and streaming suffix matching",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SuffixAutomaton/08-skewed",
+      "module": "SuffixAutomaton",
+      "header": "src/String/AdvancedStrings/SuffixAutomaton/code.hpp",
+      "scenario": "skewed",
+      "oracle": "Enumerated substring frequencies, representative positions, prefix callback/clone contributions and streaming suffix matching",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SuffixAutomaton/09-odd-palindrome",
+      "module": "SuffixAutomaton",
+      "header": "src/String/AdvancedStrings/SuffixAutomaton/code.hpp",
+      "scenario": "odd-palindrome",
+      "oracle": "Enumerated substring frequencies, representative positions, prefix callback/clone contributions and streaming suffix matching",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SuffixAutomaton/10-even-palindromes",
+      "module": "SuffixAutomaton",
+      "header": "src/String/AdvancedStrings/SuffixAutomaton/code.hpp",
+      "scenario": "even-palindromes",
+      "oracle": "Enumerated substring frequencies, representative positions, prefix callback/clone contributions and streaming suffix matching",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PalindromeAutomaton/01-empty",
+      "module": "PalindromeAutomaton",
+      "header": "src/String/AdvancedStrings/PalindromeAutomaton/code.hpp",
+      "scenario": "empty",
+      "oracle": "Enumerated palindromes/frequencies and longest palindromic suffixes; external counts/positions/depth",
+      "source": "tests/Correctness/String/AdvancedStrings/PalindromeAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PalindromeAutomaton/02-single",
+      "module": "PalindromeAutomaton",
+      "header": "src/String/AdvancedStrings/PalindromeAutomaton/code.hpp",
+      "scenario": "single",
+      "oracle": "Enumerated palindromes/frequencies and longest palindromic suffixes; external counts/positions/depth",
+      "source": "tests/Correctness/String/AdvancedStrings/PalindromeAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PalindromeAutomaton/03-overlap",
+      "module": "PalindromeAutomaton",
+      "header": "src/String/AdvancedStrings/PalindromeAutomaton/code.hpp",
+      "scenario": "overlap",
+      "oracle": "Enumerated palindromes/frequencies and longest palindromic suffixes; external counts/positions/depth",
+      "source": "tests/Correctness/String/AdvancedStrings/PalindromeAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PalindromeAutomaton/04-periodic-tail",
+      "module": "PalindromeAutomaton",
+      "header": "src/String/AdvancedStrings/PalindromeAutomaton/code.hpp",
+      "scenario": "periodic-tail",
+      "oracle": "Enumerated palindromes/frequencies and longest palindromic suffixes; external counts/positions/depth",
+      "source": "tests/Correctness/String/AdvancedStrings/PalindromeAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PalindromeAutomaton/05-repeated-letters",
+      "module": "PalindromeAutomaton",
+      "header": "src/String/AdvancedStrings/PalindromeAutomaton/code.hpp",
+      "scenario": "repeated-letters",
+      "oracle": "Enumerated palindromes/frequencies and longest palindromic suffixes; external counts/positions/depth",
+      "source": "tests/Correctness/String/AdvancedStrings/PalindromeAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PalindromeAutomaton/06-alphabet",
+      "module": "PalindromeAutomaton",
+      "header": "src/String/AdvancedStrings/PalindromeAutomaton/code.hpp",
+      "scenario": "alphabet",
+      "oracle": "Enumerated palindromes/frequencies and longest palindromic suffixes; external counts/positions/depth",
+      "source": "tests/Correctness/String/AdvancedStrings/PalindromeAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PalindromeAutomaton/07-nested-palindromes",
+      "module": "PalindromeAutomaton",
+      "header": "src/String/AdvancedStrings/PalindromeAutomaton/code.hpp",
+      "scenario": "nested-palindromes",
+      "oracle": "Enumerated palindromes/frequencies and longest palindromic suffixes; external counts/positions/depth",
+      "source": "tests/Correctness/String/AdvancedStrings/PalindromeAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PalindromeAutomaton/08-skewed",
+      "module": "PalindromeAutomaton",
+      "header": "src/String/AdvancedStrings/PalindromeAutomaton/code.hpp",
+      "scenario": "skewed",
+      "oracle": "Enumerated palindromes/frequencies and longest palindromic suffixes; external counts/positions/depth",
+      "source": "tests/Correctness/String/AdvancedStrings/PalindromeAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PalindromeAutomaton/09-odd-palindrome",
+      "module": "PalindromeAutomaton",
+      "header": "src/String/AdvancedStrings/PalindromeAutomaton/code.hpp",
+      "scenario": "odd-palindrome",
+      "oracle": "Enumerated palindromes/frequencies and longest palindromic suffixes; external counts/positions/depth",
+      "source": "tests/Correctness/String/AdvancedStrings/PalindromeAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PalindromeAutomaton/10-even-palindromes",
+      "module": "PalindromeAutomaton",
+      "header": "src/String/AdvancedStrings/PalindromeAutomaton/code.hpp",
+      "scenario": "even-palindromes",
+      "oracle": "Enumerated palindromes/frequencies and longest palindromic suffixes; external counts/positions/depth",
+      "source": "tests/Correctness/String/AdvancedStrings/PalindromeAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Manacher/01-empty",
+      "module": "Manacher",
+      "header": "src/String/StringF4/Manacher/code.hpp",
+      "scenario": "empty",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/Manacher/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Manacher/02-single",
+      "module": "Manacher",
+      "header": "src/String/StringF4/Manacher/code.hpp",
+      "scenario": "single",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/Manacher/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Manacher/03-overlap",
+      "module": "Manacher",
+      "header": "src/String/StringF4/Manacher/code.hpp",
+      "scenario": "overlap",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/Manacher/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Manacher/04-periodic-tail",
+      "module": "Manacher",
+      "header": "src/String/StringF4/Manacher/code.hpp",
+      "scenario": "periodic-tail",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/Manacher/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Manacher/05-many-clones",
+      "module": "Manacher",
+      "header": "src/String/StringF4/Manacher/code.hpp",
+      "scenario": "many-clones",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/Manacher/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Manacher/06-alphabet",
+      "module": "Manacher",
+      "header": "src/String/StringF4/Manacher/code.hpp",
+      "scenario": "alphabet",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/Manacher/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Manacher/07-nested-palindromes",
+      "module": "Manacher",
+      "header": "src/String/StringF4/Manacher/code.hpp",
+      "scenario": "nested-palindromes",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/Manacher/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Manacher/08-skewed",
+      "module": "Manacher",
+      "header": "src/String/StringF4/Manacher/code.hpp",
+      "scenario": "skewed",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/Manacher/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Manacher/09-odd-palindrome",
+      "module": "Manacher",
+      "header": "src/String/StringF4/Manacher/code.hpp",
+      "scenario": "odd-palindrome",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/Manacher/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Manacher/10-even-palindromes",
+      "module": "Manacher",
+      "header": "src/String/StringF4/Manacher/code.hpp",
+      "scenario": "even-palindromes",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/Manacher/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MinimalString/01-empty",
+      "module": "MinimalString",
+      "header": "src/String/StringF4/MinimalString/code.hpp",
+      "scenario": "empty",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/MinimalString/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MinimalString/02-single",
+      "module": "MinimalString",
+      "header": "src/String/StringF4/MinimalString/code.hpp",
+      "scenario": "single",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/MinimalString/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MinimalString/03-overlap",
+      "module": "MinimalString",
+      "header": "src/String/StringF4/MinimalString/code.hpp",
+      "scenario": "overlap",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/MinimalString/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MinimalString/04-periodic-tail",
+      "module": "MinimalString",
+      "header": "src/String/StringF4/MinimalString/code.hpp",
+      "scenario": "periodic-tail",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/MinimalString/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MinimalString/05-many-clones",
+      "module": "MinimalString",
+      "header": "src/String/StringF4/MinimalString/code.hpp",
+      "scenario": "many-clones",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/MinimalString/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MinimalString/06-alphabet",
+      "module": "MinimalString",
+      "header": "src/String/StringF4/MinimalString/code.hpp",
+      "scenario": "alphabet",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/MinimalString/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MinimalString/07-nested-palindromes",
+      "module": "MinimalString",
+      "header": "src/String/StringF4/MinimalString/code.hpp",
+      "scenario": "nested-palindromes",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/MinimalString/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MinimalString/08-skewed",
+      "module": "MinimalString",
+      "header": "src/String/StringF4/MinimalString/code.hpp",
+      "scenario": "skewed",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/MinimalString/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MinimalString/09-odd-palindrome",
+      "module": "MinimalString",
+      "header": "src/String/StringF4/MinimalString/code.hpp",
+      "scenario": "odd-palindrome",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/MinimalString/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MinimalString/10-even-palindromes",
+      "module": "MinimalString",
+      "header": "src/String/StringF4/MinimalString/code.hpp",
+      "scenario": "even-palindromes",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/StringF4/MinimalString/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SuffixArray/01-empty",
+      "module": "SuffixArray",
+      "header": "src/String/AdvancedStrings/SuffixArray/code.hpp",
+      "scenario": "empty",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixArray/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SuffixArray/02-single",
+      "module": "SuffixArray",
+      "header": "src/String/AdvancedStrings/SuffixArray/code.hpp",
+      "scenario": "single",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixArray/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SuffixArray/03-overlap",
+      "module": "SuffixArray",
+      "header": "src/String/AdvancedStrings/SuffixArray/code.hpp",
+      "scenario": "overlap",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixArray/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SuffixArray/04-periodic-tail",
+      "module": "SuffixArray",
+      "header": "src/String/AdvancedStrings/SuffixArray/code.hpp",
+      "scenario": "periodic-tail",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixArray/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SuffixArray/05-many-clones",
+      "module": "SuffixArray",
+      "header": "src/String/AdvancedStrings/SuffixArray/code.hpp",
+      "scenario": "many-clones",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixArray/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SuffixArray/06-alphabet",
+      "module": "SuffixArray",
+      "header": "src/String/AdvancedStrings/SuffixArray/code.hpp",
+      "scenario": "alphabet",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixArray/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SuffixArray/07-nested-palindromes",
+      "module": "SuffixArray",
+      "header": "src/String/AdvancedStrings/SuffixArray/code.hpp",
+      "scenario": "nested-palindromes",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixArray/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SuffixArray/08-skewed",
+      "module": "SuffixArray",
+      "header": "src/String/AdvancedStrings/SuffixArray/code.hpp",
+      "scenario": "skewed",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixArray/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SuffixArray/09-odd-palindrome",
+      "module": "SuffixArray",
+      "header": "src/String/AdvancedStrings/SuffixArray/code.hpp",
+      "scenario": "odd-palindrome",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixArray/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SuffixArray/10-even-palindromes",
+      "module": "SuffixArray",
+      "header": "src/String/AdvancedStrings/SuffixArray/code.hpp",
+      "scenario": "even-palindromes",
+      "oracle": "Brute-force substrings / palindromes / rotations / suffix order and LCP",
+      "source": "tests/Correctness/String/AdvancedStrings/SuffixArray/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "AcAutomaton/01-corpus-01",
+      "module": "AcAutomaton",
+      "header": "src/String/AdvancedStrings/AcAutomaton/code.hpp",
+      "scenario": "corpus-01",
+      "oracle": "Naive overlapping pattern matching and suffix-prefix failure links; external count/weight aggregation",
+      "source": "tests/Correctness/String/AdvancedStrings/AcAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "AcAutomaton/02-corpus-02",
+      "module": "AcAutomaton",
+      "header": "src/String/AdvancedStrings/AcAutomaton/code.hpp",
+      "scenario": "corpus-02",
+      "oracle": "Naive overlapping pattern matching and suffix-prefix failure links; external count/weight aggregation",
+      "source": "tests/Correctness/String/AdvancedStrings/AcAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "AcAutomaton/03-corpus-03",
+      "module": "AcAutomaton",
+      "header": "src/String/AdvancedStrings/AcAutomaton/code.hpp",
+      "scenario": "corpus-03",
+      "oracle": "Naive overlapping pattern matching and suffix-prefix failure links; external count/weight aggregation",
+      "source": "tests/Correctness/String/AdvancedStrings/AcAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "AcAutomaton/04-corpus-04",
+      "module": "AcAutomaton",
+      "header": "src/String/AdvancedStrings/AcAutomaton/code.hpp",
+      "scenario": "corpus-04",
+      "oracle": "Naive overlapping pattern matching and suffix-prefix failure links; external count/weight aggregation",
+      "source": "tests/Correctness/String/AdvancedStrings/AcAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "AcAutomaton/05-corpus-05",
+      "module": "AcAutomaton",
+      "header": "src/String/AdvancedStrings/AcAutomaton/code.hpp",
+      "scenario": "corpus-05",
+      "oracle": "Naive overlapping pattern matching and suffix-prefix failure links; external count/weight aggregation",
+      "source": "tests/Correctness/String/AdvancedStrings/AcAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "AcAutomaton/06-corpus-06",
+      "module": "AcAutomaton",
+      "header": "src/String/AdvancedStrings/AcAutomaton/code.hpp",
+      "scenario": "corpus-06",
+      "oracle": "Naive overlapping pattern matching and suffix-prefix failure links; external count/weight aggregation",
+      "source": "tests/Correctness/String/AdvancedStrings/AcAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "AcAutomaton/07-corpus-07",
+      "module": "AcAutomaton",
+      "header": "src/String/AdvancedStrings/AcAutomaton/code.hpp",
+      "scenario": "corpus-07",
+      "oracle": "Naive overlapping pattern matching and suffix-prefix failure links; external count/weight aggregation",
+      "source": "tests/Correctness/String/AdvancedStrings/AcAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "AcAutomaton/08-corpus-08",
+      "module": "AcAutomaton",
+      "header": "src/String/AdvancedStrings/AcAutomaton/code.hpp",
+      "scenario": "corpus-08",
+      "oracle": "Naive overlapping pattern matching and suffix-prefix failure links; external count/weight aggregation",
+      "source": "tests/Correctness/String/AdvancedStrings/AcAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "AcAutomaton/09-corpus-09",
+      "module": "AcAutomaton",
+      "header": "src/String/AdvancedStrings/AcAutomaton/code.hpp",
+      "scenario": "corpus-09",
+      "oracle": "Naive overlapping pattern matching and suffix-prefix failure links; external count/weight aggregation",
+      "source": "tests/Correctness/String/AdvancedStrings/AcAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "AcAutomaton/10-corpus-10",
+      "module": "AcAutomaton",
+      "header": "src/String/AdvancedStrings/AcAutomaton/code.hpp",
+      "scenario": "corpus-10",
+      "oracle": "Naive overlapping pattern matching and suffix-prefix failure links; external count/weight aggregation",
+      "source": "tests/Correctness/String/AdvancedStrings/AcAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExSuffixAutomaton/01-corpus-01",
+      "module": "ExSuffixAutomaton",
+      "header": "src/String/AdvancedStrings/ExSuffixAutomaton/code.hpp",
+      "scenario": "corpus-01",
+      "oracle": "Enumerated per-source substring frequencies/unions/masks, reused-prefix callbacks and no cross-source matches",
+      "source": "tests/Correctness/String/AdvancedStrings/ExSuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExSuffixAutomaton/02-corpus-02",
+      "module": "ExSuffixAutomaton",
+      "header": "src/String/AdvancedStrings/ExSuffixAutomaton/code.hpp",
+      "scenario": "corpus-02",
+      "oracle": "Enumerated per-source substring frequencies/unions/masks, reused-prefix callbacks and no cross-source matches",
+      "source": "tests/Correctness/String/AdvancedStrings/ExSuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExSuffixAutomaton/03-corpus-03",
+      "module": "ExSuffixAutomaton",
+      "header": "src/String/AdvancedStrings/ExSuffixAutomaton/code.hpp",
+      "scenario": "corpus-03",
+      "oracle": "Enumerated per-source substring frequencies/unions/masks, reused-prefix callbacks and no cross-source matches",
+      "source": "tests/Correctness/String/AdvancedStrings/ExSuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExSuffixAutomaton/04-corpus-04",
+      "module": "ExSuffixAutomaton",
+      "header": "src/String/AdvancedStrings/ExSuffixAutomaton/code.hpp",
+      "scenario": "corpus-04",
+      "oracle": "Enumerated per-source substring frequencies/unions/masks, reused-prefix callbacks and no cross-source matches",
+      "source": "tests/Correctness/String/AdvancedStrings/ExSuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExSuffixAutomaton/05-corpus-05",
+      "module": "ExSuffixAutomaton",
+      "header": "src/String/AdvancedStrings/ExSuffixAutomaton/code.hpp",
+      "scenario": "corpus-05",
+      "oracle": "Enumerated per-source substring frequencies/unions/masks, reused-prefix callbacks and no cross-source matches",
+      "source": "tests/Correctness/String/AdvancedStrings/ExSuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExSuffixAutomaton/06-corpus-06",
+      "module": "ExSuffixAutomaton",
+      "header": "src/String/AdvancedStrings/ExSuffixAutomaton/code.hpp",
+      "scenario": "corpus-06",
+      "oracle": "Enumerated per-source substring frequencies/unions/masks, reused-prefix callbacks and no cross-source matches",
+      "source": "tests/Correctness/String/AdvancedStrings/ExSuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExSuffixAutomaton/07-corpus-07",
+      "module": "ExSuffixAutomaton",
+      "header": "src/String/AdvancedStrings/ExSuffixAutomaton/code.hpp",
+      "scenario": "corpus-07",
+      "oracle": "Enumerated per-source substring frequencies/unions/masks, reused-prefix callbacks and no cross-source matches",
+      "source": "tests/Correctness/String/AdvancedStrings/ExSuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExSuffixAutomaton/08-corpus-08",
+      "module": "ExSuffixAutomaton",
+      "header": "src/String/AdvancedStrings/ExSuffixAutomaton/code.hpp",
+      "scenario": "corpus-08",
+      "oracle": "Enumerated per-source substring frequencies/unions/masks, reused-prefix callbacks and no cross-source matches",
+      "source": "tests/Correctness/String/AdvancedStrings/ExSuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExSuffixAutomaton/09-corpus-09",
+      "module": "ExSuffixAutomaton",
+      "header": "src/String/AdvancedStrings/ExSuffixAutomaton/code.hpp",
+      "scenario": "corpus-09",
+      "oracle": "Enumerated per-source substring frequencies/unions/masks, reused-prefix callbacks and no cross-source matches",
+      "source": "tests/Correctness/String/AdvancedStrings/ExSuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExSuffixAutomaton/10-corpus-10",
+      "module": "ExSuffixAutomaton",
+      "header": "src/String/AdvancedStrings/ExSuffixAutomaton/code.hpp",
+      "scenario": "corpus-10",
+      "oracle": "Enumerated per-source substring frequencies/unions/masks, reused-prefix callbacks and no cross-source matches",
+      "source": "tests/Correctness/String/AdvancedStrings/ExSuffixAutomaton/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Kmp/01-empty",
+      "module": "Kmp",
+      "header": "src/String/StringF4/Kmp/code.hpp",
+      "scenario": "empty",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/Kmp/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Kmp/02-single",
+      "module": "Kmp",
+      "header": "src/String/StringF4/Kmp/code.hpp",
+      "scenario": "single",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/Kmp/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Kmp/03-overlap",
+      "module": "Kmp",
+      "header": "src/String/StringF4/Kmp/code.hpp",
+      "scenario": "overlap",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/Kmp/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Kmp/04-periodic-tail",
+      "module": "Kmp",
+      "header": "src/String/StringF4/Kmp/code.hpp",
+      "scenario": "periodic-tail",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/Kmp/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Kmp/05-many-clones",
+      "module": "Kmp",
+      "header": "src/String/StringF4/Kmp/code.hpp",
+      "scenario": "many-clones",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/Kmp/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Kmp/06-alphabet",
+      "module": "Kmp",
+      "header": "src/String/StringF4/Kmp/code.hpp",
+      "scenario": "alphabet",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/Kmp/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Kmp/07-nested-palindromes",
+      "module": "Kmp",
+      "header": "src/String/StringF4/Kmp/code.hpp",
+      "scenario": "nested-palindromes",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/Kmp/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Kmp/08-skewed",
+      "module": "Kmp",
+      "header": "src/String/StringF4/Kmp/code.hpp",
+      "scenario": "skewed",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/Kmp/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Kmp/09-odd-palindrome",
+      "module": "Kmp",
+      "header": "src/String/StringF4/Kmp/code.hpp",
+      "scenario": "odd-palindrome",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/Kmp/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Kmp/10-even-palindromes",
+      "module": "Kmp",
+      "header": "src/String/StringF4/Kmp/code.hpp",
+      "scenario": "even-palindromes",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/Kmp/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ZFunction/01-empty",
+      "module": "ZFunction",
+      "header": "src/String/StringF4/ZFunction/code.hpp",
+      "scenario": "empty",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/ZFunction/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ZFunction/02-single",
+      "module": "ZFunction",
+      "header": "src/String/StringF4/ZFunction/code.hpp",
+      "scenario": "single",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/ZFunction/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ZFunction/03-overlap",
+      "module": "ZFunction",
+      "header": "src/String/StringF4/ZFunction/code.hpp",
+      "scenario": "overlap",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/ZFunction/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ZFunction/04-periodic-tail",
+      "module": "ZFunction",
+      "header": "src/String/StringF4/ZFunction/code.hpp",
+      "scenario": "periodic-tail",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/ZFunction/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ZFunction/05-many-clones",
+      "module": "ZFunction",
+      "header": "src/String/StringF4/ZFunction/code.hpp",
+      "scenario": "many-clones",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/ZFunction/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ZFunction/06-alphabet",
+      "module": "ZFunction",
+      "header": "src/String/StringF4/ZFunction/code.hpp",
+      "scenario": "alphabet",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/ZFunction/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ZFunction/07-nested-palindromes",
+      "module": "ZFunction",
+      "header": "src/String/StringF4/ZFunction/code.hpp",
+      "scenario": "nested-palindromes",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/ZFunction/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ZFunction/08-skewed",
+      "module": "ZFunction",
+      "header": "src/String/StringF4/ZFunction/code.hpp",
+      "scenario": "skewed",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/ZFunction/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ZFunction/09-odd-palindrome",
+      "module": "ZFunction",
+      "header": "src/String/StringF4/ZFunction/code.hpp",
+      "scenario": "odd-palindrome",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/ZFunction/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ZFunction/10-even-palindromes",
+      "module": "ZFunction",
+      "header": "src/String/StringF4/ZFunction/code.hpp",
+      "scenario": "even-palindromes",
+      "oracle": "Enumerated prefix/suffix or direct LCP",
+      "source": "tests/Correctness/String/StringF4/ZFunction/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StringHash/01-empty",
+      "module": "StringHash",
+      "header": "src/String/StringF4/StringHash/code.hpp",
+      "scenario": "empty",
+      "oracle": "Direct polynomial recurrence on every interval",
+      "source": "tests/Correctness/String/StringF4/StringHash/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StringHash/02-single",
+      "module": "StringHash",
+      "header": "src/String/StringF4/StringHash/code.hpp",
+      "scenario": "single",
+      "oracle": "Direct polynomial recurrence on every interval",
+      "source": "tests/Correctness/String/StringF4/StringHash/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StringHash/03-overlap",
+      "module": "StringHash",
+      "header": "src/String/StringF4/StringHash/code.hpp",
+      "scenario": "overlap",
+      "oracle": "Direct polynomial recurrence on every interval",
+      "source": "tests/Correctness/String/StringF4/StringHash/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StringHash/04-periodic-tail",
+      "module": "StringHash",
+      "header": "src/String/StringF4/StringHash/code.hpp",
+      "scenario": "periodic-tail",
+      "oracle": "Direct polynomial recurrence on every interval",
+      "source": "tests/Correctness/String/StringF4/StringHash/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StringHash/05-many-clones",
+      "module": "StringHash",
+      "header": "src/String/StringF4/StringHash/code.hpp",
+      "scenario": "many-clones",
+      "oracle": "Direct polynomial recurrence on every interval",
+      "source": "tests/Correctness/String/StringF4/StringHash/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StringHash/06-alphabet",
+      "module": "StringHash",
+      "header": "src/String/StringF4/StringHash/code.hpp",
+      "scenario": "alphabet",
+      "oracle": "Direct polynomial recurrence on every interval",
+      "source": "tests/Correctness/String/StringF4/StringHash/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StringHash/07-nested-palindromes",
+      "module": "StringHash",
+      "header": "src/String/StringF4/StringHash/code.hpp",
+      "scenario": "nested-palindromes",
+      "oracle": "Direct polynomial recurrence on every interval",
+      "source": "tests/Correctness/String/StringF4/StringHash/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StringHash/08-skewed",
+      "module": "StringHash",
+      "header": "src/String/StringF4/StringHash/code.hpp",
+      "scenario": "skewed",
+      "oracle": "Direct polynomial recurrence on every interval",
+      "source": "tests/Correctness/String/StringF4/StringHash/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StringHash/09-odd-palindrome",
+      "module": "StringHash",
+      "header": "src/String/StringF4/StringHash/code.hpp",
+      "scenario": "odd-palindrome",
+      "oracle": "Direct polynomial recurrence on every interval",
+      "source": "tests/Correctness/String/StringF4/StringHash/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StringHash/10-even-palindromes",
+      "module": "StringHash",
+      "header": "src/String/StringF4/StringHash/code.hpp",
+      "scenario": "even-palindromes",
+      "oracle": "Direct polynomial recurrence on every interval",
+      "source": "tests/Correctness/String/StringF4/StringHash/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExGcd/01-both-zero",
+      "module": "ExGcd",
+      "header": "src/Math/MathPackage/ExGcd/code.hpp",
+      "scenario": "both-zero",
+      "oracle": "std::gcd and wide Bezout identity",
+      "source": "tests/Correctness/Math/MathPackage/ExGcd/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExGcd/02-zero-left",
+      "module": "ExGcd",
+      "header": "src/Math/MathPackage/ExGcd/code.hpp",
+      "scenario": "zero-left",
+      "oracle": "std::gcd and wide Bezout identity",
+      "source": "tests/Correctness/Math/MathPackage/ExGcd/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExGcd/03-zero-right",
+      "module": "ExGcd",
+      "header": "src/Math/MathPackage/ExGcd/code.hpp",
+      "scenario": "zero-right",
+      "oracle": "std::gcd and wide Bezout identity",
+      "source": "tests/Correctness/Math/MathPackage/ExGcd/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExGcd/04-equal",
+      "module": "ExGcd",
+      "header": "src/Math/MathPackage/ExGcd/code.hpp",
+      "scenario": "equal",
+      "oracle": "std::gcd and wide Bezout identity",
+      "source": "tests/Correctness/Math/MathPackage/ExGcd/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExGcd/05-coprime",
+      "module": "ExGcd",
+      "header": "src/Math/MathPackage/ExGcd/code.hpp",
+      "scenario": "coprime",
+      "oracle": "std::gcd and wide Bezout identity",
+      "source": "tests/Correctness/Math/MathPackage/ExGcd/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExGcd/06-divisible",
+      "module": "ExGcd",
+      "header": "src/Math/MathPackage/ExGcd/code.hpp",
+      "scenario": "divisible",
+      "oracle": "std::gcd and wide Bezout identity",
+      "source": "tests/Correctness/Math/MathPackage/ExGcd/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExGcd/07-fibonacci",
+      "module": "ExGcd",
+      "header": "src/Math/MathPackage/ExGcd/code.hpp",
+      "scenario": "fibonacci",
+      "oracle": "std::gcd and wide Bezout identity",
+      "source": "tests/Correctness/Math/MathPackage/ExGcd/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExGcd/08-swapped",
+      "module": "ExGcd",
+      "header": "src/Math/MathPackage/ExGcd/code.hpp",
+      "scenario": "swapped",
+      "oracle": "std::gcd and wide Bezout identity",
+      "source": "tests/Correctness/Math/MathPackage/ExGcd/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExGcd/09-near-limit",
+      "module": "ExGcd",
+      "header": "src/Math/MathPackage/ExGcd/code.hpp",
+      "scenario": "near-limit",
+      "oracle": "std::gcd and wide Bezout identity",
+      "source": "tests/Correctness/Math/MathPackage/ExGcd/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ExGcd/10-large-common-factor",
+      "module": "ExGcd",
+      "header": "src/Math/MathPackage/ExGcd/code.hpp",
+      "scenario": "large-common-factor",
+      "oracle": "std::gcd and wide Bezout identity",
+      "source": "tests/Correctness/Math/MathPackage/ExGcd/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Combinatorics/01-zero",
+      "module": "Combinatorics",
+      "header": "src/Math/MathPackage/Combinatorics/code.hpp",
+      "scenario": "zero",
+      "oracle": "Pascal recurrence",
+      "source": "tests/Correctness/Math/MathPackage/Combinatorics/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Combinatorics/02-one",
+      "module": "Combinatorics",
+      "header": "src/Math/MathPackage/Combinatorics/code.hpp",
+      "scenario": "one",
+      "oracle": "Pascal recurrence",
+      "source": "tests/Correctness/Math/MathPackage/Combinatorics/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Combinatorics/03-prime-boundary",
+      "module": "Combinatorics",
+      "header": "src/Math/MathPackage/Combinatorics/code.hpp",
+      "scenario": "prime-boundary",
+      "oracle": "Pascal recurrence",
+      "source": "tests/Correctness/Math/MathPackage/Combinatorics/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Combinatorics/04-wide-modulus",
+      "module": "Combinatorics",
+      "header": "src/Math/MathPackage/Combinatorics/code.hpp",
+      "scenario": "wide-modulus",
+      "oracle": "Pascal recurrence",
+      "source": "tests/Correctness/Math/MathPackage/Combinatorics/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Combinatorics/05-shared-grow",
+      "module": "Combinatorics",
+      "header": "src/Math/MathPackage/Combinatorics/code.hpp",
+      "scenario": "shared-grow",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/Combinatorics/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Combinatorics/06-symmetry",
+      "module": "Combinatorics",
+      "header": "src/Math/MathPackage/Combinatorics/code.hpp",
+      "scenario": "symmetry",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/Combinatorics/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Combinatorics/07-invalid-k",
+      "module": "Combinatorics",
+      "header": "src/Math/MathPackage/Combinatorics/code.hpp",
+      "scenario": "invalid-k",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/Combinatorics/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Combinatorics/08-dynamic-switch",
+      "module": "Combinatorics",
+      "header": "src/Math/MathPackage/Combinatorics/code.hpp",
+      "scenario": "dynamic-switch",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/Combinatorics/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Combinatorics/09-permutation",
+      "module": "Combinatorics",
+      "header": "src/Math/MathPackage/Combinatorics/code.hpp",
+      "scenario": "permutation",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/Combinatorics/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Combinatorics/10-grow-shrink",
+      "module": "Combinatorics",
+      "header": "src/Math/MathPackage/Combinatorics/code.hpp",
+      "scenario": "grow-shrink",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/Combinatorics/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ModuloInteger/01-signed-min",
+      "module": "ModuloInteger",
+      "header": "src/Math/MathPackage/ModuloInteger/code.hpp",
+      "scenario": "signed-min",
+      "oracle": "128-bit normalization",
+      "source": "tests/Correctness/Math/MathPackage/ModuloInteger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ModuloInteger/02-unsigned-max",
+      "module": "ModuloInteger",
+      "header": "src/Math/MathPackage/ModuloInteger/code.hpp",
+      "scenario": "unsigned-max",
+      "oracle": "128-bit normalization",
+      "source": "tests/Correctness/Math/MathPackage/ModuloInteger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ModuloInteger/03-zero-power",
+      "module": "ModuloInteger",
+      "header": "src/Math/MathPackage/ModuloInteger/code.hpp",
+      "scenario": "zero-power",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/ModuloInteger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ModuloInteger/04-negative-power",
+      "module": "ModuloInteger",
+      "header": "src/Math/MathPackage/ModuloInteger/code.hpp",
+      "scenario": "negative-power",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/ModuloInteger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ModuloInteger/05-wrap-add",
+      "module": "ModuloInteger",
+      "header": "src/Math/MathPackage/ModuloInteger/code.hpp",
+      "scenario": "wrap-add",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/ModuloInteger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ModuloInteger/06-wrap-subtract",
+      "module": "ModuloInteger",
+      "header": "src/Math/MathPackage/ModuloInteger/code.hpp",
+      "scenario": "wrap-subtract",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/ModuloInteger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ModuloInteger/07-division",
+      "module": "ModuloInteger",
+      "header": "src/Math/MathPackage/ModuloInteger/code.hpp",
+      "scenario": "division",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/ModuloInteger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ModuloInteger/08-wide-product",
+      "module": "ModuloInteger",
+      "header": "src/Math/MathPackage/ModuloInteger/code.hpp",
+      "scenario": "wide-product",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/ModuloInteger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ModuloInteger/09-quotient-correction",
+      "module": "ModuloInteger",
+      "header": "src/Math/MathPackage/ModuloInteger/code.hpp",
+      "scenario": "quotient-correction",
+      "oracle": "128-bit modular-product oracle",
+      "source": "tests/Correctness/Math/MathPackage/ModuloInteger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ModuloInteger/10-failed-stream",
+      "module": "ModuloInteger",
+      "header": "src/Math/MathPackage/ModuloInteger/code.hpp",
+      "scenario": "failed-stream",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/ModuloInteger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Sieve/01-unit",
+      "module": "Sieve",
+      "header": "src/Math/MathPackage/Sieve/code.hpp",
+      "scenario": "unit",
+      "oracle": "Trial division and all-divisor enumeration",
+      "source": "tests/Correctness/Math/MathPackage/Sieve/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Sieve/02-first-prime",
+      "module": "Sieve",
+      "header": "src/Math/MathPackage/Sieve/code.hpp",
+      "scenario": "first-prime",
+      "oracle": "Trial division and all-divisor enumeration",
+      "source": "tests/Correctness/Math/MathPackage/Sieve/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Sieve/03-square",
+      "module": "Sieve",
+      "header": "src/Math/MathPackage/Sieve/code.hpp",
+      "scenario": "square",
+      "oracle": "Trial division and all-divisor enumeration",
+      "source": "tests/Correctness/Math/MathPackage/Sieve/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Sieve/04-prime-power",
+      "module": "Sieve",
+      "header": "src/Math/MathPackage/Sieve/code.hpp",
+      "scenario": "prime-power",
+      "oracle": "Trial division and all-divisor enumeration",
+      "source": "tests/Correctness/Math/MathPackage/Sieve/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Sieve/05-many-factors",
+      "module": "Sieve",
+      "header": "src/Math/MathPackage/Sieve/code.hpp",
+      "scenario": "many-factors",
+      "oracle": "Trial division and all-divisor enumeration",
+      "source": "tests/Correctness/Math/MathPackage/Sieve/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Sieve/06-growth-prime",
+      "module": "Sieve",
+      "header": "src/Math/MathPackage/Sieve/code.hpp",
+      "scenario": "growth-prime",
+      "oracle": "Trial division and all-divisor enumeration",
+      "source": "tests/Correctness/Math/MathPackage/Sieve/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Sieve/07-capacity-crossing",
+      "module": "Sieve",
+      "header": "src/Math/MathPackage/Sieve/code.hpp",
+      "scenario": "capacity-crossing",
+      "oracle": "Trial division and all-divisor enumeration",
+      "source": "tests/Correctness/Math/MathPackage/Sieve/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Sieve/08-odd-composite",
+      "module": "Sieve",
+      "header": "src/Math/MathPackage/Sieve/code.hpp",
+      "scenario": "odd-composite",
+      "oracle": "Trial division and all-divisor enumeration",
+      "source": "tests/Correctness/Math/MathPackage/Sieve/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Sieve/09-semiprime",
+      "module": "Sieve",
+      "header": "src/Math/MathPackage/Sieve/code.hpp",
+      "scenario": "semiprime",
+      "oracle": "Trial division and all-divisor enumeration",
+      "source": "tests/Correctness/Math/MathPackage/Sieve/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Sieve/10-perfect-square",
+      "module": "Sieve",
+      "header": "src/Math/MathPackage/Sieve/code.hpp",
+      "scenario": "perfect-square",
+      "oracle": "Trial division and all-divisor enumeration",
+      "source": "tests/Correctness/Math/MathPackage/Sieve/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MillerRabin/01-zero",
+      "module": "MillerRabin",
+      "header": "src/Math/RandomNumberAlgorithm/MillerRabin/code.hpp",
+      "scenario": "zero",
+      "oracle": "Known factorization / independently trial-verified prime",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/MillerRabin/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MillerRabin/02-unit",
+      "module": "MillerRabin",
+      "header": "src/Math/RandomNumberAlgorithm/MillerRabin/code.hpp",
+      "scenario": "unit",
+      "oracle": "Known factorization / independently trial-verified prime",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/MillerRabin/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MillerRabin/03-two",
+      "module": "MillerRabin",
+      "header": "src/Math/RandomNumberAlgorithm/MillerRabin/code.hpp",
+      "scenario": "two",
+      "oracle": "Known factorization / independently trial-verified prime",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/MillerRabin/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MillerRabin/04-fermat-prime",
+      "module": "MillerRabin",
+      "header": "src/Math/RandomNumberAlgorithm/MillerRabin/code.hpp",
+      "scenario": "fermat-prime",
+      "oracle": "Known factorization / independently trial-verified prime",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/MillerRabin/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MillerRabin/05-carmichael-1",
+      "module": "MillerRabin",
+      "header": "src/Math/RandomNumberAlgorithm/MillerRabin/code.hpp",
+      "scenario": "carmichael-1",
+      "oracle": "Known factorization / independently trial-verified prime",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/MillerRabin/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MillerRabin/06-carmichael-2",
+      "module": "MillerRabin",
+      "header": "src/Math/RandomNumberAlgorithm/MillerRabin/code.hpp",
+      "scenario": "carmichael-2",
+      "oracle": "Known factorization / independently trial-verified prime",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/MillerRabin/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MillerRabin/07-strong-pseudoprime",
+      "module": "MillerRabin",
+      "header": "src/Math/RandomNumberAlgorithm/MillerRabin/code.hpp",
+      "scenario": "strong-pseudoprime",
+      "oracle": "Known factorization / independently trial-verified prime",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/MillerRabin/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MillerRabin/08-mersenne-prime",
+      "module": "MillerRabin",
+      "header": "src/Math/RandomNumberAlgorithm/MillerRabin/code.hpp",
+      "scenario": "mersenne-prime",
+      "oracle": "Known factorization / independently trial-verified prime",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/MillerRabin/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MillerRabin/09-unsigned-prime",
+      "module": "MillerRabin",
+      "header": "src/Math/RandomNumberAlgorithm/MillerRabin/code.hpp",
+      "scenario": "unsigned-prime",
+      "oracle": "Known factorization / independently trial-verified prime",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/MillerRabin/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MillerRabin/10-unsigned-max",
+      "module": "MillerRabin",
+      "header": "src/Math/RandomNumberAlgorithm/MillerRabin/code.hpp",
+      "scenario": "unsigned-max",
+      "oracle": "Known factorization / independently trial-verified prime",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/MillerRabin/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PollardRho/01-unit",
+      "module": "PollardRho",
+      "header": "src/Math/RandomNumberAlgorithm/PollardRho/code.hpp",
+      "scenario": "unit",
+      "oracle": "Known prime factors and multiplicities",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/PollardRho/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PollardRho/02-two",
+      "module": "PollardRho",
+      "header": "src/Math/RandomNumberAlgorithm/PollardRho/code.hpp",
+      "scenario": "two",
+      "oracle": "Known prime factors and multiplicities",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/PollardRho/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PollardRho/03-power2",
+      "module": "PollardRho",
+      "header": "src/Math/RandomNumberAlgorithm/PollardRho/code.hpp",
+      "scenario": "power2",
+      "oracle": "Known prime factors and multiplicities",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/PollardRho/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PollardRho/04-power3",
+      "module": "PollardRho",
+      "header": "src/Math/RandomNumberAlgorithm/PollardRho/code.hpp",
+      "scenario": "power3",
+      "oracle": "Known prime factors and multiplicities",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/PollardRho/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PollardRho/05-smooth",
+      "module": "PollardRho",
+      "header": "src/Math/RandomNumberAlgorithm/PollardRho/code.hpp",
+      "scenario": "smooth",
+      "oracle": "Known prime factors and multiplicities",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/PollardRho/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PollardRho/06-square",
+      "module": "PollardRho",
+      "header": "src/Math/RandomNumberAlgorithm/PollardRho/code.hpp",
+      "scenario": "square",
+      "oracle": "Known prime factors and multiplicities",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/PollardRho/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PollardRho/07-close-primes",
+      "module": "PollardRho",
+      "header": "src/Math/RandomNumberAlgorithm/PollardRho/code.hpp",
+      "scenario": "close-primes",
+      "oracle": "Known prime factors and multiplicities",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/PollardRho/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PollardRho/08-large-semiprime",
+      "module": "PollardRho",
+      "header": "src/Math/RandomNumberAlgorithm/PollardRho/code.hpp",
+      "scenario": "large-semiprime",
+      "oracle": "Known prime factors and multiplicities",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/PollardRho/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PollardRho/09-mersenne",
+      "module": "PollardRho",
+      "header": "src/Math/RandomNumberAlgorithm/PollardRho/code.hpp",
+      "scenario": "mersenne",
+      "oracle": "Known prime factors and multiplicities",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/PollardRho/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "PollardRho/10-max-u64",
+      "module": "PollardRho",
+      "header": "src/Math/RandomNumberAlgorithm/PollardRho/code.hpp",
+      "scenario": "max-u64",
+      "oracle": "Known prime factors and multiplicities",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/PollardRho/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RandomNumber/01-zero",
+      "module": "RandomNumber",
+      "header": "src/Math/RandomNumberAlgorithm/RandomNumber/code.hpp",
+      "scenario": "zero",
+      "oracle": "Independent std engine sequence with boundary seed",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/RandomNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RandomNumber/02-one",
+      "module": "RandomNumber",
+      "header": "src/Math/RandomNumberAlgorithm/RandomNumber/code.hpp",
+      "scenario": "one",
+      "oracle": "Independent std engine sequence with boundary seed",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/RandomNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RandomNumber/03-max",
+      "module": "RandomNumber",
+      "header": "src/Math/RandomNumberAlgorithm/RandomNumber/code.hpp",
+      "scenario": "max",
+      "oracle": "Independent std engine sequence with boundary seed",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/RandomNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RandomNumber/04-high-bit",
+      "module": "RandomNumber",
+      "header": "src/Math/RandomNumberAlgorithm/RandomNumber/code.hpp",
+      "scenario": "high-bit",
+      "oracle": "Independent std engine sequence with boundary seed",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/RandomNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RandomNumber/05-all-low-bits",
+      "module": "RandomNumber",
+      "header": "src/Math/RandomNumberAlgorithm/RandomNumber/code.hpp",
+      "scenario": "all-low-bits",
+      "oracle": "Independent std engine sequence with boundary seed",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/RandomNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RandomNumber/06-cross-word",
+      "module": "RandomNumber",
+      "header": "src/Math/RandomNumberAlgorithm/RandomNumber/code.hpp",
+      "scenario": "cross-word",
+      "oracle": "Independent std engine sequence with boundary seed",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/RandomNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RandomNumber/07-alternating",
+      "module": "RandomNumber",
+      "header": "src/Math/RandomNumberAlgorithm/RandomNumber/code.hpp",
+      "scenario": "alternating",
+      "oracle": "Independent std engine sequence with boundary seed",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/RandomNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RandomNumber/08-reverse-alternating",
+      "module": "RandomNumber",
+      "header": "src/Math/RandomNumberAlgorithm/RandomNumber/code.hpp",
+      "scenario": "reverse-alternating",
+      "oracle": "Independent std engine sequence with boundary seed",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/RandomNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RandomNumber/09-date",
+      "module": "RandomNumber",
+      "header": "src/Math/RandomNumberAlgorithm/RandomNumber/code.hpp",
+      "scenario": "date",
+      "oracle": "Independent std engine sequence with boundary seed",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/RandomNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RandomNumber/10-sparse",
+      "module": "RandomNumber",
+      "header": "src/Math/RandomNumberAlgorithm/RandomNumber/code.hpp",
+      "scenario": "sparse",
+      "oracle": "Independent std engine sequence with boundary seed",
+      "source": "tests/Correctness/Math/RandomNumberAlgorithm/RandomNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FloatPointNumber/01-epsilon-low",
+      "module": "FloatPointNumber",
+      "header": "src/Math/MathPackage/FloatPointNumber/code.hpp",
+      "scenario": "epsilon-low",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/FloatPointNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FloatPointNumber/02-signed-zero",
+      "module": "FloatPointNumber",
+      "header": "src/Math/MathPackage/FloatPointNumber/code.hpp",
+      "scenario": "signed-zero",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/FloatPointNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FloatPointNumber/03-negative-tie",
+      "module": "FloatPointNumber",
+      "header": "src/Math/MathPackage/FloatPointNumber/code.hpp",
+      "scenario": "negative-tie",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/FloatPointNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FloatPointNumber/04-positive-tie",
+      "module": "FloatPointNumber",
+      "header": "src/Math/MathPackage/FloatPointNumber/code.hpp",
+      "scenario": "positive-tie",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/FloatPointNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FloatPointNumber/05-epsilon-round",
+      "module": "FloatPointNumber",
+      "header": "src/Math/MathPackage/FloatPointNumber/code.hpp",
+      "scenario": "epsilon-round",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/FloatPointNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FloatPointNumber/06-large-integral",
+      "module": "FloatPointNumber",
+      "header": "src/Math/MathPackage/FloatPointNumber/code.hpp",
+      "scenario": "large-integral",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/FloatPointNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FloatPointNumber/07-comparison-order",
+      "module": "FloatPointNumber",
+      "header": "src/Math/MathPackage/FloatPointNumber/code.hpp",
+      "scenario": "comparison-order",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/FloatPointNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FloatPointNumber/08-std-sqrt",
+      "module": "FloatPointNumber",
+      "header": "src/Math/MathPackage/FloatPointNumber/code.hpp",
+      "scenario": "std-sqrt",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/FloatPointNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FloatPointNumber/09-std-hypot-angle",
+      "module": "FloatPointNumber",
+      "header": "src/Math/MathPackage/FloatPointNumber/code.hpp",
+      "scenario": "std-hypot-angle",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/FloatPointNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FloatPointNumber/10-precision-stream",
+      "module": "FloatPointNumber",
+      "header": "src/Math/MathPackage/FloatPointNumber/code.hpp",
+      "scenario": "precision-stream",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Math/MathPackage/FloatPointNumber/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GaussianElimination/01-empty",
+      "module": "GaussianElimination",
+      "header": "src/Math/LinearAlgebra/GaussianElimination/code.hpp",
+      "scenario": "empty",
+      "oracle": "Known determinant classification and independent A*inverse product",
+      "source": "tests/Correctness/Math/LinearAlgebra/GaussianElimination/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GaussianElimination/02-identity",
+      "module": "GaussianElimination",
+      "header": "src/Math/LinearAlgebra/GaussianElimination/code.hpp",
+      "scenario": "identity",
+      "oracle": "Known determinant classification and independent A*inverse product",
+      "source": "tests/Correctness/Math/LinearAlgebra/GaussianElimination/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GaussianElimination/03-swap-pivot",
+      "module": "GaussianElimination",
+      "header": "src/Math/LinearAlgebra/GaussianElimination/code.hpp",
+      "scenario": "swap-pivot",
+      "oracle": "Known determinant classification and independent A*inverse product",
+      "source": "tests/Correctness/Math/LinearAlgebra/GaussianElimination/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GaussianElimination/04-zero",
+      "module": "GaussianElimination",
+      "header": "src/Math/LinearAlgebra/GaussianElimination/code.hpp",
+      "scenario": "zero",
+      "oracle": "Known determinant classification and independent A*inverse product",
+      "source": "tests/Correctness/Math/LinearAlgebra/GaussianElimination/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GaussianElimination/05-dependent",
+      "module": "GaussianElimination",
+      "header": "src/Math/LinearAlgebra/GaussianElimination/code.hpp",
+      "scenario": "dependent",
+      "oracle": "Known determinant classification and independent A*inverse product",
+      "source": "tests/Correctness/Math/LinearAlgebra/GaussianElimination/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GaussianElimination/06-diagonal",
+      "module": "GaussianElimination",
+      "header": "src/Math/LinearAlgebra/GaussianElimination/code.hpp",
+      "scenario": "diagonal",
+      "oracle": "Known determinant classification and independent A*inverse product",
+      "source": "tests/Correctness/Math/LinearAlgebra/GaussianElimination/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GaussianElimination/07-signed",
+      "module": "GaussianElimination",
+      "header": "src/Math/LinearAlgebra/GaussianElimination/code.hpp",
+      "scenario": "signed",
+      "oracle": "Known determinant classification and independent A*inverse product",
+      "source": "tests/Correctness/Math/LinearAlgebra/GaussianElimination/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GaussianElimination/08-triangular",
+      "module": "GaussianElimination",
+      "header": "src/Math/LinearAlgebra/GaussianElimination/code.hpp",
+      "scenario": "triangular",
+      "oracle": "Known determinant classification and independent A*inverse product",
+      "source": "tests/Correctness/Math/LinearAlgebra/GaussianElimination/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GaussianElimination/09-fractional",
+      "module": "GaussianElimination",
+      "header": "src/Math/LinearAlgebra/GaussianElimination/code.hpp",
+      "scenario": "fractional",
+      "oracle": "Known determinant classification and independent A*inverse product",
+      "source": "tests/Correctness/Math/LinearAlgebra/GaussianElimination/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GaussianElimination/10-near-scale",
+      "module": "GaussianElimination",
+      "header": "src/Math/LinearAlgebra/GaussianElimination/code.hpp",
+      "scenario": "near-scale",
+      "oracle": "Known determinant classification and independent A*inverse product",
+      "source": "tests/Correctness/Math/LinearAlgebra/GaussianElimination/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "LinearBasis/01-xor-structure-01",
+      "module": "LinearBasis",
+      "header": "src/Math/LinearAlgebra/LinearBasis/code.hpp",
+      "scenario": "xor-structure-01",
+      "oracle": "Enumerated subset XOR set, ordering and membership",
+      "source": "tests/Correctness/Math/LinearAlgebra/LinearBasis/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "LinearBasis/02-xor-structure-02",
+      "module": "LinearBasis",
+      "header": "src/Math/LinearAlgebra/LinearBasis/code.hpp",
+      "scenario": "xor-structure-02",
+      "oracle": "Enumerated subset XOR set, ordering and membership",
+      "source": "tests/Correctness/Math/LinearAlgebra/LinearBasis/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "LinearBasis/03-xor-structure-03",
+      "module": "LinearBasis",
+      "header": "src/Math/LinearAlgebra/LinearBasis/code.hpp",
+      "scenario": "xor-structure-03",
+      "oracle": "Enumerated subset XOR set, ordering and membership",
+      "source": "tests/Correctness/Math/LinearAlgebra/LinearBasis/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "LinearBasis/04-xor-structure-04",
+      "module": "LinearBasis",
+      "header": "src/Math/LinearAlgebra/LinearBasis/code.hpp",
+      "scenario": "xor-structure-04",
+      "oracle": "Enumerated subset XOR set, ordering and membership",
+      "source": "tests/Correctness/Math/LinearAlgebra/LinearBasis/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "LinearBasis/05-xor-structure-05",
+      "module": "LinearBasis",
+      "header": "src/Math/LinearAlgebra/LinearBasis/code.hpp",
+      "scenario": "xor-structure-05",
+      "oracle": "Enumerated subset XOR set, ordering and membership",
+      "source": "tests/Correctness/Math/LinearAlgebra/LinearBasis/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "LinearBasis/06-xor-structure-06",
+      "module": "LinearBasis",
+      "header": "src/Math/LinearAlgebra/LinearBasis/code.hpp",
+      "scenario": "xor-structure-06",
+      "oracle": "Enumerated subset XOR set, ordering and membership",
+      "source": "tests/Correctness/Math/LinearAlgebra/LinearBasis/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "LinearBasis/07-xor-structure-07",
+      "module": "LinearBasis",
+      "header": "src/Math/LinearAlgebra/LinearBasis/code.hpp",
+      "scenario": "xor-structure-07",
+      "oracle": "Enumerated subset XOR set, ordering and membership",
+      "source": "tests/Correctness/Math/LinearAlgebra/LinearBasis/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "LinearBasis/08-xor-structure-08",
+      "module": "LinearBasis",
+      "header": "src/Math/LinearAlgebra/LinearBasis/code.hpp",
+      "scenario": "xor-structure-08",
+      "oracle": "Enumerated subset XOR set, ordering and membership",
+      "source": "tests/Correctness/Math/LinearAlgebra/LinearBasis/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "LinearBasis/09-xor-structure-09",
+      "module": "LinearBasis",
+      "header": "src/Math/LinearAlgebra/LinearBasis/code.hpp",
+      "scenario": "xor-structure-09",
+      "oracle": "Enumerated subset XOR set, ordering and membership",
+      "source": "tests/Correctness/Math/LinearAlgebra/LinearBasis/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "LinearBasis/10-xor-structure-10",
+      "module": "LinearBasis",
+      "header": "src/Math/LinearAlgebra/LinearBasis/code.hpp",
+      "scenario": "xor-structure-10",
+      "oracle": "Enumerated subset XOR set, ordering and membership",
+      "source": "tests/Correctness/Math/LinearAlgebra/LinearBasis/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MultipleBackpacks/01-empty",
+      "module": "MultipleBackpacks",
+      "header": "src/DynamicProgramming/MultipleBackpacks/code.hpp",
+      "scenario": "empty",
+      "oracle": "Independent bounded-item dynamic program",
+      "source": "tests/Correctness/DynamicProgramming/MultipleBackpacks/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MultipleBackpacks/02-zero-weight",
+      "module": "MultipleBackpacks",
+      "header": "src/DynamicProgramming/MultipleBackpacks/code.hpp",
+      "scenario": "zero-weight",
+      "oracle": "Independent bounded-item dynamic program",
+      "source": "tests/Correctness/DynamicProgramming/MultipleBackpacks/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MultipleBackpacks/03-zero-count",
+      "module": "MultipleBackpacks",
+      "header": "src/DynamicProgramming/MultipleBackpacks/code.hpp",
+      "scenario": "zero-count",
+      "oracle": "Independent bounded-item dynamic program",
+      "source": "tests/Correctness/DynamicProgramming/MultipleBackpacks/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MultipleBackpacks/04-negative-value",
+      "module": "MultipleBackpacks",
+      "header": "src/DynamicProgramming/MultipleBackpacks/code.hpp",
+      "scenario": "negative-value",
+      "oracle": "Independent bounded-item dynamic program",
+      "source": "tests/Correctness/DynamicProgramming/MultipleBackpacks/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MultipleBackpacks/05-heavy",
+      "module": "MultipleBackpacks",
+      "header": "src/DynamicProgramming/MultipleBackpacks/code.hpp",
+      "scenario": "heavy",
+      "oracle": "Independent bounded-item dynamic program",
+      "source": "tests/Correctness/DynamicProgramming/MultipleBackpacks/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MultipleBackpacks/06-exact-fit",
+      "module": "MultipleBackpacks",
+      "header": "src/DynamicProgramming/MultipleBackpacks/code.hpp",
+      "scenario": "exact-fit",
+      "oracle": "Independent bounded-item dynamic program",
+      "source": "tests/Correctness/DynamicProgramming/MultipleBackpacks/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MultipleBackpacks/07-residue",
+      "module": "MultipleBackpacks",
+      "header": "src/DynamicProgramming/MultipleBackpacks/code.hpp",
+      "scenario": "residue",
+      "oracle": "Independent bounded-item dynamic program",
+      "source": "tests/Correctness/DynamicProgramming/MultipleBackpacks/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MultipleBackpacks/08-mixed-zero",
+      "module": "MultipleBackpacks",
+      "header": "src/DynamicProgramming/MultipleBackpacks/code.hpp",
+      "scenario": "mixed-zero",
+      "oracle": "Independent bounded-item dynamic program",
+      "source": "tests/Correctness/DynamicProgramming/MultipleBackpacks/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MultipleBackpacks/09-duplicate-types",
+      "module": "MultipleBackpacks",
+      "header": "src/DynamicProgramming/MultipleBackpacks/code.hpp",
+      "scenario": "duplicate-types",
+      "oracle": "Independent bounded-item dynamic program",
+      "source": "tests/Correctness/DynamicProgramming/MultipleBackpacks/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MultipleBackpacks/10-count-truncation",
+      "module": "MultipleBackpacks",
+      "header": "src/DynamicProgramming/MultipleBackpacks/code.hpp",
+      "scenario": "count-truncation",
+      "oracle": "Independent bounded-item dynamic program",
+      "source": "tests/Correctness/DynamicProgramming/MultipleBackpacks/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StronglyConnectedComponent/01-empty",
+      "module": "StronglyConnectedComponent",
+      "header": "src/GraphTheory/Connectivity/StronglyConnectedComponent/code.hpp",
+      "scenario": "empty",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/Connectivity/StronglyConnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StronglyConnectedComponent/02-isolates",
+      "module": "StronglyConnectedComponent",
+      "header": "src/GraphTheory/Connectivity/StronglyConnectedComponent/code.hpp",
+      "scenario": "isolates",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/Connectivity/StronglyConnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StronglyConnectedComponent/03-self-loop",
+      "module": "StronglyConnectedComponent",
+      "header": "src/GraphTheory/Connectivity/StronglyConnectedComponent/code.hpp",
+      "scenario": "self-loop",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/Connectivity/StronglyConnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StronglyConnectedComponent/04-parallel",
+      "module": "StronglyConnectedComponent",
+      "header": "src/GraphTheory/Connectivity/StronglyConnectedComponent/code.hpp",
+      "scenario": "parallel",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/Connectivity/StronglyConnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StronglyConnectedComponent/05-cycle",
+      "module": "StronglyConnectedComponent",
+      "header": "src/GraphTheory/Connectivity/StronglyConnectedComponent/code.hpp",
+      "scenario": "cycle",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/Connectivity/StronglyConnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StronglyConnectedComponent/06-diamond",
+      "module": "StronglyConnectedComponent",
+      "header": "src/GraphTheory/Connectivity/StronglyConnectedComponent/code.hpp",
+      "scenario": "diamond",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/Connectivity/StronglyConnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StronglyConnectedComponent/07-two-components",
+      "module": "StronglyConnectedComponent",
+      "header": "src/GraphTheory/Connectivity/StronglyConnectedComponent/code.hpp",
+      "scenario": "two-components",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/Connectivity/StronglyConnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StronglyConnectedComponent/08-bridge-components",
+      "module": "StronglyConnectedComponent",
+      "header": "src/GraphTheory/Connectivity/StronglyConnectedComponent/code.hpp",
+      "scenario": "bridge-components",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/Connectivity/StronglyConnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StronglyConnectedComponent/09-incoming-cycle",
+      "module": "StronglyConnectedComponent",
+      "header": "src/GraphTheory/Connectivity/StronglyConnectedComponent/code.hpp",
+      "scenario": "incoming-cycle",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/Connectivity/StronglyConnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "StronglyConnectedComponent/10-cycle-tail",
+      "module": "StronglyConnectedComponent",
+      "header": "src/GraphTheory/Connectivity/StronglyConnectedComponent/code.hpp",
+      "scenario": "cycle-tail",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/Connectivity/StronglyConnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TopSort/01-empty",
+      "module": "TopSort",
+      "header": "src/GraphTheory/TopSort/code.hpp",
+      "scenario": "empty",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/TopSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TopSort/02-isolates",
+      "module": "TopSort",
+      "header": "src/GraphTheory/TopSort/code.hpp",
+      "scenario": "isolates",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/TopSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TopSort/03-self-loop",
+      "module": "TopSort",
+      "header": "src/GraphTheory/TopSort/code.hpp",
+      "scenario": "self-loop",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/TopSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TopSort/04-parallel",
+      "module": "TopSort",
+      "header": "src/GraphTheory/TopSort/code.hpp",
+      "scenario": "parallel",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/TopSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TopSort/05-cycle",
+      "module": "TopSort",
+      "header": "src/GraphTheory/TopSort/code.hpp",
+      "scenario": "cycle",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/TopSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TopSort/06-diamond",
+      "module": "TopSort",
+      "header": "src/GraphTheory/TopSort/code.hpp",
+      "scenario": "diamond",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/TopSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TopSort/07-two-components",
+      "module": "TopSort",
+      "header": "src/GraphTheory/TopSort/code.hpp",
+      "scenario": "two-components",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/TopSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TopSort/08-bridge-components",
+      "module": "TopSort",
+      "header": "src/GraphTheory/TopSort/code.hpp",
+      "scenario": "bridge-components",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/TopSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TopSort/09-incoming-cycle",
+      "module": "TopSort",
+      "header": "src/GraphTheory/TopSort/code.hpp",
+      "scenario": "incoming-cycle",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/TopSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TopSort/10-cycle-tail",
+      "module": "TopSort",
+      "header": "src/GraphTheory/TopSort/code.hpp",
+      "scenario": "cycle-tail",
+      "oracle": "Independent transitive closure, condensation / Kahn invariants",
+      "source": "tests/Correctness/GraphTheory/TopSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "EdgeBiconnectedComponent/01-empty",
+      "module": "EdgeBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/EdgeBiconnectedComponent/code.hpp",
+      "scenario": "empty",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/EdgeBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "EdgeBiconnectedComponent/02-isolates",
+      "module": "EdgeBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/EdgeBiconnectedComponent/code.hpp",
+      "scenario": "isolates",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/EdgeBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "EdgeBiconnectedComponent/03-self-loop",
+      "module": "EdgeBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/EdgeBiconnectedComponent/code.hpp",
+      "scenario": "self-loop",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/EdgeBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "EdgeBiconnectedComponent/04-single-edge",
+      "module": "EdgeBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/EdgeBiconnectedComponent/code.hpp",
+      "scenario": "single-edge",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/EdgeBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "EdgeBiconnectedComponent/05-parallel",
+      "module": "EdgeBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/EdgeBiconnectedComponent/code.hpp",
+      "scenario": "parallel",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/EdgeBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "EdgeBiconnectedComponent/06-triangle",
+      "module": "EdgeBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/EdgeBiconnectedComponent/code.hpp",
+      "scenario": "triangle",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/EdgeBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "EdgeBiconnectedComponent/07-star",
+      "module": "EdgeBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/EdgeBiconnectedComponent/code.hpp",
+      "scenario": "star",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/EdgeBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "EdgeBiconnectedComponent/08-two-cycles-cut",
+      "module": "EdgeBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/EdgeBiconnectedComponent/code.hpp",
+      "scenario": "two-cycles-cut",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/EdgeBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "EdgeBiconnectedComponent/09-disconnected",
+      "module": "EdgeBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/EdgeBiconnectedComponent/code.hpp",
+      "scenario": "disconnected",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/EdgeBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "EdgeBiconnectedComponent/10-parallel-tail",
+      "module": "EdgeBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/EdgeBiconnectedComponent/code.hpp",
+      "scenario": "parallel-tail",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/EdgeBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "VertexBiconnectedComponent/01-empty",
+      "module": "VertexBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/VertexBiconnectedComponent/code.hpp",
+      "scenario": "empty",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/VertexBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "VertexBiconnectedComponent/02-isolates",
+      "module": "VertexBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/VertexBiconnectedComponent/code.hpp",
+      "scenario": "isolates",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/VertexBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "VertexBiconnectedComponent/03-self-loop",
+      "module": "VertexBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/VertexBiconnectedComponent/code.hpp",
+      "scenario": "self-loop",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/VertexBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "VertexBiconnectedComponent/04-single-edge",
+      "module": "VertexBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/VertexBiconnectedComponent/code.hpp",
+      "scenario": "single-edge",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/VertexBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "VertexBiconnectedComponent/05-parallel",
+      "module": "VertexBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/VertexBiconnectedComponent/code.hpp",
+      "scenario": "parallel",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/VertexBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "VertexBiconnectedComponent/06-triangle",
+      "module": "VertexBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/VertexBiconnectedComponent/code.hpp",
+      "scenario": "triangle",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/VertexBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "VertexBiconnectedComponent/07-star",
+      "module": "VertexBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/VertexBiconnectedComponent/code.hpp",
+      "scenario": "star",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/VertexBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "VertexBiconnectedComponent/08-two-cycles-cut",
+      "module": "VertexBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/VertexBiconnectedComponent/code.hpp",
+      "scenario": "two-cycles-cut",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/VertexBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "VertexBiconnectedComponent/09-disconnected",
+      "module": "VertexBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/VertexBiconnectedComponent/code.hpp",
+      "scenario": "disconnected",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/VertexBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "VertexBiconnectedComponent/10-parallel-tail",
+      "module": "VertexBiconnectedComponent",
+      "header": "src/GraphTheory/Connectivity/VertexBiconnectedComponent/code.hpp",
+      "scenario": "parallel-tail",
+      "oracle": "Remove each edge/vertex and recompute connected components",
+      "source": "tests/Correctness/GraphTheory/Connectivity/VertexBiconnectedComponent/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RingTree/01-functional-01",
+      "module": "RingTree",
+      "header": "src/GraphTheory/RingTree/code.hpp",
+      "scenario": "functional-01",
+      "oracle": "Enumerated functional cycles and edge conservation",
+      "source": "tests/Correctness/GraphTheory/RingTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RingTree/02-functional-02",
+      "module": "RingTree",
+      "header": "src/GraphTheory/RingTree/code.hpp",
+      "scenario": "functional-02",
+      "oracle": "Enumerated functional cycles and edge conservation",
+      "source": "tests/Correctness/GraphTheory/RingTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RingTree/03-functional-03",
+      "module": "RingTree",
+      "header": "src/GraphTheory/RingTree/code.hpp",
+      "scenario": "functional-03",
+      "oracle": "Enumerated functional cycles and edge conservation",
+      "source": "tests/Correctness/GraphTheory/RingTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RingTree/04-functional-04",
+      "module": "RingTree",
+      "header": "src/GraphTheory/RingTree/code.hpp",
+      "scenario": "functional-04",
+      "oracle": "Enumerated functional cycles and edge conservation",
+      "source": "tests/Correctness/GraphTheory/RingTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RingTree/05-functional-05",
+      "module": "RingTree",
+      "header": "src/GraphTheory/RingTree/code.hpp",
+      "scenario": "functional-05",
+      "oracle": "Enumerated functional cycles and edge conservation",
+      "source": "tests/Correctness/GraphTheory/RingTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RingTree/06-functional-06",
+      "module": "RingTree",
+      "header": "src/GraphTheory/RingTree/code.hpp",
+      "scenario": "functional-06",
+      "oracle": "Enumerated functional cycles and edge conservation",
+      "source": "tests/Correctness/GraphTheory/RingTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RingTree/07-functional-07",
+      "module": "RingTree",
+      "header": "src/GraphTheory/RingTree/code.hpp",
+      "scenario": "functional-07",
+      "oracle": "Enumerated functional cycles and edge conservation",
+      "source": "tests/Correctness/GraphTheory/RingTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RingTree/08-functional-08",
+      "module": "RingTree",
+      "header": "src/GraphTheory/RingTree/code.hpp",
+      "scenario": "functional-08",
+      "oracle": "Enumerated functional cycles and edge conservation",
+      "source": "tests/Correctness/GraphTheory/RingTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RingTree/09-functional-09",
+      "module": "RingTree",
+      "header": "src/GraphTheory/RingTree/code.hpp",
+      "scenario": "functional-09",
+      "oracle": "Enumerated functional cycles and edge conservation",
+      "source": "tests/Correctness/GraphTheory/RingTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RingTree/10-functional-10",
+      "module": "RingTree",
+      "header": "src/GraphTheory/RingTree/code.hpp",
+      "scenario": "functional-10",
+      "oracle": "Enumerated functional cycles and edge conservation",
+      "source": "tests/Correctness/GraphTheory/RingTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CentroidDecomposition/01-empty",
+      "module": "CentroidDecomposition",
+      "header": "src/TreeTheory/CentroidDecomposition/code.hpp",
+      "scenario": "empty",
+      "oracle": "Remove each returned centroid and enumerate remaining component sizes",
+      "source": "tests/Correctness/TreeTheory/CentroidDecomposition/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CentroidDecomposition/02-single",
+      "module": "CentroidDecomposition",
+      "header": "src/TreeTheory/CentroidDecomposition/code.hpp",
+      "scenario": "single",
+      "oracle": "Remove each returned centroid and enumerate remaining component sizes",
+      "source": "tests/Correctness/TreeTheory/CentroidDecomposition/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CentroidDecomposition/03-edge",
+      "module": "CentroidDecomposition",
+      "header": "src/TreeTheory/CentroidDecomposition/code.hpp",
+      "scenario": "edge",
+      "oracle": "Remove each returned centroid and enumerate remaining component sizes",
+      "source": "tests/Correctness/TreeTheory/CentroidDecomposition/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CentroidDecomposition/04-chain",
+      "module": "CentroidDecomposition",
+      "header": "src/TreeTheory/CentroidDecomposition/code.hpp",
+      "scenario": "chain",
+      "oracle": "Remove each returned centroid and enumerate remaining component sizes",
+      "source": "tests/Correctness/TreeTheory/CentroidDecomposition/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CentroidDecomposition/05-star",
+      "module": "CentroidDecomposition",
+      "header": "src/TreeTheory/CentroidDecomposition/code.hpp",
+      "scenario": "star",
+      "oracle": "Remove each returned centroid and enumerate remaining component sizes",
+      "source": "tests/Correctness/TreeTheory/CentroidDecomposition/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CentroidDecomposition/06-balanced",
+      "module": "CentroidDecomposition",
+      "header": "src/TreeTheory/CentroidDecomposition/code.hpp",
+      "scenario": "balanced",
+      "oracle": "Remove each returned centroid and enumerate remaining component sizes",
+      "source": "tests/Correctness/TreeTheory/CentroidDecomposition/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CentroidDecomposition/07-unequal-branches",
+      "module": "CentroidDecomposition",
+      "header": "src/TreeTheory/CentroidDecomposition/code.hpp",
+      "scenario": "unequal-branches",
+      "oracle": "Remove each returned centroid and enumerate remaining component sizes",
+      "source": "tests/Correctness/TreeTheory/CentroidDecomposition/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CentroidDecomposition/08-reversed-neighbors",
+      "module": "CentroidDecomposition",
+      "header": "src/TreeTheory/CentroidDecomposition/code.hpp",
+      "scenario": "reversed-neighbors",
+      "oracle": "Remove each returned centroid and enumerate remaining component sizes",
+      "source": "tests/Correctness/TreeTheory/CentroidDecomposition/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CentroidDecomposition/09-broom",
+      "module": "CentroidDecomposition",
+      "header": "src/TreeTheory/CentroidDecomposition/code.hpp",
+      "scenario": "broom",
+      "oracle": "Remove each returned centroid and enumerate remaining component sizes",
+      "source": "tests/Correctness/TreeTheory/CentroidDecomposition/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CentroidDecomposition/10-two-branches",
+      "module": "CentroidDecomposition",
+      "header": "src/TreeTheory/CentroidDecomposition/code.hpp",
+      "scenario": "two-branches",
+      "oracle": "Remove each returned centroid and enumerate remaining component sizes",
+      "source": "tests/Correctness/TreeTheory/CentroidDecomposition/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Tree/01-empty",
+      "module": "Tree",
+      "header": "src/TreeTheory/Tree/code.hpp",
+      "scenario": "empty",
+      "oracle": "BFS parent/depth, naive LCA and pairwise LCA closure",
+      "source": "tests/Correctness/TreeTheory/Tree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Tree/02-single",
+      "module": "Tree",
+      "header": "src/TreeTheory/Tree/code.hpp",
+      "scenario": "single",
+      "oracle": "BFS parent/depth, naive LCA and pairwise LCA closure",
+      "source": "tests/Correctness/TreeTheory/Tree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Tree/03-edge",
+      "module": "Tree",
+      "header": "src/TreeTheory/Tree/code.hpp",
+      "scenario": "edge",
+      "oracle": "BFS parent/depth, naive LCA and pairwise LCA closure",
+      "source": "tests/Correctness/TreeTheory/Tree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Tree/04-chain",
+      "module": "Tree",
+      "header": "src/TreeTheory/Tree/code.hpp",
+      "scenario": "chain",
+      "oracle": "BFS parent/depth, naive LCA and pairwise LCA closure",
+      "source": "tests/Correctness/TreeTheory/Tree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Tree/05-star",
+      "module": "Tree",
+      "header": "src/TreeTheory/Tree/code.hpp",
+      "scenario": "star",
+      "oracle": "BFS parent/depth, naive LCA and pairwise LCA closure",
+      "source": "tests/Correctness/TreeTheory/Tree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Tree/06-balanced",
+      "module": "Tree",
+      "header": "src/TreeTheory/Tree/code.hpp",
+      "scenario": "balanced",
+      "oracle": "BFS parent/depth, naive LCA and pairwise LCA closure",
+      "source": "tests/Correctness/TreeTheory/Tree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Tree/07-unequal-branches",
+      "module": "Tree",
+      "header": "src/TreeTheory/Tree/code.hpp",
+      "scenario": "unequal-branches",
+      "oracle": "BFS parent/depth, naive LCA and pairwise LCA closure",
+      "source": "tests/Correctness/TreeTheory/Tree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Tree/08-reversed-neighbors",
+      "module": "Tree",
+      "header": "src/TreeTheory/Tree/code.hpp",
+      "scenario": "reversed-neighbors",
+      "oracle": "BFS parent/depth, naive LCA and pairwise LCA closure",
+      "source": "tests/Correctness/TreeTheory/Tree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Tree/09-broom",
+      "module": "Tree",
+      "header": "src/TreeTheory/Tree/code.hpp",
+      "scenario": "broom",
+      "oracle": "BFS parent/depth, naive LCA and pairwise LCA closure",
+      "source": "tests/Correctness/TreeTheory/Tree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Tree/10-two-branches",
+      "module": "Tree",
+      "header": "src/TreeTheory/Tree/code.hpp",
+      "scenario": "two-branches",
+      "oracle": "BFS parent/depth, naive LCA and pairwise LCA closure",
+      "source": "tests/Correctness/TreeTheory/Tree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Dijkstra/01-single",
+      "module": "Dijkstra",
+      "header": "src/GraphTheory/Dijkstra/code.hpp",
+      "scenario": "single",
+      "oracle": "Independent Floyd-Warshall including repeated cached source queries",
+      "source": "tests/Correctness/GraphTheory/Dijkstra/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Dijkstra/02-disconnected",
+      "module": "Dijkstra",
+      "header": "src/GraphTheory/Dijkstra/code.hpp",
+      "scenario": "disconnected",
+      "oracle": "Independent Floyd-Warshall including repeated cached source queries",
+      "source": "tests/Correctness/GraphTheory/Dijkstra/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Dijkstra/03-zero-cycle",
+      "module": "Dijkstra",
+      "header": "src/GraphTheory/Dijkstra/code.hpp",
+      "scenario": "zero-cycle",
+      "oracle": "Independent Floyd-Warshall including repeated cached source queries",
+      "source": "tests/Correctness/GraphTheory/Dijkstra/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Dijkstra/04-parallel",
+      "module": "Dijkstra",
+      "header": "src/GraphTheory/Dijkstra/code.hpp",
+      "scenario": "parallel",
+      "oracle": "Independent Floyd-Warshall including repeated cached source queries",
+      "source": "tests/Correctness/GraphTheory/Dijkstra/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Dijkstra/05-stale-heap",
+      "module": "Dijkstra",
+      "header": "src/GraphTheory/Dijkstra/code.hpp",
+      "scenario": "stale-heap",
+      "oracle": "Independent Floyd-Warshall including repeated cached source queries",
+      "source": "tests/Correctness/GraphTheory/Dijkstra/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Dijkstra/06-self-loop",
+      "module": "Dijkstra",
+      "header": "src/GraphTheory/Dijkstra/code.hpp",
+      "scenario": "self-loop",
+      "oracle": "Independent Floyd-Warshall including repeated cached source queries",
+      "source": "tests/Correctness/GraphTheory/Dijkstra/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Dijkstra/07-equal-paths",
+      "module": "Dijkstra",
+      "header": "src/GraphTheory/Dijkstra/code.hpp",
+      "scenario": "equal-paths",
+      "oracle": "Independent Floyd-Warshall including repeated cached source queries",
+      "source": "tests/Correctness/GraphTheory/Dijkstra/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Dijkstra/08-directed-cycle",
+      "module": "Dijkstra",
+      "header": "src/GraphTheory/Dijkstra/code.hpp",
+      "scenario": "directed-cycle",
+      "oracle": "Independent Floyd-Warshall including repeated cached source queries",
+      "source": "tests/Correctness/GraphTheory/Dijkstra/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Dijkstra/09-large-weights",
+      "module": "Dijkstra",
+      "header": "src/GraphTheory/Dijkstra/code.hpp",
+      "scenario": "large-weights",
+      "oracle": "Independent Floyd-Warshall including repeated cached source queries",
+      "source": "tests/Correctness/GraphTheory/Dijkstra/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Dijkstra/10-many-sources",
+      "module": "Dijkstra",
+      "header": "src/GraphTheory/Dijkstra/code.hpp",
+      "scenario": "many-sources",
+      "oracle": "Independent Floyd-Warshall including repeated cached source queries",
+      "source": "tests/Correctness/GraphTheory/Dijkstra/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TwoSat/01-empty",
+      "module": "TwoSat",
+      "header": "src/GraphTheory/Connectivity/TwoSat/code.hpp",
+      "scenario": "empty",
+      "oracle": "All 2^n truth assignments, repeated work and answer validation",
+      "source": "tests/Correctness/GraphTheory/Connectivity/TwoSat/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TwoSat/02-free",
+      "module": "TwoSat",
+      "header": "src/GraphTheory/Connectivity/TwoSat/code.hpp",
+      "scenario": "free",
+      "oracle": "All 2^n truth assignments, repeated work and answer validation",
+      "source": "tests/Correctness/GraphTheory/Connectivity/TwoSat/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TwoSat/03-force-true",
+      "module": "TwoSat",
+      "header": "src/GraphTheory/Connectivity/TwoSat/code.hpp",
+      "scenario": "force-true",
+      "oracle": "All 2^n truth assignments, repeated work and answer validation",
+      "source": "tests/Correctness/GraphTheory/Connectivity/TwoSat/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TwoSat/04-force-false",
+      "module": "TwoSat",
+      "header": "src/GraphTheory/Connectivity/TwoSat/code.hpp",
+      "scenario": "force-false",
+      "oracle": "All 2^n truth assignments, repeated work and answer validation",
+      "source": "tests/Correctness/GraphTheory/Connectivity/TwoSat/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TwoSat/05-contradiction",
+      "module": "TwoSat",
+      "header": "src/GraphTheory/Connectivity/TwoSat/code.hpp",
+      "scenario": "contradiction",
+      "oracle": "All 2^n truth assignments, repeated work and answer validation",
+      "source": "tests/Correctness/GraphTheory/Connectivity/TwoSat/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TwoSat/06-equivalence",
+      "module": "TwoSat",
+      "header": "src/GraphTheory/Connectivity/TwoSat/code.hpp",
+      "scenario": "equivalence",
+      "oracle": "All 2^n truth assignments, repeated work and answer validation",
+      "source": "tests/Correctness/GraphTheory/Connectivity/TwoSat/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TwoSat/07-opposition",
+      "module": "TwoSat",
+      "header": "src/GraphTheory/Connectivity/TwoSat/code.hpp",
+      "scenario": "opposition",
+      "oracle": "All 2^n truth assignments, repeated work and answer validation",
+      "source": "tests/Correctness/GraphTheory/Connectivity/TwoSat/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TwoSat/08-tautology",
+      "module": "TwoSat",
+      "header": "src/GraphTheory/Connectivity/TwoSat/code.hpp",
+      "scenario": "tautology",
+      "oracle": "All 2^n truth assignments, repeated work and answer validation",
+      "source": "tests/Correctness/GraphTheory/Connectivity/TwoSat/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TwoSat/09-implication-chain",
+      "module": "TwoSat",
+      "header": "src/GraphTheory/Connectivity/TwoSat/code.hpp",
+      "scenario": "implication-chain",
+      "oracle": "All 2^n truth assignments, repeated work and answer validation",
+      "source": "tests/Correctness/GraphTheory/Connectivity/TwoSat/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TwoSat/10-late-conflict",
+      "module": "TwoSat",
+      "header": "src/GraphTheory/Connectivity/TwoSat/code.hpp",
+      "scenario": "late-conflict",
+      "oracle": "All 2^n truth assignments, repeated work and answer validation",
+      "source": "tests/Correctness/GraphTheory/Connectivity/TwoSat/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MaxFlow/01-no-path",
+      "module": "MaxFlow",
+      "header": "src/GraphTheory/Flow/MaxFlow/code.hpp",
+      "scenario": "no-path",
+      "oracle": "Enumerated s-t cuts and split-flow conservation",
+      "source": "tests/Correctness/GraphTheory/Flow/MaxFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MaxFlow/02-zero-capacity",
+      "module": "MaxFlow",
+      "header": "src/GraphTheory/Flow/MaxFlow/code.hpp",
+      "scenario": "zero-capacity",
+      "oracle": "Enumerated s-t cuts and split-flow conservation",
+      "source": "tests/Correctness/GraphTheory/Flow/MaxFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MaxFlow/03-single",
+      "module": "MaxFlow",
+      "header": "src/GraphTheory/Flow/MaxFlow/code.hpp",
+      "scenario": "single",
+      "oracle": "Enumerated s-t cuts and split-flow conservation",
+      "source": "tests/Correctness/GraphTheory/Flow/MaxFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MaxFlow/04-parallel",
+      "module": "MaxFlow",
+      "header": "src/GraphTheory/Flow/MaxFlow/code.hpp",
+      "scenario": "parallel",
+      "oracle": "Enumerated s-t cuts and split-flow conservation",
+      "source": "tests/Correctness/GraphTheory/Flow/MaxFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MaxFlow/05-bottleneck",
+      "module": "MaxFlow",
+      "header": "src/GraphTheory/Flow/MaxFlow/code.hpp",
+      "scenario": "bottleneck",
+      "oracle": "Enumerated s-t cuts and split-flow conservation",
+      "source": "tests/Correctness/GraphTheory/Flow/MaxFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MaxFlow/06-self-loop",
+      "module": "MaxFlow",
+      "header": "src/GraphTheory/Flow/MaxFlow/code.hpp",
+      "scenario": "self-loop",
+      "oracle": "Enumerated s-t cuts and split-flow conservation",
+      "source": "tests/Correctness/GraphTheory/Flow/MaxFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MaxFlow/07-anti-parallel",
+      "module": "MaxFlow",
+      "header": "src/GraphTheory/Flow/MaxFlow/code.hpp",
+      "scenario": "anti-parallel",
+      "oracle": "Enumerated s-t cuts and split-flow conservation",
+      "source": "tests/Correctness/GraphTheory/Flow/MaxFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MaxFlow/08-diamond",
+      "module": "MaxFlow",
+      "header": "src/GraphTheory/Flow/MaxFlow/code.hpp",
+      "scenario": "diamond",
+      "oracle": "Enumerated s-t cuts and split-flow conservation",
+      "source": "tests/Correctness/GraphTheory/Flow/MaxFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MaxFlow/09-reroute",
+      "module": "MaxFlow",
+      "header": "src/GraphTheory/Flow/MaxFlow/code.hpp",
+      "scenario": "reroute",
+      "oracle": "Enumerated s-t cuts and split-flow conservation",
+      "source": "tests/Correctness/GraphTheory/Flow/MaxFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MaxFlow/10-wide-capacity",
+      "module": "MaxFlow",
+      "header": "src/GraphTheory/Flow/MaxFlow/code.hpp",
+      "scenario": "wide-capacity",
+      "oracle": "Enumerated s-t cuts and split-flow conservation",
+      "source": "tests/Correctness/GraphTheory/Flow/MaxFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CostFlow/01-empty",
+      "module": "CostFlow",
+      "header": "src/GraphTheory/Flow/CostFlow/code.hpp",
+      "scenario": "empty",
+      "oracle": "Exhaustive feasible integral flows and independent cost optimization in all three modes",
+      "source": "tests/Correctness/GraphTheory/Flow/CostFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CostFlow/02-zero-capacity",
+      "module": "CostFlow",
+      "header": "src/GraphTheory/Flow/CostFlow/code.hpp",
+      "scenario": "zero-capacity",
+      "oracle": "Exhaustive feasible integral flows and independent cost optimization in all three modes",
+      "source": "tests/Correctness/GraphTheory/Flow/CostFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CostFlow/03-single-negative",
+      "module": "CostFlow",
+      "header": "src/GraphTheory/Flow/CostFlow/code.hpp",
+      "scenario": "single-negative",
+      "oracle": "Exhaustive feasible integral flows and independent cost optimization in all three modes",
+      "source": "tests/Correctness/GraphTheory/Flow/CostFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CostFlow/04-positive-cost",
+      "module": "CostFlow",
+      "header": "src/GraphTheory/Flow/CostFlow/code.hpp",
+      "scenario": "positive-cost",
+      "oracle": "Exhaustive feasible integral flows and independent cost optimization in all three modes",
+      "source": "tests/Correctness/GraphTheory/Flow/CostFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CostFlow/05-zero-cost",
+      "module": "CostFlow",
+      "header": "src/GraphTheory/Flow/CostFlow/code.hpp",
+      "scenario": "zero-cost",
+      "oracle": "Exhaustive feasible integral flows and independent cost optimization in all three modes",
+      "source": "tests/Correctness/GraphTheory/Flow/CostFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CostFlow/06-parallel",
+      "module": "CostFlow",
+      "header": "src/GraphTheory/Flow/CostFlow/code.hpp",
+      "scenario": "parallel",
+      "oracle": "Exhaustive feasible integral flows and independent cost optimization in all three modes",
+      "source": "tests/Correctness/GraphTheory/Flow/CostFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CostFlow/07-negative-dag",
+      "module": "CostFlow",
+      "header": "src/GraphTheory/Flow/CostFlow/code.hpp",
+      "scenario": "negative-dag",
+      "oracle": "Exhaustive feasible integral flows and independent cost optimization in all three modes",
+      "source": "tests/Correctness/GraphTheory/Flow/CostFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CostFlow/08-two-paths",
+      "module": "CostFlow",
+      "header": "src/GraphTheory/Flow/CostFlow/code.hpp",
+      "scenario": "two-paths",
+      "oracle": "Exhaustive feasible integral flows and independent cost optimization in all three modes",
+      "source": "tests/Correctness/GraphTheory/Flow/CostFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CostFlow/09-zero-self-loop",
+      "module": "CostFlow",
+      "header": "src/GraphTheory/Flow/CostFlow/code.hpp",
+      "scenario": "zero-self-loop",
+      "oracle": "Exhaustive feasible integral flows and independent cost optimization in all three modes",
+      "source": "tests/Correctness/GraphTheory/Flow/CostFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CostFlow/10-reroute",
+      "module": "CostFlow",
+      "header": "src/GraphTheory/Flow/CostFlow/code.hpp",
+      "scenario": "reroute",
+      "oracle": "Exhaustive feasible integral flows and independent cost optimization in all three modes",
+      "source": "tests/Correctness/GraphTheory/Flow/CostFlow/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GridUtil/01-zero-rows",
+      "module": "GridUtil",
+      "header": "src/GraphTheory/GridUtil/code.hpp",
+      "scenario": "zero-rows",
+      "oracle": "Explicit coordinate bounds and left/right/up/down neighbor list",
+      "source": "tests/Correctness/GraphTheory/GridUtil/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GridUtil/02-zero-columns",
+      "module": "GridUtil",
+      "header": "src/GraphTheory/GridUtil/code.hpp",
+      "scenario": "zero-columns",
+      "oracle": "Explicit coordinate bounds and left/right/up/down neighbor list",
+      "source": "tests/Correctness/GraphTheory/GridUtil/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GridUtil/03-one-cell",
+      "module": "GridUtil",
+      "header": "src/GraphTheory/GridUtil/code.hpp",
+      "scenario": "one-cell",
+      "oracle": "Explicit coordinate bounds and left/right/up/down neighbor list",
+      "source": "tests/Correctness/GraphTheory/GridUtil/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GridUtil/04-one-row",
+      "module": "GridUtil",
+      "header": "src/GraphTheory/GridUtil/code.hpp",
+      "scenario": "one-row",
+      "oracle": "Explicit coordinate bounds and left/right/up/down neighbor list",
+      "source": "tests/Correctness/GraphTheory/GridUtil/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GridUtil/05-one-column",
+      "module": "GridUtil",
+      "header": "src/GraphTheory/GridUtil/code.hpp",
+      "scenario": "one-column",
+      "oracle": "Explicit coordinate bounds and left/right/up/down neighbor list",
+      "source": "tests/Correctness/GraphTheory/GridUtil/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GridUtil/06-two-by-two",
+      "module": "GridUtil",
+      "header": "src/GraphTheory/GridUtil/code.hpp",
+      "scenario": "two-by-two",
+      "oracle": "Explicit coordinate bounds and left/right/up/down neighbor list",
+      "source": "tests/Correctness/GraphTheory/GridUtil/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GridUtil/07-wide",
+      "module": "GridUtil",
+      "header": "src/GraphTheory/GridUtil/code.hpp",
+      "scenario": "wide",
+      "oracle": "Explicit coordinate bounds and left/right/up/down neighbor list",
+      "source": "tests/Correctness/GraphTheory/GridUtil/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GridUtil/08-tall",
+      "module": "GridUtil",
+      "header": "src/GraphTheory/GridUtil/code.hpp",
+      "scenario": "tall",
+      "oracle": "Explicit coordinate bounds and left/right/up/down neighbor list",
+      "source": "tests/Correctness/GraphTheory/GridUtil/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GridUtil/09-square",
+      "module": "GridUtil",
+      "header": "src/GraphTheory/GridUtil/code.hpp",
+      "scenario": "square",
+      "oracle": "Explicit coordinate bounds and left/right/up/down neighbor list",
+      "source": "tests/Correctness/GraphTheory/GridUtil/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "GridUtil/10-non-square",
+      "module": "GridUtil",
+      "header": "src/GraphTheory/GridUtil/code.hpp",
+      "scenario": "non-square",
+      "oracle": "Explicit coordinate bounds and left/right/up/down neighbor list",
+      "source": "tests/Correctness/GraphTheory/GridUtil/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastFourierTransform/01-empty-both",
+      "module": "FastFourierTransform",
+      "header": "src/Math/Polynomial/FastFourierTransform/code.hpp",
+      "scenario": "empty-both",
+      "oracle": "Naive convolution",
+      "source": "tests/Correctness/Math/Polynomial/FastFourierTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastFourierTransform/02-empty-right",
+      "module": "FastFourierTransform",
+      "header": "src/Math/Polynomial/FastFourierTransform/code.hpp",
+      "scenario": "empty-right",
+      "oracle": "Naive convolution",
+      "source": "tests/Correctness/Math/Polynomial/FastFourierTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastFourierTransform/03-scalar",
+      "module": "FastFourierTransform",
+      "header": "src/Math/Polynomial/FastFourierTransform/code.hpp",
+      "scenario": "scalar",
+      "oracle": "Naive convolution",
+      "source": "tests/Correctness/Math/Polynomial/FastFourierTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastFourierTransform/04-trailing-zero",
+      "module": "FastFourierTransform",
+      "header": "src/Math/Polynomial/FastFourierTransform/code.hpp",
+      "scenario": "trailing-zero",
+      "oracle": "Naive convolution",
+      "source": "tests/Correctness/Math/Polynomial/FastFourierTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastFourierTransform/05-negative-cancellation",
+      "module": "FastFourierTransform",
+      "header": "src/Math/Polynomial/FastFourierTransform/code.hpp",
+      "scenario": "negative-cancellation",
+      "oracle": "Naive convolution",
+      "source": "tests/Correctness/Math/Polynomial/FastFourierTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastFourierTransform/06-small-side-fallback",
+      "module": "FastFourierTransform",
+      "header": "src/Math/Polynomial/FastFourierTransform/code.hpp",
+      "scenario": "small-side-fallback",
+      "oracle": "Naive convolution",
+      "source": "tests/Correctness/Math/Polynomial/FastFourierTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastFourierTransform/07-exact-threshold",
+      "module": "FastFourierTransform",
+      "header": "src/Math/Polynomial/FastFourierTransform/code.hpp",
+      "scenario": "exact-threshold",
+      "oracle": "Naive convolution",
+      "source": "tests/Correctness/Math/Polynomial/FastFourierTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastFourierTransform/08-power-boundary",
+      "module": "FastFourierTransform",
+      "header": "src/Math/Polynomial/FastFourierTransform/code.hpp",
+      "scenario": "power-boundary",
+      "oracle": "Naive convolution",
+      "source": "tests/Correctness/Math/Polynomial/FastFourierTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastFourierTransform/09-impulse",
+      "module": "FastFourierTransform",
+      "header": "src/Math/Polynomial/FastFourierTransform/code.hpp",
+      "scenario": "impulse",
+      "oracle": "Naive convolution",
+      "source": "tests/Correctness/Math/Polynomial/FastFourierTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastFourierTransform/10-cache-resize",
+      "module": "FastFourierTransform",
+      "header": "src/Math/Polynomial/FastFourierTransform/code.hpp",
+      "scenario": "cache-resize",
+      "oracle": "Naive convolution after grow/shrink",
+      "source": "tests/Correctness/Math/Polynomial/FastFourierTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "NumberTheoreticTransform/01-empty-both",
+      "module": "NumberTheoreticTransform",
+      "header": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp",
+      "scenario": "empty-both",
+      "oracle": "Naive convolution",
+      "source": "tests/Correctness/Math/Polynomial/NumberTheoreticTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "NumberTheoreticTransform/02-empty-right",
+      "module": "NumberTheoreticTransform",
+      "header": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp",
+      "scenario": "empty-right",
+      "oracle": "Naive convolution",
+      "source": "tests/Correctness/Math/Polynomial/NumberTheoreticTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "NumberTheoreticTransform/03-scalar",
+      "module": "NumberTheoreticTransform",
+      "header": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp",
+      "scenario": "scalar",
+      "oracle": "Naive convolution",
+      "source": "tests/Correctness/Math/Polynomial/NumberTheoreticTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "NumberTheoreticTransform/04-trailing-zero",
+      "module": "NumberTheoreticTransform",
+      "header": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp",
+      "scenario": "trailing-zero",
+      "oracle": "Naive convolution",
+      "source": "tests/Correctness/Math/Polynomial/NumberTheoreticTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "NumberTheoreticTransform/05-negative-cancellation",
+      "module": "NumberTheoreticTransform",
+      "header": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp",
+      "scenario": "negative-cancellation",
+      "oracle": "Naive convolution",
+      "source": "tests/Correctness/Math/Polynomial/NumberTheoreticTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "NumberTheoreticTransform/06-small-side-fallback",
+      "module": "NumberTheoreticTransform",
+      "header": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp",
+      "scenario": "small-side-fallback",
+      "oracle": "Naive convolution",
+      "source": "tests/Correctness/Math/Polynomial/NumberTheoreticTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "NumberTheoreticTransform/07-exact-threshold",
+      "module": "NumberTheoreticTransform",
+      "header": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp",
+      "scenario": "exact-threshold",
+      "oracle": "Naive convolution",
+      "source": "tests/Correctness/Math/Polynomial/NumberTheoreticTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "NumberTheoreticTransform/08-power-boundary",
+      "module": "NumberTheoreticTransform",
+      "header": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp",
+      "scenario": "power-boundary",
+      "oracle": "Naive convolution",
+      "source": "tests/Correctness/Math/Polynomial/NumberTheoreticTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "NumberTheoreticTransform/09-impulse",
+      "module": "NumberTheoreticTransform",
+      "header": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp",
+      "scenario": "impulse",
+      "oracle": "Naive convolution",
+      "source": "tests/Correctness/Math/Polynomial/NumberTheoreticTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "NumberTheoreticTransform/10-cache-resize",
+      "module": "NumberTheoreticTransform",
+      "header": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp",
+      "scenario": "cache-resize",
+      "oracle": "Naive convolution after grow/shrink",
+      "source": "tests/Correctness/Math/Polynomial/NumberTheoreticTransform/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CountingSortOrder/01-order-00",
+      "module": "CountingSortOrder",
+      "header": "src/Sorting/CountingSortOrder/code.hpp",
+      "scenario": "order-00",
+      "oracle": "std::stable_sort original indices",
+      "source": "tests/Correctness/Sorting/CountingSortOrder/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CountingSortOrder/02-order-01",
+      "module": "CountingSortOrder",
+      "header": "src/Sorting/CountingSortOrder/code.hpp",
+      "scenario": "order-01",
+      "oracle": "std::stable_sort original indices",
+      "source": "tests/Correctness/Sorting/CountingSortOrder/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CountingSortOrder/03-order-02",
+      "module": "CountingSortOrder",
+      "header": "src/Sorting/CountingSortOrder/code.hpp",
+      "scenario": "order-02",
+      "oracle": "std::stable_sort original indices",
+      "source": "tests/Correctness/Sorting/CountingSortOrder/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CountingSortOrder/04-order-03",
+      "module": "CountingSortOrder",
+      "header": "src/Sorting/CountingSortOrder/code.hpp",
+      "scenario": "order-03",
+      "oracle": "std::stable_sort original indices",
+      "source": "tests/Correctness/Sorting/CountingSortOrder/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CountingSortOrder/05-order-04",
+      "module": "CountingSortOrder",
+      "header": "src/Sorting/CountingSortOrder/code.hpp",
+      "scenario": "order-04",
+      "oracle": "std::stable_sort original indices",
+      "source": "tests/Correctness/Sorting/CountingSortOrder/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CountingSortOrder/06-order-05",
+      "module": "CountingSortOrder",
+      "header": "src/Sorting/CountingSortOrder/code.hpp",
+      "scenario": "order-05",
+      "oracle": "std::stable_sort original indices",
+      "source": "tests/Correctness/Sorting/CountingSortOrder/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CountingSortOrder/07-order-06",
+      "module": "CountingSortOrder",
+      "header": "src/Sorting/CountingSortOrder/code.hpp",
+      "scenario": "order-06",
+      "oracle": "std::stable_sort original indices",
+      "source": "tests/Correctness/Sorting/CountingSortOrder/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CountingSortOrder/08-order-07",
+      "module": "CountingSortOrder",
+      "header": "src/Sorting/CountingSortOrder/code.hpp",
+      "scenario": "order-07",
+      "oracle": "std::stable_sort original indices",
+      "source": "tests/Correctness/Sorting/CountingSortOrder/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CountingSortOrder/09-order-08",
+      "module": "CountingSortOrder",
+      "header": "src/Sorting/CountingSortOrder/code.hpp",
+      "scenario": "order-08",
+      "oracle": "std::stable_sort original indices",
+      "source": "tests/Correctness/Sorting/CountingSortOrder/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "CountingSortOrder/10-order-09",
+      "module": "CountingSortOrder",
+      "header": "src/Sorting/CountingSortOrder/code.hpp",
+      "scenario": "order-09",
+      "oracle": "std::stable_sort original indices",
+      "source": "tests/Correctness/Sorting/CountingSortOrder/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Discreter/01-rank-00",
+      "module": "Discreter",
+      "header": "src/Sorting/Discreter/code.hpp",
+      "scenario": "rank-00",
+      "oracle": "Sorted unique basis and linear rank count",
+      "source": "tests/Correctness/Sorting/Discreter/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Discreter/02-rank-01",
+      "module": "Discreter",
+      "header": "src/Sorting/Discreter/code.hpp",
+      "scenario": "rank-01",
+      "oracle": "Sorted unique basis and linear rank count",
+      "source": "tests/Correctness/Sorting/Discreter/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Discreter/03-rank-02",
+      "module": "Discreter",
+      "header": "src/Sorting/Discreter/code.hpp",
+      "scenario": "rank-02",
+      "oracle": "Sorted unique basis and linear rank count",
+      "source": "tests/Correctness/Sorting/Discreter/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Discreter/04-rank-03",
+      "module": "Discreter",
+      "header": "src/Sorting/Discreter/code.hpp",
+      "scenario": "rank-03",
+      "oracle": "Sorted unique basis and linear rank count",
+      "source": "tests/Correctness/Sorting/Discreter/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Discreter/05-rank-04",
+      "module": "Discreter",
+      "header": "src/Sorting/Discreter/code.hpp",
+      "scenario": "rank-04",
+      "oracle": "Sorted unique basis and linear rank count",
+      "source": "tests/Correctness/Sorting/Discreter/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Discreter/06-rank-05",
+      "module": "Discreter",
+      "header": "src/Sorting/Discreter/code.hpp",
+      "scenario": "rank-05",
+      "oracle": "Sorted unique basis and linear rank count",
+      "source": "tests/Correctness/Sorting/Discreter/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Discreter/07-rank-06",
+      "module": "Discreter",
+      "header": "src/Sorting/Discreter/code.hpp",
+      "scenario": "rank-06",
+      "oracle": "Sorted unique basis and linear rank count",
+      "source": "tests/Correctness/Sorting/Discreter/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Discreter/08-rank-07",
+      "module": "Discreter",
+      "header": "src/Sorting/Discreter/code.hpp",
+      "scenario": "rank-07",
+      "oracle": "Sorted unique basis and linear rank count",
+      "source": "tests/Correctness/Sorting/Discreter/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Discreter/09-rank-08",
+      "module": "Discreter",
+      "header": "src/Sorting/Discreter/code.hpp",
+      "scenario": "rank-08",
+      "oracle": "Sorted unique basis and linear rank count",
+      "source": "tests/Correctness/Sorting/Discreter/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Discreter/10-rank-09",
+      "module": "Discreter",
+      "header": "src/Sorting/Discreter/code.hpp",
+      "scenario": "rank-09",
+      "oracle": "Sorted unique basis and linear rank count",
+      "source": "tests/Correctness/Sorting/Discreter/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MoSort/01-ranges-00",
+      "module": "MoSort",
+      "header": "src/Sorting/MoSort/code.hpp",
+      "scenario": "ranges-00",
+      "oracle": "Naive half-open sum and ordering/permutation invariants",
+      "source": "tests/Correctness/Sorting/MoSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MoSort/02-ranges-01",
+      "module": "MoSort",
+      "header": "src/Sorting/MoSort/code.hpp",
+      "scenario": "ranges-01",
+      "oracle": "Naive half-open sum and ordering/permutation invariants",
+      "source": "tests/Correctness/Sorting/MoSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MoSort/03-ranges-02",
+      "module": "MoSort",
+      "header": "src/Sorting/MoSort/code.hpp",
+      "scenario": "ranges-02",
+      "oracle": "Naive half-open sum and ordering/permutation invariants",
+      "source": "tests/Correctness/Sorting/MoSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MoSort/04-ranges-03",
+      "module": "MoSort",
+      "header": "src/Sorting/MoSort/code.hpp",
+      "scenario": "ranges-03",
+      "oracle": "Naive half-open sum and ordering/permutation invariants",
+      "source": "tests/Correctness/Sorting/MoSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MoSort/05-ranges-04",
+      "module": "MoSort",
+      "header": "src/Sorting/MoSort/code.hpp",
+      "scenario": "ranges-04",
+      "oracle": "Naive half-open sum and ordering/permutation invariants",
+      "source": "tests/Correctness/Sorting/MoSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MoSort/06-ranges-05",
+      "module": "MoSort",
+      "header": "src/Sorting/MoSort/code.hpp",
+      "scenario": "ranges-05",
+      "oracle": "Naive half-open sum and ordering/permutation invariants",
+      "source": "tests/Correctness/Sorting/MoSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MoSort/07-ranges-06",
+      "module": "MoSort",
+      "header": "src/Sorting/MoSort/code.hpp",
+      "scenario": "ranges-06",
+      "oracle": "Naive half-open sum and ordering/permutation invariants",
+      "source": "tests/Correctness/Sorting/MoSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MoSort/08-ranges-07",
+      "module": "MoSort",
+      "header": "src/Sorting/MoSort/code.hpp",
+      "scenario": "ranges-07",
+      "oracle": "Naive half-open sum and ordering/permutation invariants",
+      "source": "tests/Correctness/Sorting/MoSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MoSort/09-ranges-08",
+      "module": "MoSort",
+      "header": "src/Sorting/MoSort/code.hpp",
+      "scenario": "ranges-08",
+      "oracle": "Naive half-open sum and ordering/permutation invariants",
+      "source": "tests/Correctness/Sorting/MoSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "MoSort/10-ranges-09",
+      "module": "MoSort",
+      "header": "src/Sorting/MoSort/code.hpp",
+      "scenario": "ranges-09",
+      "oracle": "Naive half-open sum and ordering/permutation invariants",
+      "source": "tests/Correctness/Sorting/MoSort/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DisjointSetUnion/01-partition-00",
+      "module": "DisjointSetUnion",
+      "header": "src/DataStructures/BaseDataStructures/DisjointSetUnion/code.hpp",
+      "scenario": "partition-00",
+      "oracle": "Naive relabel partition and component sizes",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DisjointSetUnion/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DisjointSetUnion/02-partition-01",
+      "module": "DisjointSetUnion",
+      "header": "src/DataStructures/BaseDataStructures/DisjointSetUnion/code.hpp",
+      "scenario": "partition-01",
+      "oracle": "Naive relabel partition and component sizes",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DisjointSetUnion/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DisjointSetUnion/03-partition-02",
+      "module": "DisjointSetUnion",
+      "header": "src/DataStructures/BaseDataStructures/DisjointSetUnion/code.hpp",
+      "scenario": "partition-02",
+      "oracle": "Naive relabel partition and component sizes",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DisjointSetUnion/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DisjointSetUnion/04-partition-03",
+      "module": "DisjointSetUnion",
+      "header": "src/DataStructures/BaseDataStructures/DisjointSetUnion/code.hpp",
+      "scenario": "partition-03",
+      "oracle": "Naive relabel partition and component sizes",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DisjointSetUnion/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DisjointSetUnion/05-partition-04",
+      "module": "DisjointSetUnion",
+      "header": "src/DataStructures/BaseDataStructures/DisjointSetUnion/code.hpp",
+      "scenario": "partition-04",
+      "oracle": "Naive relabel partition and component sizes",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DisjointSetUnion/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DisjointSetUnion/06-partition-05",
+      "module": "DisjointSetUnion",
+      "header": "src/DataStructures/BaseDataStructures/DisjointSetUnion/code.hpp",
+      "scenario": "partition-05",
+      "oracle": "Naive relabel partition and component sizes",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DisjointSetUnion/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DisjointSetUnion/07-partition-06",
+      "module": "DisjointSetUnion",
+      "header": "src/DataStructures/BaseDataStructures/DisjointSetUnion/code.hpp",
+      "scenario": "partition-06",
+      "oracle": "Naive relabel partition and component sizes",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DisjointSetUnion/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DisjointSetUnion/08-partition-07",
+      "module": "DisjointSetUnion",
+      "header": "src/DataStructures/BaseDataStructures/DisjointSetUnion/code.hpp",
+      "scenario": "partition-07",
+      "oracle": "Naive relabel partition and component sizes",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DisjointSetUnion/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DisjointSetUnion/09-partition-08",
+      "module": "DisjointSetUnion",
+      "header": "src/DataStructures/BaseDataStructures/DisjointSetUnion/code.hpp",
+      "scenario": "partition-08",
+      "oracle": "Naive relabel partition and component sizes",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DisjointSetUnion/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DisjointSetUnion/10-partition-09",
+      "module": "DisjointSetUnion",
+      "header": "src/DataStructures/BaseDataStructures/DisjointSetUnion/code.hpp",
+      "scenario": "partition-09",
+      "oracle": "Naive relabel partition and component sizes",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DisjointSetUnion/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DeletableHeap/01-deletions-00",
+      "module": "DeletableHeap",
+      "header": "src/DataStructures/BaseDataStructures/DeletableHeap/code.hpp",
+      "scenario": "deletions-00",
+      "oracle": "std::multiset after erase/push/pop including duplicates",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DeletableHeap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DeletableHeap/02-deletions-01",
+      "module": "DeletableHeap",
+      "header": "src/DataStructures/BaseDataStructures/DeletableHeap/code.hpp",
+      "scenario": "deletions-01",
+      "oracle": "std::multiset after erase/push/pop including duplicates",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DeletableHeap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DeletableHeap/03-deletions-02",
+      "module": "DeletableHeap",
+      "header": "src/DataStructures/BaseDataStructures/DeletableHeap/code.hpp",
+      "scenario": "deletions-02",
+      "oracle": "std::multiset after erase/push/pop including duplicates",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DeletableHeap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DeletableHeap/04-deletions-03",
+      "module": "DeletableHeap",
+      "header": "src/DataStructures/BaseDataStructures/DeletableHeap/code.hpp",
+      "scenario": "deletions-03",
+      "oracle": "std::multiset after erase/push/pop including duplicates",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DeletableHeap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DeletableHeap/05-deletions-04",
+      "module": "DeletableHeap",
+      "header": "src/DataStructures/BaseDataStructures/DeletableHeap/code.hpp",
+      "scenario": "deletions-04",
+      "oracle": "std::multiset after erase/push/pop including duplicates",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DeletableHeap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DeletableHeap/06-deletions-05",
+      "module": "DeletableHeap",
+      "header": "src/DataStructures/BaseDataStructures/DeletableHeap/code.hpp",
+      "scenario": "deletions-05",
+      "oracle": "std::multiset after erase/push/pop including duplicates",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DeletableHeap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DeletableHeap/07-deletions-06",
+      "module": "DeletableHeap",
+      "header": "src/DataStructures/BaseDataStructures/DeletableHeap/code.hpp",
+      "scenario": "deletions-06",
+      "oracle": "std::multiset after erase/push/pop including duplicates",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DeletableHeap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DeletableHeap/08-deletions-07",
+      "module": "DeletableHeap",
+      "header": "src/DataStructures/BaseDataStructures/DeletableHeap/code.hpp",
+      "scenario": "deletions-07",
+      "oracle": "std::multiset after erase/push/pop including duplicates",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DeletableHeap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DeletableHeap/09-deletions-08",
+      "module": "DeletableHeap",
+      "header": "src/DataStructures/BaseDataStructures/DeletableHeap/code.hpp",
+      "scenario": "deletions-08",
+      "oracle": "std::multiset after erase/push/pop including duplicates",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DeletableHeap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "DeletableHeap/10-deletions-09",
+      "module": "DeletableHeap",
+      "header": "src/DataStructures/BaseDataStructures/DeletableHeap/code.hpp",
+      "scenario": "deletions-09",
+      "oracle": "std::multiset after erase/push/pop including duplicates",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/DeletableHeap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "HashMap/01-hash-00",
+      "module": "HashMap",
+      "header": "src/DataStructures/BaseDataStructures/HashMap/code.hpp",
+      "scenario": "hash-00",
+      "oracle": "std::map including bucket collisions, default missing values, moves and clear",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/HashMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "HashMap/02-hash-01",
+      "module": "HashMap",
+      "header": "src/DataStructures/BaseDataStructures/HashMap/code.hpp",
+      "scenario": "hash-01",
+      "oracle": "std::map including bucket collisions, default missing values, moves and clear",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/HashMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "HashMap/03-hash-02",
+      "module": "HashMap",
+      "header": "src/DataStructures/BaseDataStructures/HashMap/code.hpp",
+      "scenario": "hash-02",
+      "oracle": "std::map including bucket collisions, default missing values, moves and clear",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/HashMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "HashMap/04-hash-03",
+      "module": "HashMap",
+      "header": "src/DataStructures/BaseDataStructures/HashMap/code.hpp",
+      "scenario": "hash-03",
+      "oracle": "std::map including bucket collisions, default missing values, moves and clear",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/HashMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "HashMap/05-hash-04",
+      "module": "HashMap",
+      "header": "src/DataStructures/BaseDataStructures/HashMap/code.hpp",
+      "scenario": "hash-04",
+      "oracle": "std::map including bucket collisions, default missing values, moves and clear",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/HashMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "HashMap/06-hash-05",
+      "module": "HashMap",
+      "header": "src/DataStructures/BaseDataStructures/HashMap/code.hpp",
+      "scenario": "hash-05",
+      "oracle": "std::map including bucket collisions, default missing values, moves and clear",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/HashMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "HashMap/07-hash-06",
+      "module": "HashMap",
+      "header": "src/DataStructures/BaseDataStructures/HashMap/code.hpp",
+      "scenario": "hash-06",
+      "oracle": "std::map including bucket collisions, default missing values, moves and clear",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/HashMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "HashMap/08-hash-07",
+      "module": "HashMap",
+      "header": "src/DataStructures/BaseDataStructures/HashMap/code.hpp",
+      "scenario": "hash-07",
+      "oracle": "std::map including bucket collisions, default missing values, moves and clear",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/HashMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "HashMap/09-hash-08",
+      "module": "HashMap",
+      "header": "src/DataStructures/BaseDataStructures/HashMap/code.hpp",
+      "scenario": "hash-08",
+      "oracle": "std::map including bucket collisions, default missing values, moves and clear",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/HashMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "HashMap/10-hash-09",
+      "module": "HashMap",
+      "header": "src/DataStructures/BaseDataStructures/HashMap/code.hpp",
+      "scenario": "hash-09",
+      "oracle": "std::map including bucket collisions, default missing values, moves and clear",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/HashMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RMQ/01-intervals-00",
+      "module": "RMQ",
+      "header": "src/DataStructures/BaseDataStructures/RMQ/code.hpp",
+      "scenario": "intervals-00",
+      "oracle": "Linear min/max over every nonempty interval",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/RMQ/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RMQ/02-intervals-01",
+      "module": "RMQ",
+      "header": "src/DataStructures/BaseDataStructures/RMQ/code.hpp",
+      "scenario": "intervals-01",
+      "oracle": "Linear min/max over every nonempty interval",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/RMQ/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RMQ/03-intervals-02",
+      "module": "RMQ",
+      "header": "src/DataStructures/BaseDataStructures/RMQ/code.hpp",
+      "scenario": "intervals-02",
+      "oracle": "Linear min/max over every nonempty interval",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/RMQ/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RMQ/04-intervals-03",
+      "module": "RMQ",
+      "header": "src/DataStructures/BaseDataStructures/RMQ/code.hpp",
+      "scenario": "intervals-03",
+      "oracle": "Linear min/max over every nonempty interval",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/RMQ/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RMQ/05-intervals-04",
+      "module": "RMQ",
+      "header": "src/DataStructures/BaseDataStructures/RMQ/code.hpp",
+      "scenario": "intervals-04",
+      "oracle": "Linear min/max over every nonempty interval",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/RMQ/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RMQ/06-intervals-05",
+      "module": "RMQ",
+      "header": "src/DataStructures/BaseDataStructures/RMQ/code.hpp",
+      "scenario": "intervals-05",
+      "oracle": "Linear min/max over every nonempty interval",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/RMQ/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RMQ/07-intervals-06",
+      "module": "RMQ",
+      "header": "src/DataStructures/BaseDataStructures/RMQ/code.hpp",
+      "scenario": "intervals-06",
+      "oracle": "Linear min/max over every nonempty interval",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/RMQ/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RMQ/08-intervals-07",
+      "module": "RMQ",
+      "header": "src/DataStructures/BaseDataStructures/RMQ/code.hpp",
+      "scenario": "intervals-07",
+      "oracle": "Linear min/max over every nonempty interval",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/RMQ/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RMQ/09-intervals-08",
+      "module": "RMQ",
+      "header": "src/DataStructures/BaseDataStructures/RMQ/code.hpp",
+      "scenario": "intervals-08",
+      "oracle": "Linear min/max over every nonempty interval",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/RMQ/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "RMQ/10-intervals-09",
+      "module": "RMQ",
+      "header": "src/DataStructures/BaseDataStructures/RMQ/code.hpp",
+      "scenario": "intervals-09",
+      "oracle": "Linear min/max over every nonempty interval",
+      "source": "tests/Correctness/DataStructures/BaseDataStructures/RMQ/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FenwickTree/01-prefix-00",
+      "module": "FenwickTree",
+      "header": "src/DataStructures/TreeDataStructures/FenwickTree/code.hpp",
+      "scenario": "prefix-00",
+      "oracle": "Linear prefixes and all nonnegative prefix thresholds before/after updates",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/FenwickTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FenwickTree/02-prefix-01",
+      "module": "FenwickTree",
+      "header": "src/DataStructures/TreeDataStructures/FenwickTree/code.hpp",
+      "scenario": "prefix-01",
+      "oracle": "Linear prefixes and all nonnegative prefix thresholds before/after updates",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/FenwickTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FenwickTree/03-prefix-02",
+      "module": "FenwickTree",
+      "header": "src/DataStructures/TreeDataStructures/FenwickTree/code.hpp",
+      "scenario": "prefix-02",
+      "oracle": "Linear prefixes and all nonnegative prefix thresholds before/after updates",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/FenwickTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FenwickTree/04-prefix-03",
+      "module": "FenwickTree",
+      "header": "src/DataStructures/TreeDataStructures/FenwickTree/code.hpp",
+      "scenario": "prefix-03",
+      "oracle": "Linear prefixes and all nonnegative prefix thresholds before/after updates",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/FenwickTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FenwickTree/05-prefix-04",
+      "module": "FenwickTree",
+      "header": "src/DataStructures/TreeDataStructures/FenwickTree/code.hpp",
+      "scenario": "prefix-04",
+      "oracle": "Linear prefixes and all nonnegative prefix thresholds before/after updates",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/FenwickTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FenwickTree/06-prefix-05",
+      "module": "FenwickTree",
+      "header": "src/DataStructures/TreeDataStructures/FenwickTree/code.hpp",
+      "scenario": "prefix-05",
+      "oracle": "Linear prefixes and all nonnegative prefix thresholds before/after updates",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/FenwickTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FenwickTree/07-prefix-06",
+      "module": "FenwickTree",
+      "header": "src/DataStructures/TreeDataStructures/FenwickTree/code.hpp",
+      "scenario": "prefix-06",
+      "oracle": "Linear prefixes and all nonnegative prefix thresholds before/after updates",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/FenwickTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FenwickTree/08-prefix-07",
+      "module": "FenwickTree",
+      "header": "src/DataStructures/TreeDataStructures/FenwickTree/code.hpp",
+      "scenario": "prefix-07",
+      "oracle": "Linear prefixes and all nonnegative prefix thresholds before/after updates",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/FenwickTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FenwickTree/09-prefix-08",
+      "module": "FenwickTree",
+      "header": "src/DataStructures/TreeDataStructures/FenwickTree/code.hpp",
+      "scenario": "prefix-08",
+      "oracle": "Linear prefixes and all nonnegative prefix thresholds before/after updates",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/FenwickTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FenwickTree/10-prefix-09",
+      "module": "FenwickTree",
+      "header": "src/DataStructures/TreeDataStructures/FenwickTree/code.hpp",
+      "scenario": "prefix-09",
+      "oracle": "Linear prefixes and all nonnegative prefix thresholds before/after updates",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/FenwickTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SegTree/01-lazy-00",
+      "module": "SegTree",
+      "header": "src/DataStructures/TreeDataStructures/SegTree/code.hpp",
+      "scenario": "lazy-00",
+      "oracle": "Naive array after assign/add/multiply; every interval and pending-tag copy",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SegTree/02-lazy-01",
+      "module": "SegTree",
+      "header": "src/DataStructures/TreeDataStructures/SegTree/code.hpp",
+      "scenario": "lazy-01",
+      "oracle": "Naive array after assign/add/multiply; every interval and pending-tag copy",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SegTree/03-lazy-02",
+      "module": "SegTree",
+      "header": "src/DataStructures/TreeDataStructures/SegTree/code.hpp",
+      "scenario": "lazy-02",
+      "oracle": "Naive array after assign/add/multiply; every interval and pending-tag copy",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SegTree/04-lazy-03",
+      "module": "SegTree",
+      "header": "src/DataStructures/TreeDataStructures/SegTree/code.hpp",
+      "scenario": "lazy-03",
+      "oracle": "Naive array after assign/add/multiply; every interval and pending-tag copy",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SegTree/05-lazy-04",
+      "module": "SegTree",
+      "header": "src/DataStructures/TreeDataStructures/SegTree/code.hpp",
+      "scenario": "lazy-04",
+      "oracle": "Naive array after assign/add/multiply; every interval and pending-tag copy",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SegTree/06-lazy-05",
+      "module": "SegTree",
+      "header": "src/DataStructures/TreeDataStructures/SegTree/code.hpp",
+      "scenario": "lazy-05",
+      "oracle": "Naive array after assign/add/multiply; every interval and pending-tag copy",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SegTree/07-lazy-06",
+      "module": "SegTree",
+      "header": "src/DataStructures/TreeDataStructures/SegTree/code.hpp",
+      "scenario": "lazy-06",
+      "oracle": "Naive array after assign/add/multiply; every interval and pending-tag copy",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SegTree/08-lazy-07",
+      "module": "SegTree",
+      "header": "src/DataStructures/TreeDataStructures/SegTree/code.hpp",
+      "scenario": "lazy-07",
+      "oracle": "Naive array after assign/add/multiply; every interval and pending-tag copy",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SegTree/09-lazy-08",
+      "module": "SegTree",
+      "header": "src/DataStructures/TreeDataStructures/SegTree/code.hpp",
+      "scenario": "lazy-08",
+      "oracle": "Naive array after assign/add/multiply; every interval and pending-tag copy",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SegTree/10-lazy-09",
+      "module": "SegTree",
+      "header": "src/DataStructures/TreeDataStructures/SegTree/code.hpp",
+      "scenario": "lazy-09",
+      "oracle": "Naive array after assign/add/multiply; every interval and pending-tag copy",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ListHelper/01-empty",
+      "module": "ListHelper",
+      "header": "src/Clarketech/ListHelper/code.hpp",
+      "scenario": "empty",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Clarketech/ListHelper/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ListHelper/02-sort-borrows",
+      "module": "ListHelper",
+      "header": "src/Clarketech/ListHelper/code.hpp",
+      "scenario": "sort-borrows",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Clarketech/ListHelper/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ListHelper/03-wide-signed",
+      "module": "ListHelper",
+      "header": "src/Clarketech/ListHelper/code.hpp",
+      "scenario": "wide-signed",
+      "oracle": "std::sort",
+      "source": "tests/Correctness/Clarketech/ListHelper/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ListHelper/04-descending",
+      "module": "ListHelper",
+      "header": "src/Clarketech/ListHelper/code.hpp",
+      "scenario": "descending",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Clarketech/ListHelper/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ListHelper/05-unique-adjacent",
+      "module": "ListHelper",
+      "header": "src/Clarketech/ListHelper/code.hpp",
+      "scenario": "unique-adjacent",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Clarketech/ListHelper/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ListHelper/06-filter-map",
+      "module": "ListHelper",
+      "header": "src/Clarketech/ListHelper/code.hpp",
+      "scenario": "filter-map",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Clarketech/ListHelper/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ListHelper/07-slice-clamp",
+      "module": "ListHelper",
+      "header": "src/Clarketech/ListHelper/code.hpp",
+      "scenario": "slice-clamp",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Clarketech/ListHelper/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ListHelper/08-reusable-state",
+      "module": "ListHelper",
+      "header": "src/Clarketech/ListHelper/code.hpp",
+      "scenario": "reusable-state",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Clarketech/ListHelper/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ListHelper/09-temporary-member",
+      "module": "ListHelper",
+      "header": "src/Clarketech/ListHelper/code.hpp",
+      "scenario": "temporary-member",
+      "oracle": "Owned temporary result survives source destruction",
+      "source": "tests/Correctness/Clarketech/ListHelper/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "ListHelper/10-proxy-stream",
+      "module": "ListHelper",
+      "header": "src/Clarketech/ListHelper/code.hpp",
+      "scenario": "proxy-stream",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Clarketech/ListHelper/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Debuger/01-exact-options",
+      "module": "Debuger",
+      "header": "src/Clarketech/Debuger/code.hpp",
+      "scenario": "exact-options",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Clarketech/Debuger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Debuger/02-option-length",
+      "module": "Debuger",
+      "header": "src/Clarketech/Debuger/code.hpp",
+      "scenario": "option-length",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Clarketech/Debuger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Debuger/03-owned-mutable-copy",
+      "module": "Debuger",
+      "header": "src/Clarketech/Debuger/code.hpp",
+      "scenario": "owned-mutable-copy",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Clarketech/Debuger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Debuger/04-one-side-effect",
+      "module": "Debuger",
+      "header": "src/Clarketech/Debuger/code.hpp",
+      "scenario": "one-side-effect",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Clarketech/Debuger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Debuger/05-variadic-side-effects",
+      "module": "Debuger",
+      "header": "src/Clarketech/Debuger/code.hpp",
+      "scenario": "variadic-side-effects",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Clarketech/Debuger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Debuger/06-throw-expression",
+      "module": "Debuger",
+      "header": "src/Clarketech/Debuger/code.hpp",
+      "scenario": "throw-expression",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Clarketech/Debuger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Debuger/07-unknown-expression",
+      "module": "Debuger",
+      "header": "src/Clarketech/Debuger/code.hpp",
+      "scenario": "unknown-expression",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Clarketech/Debuger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Debuger/08-empty-call",
+      "module": "Debuger",
+      "header": "src/Clarketech/Debuger/code.hpp",
+      "scenario": "empty-call",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Clarketech/Debuger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Debuger/09-loop-disabled",
+      "module": "Debuger",
+      "header": "src/Clarketech/Debuger/code.hpp",
+      "scenario": "loop-disabled",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Clarketech/Debuger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Debuger/10-release-config",
+      "module": "Debuger",
+      "header": "src/Clarketech/Debuger/code.hpp",
+      "scenario": "release-config",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Clarketech/Debuger/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastInputOutput/01-roundtrip-00",
+      "module": "FastInputOutput",
+      "header": "src/Clarketech/FastInputOutput/code.hpp",
+      "scenario": "roundtrip-00",
+      "oracle": "Standard integer formatting and exact round trip through temporary file",
+      "source": "tests/Correctness/Clarketech/FastInputOutput/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastInputOutput/02-roundtrip-01",
+      "module": "FastInputOutput",
+      "header": "src/Clarketech/FastInputOutput/code.hpp",
+      "scenario": "roundtrip-01",
+      "oracle": "Standard integer formatting and exact round trip through temporary file",
+      "source": "tests/Correctness/Clarketech/FastInputOutput/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastInputOutput/03-roundtrip-02",
+      "module": "FastInputOutput",
+      "header": "src/Clarketech/FastInputOutput/code.hpp",
+      "scenario": "roundtrip-02",
+      "oracle": "Standard integer formatting and exact round trip through temporary file",
+      "source": "tests/Correctness/Clarketech/FastInputOutput/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastInputOutput/04-roundtrip-03",
+      "module": "FastInputOutput",
+      "header": "src/Clarketech/FastInputOutput/code.hpp",
+      "scenario": "roundtrip-03",
+      "oracle": "Standard integer formatting and exact round trip through temporary file",
+      "source": "tests/Correctness/Clarketech/FastInputOutput/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastInputOutput/05-roundtrip-04",
+      "module": "FastInputOutput",
+      "header": "src/Clarketech/FastInputOutput/code.hpp",
+      "scenario": "roundtrip-04",
+      "oracle": "Standard integer formatting and exact round trip through temporary file",
+      "source": "tests/Correctness/Clarketech/FastInputOutput/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastInputOutput/06-roundtrip-05",
+      "module": "FastInputOutput",
+      "header": "src/Clarketech/FastInputOutput/code.hpp",
+      "scenario": "roundtrip-05",
+      "oracle": "Standard integer formatting and exact round trip through temporary file",
+      "source": "tests/Correctness/Clarketech/FastInputOutput/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastInputOutput/07-roundtrip-06",
+      "module": "FastInputOutput",
+      "header": "src/Clarketech/FastInputOutput/code.hpp",
+      "scenario": "roundtrip-06",
+      "oracle": "Standard integer formatting and exact round trip through temporary file",
+      "source": "tests/Correctness/Clarketech/FastInputOutput/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastInputOutput/08-roundtrip-07",
+      "module": "FastInputOutput",
+      "header": "src/Clarketech/FastInputOutput/code.hpp",
+      "scenario": "roundtrip-07",
+      "oracle": "Standard integer formatting and exact round trip through temporary file",
+      "source": "tests/Correctness/Clarketech/FastInputOutput/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastInputOutput/09-roundtrip-08",
+      "module": "FastInputOutput",
+      "header": "src/Clarketech/FastInputOutput/code.hpp",
+      "scenario": "roundtrip-08",
+      "oracle": "Standard integer formatting and exact round trip through temporary file",
+      "source": "tests/Correctness/Clarketech/FastInputOutput/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "FastInputOutput/10-roundtrip-09",
+      "module": "FastInputOutput",
+      "header": "src/Clarketech/FastInputOutput/code.hpp",
+      "scenario": "roundtrip-09",
+      "oracle": "Standard integer formatting and exact round trip through temporary file",
+      "source": "tests/Correctness/Clarketech/FastInputOutput/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Trie/01-words-00",
+      "module": "Trie",
+      "header": "src/DataStructures/TreeDataStructures/Trie/code.hpp",
+      "scenario": "words-00",
+      "oracle": "Prefix/end counts from a string multiset and independent snapshots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/Trie/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Trie/02-words-01",
+      "module": "Trie",
+      "header": "src/DataStructures/TreeDataStructures/Trie/code.hpp",
+      "scenario": "words-01",
+      "oracle": "Prefix/end counts from a string multiset and independent snapshots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/Trie/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Trie/03-words-02",
+      "module": "Trie",
+      "header": "src/DataStructures/TreeDataStructures/Trie/code.hpp",
+      "scenario": "words-02",
+      "oracle": "Prefix/end counts from a string multiset and independent snapshots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/Trie/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Trie/04-words-03",
+      "module": "Trie",
+      "header": "src/DataStructures/TreeDataStructures/Trie/code.hpp",
+      "scenario": "words-03",
+      "oracle": "Prefix/end counts from a string multiset and independent snapshots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/Trie/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Trie/05-words-04",
+      "module": "Trie",
+      "header": "src/DataStructures/TreeDataStructures/Trie/code.hpp",
+      "scenario": "words-04",
+      "oracle": "Prefix/end counts from a string multiset and independent snapshots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/Trie/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Trie/06-words-05",
+      "module": "Trie",
+      "header": "src/DataStructures/TreeDataStructures/Trie/code.hpp",
+      "scenario": "words-05",
+      "oracle": "Prefix/end counts from a string multiset and independent snapshots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/Trie/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Trie/07-words-06",
+      "module": "Trie",
+      "header": "src/DataStructures/TreeDataStructures/Trie/code.hpp",
+      "scenario": "words-06",
+      "oracle": "Prefix/end counts from a string multiset and independent snapshots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/Trie/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Trie/08-words-07",
+      "module": "Trie",
+      "header": "src/DataStructures/TreeDataStructures/Trie/code.hpp",
+      "scenario": "words-07",
+      "oracle": "Prefix/end counts from a string multiset and independent snapshots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/Trie/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Trie/09-words-08",
+      "module": "Trie",
+      "header": "src/DataStructures/TreeDataStructures/Trie/code.hpp",
+      "scenario": "words-08",
+      "oracle": "Prefix/end counts from a string multiset and independent snapshots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/Trie/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Trie/10-words-09",
+      "module": "Trie",
+      "header": "src/DataStructures/TreeDataStructures/Trie/code.hpp",
+      "scenario": "words-09",
+      "oracle": "Prefix/end counts from a string multiset and independent snapshots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/Trie/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SparseSegTree/01-snapshots-00",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "snapshots-00",
+      "oracle": "Naive multiset interval count/sum for live, old, frozen, difference and merged roots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SparseSegTree/02-snapshots-01",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "snapshots-01",
+      "oracle": "Naive multiset interval count/sum for live, old, frozen, difference and merged roots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SparseSegTree/03-snapshots-02",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "snapshots-02",
+      "oracle": "Naive multiset interval count/sum for live, old, frozen, difference and merged roots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SparseSegTree/04-snapshots-03",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "snapshots-03",
+      "oracle": "Naive multiset interval count/sum for live, old, frozen, difference and merged roots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SparseSegTree/05-snapshots-04",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "snapshots-04",
+      "oracle": "Naive multiset interval count/sum for live, old, frozen, difference and merged roots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SparseSegTree/06-snapshots-05",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "snapshots-05",
+      "oracle": "Naive multiset interval count/sum for live, old, frozen, difference and merged roots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SparseSegTree/07-snapshots-06",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "snapshots-06",
+      "oracle": "Naive multiset interval count/sum for live, old, frozen, difference and merged roots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SparseSegTree/08-snapshots-07",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "snapshots-07",
+      "oracle": "Naive multiset interval count/sum for live, old, frozen, difference and merged roots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SparseSegTree/09-snapshots-08",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "snapshots-08",
+      "oracle": "Naive multiset interval count/sum for live, old, frozen, difference and merged roots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "SparseSegTree/10-snapshots-09",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "snapshots-09",
+      "oracle": "Naive multiset interval count/sum for live, old, frozen, difference and merged roots",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TreeMap/01-ordered-00",
+      "module": "TreeMap",
+      "header": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp",
+      "scenario": "ordered-00",
+      "oracle": "std::map order/rank/lookup after duplicates, deletion, copying and reset",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/TreeMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TreeMap/02-ordered-01",
+      "module": "TreeMap",
+      "header": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp",
+      "scenario": "ordered-01",
+      "oracle": "std::map order/rank/lookup after duplicates, deletion, copying and reset",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/TreeMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TreeMap/03-ordered-02",
+      "module": "TreeMap",
+      "header": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp",
+      "scenario": "ordered-02",
+      "oracle": "std::map order/rank/lookup after duplicates, deletion, copying and reset",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/TreeMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TreeMap/04-ordered-03",
+      "module": "TreeMap",
+      "header": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp",
+      "scenario": "ordered-03",
+      "oracle": "std::map order/rank/lookup after duplicates, deletion, copying and reset",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/TreeMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TreeMap/05-ordered-04",
+      "module": "TreeMap",
+      "header": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp",
+      "scenario": "ordered-04",
+      "oracle": "std::map order/rank/lookup after duplicates, deletion, copying and reset",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/TreeMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TreeMap/06-ordered-05",
+      "module": "TreeMap",
+      "header": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp",
+      "scenario": "ordered-05",
+      "oracle": "std::map order/rank/lookup after duplicates, deletion, copying and reset",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/TreeMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TreeMap/07-ordered-06",
+      "module": "TreeMap",
+      "header": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp",
+      "scenario": "ordered-06",
+      "oracle": "std::map order/rank/lookup after duplicates, deletion, copying and reset",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/TreeMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TreeMap/08-ordered-07",
+      "module": "TreeMap",
+      "header": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp",
+      "scenario": "ordered-07",
+      "oracle": "std::map order/rank/lookup after duplicates, deletion, copying and reset",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/TreeMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TreeMap/09-ordered-08",
+      "module": "TreeMap",
+      "header": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp",
+      "scenario": "ordered-08",
+      "oracle": "std::map order/rank/lookup after duplicates, deletion, copying and reset",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/TreeMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "TreeMap/10-ordered-09",
+      "module": "TreeMap",
+      "header": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp",
+      "scenario": "ordered-09",
+      "oracle": "std::map order/rank/lookup after duplicates, deletion, copying and reset",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/TreeMap/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Geo2/PointVec/01-origin",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PointVec.hpp",
+      "scenario": "origin",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPointVec.cpp"
+    },
+    {
+      "id": "Geo2/PointVec/02-point-vector-types",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PointVec.hpp",
+      "scenario": "point-vector-types",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPointVec.cpp"
+    },
+    {
+      "id": "Geo2/PointVec/03-negative-dot",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PointVec.hpp",
+      "scenario": "negative-dot",
+      "oracle": "Scalar expansion",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPointVec.cpp"
+    },
+    {
+      "id": "Geo2/PointVec/04-integer-orientation",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PointVec.hpp",
+      "scenario": "integer-orientation",
+      "oracle": "Exact determinant sign",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPointVec.cpp"
+    },
+    {
+      "id": "Geo2/PointVec/05-distance",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PointVec.hpp",
+      "scenario": "distance",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPointVec.cpp"
+    },
+    {
+      "id": "Geo2/PointVec/06-rotate-90",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PointVec.hpp",
+      "scenario": "rotate-90",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPointVec.cpp"
+    },
+    {
+      "id": "Geo2/PointVec/07-rotate-angle",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PointVec.hpp",
+      "scenario": "rotate-angle",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPointVec.cpp"
+    },
+    {
+      "id": "Geo2/PointVec/08-signed-angle",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PointVec.hpp",
+      "scenario": "signed-angle",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPointVec.cpp"
+    },
+    {
+      "id": "Geo2/PointVec/09-polar-half",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PointVec.hpp",
+      "scenario": "polar-half",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPointVec.cpp"
+    },
+    {
+      "id": "Geo2/PointVec/10-point-hit",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PointVec.hpp",
+      "scenario": "point-hit",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPointVec.cpp"
+    },
+    {
+      "id": "Geo2/SegLine/01-proper-cross",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/SegLine.hpp",
+      "scenario": "proper-cross",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedSegLine.cpp"
+    },
+    {
+      "id": "Geo2/SegLine/02-endpoint-contact",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/SegLine.hpp",
+      "scenario": "endpoint-contact",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedSegLine.cpp"
+    },
+    {
+      "id": "Geo2/SegLine/03-overlap",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/SegLine.hpp",
+      "scenario": "overlap",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedSegLine.cpp"
+    },
+    {
+      "id": "Geo2/SegLine/04-parallel-disjoint",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/SegLine.hpp",
+      "scenario": "parallel-disjoint",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedSegLine.cpp"
+    },
+    {
+      "id": "Geo2/SegLine/05-coincident-lines",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/SegLine.hpp",
+      "scenario": "coincident-lines",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedSegLine.cpp"
+    },
+    {
+      "id": "Geo2/SegLine/06-zero-segment",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/SegLine.hpp",
+      "scenario": "zero-segment",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedSegLine.cpp"
+    },
+    {
+      "id": "Geo2/SegLine/07-outside-nearest",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/SegLine.hpp",
+      "scenario": "outside-nearest",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedSegLine.cpp"
+    },
+    {
+      "id": "Geo2/SegLine/08-projection",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/SegLine.hpp",
+      "scenario": "projection",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedSegLine.cpp"
+    },
+    {
+      "id": "Geo2/SegLine/09-reversed-line",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/SegLine.hpp",
+      "scenario": "reversed-line",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedSegLine.cpp"
+    },
+    {
+      "id": "Geo2/SegLine/10-integer-boundary",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/SegLine.hpp",
+      "scenario": "integer-boundary",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedSegLine.cpp"
+    },
+    {
+      "id": "Geo2/PolygonConvex/01-empty-hull",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PolygonConvex.hpp",
+      "scenario": "empty-hull",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPolygonConvex.cpp"
+    },
+    {
+      "id": "Geo2/PolygonConvex/02-single-hull",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PolygonConvex.hpp",
+      "scenario": "single-hull",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPolygonConvex.cpp"
+    },
+    {
+      "id": "Geo2/PolygonConvex/03-collinear-hull",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PolygonConvex.hpp",
+      "scenario": "collinear-hull",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPolygonConvex.cpp"
+    },
+    {
+      "id": "Geo2/PolygonConvex/04-square-area",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PolygonConvex.hpp",
+      "scenario": "square-area",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPolygonConvex.cpp"
+    },
+    {
+      "id": "Geo2/PolygonConvex/05-clockwise",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PolygonConvex.hpp",
+      "scenario": "clockwise",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPolygonConvex.cpp"
+    },
+    {
+      "id": "Geo2/PolygonConvex/06-concave-notch",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PolygonConvex.hpp",
+      "scenario": "concave-notch",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPolygonConvex.cpp"
+    },
+    {
+      "id": "Geo2/PolygonConvex/07-interior-points",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PolygonConvex.hpp",
+      "scenario": "interior-points",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPolygonConvex.cpp"
+    },
+    {
+      "id": "Geo2/PolygonConvex/08-cut-square",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PolygonConvex.hpp",
+      "scenario": "cut-square",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPolygonConvex.cpp"
+    },
+    {
+      "id": "Geo2/PolygonConvex/09-minkowski",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PolygonConvex.hpp",
+      "scenario": "minkowski",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPolygonConvex.cpp"
+    },
+    {
+      "id": "Geo2/PolygonConvex/10-diameter",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/PolygonConvex.hpp",
+      "scenario": "diameter",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedPolygonConvex.cpp"
+    },
+    {
+      "id": "Geo2/Circle/01-zero-circle",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/Circle.hpp",
+      "scenario": "zero-circle",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedCircle.cpp"
+    },
+    {
+      "id": "Geo2/Circle/02-point-location",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/Circle.hpp",
+      "scenario": "point-location",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedCircle.cpp"
+    },
+    {
+      "id": "Geo2/Circle/03-line-tangent",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/Circle.hpp",
+      "scenario": "line-tangent",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedCircle.cpp"
+    },
+    {
+      "id": "Geo2/Circle/04-line-secant",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/Circle.hpp",
+      "scenario": "line-secant",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedCircle.cpp"
+    },
+    {
+      "id": "Geo2/Circle/05-external-tangent",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/Circle.hpp",
+      "scenario": "external-tangent",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedCircle.cpp"
+    },
+    {
+      "id": "Geo2/Circle/06-internal-tangent",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/Circle.hpp",
+      "scenario": "internal-tangent",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedCircle.cpp"
+    },
+    {
+      "id": "Geo2/Circle/07-contained",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/Circle.hpp",
+      "scenario": "contained",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedCircle.cpp"
+    },
+    {
+      "id": "Geo2/Circle/08-circumcircle",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/Circle.hpp",
+      "scenario": "circumcircle",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedCircle.cpp"
+    },
+    {
+      "id": "Geo2/Circle/09-segment-rim",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/Circle.hpp",
+      "scenario": "segment-rim",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedCircle.cpp"
+    },
+    {
+      "id": "Geo2/Circle/10-point-tangents",
+      "module": "Geo2",
+      "header": "src/Geometry/Geo2/Circle.hpp",
+      "scenario": "point-tangents",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo2/TestCaseExpandedCircle.cpp"
+    },
+    {
+      "id": "Geo3/01-translate",
+      "module": "Geo3",
+      "header": "src/Geometry/Geo3/code.hpp",
+      "scenario": "translate",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo3/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Geo3/02-dot-cross",
+      "module": "Geo3",
+      "header": "src/Geometry/Geo3/code.hpp",
+      "scenario": "dot-cross",
+      "oracle": "Scalar expansion",
+      "source": "tests/Correctness/Geometry/Geo3/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Geo3/03-wide-triple",
+      "module": "Geo3",
+      "header": "src/Geometry/Geo3/code.hpp",
+      "scenario": "wide-triple",
+      "oracle": "128-bit scalar determinant",
+      "source": "tests/Correctness/Geometry/Geo3/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Geo3/04-distance",
+      "module": "Geo3",
+      "header": "src/Geometry/Geo3/code.hpp",
+      "scenario": "distance",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo3/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Geo3/05-line-foot",
+      "module": "Geo3",
+      "header": "src/Geometry/Geo3/code.hpp",
+      "scenario": "line-foot",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo3/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Geo3/06-segment-end",
+      "module": "Geo3",
+      "header": "src/Geometry/Geo3/code.hpp",
+      "scenario": "segment-end",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo3/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Geo3/07-zero-segment",
+      "module": "Geo3",
+      "header": "src/Geometry/Geo3/code.hpp",
+      "scenario": "zero-segment",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo3/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Geo3/08-plane-foot",
+      "module": "Geo3",
+      "header": "src/Geometry/Geo3/code.hpp",
+      "scenario": "plane-foot",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo3/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Geo3/09-plane-line",
+      "module": "Geo3",
+      "header": "src/Geometry/Geo3/code.hpp",
+      "scenario": "plane-line",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo3/TestCaseExpanded.cpp"
+    },
+    {
+      "id": "Geo3/10-tetrahedron",
+      "module": "Geo3",
+      "header": "src/Geometry/Geo3/code.hpp",
+      "scenario": "tetrahedron",
+      "oracle": "Independent expected value / invariant",
+      "source": "tests/Correctness/Geometry/Geo3/TestCaseExpanded.cpp"
+    }
+  ]
+}

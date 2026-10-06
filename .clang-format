@@ -1,0 +1,21 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+AccessModifierOffset: -4
+ColumnLimit: 100
+BreakBeforeBraces: Attach
+NamespaceIndentation: None
+PointerAlignment: Right
+DerivePointerAlignment: false
+AllowShortBlocksOnASingleLine: Never
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLambdasOnASingleLine: Empty
+AllowShortLoopsOnASingleLine: false
+InsertBraces: false
+ReflowComments: Never
+SortIncludes: Never
+SortUsingDeclarations: Never
+BreakTemplateDeclarations: Yes
+AlignEscapedNewlines: DontAlign
+FixNamespaceComments: false
+StatementMacros: [callOperator, FLOAT_POINT_UNARY_FN]

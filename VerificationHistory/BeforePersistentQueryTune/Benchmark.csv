@@ -1,4 +1,0 @@
-scenario,originalMs,finalMs,speedup,checksum
-build,16.759,15.679,1.06888,496672
-range-count,31.749,48.112,0.659898,628262264
-kth-query,24.069,25.855,0.930922,49772152172

@@ -1,4 +1,0 @@
-scenario,beforeMs,afterMs,speedup,checksum
-build-100K,0.55,0.541,1.01664,0
-query-300K,0.362,0.335,1.0806,187669429
-build-stateful-comparator-30K,0.152,0.154,0.987013,10

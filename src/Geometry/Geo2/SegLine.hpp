@@ -1,0 +1,232 @@
+#pragma once
+#include "PointVec.hpp"
+
+// SNIPPET BEGIN
+namespace _geo2 {
+
+template <class T>
+struct Line {
+    Point<T> p;
+    Vec<T> v;
+
+private:
+    Line(Point<T> p, Vec<T> v, int) : p(p), v(v) {
+        assert(v != Vec<T>::O);
+    }
+    Point<T> project(Point<T> q) const {
+        static_assert(!std::is_integral_v<T>, "nearest coordinates need floating T");
+        return p + v * (v.dot(q - p) / v.len2());
+    }
+    template <class U>
+    friend Near<U> near(Point<U>, const Line<U> &);
+
+public:
+    Line(Point<T> a, Point<T> b) : Line(a, b - a, 0) {}
+    static Line fromVec(Point<T> p, Vec<T> v) {
+        return Line(p, v, 0);
+    }
+    T eval(Point<T> q) const {
+        return v.cross(q - p);
+    }
+    int side(Point<T> q) const {
+        auto x = eval(q);
+        return x == 0 ? 0 : x < 0 ? -1 : 1;
+    }
+    Location loc(Point<T> q) const {
+        return eval(q) == 0 ? Location::ON : Location::OUT;
+    }
+    bool parallel(const Line &l) const {
+        return v.cross(l.v) == 0;
+    }
+    bool orthogonal(const Line &l) const {
+        return v.dot(l.v) == 0;
+    }
+    Point<T> reflect(Point<T> q) const {
+        return q + (project(q) - q) * T(2);
+    }
+    Line reversed() const {
+        return fromVec(p, -v);
+    }
+};
+
+template <class T>
+struct Seg {
+    Point<T> a{}, b{};
+    Vec<T> vec() const {
+        return b - a;
+    }
+    T len2() const {
+        return a.dist2(b);
+    }
+    auto len() const {
+        return a.dist(b);
+    }
+    Location loc(Point<T> p) const {
+        if constexpr (std::is_integral_v<T>)
+            return orient(a, b, p) == 0 and std::min(a.x, b.x) <= p.x and
+                           p.x <= std::max(a.x, b.x) and std::min(a.y, b.y) <= p.y and
+                           p.y <= std::max(a.y, b.y)
+                       ? Location::ON
+                       : Location::OUT;
+        return a.cross(b, p) == 0 and (p - a).dot(p - b) <= 0 ? Location::ON : Location::OUT;
+    }
+    Line<T> line() const {
+        return Line<T>(a, b);
+    }
+    Point<T> mid() const {
+        static_assert(!std::is_integral_v<T>, "mid needs floating coordinates");
+        return a + vec() / T(2);
+    }
+};
+
+template <class T>
+Near<T> near(Point<T> p, const Line<T> &l) {
+    return {p, l.loc(p) == Location::ON ? p : l.project(p)};
+}
+
+template <class T>
+Near<T> near(Point<T> p, const Seg<T> &s) {
+    static_assert(!std::is_integral_v<T>, "nearest coordinates need floating T");
+    if (s.loc(p) == Location::ON)
+        return {p, p};
+    if (s.a == s.b)
+        return {p, s.a};
+    T t = std::clamp(s.vec().dot(p - s.a) / s.len2(), T(0), T(1));
+    return {p, s.a + s.vec() * t};
+}
+
+template <class T>
+bool inter(const Seg<T> &s, const Seg<T> &t, std::nullptr_t) {
+    int a = orient(s.a, s.b, t.a), b = orient(s.a, s.b, t.b);
+    int c = orient(t.a, t.b, s.a), d = orient(t.a, t.b, s.b);
+    return (a * b < 0 and c * d < 0) or (a == 0 and (s.loc(t.a) == Location::ON)) or
+           (b == 0 and (s.loc(t.b) == Location::ON)) or (c == 0 and (t.loc(s.a) == Location::ON)) or
+           (d == 0 and (t.loc(s.b) == Location::ON));
+}
+
+template <class T>
+bool inter(const Line<T> &l, const Seg<T> &s, std::nullptr_t) {
+    return l.side(s.a) * l.side(s.b) <= 0;
+}
+
+template <class T>
+bool inter(const Line<T> &a, const Line<T> &b, std::nullptr_t) {
+    return !a.parallel(b) or (a.loc(b.p) == Location::ON);
+}
+
+template <class T>
+Hit<T> inter(const Line<T> &a, const Line<T> &b) {
+    static_assert(!std::is_integral_v<T>, "intersection coordinates need floating T");
+    T d = a.v.cross(b.v);
+    if (d == 0)
+        return {(a.loc(b.p) == Location::ON) ? HitKind::CO : HitKind::NONE, {}};
+    return {HitKind::ONE, {a.p + a.v * ((b.p - a.p).cross(b.v) / d), {}}};
+}
+
+template <class T>
+Hit<T> inter(const Line<T> &l, const Seg<T> &s) {
+    static_assert(!std::is_integral_v<T>, "intersection coordinates need floating T");
+    if (!inter(l, s, nullptr))
+        return {};
+    if (s.a == s.b)
+        return {HitKind::ONE, {s.a, {}}};
+    if ((l.loc(s.a) == Location::ON) and (l.loc(s.b) == Location::ON)) {
+        auto a = s.a, b = s.b;
+        if (l.v.dot(b - a) < 0)
+            std::swap(a, b);
+        return {HitKind::SEG, {a, b}};
+    }
+    if ((l.loc(s.a) == Location::ON))
+        return {HitKind::ONE, {s.a, {}}};
+    if ((l.loc(s.b) == Location::ON))
+        return {HitKind::ONE, {s.b, {}}};
+    return inter(l, s.line());
+}
+
+template <class T>
+Hit<T> inter(const Seg<T> &s, const Seg<T> &t) {
+    static_assert(!std::is_integral_v<T>, "intersection coordinates need floating T");
+    if (!inter(s, t, nullptr))
+        return {};
+    if (s.a == s.b)
+        return {HitKind::ONE, {s.a, {}}};
+    if (t.a == t.b)
+        return {HitKind::ONE, {t.a, {}}};
+    if (s.vec().cross(t.vec()) != 0) {
+        for (auto p : {s.a, s.b, t.a, t.b})
+            if ((s.loc(p) == Location::ON) and (t.loc(p) == Location::ON))
+                return {HitKind::ONE, {p, {}}};
+        return inter(s.line(), t.line());
+    }
+    auto a = std::max(std::min(s.a, s.b), std::min(t.a, t.b));
+    auto b = std::min(std::max(s.a, s.b), std::max(t.a, t.b));
+    return {a == b ? HitKind::ONE : HitKind::SEG, {a, b}};
+}
+
+template <class T>
+bool inter(Point<T> p, const Line<T> &s, std::nullptr_t) {
+    return s.loc(p) == Location::ON;
+}
+
+template <class T>
+Hit<T> inter(Point<T> p, const Line<T> &s) {
+    return inter(p, s, nullptr) ? Hit<T>{HitKind::ONE, {p, {}}} : Hit<T>{};
+}
+
+template <class T>
+bool inter(Point<T> p, const Seg<T> &s, std::nullptr_t) {
+    return s.loc(p) == Location::ON;
+}
+
+template <class T>
+Hit<T> inter(Point<T> p, const Seg<T> &s) {
+    return inter(p, s, nullptr) ? Hit<T>{HitKind::ONE, {p, {}}} : Hit<T>{};
+}
+
+GEO2_REVERSE(Line, Point)
+GEO2_REVERSE_INTER(Line, Point)
+GEO2_REVERSE(Seg, Point)
+GEO2_REVERSE_INTER(Seg, Point)
+
+GEO2_REVERSE(Seg, Line)
+GEO2_REVERSE_INTER(Seg, Line)
+
+// Witnesses follow argument order. Empty regions have no nearest points.
+template <class T>
+Near<T> near(const Line<T> &a, const Line<T> &b) {
+    auto hit = inter(a, b);
+    if (hit.kind == HitKind::ONE)
+        return {hit.ps[0], hit.ps[0]};
+    if (hit.kind == HitKind::CO)
+        return {a.p, a.p};
+    return near(a.p, b);
+}
+
+template <class T>
+Near<T> near(const Line<T> &l, const Seg<T> &s) {
+    auto hit = inter(l, s);
+    if (hit)
+        return {hit.ps[0], hit.ps[0]};
+    auto a = near(l, s.a), b = near(l, s.b);
+    return a.first.dist2(a.second) < b.first.dist2(b.second) ? a : b;
+}
+
+template <class T>
+Near<T> near(const Seg<T> &a, const Seg<T> &b) {
+    auto hit = inter(a, b);
+    if (hit)
+        return {hit.ps[0], hit.ps[0]};
+    auto best = near(a.a, b);
+    for (auto q : {near(a.b, b), near(a, b.a), near(a, b.b)})
+        if (q.first.dist2(q.second) < best.first.dist2(best.second))
+            best = q;
+    return best;
+}
+
+} // namespace _geo2
+
+using _geo2::Seg;
+using _geo2::Line;
+using _geo2::inter;
+using _geo2::near;
+// SNIPPET END

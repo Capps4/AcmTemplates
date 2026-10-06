@@ -1,4 +1,0 @@
-scenario,originalMs,finalMs,speedup,checksum
-chain-10K,1.34,1.258,1.06518,2666766630001
-star-50K,5.63,5.943,0.947333,208343333050001
-random-multigraph-50K,3.821,4.739,0.806288,125009003560949

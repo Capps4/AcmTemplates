@@ -1,3 +1,0 @@
-scenario,originalMs,finalMs,speedup,checksum
-push-erase-top-100K,1.012,1.019,0.993131,9993864185
-bulk-string-build-30K,4.25,2.921,1.45498,30265

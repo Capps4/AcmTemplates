@@ -1,3 +1,0 @@
-scenario,originalMs,finalMs,speedup,checksum
-factorial-build,3.373,2.748,1.22744,1173919140
-combination-queries,0.849,0.919,0.92383,249835730492809

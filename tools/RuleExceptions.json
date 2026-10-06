@@ -1,0 +1,1772 @@
+{
+  "version": 1,
+  "date": "2026-10-05",
+  "scope": "active template headers only; semantic exceptions, not correctness evidence",
+  "reviews": [
+    {
+      "id": "src/TreeTheory/CentroidDecomposition/code.hpp:R04:dfsOrder",
+      "fingerprint": "b23d74a77a77748e8410b7fad4b96e59286618cf5d6644b26e6d0efd8de562c0",
+      "reason": "dfsOrder 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Math/MathPackage/Combinatorics/code.hpp:R04:getMod",
+      "fingerprint": "9177d5676108aa8b21284943f482cfb2f5f798e84d35d69300931a7c4804042c",
+      "reason": "getMod 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Math/MathPackage/Combinatorics/code.hpp:R04:shared",
+      "fingerprint": "d699e7f7d609e49de4620c726c37943062166f8bc7d177b62a40e52304777f0d",
+      "reason": "shared 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/GraphTheory/Flow/CostFlow/code.hpp:R09:is_integral_v",
+      "fingerprint": "554ad4e3f3793d92a2efc1345628647a5c4bdf96d02b3a48d9aef2127140e153",
+      "reason": "容量为至多 64 位整型、费用为至多 64 位有符号整型，保证宽整数势能与反边费用表示；不接受浮点截断。"
+    },
+    {
+      "id": "src/GraphTheory/Flow/CostFlow/code.hpp:R09:is_signed_v",
+      "fingerprint": "900a332c9dd60dcf29d199dd35ee7f89bb4a790e50a6589fefc2febbeeb3ffe8",
+      "reason": "容量为至多 64 位整型、费用为至多 64 位有符号整型，保证宽整数势能与反边费用表示；不接受浮点截断。"
+    },
+    {
+      "id": "src/GraphTheory/Flow/CostFlow/code.hpp:R04:dijkstra",
+      "fingerprint": "893c258162bc3da363526624f46c171def3e219825e94d013f27b08734118bb2",
+      "reason": "经典 Dijkstra 算法名；这一步计算残量图的最短路，保留名称直接表达算法。"
+    },
+    {
+      "id": "src/Sorting/CountingSortOrder/code.hpp:R04:countingSortOrder",
+      "fingerprint": "720fee1f2c572d0df8c28ef7d0467291ee5a71a1ca3cc0408451754ffb17e119",
+      "reason": "countingSortOrder 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Clarketech/Debuger/code.hpp:R04:strdup",
+      "fingerprint": "06d21d616739b9e4cdbc2662d72c391fc11bfaac0b2a4850b39493dfdc0dab4b",
+      "reason": "C/POSIX 的 strdup；用户指定 Debuger 唯一允许的配置注册写法，保留原名。"
+    },
+    {
+      "id": "src/DataStructures/BaseDataStructures/DeletableHeap/code.hpp:R07:&&",
+      "fingerprint": "2172202f1c81c527792643b9ac8fd49a59bc8dc86e27ea94f5b7b23542f955ec",
+      "reason": "Args&& 是转发引用；保留 emplace 的参数值类别。"
+    },
+    {
+      "id": "src/Sorting/Discreter/code.hpp:R04:discreteFrom",
+      "fingerprint": "c969c26905f440acac5fea741d3a87f5ca586e5bc8dd326e554f8b0754d2117b",
+      "reason": "用户要求保留 既有模板 的 discreteFrom 管道入口，已删除 Discreter 类。"
+    },
+    {
+      "id": "src/Sorting/Discreter/code.hpp:R07:&&",
+      "fingerprint": "c969c26905f440acac5fea741d3a87f5ca586e5bc8dd326e554f8b0754d2117b",
+      "reason": "逐处核对为移动/转发/引用限定或宏引用参数的 &&，不是逻辑与。"
+    },
+    {
+      "id": "src/GraphTheory/Connectivity/EdgeBiconnectedComponent/code.hpp:R04:cntBlock",
+      "fingerprint": "04c72a868c58036ddf373848fee9efa295c4a5ddae7a420d833ba76be4f4f724",
+      "reason": "既有模板 公开分量计数。"
+    },
+    {
+      "id": "src/GraphTheory/Connectivity/EdgeBiconnectedComponent/code.hpp:R04:cutDeg",
+      "fingerprint": "9460542b6f27b45bc697aaf2951b704172caa939fa4c7a84c4e872e1df30e323",
+      "reason": "既有模板 公开桥度数，本轮补上未赋值的正确性问题。"
+    },
+    {
+      "id": "src/GraphTheory/Connectivity/EdgeBiconnectedComponent/code.hpp:R04:componentNum",
+      "fingerprint": "d490af04cc03c92d0f58bd3d23c6f3f6bc241af68670ca5eabe30c37422c2cea",
+      "reason": "既有模板 公开原图连通分量计数。"
+    },
+    {
+      "id": "src/Math/MathPackage/ExGcd/code.hpp:R04:exgcd",
+      "fingerprint": "fb97b2b4e1ab49593ff09efae060c3ab80a4726b4ab510f0a8e364490a4ecf51",
+      "reason": "exgcd 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Math/Polynomial/FastFourierTransform/code.hpp:R09:is_floating_point_v",
+      "fingerprint": "2a6471e38fbb2dff51f04522f92a10c8e05e5dc376af14046dc42692eda42e66",
+      "reason": "FFT 系数要求浮点类型，三角函数与复数运算依赖该约定。"
+    },
+    {
+      "id": "src/Math/Polynomial/FastFourierTransform/code.hpp:R04:vector",
+      "fingerprint": "5168c62dc5638ad306a304566825abb795621c78f24834ef2a0940c77920138a",
+      "reason": "继承 std::vector 的构造函数名称，保留标准接口。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:buffer",
+      "fingerprint": "32a564389a579f95bc85a2f39cdda5e6c9ae24b7e6ab6a2ca6e3b825afdaae87",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；buffer 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:ended",
+      "fingerprint": "ceb1dfd3fff74a4b5f52b5c3d252a0e873e87c7dec0fb78fc623c8e11d5c3934",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；ended 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:failed",
+      "fingerprint": "476d53cca32dfa563275e91e0853de9f09647bbaa36ad65f7b8461765f1da987",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；failed 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:space",
+      "fingerprint": "58c042d49c9ba6abcef17f305dd46afc61748df1d5094e11779fbc2ffc5db829",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；space 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:refill",
+      "fingerprint": "302aafa4a9d34c6b0dce14937eec2862b232992885f4709e47480acfdb717475",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；refill 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R05:body",
+      "fingerprint": "52efd3f8b6fc156d0f68ff25987f4b4cd5e588be6677018275d570b3d6fea724",
+      "reason": "用户指定的 既有模板 整数读写和短状态分支；人工合并控制流/多语句候选 34/188 行（18.09%），低于 30%。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R06:packed",
+      "fingerprint": "7276dac9661867d88acf44b0473e98454cf008f7f1812b4c4b0ffcb5d009f173",
+      "reason": "用户指定的 既有模板 整数读写和短状态分支；人工合并控制流/多语句候选 34/188 行（18.09%），低于 30%。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:ready",
+      "fingerprint": "f24713ced56396e5b56a5dfc989126117dfb977b1ad6fef11da0b5204cab3499",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；ready 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:readInt",
+      "fingerprint": "4bca8d5df0ce553ae37ff5300a0616a9cfa804efedf50eb143d4d56fba58ca35",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；readInt 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:negative",
+      "fingerprint": "ad67850c1bbe8f9ffad6aaff7b1f017fe4638ede106dc27fb73219c301cf0975",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；negative 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:source",
+      "fingerprint": "8b7d71f5fa2a8f8460eb3e131a9fb8883d3f8bfd30329688753b79370b632e0c",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；source 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:stdin",
+      "fingerprint": "8b7d71f5fa2a8f8460eb3e131a9fb8883d3f8bfd30329688753b79370b632e0c",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；stdin 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:shared",
+      "fingerprint": "0f600fc73d76c9d918ff3f1eeffea67f98b0b535e0f3c2fb0b844642440aba90",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；shared 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:input",
+      "fingerprint": "44d641b371973c66e42d9f5a615415e7e77f47a926ece74ff2259217cc92c429",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；input 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:first",
+      "fingerprint": "78a328872b2d49f181e6e153a63943945da85f0ec48ebec907ec75eebfd1aa87",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；first 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:append",
+      "fingerprint": "ef98b92076d859bfd66685cd9f7b7cdccab5737756d25e254250a5129504a94b",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；append 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:getLine",
+      "fingerprint": "0bed3bf569eb65acd7820fc75123e0d4508723ca1f022237362b4515ba3ea43e",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；getLine 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:delimiter",
+      "fingerprint": "b7302a9fd4f890bbc3a87b3612bcee0c7fe85411e4efc1a2e22e72bf03009bbf",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；delimiter 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:drain",
+      "fingerprint": "867e25951838b573e59819e611f8cad9555ff92c519f8f0e706417e159c64397",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；drain 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:writeInt",
+      "fingerprint": "f10c2a476b47cd00ccd830c74a80af25a1bc9cc96cad8b1afb91b111753581a4",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；writeInt 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:digits",
+      "fingerprint": "878107668e3f5015c98e3b25a89a95d55b6f31039e84380720291bd3f1ce0312",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；digits 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:pairs",
+      "fingerprint": "a9a4d33ba7d6f5f26b63289708fd36f285777ff83a9d4822a33e4f54a9f3495a",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；pairs 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:write",
+      "fingerprint": "dd867aea23e67ffa238ab814811363d40682ca0fa407c42db2cabeba4f2c39e4",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；write 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:target",
+      "fingerprint": "de1d05db9d5b2b83f457f762409f422292238a86d22f81cd44640f8d35799d56",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；target 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:stdout",
+      "fingerprint": "de1d05db9d5b2b83f457f762409f422292238a86d22f81cd44640f8d35799d56",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；stdout 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:flush",
+      "fingerprint": "e94fec517e646fc132067c8b10e21ec47aedce06edf9c8bb16449c0d46f9be2f",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；flush 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/Clarketech/FastInputOutput/code.hpp:R04:output",
+      "fingerprint": "838810061ccf7d0edb295c83308fb772cf1605a56bda5da5d52963e0dd724128",
+      "reason": "用户明确要求 FastInputOutput 采用 既有模板 且不要改写；output 是原缓冲/状态/流协议中的名字，仅补严格编译数组初始化。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/FenwickTree/code.hpp:R04:modify",
+      "fingerprint": "2e53ac95f9527c40d2d906316a2b250ee23fb2e815a390c5676acfc6360de0ea",
+      "reason": "modify 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/FenwickTree/code.hpp:R04:query",
+      "fingerprint": "867e98ede849144ad1a504d79618ae7cbdfd89500ab548f681cc3d5061724f43",
+      "reason": "用户指定将 posQuery 改名为 query，公开前缀查询接口。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/FenwickTree/code.hpp:R04:select",
+      "fingerprint": "68d88759f2110ca88a49ef52c643f17aa431422b4c126d3ec0b6fb9ae0ac421c",
+      "reason": "select 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Math/MathPackage/FloatPointNumber/code.hpp:R09:is_floating_point_v",
+      "fingerprint": "2a6471e38fbb2dff51f04522f92a10c8e05e5dc376af14046dc42692eda42e66",
+      "reason": "底层 T 必须为浮点；输入按 float/double/long double 选择对应解析函数。"
+    },
+    {
+      "id": "src/Math/MathPackage/FloatPointNumber/code.hpp:R04:round",
+      "fingerprint": "2d8fb345c0cdb14c60d068ef5433573010058ede1a2bad6ae2cf4913ba326d82",
+      "reason": "round 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Math/MathPackage/FloatPointNumber/code.hpp:R04:setprecision",
+      "fingerprint": "e579b7653d96bd7b0009be2d79d1a51a05a95ec2cc925fecf6d97cc44873fee1",
+      "reason": "Float 的公共精度设置接口及 std::setprecision 调用，保留既有用法。"
+    },
+    {
+      "id": "src/Math/MathPackage/FloatPointNumber/code.hpp:R09:is_same_v",
+      "fingerprint": "4521e8e2e9668b7450047f2c411dfa96c07cc23158c50924ce7636e7789fca14",
+      "reason": "底层 T 必须为浮点；输入按 float/double/long double 选择对应解析函数。"
+    },
+    {
+      "id": "src/Math/MathPackage/FloatPointNumber/code.hpp:R04:atan2",
+      "fingerprint": "f8fb6df173d3c81649efa3d28c3decc9b380202be1105d3f78a007a2405afcfa",
+      "reason": "现有 Float 数学重载及标准库函数名称，接口迁移留待模块确认。"
+    },
+    {
+      "id": "src/Math/LinearAlgebra/GaussianElimination/code.hpp:R09:void_t",
+      "fingerprint": "57f69dc5d0bb7f6f9fced8f94581b1c3b5452f9cbcdc3ef4b29d97f31cf4cdfc",
+      "reason": "检测 const inv() 且结果可转为 T，选择行逆元路径；浮点选择主元，普通整数不是所需的域。"
+    },
+    {
+      "id": "src/Math/LinearAlgebra/GaussianElimination/code.hpp:R09:is_convertible",
+      "fingerprint": "7c19d6c79ca4d16de447206cf497e5b4921f6c2a30fbc20fcd2660f59ec225e3",
+      "reason": "检测 const inv() 且结果可转为 T，选择行逆元路径；浮点选择主元，普通整数不是所需的域。"
+    },
+    {
+      "id": "src/Math/LinearAlgebra/GaussianElimination/code.hpp:R04:gauss",
+      "fingerprint": "e840d96affaef4e16b38d2c9287f711f519e7f94febdc9fae360c9db3c3a84a2",
+      "reason": "gauss 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Math/LinearAlgebra/GaussianElimination/code.hpp:R09:is_integral_v",
+      "fingerprint": "01f4ca4c8b0a9df4c185c777fe05af4bd6f095f13ca96e4fdab0f9fd36ee4f39",
+      "reason": "检测 const inv() 且结果可转为 T，选择行逆元路径；浮点选择主元，普通整数不是所需的域。"
+    },
+    {
+      "id": "src/Math/LinearAlgebra/GaussianElimination/code.hpp:R09:is_floating_point_v",
+      "fingerprint": "0a94296aa7ecb944e61a7f4cb52e543da89f135d6128bf36302ae53a42f1532d",
+      "reason": "检测 const inv() 且结果可转为 T，选择行逆元路径；浮点选择主元，普通整数不是所需的域。"
+    },
+    {
+      "id": "src/Math/LinearAlgebra/GaussianElimination/code.hpp:R04:status",
+      "fingerprint": "71fbb252295a1629d644b49ee1386f2959d8f9faab5774e2f1892fb322eb4241",
+      "reason": "status 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PointVec.hpp:R04:toVec",
+      "fingerprint": "10b9f9ae5a30d05a83001cd501e7d4a4e1681f6c2d72f3a550a7e148fa15be08",
+      "reason": "toVec 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PointVec.hpp:R09:is_integral_v",
+      "fingerprint": "3b6bcbf58f4aac134b5438c7d42da8aed1e7bd093707d4588b426aa5d5657bf5",
+      "reason": "区分整数精确拓扑、浮点构造与包装数值；整数半平面转换、宽乘及交点返回类型依赖这些分支。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PointVec.hpp:R04:cross",
+      "fingerprint": "22d60e8c576c88d0addc26c333c29c8df12085e54d25f8044818acb3e0faafef",
+      "reason": "cross 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PointVec.hpp:R04:dist2",
+      "fingerprint": "c48f33dbc32ab09e3a1cda20581a12361ff56b400cf510825085e6baf58d7a9b",
+      "reason": "dist2 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PointVec.hpp:R04:rot90",
+      "fingerprint": "9f762ff9cef6a398d070909be3e082e148b6ce945d7e9545efe3f9932013a677",
+      "reason": "rot90 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PointVec.hpp:R04:angle",
+      "fingerprint": "a97c3be7b8f698fb1649a88af1826d896df13bddac06316d9fc39e4bfc3aab96",
+      "reason": "angle 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PointVec.hpp:R04:orient",
+      "fingerprint": "c467c50f4cd9e9c24d8f5ab262fe878d7521c8cb00ce5b7dd2b55f00cb9dd5b5",
+      "reason": "orient 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PointVec.hpp:R04:inter",
+      "fingerprint": "5df00dbb9cf61d1e3833feb14e0f3fedf4484a9ba88f53b9f830c106eddf2165",
+      "reason": "inter 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/SegLine.hpp:R04:project",
+      "fingerprint": "e30553cc222afe5d72fa9b1a5f853eb59647808a58e5ec1ff09fcd8ba05a83fe",
+      "reason": "project 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/SegLine.hpp:R09:is_integral_v",
+      "fingerprint": "c22c3d5bb38169dd01127746ba5079c506171577fc4f4dbf8d738ff23588f45a",
+      "reason": "区分整数精确拓扑、浮点构造与包装数值；整数半平面转换、宽乘及交点返回类型依赖这些分支。"
+    },
+    {
+      "id": "src/Geometry/Geo2/SegLine.hpp:R04:fromVec",
+      "fingerprint": "d9575d0ace3e7287ba8fe17125e5579340695222c2277dd72c27fa7046919895",
+      "reason": "fromVec 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/SegLine.hpp:R04:cross",
+      "fingerprint": "84e8a170e6619870e856f8ef9898acfbc8b82643e2bc15485db223c4d3096e4b",
+      "reason": "cross 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/SegLine.hpp:R04:parallel",
+      "fingerprint": "15120dc140c9388cedca845cfe90647a9d8cfc9b571eed20ff1c08f64b9cd38c",
+      "reason": "parallel 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/SegLine.hpp:R04:orthogonal",
+      "fingerprint": "05098bb317c79e125c9f68be6d7358018a45a0a857e7ec4f31cf243b3d10cb3e",
+      "reason": "orthogonal 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/SegLine.hpp:R04:reflect",
+      "fingerprint": "ea5ecb240cae6011e87241bc7452f87591c4456c96365eedfd8d0dbe203f9328",
+      "reason": "reflect 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/SegLine.hpp:R04:reversed",
+      "fingerprint": "ff3a8dd873da9f016ebddd1b4ede93c305cd4460640a94e73b83fe9a664bba0e",
+      "reason": "reversed 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/SegLine.hpp:R04:dist2",
+      "fingerprint": "d2a8af1ac807ee2f0681a1aa527e57933ebd354f9a6d2ade73ac036a1e55f652",
+      "reason": "dist2 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/SegLine.hpp:R04:orient",
+      "fingerprint": "05659adaf1b4c73a017459b835a9614e6bea8d21485a6571ef154870e7f873f4",
+      "reason": "orient 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/SegLine.hpp:R04:inter",
+      "fingerprint": "479f6002ab08157d637c13e5f4ef2a791f664b10c5f6bea02909091acd076112",
+      "reason": "inter 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/SegLine.hpp:R04:first",
+      "fingerprint": "a8b982662fb9c47eb4a124915cb64f97793d91d5f5fc7570f4ded2c3b7da0d07",
+      "reason": "std::pair 的 first 成员是标准接口，不能随内部命名规则改动。"
+    },
+    {
+      "id": "src/Geometry/Geo2/SegLine.hpp:R04:second",
+      "fingerprint": "a8b982662fb9c47eb4a124915cb64f97793d91d5f5fc7570f4ded2c3b7da0d07",
+      "reason": "std::pair 的 second 成员是标准接口，不能随内部命名规则改动。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:convexHull",
+      "fingerprint": "6ecfd0c650d985ef788ecf9c56117f2de255b61a180f50e87f54b0d22dcb9f36",
+      "reason": "convexHull 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:area2",
+      "fingerprint": "46ab1cee37470546d7505ba6f8ae669729b53b82376111623140cb1b4ad6bd2d",
+      "reason": "area2 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R09:conditional_t",
+      "fingerprint": "303058c4f92595a8744204d099d41f344ab72b202f6f2499269526ec577641c5",
+      "reason": "区分整数精确拓扑、浮点构造与包装数值；整数半平面转换、宽乘及交点返回类型依赖这些分支。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R09:is_integral_v",
+      "fingerprint": "6a689e908f3dc7fc94df4110f618d6e2e6fceaabff3df8848664f18fd5a493b1",
+      "reason": "区分整数精确拓扑、浮点构造与包装数值；整数半平面转换、宽乘及交点返回类型依赖这些分支。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:cross",
+      "fingerprint": "ed0bcc44096dcc14bb4aa3ef05ae420a2e7895caa1dd1b88d2bef24a202c09fb",
+      "reason": "cross 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:perimeter",
+      "fingerprint": "d8b86056aca9dea6c88f16027ed8e313cf382ee3a0ac6a0786dfb4c10a9af6d3",
+      "reason": "perimeter 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:orient",
+      "fingerprint": "515201a201b55eda33dceac51199edac4b45f37ede5d2595ce6592cfe8a4d3ae",
+      "reason": "orient 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:isConvex",
+      "fingerprint": "893c95b801ef005163cb20b4ce2f9f1b1763a6da39f2eb55a6b28049a2b4cdc8",
+      "reason": "isConvex 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:centroid",
+      "fingerprint": "cb96517b20ab3415076e3221fdd92ee8e9769bd2e3d55738c4232a41c23cd3be",
+      "reason": "centroid 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:toVec",
+      "fingerprint": "c4c767062b5d2f607e6efe48fba8217ca9d0d8f03ce1c2b8b8c9baa1ddec8145",
+      "reason": "toVec 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:inter",
+      "fingerprint": "816d1b768e13c330419c3cc3942b8dfc9097238ea3b7eab2f9d270ae498d144b",
+      "reason": "inter 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:cutLeft",
+      "fingerprint": "717e727f0ab032ef5fc653144b4d3aee6714e0bbd56b9a5183d204912c036c85",
+      "reason": "cutLeft 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:farthestPair",
+      "fingerprint": "60d215c79a78aa7504868f812a3ddf8f04b1a77a792b7bc6f938b971a962ae2d",
+      "reason": "farthestPair 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:minWidth",
+      "fingerprint": "26cc4ba5110d8f9169436c9e342c5179a1a20e87e51d6b62f572a9f3c62e403e",
+      "reason": "minWidth 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:minBoundingRect",
+      "fingerprint": "4317ba86e308ab9fbefd51840d269e99318f405a41f15abe43d2ed7bccc71116",
+      "reason": "minBoundingRect 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:minkowskiSum",
+      "fingerprint": "a5532f15a553701374aa8246780ff9efe09202ee6dd7efa86595d5af45a909f4",
+      "reason": "minkowskiSum 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:minkowskiDiff",
+      "fingerprint": "08d9f12fc27c07699a9f3cb2470b379ab9e42fb2349c7bc4e69ea8fb85f8fa74",
+      "reason": "minkowskiDiff 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:halfPlaneIntersection",
+      "fingerprint": "0892516bc16c486eb482a3ba526d5974c02104ef5b94bcb1aedf6a066a4d21bb",
+      "reason": "halfPlaneIntersection 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:fromBoundary",
+      "fingerprint": "d9ef7621137bf7908c5dada6479729451f4ac701b03c553e00dfe81add2d0e4f",
+      "reason": "fromBoundary 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:first",
+      "fingerprint": "47eb31c5eecf6a68c587ce915a1d0ce9933272910476db31f61fa55d20386a13",
+      "reason": "std::pair 的 first 成员是标准接口，不能随内部命名规则改动。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:second",
+      "fingerprint": "a10e739afadf0e73e0986915ecf885affb052ceb66a78ffdfbeeb053f57a40da",
+      "reason": "std::pair 的 second 成员是标准接口，不能随内部命名规则改动。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:vertices",
+      "fingerprint": "6e9de25997428f25e931942451bcb7c0e03afd45d9cec26c470fa6e3d3bb1bb1",
+      "reason": "vertices 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:polygon",
+      "fingerprint": "64acb545ad100eb34c430c75a4db8940684c1fe2f5412995aa30c1a55df8ba55",
+      "reason": "polygon 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:rot90",
+      "fingerprint": "6acea2740941e4319b9d528cffb910747b4f9cb847ca3652b4fa2e8601bba13a",
+      "reason": "rot90 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:tangents",
+      "fingerprint": "8cc636fea41feca18691116296a02b392f1d966634d15e961da51f6dfab10660",
+      "reason": "tangents 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:dist2",
+      "fingerprint": "a576c2536314f2db66bcaf6d0af91de867f3e49f746331c664aa3287b046706c",
+      "reason": "dist2 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:diameter",
+      "fingerprint": "261c8f5756d130de825ab9007a40533760e4453a71685a22591a1d3f5af98f95",
+      "reason": "diameter 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:parallel",
+      "fingerprint": "991af622afbda248066362a9f1ea9d14de7a076bdeafa5c755f0ee4042692409",
+      "reason": "parallel 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R09:is_arithmetic_v",
+      "fingerprint": "c2d8919021337f9969b62aa8a35834cac4394ad2d0833e3abd075978526fb6d0",
+      "reason": "区分整数精确拓扑、浮点构造与包装数值；整数半平面转换、宽乘及交点返回类型依赖这些分支。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:fromVec",
+      "fingerprint": "ac03dad66d13840ff75ca4a0a35704a456ae5a34b9672feea538531d2304a0aa",
+      "reason": "fromVec 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/PolygonConvex.hpp:R04:size_t",
+      "fingerprint": "ec599d25989c41dd2ede765aac80d67d9c02f23355bf9f06c3aa118ec9692e42",
+      "reason": "size_t 是标准类型名，不是本仓的局部变量。"
+    },
+    {
+      "id": "src/Geometry/Geo2/Circle.hpp:R04:circum",
+      "fingerprint": "5691dbcbd0e6d036e39b287e14aa519b3d94aaded3cb232fa28faf47fe4e967c",
+      "reason": "circum 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/Circle.hpp:R09:is_integral_v",
+      "fingerprint": "954d4e07af661bc90a0951b1270c434e005453a90ee84058121349dc840b52e3",
+      "reason": "区分整数精确拓扑、浮点构造与包装数值；整数半平面转换、宽乘及交点返回类型依赖这些分支。"
+    },
+    {
+      "id": "src/Geometry/Geo2/Circle.hpp:R04:cross",
+      "fingerprint": "c7fcf3ae235a512c6aeee1a6a6cf1e0d660748f2f5227567480c135c6d12460a",
+      "reason": "cross 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/Circle.hpp:R04:rot90",
+      "fingerprint": "1e5a171d127eaef3b83177c1ca41bd1cb4195b73c5e1da4717b6610cd01c8e98",
+      "reason": "rot90 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/Circle.hpp:R04:perimeter",
+      "fingerprint": "1844a847281172334803d2f54b36f58c5094d4ed800fc4ea0226a36158084d09",
+      "reason": "perimeter 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/Circle.hpp:R04:dist2",
+      "fingerprint": "d982e5de2538fa3b25a1e02e81212cb71e3eaa194d3712bd2d6b1614bdb54865",
+      "reason": "dist2 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/Circle.hpp:R04:inter",
+      "fingerprint": "49533f2c208124df73e21dce547a5e2c04a9afe059d37a99590a32b10a62efca",
+      "reason": "inter 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/Circle.hpp:R04:second",
+      "fingerprint": "d7da069f7f72a33069938499d121968c9eded0b607734e97628996b30b0a9879",
+      "reason": "std::pair 的 second 成员是标准接口，不能随内部命名规则改动。"
+    },
+    {
+      "id": "src/Geometry/Geo2/Circle.hpp:R04:relation",
+      "fingerprint": "809f6c21d45ab4ee0571c9daa9c3eab58887801700ac42d2a179b91ba08a2f83",
+      "reason": "relation 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/Circle.hpp:R04:intersectionArea",
+      "fingerprint": "6288432240c857c6a822256140d517bb16b50341aefb352cf0e5e5aca72c5e43",
+      "reason": "intersectionArea 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/Circle.hpp:R04:infinite",
+      "fingerprint": "967880aa3ae2b26970ed028711ce24f8b6ed7f79bf677736777a62728f1a6862",
+      "reason": "infinite 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/Circle.hpp:R04:lines",
+      "fingerprint": "24952c70184a683c890dc5857633b1df6af8cbc6989bb52ba401b391e3fd28b3",
+      "reason": "lines 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/Circle.hpp:R04:tangents",
+      "fingerprint": "1cdbf4225b29c0d5ad1bd352b333d6db3a58b4f47356a1b4cd41a252566af8e7",
+      "reason": "tangents 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/Circle.hpp:R04:fromVec",
+      "fingerprint": "6c0550b869f9449c64877e03176cdae81197b217588ba7af3d89307d2f204749",
+      "reason": "fromVec 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/Circle.hpp:R04:commonTangents",
+      "fingerprint": "91755172152947d24a009fdcde89b99e4d986aa1f06e721d1b464876774b3007",
+      "reason": "commonTangents 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/Circle.hpp:R04:vertices",
+      "fingerprint": "eb744487d07dd98c35378e1ccfbf9433a83979f63eeb362bf12dfe1a2adc7285",
+      "reason": "vertices 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Geometry/Geo2/Circle.hpp:R04:first",
+      "fingerprint": "d3cc9ab13f5235e128bf055095519efd95b2aaab41fe26149d996ecae11cbda3",
+      "reason": "std::pair 的 first 成员是标准接口，不能随内部命名规则改动。"
+    },
+    {
+      "id": "src/Geometry/Geo3/code.hpp:R09:conditional_t",
+      "fingerprint": "79a0bf3d4af4d302fa5a7b68f37b35bb3c6abc8c669b8df85da4e46fa23a60b7",
+      "reason": "整数坐标提升点积/叉积/三重积并返回 Float 距离，浮点保留原标量，区分结果表示。"
+    },
+    {
+      "id": "src/Geometry/Geo3/code.hpp:R09:is_integral_v",
+      "fingerprint": "2db717f8b5c01daa3f5e1f5e17cd0e049d3aaf33e7b89c406a2af79e1fd554d1",
+      "reason": "整数坐标提升点积/叉积/三重积并返回 Float 距离，浮点保留原标量，区分结果表示。"
+    },
+    {
+      "id": "src/Geometry/Geo3/code.hpp:R04:toVec",
+      "fingerprint": "8114dcc75749b3d584eb7dbcbcd0dce1662bd33ff35124ac4751dd4d70ab1218",
+      "reason": "与 Geo2 相同的公开点转位置向量接口。"
+    },
+    {
+      "id": "src/Geometry/Geo3/code.hpp:R04:cross",
+      "fingerprint": "a9474fdd014899bdce406f7cc39764bed28e3cbb45cb8232ad70c1dce0ac89d2",
+      "reason": "公开向量叉积接口。"
+    },
+    {
+      "id": "src/Geometry/Geo3/code.hpp:R04:triple",
+      "fingerprint": "8f0e1064cc41531d1f224dc2d8f3600e6806ed73955cc93b16c1c92fe8ea1197",
+      "reason": "公开三重积接口，保留宽整数结果。"
+    },
+    {
+      "id": "src/Geometry/Geo3/code.hpp:R04:dist2",
+      "fingerprint": "c48b2b66bce08908b13547a57785f5233b3b9f1bdc4d059ae1e1ab7be21d5e39",
+      "reason": "公开平方距离接口，与 Geo2 一致。"
+    },
+    {
+      "id": "src/Geometry/Geo3/code.hpp:R04:fromVec",
+      "fingerprint": "8653ceb6e1ef4676fd841663e23d00e6b7c4fb1381a6751091788d034a3fe6e5",
+      "reason": "与 Geo2 相同的点加方向构造直线接口。"
+    },
+    {
+      "id": "src/Geometry/Geo3/code.hpp:R04:relation",
+      "fingerprint": "bfe559a8a6236d7c8b0d553358767816cf5b9a8eb13efd453842b3255f334d25",
+      "reason": "既有平面与直线关系/交点接口，类型分离后保留。"
+    },
+    {
+      "id": "src/Geometry/Geo3/code.hpp:R04:reverse",
+      "fingerprint": "82ac2207b3f1f1da181dc693e123e0c43910771605b4bf23a47fc7358a0d1aeb",
+      "reason": "reverse 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/GraphTheory/GridUtil/code.hpp:R04:contains",
+      "fingerprint": "185c2bfcdf63a854f71fe51749dc228eef3930a4d92e64b5914de5bd77a81802",
+      "reason": "contains 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/GraphTheory/GridUtil/code.hpp:R04:forEachNeighbor",
+      "fingerprint": "68ad6cb4b444cbd43b420b52f57756c36dcb9e371c9077fa84b6609fcb68e01a",
+      "reason": "forEachNeighbor 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/GraphTheory/GridUtil/code.hpp:R07:&&",
+      "fingerprint": "cf9eda68cfe33ff6bae8ab26c7428ae3be8f5147ae0174be826a637f952bde36",
+      "reason": "F&& 是回调的转发引用，不能改成逻辑 and。"
+    },
+    {
+      "id": "src/GraphTheory/GridUtil/code.hpp:R04:neighbors",
+      "fingerprint": "f62a88c9e2af43d46dfa1ff4b681f838b36fb464d4ddb67361d67bd1f33078c6",
+      "reason": "neighbors 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DataStructures/BaseDataStructures/HashMap/code.hpp:R04:_hashmap",
+      "fingerprint": "0848e3dd9717b1b74ff2fdff6dcbe286b7de12801766cd2dd2f7ac91d966b698",
+      "reason": "HashMap 的实现命名空间；内部类已按用户要求改 Impl / Pool，私有运行变量已缩名。"
+    },
+    {
+      "id": "src/DataStructures/BaseDataStructures/HashMap/code.hpp:R05:body",
+      "fingerprint": "654d04d1da3ecddc1e1ebd33f9a9e8d887ba4d089fe284fc87158d3abf0c362b",
+      "reason": "用户明确要求 既有模板 实现适度压行到 200–210 行；保留短池状态与纯查询分支，实际压行低于 30%。"
+    },
+    {
+      "id": "src/DataStructures/BaseDataStructures/HashMap/code.hpp:R07:&&",
+      "fingerprint": "0dee450b4184ee791f4f232252ae62efc211e54e0e70fe77325e52d74162fe7f",
+      "reason": "逐处核对为移动/转发/引用限定或宏引用参数的 &&，不是逻辑与。"
+    },
+    {
+      "id": "src/Math/LinearAlgebra/LinearBasis/code.hpp:R09:is_integral_v",
+      "fingerprint": "e47e40fd85a1e4b70a2a6ba7867fc062977e30cb3eb9d02081f163ffffec58ee",
+      "reason": "异或基需要非 bool 整数；有符号输入要求非负，保留位运算值域检查。"
+    },
+    {
+      "id": "src/Math/LinearAlgebra/LinearBasis/code.hpp:R09:is_same_v",
+      "fingerprint": "e47e40fd85a1e4b70a2a6ba7867fc062977e30cb3eb9d02081f163ffffec58ee",
+      "reason": "异或基需要非 bool 整数；有符号输入要求非负，保留位运算值域检查。"
+    },
+    {
+      "id": "src/Math/LinearAlgebra/LinearBasis/code.hpp:R04:digits",
+      "fingerprint": "e6507e96ff1e51d318ee3f5b384d6544bd6d84ee8399cb42304f24d623ed7376",
+      "reason": "numeric_limits::digits 是标准类型属性，名称由标准库定义。"
+    },
+    {
+      "id": "src/Math/LinearAlgebra/LinearBasis/code.hpp:R04:canZero",
+      "fingerprint": "7526febf508a5fc3d1088f405cd16c1471109cce2450ddecbf5e546a69b35135",
+      "reason": "canZero 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Math/LinearAlgebra/LinearBasis/code.hpp:R09:is_signed_v",
+      "fingerprint": "78f5fe0dfdfa1818662038cfa4fa7b171ff71ae350ecb5cf214dea5f85e5bb41",
+      "reason": "异或基需要非 bool 整数；有符号输入要求非负，保留位运算值域检查。"
+    },
+    {
+      "id": "src/Math/LinearAlgebra/LinearBasis/code.hpp:R04:check",
+      "fingerprint": "9c944e25cf3b136424227036ac578e60fc5c0527adbf62f0a8658e323e2807aa",
+      "reason": "check 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Math/LinearAlgebra/LinearBasis/code.hpp:R04:getMax",
+      "fingerprint": "1d48637edc24f2a115b900ef691ec2fe06fbd3c896bf7d11f7341fa7ebd22792",
+      "reason": "getMax 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Math/LinearAlgebra/LinearBasis/code.hpp:R04:getMin",
+      "fingerprint": "d50a75b19c2fa5fa389d57e07289bc50ff7d1ef640069b78dc6e6034da792418",
+      "reason": "getMin 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Math/LinearAlgebra/LinearBasis/code.hpp:R04:findByOrder",
+      "fingerprint": "37b099f2176285372d5461b7da0a448376df9500b72d36c756e34596a0847f04",
+      "reason": "findByOrder 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R07:&&",
+      "fingerprint": "eaa95d5c9e5df632011fdd9250003c8f120b12e3e2db5d304a59fc772e5be7b7",
+      "reason": "逐处核对为移动/转发/引用限定或宏引用参数的 &&，不是逻辑与。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:canMove",
+      "fingerprint": "36e26b18712a50a31b79aa3645b77f7b208c24160d92df2336e7e1f814611d21",
+      "reason": "既有模板 的所有权判断：仅消费非常量右值；用户要求维持 既有模板 简洁实现。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R09:is_lvalue_reference_v",
+      "fingerprint": "1857561a44aef1305f05457f596d744dda156183b47b9dd999f72241c0c99c89",
+      "reason": "既有模板 的容器/比较器分派和借用/消费判断：vector 整数采用基数排序、bool 禁止 make_unsigned；成员返回 void/引用与右值所有权必须区分。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R09:is_const_v",
+      "fingerprint": "6bda913eaa95b6736c6c25d626df9fc40c4b2c3c3e67a723a052712931f40810",
+      "reason": "既有模板 的容器/比较器分派和借用/消费判断：vector 整数采用基数排序、bool 禁止 make_unsigned；成员返回 void/引用与右值所有权必须区分。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:radixSort",
+      "fingerprint": "30ec4297394496680a1e3fc55691e3a4ef47c6ee1a26ffc2150fc72de81562b8",
+      "reason": "既有模板 的公开整数基数排序入口。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R06:packed",
+      "fingerprint": "1a6845764d5282e4474a87115c65e9e17c21379c609e83bde127829625d246ba",
+      "reason": "保留用户指定 既有模板 的短容器处理及返回分支；人工合并压行候选 20/226 行（8.85%），低于 30%。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:range",
+      "fingerprint": "c08fd92cc2f50ba1c8077adff2966d37f991ac8b2be81782e417322aeda4921a",
+      "reason": "既有模板 的无符号键范围，控制基数轮数；本轮用户要求仅补正确性，保留该局部名字。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:shift",
+      "fingerprint": "c87edc4ff4e8e9dd492ad0e7b6646a77ad9557be15c3f0bfb1efaa6f239dee57",
+      "reason": "既有模板 的位移量，不是缓存状态；按用户的 既有模板 边界保留。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R05:body",
+      "fingerprint": "877a9f084c7a5354a58e22b3e67f24775fe97ca33aaceb8789d1531efef5b558",
+      "reason": "保留用户指定 既有模板 的短容器处理及返回分支；人工合并压行候选 20/226 行（8.85%），低于 30%。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:sorted",
+      "fingerprint": "1e7d4d6df85ad759ef6c379a5df4d276cb60f50b1186a35f3e936fbb614e9da8",
+      "reason": "sorted 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:result",
+      "fingerprint": "8efb71d29cf1f3f38d31c8a47177ac9933761b2eeb5b27fb8322474683a32488",
+      "reason": "既有模板 管道的拥有结果，避免与借用输入 a 混淆；按用户指定保留结构及名字。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R09:is_integral_v",
+      "fingerprint": "c6164f13a798dba6b6cf6aea14332234608c36945bd9c6038149fd99b60a5456",
+      "reason": "既有模板 的容器/比较器分派和借用/消费判断：vector 整数采用基数排序、bool 禁止 make_unsigned；成员返回 void/引用与右值所有权必须区分。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R09:is_same_v",
+      "fingerprint": "86c9db8df715a45ece3a866d109fd62b24a6840f1a49e31527a8134935ffd9cf",
+      "reason": "既有模板 的容器/比较器分派和借用/消费判断：vector 整数采用基数排序、bool 禁止 make_unsigned；成员返回 void/引用与右值所有权必须区分。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:passes",
+      "fingerprint": "37c2609e8df28b08d9eea1b531a288160ac1338ef4fd116632a806ecab9e3cc5",
+      "reason": "既有模板 基数排序轮数阈值，服务现有排序选择；本轮不改性能内核。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:unique",
+      "fingerprint": "fc68633ca935683237fe861b4d395a6d9b0ded8369a01bcd2304d2367fdbebaf",
+      "reason": "unique 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:reverse",
+      "fingerprint": "d27f563a09ec8674c1195835e43b627fd91467b67923275e3166efe68e9b90a2",
+      "reason": "reverse 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:slice",
+      "fingerprint": "f80d83b5ca46207d43c6446fde5c17ff4f6d6cc874bcc9723f86bd4bc5dc222f",
+      "reason": "既有模板 的公开半开区间管道接口。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:first",
+      "fingerprint": "be7db977830f0a384ce7872e48e9480a4bc886a21fe1d1135ae01c2789f4664d",
+      "reason": "既有模板 的公开 first 查询及 slice 的左端参数；保持本轮恢复的调用契约。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:get_allocator",
+      "fingerprint": "496dd6272f393cba647763291362aeeba9f16dd868905f9b6e186419ad355aa3",
+      "reason": "标准容器的 allocator 获取接口。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:filter",
+      "fingerprint": "f53aa28c9690c7760994d5d256c89a8efc8a65230f8b573c008f678f70e220fb",
+      "reason": "filter 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:enumerate",
+      "fingerprint": "ddaf656c077c52becacb42ebe1b2954dcf9f8ce5cd7f625bbed97882c8df559c",
+      "reason": "既有模板 的公开带下标枚举接口。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:accumulate",
+      "fingerprint": "ecd7cd504169ed7c2eb772156109285e1617aba3cc17805af8a4f7d14aabc776",
+      "reason": "既有模板 的公开累计接口。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:initial",
+      "fingerprint": "0da991ad5d04b0271a3eaffdb75728b055e0a6e5e3ae9e6cbd8c8defd6288fe9",
+      "reason": "既有模板 的初值捕获，修复重复调用时不移动初值；保留名字区分中间 result。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:write",
+      "fingerprint": "dbdf3959de00b08fa6c0cc366a39525687cce9378a59caee08a49ffaf4470ecc",
+      "reason": "既有模板 的标准流写入重载，供 cout 管道调用。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:separator",
+      "fingerprint": "922c8ac9e5374a4e16f02c402eabbcc5aef7df16386a9a539edc8d87526245aa",
+      "reason": "既有模板 cout 的分隔串参数及捕获，按用户边界不重构流框架。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:ending",
+      "fingerprint": "10184ec30dfc339acadee1c779d400e907cea9625d16d681d7616e8a62898192",
+      "reason": "既有模板 cout 的结尾串参数及捕获，按用户边界保留。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:memberCall",
+      "fingerprint": "d67c13812aaf8e598ab335ba30e7e7ed0c0aee228526c62b363dbbb1a8b57cf6",
+      "reason": "既有模板 的成员调用载体/CTAD 接口，未增加新类。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:function",
+      "fingerprint": "c74fcc692d533b1e11eccfd0a20b92188afd99410cfd6bd264fdd80f56ebe811",
+      "reason": "既有模板 memberCall 的可调用对象字段；std::invoke 只修正成员指针调用。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:applyCall",
+      "fingerprint": "132c818ea010e9433774fc5fc035aef89274ca8cad54a2784cfba4773d851667",
+      "reason": "既有模板 的共用成员调用执行点，负责转发及结果寿命；本轮仅补实际生命周期问题。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:object",
+      "fingerprint": "5916cf9b1742454e312b9afe4fd21f3f9211f37a0240ab0c4bb7bae83b68a126",
+      "reason": "既有模板 的成员调用接收者，用于区分 op 与参数 tuple，按用户指定保持。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:constObject",
+      "fingerprint": "8c350469379af1e15e77bd38b9b6673980527d3a33c509ed0fbee1b66b495148",
+      "reason": "既有模板 的 const 左值接收类型，确保不改借用左值。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:receiver",
+      "fingerprint": "589afbfb5abcd4b78fa64b561fd11e80d24d84e318e137f67bd8ec18f358c5f0",
+      "reason": "既有模板 的接收引用类型；右值可消费，左值 const 借用。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R09:conditional_t",
+      "fingerprint": "555fe769a116f04e9f5ac39fa3957a27d4c8e43da06f503852cae22cf5c0fdbc",
+      "reason": "既有模板 的容器/比较器分派和借用/消费判断：vector 整数采用基数排序、bool 禁止 make_unsigned；成员返回 void/引用与右值所有权必须区分。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R09:is_void_v",
+      "fingerprint": "269910c1e51abaf75168af1f0454750bea8ea5cb377ae9960bdab41acba809f8",
+      "reason": "既有模板 的容器/比较器分派和借用/消费判断：vector 整数采用基数排序、bool 禁止 make_unsigned；成员返回 void/引用与右值所有权必须区分。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R09:is_reference_v",
+      "fingerprint": "ce69cf5c20c43784045025adfa519939252083c7a2ad9910a11e2be99630fa88",
+      "reason": "既有模板 的容器/比较器分派和借用/消费判断：vector 整数采用基数排序、bool 禁止 make_unsigned；成员返回 void/引用与右值所有权必须区分。"
+    },
+    {
+      "id": "src/Clarketech/ListHelper/code.hpp:R04:callOperator",
+      "fingerprint": "4ea7a3647105f868a52a589598c36ecb2cb19a49cec40a65c3e5674c1d94402e",
+      "reason": "仅在本文件定义并立即 undef 的引用重载生成宏；保留与 .clang-format 的宏配置对应。"
+    },
+    {
+      "id": "src/String/StringF4/Manacher/code.hpp:R04:getPalinLenFromCenter",
+      "fingerprint": "fc3bb37878edf9e6331c43f4dde4a1690f957dc6a1985b6b83328e324e11d031",
+      "reason": "getPalinLenFromCenter 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/String/StringF4/Manacher/code.hpp:R04:getPalinLenFromTail",
+      "fingerprint": "c4638862755576f8a6a988c6b3b8097f97e86692e53466096fc0eb55d864cb8b",
+      "reason": "getPalinLenFromTail 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/String/StringF4/Manacher/code.hpp:R04:isPalindrome",
+      "fingerprint": "2352645053dfa6943a8429c8d1e7721893dbe807acd08ea30062a3c5e5c487af",
+      "reason": "isPalindrome 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/GraphTheory/Flow/MaxFlow/code.hpp:R09:is_arithmetic_v",
+      "fingerprint": "5ce19784190ae14bd68ef11a1767f9bd09993d2a3241213ff31d0376f708ef94",
+      "reason": "容量需要非 bool 算术类型；浮点容量额外检查有限值，整数不调用浮点检查。"
+    },
+    {
+      "id": "src/GraphTheory/Flow/MaxFlow/code.hpp:R09:is_same_v",
+      "fingerprint": "5ce19784190ae14bd68ef11a1767f9bd09993d2a3241213ff31d0376f708ef94",
+      "reason": "容量需要非 bool 算术类型；浮点容量额外检查有限值，整数不调用浮点检查。"
+    },
+    {
+      "id": "src/GraphTheory/Flow/MaxFlow/code.hpp:R04:second",
+      "fingerprint": "0c79eafa13cb3009ff014eeb4141b733e321ec06674355607d0a71ea974e0454",
+      "reason": "std::pair 的 second 成员是标准接口，不能随内部命名规则改动。"
+    },
+    {
+      "id": "src/GraphTheory/Flow/MaxFlow/code.hpp:R04:newNode",
+      "fingerprint": "6d939ca0d07c684547d00dffbdb3524c70072fbbe75230e04b52b7f2d69768ed",
+      "reason": "newNode 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/GraphTheory/Flow/MaxFlow/code.hpp:R09:is_floating_point_v",
+      "fingerprint": "e7dbbdf8676b426020949705188db6d68cef7d2e750480f737ff0bbdba90661c",
+      "reason": "容量需要非 bool 算术类型；浮点容量额外检查有限值，整数不调用浮点检查。"
+    },
+    {
+      "id": "src/GraphTheory/Flow/MaxFlow/code.hpp:R04:getReach",
+      "fingerprint": "55d800a28ea8600f03eb0658bb89cee6bbe2498b87406f2f33fac691fea453c5",
+      "reason": "getReach 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/GraphTheory/Flow/MaxFlow/code.hpp:R04:getCuts",
+      "fingerprint": "74372abaa42c97dbb75a6427166d1f5bf563340094e39174375595f8a16aae26",
+      "reason": "getCuts 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/GraphTheory/Flow/MaxFlow/code.hpp:R04:first",
+      "fingerprint": "853ed605f5eb74e8460f1e1b9451a290e49e536e8f196ef89f6c63297d3535e1",
+      "reason": "std::pair 的 first 成员是标准接口，不能随内部命名规则改动。"
+    },
+    {
+      "id": "src/Math/RandomNumberAlgorithm/MillerRabin/code.hpp:R09:is_integral_v",
+      "fingerprint": "e37ede051e0b433ca6ad34da2aa878548cf6860ebe354b67542b313c5470fb78",
+      "reason": "确定性见证仅适用非 bool 的 32/64 位整数，乘法宽化按该类型前提实现。"
+    },
+    {
+      "id": "src/Math/RandomNumberAlgorithm/MillerRabin/code.hpp:R09:is_same_v",
+      "fingerprint": "e37ede051e0b433ca6ad34da2aa878548cf6860ebe354b67542b313c5470fb78",
+      "reason": "确定性见证仅适用非 bool 的 32/64 位整数，乘法宽化按该类型前提实现。"
+    },
+    {
+      "id": "src/Math/RandomNumberAlgorithm/MillerRabin/code.hpp:R04:isPrime",
+      "fingerprint": "75de037891d0f6239db935c53547aba42cfff0f99f7e2aa6d0abb5c800765545",
+      "reason": "公开的无状态 MillerRabin 判定对象；已去掉无必要的 inline。"
+    },
+    {
+      "id": "src/String/StringF4/MinimalString/code.hpp:R04:minimalString",
+      "fingerprint": "5a70d8a3b199144fabe17b4ca14d0a00324afe2117202031cacda010e35da69c",
+      "reason": "minimalString 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/String/StringF4/MinimalString/code.hpp:R07:&&",
+      "fingerprint": "03bcd6724050d6c2cb38a1c8d25577af43244821ab831bdb896700e8e8a49302",
+      "reason": "auto&& 是管道操作的转发引用，交由 materialize 处理借用/拥有。"
+    },
+    {
+      "id": "src/Sorting/MoSort/code.hpp:R04:rangeScale",
+      "fingerprint": "3403d901ff059f6ad0a2bd6a1aa912a4814574a804b9263f438ed8908402f714",
+      "reason": "rangeScale 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Math/MathPackage/ModuloInteger/code.hpp:R09:is_same_v",
+      "fingerprint": "7d150be93cb41d7789c99ccba8ab183cd77bf4ae44d7626d4e24cb7eca3ed7f0",
+      "reason": "模数底层和输入限定整型；符号归一化与宽乘按位宽分派，禁止浮点输入误入构造重载。"
+    },
+    {
+      "id": "src/Math/MathPackage/ModuloInteger/code.hpp:R04:xffffffffULL",
+      "fingerprint": "839d22c1b86d0078989ca5f0c1a2dc00430d6271d10b1b82b0423b0385d41536",
+      "reason": "0xffffffffULL 是 limb 的数值掩码，不是长标识符，属于词法候选。"
+    },
+    {
+      "id": "src/Math/MathPackage/ModuloInteger/code.hpp:R04:first",
+      "fingerprint": "56b8ba308ec813c52ea09c24b91ca10dbd906e274b38f0d033a7269b0139fef1",
+      "reason": "std::pair 的高半部分成员。"
+    },
+    {
+      "id": "src/Math/MathPackage/ModuloInteger/code.hpp:R04:second",
+      "fingerprint": "1ae194bbbf13c04b02170f472fe38ba9cb30a83bdf7aabfa41003fc409a733c3",
+      "reason": "std::pair 的低半部分成员。"
+    },
+    {
+      "id": "src/Math/MathPackage/ModuloInteger/code.hpp:R04:x1p64L",
+      "fingerprint": "6b7051cb713d7b892b08d91b118abbe17d455e5de66d89d8cdf394267cf56ec6",
+      "reason": "0x1p64L 是精确的 2^64 long double 字面量，不是标识符。"
+    },
+    {
+      "id": "src/Math/MathPackage/ModuloInteger/code.hpp:R09:enable_if_t",
+      "fingerprint": "373ce9baf30656a05ee685e6a0267f7c86b2c025e985141039f722f8df17f404",
+      "reason": "模数底层和输入限定整型；符号归一化与宽乘按位宽分派，禁止浮点输入误入构造重载。"
+    },
+    {
+      "id": "src/Math/MathPackage/ModuloInteger/code.hpp:R09:is_integral_v",
+      "fingerprint": "373ce9baf30656a05ee685e6a0267f7c86b2c025e985141039f722f8df17f404",
+      "reason": "模数底层和输入限定整型；符号归一化与宽乘按位宽分派，禁止浮点输入误入构造重载。"
+    },
+    {
+      "id": "src/Math/MathPackage/ModuloInteger/code.hpp:R09:is_signed_v",
+      "fingerprint": "bf277626913674b6080025680831a0abb4f3eac2828f2289023faec1bb2908ad",
+      "reason": "模数底层和输入限定整型；符号归一化与宽乘按位宽分派，禁止浮点输入误入构造重载。"
+    },
+    {
+      "id": "src/Math/MathPackage/ModuloInteger/code.hpp:R09:conditional_t",
+      "fingerprint": "a2bb96b6835c78e00e4e2a0a54c8947c9b2871848429b82c27c7f5cdb9c50c7a",
+      "reason": "宽输入有符号/无符号的规范化需要不同中间类型；宽构造不等于用 int128 模乘。"
+    },
+    {
+      "id": "src/Math/MathPackage/ModuloInteger/code.hpp:R04:getMod",
+      "fingerprint": "ea1663a034ee47e219fbca51963fa12a408a296ced899d49f095478187f11128",
+      "reason": "公开固定/动态模数查询入口。"
+    },
+    {
+      "id": "src/Math/MathPackage/ModuloInteger/code.hpp:R04:setMod",
+      "fingerprint": "a28278d235a9eb5f3632266be33b4bd706569d67fe9c51ab48712ea170b2bd79",
+      "reason": "setMod 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Math/MathPackage/ModuloInteger/code.hpp:R04:power",
+      "fingerprint": "e06be3d9589e7b2cbb9020aaa0e8a0a8a5e58015a711797709dda7ff9a1a68fe",
+      "reason": "power 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DynamicProgramming/MultipleBackpacks/code.hpp:R04:multiBag",
+      "fingerprint": "a2d38452d473c79b2ccc18eac982cef223710badb8b0a8ff8c1b8e66ae083435",
+      "reason": "multiBag 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp:R04:canTransform",
+      "fingerprint": "63bc42abeac19798724bd56e2ddf70812cee30a7f3650f1b6964428537b9fe83",
+      "reason": "canTransform 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp:R04:getMod",
+      "fingerprint": "23ae0808cd3663d5e668936bc43fe2667c70e001243624581a215300f4b7171b",
+      "reason": "Z 的公开模数入口；root() 和 Poly::P 直接读取编译期固定的质数模数。"
+    },
+    {
+      "id": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp:R04:initW",
+      "fingerprint": "3f819919fc6873b6415587f0b7c8c6dc8c429cea56cb643279f35eb117391724",
+      "reason": "initW 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp:R04:power",
+      "fingerprint": "8f67ff98b968c878074f38d42c58af739059e20fa3154cf539e534de205f4089",
+      "reason": "Z 的公开模幂及 Poly 的公开形式幂；root() 验证原根质因子条件，initW() 构造单位根，系数直接使用 Z。"
+    },
+    {
+      "id": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp:R04:vector",
+      "fingerprint": "edbf7b9a6b05230fca2decdabe9fecf1165fd1dae951c9e37ad94308a3c5f7e0",
+      "reason": "继承 std::vector<Z> 构造函数；vector 是标准库构造函数名，不是内部辅助函数。"
+    },
+    {
+      "id": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp:R04:mulxk",
+      "fingerprint": "8e921bf86598fed5040b9f1829e91bd463c4391699c353a5bc36ae1b57451c6c",
+      "reason": "既有公开接口，表示多项式乘 x^k；仅将系数类型直接写成 Z，保持接口语义。"
+    },
+    {
+      "id": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp:R04:divxk",
+      "fingerprint": "3c6b7d13e157d8d5986680def9e00c9b3a093510c3838b9615d4c09b73364307",
+      "reason": "公开除 x^k 的移位运算。"
+    },
+    {
+      "id": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp:R04:whenXis",
+      "fingerprint": "79182963d69f146b25bcdc3e59a31f3c32f51f104e212fcde711890236208c9a",
+      "reason": "既有公开多项式求值接口；系数、参数和返回值直接使用 Z，保持调用兼容。"
+    },
+    {
+      "id": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp:R04:deriv",
+      "fingerprint": "01a4449617d63e12a6fc55e5b8800ff6e690f536d865981d5896df44b8ca53b1",
+      "reason": "公开多项式求导运算。"
+    },
+    {
+      "id": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp:R04:integr",
+      "fingerprint": "916fc442be7ac23c4d32aa8b425bdd63fe73916b6cc1b6a80e5b2ec990efe925",
+      "reason": "公开多项式积分运算。"
+    },
+    {
+      "id": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp:R07:&&",
+      "fingerprint": "e652cae36436b2ef3b0f57391eedb959f5c3964ec1136df051c6092bcbe91141",
+      "reason": "逐处核对为移动/转发/引用限定或宏引用参数的 &&，不是逻辑与。"
+    },
+    {
+      "id": "src/Math/RandomNumberAlgorithm/PollardRho/code.hpp:R09:is_integral_v",
+      "fingerprint": "e37ede051e0b433ca6ad34da2aa878548cf6860ebe354b67542b313c5470fb78",
+      "reason": "输入限定非 bool 的 32/64 位整数，保留无符号差值与 128 位乘模。"
+    },
+    {
+      "id": "src/Math/RandomNumberAlgorithm/PollardRho/code.hpp:R09:is_same_v",
+      "fingerprint": "e37ede051e0b433ca6ad34da2aa878548cf6860ebe354b67542b313c5470fb78",
+      "reason": "输入限定非 bool 的 32/64 位整数，保留无符号差值与 128 位乘模。"
+    },
+    {
+      "id": "src/Math/RandomNumberAlgorithm/PollardRho/code.hpp:R04:steady_clock",
+      "fingerprint": "52d819eb85fee4e1556e576bd4305909565a36200218cae6604d17e12b15b212",
+      "reason": "chrono 时钟类型的标准名称，不是内部变量。"
+    },
+    {
+      "id": "src/Math/RandomNumberAlgorithm/PollardRho/code.hpp:R04:time_since_epoch",
+      "fingerprint": "52d819eb85fee4e1556e576bd4305909565a36200218cae6604d17e12b15b212",
+      "reason": "chrono 时间点的标准接口，保留外部库名称。"
+    },
+    {
+      "id": "src/Math/RandomNumberAlgorithm/PollardRho/code.hpp:R04:findFactor",
+      "fingerprint": "7f8a7aca8a8fc1110a7b8452622812362d4b41a4ae511ab339fb9a3e47633db4",
+      "reason": "findFactor 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Math/RandomNumberAlgorithm/PollardRho/code.hpp:R04:primeFactorize",
+      "fingerprint": "d9a254ff8e1e2205fd345dd82d30f90c03ee85c907d2da95164afc98f2b5b8f9",
+      "reason": "primeFactorize 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Math/RandomNumberAlgorithm/PollardRho/code.hpp:R04:first",
+      "fingerprint": "f0fefcac0b0d400cd5da6c2990b077a0e0709e4e728611dcfe5473e44e274dee",
+      "reason": "std::pair 的 first 成员是标准接口，不能随内部命名规则改动。"
+    },
+    {
+      "id": "src/Math/RandomNumberAlgorithm/PollardRho/code.hpp:R04:second",
+      "fingerprint": "a9df809663da773bfe056053400362c5794cee843bafa1b8b28c05a3b72d2e86",
+      "reason": "std::pair 的 second 成员是标准接口，不能随内部命名规则改动。"
+    },
+    {
+      "id": "src/Math/RandomNumberAlgorithm/RandomNumber/code.hpp:R04:steady_clock",
+      "fingerprint": "4f06fe343135e4371ea1e0395e433fa80a15c240a114e96ac299c7b3a1372721",
+      "reason": "chrono 时钟类型的标准名称，不是内部变量。"
+    },
+    {
+      "id": "src/Math/RandomNumberAlgorithm/RandomNumber/code.hpp:R04:time_since_epoch",
+      "fingerprint": "4f06fe343135e4371ea1e0395e433fa80a15c240a114e96ac299c7b3a1372721",
+      "reason": "chrono 时间点的标准接口，保留外部库名称。"
+    },
+    {
+      "id": "src/GraphTheory/RingTree/code.hpp:R04:rings",
+      "fingerprint": "48f90061cc482d30c7254544514ce6c30f7d004e0c13bc88406072f5c12d2e04",
+      "reason": "rings 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SegTree/code.hpp:R09:is_void_v",
+      "fingerprint": "6dda77dee484fe9138736842cd7b39e058793269e236b7c4412d748f58c06d99",
+      "reason": "Tag=void 不存标签，不开启范围更新；U 必须等于 Tag，防止模板实参推导绕过约束。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SegTree/code.hpp:R04:digits",
+      "fingerprint": "3424523d10a2b696ba1d872bc452bbbd35dcac9c7b85bcb4978e37b14f3124a6",
+      "reason": "numeric_limits::digits 是标准类型属性，名称由标准库定义。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SegTree/code.hpp:R04:apply",
+      "fingerprint": "89f5549da0df1c232e2d92ea2ae5932f999300cd69f8d001c00d1a2c7c24e113",
+      "reason": "Info / Tag 的公开应用协议；用户指定保留 SegTree 实现并适度压行。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SegTree/code.hpp:R04:modify",
+      "fingerprint": "c82e61cefd5d865b12810d72b010f50f559426179d9cbe8d732e7922d80247b5",
+      "reason": "modify 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SegTree/code.hpp:R04:query",
+      "fingerprint": "81a64bd3ec54184d7b60cb4fbfe27400a92476030a6ba0ceb80b259c1925a08f",
+      "reason": "query 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SegTree/code.hpp:R09:enable_if_t",
+      "fingerprint": "86ddeeeee6252f56c1c01ba1044efe8077dbec7eb1f1b3bcd6a3c754c3a12b6f",
+      "reason": "Tag=void 不存标签，不开启范围更新；U 必须等于 Tag，防止模板实参推导绕过约束。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SegTree/code.hpp:R09:is_same_v",
+      "fingerprint": "86ddeeeee6252f56c1c01ba1044efe8077dbec7eb1f1b3bcd6a3c754c3a12b6f",
+      "reason": "Tag=void 不存标签，不开启范围更新；U 必须等于 Tag，防止模板实参推导绕过约束。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SegTree/code.hpp:R04:first",
+      "fingerprint": "7613897b2241115a1ab2e7a1a70b1526a6357bc85270faef529cf09267ef2a87",
+      "reason": "std::pair 的 first 成员是标准接口，不能随内部命名规则改动。"
+    },
+    {
+      "id": "src/Math/MathPackage/Sieve/code.hpp:R04:shared",
+      "fingerprint": "87d4c3ef78204d2f13f60a19af85889a4e57f7ce67ee2ed8e60bd39fa766c582",
+      "reason": "Sieve 已有公开共享实例接口；当前源码未修改，重新核对对应调用与定义。"
+    },
+    {
+      "id": "src/Math/MathPackage/Sieve/code.hpp:R04:primes",
+      "fingerprint": "c8de36a921ee3116006dbf10bb311af63d78169fcd22240939e374ec6af883a0",
+      "reason": "primes 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Math/MathPackage/Sieve/code.hpp:R04:primeFactorize",
+      "fingerprint": "0cbd92255d0e3db9f508deccaef6baa1c5a977a59c5b59908a7875cb42819bb8",
+      "reason": "primeFactorize 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/Math/MathPackage/Sieve/code.hpp:R09:is_integral_v",
+      "fingerprint": "229b5254db007166a3e9bcee9324b8af09f107968c480322b891ad8a3fd87545",
+      "reason": "因数分解限定整数值域；allFactors 的整数入口与因子列表入口需要分离重载。"
+    },
+    {
+      "id": "src/Math/MathPackage/Sieve/code.hpp:R09:is_same_v",
+      "fingerprint": "e37ede051e0b433ca6ad34da2aa878548cf6860ebe354b67542b313c5470fb78",
+      "reason": "因数分解限定整数值域；allFactors 的整数入口与因子列表入口需要分离重载。"
+    },
+    {
+      "id": "src/Math/MathPackage/Sieve/code.hpp:R09:enable_if_t",
+      "fingerprint": "f65c2bcc604f55a30caa89f9769f8a06e63349164dcb8f527e7528dca5d3e76c",
+      "reason": "因数分解限定整数值域；allFactors 的整数入口与因子列表入口需要分离重载。"
+    },
+    {
+      "id": "src/Math/MathPackage/Sieve/code.hpp:R04:allFactors",
+      "fingerprint": "f1ca0a5df021b3e7763600f54e37d9a7fcd2248c804b032f15fe77b075097159",
+      "reason": "allFactors 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R09:is_integral_v",
+      "fingerprint": "9a52566e247023dcfaac6e561b647861562df5a745725a5dea560e6e3e045ad3",
+      "reason": "坐标必须为整数；修改参数可以是 Info 或回调，两种调用语义需要编译期区分。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R04:query",
+      "fingerprint": "2a2ea167f7bf91e2f6d8fa4dbb4ede741962f340f5fe3b1ce32c7e163a214ec3",
+      "reason": "query 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R04:first",
+      "fingerprint": "d453cf0c2be787f558c1b55d053b31da6986e0d494fdeb14eca63be75c96117a",
+      "reason": "std::pair 的 first 成员是标准接口，不能随内部命名规则改动。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R04:clearInit",
+      "fingerprint": "f2092b87793a9a26d23fee32ca652ef46ea8a3b9b7b08ed75dc8e63de68e1669",
+      "reason": "clearInit 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R07:&&",
+      "fingerprint": "2ebec22bc2a6757642cdb46601f0c6e0d732bb31935307211819c7153e583ecb",
+      "reason": "SparseSegTree&& 为移动构造/赋值，转移根和冻结边界。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R04:modify",
+      "fingerprint": "8e8b8e839a76c16122b21061155480f4b91f2c1ed56ca5f8bc2cdf229d35b9fb",
+      "reason": "modify 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R09:is_same_v",
+      "fingerprint": "8effe968f56f5b01bd2e126679a3ad3b53861481de80b3b331d899d40b3f723e",
+      "reason": "坐标必须为整数；修改参数可以是 Info 或回调，两种调用语义需要编译期区分。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R04:merge",
+      "fingerprint": "de628d998e714d39e1da8e071d237b00d167caf03d1285510882703c71f4b623",
+      "reason": "merge 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/String/StringF4/StringHash/code.hpp:R04:_strhash",
+      "fingerprint": "aff2e0cdcfee27402c2e61a1b632e3f7e3ea302fbc3c8c884f5e75d7efa7b235",
+      "reason": "实现命名空间隔离字符串哈希类型和参数；公共别名仍引用该作用域。"
+    },
+    {
+      "id": "src/String/StringF4/StringHash/code.hpp:R09:is_integral_v",
+      "fingerprint": "5cd4cf2093c1de93b470903ab2cfa98834ba6ed14a10d6ec08579a4f86e59cf6",
+      "reason": "整数、无符号字节及 vector<bool> 代理分别编码；负整数需模归一化，不能删掉分支改变符号序列。"
+    },
+    {
+      "id": "src/String/StringF4/StringHash/code.hpp:R09:is_same_v",
+      "fingerprint": "33564dfc95e4a24a2d57c4f59a7ad4b620f10a1f0ad7bd40789a7b401ba41a54",
+      "reason": "整数、无符号字节及 vector<bool> 代理分别编码；负整数需模归一化，不能删掉分支改变符号序列。"
+    },
+    {
+      "id": "src/String/StringF4/StringHash/code.hpp:R09:is_signed_v",
+      "fingerprint": "c65c6caa0925d35447c43320867736ccf9b3d1b788ea6c9077c5f36761310642",
+      "reason": "整数、无符号字节及 vector<bool> 代理分别编码；负整数需模归一化，不能删掉分支改变符号序列。"
+    },
+    {
+      "id": "src/String/StringF4/StringHash/code.hpp:R04:getArray",
+      "fingerprint": "34b8fb639f0781c0c4983d163436a274519d4553f2001564a0eea9a0ceb270d3",
+      "reason": "getArray 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/String/StringF4/StringHash/code.hpp:R04:getU64",
+      "fingerprint": "26dba4cfbf517ee303d386d074fc173d6f8ebcdca6c6ae602709333d7e479e8d",
+      "reason": "getU64 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/String/StringF4/StringHash/code.hpp:R04:steady_clock",
+      "fingerprint": "e57b47e67d2e27d7623aa3edae0c0fb3c6f7af59b2c374342f0f603d8e5d0d22",
+      "reason": "chrono 时钟类型的标准名称，不是内部变量。"
+    },
+    {
+      "id": "src/String/StringF4/StringHash/code.hpp:R04:time_since_epoch",
+      "fingerprint": "e57b47e67d2e27d7623aa3edae0c0fb3c6f7af59b2c374342f0f603d8e5d0d22",
+      "reason": "chrono 时间点的标准接口，保留外部库名称。"
+    },
+    {
+      "id": "src/GraphTheory/Connectivity/StronglyConnectedComponent/code.hpp:R04:cntBlock",
+      "fingerprint": "c2291ebe527a69772e693aeeeb4ef462dc157cc0207854a928d0f4c52141dd4f",
+      "reason": "既有模板 公开分量计数。"
+    },
+    {
+      "id": "src/String/AdvancedStrings/SuffixArray/code.hpp:R09:is_integral_v",
+      "fingerprint": "35829d5badf956f8e2c62f4976cf28a940a792858c3bcf5d5a059db5f33f3737",
+      "reason": "只把 1 字节整数按 unsigned byte 初排，其他值使用 <；不引入 Compare。"
+    },
+    {
+      "id": "src/String/AdvancedStrings/SuffixArray/code.hpp:R04:countSort",
+      "fingerprint": "065155df9c8dfef506e0769afcb36c19d84e60a8e4b9a2bfd4916b7090c0a654",
+      "reason": "用户明确要求从 既有模板 分离出的计数排序函数名。"
+    },
+    {
+      "id": "src/String/AdvancedStrings/SuffixArray/code.hpp:R04:oldrk",
+      "fingerprint": "f2b30cbefc9cc1ab2deecc6e9d60bcc9d70e1783351040e926b3150cf0bb496f",
+      "reason": "既有模板 的上一轮排名数组，与当前 rk 分开，计算 equal 的不变量。"
+    },
+    {
+      "id": "src/String/AdvancedStrings/SuffixArray/code.hpp:R04:equal",
+      "fingerprint": "3e54d83960190f4dede260da5f5485d92453f43577c6040729459e969a6cd0d4",
+      "reason": "用户明确要求保留独立的倍增排名相等函数。"
+    },
+    {
+      "id": "src/String/AdvancedStrings/SuffixArray/code.hpp:R04:calcHeight",
+      "fingerprint": "3a0db68ce6c35e28cd169cb21800e22aeef517fa93e30b053598c5bc4b1e982f",
+      "reason": "用户明确要求从 既有模板 分离出的 LCP 函数名。"
+    },
+    {
+      "id": "src/GraphTheory/TopSort/code.hpp:R04:endPoint",
+      "fingerprint": "ddb346b8a3440577fba58bb8e7299e0f8081b3c28048955e4d61b064811f8cf0",
+      "reason": "endPoint 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/GraphTheory/TopSort/code.hpp:R04:first",
+      "fingerprint": "2c665ec79ba9e2cb3bdce8ba5a413d705dfd1f868349808cb8e6eb2c0d7af1e9",
+      "reason": "std::pair 的 first 成员是标准接口，不能随内部命名规则改动。"
+    },
+    {
+      "id": "src/GraphTheory/TopSort/code.hpp:R04:topSort",
+      "fingerprint": "eabfce2f5e33a23c16c3a6e407f3ccaf35353d3df8cdf86d541299214ed3d3ed",
+      "reason": "现用公开拓扑排序对象，用户指定采用 code；无状态常量已去掉无必要的 inline。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:endPoint",
+      "fingerprint": "4783855a474a58a941fb4f30fa3a179220fe3659a95f0c11113c9b3ff1e81867",
+      "reason": "既有模板 的边端点协议，兼容整数边和带权 pair。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:first",
+      "fingerprint": "16727997ff401ac5710ef520c88f3ae16c58719ffb365f3e3529ff31602a7980",
+      "reason": "std::pair 第一成员，以及 既有模板 的重儿子首边引用。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:enter",
+      "fingerprint": "3ce0dfb780c6413383f2cd501e755c98d54799413d0bc59152f1c7457a9f88ed",
+      "reason": "既有模板 属性进入顶点的 hook。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:leave",
+      "fingerprint": "519e7fa57c76478bae87ac3dac78fc196ec98c5eefcc2c9dc1835df0a082616c",
+      "reason": "既有模板 属性离开顶点的 hook。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:afterChild",
+      "fingerprint": "624fc415315106a9f608555a288d504de06c89c1c6cc71b3a51018c8e89fe8cc",
+      "reason": "既有模板 子树返回后属性 hook；显式 DFS 栈严格保留执行顺序。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:parent",
+      "fingerprint": "10d3ce54bc9c8387223b6fe64d78f6fef1b71cb53508611740d90558dab28592",
+      "reason": "既有模板 的父顶点参数；用户建议采用 既有模板，本轮保留命名和结构。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:stageIndex",
+      "fingerprint": "84a6ef12e9fa47e8242541130fb189732864702136c250e4688c2e06f66f0eb8",
+      "reason": "既有模板 的属性阶段查询协议，防止依赖次序错误。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:attributeIndex",
+      "fingerprint": "e53cdad5e4fdf150ea6cb0cd4566885401d28ed10e346d300b43ccf5ffe3bea5",
+      "reason": "既有模板 的阶段内属性索引协议。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:firstMatch",
+      "fingerprint": "f0491d0f8684f3c0dc01701888f63a266519cf66e61d5530ede1d7af246cbefc",
+      "reason": "既有模板 的阶段匹配元函数，供公开 stageIndex 查询。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:matches",
+      "fingerprint": "f20ac63f843a718138a3c701c970e369fd2a2ade52a8627650268a57196902bd",
+      "reason": "既有模板 的元函数匹配标志数组。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:index",
+      "fingerprint": "9745af102a8f80b6aa46b0014c75acc6db5d4dd83c0d765e4de66da740fc1610",
+      "reason": "既有模板 元函数的返回索引，按用户的基线边界保留。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:contains",
+      "fingerprint": "cd7f4d21a6a3cdacdd92993022442e25b21027bff10b9e252b4f4a2936c1f37a",
+      "reason": "既有模板 的公开阶段属性成员判断。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R09:is_same_v",
+      "fingerprint": "bca2658df0941e450baef52c789218c6cde787e43b517a93ade1859cde14cc50",
+      "reason": "既有模板 的阶段属性类型匹配，保证 size/heavy/dfn 能力依赖次序。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:maybe_unused",
+      "fingerprint": "700e2a5f08fd5c74b261f6ce4dca1afe40ac9f1dca4633bb3ba787c89b1cd5b5",
+      "reason": "C++ 属性，用于零属性阶段的未使用参数，不是普通标识符。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:passCount",
+      "fingerprint": "8802e0adc7e89b86678de877ccf45b77ceaf8d240c525d3acf8084ebdc185630",
+      "reason": "passCount 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:graph",
+      "fingerprint": "2120e57dca683eec7a53d3f77c30bcbbc707863a22141b7e70071d2973e80b11",
+      "reason": "既有模板 的借用邻接表构造参数，不复制图；按用户要求保留。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:getLca",
+      "fingerprint": "ce33e3d69b9c881c40cfae7bb9d6a7dd74ee171850a2488441d4bf30ddcf7e4a",
+      "reason": "既有模板 的公开 LCA 接口。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:getRoad",
+      "fingerprint": "187ff3c186211c17a106f6a548397c20cdcd8445b59ad3f94bd488055d17910c",
+      "reason": "既有模板 的公开包含式有向端点路径接口。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:kthAncestor",
+      "fingerprint": "8a16a1459198906c4e2d138093a19e7d242f4d68b4daa47b7acd779bebffc2b3",
+      "reason": "kthAncestor 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:depth",
+      "fingerprint": "61a003a00d711e0d5d3b9172e4495bf8ba7d68f140bb39ed08a3d46eaf3244e1",
+      "reason": "既有模板 的路径深度局部值，用户基线优先，本轮不额外改名。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:isAncestor",
+      "fingerprint": "afe1f11ec431d92549b32023c980b9698543eff07f043890faaf962403b01a7e",
+      "reason": "isAncestor 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:dfsOrder",
+      "fingerprint": "9c0b195557153e5def63892771d07af4489ed112fae51dc0a4ad760537d19023",
+      "reason": "既有模板 虚树公开原顶点编号序列。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:inputIndex",
+      "fingerprint": "0ec006bc2af8c27155abcd7900828c12579b7579730abd4fa6c2d3714bf98113",
+      "reason": "既有模板 虚树公开原输入下标映射。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:result",
+      "fingerprint": "8c09fc10f88fad4d2fe1ec31baaeebdd12d4400697785371faefa00f7179f848",
+      "reason": "既有模板 的拥有虚树/邻接表结果，按用户要求保留。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:getVirtualTree",
+      "fingerprint": "aa9c55e5558bf816bbb0a5ffd3e37ccc1cebee2faad5a91a7266746f888c208e",
+      "reason": "getVirtualTree 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:extra",
+      "fingerprint": "21184aa94e301ec269234ab2ae373ef52d890bd78d94e5028e3b048717d23d74",
+      "reason": "既有模板 虚树额外点参数。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:keyCount",
+      "fingerprint": "388ac8fc4c06d59803a8a1b6522b28b2898c79b33292f69ecf0dc8e49064a826",
+      "reason": "既有模板 虚树原输入点数，区分额外点标记。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:points",
+      "fingerprint": "9e15f4375a7f3f77874f247440bce57bf5009181c0f7e0951935d0bddd778c4d",
+      "reason": "既有模板 的点/输入下标 pair 临时序列。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:sortUnique",
+      "fingerprint": "2aa66701e91bf9108f0b6f7f6010973a8ef0a1c71e1389d3723b8f59096a7fb2",
+      "reason": "既有模板 的虚树排序去重闭包，不增加新算法层。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:second",
+      "fingerprint": "6fa5c38f4dc7fdc49de7b69f87469c46cf5473c576ba79f13477dac00e67cb14",
+      "reason": "std::pair 第二成员。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:stack",
+      "fingerprint": "7e52724be774fa47987b54d42143634859750ee34be16e1c19e17c5e20c6bef1",
+      "reason": "既有模板 虚树祖先工作栈，按用户基线保留。"
+    },
+    {
+      "id": "src/TreeTheory/Tree/code.hpp:R04:ancestor",
+      "fingerprint": "5143715ea9759969aeecdc9cc64dfe2a490a2a89a2eca99c3fda62f5693e2359",
+      "reason": "既有模板 虚树中已闭包的 LCA，按用户要求保留局部命名。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp:R04:_treemap",
+      "fingerprint": "6e3d75977b51b7d06b8874e1a288c64dde3b46a3323de95d513789e89a0cbf2c",
+      "reason": "实现命名空间承载两个 backend 和共享接口，保留公共别名所在作用域。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp:R09:is_trivial_v",
+      "fingerprint": "791c8e88cac31231233fc2a120e46bdf9fd852aa08cef773a5d6f24932409542",
+      "reason": "保留资源值重置、const 迭代器及 vector<bool> 引用类型；比较器异常属性决定 noexcept，int 热节点布局仍需明确约束。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp:R09:is_trivially_move_assignable_v",
+      "fingerprint": "791c8e88cac31231233fc2a120e46bdf9fd852aa08cef773a5d6f24932409542",
+      "reason": "保留资源值重置、const 迭代器及 vector<bool> 引用类型；比较器异常属性决定 noexcept，int 热节点布局仍需明确约束。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp:R04:second",
+      "fingerprint": "d238072b192acdd28725ea46681a5913c2b51b131b35be545cc6a523a8f320ba",
+      "reason": "std::pair 的 second 成员是标准接口，不能随内部命名规则改动。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp:R04:insertOrAssign",
+      "fingerprint": "deaafc29f9494d14a9b05ff00778ba478d2cf102cf402e234b860267f0f86d35",
+      "reason": "insertOrAssign 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp:R04:first",
+      "fingerprint": "cb2bc4c27b4fdf8d0b0f094b752951960854eec9cf3dbd7e2ee2be40c17c82c1",
+      "reason": "std::pair 的 first 成员是标准接口，不能随内部命名规则改动。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp:R04:contains",
+      "fingerprint": "ea97d928b3eac6bc444858b263eb314f0652333974276d5eeb52cfff41bf4ade",
+      "reason": "contains 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp:R04:keyAt",
+      "fingerprint": "cfeabba953865bfd079e9c75a319e7c3997bf227aaa49c7d3dba8f862faab74c",
+      "reason": "keyAt 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp:R09:conditional_t",
+      "fingerprint": "5ace59789609c1504cffd5687e9f91ac0991125bab378bfc65b2ef8bf25e7f04",
+      "reason": "保留资源值重置、const 迭代器及 vector<bool> 引用类型；比较器异常属性决定 noexcept，int 热节点布局仍需明确约束。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp:R09:is_same_v",
+      "fingerprint": "e0064dbe72dd0c6e3803e25b33f4af9f87f33d280c6f81ce75ec8de5268664b5",
+      "reason": "保留资源值重置、const 迭代器及 vector<bool> 引用类型；比较器异常属性决定 noexcept，int 热节点布局仍需明确约束。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp:R07:&&",
+      "fingerprint": "30e00585baae00f8be07809a8ab7f9f23d2a28594b28c54c12e37c4543a3c2ba",
+      "reason": "两个 backend 的 && 为移动构造，保留载荷与比较器的转移约定。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp:R09:is_nothrow_copy_constructible_v",
+      "fingerprint": "30e00585baae00f8be07809a8ab7f9f23d2a28594b28c54c12e37c4543a3c2ba",
+      "reason": "保留资源值重置、const 迭代器及 vector<bool> 引用类型；比较器异常属性决定 noexcept，int 热节点布局仍需明确约束。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp:R09:is_nothrow_swappable_v",
+      "fingerprint": "adf8ecdec65e1dae08c663b38d7b0f9b351e4ca2aacb8d6d22ab9cbfd55df182",
+      "reason": "保留资源值重置、const 迭代器及 vector<bool> 引用类型；比较器异常属性决定 noexcept，int 热节点布局仍需明确约束。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp:R04:size_t",
+      "fingerprint": "ddfb6f09c88dbc5957ec37ac1e19c2d9d218b949de48e48c91c9cbacb326b28e",
+      "reason": "size_t 是标准类型名，不是本仓的局部变量。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp:R04:rankOf",
+      "fingerprint": "80c5de6d02a5f4404ad813f4f62a379ecb4da9d410b3b42de99249087144357a",
+      "reason": "rankOf 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/TreeMap/code.hpp:R04:sorted",
+      "fingerprint": "885a97e9192c657bc2604508b21dac489597d77219a44412f2ef74377e61e6dd",
+      "reason": "sorted 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/Trie/code.hpp:R04:degree",
+      "fingerprint": "ab04f2b287fc73c3ac6ec65f0678f42cbe4fc69748e4723c2d7fe362518a417d",
+      "reason": "degree 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/Trie/code.hpp:R04:clearInit",
+      "fingerprint": "cdb197bd94c57cbf871740244d4e5c164b228d9d8e088d7a21f5ae4fbee358c7",
+      "reason": "clearInit 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/Trie/code.hpp:R07:&&",
+      "fingerprint": "73b7661d64ef4218e4347265557b375a41783874e6d608f8b44c2a8bc55acfbb",
+      "reason": "Trie&& 为移动构造/赋值，转移根和冻结边界。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/Trie/code.hpp:R04:modify",
+      "fingerprint": "380462e597eb0f332df3a300121cf656845d6a4ff31a2df4672892417cb5e2d2",
+      "reason": "modify 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/Trie/code.hpp:R04:symbol",
+      "fingerprint": "ad2077bfa39ca459634f68aeba78b5daf141d3a4a14dc500e77096bf2038239f",
+      "reason": "symbol 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/Trie/code.hpp:R04:query",
+      "fingerprint": "2309eda12d6380123a9bb4885b15f7de05c5e5d0ba7129c6b279f23305c62115",
+      "reason": "query 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/Trie/code.hpp:R09:is_integral_v",
+      "fingerprint": "0380cc70c3e1a232c9dc436d887e4cec48b59e97b7e0e1e34260a91e6d0726cf",
+      "reason": "BinaryKeys 要求无符号整数与合法位宽，防止符号移位和超出位数的访问。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/Trie/code.hpp:R09:is_unsigned_v",
+      "fingerprint": "0380cc70c3e1a232c9dc436d887e4cec48b59e97b7e0e1e34260a91e6d0726cf",
+      "reason": "BinaryKeys 要求无符号整数与合法位宽，防止符号移位和超出位数的访问。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/Trie/code.hpp:R04:radix",
+      "fingerprint": "3e500f460bbe20d58c15a5a455426ab1f9e1e465465a4145c5c955c9d7f67187",
+      "reason": "numeric_limits::radix 是标准类型属性，名称由标准库定义。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/Trie/code.hpp:R04:digits",
+      "fingerprint": "184b10f20ee3ca7263865dbcde9d6006d480504c1b2a62aad0dbab372dd56091",
+      "reason": "numeric_limits::digits 是标准类型属性，名称由标准库定义。"
+    },
+    {
+      "id": "src/GraphTheory/Connectivity/VertexBiconnectedComponent/code.hpp:R04:componentNum",
+      "fingerprint": "764cc05a08f6a1438a8891e73ef561bc1e04570fa6955291c3db3202bf333a94",
+      "reason": "既有模板 公开原图连通分量计数。"
+    },
+    {
+      "id": "src/String/StringF4/ZFunction/code.hpp:R04:zFunction",
+      "fingerprint": "ca2fa5bc5405cd7032e618d38890ca981500df07e57cb22c7d88f7ceb73e5c59",
+      "reason": "zFunction 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+    },
+    {
+      "id": "src/String/StringF4/MinimalString/code.hpp:R09:is_same_v",
+      "fingerprint": "ae58b8e8c2bdbd81ff7a8efd278a0d19e39e7e42351a07f235c39837bc6e7429",
+      "reason": "ListHelper 恢复 既有模板 后不提供 materialize；直接调用方将 string_view 转为拥有 string，其他容器保留原转发复制/移动语义。"
+    },
+    {
+      "id": "src/Math/Polynomial/NumberTheoreticTransform/code.hpp:R05:body",
+      "fingerprint": "a868f48f8abdb37a738a7a8daee6db3764f5217d0ac03918c9986337cec76d92",
+      "reason": "用户明确要求缩短 root()；只合并五处单操作判断或循环，保留试除和候选验证的结构，root() 及模块压行比例均低于 30%。"
+    },
+    {
+      "id": "src/String/AdvancedStrings/AcAutomaton/code.hpp:R04:order",
+      "fingerprint": "da610146f00c682ddbe8b506caee79316fd559c7a53f4bcdf51c517846d3bcea",
+      "reason": "公开的原始 Trie BFS 顺序；失败父亲在前，调用方据此传播外部数组。"
+    },
+    {
+      "id": "src/String/AdvancedStrings/AcAutomaton/code.hpp:R07:&&",
+      "fingerprint": "d6135009b40d354f330c4ada7d812d282651954da8b3209b46a2c50d34096b39",
+      "reason": "Func&& 为转发引用，允许借用不可复制闭包；只在 add 调用期间逐字符调用，不保存或反复移动。"
+    },
+    {
+      "id": "src/String/AdvancedStrings/AcAutomaton/code.hpp:R04:build",
+      "fingerprint": "949a265377ed972e250ce34270515cd89611f32a77573017bb86c4fecbf78a8e",
+      "reason": "公开的 AC 建失败链接/补全转移入口，完成后禁止追加并允许重复调用。"
+    },
+    {
+      "id": "src/String/AdvancedStrings/SuffixAutomaton/code.hpp:R07:&&",
+      "fingerprint": "b9f8b6a9562e435de59e1fc50aea169241b2518ce99f41cc7b3d766cce4796d8",
+      "reason": "Func&& 为转发引用，允许借用不可复制闭包；只在 add 调用期间逐字符调用，不保存或反复移动。"
+    },
+    {
+      "id": "src/String/AdvancedStrings/SuffixAutomaton/code.hpp:R04:getOrder",
+      "fingerprint": "e076ab18ed912b3b547ca29445a7c1ef3b45ce1a009cb95574b0bd19fd0f5310",
+      "reason": "公开接口返回 len 升序，调用方用它汇总 link 或遍历 son DAG。"
+    },
+    {
+      "id": "src/String/AdvancedStrings/SuffixAutomaton/code.hpp:R04:match",
+      "fingerprint": "4dbb240af38d691370021a28e30fd2f14dbc416c4f34ad0e71870a45d7f595da",
+      "reason": "公开的逐字符匹配接口，维护状态 p 与实际匹配长度 l。"
+    },
+    {
+      "id": "src/String/AdvancedStrings/ExSuffixAutomaton/code.hpp:R07:&&",
+      "fingerprint": "d6135009b40d354f330c4ada7d812d282651954da8b3209b46a2c50d34096b39",
+      "reason": "Func&& 为转发引用，允许借用不可复制闭包；只在 add 调用期间逐字符调用，不保存或反复移动。"
+    },
+    {
+      "id": "src/String/AdvancedStrings/ExSuffixAutomaton/code.hpp:R04:getOrder",
+      "fingerprint": "e076ab18ed912b3b547ca29445a7c1ef3b45ce1a009cb95574b0bd19fd0f5310",
+      "reason": "公开接口返回 len 升序，调用方用它汇总 link 或遍历 son DAG。"
+    },
+    {
+      "id": "src/String/AdvancedStrings/ExSuffixAutomaton/code.hpp:R04:match",
+      "fingerprint": "4dbb240af38d691370021a28e30fd2f14dbc416c4f34ad0e71870a45d7f595da",
+      "reason": "公开的逐字符匹配接口，维护状态 p 与实际匹配长度 l。"
+    },
+    {
+      "id": "src/String/AdvancedStrings/PalindromeAutomaton/code.hpp:R04:getLink",
+      "fingerprint": "67e9f3ddde90e8e8d44c013610d1e3e3a370ecf9eef809e66f2c375751aa1f1d",
+      "reason": "PAM 中查找可扩展回文后缀的经典辅助函数名，区别于保存的 link 字段。"
+    },
+    {
+      "id": "src/String/AdvancedStrings/PalindromeAutomaton/code.hpp:R07:&&",
+      "fingerprint": "338d4f9d2f57e630328077931bf226de447a49590bceab3686680d73e2836ac9",
+      "reason": "Func&& 为转发引用，允许借用不可复制闭包；只在 add 调用期间逐字符调用，不保存或反复移动。"
+    }
+  ]
+}

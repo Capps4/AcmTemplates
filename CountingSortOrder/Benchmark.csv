@@ -1,4 +1,0 @@
-scenario,originalMs,finalMs,speedup,checksum
-integers-range-100,1.556,0.702,2.21652,44999850000
-integers-range-1000000,1.811,1.61,1.12484,44999850000
-256-byte-records,0.396,0.344,1.15116,4999950000

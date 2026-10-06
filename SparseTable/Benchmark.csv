@@ -1,4 +1,0 @@
-scenario,originalMs,finalMs,speedup,checksum
-build-100K,0.769,0.764,1.00654,0
-query-300K,0.415,0.42,0.988095,187669429
-build-stateful-comparator-30K,9.254,0.152,60.8816,10
