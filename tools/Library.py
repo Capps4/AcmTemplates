@@ -89,13 +89,23 @@ def build(source=None, config=None, require_all=True):
                 seen.add(key)
                 path = paths[key]['path']
                 code, mode = code_of(path), 'cpp'
+                sources = [path]
             else:
-                if key != 'CTL':
+                mode = 'python'
+                if key == 'CTL':
+                    path = ROOT / 'ctl'
+                    code = path.read_text(encoding='utf-8')
+                    sources = [path]
+                elif key == 'SnippetInstaller':
+                    from tools.Fetcher import standalone
+                    result = standalone()
+                    code, sources = result['code'], result['sources']
+                    sources = sources + [ROOT / 'tools/Library.py']
+                else:
                     raise ValueError('未知工具引用：' + key)
-                path, mode = ROOT / 'ctl', 'python'
-                code = path.read_text(encoding='utf-8')
                 key = 'tool/' + key
-            source_hashes[str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
+            for path in sources:
+                source_hashes[str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
             token.type, token.tag, token.content = 'fence', 'code', code
             token.info = mode
             token.meta = {'key': key}

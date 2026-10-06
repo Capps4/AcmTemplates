@@ -95,7 +95,7 @@ enable_if、void_t、conditional_t 等必须有重载、所有权、表示或性
 -std=gnu++17 -Wall -Wextra -Werror -Weffc++ -O0 -g -D_GLIBCXX_DEBUG
 ```
 
-tools/Common.py 的 strict 配置包含这些参数，并保留诊断用的 `-rdynamic -fno-omit-frame-pointer`。严格编译后的测试也运行，检查 GNU 标准库调试模式中的迭代器与容器约束。此模式的相关翻译单元必须使用一致配置，不能混用容器 ABI。优化版正确性检查和 sanitizer 分别运行；性能计时保持优化配置，不以调试版耗时评价算法性能。
+tools/__init__.py 的 strict 配置包含这些参数，并保留诊断用的 `-rdynamic -fno-omit-frame-pointer`。严格编译后的测试也运行，检查 GNU 标准库调试模式中的迭代器与容器约束。此模式的相关翻译单元必须使用一致配置，不能混用容器 ABI。优化版正确性检查和 sanitizer 分别运行；性能计时保持优化配置，不以调试版耗时评价算法性能。
 
 ## R18 头文件层次
 

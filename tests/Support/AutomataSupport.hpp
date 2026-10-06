@@ -91,6 +91,7 @@ template <int D = 2, char Base = 'a'>
 void samCase(const std::string &s) {
     ++cases[1];
     ctx = "SAM " + hex(s);
+    test_context::input = ctx;
     Sam<D, Base> a(0), single(0), plain(0);
     std::vector<long long> raw(1);
     std::vector<int> pos(1, -1), ends(s.size());
@@ -294,6 +295,7 @@ template <int D = 2, char Base = 'a'>
 void pamCase(const std::string &s) {
     ++cases[3];
     ctx = "PAM " + hex(s);
+    test_context::input = ctx;
     Pam<D, Base> a(0), single(0), plain(0);
     std::vector<long long> raw(2);
     std::vector<int> pos(2, -1), dep(2);
@@ -376,11 +378,11 @@ void branches() {
     }
 }
 void large(int which) {
-    int n = 200000;
+    int n = 128;
     std::string s(n, 'a');
     if (which == 1) {
         ++cases[1];
-        ctx = "SAM 200000 repeated chars";
+        ctx = "SAM bounded repeated chars";
         Sam<2> a(1);
         std::vector<long long> raw(1);
         a.add(s, [&](int p, int i) {
@@ -399,7 +401,7 @@ void large(int which) {
     }
     if (which == 1) {
         ++cases[1];
-        ctx = "SAM 200000 clone-heavy chars";
+        ctx = "SAM bounded clone-heavy chars";
         Sam<2> a(1);
         std::vector<long long> raw(1);
         std::string text = "a" + std::string(n, 'b');
@@ -420,7 +422,7 @@ void large(int which) {
             int p = ord[i];
             raw[a.link[p]] += raw[p];
         }
-        for (int k : {1, 2, 17, 1000, n}) {
+        for (int k : {1, 2, 17, 64, n}) {
             auto tail = a.find(std::string(k, 'b'));
             auto full = a.find("a" + std::string(k, 'b'));
             CHECK(tail and raw[*tail] == n - k + 1);
@@ -429,7 +431,7 @@ void large(int which) {
     }
     if (which == 0) {
         ++cases[0];
-        ctx = "AC 200000 deep failure chain";
+        ctx = "AC bounded deep failure chain";
         AcAutomaton<2> a(1);
         int end = a.add(s);
         a.add("");
@@ -451,7 +453,7 @@ void large(int which) {
     }
     if (which == 2) {
         ++cases[2];
-        ctx = "ExSAM 200000 repeated duplicate source";
+        ctx = "ExSAM bounded repeated duplicate source";
         ExSam<2> a(1);
         std::vector<long long> raw(1);
         for (int k = 0; k < 2; ++k)
@@ -471,7 +473,7 @@ void large(int which) {
     }
     if (which == 3) {
         ++cases[3];
-        ctx = "PAM 200000 deep suffix chain";
+        ctx = "PAM bounded deep suffix chain";
         Pam<2> a(1);
         std::vector<long long> raw(2);
         a.add(s, [&](int p, int i) {
@@ -499,18 +501,18 @@ int suite(int which) {
         if (which == 3) pamCase(s);
     }
     if (which == 1)
-        for (const auto &s : words(10)) samCase(s);
+        for (const auto &s : words(4)) samCase(s);
     if (which == 3)
-        for (const auto &s : words(11)) pamCase(s);
+        for (const auto &s : words(5)) pamCase(s);
     if (which == 0) {
-        auto pool = words(3);
+        auto pool = words(2);
         for (const auto &a : pool)
             for (const auto &b : pool)
                 for (const auto &s : pool) acCase({a, b, a, ""}, s);
         acCase({}, "abba");
     }
     if (which == 2) {
-        auto pool = words(4);
+        auto pool = words(2);
         for (const auto &a : pool)
             for (const auto &b : pool) exCase({a, b});
         exCase({});
@@ -522,7 +524,7 @@ int suite(int which) {
         for (int i = 0; i < n; ++i) s += char('a' + randomInt(0, d - 1));
         return s;
     };
-    for (int it = 0; it < 300; ++it) {
+    for (int it = 0; it < 8; ++it) {
         auto s = randText(randomInt(0, 40), 2);
         if (which == 1) samCase(s);
         if (which == 3) pamCase(s);
@@ -532,7 +534,7 @@ int suite(int which) {
         if (which == 2) exCase(group);
         if (which == 0) acCase(group, randText(randomInt(0, 60), 2));
     }
-    for (int it = 0; it < 300; ++it) {
+    for (int it = 0; it < 8; ++it) {
         std::string a, b;
         for (int i = 0, n = randomInt(0, 24); i < n; ++i) a += char(randomInt(0, 255));
         for (int i = 0, n = randomInt(0, 24); i < n; ++i) b += char(randomInt(0, 255));

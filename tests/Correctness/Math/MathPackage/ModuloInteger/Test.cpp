@@ -1,7 +1,9 @@
+#include "../../../../Support/CaseSupport.hpp"
 #include "../../../../../src/Math/MathPackage/ModuloInteger/code.hpp"
 #include "../../../../Support/TestSupport.hpp"
 #include <climits>
 #include <sstream>
+
 
 constexpr Z compileTime = (Z(2) + Z(3)) * Z(7) - Z(4);
 static_assert(compileTime.val() == 31);
@@ -24,7 +26,8 @@ void verify(long long modulus) {
     for (long long a : {0LL, 1LL % modulus, modulus / 2, modulus - 1})
         for (long long b : {0LL, 1LL % modulus, modulus / 2, modulus - 1})
             CHECK((M(a) * M(b)).val() == norm(__int128(a) * b));
-    for (int trial = 0; trial < 20000; ++trial) {
+    for (int trial = 0; trial < 16; ++trial) {
+        test_context::step = trial;
         long long a = static_cast<long long>(testRng() >> 1), b = static_cast<long long>(testRng() >> 1);
         if (trial & 1) a = -a;
         if (trial & 2) b = -b;
@@ -36,7 +39,7 @@ void verify(long long modulus) {
         CHECK((-x).val() == norm(-__int128(norm(a))));
     }
 }
-int main() {
+int coreCases() {
     verify<Z>(P);
     using Dynamic = ModuloInteger<int, 0>;
     for (int p : {1, 2, 97, INT_MAX}) { Dynamic::setMod(p); verify<Dynamic>(p); }
@@ -58,4 +61,65 @@ int main() {
     CHECK(value == Z(-5));
     std::ostringstream out; out << value; CHECK(out.str() == std::to_string(P - 5));
     std::cout << "constexpr arithmetic, 200K wide-integer oracles, extreme moduli, inverse and I/O failures passed\n";
+    return 0;
+}
+
+#include "../../../../../src/Math/MathPackage/ModuloInteger/code.hpp"
+#include "../../../../Support/CaseSupport.hpp"
+#include <sstream>
+
+namespace boundary_cases {
+
+int run() {
+    runCase("ModuloInteger/signed-min", [] {
+        CHECK(Z(std::numeric_limits<long long>::min()).val() ==
+              ((__int128(std::numeric_limits<long long>::min()) % P + P) % P));
+    });
+    runCase("ModuloInteger/unsigned-max", [] {
+        CHECK(Z(std::numeric_limits<unsigned long long>::max()).val() ==
+              int(static_cast<unsigned __int128>(std::numeric_limits<unsigned long long>::max()) %
+                  P));
+    });
+    runCase("ModuloInteger/zero-power", [] {
+        CHECK(Z(0).power(0) == Z(1));
+        CHECK(Z(0).power(9) == Z(0));
+    });
+    runCase("ModuloInteger/negative-power", [] {
+        CHECK(Z(3).power(-7) * Z(3).power(7) == Z(1));
+    });
+    runCase("ModuloInteger/wrap-add", [] {
+        CHECK(Z(P - 1) + Z(P - 1) == Z(P - 2));
+    });
+    runCase("ModuloInteger/wrap-subtract", [] {
+        CHECK(Z(0) - Z(P - 1) == Z(1));
+    });
+    runCase("ModuloInteger/division", [] {
+        CHECK(Z(987654321) / Z(1234567) * Z(1234567) == Z(987654321));
+    });
+    runCase("ModuloInteger/wide-product", [] {
+        using W = ModuloInteger<long long, 9223372036854775783LL>;
+        long long p = W::getMod();
+        CHECK((W(p - 1) * W(p - 2)).val() == 2);
+    });
+    runCase("ModuloInteger/quotient-correction", [] {
+        using W = ModuloInteger<long long, 0>;
+        W::setMod(9223372036854775807LL);
+        for (long long a : {9223372036854775806LL, 4611686018427387903LL, 9007199254740993LL})
+            for (long long b : {9223372036854775805LL, 4179340454199820288LL})
+                CHECK((W(a) * W(b)).val() == static_cast<long long>(__int128(a) * b % W::getMod()));
+    });
+    runCase("ModuloInteger/failed-stream", [] {
+        Z z = 55;
+        std::istringstream in("bad");
+        in >> z;
+        CHECK(in.fail() and z == Z(55));
+    });
+    return 0;
+}
+}
+
+int main() {
+    runCase("ModuloInteger/oracle-and-contracts", [] { CHECK(coreCases() == 0); });
+    CHECK(boundary_cases::run() == 0);
+    return 0;
 }

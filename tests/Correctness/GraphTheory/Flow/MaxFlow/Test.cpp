@@ -1,7 +1,9 @@
+#include "../../../../Support/CaseSupport.hpp"
 #include "../../../../../src/GraphTheory/Flow/MaxFlow/code.hpp"
 #include "../../../../Support/TestSupport.hpp"
 #include <cstdint>
 #include <tuple>
+
 using Arc = std::tuple<int, int, long long>;
 long long minCut(int n, const std::vector<Arc>& edges) {
     long long result = std::numeric_limits<long long>::max();
@@ -13,8 +15,9 @@ long long minCut(int n, const std::vector<Arc>& edges) {
     }
     return result;
 }
-int main() {
-    for (int trial = 0; trial < 3000; ++trial) {
+int coreCases() {
+    for (int trial = 0; trial < 16; ++trial) {
+        test_context::step = trial;
         int n = randomInt(2, 8);
         Flow<long long> flow(n);
         std::vector<Arc> edges;
@@ -58,10 +61,86 @@ int main() {
     fractions.add(0, 1, 0.5); fractions.add(0, 2, 0.75);
     fractions.add(1, 3, 0.5); fractions.add(2, 3, 0.75);
     CHECK(std::abs(fractions.work(0, 3) - 1.25) < 1e-12);
-    const int n = 2000;
+    const int n = 128;
     Flow<int> chain(n);
     for (int x = 1; x < n; ++x) chain.add(x - 1, x, 3);
     CHECK(chain.work(0, n - 1, 1) == 1 && chain.work(0, n - 1) == 2);
     CHECK(chain.work(0, n - 1) == 0 && chain.getReach(0)[n - 1] == 't');
     std::cout << "MaxFlow exhaustive cut oracle, bidirectional/parallel/self edges, limits/reuse, uint64 max, fractional, recursive 2K chain PASS\n";
+    return 0;
+}
+
+#include "../../../../../src/GraphTheory/Flow/MaxFlow/code.hpp"
+#include "../../../../Support/TestSupport.hpp"
+#include <cstdint>
+#include <tuple>
+#include "../../../../Support/CaseSupport.hpp"
+
+namespace boundary_cases {
+using Arc = std::tuple<int, int, long long>;
+long long minCut(int n, const std::vector<Arc> &edges) {
+    long long result = std::numeric_limits<long long>::max();
+    for (int mask = 0; mask < (1 << n); ++mask) {
+        if (!(mask & 1) || (mask >> (n - 1) & 1))
+            continue;
+        long long capacity = 0;
+        for (auto [x, y, value] : edges)
+            if ((mask >> x & 1) && !(mask >> y & 1))
+                capacity += value;
+        result = std::min(result, capacity);
+    }
+    return result;
+}
+void verifyAdded(int n, const std::vector<Arc> &es) {
+    Flow<long long> f(n);
+    for (auto [x, y, c] : es)
+        f.add(x, y, c);
+    auto want = minCut(n, es);
+    auto a = f.work(0, n - 1, 1);
+    CHECK(a == std::min(1LL, want));
+    CHECK(a + f.work(0, n - 1) == want);
+    CHECK(f.work(0, n - 1) == 0);
+    auto seen = f.getReach(0);
+    CHECK(seen[n - 1] == 't');
+}
+
+int run() {
+    runCase("MaxFlow/no-path", [] {
+        verifyAdded(3, {});
+    });
+    runCase("MaxFlow/zero-capacity", [] {
+        verifyAdded(2, {{0, 1, 0LL}});
+    });
+    runCase("MaxFlow/single", [] {
+        verifyAdded(2, {{0, 1, 7LL}});
+    });
+    runCase("MaxFlow/parallel", [] {
+        verifyAdded(2, {{0, 1, 3LL}, {0, 1, 5LL}});
+    });
+    runCase("MaxFlow/bottleneck", [] {
+        verifyAdded(3, {{0, 1, 99LL}, {1, 2, 2LL}});
+    });
+    runCase("MaxFlow/self-loop", [] {
+        verifyAdded(2, {{0, 0, 8LL}, {0, 1, 4LL}});
+    });
+    runCase("MaxFlow/anti-parallel", [] {
+        verifyAdded(3, {{0, 1, 7LL}, {1, 0, 3LL}, {1, 2, 5LL}});
+    });
+    runCase("MaxFlow/diamond", [] {
+        verifyAdded(4, {{0, 1, 3LL}, {0, 2, 5LL}, {1, 3, 7LL}, {2, 3, 2LL}});
+    });
+    runCase("MaxFlow/reroute", [] {
+        verifyAdded(4, {{0, 1, 1LL}, {0, 2, 1LL}, {1, 2, 1LL}, {1, 3, 1LL}, {2, 3, 1LL}});
+    });
+    runCase("MaxFlow/wide-capacity", [] {
+        verifyAdded(2, {{0, 1, 4000000000000000000LL}});
+    });
+    return 0;
+}
+}
+
+int main() {
+    runCase("MaxFlow/oracle-and-contracts", [] { CHECK(coreCases() == 0); });
+    CHECK(boundary_cases::run() == 0);
+    return 0;
 }

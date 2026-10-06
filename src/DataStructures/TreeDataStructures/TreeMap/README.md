@@ -10,6 +10,8 @@
 
 遍历用 `auto [key,value]`，value 可写回。结构修改、clear、扩容、赋值或移动后丢弃旧迭代器、引用和代理；optional 副本独立。节点池容量与排名须适合 int。
 
+两个版本均公开 `key_type = K`、`mapped_type = V`，供通用映射识别；迭代器仍返回具有 `.key`、`.value` 的 Entry，const 遍历不复制 value。
+
 SBT 仅插入重平衡，查询/删除 O(h)，不保证删除后的 h=O(log size)，完整遍历 O(N)。离线增删/查询/排名 O(log U)、遍历 O(U)、初始化排序 O(U log U) 上界；U 为候选键数。
 
 [使用示例](../../../../tests/Correctness/DataStructures/TreeDataStructures/TreeMap/Demo.cpp)。

@@ -74,7 +74,7 @@
     "9. Clarketech": "DuqN0",
     "9. Clarketech/ListHelper": "afwkF",
     "9. Clarketech/Debuger": "Ztau5",
-    "9. Clarketech/DebugerHeadCopyToBitsStdC++": "Qn3ff",
+    "9. Clarketech/DebugerCore": "Qn3ff",
     "9. Clarketech/FastInputOutput": "I9LvY",
     "last. CTL": "rNDfs"
   },
@@ -299,12 +299,7 @@
       "search": "Sieve",
       "id": "4749e9ee"
     },
-    "example/8": {
-      "search": "Primes whose root is 3",
-      "collapsed": false,
-      "id": "moc3z"
-    },
-    "example/239": {
+    "DebugerHeadCopyToBitsStdC++": {
       "search": "copy to bits/stdc++.h",
       "theme": "Darcula",
       "id": "agQ2Y"

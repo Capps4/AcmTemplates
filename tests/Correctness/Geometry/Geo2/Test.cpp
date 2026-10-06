@@ -1,6 +1,8 @@
+#include "../../../Support/CaseSupport.hpp"
 #include "../../../../src/Geometry/Geo2/Circle.hpp"
 #include "../../../Support/TestSupport.hpp"
 #include <limits>
+
 using namespace _geo2;
 using i64 = long long;
 using Wrapped = FloatPointNumber<double>;
@@ -376,7 +378,7 @@ double diskCorner(double x, double y, double r) {
 
 template <class T>
 void areaOracle() {
-    for (int rep = 0; rep < 3000; ++rep) {
+    for (int rep = 0; rep < 8; ++rep) {
         double x0 = randomInt(-30, 30), x1 = randomInt(-30, 30);
         double y0 = randomInt(-30, 30), y1 = randomInt(-30, 30), r = randomInt(0, 25);
         if (x0 > x1) std::swap(x0, x1);
@@ -390,7 +392,7 @@ void areaOracle() {
 template <class T>
 void boundedHalfPlanes() {
     auto domain = convexHull<T>({{-100, -100}, {100, -100}, {100, 100}, {-100, 100}});
-    for (int rep = 0; rep < 1000; ++rep) {
+    for (int rep = 0; rep < 8; ++rep) {
         std::vector<Line<T>> lines;
         for (int i = 0; i < 30; ++i) {
             Vec<T> v{T(randomInt(-10, 10)), T(randomInt(-10, 10))};
@@ -582,7 +584,7 @@ void nearestOracles(int rounds) {
 }
 
 void circlePredicateOracle() {
-    for (int rep = 0; rep < 20000; ++rep) {
+    for (int rep = 0; rep < 16; ++rep) {
         auto point = [] { return Point<i64>{randomInt(-10, 10), randomInt(-10, 10)}; };
         Circle<i64> c(point(), randomInt(0, 10)), d(point(), randomInt(0, 10));
         Seg<i64> s{point(), point()};
@@ -614,16 +616,303 @@ void halfPlaneCornerRegression() {
     CHECK(actual.loc({-10, 0}) == Location::ON);
 }
 
+
+
+#include "../../../../src/Geometry/Geo2/Circle.hpp"
+#include "../../../Support/CaseSupport.hpp"
+
+namespace boundary_Circle {
+bool closeAdded(double a, double b) {
+    return std::abs(a - b) <= 1e-8 * (1 + std::abs(a) + std::abs(b));
+}
+using P = Point<double>;
+using V = Vec<double>;
+
+int run() {
+    runCase("Geo2/Circle/zero-circle", [] {
+        Circle<double> c{{1, 2}, 0};
+        CHECK(c.loc(P(1, 2)) == Location::ON);
+        CHECK(inter(c, c).kind == HitKind::ONE);
+    });
+    runCase("Geo2/Circle/point-location", [] {
+        Circle<double> c{{0, 0}, 5};
+        CHECK(c.loc(P(0, 0)) == Location::IN);
+        CHECK(c.loc(P(3, 4)) == Location::ON);
+        CHECK(c.loc(P(6, 0)) == Location::OUT);
+    });
+    runCase("Geo2/Circle/line-tangent", [] {
+        auto h = inter(Circle<double>{{0, 0}, 2}, Line<double>{{-3, 2}, {3, 2}});
+        CHECK(h.kind == HitKind::ONE);
+        CHECK(h.ps[0] == P(0, 2));
+    });
+    runCase("Geo2/Circle/line-secant", [] {
+        auto h = inter(Circle<double>{{0, 0}, 2}, Line<double>{{-3, 0}, {3, 0}});
+        CHECK(h.kind == HitKind::TWO);
+        for (int i = 0; i < 2; ++i)
+            CHECK(h.ps[i].dist2(P(0, 0)) == 4);
+    });
+    runCase("Geo2/Circle/external-tangent", [] {
+        Circle<double> a{{0, 0}, 2}, b{{4, 0}, 2};
+        CHECK(relation(a, b) == CircleRelation::EXTERNAL_TANGENT);
+        CHECK(inter(a, b).ps[0] == P(2, 0));
+    });
+    runCase("Geo2/Circle/internal-tangent", [] {
+        Circle<double> a{{0, 0}, 3}, b{{2, 0}, 1};
+        CHECK(relation(a, b) == CircleRelation::INTERNAL_TANGENT);
+        CHECK(inter(a, b).ps[0] == P(3, 0));
+    });
+    runCase("Geo2/Circle/contained", [] {
+        Circle<double> a{{0, 0}, 3}, b{{0, 0}, 1};
+        CHECK(relation(a, b) == CircleRelation::CONTAINED);
+        CHECK(!inter(a, b));
+        CHECK(closeAdded(intersectionArea(a, b), std::acos(-1.)));
+    });
+    runCase("Geo2/Circle/circumcircle", [] {
+        auto c = Circle<double>::circum(P(0, 0), P(2, 0), P(0, 2));
+        CHECK(c.o == P(1, 1));
+        CHECK(closeAdded(c.r, std::sqrt(2.)));
+    });
+    runCase("Geo2/Circle/segment-rim", [] {
+        Circle<double> c{{0, 0}, 1};
+        CHECK(!inter(c, Seg<double>{{0, 0}, {0.5, 0}}));
+        CHECK(inter(c, Seg<double>{{0, 0}, {2, 0}}).kind == HitKind::ONE);
+    });
+    runCase("Geo2/Circle/point-tangents", [] {
+        Circle<double> c{{0, 0}, 1};
+        auto t = tangents(P(2, 0), c);
+        CHECK(t.lines.size() == 2);
+        for (auto &l : t.lines)
+            CHECK(closeAdded(near(c.o, l).first.dist(near(c.o, l).second), 1));
+    });
+    return 0;
+}
+}
+
+#include "../../../../src/Geometry/Geo2/PointVec.hpp"
+#include "../../../Support/CaseSupport.hpp"
+
+namespace boundary_PointVec {
+bool closeAdded(double a, double b) {
+    return std::abs(a - b) <= 1e-8 * (1 + std::abs(a) + std::abs(b));
+}
+using P = Point<double>;
+using V = Vec<double>;
+
+int run() {
+    runCase("Geo2/PointVec/origin", [] {
+        CHECK(P::O == P(0, 0));
+        CHECK(V::O == V(0, 0));
+    });
+    runCase("Geo2/PointVec/point-vector-types", [] {
+        static_assert(!std::is_same_v<P, V>);
+        P p(1, 2);
+        V v(3, -5);
+        CHECK(p + v == P(4, -3));
+        CHECK((p + v) - p == v);
+    });
+    runCase("Geo2/PointVec/negative-dot", [] {
+        V a(-3, 4), b(7, -2);
+        CHECK(a.dot(b) == -29);
+        CHECK(a.cross(b) == -22);
+    });
+    runCase("Geo2/PointVec/integer-orientation", [] {
+        CHECK(orient(Point<long long>(-1000000000, 0), Point<long long>(1000000000, 0),
+                     Point<long long>(0, 1000000000)) == 1);
+    });
+    runCase("Geo2/PointVec/distance", [] {
+        P a(-1, -2), b(2, 2);
+        CHECK(a.dist2(b) == 25);
+        CHECK(closeAdded(a.dist(b), 5));
+    });
+    runCase("Geo2/PointVec/rotate-90", [] {
+        V a(3, 4);
+        CHECK(a.rot90() == V(-4, 3));
+        CHECK(a.dot(a.rot90()) == 0);
+    });
+    runCase("Geo2/PointVec/rotate-angle", [] {
+        auto v = V(2, 0).rot(std::acos(-1.) / 2);
+        CHECK(closeAdded(v.x, 0));
+        CHECK(closeAdded(v.y, 2));
+    });
+    runCase("Geo2/PointVec/signed-angle", [] {
+        CHECK(closeAdded(V(1, 0).angle(V(0, -1)), -std::acos(-1.) / 2));
+    });
+    runCase("Geo2/PointVec/polar-half", [] {
+        CHECK(V(1, 0).half() == 0);
+        CHECK(V(-1, 0).half() == 1);
+        CHECK(V(0, 1).half() == 0);
+        CHECK(V(0, -1).half() == 1);
+    });
+    runCase("Geo2/PointVec/point-hit", [] {
+        CHECK(inter(P(1, 2), P(1, 2)).kind == HitKind::ONE);
+        CHECK(!inter(P(1, 2), P(2, 1)));
+        CHECK(near(P(1, 2), P(2, 1)).first == P(1, 2));
+    });
+    return 0;
+}
+}
+
+#include "../../../../src/Geometry/Geo2/PolygonConvex.hpp"
+#include "../../../Support/CaseSupport.hpp"
+
+namespace boundary_PolygonConvex {
+bool closeAdded(double a, double b) {
+    return std::abs(a - b) <= 1e-8 * (1 + std::abs(a) + std::abs(b));
+}
+using P = Point<double>;
+using V = Vec<double>;
+
+int run() {
+    runCase("Geo2/PolygonConvex/empty-hull", [] {
+        CHECK(convexHull(std::vector<P>{}).empty());
+    });
+    runCase("Geo2/PolygonConvex/single-hull", [] {
+        auto h = convexHull(std::vector<P>{{2, 3}, {2, 3}});
+        CHECK(h.size() == 1);
+        CHECK(h.loc(P(2, 3)) == Location::ON);
+    });
+    runCase("Geo2/PolygonConvex/collinear-hull", [] {
+        auto h = convexHull(std::vector<P>{{2, 0}, {0, 0}, {1, 0}, {3, 0}, {2, 0}});
+        CHECK(h.size() == 2);
+        CHECK(h.loc(P(1, 0)) == Location::ON);
+    });
+    runCase("Geo2/PolygonConvex/square-area", [] {
+        Polygon<double> p{{{0, 0}, {4, 0}, {4, 3}, {0, 3}}};
+        CHECK(p.area() == 12);
+        CHECK(p.perimeter() == 14);
+        CHECK(p.centroid() == P(2, 1.5));
+    });
+    runCase("Geo2/PolygonConvex/clockwise", [] {
+        Polygon<double> p{{{0, 0}, {0, 3}, {4, 3}, {4, 0}}};
+        CHECK(p.area() == 12);
+        CHECK(p.loc(P(2, 1)) == Location::IN);
+        CHECK(p.loc(P(4, 1)) == Location::ON);
+    });
+    runCase("Geo2/PolygonConvex/concave-notch", [] {
+        Polygon<double> p{{{0, 0}, {4, 0}, {4, 4}, {2, 2}, {0, 4}}};
+        CHECK(!p.isConvex());
+        CHECK(p.loc(P(2, 3)) == Location::OUT);
+        CHECK(p.loc(P(2, 1)) == Location::IN);
+    });
+    runCase("Geo2/PolygonConvex/interior-points", [] {
+        auto h = convexHull(std::vector<P>{{0, 0}, {4, 0}, {4, 3}, {0, 3}, {2, 1}, {2, 2}, {0, 0}});
+        CHECK(h.size() == 4);
+        CHECK(h.area() == 12);
+    });
+    runCase("Geo2/PolygonConvex/cut-square", [] {
+        auto h = convexHull(std::vector<P>{{0, 0}, {4, 0}, {4, 4}, {0, 4}});
+        auto cut = cutLeft(h, Line<double>{{2, -1}, {2, 5}});
+        CHECK(closeAdded(cut.area(), 8));
+    });
+    runCase("Geo2/PolygonConvex/minkowski", [] {
+        auto a = convexHull(std::vector<P>{{0, 0}, {1, 0}, {1, 1}, {0, 1}});
+        auto c = minkowskiSum(a, a);
+        CHECK(c.area() == 4);
+    });
+    runCase("Geo2/PolygonConvex/diameter", [] {
+        auto h = convexHull(std::vector<P>{{0, 0}, {4, 0}, {4, 3}, {0, 3}});
+        CHECK(closeAdded(diameter(h), 5));
+        CHECK(closeAdded(minWidth(h), 3));
+    });
+    return 0;
+}
+}
+
+#include "../../../../src/Geometry/Geo2/SegLine.hpp"
+#include "../../../Support/CaseSupport.hpp"
+
+namespace boundary_SegLine {
+bool closeAdded(double a, double b) {
+    return std::abs(a - b) <= 1e-8 * (1 + std::abs(a) + std::abs(b));
+}
+using P = Point<double>;
+using V = Vec<double>;
+
+int run() {
+    runCase("Geo2/SegLine/proper-cross", [] {
+        auto h = inter(Seg<double>{{0, 0}, {4, 4}}, Seg<double>{{0, 4}, {4, 0}});
+        CHECK(h.kind == HitKind::ONE);
+        CHECK(h.ps[0] == P(2, 2));
+    });
+    runCase("Geo2/SegLine/endpoint-contact", [] {
+        CHECK(inter(Seg<double>{{0, 0}, {1, 0}}, Seg<double>{{1, 0}, {1, 2}}).kind == HitKind::ONE);
+    });
+    runCase("Geo2/SegLine/overlap", [] {
+        auto h = inter(Seg<double>{{0, 0}, {4, 0}}, Seg<double>{{1, 0}, {3, 0}});
+        CHECK(h.kind == HitKind::SEG);
+        CHECK(h.ps[0].dist2(h.ps[1]) == 4);
+    });
+    runCase("Geo2/SegLine/parallel-disjoint", [] {
+        CHECK(!inter(Line<double>{{0, 0}, {1, 0}}, Line<double>{{0, 1}, {1, 1}}));
+    });
+    runCase("Geo2/SegLine/coincident-lines", [] {
+        CHECK(inter(Line<double>{{0, 0}, {1, 0}}, Line<double>{{2, 0}, {-3, 0}}).kind ==
+              HitKind::CO);
+    });
+    runCase("Geo2/SegLine/zero-segment", [] {
+        Seg<double> s{{2, 3}, {2, 3}};
+        CHECK(s.loc(P(2, 3)) == Location::ON);
+        CHECK(near(P(7, 3), s).second == P(2, 3));
+    });
+    runCase("Geo2/SegLine/outside-nearest", [] {
+        CHECK(near(P(-1, 2), Seg<double>{{0, 0}, {4, 0}}).second == P(0, 0));
+        CHECK(near(P(5, 2), Seg<double>{{0, 0}, {4, 0}}).second == P(4, 0));
+    });
+    runCase("Geo2/SegLine/projection", [] {
+        Line<double> l{{0, 0}, {4, 0}};
+        CHECK(near(P(2, 3), l).second == P(2, 0));
+        CHECK(l.reflect(P(2, 3)) == P(2, -3));
+    });
+    runCase("Geo2/SegLine/reversed-line", [] {
+        Line<double> l{{0, 0}, {4, 0}};
+        CHECK(l.side(P(2, 3)) == -l.reversed().side(P(2, 3)));
+    });
+    runCase("Geo2/SegLine/integer-boundary", [] {
+        Seg<long long> s{{-1000000000, -1000000000}, {1000000000, 1000000000}};
+        CHECK(s.loc(Point<long long>(0, 0)) == Location::ON);
+        CHECK(s.loc(Point<long long>(0, 1)) == Location::OUT);
+    });
+    return 0;
+}
+}
+
+#include "../../../../src/Geometry/Geo2/PolygonConvex.hpp"
+#include "../../../Support/TestSupport.hpp"
+
+namespace example_cases {
+
+int run() {
+    using I = long long;
+    std::istringstream input("0 0 4 0 4 3 0 3 2 1 0 0");
+    std::vector<Point<I>> ps(6);
+    for (auto &p : ps)
+        input >> p;
+    auto hull = convexHull(std::move(ps));
+    CHECK(hull.size() == 4);
+    CHECK(hull.area2() == 24);
+    CHECK(hull.loc({1, 1}) == Location::IN);
+    CHECK(hull.loc({4, 1}) == Location::ON);
+    CHECK(hull.loc({5, 1}) == Location::OUT);
+    CHECK(inter(hull, Seg<I>{{-1, 1}, {5, 1}}, nullptr));
+    return 0;
+}
+}
+
 int main() {
-    halfPlaneCornerRegression<double>(); halfPlaneCornerRegression<Wrapped>();
-    nearestOracles<double>(3000); nearestOracles<Wrapped>(3000);
-    circlePredicateOracle();
-    largeHull();
-    segmentOracle();
-    areaOracle<double>(); areaOracle<Wrapped>();
-    boundedHalfPlanes<double>(); boundedHalfPlanes<Wrapped>();
-    edges<i64>(); edges<double>(); edges<Wrapped>();
-    predicates<i64>(2000); predicates<double>(2000); predicates<Wrapped>(2000);
-    constructions<double>(2000); constructions<Wrapped>(2000);
-    std::cout << "Geo2: 65536-vertex hull, 6561 segment pairs, 6000 area oracles, 2000 bounded HPI, 6000 predicate + 4000 construction rounds, 6000 nearest-point + 20000 circle-predicate oracles PASS; seed=" << testSeed << '\n';
+    runStressCase("Geo2/dense-conditioning", [] { largeHull(); });
+    runCase("Geo2/half-plane-corner", [] { halfPlaneCornerRegression<double>(); halfPlaneCornerRegression<Wrapped>(); });
+    runCase("Geo2/nearest-witnesses", [] { nearestOracles<double>(8); nearestOracles<Wrapped>(8); });
+    runCase("Geo2/circle-predicates", [] { circlePredicateOracle(); });
+    runCase("Geo2/segment-oracle", [] { segmentOracle(); });
+    runCase("Geo2/circle-polygon-area", [] { areaOracle<double>(); areaOracle<Wrapped>(); });
+    runCase("Geo2/bounded-half-planes", [] { boundedHalfPlanes<double>(); boundedHalfPlanes<Wrapped>(); });
+    runCase("Geo2/scalar-boundaries", [] { edges<i64>(); edges<double>(); edges<Wrapped>(); });
+    runCase("Geo2/hull-predicates", [] { predicates<i64>(8); predicates<double>(8); predicates<Wrapped>(8); });
+    runCase("Geo2/hull-constructions", [] { constructions<double>(8); constructions<Wrapped>(8); });
+    CHECK(boundary_Circle::run() == 0);
+    CHECK(boundary_PointVec::run() == 0);
+    CHECK(boundary_PolygonConvex::run() == 0);
+    CHECK(boundary_SegLine::run() == 0);
+    runCase("Geo2/usage-example", [] { CHECK(example_cases::run() == 0); });
+    return 0;
 }

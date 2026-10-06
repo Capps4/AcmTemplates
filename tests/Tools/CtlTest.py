@@ -14,7 +14,7 @@ from tools.Console import Console
 class CtlTest(unittest.TestCase):
     def invoke(self, arguments):
         output = io.StringIO()
-        with contextlib.redirect_stdout(output):
+        with contextlib.redirect_stdout(output), patch.object(Ctl, "test_lock", return_value=contextlib.nullcontext()):
             result = Ctl.main(arguments)
         return result, output.getvalue()
 
@@ -54,12 +54,36 @@ class CtlTest(unittest.TestCase):
                 self.assertEqual(test.call_args.args[1:], flags)
 
     def test_both_categories_run_after_correctness_failure(self):
-        right = {'records': [{'status': 'failed'}], 'passed': False, 'path': 'right-report'}
-        perf = {'records': [{'status': 'passed'}], 'passed': True, 'path': 'perf-report'}
+        right = {'records': [{'id': 'Tiny/strict/main', 'module': 'Tiny', 'phase': 'run', 'error': 'case failed', 'status': 'failed'}], 'passed': False, 'path': 'right-report'}
+        perf = {'records': [{'id': 'Tiny/Benchmark', 'module': 'Tiny', 'status': 'passed'}], 'passed': True, 'path': 'perf-report'}
         with patch('tools.Ctl.platform.system', return_value='Darwin'), patch('tools.Run.run', return_value=right) as run, patch('tools.Benchmark.run', return_value=perf) as bench, patch('tools.Verification.save', return_value=({'passed': False}, 'summary')):
             status, output = self.invoke(['test', '--all'])
         self.assertEqual(status, 1);run.assert_called_once();bench.assert_called_once()
-        self.assertIn('性能测试', output);self.assertIn('失败', output)
+        self.assertIn('性能：', output);self.assertIn('失败', output)
+
+    def test_replay_flags_are_scoped_and_restored(self):
+        previous = (Ctl.config.TEST_MODULES, Ctl.config.TEST_CASE, Ctl.config.RIGHT_PROFILES, Ctl.config.RIGHT_SEED)
+        observed = []
+        def inspect(console, right, perf):
+            observed.append((Ctl.config.TEST_MODULES, Ctl.config.TEST_CASE, Ctl.config.RIGHT_PROFILES, Ctl.config.RIGHT_SEED))
+            return 0
+        with patch.object(Ctl, 'test', side_effect=inspect):
+            status, _ = self.invoke(['test', '--right', '--module', 'Tiny', '--case', 'value', '--profile', 'optimized', '--seed', '42'])
+        self.assertEqual(status, 0)
+        self.assertEqual(observed, [(('Tiny',), 'value', ('optimized',), 42)])
+        self.assertEqual(previous, (Ctl.config.TEST_MODULES, Ctl.config.TEST_CASE, Ctl.config.RIGHT_PROFILES, Ctl.config.RIGHT_SEED))
+        self.assertEqual(self.invoke(['test', '--perf', '--case', 'value'])[0], 1)
+
+    def test_one_tick_per_header_after_both_categories(self):
+        right = dict(records=[dict(id='Tiny/' + p + '/main', module='Tiny', profile=p, status='passed')
+                              for p in ('strict', 'optimized', 'sanitized')], passed=True, path='summary')
+        perf = dict(records=[dict(id='Tiny/Benchmark', module='Tiny', status='passed')], passed=True, path='summary')
+        with patch('tools.Run.run', return_value=right), patch('tools.Benchmark.run', return_value=perf), patch('tools.Verification.save', return_value=({'passed': True}, 'summary')), patch('tools.Common.catalog', return_value={'Tiny': {'module': 'Tiny'}}):
+            status, output = self.invoke(['test', '--all'])
+        self.assertEqual(status, 0)
+        self.assertEqual(output.count('✓'), 1)
+        self.assertNotIn('/strict', output)
+        self.assertNotIn('复用缓存', output)
 
     def test_errors_have_no_json_or_traceback(self):
         with patch.object(Ctl, 'update_local', side_effect=ValueError('multiple directories')):

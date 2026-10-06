@@ -8,4 +8,14 @@ int enabledDebugFromOtherTranslationUnit() {
     return count;
 }
 
-int main() { int cnt = enabledDebugFromOtherTranslationUnit(); std::free($); return cnt != 1; }
+int isolatedCase() {
+    int cnt = enabledDebugFromOtherTranslationUnit();
+    std::free($);
+    return cnt != 1;
+}
+
+#include "../../../Support/CaseSupport.hpp"
+int main() {
+    runCase("Debuger/enabled", [] { CHECK(isolatedCase() == 0); });
+    return 0;
+}

@@ -2,13 +2,12 @@
 from collections import defaultdict
 import hashlib
 import json
-import os
 from pathlib import Path
 import re
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from tools.Common import FLAGS, ROOT, digest, manifest, module_path
+from tools.Common import FLAGS, ROOT, digest, manifest, module_path, catalog
 
 REVIEWS = ROOT / 'tools/RuleExceptions.json'
 REQUIRED = '-std=gnu++17 -Wall -Wextra -Werror -Weffc++ -O0 -g -D_GLIBCXX_DEBUG'.split()
@@ -51,20 +50,9 @@ def mask(text, literals=True):
 
 
 def files():
-    result = {}
+    result = {item['path']: (item['module'], item['include']) for item in catalog().values()}
     for name, item in manifest().items():
         folder = module_path(name)
-        entries = ('PointVec.hpp', 'SegLine.hpp', 'PolygonConvex.hpp', 'Circle.hpp') if name == 'Geo2' else ('code.hpp',)
-        for entry in entries:
-            path = folder / entry
-            if name == 'Geo2' and entry != 'PointVec.hpp':
-                prev = {'SegLine.hpp': 'PointVec.hpp', 'PolygonConvex.hpp': 'SegLine.hpp', 'Circle.hpp': 'PolygonConvex.hpp'}[entry]
-                expected = prev
-            elif item.get('include'):
-                expected = 'Include.hpp'
-            else:
-                expected = os.path.relpath(ROOT / 'Headers/Headers.hpp', folder)
-            result[path] = (name, expected)
         for path in folder.glob('Include.hpp'):
             result[path] = (name, None)
     for path in (ROOT / 'Headers').glob('*.hpp'):

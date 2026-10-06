@@ -42,17 +42,16 @@ FLAGS = {
 }
 RIGHT_PROFILES = ('strict', 'optimized', 'sanitized')
 TEST_MODULES = None  # None covers every module; a tuple selects a local working scope.
-TEST_JOBS = 3
+TEST_JOBS = 6
+TEST_RUN_JOBS = 32  # Compiler concurrency stays at TEST_JOBS.
+TEST_CASE = None  # Exact case ID or its module-relative suffix; local reproduction only.
 RIGHT_SEED = 20261001
 PERF_SEED = 20261005
 TEST_TIMEOUT = 180
 COMPILE_TIMEOUT = 300
-FORCE_RIGHT = False
-PERF_SIZES = {
-    'PollardRho': (30, 100), 'GaussianElimination': (32, 96),
-    'MaxFlow': (1000, 10000), 'CostFlow': (500, 2000),
-    'MultipleBackpacks': (1000, 10000), 'MillerRabin': (1000, 10000),
-    'FastFourierTransform': (4096, 32768), 'NumberTheoreticTransform': (4096, 32768),
-    'Trie': (10000, 100000), 'SparseSegTree': (10000, 100000),
-}
 PERF_DEFAULT_SIZES = (10000, 100000)
+PERF_REPEATS = 3
+
+# Workload targets, excluding compiler/process startup and strict/Sanitizer overhead.
+CORRECTNESS_TARGET_MS = (0, 20)
+PERFORMANCE_TARGET_MS = (0, 100)

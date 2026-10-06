@@ -11,9 +11,18 @@ int main(int argc, char **argv) {
                    [&]() -> std::uint64_t {
                        PollardRho<unsigned long long> f(input.seed);
                        std::uint64_t sum = 0;
-                       for (auto x : a)
-                           for (auto [p, e] : f.primeFactorize(x))
-                               sum ^= p + e;
+                       for (auto x : a) {
+                           unsigned long long remaining = x;
+                           for (auto [p, e] : f.primeFactorize(x)) {
+                               benchmarkCheck(p > 1 and e > 0, "positive prime powers");
+                               for (int i = 0; i < e; ++i) {
+                                   benchmarkCheck(remaining % p == 0, "factor divides remaining input");
+                                   remaining /= p;
+                               }
+                               sum = benchmarkMix(sum, p + e);
+                           }
+                           benchmarkCheck(remaining == 1, "factorization reconstructs input");
+                       }
                        return sum;
                    });
 }

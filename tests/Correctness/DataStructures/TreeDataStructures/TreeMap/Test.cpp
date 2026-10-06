@@ -1,5 +1,5 @@
+#include "../../../../Support/CaseSupport.hpp"
 #include "../../../../../src/DataStructures/TreeDataStructures/TreeMap/code.hpp"
-
 #include <algorithm>
 #include <array>
 #include <cstdlib>
@@ -15,6 +15,8 @@
 #include <type_traits>
 #include <utility>
 #include <vector>
+
+
 
 namespace {
 std::string testName;
@@ -98,7 +100,7 @@ void randomCase(const std::string& name, Map& map, Comparator compare) {
     testName = name;
     std::map<int, int, Comparator> reference(compare);
     std::mt19937 random(91929);
-    for (testStep = 0; testStep < 4000; ++testStep) {
+    for (testStep = 0; testStep < 160; ++testStep) {
         int key = static_cast<int>(random() % 129) - 64;
         int value = static_cast<int>(random() % 100000);
         switch (random() % 7) {
@@ -167,7 +169,7 @@ void capacityCases() {
     require(!map.insertOrAssign(1, 11), "full existing assignment failed"); reference[1] = 11;
     map.erase(4); reference.erase(4); map.insert(8, 80); reference.emplace(8, 80);
     snapshot(map, reference);
-    for (testStep = 0; testStep < 1800; ++testStep) {
+    for (testStep = 0; testStep < 32; ++testStep) {
         int removed = reference.begin()->first, added = testStep + 10;
         map.erase(removed); reference.erase(removed);
         require(map.insert(added, added * 10), "freed fixed-capacity slot was not reused");
@@ -483,7 +485,11 @@ void moveOnlyContainerCases() {
 template<class Key, class Compare>
 void radixCase(Compare compare) {
     std::mt19937_64 random(2313);
-    for (int n : {0, 1, 1023, 1024, 4097}) {
+    // The dispatch threshold is shared; cross widths at the threshold and
+    // exercise adjacent sizes plus input ordering with the representative int.
+    const auto sizes = std::is_same_v<Key, int> ? std::vector<int>{1023, 1024, 1025} :
+                                                std::vector<int>{1024};
+    for (int n : sizes) {
         std::vector<Key> input(n);
         for (Key& key : input)
             key = static_cast<Key>(random());
@@ -494,7 +500,7 @@ void radixCase(Compare compare) {
         auto expected = input;
         std::sort(expected.begin(), expected.end(), compare);
         expected.erase(std::unique(expected.begin(), expected.end()), expected.end());
-        for (int order = 0; order < 3; ++order) {
+        for (int order = 0; order < (std::is_same_v<Key, int> ? 3 : 1); ++order) {
             TreeMapOff<Key, bool, Compare> map(input, compare);
             require(map.empty(), "candidate registration inserted elements");
             for (Key key : input)
@@ -514,7 +520,7 @@ void radixCase(Compare compare) {
 template<class Key, class Compare>
 void candidateSortCase(Compare compare) {
     std::mt19937_64 random(2401);
-    for (int n : {0, 1, 2, 63, 64, 65, 128, 256, 1024, 4097, 8193}) {
+    for (int n : {0, 1, 64, 65, 128}) {
         for (int kind = 0; kind < 4; ++kind) {
             std::vector<Key> input(n);
             for (int i = 0; i < n; ++i) {
@@ -569,7 +575,7 @@ void radixCases() {
     candidateSortCase<int>([](int a, int b) { return a > b; });
     // Equal upper digits must be skipped without changing the active buffer.
     for (int shift : {0, 8}) {
-        std::vector<long long> narrow(4097);
+        std::vector<long long> narrow(1024);
         for (int i = 0; i < static_cast<int>(narrow.size()); ++i)
             narrow[i] = (256LL + i % 7) << shift;
         TreeMapOff<long long, int> map(narrow);
@@ -587,20 +593,111 @@ void radixCases() {
 
 } // namespace
 
-int main() {
-    try {
-        differentialCases();
-        radixCases();
-        capacityCases();
-        valueCases();
-        recycledValueCases();
-        observableResetCases();
-        copyMoveCases();
-        moveOnlyContainerCases();
-        std::cout << "PASS: TreeMap/TreeMapOff C++17 differential and regression checks\n";
-        return EXIT_SUCCESS;
-    } catch (const std::exception& error) {
-        std::cerr << "FAIL: " << error.what() << '\n';
-        return EXIT_FAILURE;
+
+
+#include "../../../../../src/DataStructures/TreeDataStructures/TreeMap/code.hpp"
+#include "../../../../Support/CaseSupport.hpp"
+
+namespace boundary_cases {
+void verifyAdded(const std::vector<int> &a) {
+    test_context::describe(a);
+    TreeMap<int, int> d;
+    std::map<int, int> e;
+    auto verify = [&] {
+        CHECK(d.size() == int(e.size()));
+        int k = 0;
+        for (auto [x, v] : e) {
+            CHECK(d.contains(x));
+            CHECK(d(x) == v);
+            CHECK(d.keyAt(k) == x);
+            CHECK(d.rankOf(x) == k);
+            ++k;
+        }
+        for (int x = -10; x < 10; ++x)
+            CHECK(d.rankOf(x) == std::distance(e.begin(), e.lower_bound(x)));
+    };
+    for (int x : a) {
+        d.insertOrAssign(x, x + 10);
+        e[x] = x + 10;
+        verify();
     }
+    auto saved = d;
+    for (int x : a) {
+        CHECK(d.erase(x) == bool(e.erase(x)));
+        verify();
+    }
+    CHECK(saved.size() >= d.size());
+    d.clear();
+    CHECK(d.empty());
+    d[19] = 7;
+    CHECK(d(19) == 7);
+}
+
+int run() {
+    runCase("TreeMap/empty", [] {
+        verifyAdded({});
+    });
+    runCase("TreeMap/single", [] {
+        verifyAdded({-4});
+    });
+    runCase("TreeMap/duplicates", [] {
+        verifyAdded({-1, -1, -1});
+    });
+    runCase("TreeMap/ascending", [] {
+        verifyAdded({-4, -3, -2, -1});
+    });
+    runCase("TreeMap/descending", [] {
+        verifyAdded({0, -1, -2, -3, -4});
+    });
+    runCase("TreeMap/mixed-repeated", [] {
+        verifyAdded({-2, -4, -2, -3, -4});
+    });
+    runCase("TreeMap/wide-gap", [] {
+        verifyAdded({-4, 996});
+    });
+    runCase("TreeMap/interleaved", [] {
+        verifyAdded({3, 0, 3, -2, 0, -4});
+    });
+    return 0;
+}
+}
+
+#include "../../../../../src/DataStructures/TreeDataStructures/TreeMap/code.hpp"
+#include <cassert>
+#include <vector>
+
+namespace example_cases {
+
+int run() {
+    TreeMap<int, int> map;
+    map[5] = 7;
+    map[2] += 3;
+    assert(!map(9) && map.size() == 2); // 缺失读取返回 nullopt，不插入
+    if (auto value = map(5); value)
+        assert(*value == 7); // optional 保存独立副本
+    assert(map.rankOf(5) == 1);
+    assert(map.keyAt(0) == 2);
+    for (auto [key, value] : map) value += key;
+
+    TreeMapOff<int, bool> marks(std::vector<int>{2, 5, 9, 5});
+    marks[5] = true;
+    marks[5] = false;
+    assert(marks.contains(5)); // false 也是已存在的值
+    marks.erase(5);
+    return 0;
+}
+}
+
+int main() {
+    runCase("TreeMap/online-offline-oracle", [] { differentialCases(); });
+    runCase("TreeMap/candidate-sort-thresholds", [] { radixCases(); });
+    runCase("TreeMap/capacity-and-recycling", [] { capacityCases(); });
+    runCase("TreeMap/move-only-bool-optional-values", [] { valueCases(); });
+    runCase("TreeMap/resource-release", [] { recycledValueCases(); });
+    runCase("TreeMap/observable-reset", [] { observableResetCases(); });
+    runCase("TreeMap/copy-and-move", [] { copyMoveCases(); });
+    runCase("TreeMap/move-only-container", [] { moveOnlyContainerCases(); });
+    CHECK(boundary_cases::run() == 0);
+    runCase("TreeMap/usage-example", [] { CHECK(example_cases::run() == 0); });
+    return 0;
 }

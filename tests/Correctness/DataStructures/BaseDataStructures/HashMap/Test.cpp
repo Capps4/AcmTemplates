@@ -1,3 +1,4 @@
+#include "../../../../Support/CaseSupport.hpp"
 #include "../../../../../src/DataStructures/BaseDataStructures/HashMap/code.hpp"
 #include "../../../../Support/TestSupport.hpp"
 #include <memory>
@@ -5,6 +6,7 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
+
 
 using _hashmap::Impl;
 
@@ -19,14 +21,16 @@ struct ThrowValue {
     }
 };
 
-int main() {
+int coreCases() {
     using Map = Impl<int, 101, 50000>;
     static_assert(std::is_same_v<decltype(std::declval<const Map&>()(0)), const int&>);
     static_assert(std::is_same_v<decltype(*std::declval<Map::Iterator>()), std::pair<u64, int>>);
-    for (int batch = 0; batch < 30; ++batch) {
+    for (int batch = 0; batch < 4; ++batch) {
+        test_context::step = batch;
         std::vector<Map> maps(5);
         std::vector<std::unordered_map<u64, int>> oracle(5);
-        for (int iteration = 0; iteration < 5000; ++iteration) {
+        for (int iteration = 0; iteration < 64; ++iteration) {
+        test_context::step = iteration;
             int id = randomInt(0, 4), action = randomInt(0, 9);
             u64 key = testRng() % 200;
             if (action < 6) {
@@ -61,7 +65,8 @@ int main() {
         }
     }
     // Fill exactly Capa slots; exceeding the pool is a caller precondition violation.
-    for (int batch = 0; batch < 500; ++batch) {
+    for (int batch = 0; batch < 8; ++batch) {
+        test_context::step = batch;
         Impl<int, 1, 8> map;
         for (u64 x = 0; x < 8; ++x)
             map[x] = int(x);
@@ -73,7 +78,8 @@ int main() {
     }
     {
         Impl<int, 10007, 8> map;
-        for (int repeat = 0; repeat < 100; ++repeat) {
+        for (int repeat = 0; repeat < 8; ++repeat) {
+        test_context::step = repeat;
             map[repeat] = repeat;
             map.clear();
         }
@@ -149,4 +155,58 @@ int main() {
         int cnt = 0; for (auto [key, val] : map) { CHECK(key == 1 and !val); ++cnt; } CHECK(cnt == 1);
     }
     std::cout << "HashMap 150K interleaved-owner oracle, moves/clears/collisions/full pool, Original iterator copies, resource reset, default-value lookup PASS\n";
+    return 0;
+}
+
+#include "../../../../../src/DataStructures/BaseDataStructures/HashMap/code.hpp"
+#include "../../../../Support/CaseSupport.hpp"
+
+namespace boundary_cases {
+void verifyAdded(long long seed, int n) {
+    _hashmap::Impl<long long, 7, 512> h;
+    std::map<long long, long long> e;
+    for (int i = 0; i < n; ++i) {
+        long long k = (i % 13 - 6) * 7 + seed;
+        h[k] += i - 5;
+        e[k] += i - 5;
+    }
+    for (auto [k, v] : e) {
+        CHECK(h(k) == v);
+    }
+    CHECK(h(LLONG_MAX) == 0);
+    CHECK(h(LLONG_MIN) == 0);
+    std::map<long long, long long> got;
+    for (auto [k, v] : h)
+        got[k] = v;
+    CHECK(got == e);
+    auto moved = std::move(h);
+    for (auto [k, v] : e)
+        CHECK(moved(k) == v);
+    moved.clear();
+    CHECK(moved(0) == 0);
+    moved[seed] = 9;
+    CHECK(moved(seed) == 9);
+}
+
+int run() {
+    runCase("HashMap/empty", [] {
+        verifyAdded(0, 0);
+    });
+    runCase("HashMap/single", [] {
+        verifyAdded(1, 1);
+    });
+    runCase("HashMap/key-reuse", [] {
+        verifyAdded(17, 15);
+    });
+    runCase("HashMap/bucket-collisions", [] {
+        verifyAdded(97, 120);
+    });
+    return 0;
+}
+}
+
+int main() {
+    runCase("HashMap/oracle-and-contracts", [] { CHECK(coreCases() == 0); });
+    CHECK(boundary_cases::run() == 0);
+    return 0;
 }

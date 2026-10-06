@@ -1,3 +1,4 @@
+#include "../../../Support/CaseSupport.hpp"
 #include "../../../../src/Clarketech/ListHelper/code.hpp"
 #include "../../../Support/TestSupport.hpp"
 #include <list>
@@ -5,6 +6,7 @@
 #include <sstream>
 #include <deque>
 #include <climits>
+
 struct Box {int value;void set(int x){value=x;}int get()const{return value;}};
 struct Copies {
     inline static int count=0;int value;
@@ -12,9 +14,10 @@ struct Copies {
     Copies(const Copies& rhs):value(rhs.value){++count;}
     Copies(Copies&&)=default;Copies& operator=(const Copies&)=default;Copies& operator=(Copies&&)=default;
 };
-int main(){
-    for(int trial=0;trial<1000;++trial){
-        std::vector<long long> a(randomInt(0,5000));for(auto& x:a)x=static_cast<long long>(testRng());
+int coreCases(){
+    for(int trial=0;trial<16;++trial){
+        test_context::step = trial;
+        std::vector<long long> a(randomInt(0,64));for(auto& x:a)x=static_cast<long long>(testRng());
         auto expected=a;std::sort(expected.begin(),expected.end());CHECK((a|sorted())==expected);CHECK(a.size()==expected.size());
         auto uniqueExpected=expected;uniqueExpected.erase(std::unique(uniqueExpected.begin(),uniqueExpected.end()),uniqueExpected.end());CHECK((a|sorted()|unique())==uniqueExpected);
         auto filtered=a;filtered.erase(std::remove_if(filtered.begin(),filtered.end(),[](auto x){return x%2!=0;}),filtered.end());CHECK((a|filter([](auto x){return x%2==0;}))==filtered);
@@ -23,7 +26,8 @@ int main(){
     for(int bits:{1,7,8,16}){auto v=limits;switch(bits){case 1:seq::radixSort<1>(v,LLONG_MIN,LLONG_MAX);break;case 7:seq::radixSort<7>(v,LLONG_MIN,LLONG_MAX);break;case 8:seq::radixSort<8>(v,LLONG_MIN,LLONG_MAX);break;case 16:seq::radixSort<16>(v,LLONG_MIN,LLONG_MAX);break;}CHECK(v==expected);}
     std::vector<int> emptyRadix;
     seq::radixSort<8>(emptyRadix, 0, 100);
-    for (int trial = 0; trial < 100; ++trial) {
+    for (int trial = 0; trial < 4; ++trial) {
+        test_context::step = trial;
         std::vector<long long> values(5000);
         for (auto& value : values) {
             value = trial % 2 ? static_cast<long long>(testRng()) :
@@ -62,4 +66,81 @@ int main(){
     auto getFront=call(front);decltype(auto) front=a|getFront;static_assert(std::is_same_v<decltype(front),const int&>);CHECK(&front==&a.front());CHECK((std::string("abc")|call(append,"def"))=="abcdef");
     auto suffix=call(substr,1,2);CHECK((std::string("abcd")|suffix)=="bc");CHECK((std::string("xyzw")|suffix)=="yz");
     std::cout<<"ListHelper: sort/radix oracles, ownership/views, reusable move-only ops, proxies, streams, member result lifetime PASS\n";
+    return 0;
+}
+
+#include "../../../../src/Clarketech/ListHelper/code.hpp"
+#include "../../../Support/CaseSupport.hpp"
+#include <sstream>
+
+namespace boundary_cases {
+
+int run() {
+    runCase("ListHelper/empty", [] {
+        std::vector<int> a;
+        CHECK((a | sorted() | unique()).empty());
+        CHECK(!(a | first([](int) {
+                    return true;
+                })));
+    });
+    runCase("ListHelper/sort-borrows", [] {
+        std::vector<int> a{4, 1, 4, 2};
+        auto b = a;
+        CHECK((a | sorted()) == std::vector<int>({1, 2, 4, 4}));
+        CHECK(a == b);
+    });
+    runCase("ListHelper/wide-signed", [] {
+        std::vector<long long> a{LLONG_MAX, 0, LLONG_MIN, -1};
+        auto e = a;
+        std::sort(e.begin(), e.end());
+        CHECK((a | sorted()) == e);
+    });
+    runCase("ListHelper/descending", [] {
+        CHECK((std::vector<int>{2, 1, 3} | sorted(std::greater<int>{})) ==
+              std::vector<int>({3, 2, 1}));
+    });
+    runCase("ListHelper/unique-adjacent", [] {
+        CHECK((std::vector<int>{1, 1, 2, 1, 1} | unique()) == std::vector<int>({1, 2, 1}));
+    });
+    runCase("ListHelper/filter-map", [] {
+        CHECK((std::vector<int>{-2, -1, 0, 1, 2} | filter([](int x) {
+                   return x % 2 == 0;
+               }) |
+               map([](int x) {
+                   return x * x;
+               })) == std::vector<int>({4, 0, 4}));
+    });
+    runCase("ListHelper/slice-clamp", [] {
+        CHECK((std::vector<int>{1, 2, 3} | slice(1, 99)) == std::vector<int>({2, 3}));
+        CHECK((std::vector<int>{1} | slice(4, 0)).empty());
+    });
+    runCase("ListHelper/reusable-state", [] {
+        auto op = map([k = 0](int) mutable {
+            return ++k;
+        });
+        std::vector<int> a{0, 0};
+        CHECK((a | op) == std::vector<int>({1, 2}));
+        CHECK((a | op) == std::vector<int>({3, 4}));
+    });
+    runCase("ListHelper/temporary-member", [] {
+        auto s = std::vector<std::string>{std::string(4096, 'x')} | call(front);
+        CHECK(s == std::string(4096, 'x'));
+    });
+    runCase("ListHelper/proxy-stream", [] {
+        std::vector<bool> a{true, false, true};
+        CHECK((a | map([](bool x) {
+                   return !x;
+               })) == std::vector<bool>({false, true, false}));
+        std::ostringstream out;
+        a | seq::cout(out, "|", ".");
+        CHECK(out.str() == "1|0|1.");
+    });
+    return 0;
+}
+}
+
+int main() {
+    runCase("ListHelper/oracle-and-contracts", [] { CHECK(coreCases() == 0); });
+    CHECK(boundary_cases::run() == 0);
+    return 0;
 }

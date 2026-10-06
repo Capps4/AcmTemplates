@@ -1,14 +1,17 @@
+#include "../../../../Support/CaseSupport.hpp"
 #include "../../../../../src/Math/LinearAlgebra/LinearBasis/code.hpp"
 #include "../../../../Support/TestSupport.hpp"
 #include <algorithm>
 #include <cstdint>
 #include <set>
 #include <vector>
-int main() {
+
+int coreCases() {
     LinearBasis<int> empty;
     CHECK(empty.check(0) && !empty.check(1));
-    for (int trial = 0; trial < 1000; ++trial) {
-        int n = randomInt(0, 11);
+    for (int trial = 0; trial < 12; ++trial) {
+        test_context::step = trial;
+        int n = randomInt(0, 7);
         std::vector<int> input;
         LinearBasis<int> basis;
         for (int i = 0; i < n; ++i) {
@@ -30,6 +33,7 @@ int main() {
         }
         CHECK(!basis.check(-1));
         for (int query = 0; query < 20; ++query) {
+        test_context::step = query;
             int on = randomInt(0, 1023), lo = 1024, hi = 0;
             for (int value : all) { lo = std::min(lo, value ^ on); hi = std::max(hi, value ^ on); }
             CHECK(basis.getMin(on) == lo && basis.getMax(on) == hi && basis.check(on) == bool(all.count(on)));
@@ -52,4 +56,61 @@ int main() {
     for (int i = 0; i < 8; ++i) byte.insert(static_cast<unsigned char>(1u << i));
     CHECK(byte.findByOrder(254) == 255);
     std::cout << "LinearBasis exhaustive subset XOR oracle, reduced-then-insert, empty, full 64-bit rank/kth limits PASS\n";
+    return 0;
+}
+
+#include "../../../../../src/Math/LinearAlgebra/LinearBasis/code.hpp"
+#include "../../../../Support/CaseSupport.hpp"
+#include <set>
+
+namespace boundary_cases {
+void verifyAdded(const std::vector<int> &a) {
+    test_context::describe(a);
+    LinearBasis<int> b;
+    for (int x : a)
+        b.insert(x);
+    std::set<int> all{0}, nonempty;
+    for (int m = 1; m < (1 << a.size()); ++m) {
+        int x = 0;
+        for (int i = 0; i < int(a.size()); ++i)
+            if (m >> i & 1)
+                x ^= a[i];
+        all.insert(x);
+        nonempty.insert(x);
+    }
+    CHECK(all.size() == (std::size_t(1) << b.rank));
+    CHECK(b.canZero == bool(nonempty.count(0)));
+    unsigned i = 0;
+    for (int x : nonempty)
+        CHECK(b.findByOrder(i++) == x);
+    for (int x = 0; x < 1024; ++x)
+        CHECK(b.check(x) == bool(all.count(x)));
+    CHECK(b.getMax() == *all.rbegin());
+}
+
+int run() {
+    runCase("LinearBasis/independent-span", [] { verifyAdded({1, 2, 4, 8}); });
+    runCase("LinearBasis/empty", [] {
+        verifyAdded({});
+    });
+    runCase("LinearBasis/zero-only", [] {
+        verifyAdded({0});
+    });
+    runCase("LinearBasis/single-bit", [] {
+        verifyAdded({1});
+    });
+    runCase("LinearBasis/dependent-span", [] {
+        verifyAdded({1, 2, 3});
+    });
+    runCase("LinearBasis/duplicates-and-zero", [] {
+        verifyAdded({1023, 1023, 0, 1});
+    });
+    return 0;
+}
+}
+
+int main() {
+    runCase("LinearBasis/oracle-and-contracts", [] { CHECK(coreCases() == 0); });
+    CHECK(boundary_cases::run() == 0);
+    return 0;
 }

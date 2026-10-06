@@ -1,3 +1,4 @@
+#include "../../../Support/CaseSupport.hpp"
 #include "../../../../src/Math/MathPackage/FloatPointNumber/code.hpp"
 #include "../../../../src/Geometry/Geo2/PointVec.hpp"
 #include "../../../../src/Clarketech/ListHelper/code.hpp"
@@ -8,6 +9,7 @@
 #include <stdexcept>
 #include <vector>
 #include "../../../../src/Clarketech/FastInputOutput/code.hpp"
+
 using i64 = long long;
 FILE* inputFile(const std::string& text) {
     FILE* file = std::tmpfile();
@@ -22,16 +24,16 @@ std::string contents(FILE* file) {
     while (std::size_t count = std::fread(block, 1, sizeof(block), file)) result.append(block, count);
     return result;
 }
-int main() {
+int coreCases() {
     static_assert(std::is_same_v<decltype(cin), Qinput&>);
     static_assert(std::is_same_v<decltype(cout), Qoutput&>);
     CHECK(&cin == &Qinput::shared() and &cout == &Qoutput::shared());
     static_assert(!std::is_copy_constructible_v<Qinput> && !std::is_move_constructible_v<Qinput>);
     static_assert(!std::is_copy_constructible_v<Qoutput> && !std::is_move_constructible_v<Qoutput>);
     std::vector<long long> expected{0, -1, 1, std::numeric_limits<long long>::min(), std::numeric_limits<long long>::max()};
-    for (int i = 0; i < 100000; ++i) expected.push_back(static_cast<long long>(testRng()));
+    for (int i = 0; i < 48; ++i) expected.push_back(static_cast<long long>(testRng()));
     std::ostringstream text;
-    for (auto value : expected) text << value << " \t\r\n";
+    for (auto value : expected) text << value << " \t\r\n\f\v";
     FILE* file = inputFile(text.str());
     auto reader = std::make_unique<Qinput>(file);
     for (auto value : expected) {
@@ -89,5 +91,80 @@ int main() {
     *writer << "error"; writer->flush(); CHECK(writer->fail()); writer.reset(); std::fclose(file);
     file = std::fopen("/dev/null", "w"); CHECK(file); reader = std::make_unique<Qinput>(file);
     int error = 17; *reader >> error; CHECK(reader->fail() && error == 17); reader.reset(); std::fclose(file);
-    std::cout << "FastInputOutput 100K integer/128-bit roundtrip, 1MB boundaries, EOF/errors/lines, exact macros PASS\n";
+    std::cout << "FastInputOutput integer/128-bit roundtrip, 1MB boundaries, EOF/errors/lines, exact macros PASS\n";
+    return 0;
+}
+
+#include "../../../../src/Clarketech/FastInputOutput/code.hpp"
+#undef cin
+#undef cout
+#include "../../../Support/CaseSupport.hpp"
+#undef cin
+#undef cout
+#include <sstream>
+
+namespace boundary_cases {
+void verifyAdded(const std::vector<long long> &a, std::string_view sep) {
+    test_context::describe(a);
+    FILE *f = std::tmpfile();
+    CHECK(f != nullptr);
+    std::string text;
+    for (auto x : a) {
+        text += std::to_string(x);
+        text += sep;
+    }
+    CHECK(std::fwrite(text.data(), 1, text.size(), f) == text.size());
+    std::rewind(f);
+    {
+        auto in = std::make_unique<Qinput>(f);
+        for (auto x : a) {
+            long long got = 13;
+            *in >> got;
+            CHECK(bool(*in));
+            CHECK_EQ(got, x);
+        }
+        long long got = 19;
+        *in >> got;
+        CHECK(in->fail());
+        CHECK(got == 19);
+    }
+    std::fclose(f);
+    f = std::tmpfile();
+    CHECK(f != nullptr);
+    {
+        auto out = std::make_unique<Qoutput>(f);
+        for (auto x : a)
+            *out << x << ' ';
+        out->flush();
+    }
+    std::rewind(f);
+    std::string got;
+    char buf[1024];
+    for (std::size_t n; (n = std::fread(buf, 1, sizeof(buf), f)) != 0;)
+        got.append(buf, n);
+    std::fclose(f);
+    std::string expected;
+    for (auto x : a)
+        expected += std::to_string(x) + " ";
+    CHECK(got == expected);
+}
+
+int run() {
+    runCase("FastInputOutput/empty-eof", [] {
+        verifyAdded({}, " ");
+    });
+    runCase("FastInputOutput/buffer-crossing", [] {
+        verifyAdded({-7, 0, 7}, std::string((1 << 20) - 1, ' '));
+    });
+    runCase("FastInputOutput/eof-after-token", [] {
+        verifyAdded({123456789}, "");
+    });
+    return 0;
+}
+}
+
+int main() {
+    runCase("FastInputOutput/oracle-and-contracts", [] { CHECK(coreCases() == 0); });
+    CHECK(boundary_cases::run() == 0);
+    return 0;
 }

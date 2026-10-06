@@ -1,11 +1,10 @@
 """Repository template catalog and source extraction; no external credentials."""
 import json
+import os
 from pathlib import Path
 import re
 
 from tools import ROOT, SOURCE, MANIFEST
-ALIASES = {'SparseTable': 'RMQ', 'Fenwick': 'FenwickTree', 'Z-Function': 'ZFunction',
-           'geo3': 'Geo3', 'debuger': 'Debuger'}
 
 
 def manifest():
@@ -23,15 +22,23 @@ def module_path(name, modules=None):
     return path
 
 
-def catalog():
+def catalog(modules=None):
+    modules = manifest() if modules is None else modules
     result = {}
-    for name, item in manifest().items():
-        folder = module_path(name)
+    for name, item in modules.items():
+        folder = module_path(name, modules)
+        previous = ROOT / item['include'] if item.get('include') else ROOT / 'Headers/Headers.hpp'
         for layer in item.get('layers', ['code']):
             key = name if layer == 'code' else name + '/' + layer
-            result[key] = {'path': folder / (layer + '.hpp'), 'module': name,
-                           'name': name if layer == 'code' else layer,
-                           'dependencies': item['dependencies']}
+            path = folder / (layer + '.hpp')
+            short = name if layer == 'code' else layer
+            result[key] = {'path': path, 'module': name,
+                           'name': short,
+                           'dependencies': item['dependencies'],
+                           'include': os.path.relpath(previous, folder),
+                           'prefixes': item.get('prefixes', ['_T_' + short]),
+                           'aliases': item.get('aliases', [])}
+            previous = path
     return result
 
 
@@ -43,11 +50,3 @@ def code_of(path):
     text = re.sub(r'^\s*#\s*pragma\s+once[^\n]*\n', '', text, flags=re.M)
     text = re.sub(r'^\s*#\s*include\s*"[^"\n]+"[^\n]*\n', '', text, flags=re.M)
     return text.strip() + '\n'
-
-
-def header_body(name):
-    text = (module_path(name) / 'code.hpp').read_text(encoding='utf-8')
-    marker = '// SNIPPET BEGIN\n'
-    return text.split(marker, 1)[1] if marker in text else text.replace('#pragma once\n', '')
-
-

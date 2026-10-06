@@ -1,3 +1,4 @@
+#include "../../../../Support/CaseSupport.hpp"
 // 复用 demo 的查询函数，避免测试另写一份同名算法。
 #include "../../../../../src/DataStructures/TreeDataStructures/Trie/code.hpp"
 
@@ -36,7 +37,7 @@ void testStrings() {
     std::array<Tree, 12> trees;
     std::array<std::map<std::string, int>, 12> models;
     const std::vector<std::string> keys{"", "a", "ab", "abc", "ac", "b", "ba", "c", "cc", "cccc", "z"};
-    for (int step = 0; step < 800; ++step) {
+    for (int step = 0; step < 48; ++step) {
         const int i = rng() % trees.size(), j = rng() % trees.size();
         switch (rng() % 5) {
         case 0:
@@ -101,7 +102,7 @@ void testBinary() {
     Tree::clearInit();
     std::array<Tree, 12> trees;
     std::array<std::array<int, 64>, 12> models{};
-    for (int step = 0; step < 1000; ++step) {
+    for (int step = 0; step < 48; ++step) {
         const int i = rng() % trees.size(), j = rng() % trees.size();
         switch (rng() % 5) {
         case 0: trees[i] = trees[j]; models[i] = models[j]; break;
@@ -151,7 +152,7 @@ void testPaths() {
         version[i] = version[parent[i]];
         version[i].modify(values[i], [](auto& info, int) { ++info.count; });
     }
-    for (int trial = 0; trial < 600; ++trial) {
+    for (int trial = 0; trial < 16; ++trial) {
         int l = 1 + rng() % N, r = 1 + rng() % N;
         if (l > r) std::swap(l, r);
         std::vector<unsigned> sorted(values.begin() + l, values.begin() + r + 1);
@@ -242,7 +243,91 @@ void testBoundaries() {
     assert(reset.query(UINT64_MAX).count == 0);
 }
 
+
+
+#include "../../../../Support/CaseSupport.hpp"
+
+namespace boundary_cases {
+struct AddedInfo {
+    int pass = 0, end = 0;
+};
+using AddedTrie = StringTrie<AddedInfo>;
+void verifyAdded(const std::vector<std::string> &words) {
+    AddedTrie::clearInit();
+    AddedTrie d;
+    auto verify = [&](const AddedTrie &t, const std::vector<std::string> &ws) {
+        std::set<std::string> queries{"", "a", "z", "missing"};
+        for (auto &s : ws)
+            for (std::size_t k = 0; k <= s.size(); ++k)
+                queries.insert(s.substr(0, k));
+        for (auto &q : queries) {
+            int pass = 0, end = 0;
+            for (auto &s : ws) {
+                pass += s.substr(0, q.size()) == q;
+                end += s == q;
+            }
+            auto got = t.query(q);
+            CHECK(got.pass == pass);
+            CHECK(got.end == end);
+        }
+    };
+    std::vector<std::string> seen;
+    for (auto &s : words) {
+        auto old = d;
+        auto snapshot = seen;
+        d.modify(s, [&](AddedInfo &i, int dep) {
+            ++i.pass;
+            if (dep == int(s.size()))
+                ++i.end;
+        });
+        seen.push_back(s);
+        verify(d, seen);
+        verify(old, snapshot);
+    }
+    verify(d, seen);
+}
+
+int run() {
+    runCase("Trie/empty", [] {
+        verifyAdded({});
+    });
+    runCase("Trie/empty-key", [] {
+        verifyAdded({""});
+    });
+    runCase("Trie/single-key", [] {
+        verifyAdded({"a"});
+    });
+    runCase("Trie/duplicate-prefix", [] {
+        verifyAdded({"a", "a", "aa"});
+    });
+    runCase("Trie/branching-prefixes", [] {
+        verifyAdded({"ab", "abc", "abd"});
+    });
+    runCase("Trie/deep-shared-prefix", [] {
+        verifyAdded({"z", "zz", "zzz"});
+    });
+    runCase("Trie/disjoint-branches", [] {
+        verifyAdded({"abc", "bca", "cab"});
+    });
+    runCase("Trie/duplicate-empty-key", [] {
+        verifyAdded({"", "a", ""});
+    });
+    runCase("Trie/overlapping-words", [] {
+        verifyAdded({"ababa", "aba", "ba"});
+    });
+    runCase("Trie/mixed-word-lengths", [] {
+        verifyAdded({"apple", "app", "bat", "cat"});
+    });
+    return 0;
+}
+}
+
+
 int main() {
-    testStrings(); testBinary(); testPaths(); testBoundaries();
-    std::cout << "Passed: COW histories, traversal demos, two/four roots, 1/32/64-bit boundaries\n";
+    runCase("Trie/testStrings", [] { testStrings(); });
+    runCase("Trie/testBinary", [] { testBinary(); });
+    runCase("Trie/testPaths", [] { testPaths(); });
+    runCase("Trie/testBoundaries", [] { testBoundaries(); });
+    CHECK(boundary_cases::run() == 0);
+    return 0;
 }

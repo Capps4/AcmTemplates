@@ -1,121 +1,182 @@
-"""Report current correctness coverage and sequential performance measurements."""
+"""One readable report containing compact, self-contained publication evidence."""
+import base64
 from collections import Counter, defaultdict
 import datetime
 import json
 from pathlib import Path
-import sys
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from tools.Common import ROOT, FLAGS, compiler, fingerprint, manifest, benchmark_path, write_json
-from tools.Run import current, load_state, module_jobs, tools_inputs
-from tools import REPORTS, SOURCE, RIGHT_PROFILES as PROFILES
+import re
+import shutil
+import zlib
+
+import tools as config
+from tools.Common import ROOT, catalog, manifest, benchmark_path, hardware, include_digests, save_digest_cache
+from tools.Run import current, module_jobs, tools_inputs
+from tools.Benchmark import current as benchmark_current
+
+PROFILES = ('strict', 'optimized', 'sanitized')
+MARKER = 'ctl-evidence-v4:'
 
 
-def collect():
-    modules, state = manifest(), load_state()
-    expected = {job['id'] for name in modules for profile in PROFILES
-                for job in module_jobs(name, profile)}
-    expected.update(f'Integration/{profile}/{label}' for profile in PROFILES
-                    for label in ('library', 'options'))
+def read_evidence():
+    path = config.REPORTS / 'Verification.md'
+    try:
+        match = re.search(r'<!-- ' + MARKER + r' ([A-Za-z0-9+/=]+) -->', path.read_text())
+        if not match:
+            return {}
+        result = json.loads(zlib.decompress(base64.b64decode(match[1])))
+        return result if isinstance(result, dict) and result.get('formatVersion') == 4 else {}
+    except (OSError, ValueError, zlib.error):
+        return {}
+
+
+def collect(evidence=None):
+    evidence = read_evidence() if evidence is None else evidence
+    modules, items = manifest(), catalog()
+    state = {r['id']: r for r in evidence.get('right', [])}
+    benchmarks = {r['id']: r for r in evidence.get('perf', [])}
+    actual_digests = include_digests([*state.values(), *benchmarks.values()])
+    expected_jobs = {job['id']: job for name in modules for profile in PROFILES for job in module_jobs(name, profile)}
+    expected = set(expected_jobs)
     if tools_inputs():
         expected.add('Tools/right')
-    errors, records = [], []
-    for ident in sorted(expected):
-        record = state.get(ident)
-        if not record or record.get('status') != 'passed' or not current(record):
-            errors.append('Missing/failed/stale correctness: ' + ident)
-        else:
-            records.append(record)
-    catalog = json.loads((ROOT / 'tests/Correctness/Cases.json').read_text())['addedCases']
-    counts = Counter(case['header'] for case in catalog)
-    actual = {str(p.relative_to(ROOT)) for p in SOURCE.rglob('code.hpp')}
-    actual.update(str(p.relative_to(ROOT)) for p in (SOURCE / 'Geometry/Geo2').glob('*.hpp')
-                  if p.name != 'Include.hpp')
-    if set(counts) != actual or any(n < 10 for n in counts.values()):
-        errors.append('Each algorithm header must have at least 10 catalogued cases')
-    required = {case['id'] for case in catalog}
-    if len(required) != len(catalog):
-        errors.append('Duplicate case IDs')
-    for case in catalog:
-        if not (ROOT / case['source']).is_file():
-            errors.append('Missing case source: ' + case['source'])
+    valid = {ident: state[ident] for ident in expected
+             if ident in state and state[ident].get('status') == 'passed' and current(state[ident], job=expected_jobs.get(ident), actual_digests=actual_digests)}
+    errors = []
+    catalog_path = ROOT / 'tests/Correctness/Cases.json'
+    try:
+        cases = json.loads(catalog_path.read_text())['addedCases']
+    except (OSError, ValueError, KeyError):
+        cases = []
+        errors.append('正确性覆盖清单缺失或无效')
+    counts = Counter(c['header'] for c in cases)
+    if set(counts) != {str(item['path'].relative_to(ROOT)) for item in items.values()}:
+        errors.append('覆盖清单与算法头不一致')
+    if len({c['id'] for c in cases}) != len(cases):
+        errors.append('重复 case ID')
+    for case in cases:
+        if not (ROOT / case['source']).is_file() or not case.get('scenario') or not case.get('oracle'):
+            errors.append('缺少 case 来源、场景或 oracle：' + case['id'])
     named = defaultdict(set)
-    for record in records:
-        if record['signature'].get('kind') == 'tools':
-            continue
-        for run in record.get('executions', []):
-            for line in run['output'].splitlines():
-                if line.startswith('CASE_PASS '):
-                    named[record['signature']['profile']].add(line[10:])
-    for profile in PROFILES:
-        if not required.issubset(named[profile]):
-            errors.append('Incomplete named case execution: ' + profile)
+    for record in valid.values():
+        for ident in record.get('caseIds', []):
+            named[record.get('profile')].add(ident)
+    expected_bench = {name + '/' + p.stem for name in modules for p in benchmark_path(name).glob('Benchmark*.cpp')}
+    fresh_bench = {ident: r for ident, r in benchmarks.items() if ident in expected_bench and benchmark_current(r)}
+    rows = []
+    for key, item in sorted(items.items()):
+        name = item['module']
+        required = {c['id'] for c in cases if c['header'] == str(item['path'].relative_to(ROOT))}
+        right_jobs = {ident for ident in expected if ident.startswith(name + '/')}
+        right_ok = bool(required) and right_jobs.issubset(valid) and all(required.issubset(named[p]) for p in PROFILES)
+        perf_jobs = {ident for ident in expected_bench if ident.startswith(name + '/')}
+        perf_ok = bool(perf_jobs) and perf_jobs.issubset(fresh_bench)
+        # Layered modules use a benchmark with the layer name in its stem.
+        layer_bench = [r for r in fresh_bench.values() if r['module'] == name and
+                       (key == name or item['name'] in Path(r['source']).stem)]
+        if not layer_bench:
+            layer_bench = [r for r in fresh_bench.values() if r['module'] == name]
+        perf_ms = sum(sum(s.get('samplesMs', [])) + s.get('warmupMs', 0)
+                      for r in layer_bench for s in r['samples'])
+        profile_ms = {p: sum(ms for r in valid.values() if r['module'] == name and r.get('profile') == p
+                             for ident, ms in r.get('caseMs', {}).items() if ident in required) for p in PROFILES}
+        rows.append({'name': key, 'module': name, 'right': right_ok, 'perf': perf_ok,
+                     'correctnessMs': profile_ms, 'performanceMs': perf_ms,
+                     'performanceSkipped': perf_ok and all(fresh_bench[ident]['status'] == 'skipped' for ident in perf_jobs)})
+        if not right_ok:
+            errors.append('正确性缺失、失败或过期：' + key)
+        if not perf_ok:
+            errors.append('性能缺失、失败或过期：' + key)
+    tools_ok = not tools_inputs() or 'Tools/right' in valid
+    if not tools_ok:
+        errors.append('工具回归缺失、失败或过期：Tools/right')
+    failures = [r for r in [*state.values(), *benchmarks.values()] if r.get('status') != 'passed' and not (r.get('status') == 'skipped' and benchmark_current(r))]
+    over_budget = [r['name'] + ': right=' + format(r['correctnessMs']['optimized'], '.2f') + 'ms, perf=' + format(r['performanceMs'], '.2f') + 'ms'
+                   for r in rows if (r['right'] and r['correctnessMs']['optimized'] > config.CORRECTNESS_TARGET_MS[1]) or
+                   (r['perf'] and r['performanceMs'] > config.PERFORMANCE_TARGET_MS[1])]
+    return {'overBudget': over_budget, 'passed': not errors, 'errors': errors, 'rows': rows, 'toolsPassed': tools_ok,
+            'failures': failures, 'modules': len(modules), 'headers': len(items),
+            'namedCases': len(cases), 'correctnessJobs': len(expected),
+            'freshCorrectnessJobs': len(valid)}
 
-    latest = REPORTS / 'LatestBenchmark.json'
-    bench, bench_path, environment = [], None, None
-    if latest.exists():
-        bench_path = ROOT / json.loads(latest.read_text())['report']
-        data = json.loads(bench_path.read_text())
-        bench, environment = data['records'], data['hardware']
-    expected_bench = {name + '/' + p.stem for name in modules
-                      for p in benchmark_path(name).glob('Benchmark*.cpp')}
-    covered = {record['module'] for record in bench}
-    if covered != set(modules) or {r['id'] for r in bench} != expected_bench:
-        errors.append('Performance coverage does not match the module/benchmark inventory')
-    for record in bench:
-        try:
-            sig, samples = record['signature'], record['samples']
-            workload = {(s['n'], s['shape']) for s in samples}
-            valid = (record['status'] == 'passed' and len(samples) == 4 and len(workload) == 4
-                     and {s['shape'] for s in samples} == {0, 1}
-                     and len({s['n'] for s in samples}) == 2
-                     and all(len(s['samplesMs']) == 7 for s in samples)
-                     and sig['compiler'] == compiler('optimized') and sig['flags'] == FLAGS['optimized']
-                     and fingerprint([ROOT / p for p in sig['sha256']]) == sig['sha256'])
-        except (KeyError, OSError, RuntimeError, ValueError):
-            valid = False
-        record['current'] = valid
-        if not valid:
-            errors.append('Missing/failed/stale performance: ' + record['id'])
-    return {'passed': not errors, 'errors': errors, 'modules': len(modules),
-            'correctnessJobs': len(expected), 'freshCorrectnessJobs': len(records),
-            'namedCases': len(catalog), 'headers': len(actual), 'caseCounts': dict(counts),
-            'benchmarks': bench, 'hardware': environment,
-            'benchmarkReport': str(bench_path.relative_to(ROOT)) if bench_path else None}
+
+def failure_text(record):
+    label = record['id'] + ' · ' + record.get('phase', 'unknown')
+    if record.get('failedCase'):
+        label += ' · case=' + record['failedCase']
+    if record.get('signature', {}).get('seed') is not None:
+        label += ' · seed=' + str(record['signature']['seed'])
+    if record.get('workload'):
+        label += ' · ' + json.dumps(record['workload'], ensure_ascii=False)
+    if record.get('module') not in ('Tools', 'Selection'):
+        sig = record.get('signature', {})
+        mode = '--right' if record.get('profile') else '--perf'
+        replay = 'ctl test ' + mode + ' --module ' + record['module']
+        if record.get('profile'): replay += ' --profile ' + record['profile']
+        if record.get('failedCase'): replay += ' --case ' + record['failedCase']
+        if sig.get('seed') is not None: replay += ' --seed ' + str(sig['seed'])
+        label += '\n复现：' + replay
+    return label + '\n' + record.get('error', '未完成')
 
 
 def report(data):
     status = '通过' if data['passed'] else '未完成'
-    lines = ['# 验证报告', '', f'生成时间：{datetime.datetime.now().astimezone().isoformat(timespec="seconds")}；状态：**{status}**。', '',
-             f"{data['modules']} 个模块、{data['headers']} 个算法头；具名用例 {data['namedCases']} 个。"
-             f"正确性任务 {data['correctnessJobs']} 个，现版有效通过记录 {data['freshCorrectnessJobs']} 个。", '',
-             '正确性使用 strict、optimized、sanitized 三种配置，包含各模块的暴力对照、边界、随机、规模、示例及组合测试。'
-             'strict 参数见 tests/README.md；只接受源码、依赖、编译器和参数仍匹配的记录。', '',
-             '性能输入生成不计时，预热一次、采样七次，中位数计时；进程顺序执行。'
-             'RSS 为整进程峰值，包含输入和运行时。重复校验值稳定只能证明重复执行一致，正确性仍依赖独立 oracle。'
-             '两档规模、两种形状不等于穷尽所有 API 或支持域，本机结果不证明 OJ 前 5%。', '',
-             '递归图算法的深链测试使用 256 MiB 线程栈；通过记录不代表默认 OJ 栈足够。', '',
-             '性能环境：`' + json.dumps(data['hardware'], ensure_ascii=False) + '`。', '',
-             '| 用例 | 较大规模 n | 两种形状中位数 ms | 峰值 RSS MiB |', '| --- | ---: | ---: | ---: |']
-    for record in data['benchmarks']:
-        samples = record.get('samples', [])
-        if not record.get('current') or not samples:
-            lines.append(f"| {record['id']} | — | {record['status'] if record.get('current') else '待验证/过期'} | — |")
-            continue
-        n = max(s['n'] for s in samples)
-        large = sorted((s for s in samples if s['n'] == n), key=lambda s: s['shape'])
-        timings = ' / '.join(f"{s['medianMs']:.3f}" for s in large)
-        rss = max((s.get('peakRssBytes') or 0) for s in large) / (1 << 20)
-        lines.append(f"| {record['id']} | {n} | {timings} | {rss:.1f} |")
-    if data['benchmarkReport']:
-        lines.extend(['', '原始性能记录：`' + data['benchmarkReport'] + '`。'])
-    if data['errors']:
-        lines.extend(['', '待完成：', '', *['- ' + error for error in data['errors']]])
+    lines = ['# 测试报告', '', f'{data["headers"]} 个模板 · {status}', '',
+             '| 模板 | 结果 |', '| --- | --- |']
+    for row in data['rows']:
+        result = '✓' if row['right'] and row['perf'] else '待验证/失败'
+        if row['performanceSkipped']:
+            result += '（无需性能测试）'
+        lines.append(f'| {row["name"]} | {result} |')
+    lines.extend(['', 'CTL 工具回归：' + ('✓' if data['toolsPassed'] else '待验证/失败')])
+    if data['failures']:
+        for record in data['failures']:
+            lines.extend(['', '```text', failure_text(record).replace('```', "'''"), '```'])
+    coverage_errors = [error for error in data['errors'] if not error.startswith(('正确性缺失', '性能缺失', '工具回归缺失'))]
+    if coverage_errors:
+        lines.extend(['', *['- ' + error for error in coverage_errors]])
+    if data['overBudget']:
+        lines.extend(['', '待校准（超过目标上限）：' + '；'.join(data['overBudget'])])
+    lines.extend(['', '耗时以优化版 case 工作量和性能全部预热/采样工作量计；编译、启动、strict/Sanitizer 开销单列在内嵌证据中。'])
     return '\n'.join(lines) + '\n'
 
 
-def save():
-    data = collect()
-    write_json(REPORTS / 'Verification.json', data)
-    dest = REPORTS / 'Verification.md'
-    dest.write_text(report(data), encoding='utf-8')
+def cleanup_legacy():
+    # These paths are owned by testing. Generated documents, publishing backups
+    # and rule reports belong to other workflows and are never removed here.
+    for name in ('build', 'benchmarks'):
+        path = config.CACHE / name
+        if path.is_dir() and not path.is_symlink():
+            shutil.rmtree(path)
+    for name in ('State.json', 'Latest.json', 'LatestBenchmark.json', 'Verification.json'):
+        (config.REPORTS / name).unlink(missing_ok=True)
+    if config.REPORTS.exists():
+        for path in config.REPORTS.iterdir():
+            legacy = (re.fullmatch(r'\d{8}T\d{6}Z-(?:(?:benchmark|special)-)?[0-9a-f]{8}', path.name) or
+                      re.fullmatch(r'benchmark-merged-\d{8}T\d{6}Z', path.name))
+            if legacy and path.is_dir() and not path.is_symlink():
+                shutil.rmtree(path)
+
+
+def save(right=None, perf=None):
+    evidence = read_evidence()
+    for key, records in (('right', right), ('perf', perf)):
+        if records is None:
+            continue
+        replaced = {r['module'] for r in records}
+        old = [r for r in evidence.get(key, []) if r['module'] not in replaced and r['module'] != 'Selection']
+        evidence[key] = sorted([*old, *records], key=lambda r: r['id'])
+    evidence['formatVersion'] = 4
+    if right is not None or perf is not None:
+        evidence['hardware'] = hardware()
+    evidence['generatedAt'] = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))).isoformat(timespec='seconds')
+    data = collect(evidence)
+    save_digest_cache()
+    encoded = base64.b64encode(zlib.compress(json.dumps(evidence, ensure_ascii=False, separators=(',', ':')).encode())).decode()
+    config.REPORTS.mkdir(parents=True, exist_ok=True)
+    dest = config.REPORTS / 'Verification.md'
+    tmp = dest.with_suffix('.md.tmp')
+    tmp.write_text(report(data) + '\n<!-- ' + MARKER + ' ' + encoded + ' -->\n', encoding='utf-8')
+    tmp.replace(dest)
+    if right is not None or perf is not None:
+        cleanup_legacy()
     return data, dest

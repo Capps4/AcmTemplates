@@ -1,5 +1,6 @@
 #include "../../../../src/Geometry/Geo2/Circle.hpp"
 #include "../../../Support/TestSupport.hpp"
+#include "../../../Support/CaseSupport.hpp"
 #include <tuple>
 using i64 = long long;
 
@@ -71,7 +72,7 @@ void instantiate() {
     static_assert(std::is_same_v<decltype(::inter(s, t, nullptr)), bool>);
 }
 
-int main() {
+int isolatedCase() {
     static_assert(!HasSupport<Convex<double>>::value);
     static_assert(!HasEdge<Convex<double>>::value && !HasEdge<Polygon<double>>::value);
     static_assert(!HasDist<Line<double>>::value && !HasDist<Seg<double>>::value);
@@ -85,4 +86,9 @@ int main() {
     auto row = [&](const auto &x) { std::apply([&](const auto &...y) { (CHECK(::inter(x, y, nullptr) == ::inter(y, x, nullptr)), ...); }, objects); };
     std::apply([&](const auto &...x) { (row(x), ...); }, objects);
     std::cout << "Geo2: native/wrapped double/long-double near matrix, integer inter matrix, private API PASS\n";
+    return 0;
+}
+int main() {
+    runCase("Geo2/types", [] { CHECK(isolatedCase() == 0); });
+    return 0;
 }

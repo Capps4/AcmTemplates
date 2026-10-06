@@ -53,6 +53,9 @@ protected:
     }
 
 public:
+    using key_type = Key;
+    using mapped_type = Value;
+
     bool empty() const {
         return self().size() == 0;
     }

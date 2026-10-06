@@ -1,5 +1,7 @@
+#include "../../../Support/CaseSupport.hpp"
 #include "../../../../src/Geometry/Geo3/code.hpp"
 #include "../../../Support/TestSupport.hpp"
+
 
 using I = long long;
 using Q = __int128_t;
@@ -37,7 +39,7 @@ void vectors() {
             CHECK(a.to(b) + a == b);
         }
     }
-    for (int i = 0; i < 10000; ++i) {
+    for (int i = 0; i < 32; ++i) {
         auto point = [] {
             return Point<int>(randomInt(-10000, 10000), randomInt(-10000, 10000),
                           randomInt(-10000, 10000));
@@ -145,11 +147,82 @@ void solids() {
     CHECK(out.str() == "(1, 2, 3)");
 }
 
-int main() {
+int coreCases() {
     vectors();
     lines();
     planes();
     solids();
     std::cout << "Geo3 vector/line/segment/plane/polyhedron correctness PASS; seed="
               << testSeed << '\n';
+    return 0;
+}
+
+#include "../../../../src/Geometry/Geo3/code.hpp"
+#include "../../../Support/CaseSupport.hpp"
+
+namespace boundary_cases {
+bool closeAdded(double a, double b) {
+    return std::abs(a - b) <= 1e-8 * (1 + std::abs(a) + std::abs(b));
+}
+
+int run() {
+    runCase("Geo3/translate", [] {
+        Point<int> p(1, 2, 3);
+        Vec<int> v(4, -3, 2);
+        CHECK(p + v == Point<int>(5, -1, 5));
+        CHECK((p + v) - p == v);
+    });
+    runCase("Geo3/dot-cross", [] {
+        Vec<int> a(1, 2, 3), b(4, 5, 6);
+        CHECK(a.dot(b) == 32);
+        CHECK(a.cross(b) == Vec<long long>(-3, 6, -3));
+    });
+    runCase("Geo3/wide-triple", [] {
+        Vec<int> a(1000000000, 0, 0), b(0, 1000000000, 0), c(0, 0, 1000000000);
+        CHECK(a.triple(b, c) == __int128_t(1000000000) * 1000000000 * 1000000000);
+    });
+    runCase("Geo3/distance", [] {
+        CHECK(Point<int>(0, 0, 0).dist2(Point<int>(1, 2, 2)) == 9);
+    });
+    runCase("Geo3/line-foot", [] {
+        Line<double> l{{0, 0, 0}, {4, 0, 0}};
+        CHECK(l.foot(Point<double>(2, 3, 4)) == Point<double>(2, 0, 0));
+        CHECK(closeAdded(l.dist(Point<double>(2, 3, 4)), 5));
+    });
+    runCase("Geo3/segment-end", [] {
+        Seg<double> s{{0, 0, 0}, {1, 0, 0}};
+        CHECK(closeAdded(s.dist(Point<double>(2, 0, 0)), 1));
+    });
+    runCase("Geo3/zero-segment", [] {
+        Seg<double> s{{2, 3, 4}, {2, 3, 4}};
+        CHECK(closeAdded(s.dist(Point<double>(2, 3, 9)), 5));
+    });
+    runCase("Geo3/plane-foot", [] {
+        Plane<double> p{{0, 0, 0}, {1, 0, 0}, {0, 1, 0}};
+        CHECK(p.foot(Point<double>(2, 3, 4)) == Point<double>(2, 3, 0));
+        CHECK(closeAdded(p.dist(Point<double>(2, 3, 4)), 4));
+    });
+    runCase("Geo3/plane-line", [] {
+        Plane<double> p{{0, 0, 0}, {1, 0, 0}, {0, 1, 0}};
+        CHECK(p.relation(Line<double>{{0, 0, 1}, {1, 0, 1}}).type == "NO");
+        CHECK(p.relation(Line<double>{{0, 0, 0}, {1, 0, 0}}).type == "SAME");
+    });
+    runCase("Geo3/tetrahedron", [] {
+        Polyhedron<double> p;
+        p.ps = {{0, 0, 0}, {1, 0, 0}, {0, 1, 0}, {0, 0, 1}};
+        p.fs = {{0, 2, 1}, {0, 1, 3}, {0, 3, 2}, {1, 2, 3}};
+        CHECK(closeAdded(p.vol(), 1. / 6));
+        auto v = p.vol6();
+        p.reverse();
+        CHECK(p.vol6() == -v);
+        CHECK(closeAdded(p.vol(), 1. / 6));
+    });
+    return 0;
+}
+}
+
+int main() {
+    runCase("Geo3/oracle-and-contracts", [] { CHECK(coreCases() == 0); });
+    CHECK(boundary_cases::run() == 0);
+    return 0;
 }

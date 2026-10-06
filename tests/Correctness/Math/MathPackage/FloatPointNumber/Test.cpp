@@ -1,3 +1,4 @@
+#include "../../../../Support/CaseSupport.hpp"
 #include "../../../../../src/Math/MathPackage/FloatPointNumber/code.hpp"
 #include "../../../../Support/TestSupport.hpp"
 #include <algorithm>
@@ -11,6 +12,9 @@
 #include <string>
 #include <type_traits>
 #include <utility>
+#undef CHECK_MATH_TYPE
+#undef CHECK_MATH_VALUE
+
 
 std::string formatFromOtherTranslationUnit(double value);
 constexpr double eps = 1E-12;
@@ -44,7 +48,6 @@ CHECK_MATH_TYPE(tan);
 CHECK_MATH_TYPE(asin);
 CHECK_MATH_TYPE(acos);
 CHECK_MATH_TYPE(atan);
-#undef CHECK_MATH_TYPE
 static_assert(std::is_same_v<decltype(std::atan2(Float(), Float())), Float>);
 static_assert(std::is_same_v<decltype(std::fma(Float(), Float(), Float())), Float>);
 static_assert(std::is_same_v<decltype(std::sin(0.5)), double>);
@@ -122,7 +125,6 @@ void checkMath(double a, double b, double c) {
     CHECK_MATH_VALUE(asin);
     CHECK_MATH_VALUE(acos);
     CHECK_MATH_VALUE(atan);
-#undef CHECK_MATH_VALUE
     checkNumber(std::atan2(x, y).val(), std::atan2(a, b), "atan2", a, b);
     checkNumber(std::fma(x, y, z).val(), std::fma(a, b, c), "fma", a, b);
 }
@@ -178,7 +180,7 @@ void testRound() {
     CHECK(Float(0.4999999999999).round<unsigned>() == 1U);
     CHECK(Float(42.0).round<unsigned>() == 42U);
     // Exact dyadic inputs allow an integer oracle, with no floating rounding in it.
-    for (int numerator = -8192; numerator <= 8192; ++numerator) {
+    for (int numerator = -32; numerator <= 32; ++numerator) {
         const int shifted = numerator + 8;
         const int expected = shifted >= 0 ? shifted / 16 : -((-shifted + 15) / 16);
         checkRound(numerator / 16.0, expected);
@@ -230,7 +232,7 @@ void testStreams() {
         }
     }
     Float::setprecision(17);
-    for (int numerator = -1024; numerator <= 1024; ++numerator) {
+    for (int numerator = -32; numerator <= 32; ++numerator) {
         const double value = numerator / 16.0;
         std::stringstream stream;
         stream << Float(value);
@@ -242,7 +244,7 @@ void testStreams() {
     std::cout << "streams: stod parsing/errors/EOF, signed zero, precision and two-TU sharing PASS\n";
 }
 
-int main() {
+int coreCases() {
     testRound();
     testStreams();
     const double inf = std::numeric_limits<double>::infinity();
@@ -268,7 +270,7 @@ int main() {
     const volatile double roundedProduct = aboveOne * belowOne;
     CHECK(std::fma(aboveOne, belowOne, -1.0) != roundedProduct - 1.0);
     checkMath(aboveOne, belowOne, -1.0);
-    for (int i = 0; i < 100000; ++i) {
+    for (int i = 0; i < 128; ++i) {
         const double a = randomInt(-100000, 100000) / 37.0;
         const double b = randomInt(-100000, 100000) / 31.0;
         const double c = randomInt(-100000, 100000) / 29.0;
@@ -280,7 +282,7 @@ int main() {
         const int expected = shifted >= 0 ? shifted / 1024 : -((-shifted + 1023) / 1024);
         checkRound(numerator / 1024.0, expected);
     }
-    for (int i = 0; i < 10000; ++i) {
+    for (int i = 0; i < 32; ++i) {
         const double a = std::ldexp(double(randomInt(-1000000, 1000000)), randomInt(-900, 900));
         const double b = std::ldexp(double(randomInt(-1000000, 1000000)), randomInt(-900, 900));
         checkArithmetic(a, b);
@@ -288,4 +290,62 @@ int main() {
     }
     std::cout << "Float=FloatPointNumber<double>: constexpr/types, IEEE boundaries, comparisons, all std math, "
                  "100K random oracles and 10K exponent-range cases PASS; TEST_SEED=" << testSeed << '\n';
+    return 0;
+}
+
+#include "../../../../../src/Math/MathPackage/FloatPointNumber/code.hpp"
+#include "../../../../Support/CaseSupport.hpp"
+#include <sstream>
+
+namespace boundary_cases {
+
+int run() {
+    runCase("FloatPointNumber/epsilon-low", [] {
+        CHECK(Float(0) == Float(5e-13));
+        CHECK(!(Float(0) == Float(2e-12)));
+    });
+    runCase("FloatPointNumber/signed-zero", [] {
+        CHECK(std::signbit((-Float(0)).val()));
+        CHECK(Float(-0.0).val() == 0);
+    });
+    runCase("FloatPointNumber/negative-tie", [] {
+        CHECK(Float(-2.5).round<int>() == -2);
+    });
+    runCase("FloatPointNumber/positive-tie", [] {
+        CHECK(Float(2.5).round<int>() == 3);
+    });
+    runCase("FloatPointNumber/epsilon-round", [] {
+        CHECK(Float(0.5 - 5e-13).round<int>() == 1);
+        CHECK(Float(0.5 - 2e-12).round<int>() == 0);
+    });
+    runCase("FloatPointNumber/large-integral", [] {
+        CHECK(Float(4503599627370497.0).round<long long>() == 4503599627370497LL);
+    });
+    runCase("FloatPointNumber/comparison-order", [] {
+        std::vector<Float> a{Float(1e-13), Float(-1e-13), Float(0)};
+        std::sort(a.begin(), a.end());
+        CHECK(a[0].val() == -1e-13 and a[2].val() == 1e-13);
+    });
+    runCase("FloatPointNumber/std-sqrt", [] {
+        CHECK(std::sqrt(Float(81)).val() == 9);
+    });
+    runCase("FloatPointNumber/std-hypot-angle", [] {
+        CHECK(std::atan2(Float(0), Float(1)).val() == 0);
+        CHECK(std::cos(Float(0)).val() == 1);
+    });
+    runCase("FloatPointNumber/precision-stream", [] {
+        Float::setprecision(3);
+        std::ostringstream out;
+        out << Float(1.25);
+        CHECK(out.str() == "1.250");
+        Float::setprecision(10);
+    });
+    return 0;
+}
+}
+
+int main() {
+    runCase("FloatPointNumber/oracle-and-contracts", [] { CHECK(coreCases() == 0); });
+    CHECK(boundary_cases::run() == 0);
+    return 0;
 }

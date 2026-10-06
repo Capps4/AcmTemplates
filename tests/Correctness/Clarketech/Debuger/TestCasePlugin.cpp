@@ -10,7 +10,7 @@ const char* mockConfigure(const char* value) { mockConfigured = true; return val
 #endif
 #include "../../../../src/Clarketech/Debuger/code.hpp"
 #include "../../../Support/TestSupport.hpp"
-int main() {
+int isolatedCase() {
 #if __has_include(<bits/stdc++.h>)
     CHECK(_$competition_debug::debug_enabled_flag);
     CHECK(!_$competition_debug::output_color_enabled && !_$competition_debug::output_indent_enabled);
@@ -23,4 +23,11 @@ int main() {
     int value = 7;
     debug(value);
     std::cout << "Debuger actual local GNU plugin / Clang registration fixture PASS\n";
+    return 0;
+}
+
+#include "../../../Support/CaseSupport.hpp"
+int main() {
+    runCase("Debuger/plugin", [] { CHECK(isolatedCase() == 0); });
+    return 0;
 }

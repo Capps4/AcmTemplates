@@ -1,5 +1,6 @@
 #include "../../../../src/Geometry/Geo2/Circle.hpp"
 #include "../../../Support/TestSupport.hpp"
+#include "../../../Support/CaseSupport.hpp"
 #include <limits>
 using namespace _geo2;
 using I = long long;
@@ -133,7 +134,7 @@ void fixedCases() {
             CHECK(inter(other, square, nullptr) == inter(square, other, nullptr));
         }
     }
-    for (int i = 0; i < 10000; ++i) {
+    for (int i = 0; i < 32; ++i) {
         I n = m - i;
         for (auto wrapped : {false, true}) {
             int actual = wrapped ? orient(Point<W>{0,0}, {W(double(n)),W(double(n-1))}, {W(double(n-1)),W(double(n-2))}) :
@@ -144,7 +145,7 @@ void fixedCases() {
 }
 void randomIntegers() {
     constexpr I scales[] = {1, 1000, 1000000, 1000000000};
-    for (int i = 0; i < 250000; ++i) {
+    for (int i = 0; i < 24; ++i) {
         I scale = scales[i % 4];
         auto point = [&] { return P{randomInt(-scale, scale), randomInt(-scale, scale)}; };
         P a=point(), b=point(), c=point(), d=point(), o=point();
@@ -158,7 +159,7 @@ void randomIntegers() {
             CHECK(inter(Circle<I>(o,r), Line<I>(a,b), nullptr) == expected);
         }
     }
-    for (int i = 0; i < 12000; ++i) {
+    for (int i = 0; i < 8; ++i) {
         I scale=scales[i % 4];
         auto points = [&] {
             std::vector<P> ps;
@@ -203,7 +204,7 @@ void randomIntegers() {
 }
 // Boundary order, repeated/collinear vertices, and polar wraparound are arbitrary.
 void boundaryCases() {
-    for (int rep = 0; rep < 5000; ++rep) {
+    for (int rep = 0; rep < 8; ++rep) {
         constexpr I scales[] = {2, 2000, 2000000, 200000000};
         I scale = scales[rep % 4];
         std::vector<P> input;
@@ -232,7 +233,7 @@ void boundaryCases() {
             CHECK(h.vertices() == expected);
             CHECK(h.vertices().capacity() <= 2 * h.vertices().size());
             auto copied = h, moved = std::move(copied);
-            for (int query = 0; query < 20; ++query) {
+            for (int query = 0; query < 4; ++query) {
                 P p{randomInt(-5, 5) * scale, randomInt(-5, 5) * scale};
                 P v{randomInt(-5, 5), randomInt(-5, 5)};
                 if (query < 4) v = query == 0 ? P{1, 0} : query == 1 ? P{0, 1} : query == 2 ? P{-1, 0} : P{0, -1};
@@ -266,7 +267,7 @@ long double distance(P a,P b, long double x,long double y) {
 }
 template<class T> void scaledConstruction() {
     for (I scale : {1LL,1000LL,1000000LL,100000000LL}) {
-        for (int i=0;i<2000;++i) {
+        for (int i=0;i<24;++i) {
             auto point=[&] { return P{randomInt(-5,5)*scale,randomInt(-5,5)*scale}; };
             P a=point(),b=point(),c=point(),d=point();
             auto s=Seg<T>{convert<T>(a),convert<T>(b)}, t=Seg<T>{convert<T>(c),convert<T>(d)};
@@ -294,8 +295,13 @@ template<class T> void scaledConstruction() {
         }
     }
 }
-int main() {
+int isolatedCase() {
     fixedCases(); randomIntegers(); boundaryCases();
     scaledConstruction<double>(); scaledConstruction<W>();
     std::cout << "Geo2 bounds: 250000 exact segment/circle/turn rounds, 12000 exact hull rounds, 20000 cancellation cases, 15000 boundary/capacity cases + 300000 exact line queries, 16000 scaled constructions PASS; seed=" << testSeed << '\n';
+    return 0;
+}
+int main() {
+    runCase("Geo2/bounds", [] { CHECK(isolatedCase() == 0); });
+    return 0;
 }

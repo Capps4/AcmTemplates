@@ -13,6 +13,14 @@ int main(int argc, char **argv) {
     (void)random;
     return measure(input, "chain / star; build and traversal", [&]() -> std::uint64_t {
         CentroidDecomposition a(g);
-        return std::accumulate(a.dfsOrder.begin(), a.dfsOrder.end(), std::uint64_t(0));
+        benchmarkCheck(int(a.dfsOrder.size()) == n, "centroid traversal cardinality");
+        std::vector<bool> seen(n);
+        std::uint64_t checksum = 0;
+        for (int x : a.dfsOrder) {
+            benchmarkCheck(0 <= x and x < n and not seen[x], "centroid traversal permutation");
+            seen[x] = true;
+            checksum = benchmarkMix(checksum, x);
+        }
+        return checksum;
     });
 }

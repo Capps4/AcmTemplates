@@ -30,7 +30,18 @@
   {
     "module": "Debuger",
     "path": "src/Clarketech/Debuger",
-    "dependencies": []
+    "dependencies": [],
+    "aliases": [
+      "debuger"
+    ]
+  },
+  {
+    "module": "DebugerHeadCopyToBitsStdC++",
+    "path": "src/Clarketech/DebugerHeadCopyToBitsStdC++",
+    "dependencies": [],
+    "aliases": [
+      "copy to bits/stdc++.h"
+    ]
   },
   {
     "module": "DeletableHeap",
@@ -83,7 +94,10 @@
   {
     "module": "FenwickTree",
     "path": "src/DataStructures/TreeDataStructures/FenwickTree",
-    "dependencies": []
+    "dependencies": [],
+    "aliases": [
+      "Fenwick"
+    ]
   },
   {
     "module": "FloatPointNumber",
@@ -115,7 +129,10 @@
     "dependencies": [
       "FloatPointNumber"
     ],
-    "include": "src/Geometry/Geo3/Include.hpp"
+    "include": "src/Geometry/Geo3/Include.hpp",
+    "aliases": [
+      "geo3"
+    ]
   },
   {
     "module": "GridUtil",
@@ -229,7 +246,14 @@
   {
     "module": "RMQ",
     "path": "src/DataStructures/BaseDataStructures/RMQ",
-    "dependencies": []
+    "dependencies": [],
+    "aliases": [
+      "SparseTable"
+    ],
+    "prefixes": [
+      "_T_RMQ",
+      "_T_SparseTable"
+    ]
   },
   {
     "module": "StringHash",
@@ -290,6 +314,9 @@
   {
     "module": "ZFunction",
     "path": "src/String/StringF4/ZFunction",
-    "dependencies": []
+    "dependencies": [],
+    "aliases": [
+      "Z-Function"
+    ]
   }
 ]

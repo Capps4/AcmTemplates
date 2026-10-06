@@ -12,6 +12,7 @@
 #include "../../../../src/Geometry/Geo2/Circle.hpp"
 #endif
 #include "../../../Support/TestSupport.hpp"
+#include "../../../Support/CaseSupport.hpp"
 #include <sstream>
 
 using i64 = long long;
@@ -116,20 +117,18 @@ void checkLayer() {
 #endif
 }
 
-#ifdef GEO2_TEST_MULTITU
-int geometryPointWitness();
-int geometryCircleWitness();
-#endif
-
-int main() {
+int isolatedCase() {
     checkLayer<i64>();
     checkLayer<double>();
     checkLayer<Float>();
     checkLayer<FloatPointNumber<double>>();
     checkLayer<long double>();
     checkLayer<FloatPointNumber<long double>>();
-#ifdef GEO2_TEST_MULTITU
-    CHECK(geometryPointWitness() == 1 && geometryCircleWitness() == 4);
-#endif
     std::cout << "Geo2 layer " << GEO2_TEST_LAYER << ": global API, scalar types, container access PASS\n";
+    return 0;
+}
+int main() {
+    std::string id = "Geo2/header-layer-" + std::to_string(GEO2_TEST_LAYER);
+    runCase(id.c_str(), [] { CHECK(isolatedCase() == 0); });
+    return 0;
 }

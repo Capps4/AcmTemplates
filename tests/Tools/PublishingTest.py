@@ -1,5 +1,7 @@
 """Offline checks of document generation, snippets and publication boundaries."""
 import copy
+import contextlib
+import io
 import json
 from pathlib import Path
 import re
@@ -10,7 +12,7 @@ import unittest
 from unittest.mock import patch, Mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-from tools import Catalog, Fetcher, Library, Publisher
+from tools import Catalog, Common, Fetcher, Library, Publisher, SnippetInstaller
 from CardSupport import CARD, decode
 from tools.Yuque import YuqueClient, YuqueError
 
@@ -18,10 +20,31 @@ from tools.Yuque import YuqueClient, YuqueError
 class CatalogTest(unittest.TestCase):
     def test_all_sources(self):
         paths = Catalog.catalog()
-        self.assertEqual(len(paths), 55)
-        self.assertEqual(len({x['path'] for x in paths.values()}), 55)
+        self.assertEqual(len({x['path'] for x in paths.values()}), len(paths))
         self.assertTrue(all(x['path'].exists() for x in paths.values()))
-        self.assertEqual(len([k for k in paths if k.startswith('Geo2/')]), 4)
+        self.assertEqual(len(paths), sum(len(item.get('layers', ['code']))
+                                        for item in Catalog.manifest().values()))
+
+    def test_generic_layers_prefixes_and_dependencies(self):
+        modules = {
+            'Base': {'path': 'src/Base', 'dependencies': []},
+            'Layered': {'path': 'src/Layered', 'dependencies': ['Base'],
+                        'include': 'src/Layered/Include.hpp', 'layers': ['First', 'Second']},
+            'Named': {'path': 'src/Named', 'dependencies': [],
+                      'prefixes': ['_T_New', '_T_Old'], 'aliases': ['Old']},
+        }
+        paths = Catalog.catalog(modules)
+        self.assertEqual(paths['Layered/First']['include'], 'Include.hpp')
+        self.assertEqual(paths['Layered/Second']['include'], 'First.hpp')
+        self.assertEqual({p.name for p in Common.headers('Layered', modules)},
+                         {'code.hpp', 'First.hpp', 'Second.hpp'})
+        with patch.object(Fetcher, 'catalog', return_value=paths), patch.object(Fetcher, 'code_of', return_value='int x;\n'):
+            data = Fetcher.snippets()
+            self.assertEqual(data['Named']['prefix'], ['_T_New', '_T_Old'])
+            self.assertEqual(data['Layered/First']['prefix'], '_T_First')
+            entry = {'Print to console': {'prefix': '_T_Old', 'scope': 'cpp',
+                     'description': 'Log output to console', 'body': ['old']}}
+            self.assertTrue(Fetcher.legacy(Path('Old.code-snippets'), entry))
 
     def test_body_keeps_macro_system_include(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -44,9 +67,9 @@ class LibraryTest(unittest.TestCase):
 
     def test_complete_library(self):
         result = Library.build()
-        self.assertEqual(result['provenance']['templates'], 55)
+        self.assertEqual(result['provenance']['templates'], len(Catalog.catalog()))
         self.assertNotIn('<!-- @code ', result['markdown'])
-        self.assertEqual(len(CARD.findall(result['lake'])), 58)
+        self.assertEqual(len(CARD.findall(result['lake'])), sum(t.type == 'fence' for t in Library.markdown_parser().parse(result['markdown'])))
         self.assertIn('id="rNDfs"', result['lake'])
         self.assertTrue(all(decode(c)['collapsed'] for c in CARD.findall(result['lake'])
                             if decode(c)['mode'] in ('cpp', 'python')))
@@ -57,15 +80,20 @@ class LibraryTest(unittest.TestCase):
         cards = [decode(c) for c in re.findall(r'<card\b.*?</card>', result['lake'], re.S)]
         ids = [c['id'] for c in cards]
         self.assertEqual(len(ids), len(set(ids)))
-        self.assertEqual(len([c for c in cards if 'src' in c]), 47)
+        tokens = Library.markdown_parser().parse(Library.DOCUMENT.read_text(encoding='utf-8'))
+        expected = [child.content for token in tokens for child in (token.children or [])
+                    if child.type == 'math']
+        actual = [decode(card)['code'] for card in re.findall(
+            r'<card\b[^>]*\bname="math"[^>]*>.*?</card>', result['lake'], re.S)]
+        self.assertEqual(actual, expected)
 
     def test_source_fidelity_and_existing_card_id(self):
-        config = {'cards': {'Debuger': {'id': 'old', 'theme': 'custom'}}}
-        result = self.build('# Debug\n\n<!-- @code Debuger -->\n', config)
+        key = next(iter(Catalog.catalog()))
+        config = {'cards': {key: {'id': 'old', 'theme': 'custom'}}}
+        result = self.build('# Template\n\n<!-- @code ' + key + ' -->\n', config)
         data = decode(CARD.findall(result['lake'])[0])
-        self.assertEqual(data['code'], Catalog.code_of(Catalog.catalog()['Debuger']['path']))
+        self.assertEqual(data['code'], Catalog.code_of(Catalog.catalog()[key]['path']))
         self.assertEqual(data['id'], 'old');self.assertEqual(data['theme'], 'custom')
-        self.assertIn('auto $', data['code'])
 
     def test_missing(self):
         with self.assertRaisesRegex(ValueError, '未引用'):
@@ -77,7 +105,8 @@ class LibraryTest(unittest.TestCase):
 
     def test_duplicate(self):
         with self.assertRaisesRegex(ValueError, '重复'):
-            self.build('<!-- @code Debuger -->\n\n<!-- @code Debuger -->\n')
+            key = next(iter(Catalog.catalog()))
+            self.build('<!-- @code ' + key + ' -->\n\n<!-- @code ' + key + ' -->\n')
 
     def test_marker_in_example_is_literal(self):
         result = self.build('```text\n<!-- @code Missing -->\n```\n')
@@ -107,14 +136,15 @@ class LibraryTest(unittest.TestCase):
 class FetcherTest(unittest.TestCase):
     def test_all_snippet_roundtrips(self):
         data = json.loads(json.dumps(Fetcher.snippets()))
-        self.assertEqual(len(data), 55)
+        self.assertEqual(set(data), set(Catalog.catalog()))
         for key, entry in data.items():
             body = '\n'.join(entry['body'][:-1]) + '\n'
             raw = re.sub(r'\\([\\$}])', r'\1', body)
             self.assertEqual(raw, Catalog.code_of(Catalog.catalog()[key]['path']))
             self.assertEqual(entry['body'][-1], '$0')
         self.assertNotIn('_T_', [v['prefix'] for v in data.values()])
-        self.assertIn('_T_SparseTable', data['RMQ']['prefix'])
+        for key, item in Catalog.catalog().items():
+            self.assertEqual(Fetcher.prefixes(data[key]), item['prefixes'])
 
     def test_platform_paths(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -146,16 +176,26 @@ class FetcherTest(unittest.TestCase):
                 self.assertIn((user / 'snippets').resolve(), Fetcher.candidates(home, 'Linux', {}))
 
     def test_ambiguous_and_explicit(self):
-        with patch.object(Fetcher, 'candidates', return_value=[Path('/a'), Path('/b')]):
+        with patch.object(Fetcher, 'candidates', return_value=[Path('/a'), Path('/b')]), patch.object(SnippetInstaller.sys.stdin, 'isatty', return_value=False), patch('builtins.input', side_effect=AssertionError('unexpected input')):
             with self.assertRaisesRegex(ValueError, '多个'):
                 Fetcher.locate()
             self.assertEqual(Fetcher.locate('/chosen'), Path('/chosen'))
         self.assertEqual(Fetcher.locate(user_data='/tmp/data'), Path('/tmp/data/User/snippets').resolve())
 
     def test_no_configuration(self):
-        with patch.object(Fetcher, 'candidates', return_value=[]):
+        with patch.object(Fetcher, 'candidates', return_value=[]), patch.object(SnippetInstaller.sys.stdin, 'isatty', return_value=False), patch('builtins.input', side_effect=AssertionError('unexpected input')):
             with self.assertRaisesRegex(ValueError, '未找到'):
                 Fetcher.locate()
+
+    def test_interactive_choice_and_custom_directory(self):
+        with patch.object(SnippetInstaller.sys.stdin, 'isatty', return_value=True), contextlib.redirect_stdout(io.StringIO()):
+            with patch('builtins.input', side_effect=['bad', '3', '2']):
+                self.assertEqual(SnippetInstaller.locate(paths=[Path('/a'), Path('/b')]), Path('/b'))
+            with patch('builtins.input', side_effect=['0', '/custom/snippets']):
+                self.assertEqual(SnippetInstaller.locate(paths=[Path('/a'), Path('/b')]), Path('/custom/snippets'))
+            with patch('builtins.input', return_value=''):
+                with self.assertRaisesRegex(ValueError, '取消'):
+                    SnippetInstaller.locate(paths=[])
 
     def test_jsonc(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -169,8 +209,9 @@ class FetcherTest(unittest.TestCase):
             personal = dest / 'init_.code-snippets'
             original = '{"main":{"prefix":"_T_","body":["int main() {}"]}}'
             personal.write_text(original)
-            old = dest / 'FenwickTree.code-snippets'
-            entry = {'Print to console': {'prefix': '_T_FenwickTree', 'scope': 'cpp',
+            name = next(iter(Catalog.catalog().values()))['name']
+            old = dest / (name + '.code-snippets')
+            entry = {'Print to console': {'prefix': '_T_' + name, 'scope': 'cpp',
                      'description': 'Log output to console', 'body': ['old', '$0']}}
             old.write_text(json.dumps(entry));old_text = old.read_text()
             self.assertEqual(Fetcher.plan(dest), [old])
@@ -184,7 +225,9 @@ class FetcherTest(unittest.TestCase):
     def test_unknown_conflict_and_unowned_target_refused(self):
         with tempfile.TemporaryDirectory() as tmp:
             dest = Path(tmp)
-            (dest / 'cpp.json').write_text('{"mine":{"prefix":"_T_Debuger","body":[]}}')
+            entry = next(iter(Fetcher.snippets().values()))
+            prefix = Fetcher.prefixes(entry)[0]
+            (dest / 'cpp.json').write_text(json.dumps({'mine': {'prefix': prefix, 'body': []}}))
             with self.assertRaisesRegex(ValueError, '重复前缀'):
                 Fetcher.plan(dest)
             (dest / 'cpp.json').unlink()
@@ -195,8 +238,9 @@ class FetcherTest(unittest.TestCase):
     def test_failed_install_rolls_back(self):
         with tempfile.TemporaryDirectory() as tmp, patch.object(Fetcher, 'CACHE', Path(tmp) / 'repo/.cache'):
             dest = Path(tmp) / 'snippets';dest.mkdir()
-            old = dest / 'RMQ.code-snippets'
-            old.write_text(json.dumps({'Print to console': {'prefix': '_T_RMQ', 'scope': 'cpp',
+            name = next(iter(Catalog.catalog().values()))['name']
+            old = dest / (name + '.code-snippets')
+            old.write_text(json.dumps({'Print to console': {'prefix': '_T_' + name, 'scope': 'cpp',
                 'description': 'Log output to console', 'body': ['old']}}))
             original_unlink = Path.unlink
             def fail(path, *args, **kwargs):
@@ -257,8 +301,8 @@ class PublishTest(unittest.TestCase):
         with patch('tools.Yuque.read_token', return_value=None):
             with self.assertRaisesRegex(YuqueError, 'Token'):
                 YuqueClient()
-            self.assertEqual(len(Fetcher.snippets()), 55)
-            self.assertEqual(Library.build()['provenance']['templates'], 55)
+            self.assertEqual(set(Fetcher.snippets()), set(Catalog.catalog()))
+            self.assertEqual(Library.build()['provenance']['templates'], len(Catalog.catalog()))
 
     def test_token_redacted_on_auth_failure(self):
         client = object.__new__(YuqueClient);client.token, client.node = 'fake-test-token', 'node'

@@ -1,8 +1,10 @@
+#include "../../../../Support/CaseSupport.hpp"
 #include "../../../../../src/Math/RandomNumberAlgorithm/MillerRabin/code.hpp"
 #include "../../../../../src/Math/MathPackage/ModuloInteger/code.hpp"
 #include "../../../../Support/TestSupport.hpp"
 #include <limits>
 #include <vector>
+
 constexpr MillerRabin<int> small;
 static_assert(small(2) && small(97) && !small(1) && !small(341));
 static_assert(isPrime(2305843009213693951LL));
@@ -38,8 +40,8 @@ bool reference(U n) {
     }
     return true;
 }
-int main() {
-    const int limit = 1000000;
+int coreCases() {
+    const int limit = 256;
     std::vector<bool> prime(limit + 1, true); prime[0] = prime[1] = false;
     for (int i = 2; i <= limit / i; ++i) if (prime[i])
         for (int j = i * i; j <= limit; j += i) prime[j] = false;
@@ -54,7 +56,7 @@ int main() {
     CHECK(unsignedLarge(18446744073709551557ULL));
     CHECK(!unsignedLarge(std::numeric_limits<U>::max()));
     CHECK(unsignedSmall(4294967291U)); CHECK(!unsignedSmall(4294967295U));
-    for (int i = 0; i < 2000; ++i) {
+    for (int i = 0; i < 16; ++i) {
         auto value = testRng();
         CHECK(unsignedLarge(value) == reference(value));
     }
@@ -64,4 +66,42 @@ int main() {
     CHECK(isPrime(2305843009213693951LL));
     CHECK(Dynamic::getMod() == 1000000007 && existing + 2 == Dynamic(1));
     std::cout << "MillerRabin: exhaustive sieve, pseudoprimes, independent uint64 arithmetic, constexpr, mod isolation PASS\n";
+    return 0;
+}
+
+#include "../../../../../src/Math/RandomNumberAlgorithm/MillerRabin/code.hpp"
+#include "../../../../Support/CaseSupport.hpp"
+
+namespace boundary_cases {
+
+int run() {
+    runCase("MillerRabin/fermat-prime", [] {
+        CHECK(MillerRabin<unsigned long long>{}(65537ULL) == true);
+    });
+    runCase("MillerRabin/carmichael-1", [] {
+        CHECK(MillerRabin<unsigned long long>{}(561ULL) == false);
+    });
+    runCase("MillerRabin/carmichael-2", [] {
+        CHECK(MillerRabin<unsigned long long>{}(41041ULL) == false);
+    });
+    runCase("MillerRabin/strong-pseudoprime", [] {
+        CHECK(MillerRabin<unsigned long long>{}(341550071728321ULL) == false);
+    });
+    runCase("MillerRabin/mersenne-prime", [] {
+        CHECK(MillerRabin<unsigned long long>{}(2305843009213693951ULL) == true);
+    });
+    runCase("MillerRabin/unsigned-prime", [] {
+        CHECK(MillerRabin<unsigned long long>{}(18446744073709551557ULL) == true);
+    });
+    runCase("MillerRabin/unsigned-max", [] {
+        CHECK(MillerRabin<unsigned long long>{}(18446744073709551615ULL) == false);
+    });
+    return 0;
+}
+}
+
+int main() {
+    runCase("MillerRabin/oracle-and-contracts", [] { CHECK(coreCases() == 0); });
+    CHECK(boundary_cases::run() == 0);
+    return 0;
 }

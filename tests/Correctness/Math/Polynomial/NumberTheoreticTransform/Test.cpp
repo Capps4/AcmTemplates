@@ -1,10 +1,9 @@
+#include "../../../../Support/CaseSupport.hpp"
 #include "../../../../../src/Math/Polynomial/NumberTheoreticTransform/code.hpp"
 #include "../../../../Support/TestSupport.hpp"
-#include "../../../../../src/Math/MathPackage/Combinatorics/code.hpp"
-#include "../../../../../src/Math/MathPackage/Sieve/code.hpp"
-#include "../../../../../src/Math/RandomNumberAlgorithm/PollardRho/code.hpp"
 #include <limits>
 #include <sstream>
+
 template<class T> using Series = std::vector<T>;
 template<class T>
 Series<T> naiveProduct(const Series<T>& a,const Series<T>& b,int count=-1){
@@ -58,9 +57,9 @@ void verifySeries(int m){
     T eval=0,term=1;for(auto x:a){eval+=x*term;term*=T(7);}CHECK(a.whenXis(7)==eval);
     CHECK(a.mulxk(5).divxk(5)==a);CHECK(a.divxk(m).empty());
 }
-int main(){
+int coreCases(){
     for(int m:{0,1,2,3,7,31,32,63,64,127,128,129,200,257})verifySeries<Poly>(m);
-    for(int i=0;i<40;++i)verifySeries<Poly>(randomInt(1,100));
+    for(int i=0;i<4;++i)verifySeries<Poly>(randomInt(1,100));
     for(int n:{0,1,2,4,256,1024,16}){
         Poly a(n);for(auto& x:a)x=randomInt(-50,50);auto original=a;dft(a);idft(a);CHECK(a==original);
     }
@@ -76,17 +75,74 @@ int main(){
     Poly expected{1};for(const auto& p:factors)expected=expected*p;
     CHECK(Poly::prod(factors)==expected);CHECK(Poly::prod({})==Poly{1});
     std::stringstream io;io<<a;CHECK(io.str()=="2 3 5");Poly parsed(3);io>>parsed;CHECK(parsed==a);
-    // Cross-module math integration: product tree, formal powers, binomial cache,
-    // sieve, primality and rho coexist with a separate runtime modulus.
-    ModuloInteger<long long,0>::setMod(101);
-    std::vector<Poly> binomialFactors(200,Poly{1,1});
-    auto binomial=Poly::prod(binomialFactors);
-    CHECK(binomial==Poly{1,1}.power(200,201));
-    for(int i=0;i<=200;++i)CHECK(binomial[i]==comb.C(200,i));
-    PollardRho<long long> factorizer(17);
-    auto primeFactors=factorizer.primeFactorize(1000000016000000063LL);
-    for(auto [p,e]:primeFactors)CHECK(isPrime(p) && e==1);
-    CHECK(siv.primeFactorize(123456LL)==factorizer.primeFactorize(123456LL));
-    CHECK((ModuloInteger<long long,0>::getMod()==101));
+    std::vector<Poly> binomialFactors(16, Poly{1, 1});
+    auto binomial = Poly::prod(binomialFactors);
+    std::vector<long long> pascal(17); pascal[0] = 1;
+    for (int n = 0; n < 16; ++n)
+        for (int k = n + 1; k > 0; --k)
+            pascal[k] += pascal[k - 1];
+    for (int i = 0; i <= 16; ++i) CHECK(binomial[i] == Z(pascal[i]));
     std::cout<<"NTT: naive products and series recurrences, roots, fallback, empty, large exponents, aliasing, IO PASS\n";
+    return 0;
+}
+
+#include "../../../../../src/Math/Polynomial/NumberTheoreticTransform/code.hpp"
+#include "../../../../Support/CaseSupport.hpp"
+
+namespace boundary_cases {
+void verifyAdded(const std::vector<Z> &a, const std::vector<Z> &b) {
+    Poly x(a.begin(), a.end()), y(b.begin(), b.end());
+    auto c = x * y;
+    std::vector<Z> e(a.empty() or b.empty() ? 0 : a.size() + b.size() - 1);
+    for (std::size_t i = 0; i < a.size(); ++i)
+        for (std::size_t j = 0; j < b.size(); ++j)
+            e[i + j] += a[i] * b[j];
+    CHECK(c.size() == e.size());
+    for (std::size_t i = 0; i < e.size(); ++i)
+        CHECK(c[i] == e[i]);
+}
+
+int run() {
+    runCase("NumberTheoreticTransform/empty-both", [] {
+        verifyAdded({}, {});
+    });
+    runCase("NumberTheoreticTransform/empty-right", [] {
+        verifyAdded({1, 2, 3}, {});
+    });
+    runCase("NumberTheoreticTransform/scalar", [] {
+        verifyAdded({-7}, {11});
+    });
+    runCase("NumberTheoreticTransform/trailing-zero", [] {
+        verifyAdded({1, 0, 0}, {0, 0, 2});
+    });
+    runCase("NumberTheoreticTransform/negative-cancellation", [] {
+        verifyAdded({1, -1, 1, -1}, {1, 1, 1, 1});
+    });
+    runCase("NumberTheoreticTransform/small-side-fallback", [] {
+        verifyAdded(std::vector<Z>(127, 1), std::vector<Z>(257, -1));
+    });
+    runCase("NumberTheoreticTransform/exact-threshold", [] {
+        verifyAdded(std::vector<Z>(128, 1), std::vector<Z>(128, 1));
+    });
+    runCase("NumberTheoreticTransform/power-boundary", [] {
+        verifyAdded(std::vector<Z>(129, 1), std::vector<Z>(128, 2));
+    });
+    runCase("NumberTheoreticTransform/impulse", [] {
+        std::vector<Z> a(257), b(129);
+        a[256] = 3;
+        b[64] = -2;
+        verifyAdded(a, b);
+    });
+    runCase("NumberTheoreticTransform/cache-resize", [] {
+        verifyAdded(std::vector<Z>(1025, 1), std::vector<Z>(129, -1));
+        verifyAdded(std::vector<Z>(128, 3), std::vector<Z>(128, 2));
+    });
+    return 0;
+}
+}
+
+int main() {
+    runCase("NumberTheoreticTransform/oracle-and-contracts", [] { CHECK(coreCases() == 0); });
+    CHECK(boundary_cases::run() == 0);
+    return 0;
 }

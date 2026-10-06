@@ -1,0 +1,12 @@
+{
+  "iterations": {
+    "BenchmarkCircle": 15,
+    "BenchmarkPointVec": 37,
+    "BenchmarkPolygonConvex": 1,
+    "BenchmarkSegLine": 25
+  },
+  "sizes": [
+    10000,
+    130000
+  ]
+}

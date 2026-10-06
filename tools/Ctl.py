@@ -1,6 +1,10 @@
 """The only public command surface for Capps Template Library."""
 import argparse
 import platform
+import re
+import shutil
+import time
+from contextlib import contextmanager
 
 import tools as config
 from tools.Console import Console
@@ -16,7 +20,7 @@ HELP = '''Capps Template Library
   ctl test --all      正确性和性能测试
 
 配置：tools/__init__.py；Token：.yuque/token 或 YUQUE_TOKEN。
-任意工作目录均可调用；产物、日志和报告保存在仓库 .cache/。
+任意工作目录均可调用；测试报告：.cache/reports/Verification.md；编译缓存：.cache/compiled/。
 '''
 
 
@@ -34,7 +38,28 @@ def parser():
     group.add_argument('--right', action='store_true', help='正确性测试')
     group.add_argument('--perf', action='store_true', help='性能测试')
     group.add_argument('--all', action='store_true', help='两种测试都执行')
+    test.add_argument('--module', action='append', help='选择模块，可重复传入')
+    test.add_argument('--case', help='复现 case：完整 ID 或模块内名称（正确性）')
+    test.add_argument('--profile', choices=('strict', 'optimized', 'sanitized'), help='局部编译模式（正确性）')
+    test.add_argument('--seed', type=int, help='复现随机种子')
     return result
+
+
+@contextmanager
+def test_lock():
+    import fcntl
+    config.CACHE.mkdir(parents=True, exist_ok=True)
+    # Keep the inode stable while other invocations are waiting for the lock.
+    with (config.CACHE / '.test.lock').open('a') as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        try:
+            # Only our interrupted-run directories, after acquiring the whole-run lock.
+            for path in config.CACHE.iterdir():
+                if re.fullmatch(r'test-(?:(?:perf|build)-)?[a-z0-9_]{8}', path.name) and path.is_dir() and not path.is_symlink():
+                    shutil.rmtree(path)
+            yield
+        finally:
+            fcntl.flock(lock, fcntl.LOCK_UN)
 
 
 def update_local(console):
@@ -78,35 +103,52 @@ def rule(console):
 def test(console, right, perf):
     if platform.system() not in ('Darwin', 'Linux'):
         raise ValueError('当前测试执行器需要 macOS 或 Linux；Windows 可使用 WSL')
-    errors = []
-    counts = []
-    # Continue the second category even if the first has failed; each saves its report.
-    for enabled, title, module in [(right, '正确性测试', 'Run'), (perf, '性能测试', 'Benchmark')]:
+    from tools.Common import catalog
+    from tools.Verification import failure_text, save
+    results, errors = [], []
+    for enabled, title, module in [(right, '正确性', 'Run'), (perf, '性能', 'Benchmark')]:
         if not enabled:
             continue
+        console.note(title + '：编译与测试中…')
         try:
-            with console.step(title):
-                import importlib
-                runner = importlib.import_module('tools.' + module)
-                result = runner.run(config.TEST_MODULES, progress=console.progress)
-                records = result['records']
-                failed = sum(r['status'] != 'passed' for r in records)
-                cached = sum(bool(r.get('cached')) for r in records)
-                counts.append(f'{title} {len(records) - failed}/{len(records)} 通过')
-                console.note(f'{len(records) - failed} 个通过 · {failed} 个失败 · {cached} 个复用缓存')
-                console.note('报告：' + result['path'])
-                if not result['passed']:
-                    raise ValueError(title + '存在失败任务，请查看日志')
+            started = time.monotonic()
+            import importlib
+            with console.track(title + '：准备测试任务'):
+                result = importlib.import_module('tools.' + module).run(
+                    config.TEST_MODULES, progress=console.progress, activity=console.task)
+            results.extend(result['records'])
+            cached = sum(r.get('compileCached', False) for r in result['records'])
+            compiled = sum('compileCached' in r for r in result['records'])
+            console.note(title + '耗时：' + format(time.monotonic() - started, '.2f') +
+                         's · 编译缓存 ' + str(cached) + '/' + str(compiled))
+            if not result['passed']:
+                errors.append(title + '测试失败')
         except (OSError, RuntimeError, ValueError) as exc:
-            errors.append(str(exc))
-    with console.step('汇总当前验证报告'):
-        from tools.Verification import save
-        evidence, path = save()
-        console.note('报告：' + str(path))
-        console.note('全库发布验证：' + ('通过' if evidence['passed'] else '未完成；缺失或过期记录不能算通过'))
+            errors.append(title + '：' + str(exc))
+    console.clear_progress()
+    selected = set(config.TEST_MODULES) if config.TEST_MODULES else None
+    items = [(key, item) for key, item in sorted(catalog().items())
+             if selected is None or item['module'] in selected]
+    for done, (key, item) in enumerate(items, 1):
+        records = [r for r in results if r['module'] == item['module']]
+        ok = bool(records) and all(r['status'] in ('passed', 'skipped') for r in records)
+        if config.TEST_CASE:
+            ok = ok and any(r.get('caseIds') for r in records)
+        label = key + ('（无需性能测试）' if any(r['status'] == 'skipped' for r in records) else '')
+        console.progress(done, len(items), label, 'passed' if ok else 'failed')
+    tools = [r for r in results if r['module'] == 'Tools']
+    if tools:
+        console.note('CTL 工具回归：' + ('✓' if all(r['status'] == 'passed' for r in tools) else '×'))
+    for record in results:
+        if record['status'] not in ('passed', 'skipped'):
+            console.note(failure_text(record))
+    with console.track('汇总：检查并保存报告'):
+        _, path = save()
+    console.note('报告：' + str(path))
     if errors:
-        raise ValueError('\n'.join(errors))
-    console.finish(' · '.join(counts))
+        raise ValueError('；'.join(errors))
+    scope = '局部测试' if config.TEST_CASE or set(config.RIGHT_PROFILES) != {'strict', 'optimized', 'sanitized'} or selected else '测试'
+    console.finish(str(len(items)) + ' 个模板' + scope + '完成')
     return 0
 
 
@@ -120,7 +162,23 @@ def main(argv=None):
         if args.command == 'rule':
             return rule(console)
         if args.command == 'test':
-            return test(console, args.right or args.all, args.perf or args.all)
+            if platform.system() not in ('Darwin', 'Linux'):
+                raise ValueError('当前测试执行器需要 macOS 或 Linux；Windows 可使用 WSL')
+            if (args.case or args.profile) and not (args.right or args.all):
+                raise ValueError('--case/--profile 需要 --right 或 --all')
+            if args.seed is not None and args.seed < 0:
+                raise ValueError('种子须为非负整数')
+            fields = ('TEST_MODULES', 'TEST_CASE', 'RIGHT_PROFILES', 'RIGHT_SEED', 'PERF_SEED')
+            previous = {key: getattr(config, key) for key in fields}
+            try:
+                if args.module: config.TEST_MODULES = tuple(args.module)
+                if args.case: config.TEST_CASE = args.case
+                if args.profile: config.RIGHT_PROFILES = (args.profile,)
+                if args.seed is not None: config.RIGHT_SEED = config.PERF_SEED = args.seed
+                with test_lock():
+                    return test(console, args.right or args.all, args.perf or args.all)
+            finally:
+                for key, value in previous.items(): setattr(config, key, value)
         if args.local:
             return update_local(console)
         from tools.Publisher import publish

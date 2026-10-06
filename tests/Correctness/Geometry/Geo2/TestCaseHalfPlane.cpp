@@ -1,5 +1,6 @@
 #include "../../../../src/Geometry/Geo2/Circle.hpp"
 #include "../../../Support/TestSupport.hpp"
+#include "../../../Support/CaseSupport.hpp"
 #include <fstream>
 #include <filesystem>
 using namespace _geo2;
@@ -56,12 +57,14 @@ template<class T> void run(const char *path) {
         for(auto p:expected) CHECK(boundaryDistance(actual,p)<=2E-5);
     }
 }
-int main(int argc,char **argv) {
-    CHECK(argc==1 or argc==2);
-    auto path = argc==2 ? std::filesystem::path(argv[1])
-                       : std::filesystem::path(__FILE__).parent_path() / "HalfPlaneRegression.txt";
+int isolatedCase() {
+    auto path = std::filesystem::path(__FILE__).parent_path() / "HalfPlaneRegression.txt";
     auto file = path.string();
-    run<double>(file.c_str());run<FloatPointNumber<double>>(file.c_str());
-    std::cout<<"Geo2 HPI exact Fraction oracle: native/wrapped PASS; cases="<<file<<'\n';
+    run<double>(file.c_str());
+    run<FloatPointNumber<double>>(file.c_str());
+    return 0;
+}
+int main() {
+    runCase("Geo2/halfplane", [] { CHECK(isolatedCase() == 0); });
     return 0;
 }

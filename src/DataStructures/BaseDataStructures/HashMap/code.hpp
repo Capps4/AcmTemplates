@@ -128,6 +128,9 @@ class Impl {
         return pool.val[i];
     }
 public:
+    using key_type = u64;
+    using mapped_type = Val;
+
     struct Iterator {
         int pos, stop, tail, end;
         bool flat;
@@ -198,4 +201,3 @@ public:
 
 template <class Val, int N = int(5E6), int Capa = N + 3>
 using HashMap = _hashmap::Impl<Val, _hashmap::sqr(N), Capa>;
-

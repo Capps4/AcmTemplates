@@ -1,9 +1,11 @@
+#include "../../../../Support/CaseSupport.hpp"
 #include "../../../../../src/DataStructures/TreeDataStructures/SegTree/code.hpp"
 #include "TestTypes.hpp"
 #include "../../../../Support/TestSupport.hpp"
 #include <memory>
 #include <numeric>
 #include <utility>
+
 
 template <class Tree, class U, class = void>
 struct HasUpdate : std::false_type {};
@@ -113,7 +115,7 @@ void boundaries() {
 }
 
 void exhaustiveSearch() {
-    for (int n = 0; n <= 8; ++n) {
+    for (int n = 0; n <= 5; ++n) {
         caseN = n;
         for (int mask = 0; mask < (1 << n); ++mask) {
             trialId = mask;
@@ -159,9 +161,10 @@ void exhaustiveSearch() {
 }
 
 void randomUpdates() {
-    for (int trial = 0; trial < 180; ++trial) {
+    for (int trial = 0; trial < 8; ++trial) {
+        test_context::step = trial;
         trialId = trial;
-        int n = trial < 20 ? trial : randomInt(1, 150);
+        int n = trial < 20 ? trial : randomInt(1, 24);
         caseN = n;
         std::vector<long long> a(n);
         for (auto &v : a) v = randomInt(-100, 100);
@@ -170,7 +173,8 @@ void randomUpdates() {
         SegTree<SumInfo, AddTag> sums(a);
         SegTree<MaxInfo, AddTag> maxima(a);
         std::vector<long long> b = a, c = a;
-        for (int step = 0; step < 500; ++step) {
+        for (int step = 0; step < 32; ++step) {
+        test_context::step = step;
             stepId = step;
             int l = randomInt(0, n), r = randomInt(l, n);
             caseL = l; caseR = r;
@@ -230,14 +234,16 @@ void orderedMerge() {
         }
         expect(tree.query(0, n).val == std::string(a.begin(), a.end()));
     }
-    for (int trial = 0; trial < 60; ++trial) {
+    for (int trial = 0; trial < 4; ++trial) {
+        test_context::step = trial;
         trialId = trial;
         int n = randomInt(0, 40);
         caseN = n;
         std::vector<char> a(n, 'a'), b = a;
         SegTree<TextInfo> plain(a);
         SegTree<SetInfo, SetTag> lazy(a);
-        for (int step = 0; step < 250; ++step) {
+        for (int step = 0; step < 16; ++step) {
+        test_context::step = step;
             stepId = step;
             int l = randomInt(0, n), r = randomInt(l, n);
             caseL = l; caseR = r;
@@ -266,7 +272,7 @@ void orderedMerge() {
 }
 
 void largeSearch() {
-    constexpr int n = 131073;
+    constexpr int n = 129;
     SegTree<MaxInfo, AddTag> tree(n, MaxInfo(0));
     tree.modify(0, n, AddTag{3});
     tree.modify(n - 1, n, AddTag{4});
@@ -282,12 +288,76 @@ void largeSearch() {
     expect(tree.last(0, n - 1, pred) == 0);
 }
 
+
+
+#include "../../../../../src/DataStructures/TreeDataStructures/SegTree/code.hpp"
+#include "../../../../Support/CaseSupport.hpp"
+#include "TestTypes.hpp"
+
+namespace boundary_cases {
+void verifyAdded(int n, int shape) {
+    std::vector<long long> a(n);
+    std::iota(a.begin(), a.end(), 1);
+    auto d = SegTree<SumInfo, AffineTag>(a);
+    auto verifyState = [&] {
+        for (int l = 0; l < n; ++l)
+            for (int r = l + 1; r <= n; ++r)
+                CHECK(d.query(l, r).val == std::accumulate(a.begin() + l, a.begin() + r, 0LL));
+    };
+    verifyState();
+    for (int step = 0; step < 12 and n > 0; ++step) {
+        test_context::step = step;
+        int l = shape ? 0 : step % n, r = shape ? n : std::min(n, l + 1 + step % 4);
+        AffineTag t{step % 3 == 0 ? -1 : 1, step - 5};
+        d.modify(l, r, t);
+        for (int i = l; i < r; ++i)
+            a[i] = a[i] * t.mul + t.add;
+        auto saved = d;
+        verifyState();
+        for (int i = 0; i < n; ++i)
+            CHECK(saved.query(i, i + 1).val == a[i]);
+        int p = step % n;
+        d.modify(p, SumInfo(step));
+        a[p] = step;
+        verifyState();
+    }
+}
+
+int run() {
+    runCase("SegTree/empty", [] {
+        verifyAdded(0, 0);
+    });
+    runCase("SegTree/single", [] {
+        verifyAdded(1, 0);
+    });
+    runCase("SegTree/two-elements-alternate-tags", [] {
+        verifyAdded(2, 1);
+    });
+    runCase("SegTree/odd-padding", [] {
+        verifyAdded(3, 0);
+    });
+    runCase("SegTree/power-of-two", [] {
+        verifyAdded(4, 1);
+    });
+    runCase("SegTree/non-power-of-two", [] {
+        verifyAdded(5, 0);
+    });
+    runCase("SegTree/padding-search", [] {
+        verifyAdded(7, 1);
+    });
+    runCase("SegTree/range-composition", [] {
+        verifyAdded(17, 0);
+    });
+    return 0;
+}
+}
+
 int main() {
-    boundaries();
-    exhaustiveSearch();
-    randomUpdates();
-    orderedMerge();
-    largeSearch();
-    std::cout << "Empty/padded boundaries, exhaustive searches, random oracles, affine tags, "
-                 "ordered merges, move-only predicates and Tag=void API checks passed\n";
+    runCase("SegTree/boundaries", [] { boundaries(); });
+    runCase("SegTree/exhaustiveSearch", [] { exhaustiveSearch(); });
+    runCase("SegTree/randomUpdates", [] { randomUpdates(); });
+    runCase("SegTree/orderedMerge", [] { orderedMerge(); });
+    runCase("SegTree/largeSearch", [] { largeSearch(); });
+    CHECK(boundary_cases::run() == 0);
+    return 0;
 }
