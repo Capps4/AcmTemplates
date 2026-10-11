@@ -3586,6 +3586,62 @@
       "source": "tests/Correctness/Math/MathPackage/Sieve/Test.cpp"
     },
     {
+      "id": "SparseSegTree/lazy-exhaustive",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "all pairs of overlapping, disjoint and empty updates on five cells",
+      "oracle": "Exhaustive array sums, snapshots, merges and signed views",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseLazy.cpp"
+    },
+    {
+      "id": "SparseSegTree/lazy-random-cow-merge-views",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "seeded mixed updates, point replacement, move, merge and four-root views",
+      "oracle": "Independent arrays per tree and frozen snapshot",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseLazy.cpp"
+    },
+    {
+      "id": "SparseSegTree/lazy-prefix-suffix-search",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "monotone first/last and callbacks with coordinates",
+      "oracle": "Linear prefix/suffix scan over nonnegative array",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseLazy.cpp"
+    },
+    {
+      "id": "SparseSegTree/lazy-extreme-coordinates",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "domain [-10^18,10^18), one cell and self merge",
+      "oracle": "128-bit arithmetic progression and explicit boundary sums",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseLazy.cpp"
+    },
+    {
+      "id": "SparseSegTree/lazy-type-modes",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "Tag=void and unused boundary placeholders in Info::apply",
+      "oracle": "Explicit sums, custom untagged merge and representation assertions",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseLazy.cpp"
+    },
+    {
+      "id": "SparseSegTree/lazy-large-domain",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "256 narrow/wide updates and queries on a huge coordinate domain, snapshot and self merge",
+      "oracle": "Coordinate-compressed weighted difference Fenwick",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseLazy.cpp"
+    },
+    {
+      "id": "SparseSegTree/lazy-footer-int-length",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "global Info/Tag example, empty roots and four-root INT_MAX length",
+      "oracle": "Explicit overlap sums and domain lengths",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseLazy.cpp"
+    },
+    {
       "id": "SparseSegTree/both-boundaries",
       "module": "SparseSegTree",
       "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
@@ -3656,6 +3712,46 @@
       "scenario": "right-boundary",
       "oracle": "Naive multiset interval count/sum for live, old, frozen, difference and merged roots",
       "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/Test.cpp"
+    },
+    {
+      "id": "SparseSegTree/lazy-nested-view-search",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "nested signed views, zero/single-root views and frozen multi-root searches",
+      "oracle": "Five-cell array query sums and exhaustive linear prefix/suffix threshold scans",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseLazy.cpp"
+    },
+    {
+      "id": "SparseSegTree/lazy-metadata-length",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "length-aware search, nonzero default metadata, pool growth and INT_MAX/LLONG_MAX lengths",
+      "oracle": "Physical interval lengths, array sums and closed-form prefix/suffix length positions",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseLazy.cpp"
+    },
+    {
+      "id": "SparseSegTree/plain-ordered-info",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "noncommutative Info concatenation, range order and custom leaf merge without Tag",
+      "oracle": "Independent string concatenation and linear pattern-search oracle",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseContracts.cpp"
+    },
+    {
+      "id": "SparseSegTree/coordinate-types",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "int and unsigned long long domains near coordinate limits",
+      "oracle": "Small arrays, all legal ranges and linear boundary searches",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseContracts.cpp"
+    },
+    {
+      "id": "SparseSegTree/lazy-ownership-lifecycle",
+      "module": "SparseSegTree",
+      "header": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp",
+      "scenario": "unshared consuming merge, copy/move/self assignment, reset and reused moved sources",
+      "oracle": "Independent five-cell arrays and retained snapshot expectations",
+      "source": "tests/Correctness/DataStructures/TreeDataStructures/SparseSegTree/TestCaseContracts.cpp"
     },
     {
       "id": "StringHash/alphabet",

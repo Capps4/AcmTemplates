@@ -21,7 +21,9 @@
 #undef Info
 
 #define Info SparseExampleInfo
+#define Tag SparseExampleTag
 #include "../../../../../src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp"
+#undef Tag
 #undef Info
 
 int exampleCases() {
@@ -70,16 +72,16 @@ int exampleCases() {
     CHECK(bits.query(7).count == 1 && bits.query(7).end == 1);
     CHECK(bits.query(8).count == 0);
 
-    using Sparse = SparseSegTree<SparseExampleInfo, long long>;
+    using Sparse = SparseSegTree<SparseExampleInfo, long long, SparseExampleTag>;
     Sparse::clearInit(-8, 8);
     Sparse a;
-    a.modify(-1, SparseExampleInfo{1, -1});
+    a.modify(-1, SparseExampleInfo{2});
     Sparse b = a;
-    b.modify(4, SparseExampleInfo{1, 4});
+    b.modify(4, 6, SparseExampleTag{3});
     auto diff = b - a;
-    CHECK(a.query(-8, 8).count == 1 && b.query(-8, 8).sum == 3);
-    CHECK(diff.query(-8, 8).count == 1 && diff.query(-8, 8).sum == 4);
-    CHECK(diff.first(-8, 8, [](const SparseExampleInfo &info) { return info.count >= 1; }) == 4);
+    CHECK(a.query(-8, 8).sum == 2 && b.query(-8, 8).sum == 8);
+    CHECK(diff.query(-8, 8).len == 16 && diff.query(-8, 8).sum == 6);
+    CHECK(diff.first(-8, 8, [](const SparseExampleInfo &info) { return info.sum >= 1; }) == 4);
     std::cout << "SegTree, string/binary trie and sparse tree footer examples passed\n";
     return 0;
 }

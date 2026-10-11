@@ -1281,7 +1281,7 @@
     {
       "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R09:is_integral_v",
       "fingerprint": "9a52566e247023dcfaac6e561b647861562df5a745725a5dea560e6e3e045ad3",
-      "reason": "坐标必须为整数；修改参数可以是 Info 或回调，两种调用语义需要编译期区分。"
+      "reason": "递归二分与单位叶子要求 Coord 为整数；保留对不合法坐标类型的编译期诊断。"
     },
     {
       "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R04:query",
@@ -1291,7 +1291,7 @@
     {
       "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R04:first",
       "fingerprint": "d453cf0c2be787f558c1b55d053b31da6986e0d494fdeb14eca63be75c96117a",
-      "reason": "std::pair 的 first 成员是标准接口，不能随内部命名规则改动。"
+      "reason": "SparseSegTree/View 的既有公共前缀搜索接口；保留调用兼容。"
     },
     {
       "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R04:clearInit",
@@ -1305,13 +1305,13 @@
     },
     {
       "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R04:modify",
-      "fingerprint": "8e8b8e839a76c16122b21061155480f4b91f2c1ed56ca5f8bc2cdf229d35b9fb",
-      "reason": "modify 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+      "fingerprint": "00d21473f91f03fadd99511ac857a2fed7c25df2d3a2bcbbb537e99fb9a9947f",
+      "reason": "既有点修改和新增区间修改共用的公共接口；用户明确要求 modify(l,r,tag) 调用形式。"
     },
     {
       "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R09:is_same_v",
-      "fingerprint": "8effe968f56f5b01bd2e126679a3ad3b53861481de80b3b331d899d40b3f723e",
-      "reason": "坐标必须为整数；修改参数可以是 Info 或回调，两种调用语义需要编译期区分。"
+      "fingerprint": "ecff192bcdf27ee39e7ace23cd7ab2f4f18add64b2d04f2bbd011290031fd201",
+      "reason": "区分 Info 值与单参数回调、限制区间接口的 Tag 类型、拒绝带标记自定义叶子合并，并区分原地/COW 路径；各项对应调用或所有权语义。"
     },
     {
       "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R04:merge",
@@ -1767,6 +1767,31 @@
       "id": "src/String/AdvancedStrings/PalindromeAutomaton/code.hpp:R07:&&",
       "fingerprint": "338d4f9d2f57e630328077931bf226de447a49590bceab3686680d73e2836ac9",
       "reason": "Func&& 为转发引用，允许借用不可复制闭包；只在 add 调用期间逐字符调用，不保存或反复移动。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R04:_sparse",
+      "fingerprint": "7ef974469d003b7673b4fd7c5a88775f56673e8b7232388f541b2b1be5eb7eea",
+      "reason": "稀疏树辅助命名空间；Tags<void> 空基类确保旧点修改模式不增加节点或 View 存储，与其他模块的 Tag 辅助类型隔离。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R09:is_void_v",
+      "fingerprint": "6dda77dee484fe9138736842cd7b39e058793269e236b7c4412d748f58c06d99",
+      "reason": "Tag=void 保留无标记旧接口与节点表示；启用 Tag 后才存储、组合和应用永久标记。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R09:conditional_t",
+      "fingerprint": "4181abd8a2167e30abe716532f7178e3c473d4d8a2bf6a2dc17319b9fb1b65d3",
+      "reason": "Mark 在有标记时为 Tag、无标记时为 monostate，使内部递归签名可共用且不形成 void 参数；旧节点不存储占位对象。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R04:apply",
+      "fingerprint": "0a8d3b0157b48785c448b24bfa1bd3198f2c6e3b8b040f006dec45c36de2138b",
+      "reason": "Info/Tag 的公共作用与组合接口沿用 apply；用户明确要求私有 app 改名 apply。该 helper 应用标记并回填区间元信息，多根视图用恒等 Tag 清空累计元信息以避免长度重复累加及溢出。"
+    },
+    {
+      "id": "src/DataStructures/TreeDataStructures/SparseSegTree/code.hpp:R09:enable_if_t",
+      "fingerprint": "86ddeeeee6252f56c1c01ba1044efe8077dbec7eb1f1b3bcd6a3c754c3a12b6f",
+      "reason": "Tag=void 时移除区间修改，且不能通过显式模板参数向无标记树传入其他标记，保留原点修改模式。"
     }
   ]
 }
