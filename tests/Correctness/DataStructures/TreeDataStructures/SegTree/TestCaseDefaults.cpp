@@ -45,6 +45,9 @@ int exampleCases() {
     CHECK(plain.last(0, 3, pred) == 2);
     CHECK(!plain.first(1, 1, pred));
     CHECK(!plain.last(0, 3, [](const SegExampleInfo &) { return false; }));
+    auto atLeast = [](const SegExampleInfo &info) { return info.val >= 12; };
+    CHECK(plain.first(0, 3, atLeast) == 2); // 1 + 9 + 3。
+    CHECK(plain.last(0, 3, atLeast) == 1);  // 9 + 3。
 
     using Words = StringTrie<TrieExampleInfo>;
     Words::clearInit();
@@ -82,6 +85,13 @@ int exampleCases() {
     CHECK(a.query(-8, 8).sum == 2 && b.query(-8, 8).sum == 8);
     CHECK(diff.query(-8, 8).len == 16 && diff.query(-8, 8).sum == 6);
     CHECK(diff.first(-8, 8, [](const SparseExampleInfo &info) { return info.sum >= 1; }) == 4);
+    Sparse values;
+    values.modify(0, SparseExampleInfo{1});
+    values.modify(1, SparseExampleInfo{9});
+    values.modify(2, SparseExampleInfo{3});
+    auto sparsePred = [](const SparseExampleInfo &info) { return info.sum >= 12; };
+    CHECK(plain.first(0, 3, atLeast) == values.first(0, 3, sparsePred));
+    CHECK(plain.last(0, 3, atLeast) == values.last(0, 3, sparsePred));
     std::cout << "SegTree, string/binary trie and sparse tree footer examples passed\n";
     return 0;
 }

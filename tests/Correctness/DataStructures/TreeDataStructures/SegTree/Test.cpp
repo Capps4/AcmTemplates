@@ -43,6 +43,33 @@ void expect(bool ok) {
 }
 
 template <class Tree>
+void verifySearch(Tree &tree, const std::vector<long long> &a, int l, int r, long long lim) {
+    caseN = int(a.size());
+    caseL = l;
+    caseR = r;
+    std::optional<int> first, last;
+    long long sum = 0;
+    for (int i = l; i < r; ++i) {
+        sum += a[i];
+        if (sum >= lim) {
+            first = i;
+            break;
+        }
+    }
+    sum = 0;
+    for (int i = r; i > l;) {
+        sum += a[--i];
+        if (sum >= lim) {
+            last = i;
+            break;
+        }
+    }
+    auto pred = [lim](const SumInfo &v) { return v.val >= lim; };
+    expect(tree.first(l, r, pred) == first);
+    expect(tree.last(l, r, pred) == last);
+}
+
+template <class Tree>
 void verifySum(Tree &tree, const std::vector<long long> &a) {
     int n = int(a.size());
     if (!n) return;
@@ -124,6 +151,11 @@ void exhaustiveSearch() {
             SegTree<MaxInfo> plain(a);
             SegTree<MaxInfo, AddTag> lazy(a);
             lazy.modify(0, n, AddTag{3});
+            SegTree<SumInfo> counts(a);
+            SegTree<SumInfo, AddTag> sums(a);
+            sums.modify(0, n, AddTag{2});
+            std::vector<long long> b = a;
+            for (auto &v : b) v += 2;
             for (int l = 0; l <= n; ++l) {
                 for (int r = l; r <= n; ++r) {
                     caseL = l; caseR = r;
@@ -139,22 +171,29 @@ void exhaustiveSearch() {
                         expect(lazy.first(l, r, shifted) == first);
                         expect(lazy.last(l, r, shifted) == last);
                     }
+                    for (int lim = 0; lim <= 3 * n + 1; ++lim) {
+                        verifySearch(counts, a, l, r, lim);
+                        verifySearch(sums, b, l, r, lim);
+                    }
                 }
             }
         }
     }
     std::vector<long long> a{1, 1, 1, 1, 5, 1, 1, 1};
     SegTree<SumInfo, AddTag> tree(a);
-    for (int lim = 0; lim <= 20; ++lim) {
-        for (int l = 0; l <= 8; ++l) {
-            for (int r = l; r <= 8; ++r) {
-                std::optional<int> first, last;
-                for (int i = l; i < r; ++i) {
-                    if (a[i] >= lim) { if (!first) first = i; last = i; }
+    for (int step = 0; step < 3; ++step) {
+        if (step == 1) {
+            tree.modify(1, 7, AddTag{2});
+            for (int i = 1; i < 7; ++i) a[i] += 2;
+        } else if (step == 2) {
+            tree.modify(4, SumInfo(0));
+            a[4] = 0;
+        }
+        for (int lim = 0; lim <= 25; ++lim) {
+            for (int l = 0; l <= 8; ++l) {
+                for (int r = l; r <= 8; ++r) {
+                    verifySearch(tree, a, l, r, lim);
                 }
-                auto pred = [lim](const SumInfo &v) { return v.val >= lim; };
-                expect(tree.first(l, r, pred) == first);
-                expect(tree.last(l, r, pred) == last);
             }
         }
     }
@@ -218,6 +257,32 @@ void randomUpdates() {
             }
         }
     }
+    for (int trial = 0; trial < 16; ++trial) {
+        trialId = trial;
+        int n = randomInt(1, 33);
+        std::vector<long long> a(n);
+        for (auto &v : a) v = randomInt(0, 10);
+        SegTree<SumInfo, AffineTag> tree(a);
+        for (int step = 0; step < 100; ++step) {
+            stepId = step;
+            int l = randomInt(0, n), r = randomInt(l, n);
+            if (step % 4 == 0) {
+                int p = randomInt(0, n - 1), v = randomInt(0, 10);
+                tree.modify(p, SumInfo(v));
+                a[p] = v;
+            } else {
+                AffineTag tag{randomInt(0, 1), randomInt(0, 3)};
+                tree.modify(l, r, tag);
+                for (int i = l; i < r; ++i) a[i] = a[i] * tag.mul + tag.add;
+            }
+            l = randomInt(0, n);
+            r = randomInt(l, n);
+            int total = int(std::accumulate(a.begin() + l, a.begin() + r, 0LL));
+            verifySearch(tree, a, l, r, randomInt(0, total + 1));
+            verifySearch(tree, a, 0, n, 0);
+            verifySearch(tree, a, 0, n, std::accumulate(a.begin(), a.end(), 1LL));
+        }
+    }
 }
 
 void orderedMerge() {
@@ -230,6 +295,14 @@ void orderedMerge() {
             for (int r = l + 1; r <= n; ++r) {
                 caseL = l; caseR = r;
                 expect(tree.query(l, r).val == std::string(a.begin() + l, a.begin() + r));
+                for (int i = l; i + 1 < r; ++i) {
+                    std::string pat(a.begin() + i, a.begin() + i + 2);
+                    auto pred = [&pat](const TextInfo &v) {
+                        return v.val.find(pat) != std::string::npos;
+                    };
+                    expect(tree.first(l, r, pred) == i + 1);
+                    expect(tree.last(l, r, pred) == i);
+                }
             }
         }
         expect(tree.query(0, n).val == std::string(a.begin(), a.end()));
@@ -267,12 +340,21 @@ void orderedMerge() {
             }
             expect(lazy.first(l, r, pred) == first);
             expect(lazy.last(l, r, pred) == last);
+            std::string text(b.begin() + l, b.begin() + r);
+            auto pos = text.find("ab"), end = text.rfind("ab");
+            first = pos == std::string::npos ? std::nullopt
+                                             : std::optional<int>(l + int(pos) + 1);
+            last = end == std::string::npos ? std::nullopt
+                                           : std::optional<int>(l + int(end));
+            auto pair = [](const SetInfo &v) { return v.val.find("ab") != std::string::npos; };
+            expect(lazy.first(l, r, pair) == first);
+            expect(lazy.last(l, r, pair) == last);
         }
     }
 }
 
 void largeSearch() {
-    constexpr int n = 129;
+    constexpr int n = (1 << 18) + 1;
     SegTree<MaxInfo, AddTag> tree(n, MaxInfo(0));
     tree.modify(0, n, AddTag{3});
     tree.modify(n - 1, n, AddTag{4});
@@ -286,6 +368,23 @@ void largeSearch() {
     tree.modify(0, MaxInfo(8));
     expect(tree.first(0, n, pred) == 0);
     expect(tree.last(0, n - 1, pred) == 0);
+
+    SegTree<SumInfo, AddTag> sums(n, SumInfo(0));
+    sums.modify(0, n, AddTag{1});
+    sums.modify(0, 1, AddTag{3});
+    sums.modify(n - 1, n, AddTag{5});
+    auto atLeast = [&calls](const SumInfo &v) { ++calls; return v.val >= n / 2; };
+    calls = 0;
+    expect(sums.first(0, n, atLeast) == n / 2 - 4);
+    expect(calls < 100);
+    calls = 0;
+    expect(sums.last(0, n, atLeast) == n - n / 2 + 5);
+    expect(calls < 100);
+    auto never = [&calls](const SumInfo &v) { ++calls; return v.val > n + 8; };
+    calls = 0;
+    expect(!sums.first(0, n, never));
+    expect(!sums.last(0, n, never));
+    expect(calls < 100);
 }
 
 

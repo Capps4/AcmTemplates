@@ -57,23 +57,24 @@ class SegTree : private _segt::Tags<Tag> {
         }
     }
 
-    template <class F>
-    std::optional<int> find(int p, F &pred, bool last) {
-        std::array<int, DMax> stk{};
-        int cnt = 0;
-        while (true) {
-            if (pred(info[p])) {
-                if (p >= base)
-                    return p - base;
-                down(p);
-                p = p * 2 + int(last);
-                stk[cnt++] = p ^ 1;
-            } else {
-                if (!cnt)
-                    return std::nullopt;
-                p = stk[--cnt];
+    template <bool Rev, class F>
+    std::optional<int> find(int p, std::optional<Info> &acc, F &pred) {
+        Info cur = acc ? (Rev ? info[p] + *acc : *acc + info[p]) : info[p];
+        if (!pred(cur)) {
+            acc = std::move(cur);
+            return std::nullopt;
+        }
+        // The whole block matches; descend without visiting both branches.
+        while (p < base) {
+            down(p);
+            p = p * 2 + int(Rev);
+            cur = acc ? (Rev ? info[p] + *acc : *acc + info[p]) : info[p];
+            if (!pred(cur)) {
+                acc = std::move(cur);
+                p ^= 1;
             }
         }
+        return p - base;
     }
 
 public:
@@ -155,7 +156,7 @@ public:
                 up((b - 1) >> h, h);
         }
     }
-    // A false predicate must rule out every matching leaf in that node.
+    // pred must stay true as the prefix/suffix grows; no empty Info is tested.
     template <class F>
     std::optional<int> first(int l, int r, F pred) {
         assert(0 <= l and l <= r and r <= n);
@@ -163,11 +164,12 @@ public:
             return std::nullopt;
         l += base, r += base;
         push(l, r);
+        std::optional<Info> acc;
         std::array<int, DMax> stk{};
         int cnt = 0;
         while (l < r) {
             if (l & 1) {
-                auto ans = find(l++, pred, false);
+                auto ans = find<false>(l++, acc, pred);
                 if (ans)
                     return ans;
             }
@@ -176,7 +178,7 @@ public:
             l >>= 1, r >>= 1;
         }
         while (cnt) {
-            auto ans = find(stk[--cnt], pred, false);
+            auto ans = find<false>(stk[--cnt], acc, pred);
             if (ans)
                 return ans;
         }
@@ -190,20 +192,21 @@ public:
             return std::nullopt;
         l += base, r += base;
         push(l, r);
+        std::optional<Info> acc;
         std::array<int, DMax> stk{};
         int cnt = 0;
         while (l < r) {
             if (l & 1)
                 stk[cnt++] = l++;
             if (r & 1) {
-                auto ans = find(--r, pred, true);
+                auto ans = find<true>(--r, acc, pred);
                 if (ans)
                     return ans;
             }
             l >>= 1, r >>= 1;
         }
         while (cnt) {
-            auto ans = find(stk[--cnt], pred, true);
+            auto ans = find<true>(stk[--cnt], acc, pred);
             if (ans)
                 return ans;
         }
@@ -215,7 +218,9 @@ public:
 struct Tag {
     long long add = 0;
 
-    void apply(const Tag &v) { add += v.add; }
+    void apply(const Tag &v) {
+        add += v.add;
+    }
 };
 
 struct Info {
@@ -224,7 +229,11 @@ struct Info {
 
     explicit Info(long long val = 0, int len = 1) : val(val), len(len) {}
 
-    Info operator+(const Info &v) const { return Info(val + v.val, len + v.len); }
+    Info operator+(const Info &v) const {
+        return Info(val + v.val, len + v.len);
+    }
 
-    void apply(const Tag &v) { val += v.add * len; }
+    void apply(const Tag &v) {
+        val += v.add * len;
+    }
 };
