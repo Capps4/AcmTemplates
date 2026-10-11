@@ -4,7 +4,7 @@
 
 `HashMap<Val,Capa>` 使用共享节点池、owner 隔离及常量模取桶；内部实现为 `_hashmap::Impl/Pool`。
 
-`map[key]` 缺失时插入，返回可写引用；`map(key)` 缺失返回 `Val{}` 的 const 引用，不插入。迭代器返回键值副本，遍历要求 Val 可复制；修改副本不写回容器。引用在修改或池回收后可能失效。
+`map[key]` 缺失时插入，返回可写引用；`map(key)` 只读返回 `std::optional<Val>` 值副本，缺失为 `std::nullopt`，不插入。查询和迭代器返回值副本，要求 Val 可复制；修改副本不写回容器。存储的 `0` 或 `false` 仍表示键存在。引用在修改或池回收后可能失效。
 
 公开 `key_type = u64`、`mapped_type = Val`，供通用映射识别；调试打印沿用迭代器的值复制要求。
 

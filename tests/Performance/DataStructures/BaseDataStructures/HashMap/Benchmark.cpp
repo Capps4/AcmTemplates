@@ -14,7 +14,7 @@ int main(int argc, char **argv) {
                            ++h[x];
                        std::uint64_t sum = 0;
                        for (auto x : a)
-                           sum += h(x);
+                           sum += *h(x);
                        return sum;
                    });
 }

@@ -427,7 +427,7 @@ int main() {
         Copies::count = 0;
         CHECK_EQ(render(map), "{(1, 7), (2, 9)}");
         CHECK(Copies::count == 2);
-        CHECK(map(1).value == 7 and map(2).value == 9);
+        CHECK(map(1)->value == 7 and map(2)->value == 9);
     });
     runCase("DebugerHeadCopyToBitsStdC++/treemap-order-and-state", [] {
         TreeMap<int, int, std::greater<int>> map;

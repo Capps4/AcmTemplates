@@ -12,9 +12,9 @@ const char* mockConfigure(const char* value) { mockConfigured = true; return val
 #include "../../../Support/TestSupport.hpp"
 int isolatedCase() {
 #if __has_include(<bits/stdc++.h>)
-    CHECK(_$competition_debug::debug_enabled_flag);
-    CHECK(!_$competition_debug::output_color_enabled && !_$competition_debug::output_indent_enabled);
-    CHECK(_$competition_debug::debug_precision == 6);
+    CHECK(debuger::cfg().on);
+    CHECK(!debuger::cfg().col and !debuger::cfg().gap);
+    CHECK(debuger::cfg().prec == 6);
     CHECK(std::strcmp($, "") == 0);
 #else
     CHECK(mockConfigured);

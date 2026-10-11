@@ -182,13 +182,11 @@ public:
         off = int(mix(id) % Mod);
         fst = beg = last = 0;
     }
-    const Val& operator()(u64 x) const {
+    std::optional<Val> operator()(u64 x) const {
         auto& pool = get();
-        int i = pool.find(x, id, pool.hash(x, off), beg, last);
-        if (i)
+        if (int i = pool.find(x, id, pool.hash(x, off), beg, last))
             return pool.val[i];
-        static const Val empty{};
-        return empty;
+        return std::nullopt;
     }
     Val& operator[](u64 x) {
         auto& pool = get();

@@ -23,7 +23,7 @@ struct ThrowValue {
 
 int coreCases() {
     using Map = Impl<int, 101, 50000>;
-    static_assert(std::is_same_v<decltype(std::declval<const Map&>()(0)), const int&>);
+    static_assert(std::is_same_v<decltype(std::declval<const Map&>()(0)), std::optional<int>>);
     static_assert(std::is_same_v<decltype(*std::declval<Map::Iterator>()), std::pair<u64, int>>);
     for (int batch = 0; batch < 4; ++batch) {
         test_context::step = batch;
@@ -54,7 +54,10 @@ int coreCases() {
                 const auto& map = maps[id];
                 auto found = oracle[id].find(key);
                 auto value = map(key);
-                CHECK(value == (found == oracle[id].end() ? 0 : found->second));
+                if (found == oracle[id].end())
+                    CHECK(!value);
+                else
+                    CHECK(value == found->second);
                 std::unordered_set<u64> visited;
                 for (auto [storedKey, storedValue] : map) {
                     CHECK(visited.insert(storedKey).second);
@@ -101,7 +104,7 @@ int coreCases() {
     {
         Impl<std::shared_ptr<int>, 17, 8> a, b;
         a[1] = std::make_shared<int>(7);
-        oldValue = a(1);
+        oldValue = *a(1);
         a.clear();
         CHECK(!oldValue.expired() && !a(1));
         b[1] = std::make_shared<int>(9);
@@ -151,10 +154,10 @@ int coreCases() {
         Impl<bool, 17, 8> map;
         map[1] = false;
         auto value = map(1);
-        CHECK(!value && !map(2));
+        CHECK(value and !*value and !map(2));
         int cnt = 0; for (auto [key, val] : map) { CHECK(key == 1 and !val); ++cnt; } CHECK(cnt == 1);
     }
-    std::cout << "HashMap 150K interleaved-owner oracle, moves/clears/collisions/full pool, Original iterator copies, resource reset, default-value lookup PASS\n";
+    std::cout << "HashMap 150K interleaved-owner oracle, moves/clears/collisions/full pool, Original iterator copies, resource reset, optional-value lookup PASS\n";
     return 0;
 }
 
@@ -173,8 +176,8 @@ void verifyAdded(long long seed, int n) {
     for (auto [k, v] : e) {
         CHECK(h(k) == v);
     }
-    CHECK(h(LLONG_MAX) == 0);
-    CHECK(h(LLONG_MIN) == 0);
+    CHECK(!h(LLONG_MAX));
+    CHECK(!h(LLONG_MIN));
     std::map<long long, long long> got;
     for (auto [k, v] : h)
         got[k] = v;
@@ -183,7 +186,7 @@ void verifyAdded(long long seed, int n) {
     for (auto [k, v] : e)
         CHECK(moved(k) == v);
     moved.clear();
-    CHECK(moved(0) == 0);
+    CHECK(!moved(0));
     moved[seed] = 9;
     CHECK(moved(seed) == 9);
 }
