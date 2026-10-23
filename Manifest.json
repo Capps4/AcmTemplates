@@ -1,251 +1,303 @@
 [
   {
     "module": "AcAutomaton",
-    "path": "src/String/AdvancedStrings/AcAutomaton",
-    "dependencies": []
+    "path": "src/core/String/AcAutomaton",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "CentroidDecomposition",
-    "path": "src/TreeTheory/CentroidDecomposition",
-    "dependencies": []
+    "path": "src/extra/Tree/CentroidDecomposition",
+    "dependencies": [],
+    "collection": "extra",
+    "legacySnippets": true
   },
   {
     "module": "Combinatorics",
-    "path": "src/Math/MathPackage/Combinatorics",
+    "path": "src/core/Math/Combinatorics",
     "dependencies": [
       "ModuloInteger"
     ],
-    "include": "src/Math/MathPackage/Combinatorics/Include.hpp"
+    "include": "src/core/Math/Combinatorics/Include.hpp",
+    "collection": "core"
   },
   {
     "module": "CostFlow",
-    "path": "src/GraphTheory/Flow/CostFlow",
-    "dependencies": []
+    "path": "src/core/Graph/CostFlow",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "CountingSortOrder",
-    "path": "src/Sorting/CountingSortOrder",
-    "dependencies": []
+    "path": "src/extra/Sequence/CountingSortOrder",
+    "dependencies": [],
+    "collection": "extra",
+    "legacySnippets": true
   },
   {
     "module": "Debuger",
-    "path": "src/Clarketech/Debuger",
+    "path": "src/core/Utilities/Debuger",
     "dependencies": [],
     "aliases": [
       "debuger"
-    ]
+    ],
+    "collection": "core"
   },
   {
     "module": "DebugerHeadCopyToBitsStdC++",
-    "path": "src/Clarketech/DebugerHeadCopyToBitsStdC++",
+    "path": "src/core/Utilities/DebugerHeadCopyToBitsStdC++",
     "dependencies": [],
     "aliases": [
       "copy to bits/stdc++.h"
-    ]
+    ],
+    "collection": "core"
   },
   {
     "module": "DeletableHeap",
-    "path": "src/DataStructures/BaseDataStructures/DeletableHeap",
-    "dependencies": []
+    "path": "src/extra/DataStructures/DeletableHeap",
+    "dependencies": [],
+    "collection": "extra",
+    "legacySnippets": true
   },
   {
     "module": "Dijkstra",
-    "path": "src/GraphTheory/Dijkstra",
-    "dependencies": []
+    "path": "src/core/Graph/Dijkstra",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "Discreter",
-    "path": "src/Sorting/Discreter",
+    "path": "src/core/Sequence/Discreter",
     "dependencies": [
       "ListHelper"
     ],
-    "include": "src/Sorting/Discreter/Include.hpp"
+    "include": "src/core/Sequence/Discreter/Include.hpp",
+    "collection": "core"
   },
   {
     "module": "DisjointSetUnion",
-    "path": "src/DataStructures/BaseDataStructures/DisjointSetUnion",
-    "dependencies": []
+    "path": "src/core/DataStructures/DisjointSetUnion",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "EdgeBiconnectedComponent",
-    "path": "src/GraphTheory/Connectivity/EdgeBiconnectedComponent",
-    "dependencies": []
+    "path": "src/core/Graph/EdgeBiconnectedComponent",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "ExGcd",
-    "path": "src/Math/MathPackage/ExGcd",
-    "dependencies": []
+    "path": "src/core/Math/ExGcd",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "ExSuffixAutomaton",
-    "path": "src/String/AdvancedStrings/ExSuffixAutomaton",
-    "dependencies": []
+    "path": "src/extra/String/ExSuffixAutomaton",
+    "dependencies": [],
+    "collection": "extra",
+    "legacySnippets": true
   },
   {
     "module": "FastFourierTransform",
-    "path": "src/Math/Polynomial/FastFourierTransform",
-    "dependencies": []
+    "path": "src/extra/Math/FastFourierTransform",
+    "dependencies": [],
+    "collection": "extra",
+    "legacySnippets": true
   },
   {
     "module": "FastInputOutput",
-    "path": "src/Clarketech/FastInputOutput",
-    "dependencies": []
+    "path": "src/core/Utilities/FastInputOutput",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "FenwickTree",
-    "path": "src/DataStructures/TreeDataStructures/FenwickTree",
+    "path": "src/core/DataStructures/FenwickTree",
     "dependencies": [],
     "aliases": [
       "Fenwick"
-    ]
+    ],
+    "collection": "core"
   },
   {
     "module": "FloatPointNumber",
-    "path": "src/Math/MathPackage/FloatPointNumber",
-    "dependencies": []
+    "path": "src/core/Math/FloatPointNumber",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "GaussianElimination",
-    "path": "src/Math/LinearAlgebra/GaussianElimination",
-    "dependencies": []
+    "path": "src/extra/Math/GaussianElimination",
+    "dependencies": [],
+    "collection": "extra",
+    "legacySnippets": true
   },
   {
     "module": "Geo2",
-    "path": "src/Geometry/Geo2",
+    "path": "src/core/Geometry/Geo2",
     "dependencies": [
       "FloatPointNumber"
     ],
-    "include": "src/Geometry/Geo2/Include.hpp",
+    "include": "src/core/Geometry/Geo2/Include.hpp",
     "layers": [
       "PointVec",
       "SegLine",
       "PolygonConvex",
       "Circle"
-    ]
+    ],
+    "collection": "core"
   },
   {
     "module": "Geo3",
-    "path": "src/Geometry/Geo3",
+    "path": "src/extra/Geometry/Geo3",
     "dependencies": [
       "FloatPointNumber"
     ],
-    "include": "src/Geometry/Geo3/Include.hpp",
+    "include": "src/extra/Geometry/Geo3/Include.hpp",
     "aliases": [
       "geo3"
-    ]
+    ],
+    "collection": "extra",
+    "legacySnippets": true
   },
   {
     "module": "GridUtil",
-    "path": "src/GraphTheory/GridUtil",
-    "dependencies": []
+    "path": "src/core/Graph/GridUtil",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "HashMap",
-    "path": "src/DataStructures/BaseDataStructures/HashMap",
-    "dependencies": []
+    "path": "src/core/DataStructures/HashMap",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "Kmp",
-    "path": "src/String/StringF4/Kmp",
-    "dependencies": []
+    "path": "src/core/String/Kmp",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "LinearBasis",
-    "path": "src/Math/LinearAlgebra/LinearBasis",
-    "dependencies": []
+    "path": "src/core/Math/LinearBasis",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "ListHelper",
-    "path": "src/Clarketech/ListHelper",
-    "dependencies": []
+    "path": "src/core/Utilities/ListHelper",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "Manacher",
-    "path": "src/String/StringF4/Manacher",
-    "dependencies": []
+    "path": "src/core/String/Manacher",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "MaxFlow",
-    "path": "src/GraphTheory/Flow/MaxFlow",
-    "dependencies": []
+    "path": "src/core/Graph/MaxFlow",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "MillerRabin",
-    "path": "src/Math/RandomNumberAlgorithm/MillerRabin",
-    "dependencies": []
+    "path": "src/core/Math/MillerRabin",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "MinimalString",
-    "path": "src/String/StringF4/MinimalString",
+    "path": "src/extra/String/MinimalString",
     "dependencies": [
       "ListHelper"
     ],
-    "include": "src/String/StringF4/MinimalString/Include.hpp"
+    "include": "src/extra/String/MinimalString/Include.hpp",
+    "collection": "extra",
+    "legacySnippets": true
   },
   {
     "module": "MoSort",
-    "path": "src/Sorting/MoSort",
-    "dependencies": []
+    "path": "src/extra/Sequence/MoSort",
+    "dependencies": [],
+    "collection": "extra",
+    "legacySnippets": true
   },
   {
     "module": "ModuloInteger",
-    "path": "src/Math/MathPackage/ModuloInteger",
-    "dependencies": []
+    "path": "src/core/Math/ModuloInteger",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "MultipleBackpacks",
-    "path": "src/DynamicProgramming/MultipleBackpacks",
-    "dependencies": []
+    "path": "src/core/DynamicProgramming/MultipleBackpacks",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "NumberTheoreticTransform",
-    "path": "src/Math/Polynomial/NumberTheoreticTransform",
+    "path": "src/core/Math/NumberTheoreticTransform",
     "dependencies": [
       "ModuloInteger"
     ],
-    "include": "src/Math/Polynomial/NumberTheoreticTransform/Include.hpp"
+    "include": "src/core/Math/NumberTheoreticTransform/Include.hpp",
+    "collection": "core"
   },
   {
     "module": "PalindromeAutomaton",
-    "path": "src/String/AdvancedStrings/PalindromeAutomaton",
-    "dependencies": []
+    "path": "src/extra/String/PalindromeAutomaton",
+    "dependencies": [],
+    "collection": "extra",
+    "legacySnippets": true
   },
   {
     "module": "PollardRho",
-    "path": "src/Math/RandomNumberAlgorithm/PollardRho",
+    "path": "src/core/Math/PollardRho",
     "dependencies": [
       "MillerRabin"
     ],
-    "include": "src/Math/RandomNumberAlgorithm/PollardRho/Include.hpp"
+    "include": "src/core/Math/PollardRho/Include.hpp",
+    "collection": "core"
   },
   {
     "module": "RandomNumber",
-    "path": "src/Math/RandomNumberAlgorithm/RandomNumber",
-    "dependencies": []
+    "path": "src/extra/Math/RandomNumber",
+    "dependencies": [],
+    "collection": "extra",
+    "legacySnippets": true
   },
   {
     "module": "RingTree",
-    "path": "src/GraphTheory/RingTree",
-    "dependencies": []
+    "path": "src/core/Graph/RingTree",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "SegTree",
-    "path": "src/DataStructures/TreeDataStructures/SegTree",
-    "dependencies": []
+    "path": "src/core/DataStructures/SegTree",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "Sieve",
-    "path": "src/Math/MathPackage/Sieve",
-    "dependencies": []
+    "path": "src/core/Math/Sieve",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "SparseSegTree",
-    "path": "src/DataStructures/TreeDataStructures/SparseSegTree",
-    "dependencies": []
+    "path": "src/core/DataStructures/SparseSegTree",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "RMQ",
-    "path": "src/DataStructures/BaseDataStructures/RMQ",
+    "path": "src/core/DataStructures/RMQ",
     "dependencies": [],
     "aliases": [
       "SparseTable"
@@ -253,70 +305,223 @@
     "prefixes": [
       "_T_RMQ",
       "_T_SparseTable"
-    ]
+    ],
+    "collection": "core"
   },
   {
     "module": "StringHash",
-    "path": "src/String/StringF4/StringHash",
-    "dependencies": []
+    "path": "src/core/String/StringHash",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "StronglyConnectedComponent",
-    "path": "src/GraphTheory/Connectivity/StronglyConnectedComponent",
-    "dependencies": []
+    "path": "src/core/Graph/StronglyConnectedComponent",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "SuffixArray",
-    "path": "src/String/AdvancedStrings/SuffixArray",
-    "dependencies": []
+    "path": "src/core/String/SuffixArray",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "SuffixAutomaton",
-    "path": "src/String/AdvancedStrings/SuffixAutomaton",
-    "dependencies": []
+    "path": "src/core/String/SuffixAutomaton",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "TopSort",
-    "path": "src/GraphTheory/TopSort",
-    "dependencies": []
+    "path": "src/core/Graph/TopSort",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "Tree",
-    "path": "src/TreeTheory/Tree",
-    "dependencies": []
+    "path": "src/core/Tree/Tree",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "TreeMap",
-    "path": "src/DataStructures/TreeDataStructures/TreeMap",
+    "path": "src/core/DataStructures/TreeMap",
     "dependencies": [
       "ListHelper"
     ],
-    "include": "src/DataStructures/TreeDataStructures/TreeMap/Include.hpp"
+    "include": "src/core/DataStructures/TreeMap/Include.hpp",
+    "collection": "core"
   },
   {
     "module": "Trie",
-    "path": "src/DataStructures/TreeDataStructures/Trie",
-    "dependencies": []
+    "path": "src/core/DataStructures/Trie",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "TwoSat",
-    "path": "src/GraphTheory/Connectivity/TwoSat",
+    "path": "src/core/Graph/TwoSat",
     "dependencies": [
       "StronglyConnectedComponent"
     ],
-    "include": "src/GraphTheory/Connectivity/TwoSat/Include.hpp"
+    "include": "src/core/Graph/TwoSat/Include.hpp",
+    "collection": "core"
   },
   {
     "module": "VertexBiconnectedComponent",
-    "path": "src/GraphTheory/Connectivity/VertexBiconnectedComponent",
-    "dependencies": []
+    "path": "src/core/Graph/VertexBiconnectedComponent",
+    "dependencies": [],
+    "collection": "core"
   },
   {
     "module": "ZFunction",
-    "path": "src/String/StringF4/ZFunction",
+    "path": "src/core/String/ZFunction",
     "dependencies": [],
     "aliases": [
       "Z-Function"
-    ]
+    ],
+    "collection": "core"
+  },
+  {
+    "module": "ExCrt",
+    "path": "src/extra/Math/ExCrt",
+    "collection": "extra",
+    "dependencies": []
+  },
+  {
+    "module": "EnumComb",
+    "path": "src/extra/Math/EnumComb",
+    "collection": "extra",
+    "dependencies": []
+  },
+  {
+    "module": "RangePrimeCount",
+    "path": "src/extra/Math/RangePrimeCount",
+    "collection": "extra",
+    "dependencies": []
+  },
+  {
+    "module": "MonotonyStack",
+    "path": "src/extra/DataStructures/MonotonyStack",
+    "collection": "extra",
+    "dependencies": []
+  },
+  {
+    "module": "WeightedDisjointSetUnion",
+    "path": "src/extra/DataStructures/WeightedDisjointSetUnion",
+    "collection": "extra",
+    "dependencies": []
+  },
+  {
+    "module": "DecareTree",
+    "path": "src/extra/Tree/DecareTree",
+    "collection": "extra",
+    "dependencies": []
+  },
+  {
+    "module": "BiGraphColor",
+    "path": "src/extra/Graph/BiGraphColor",
+    "collection": "extra",
+    "dependencies": []
+  },
+  {
+    "module": "PartialOrder3D",
+    "path": "src/extra/Sequence/PartialOrder3D",
+    "collection": "extra",
+    "dependencies": [
+      "FenwickTree"
+    ],
+    "include": "src/extra/Sequence/PartialOrder3D/Include.hpp"
+  },
+  {
+    "module": "BitRMQ",
+    "path": "src/extra/DataStructures/BitRMQ",
+    "collection": "extra",
+    "dependencies": []
+  },
+  {
+    "module": "RangeBIT",
+    "path": "src/extra/DataStructures/RangeBIT",
+    "collection": "extra",
+    "dependencies": [
+      "FenwickTree"
+    ],
+    "include": "src/extra/DataStructures/RangeBIT/Include.hpp"
+  },
+  {
+    "module": "MatBIT",
+    "path": "src/extra/DataStructures/MatBIT",
+    "collection": "extra",
+    "dependencies": [
+      "FenwickTree"
+    ],
+    "include": "src/extra/DataStructures/MatBIT/Include.hpp"
+  },
+  {
+    "module": "RangeMatBIT",
+    "path": "src/extra/DataStructures/RangeMatBIT",
+    "collection": "extra",
+    "dependencies": [
+      "MatBIT"
+    ],
+    "include": "src/extra/DataStructures/RangeMatBIT/Include.hpp"
+  },
+  {
+    "module": "LiChaoTree",
+    "path": "src/extra/DataStructures/LiChaoTree",
+    "collection": "extra",
+    "dependencies": []
+  },
+  {
+    "module": "TreeDiameter",
+    "path": "src/extra/Tree/TreeDiameter",
+    "collection": "extra",
+    "dependencies": []
+  },
+  {
+    "module": "TreeHash",
+    "path": "src/extra/Tree/TreeHash",
+    "collection": "extra",
+    "dependencies": []
+  },
+  {
+    "module": "DirectedEulerRoad",
+    "path": "src/extra/Graph/DirectedEulerRoad",
+    "collection": "extra",
+    "dependencies": []
+  },
+  {
+    "module": "UndirectedEulerRoad",
+    "path": "src/extra/Graph/UndirectedEulerRoad",
+    "collection": "extra",
+    "dependencies": []
+  },
+  {
+    "module": "PolarTwoPointer",
+    "path": "src/extra/Geometry/PolarTwoPointer",
+    "collection": "extra",
+    "dependencies": [
+      "Geo2"
+    ],
+    "include": "src/extra/Geometry/PolarTwoPointer/Include.hpp"
+  },
+  {
+    "module": "ClosestPair",
+    "path": "src/extra/Geometry/ClosestPair",
+    "collection": "extra",
+    "dependencies": [
+      "Geo2"
+    ],
+    "include": "src/extra/Geometry/ClosestPair/Include.hpp"
+  },
+  {
+    "module": "DelaunayTriangulation",
+    "path": "src/extra/Geometry/DelaunayTriangulation",
+    "collection": "extra",
+    "dependencies": [
+      "Geo2"
+    ],
+    "include": "src/extra/Geometry/DelaunayTriangulation/Include.hpp"
   }
 ]

@@ -13,11 +13,13 @@ from tools.Console import Console
 HELP = '''Capps Template Library
 
   ctl update --yuque   更新语雀文档
+    --collection core|extra  选择语雀目标（默认 core）
   ctl update --local   安装本地 VS Code snippets
   ctl rule            严格检查模板规则
   ctl test --right    正确性测试（严格编译 / 优化 / Sanitizer）
   ctl test --perf     性能测试
   ctl test --all      正确性和性能测试
+    --collection core|extra  选择集合及传递依赖（默认全仓）
 
 配置：tools/__init__.py；Token：.yuque/token 或 YUQUE_TOKEN。
 任意工作目录均可调用；测试报告：.cache/reports/Verification.md；编译缓存：.cache/compiled/。
@@ -32,6 +34,7 @@ def parser():
     group = update.add_mutually_exclusive_group(required=True)
     group.add_argument('--yuque', action='store_true', help='更新语雀文档')
     group.add_argument('--local', action='store_true', help='安装 VS Code snippets')
+    update.add_argument('--collection', choices=('core', 'extra'), default='core', help='语雀目标集合；本地 snippets 仅支持 core')
     commands.add_parser('rule', help='严格检查模板规则')
     test = commands.add_parser('test', help='正确性或性能测试')
     group = test.add_mutually_exclusive_group(required=True)
@@ -39,6 +42,7 @@ def parser():
     group.add_argument('--perf', action='store_true', help='性能测试')
     group.add_argument('--all', action='store_true', help='两种测试都执行')
     test.add_argument('--module', action='append', help='选择模块，可重复传入')
+    test.add_argument('--collection', choices=('core', 'extra'), help='选择集合，默认全部；包含传递依赖')
     test.add_argument('--case', help='复现 case：完整 ID 或模块内名称（正确性）')
     test.add_argument('--profile', choices=('strict', 'optimized', 'sanitized'), help='局部编译模式（正确性）')
     test.add_argument('--seed', type=int, help='复现随机种子')
@@ -168,10 +172,18 @@ def main(argv=None):
                 raise ValueError('--case/--profile 需要 --right 或 --all')
             if args.seed is not None and args.seed < 0:
                 raise ValueError('种子须为非负整数')
-            fields = ('TEST_MODULES', 'TEST_CASE', 'RIGHT_PROFILES', 'RIGHT_SEED', 'PERF_SEED')
+            fields = ('TEST_MODULES', 'TEST_COLLECTION', 'TEST_CASE', 'RIGHT_PROFILES', 'RIGHT_SEED', 'PERF_SEED')
             previous = {key: getattr(config, key) for key in fields}
             try:
-                if args.module: config.TEST_MODULES = tuple(args.module)
+                if args.collection:
+                    from tools.Catalog import manifest
+                    eligible = manifest(args.collection, dependencies=True)
+                    if args.module and set(args.module) - set(eligible):
+                        raise ValueError('--module 不在所选集合及其依赖内')
+                    config.TEST_COLLECTION = args.collection
+                    config.TEST_MODULES = tuple(args.module or eligible)
+                elif args.module:
+                    config.TEST_MODULES = tuple(args.module)
                 if args.case: config.TEST_CASE = args.case
                 if args.profile: config.RIGHT_PROFILES = (args.profile,)
                 if args.seed is not None: config.RIGHT_SEED = config.PERF_SEED = args.seed
@@ -180,9 +192,11 @@ def main(argv=None):
             finally:
                 for key, value in previous.items(): setattr(config, key, value)
         if args.local:
+            if args.collection != 'core':
+                raise ValueError('extra 不维护 snippets；--local 仅支持 core')
             return update_local(console)
         from tools.Publisher import publish
-        result = publish(console)
+        result = publish(console, collection=args.collection)
         console.finish('语雀文档已更新并验证' if result['applied'] else '语雀文档已是最新，无需写入')
         return 0
     except KeyboardInterrupt:

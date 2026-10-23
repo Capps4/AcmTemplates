@@ -4,7 +4,7 @@
 
 ## 适用范围与判定
 
-现用算法实现由 Manifest.json 确定，包括 code.hpp、Geo2 的四层源码、直接前置 Include.hpp 和 Headers 头。测试及工具沿用各自语言和职责的命名习惯；仅在算法接口变化确实需要时修改引用。算法放 src/，公共头放根目录 Headers/，正确性放 tests/Correctness/，性能放 tests/Performance/，工具放 tools/。
+现用算法实现由 Manifest.json 确定，包括 code.hpp、Geo2 的四层源码、直接前置 Include.hpp 和 Headers 头。测试及工具沿用各自语言和职责的命名习惯；仅在算法接口变化确实需要时修改引用。算法按 src/core/<分类>/<模块>/ 与 src/extra/<分类>/<模块>/ 维护，公共头放根目录 Headers/，正确性放 tests/Correctness/，性能放 tests/Performance/，工具放 tools/。
 
 - **error（确定违规）**：例如逻辑 `||`、公共头入口错误、本仓 include 丢失、严格编译参数缺失或被降低，必须修复。
 - **review（待审候选）**：长名、压行、typedef、模板判断和 `&&`。先区分公共接口/局部名字、语法及所有权，再修复或记录保留理由。候选数量不是违规数量。
@@ -12,6 +12,8 @@
 - **R00（过期审查）**：候选消失或其代码指纹变化时，旧记录不能继续使用。重新检查含义后更新，已删除的候选移除记录。不得整批接受新候选或只刷新指纹。
 
 检查入口为 `ctl rule`，完整报告保存到 `.cache/reports/Rules.json`。错误和未处理的审查候选均返回非零。扫描结果不替代语义审查及运行验证。
+
+core 与 extra 采用同等验收标准，仅 core 生成 Snippet。Manifest 是唯一集合与依赖来源；core 不得依赖或 include extra，extra 可依赖两套模块，所有依赖无环。测试按源码相对 src 的路径镜像；框架、伪代码与公式留在 ExtraLibrary.md 的说明部分，不登记可编译模块。
 
 ## R01 正确性优先
 
@@ -101,7 +103,7 @@ tools/__init__.py 的 strict 配置包含这些参数，并保留诊断用的 `-
 
 标准头入口为 Headers/Headers.hpp，其同目录 Std.hpp 为 Clang 等环境提供标准头清单。有模块依赖时，code.hpp 先 include 本模块 Include.hpp，前置层仅包含直接依赖；无依赖时直接使用公共入口。Geo2 保留 PointVec→SegLine→PolygonConvex→Circle 的源码链，由 PointVec 引入 Include.hpp。
 
-现用头必须有 pragma once，本仓引号 include 应存在且留在本仓范围内。禁止靠本机绝对路径或间接的无关模块补头文件。新增依赖同步更新 Manifest；扫描记录不代替跨翻译单元编译。
+现用头必须有 pragma once，本仓引号 include 应存在且留在本仓范围内；跨模块直接 include 必须登记为直接依赖，集合边界同样适用于实际 include。禁止靠本机绝对路径或间接的无关模块补头文件。新增依赖同步更新 Manifest；扫描记录不代替跨翻译单元编译。
 
 ## 模块实现约束
 

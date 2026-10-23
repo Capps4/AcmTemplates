@@ -10,6 +10,7 @@ from tools.Catalog import ROOT, catalog, code_of
 
 MARKER = re.compile(r'<!--\s*@(code|tool)\s+([^\s]+)\s*-->\s*\Z')
 from tools import DOCUMENT, RENDER_SETTINGS as CONFIG
+import tools as repository
 
 
 def markdown_parser():
@@ -40,8 +41,9 @@ def markdown_parser():
     return md
 
 
-def settings():
-    return json.loads(CONFIG.read_text(encoding='utf-8'))
+def settings(collection='core'):
+    path = CONFIG if collection == 'core' else repository.EXTRA_RENDER_SETTINGS
+    return json.loads(path.read_text(encoding='utf-8'))
 
 
 def stable_id(kind, key):
@@ -64,16 +66,45 @@ def code_card(key, code, mode, config):
     return card(data)
 
 
-def build(source=None, config=None, require_all=True):
+def build(source=None, config=None, require_all=True, collection='core'):
     """Return generated Markdown/Lake and provenance. Purely local; never publishes."""
-    source = DOCUMENT if source is None else Path(source)
-    config = settings() if config is None else config
+    if collection not in ('core', 'extra'):
+        raise ValueError('Unknown collection: ' + collection)
+    source = (DOCUMENT if collection == 'core' else repository.EXTRA_DOCUMENT) if source is None else Path(source)
+    config = settings(collection) if config is None else config
     text = source.read_text(encoding='utf-8')
+    raw_text = text
+    paths = catalog(collection=collection)
+    source_hashes = {'Manifest.json': hashlib.sha256(repository.MANIFEST.read_bytes()).hexdigest()}
+
+    def readme(match):
+        name = match.group(1)
+        item = next((v for v in paths.values() if v['module'] == name), None)
+        if item is None:
+            raise ValueError('找不到模块说明：' + name)
+        path = item['path'].parent / 'README.md'
+        body = path.read_text(encoding='utf-8')
+        source_hashes[str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
+        body = re.sub(r'\A# [^\n]*\n', '', body).strip()
+        # Repository-relative links are meaningful in the module README. The
+        # published document keeps their labels; external links stay clickable.
+        body = re.sub(r'\[([^\]]+)\]\(([^)]+)\)',
+                      lambda m: m[0] if '://' in m[2] or m[2].startswith('#') else m[1], body)
+        body = re.sub(r'^(#{2,5}) ', r'\1# ', body, flags=re.M)
+        return body
+
     md = markdown_parser()
+    lines = text.splitlines(keepends=True)
+    for token in reversed(md.parse(text)):
+        if token.type == 'html_block':
+            match = re.fullmatch(r'<!--\s*@readme\s+([^\s]+)\s*-->', token.content.strip())
+            if match:
+                start, end = token.map
+                lines[start:end] = [readme(match) + '\n']
+    text = ''.join(lines)
     tokens = md.parse(text)
-    paths, seen, replacements, heading_ids = catalog(), set(), [], set()
+    seen, replacements, heading_ids = set(), [], set()
     headings = []
-    source_hashes = {}
     # Only standalone HTML comment tokens are directives. Examples in fences stay literal.
     for i, token in enumerate(tokens):
         if token.type == 'html_block':
@@ -97,6 +128,8 @@ def build(source=None, config=None, require_all=True):
                     code = path.read_text(encoding='utf-8')
                     sources = [path]
                 elif key == 'SnippetInstaller':
+                    if collection != 'core':
+                        raise ValueError('extra does not generate snippets or installers')
                     from tools.Fetcher import standalone
                     result = standalone()
                     code, sources = result['code'], result['sources']
@@ -158,9 +191,7 @@ def build(source=None, config=None, require_all=True):
     for (start, end), value in reversed(replacements):
         lines[start:end] = [value]
     expanded = ''.join(lines)
-    provenance = {'templates': len(seen), 'sourceSha256': source_hashes,
-                  'documentSha256': hashlib.sha256(text.encode()).hexdigest(),
+    provenance = {'collection': collection, 'templates': len(seen), 'sourceSha256': source_hashes,
+                  'documentSha256': hashlib.sha256(raw_text.encode()).hexdigest(),
                   'configSha256': hashlib.sha256(json.dumps(config, sort_keys=True).encode()).hexdigest()}
     return {'markdown': expanded, 'lake': lake, 'provenance': provenance}
-
-

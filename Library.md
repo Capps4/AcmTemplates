@@ -1,5 +1,7 @@
 # 1. Math
+
 ## MathPackage
+
 ### Sieve
 <!-- @code Sieve -->
 
@@ -12,7 +14,7 @@
 ### FloatPointNumber
 <!-- @code FloatPointNumber -->
 
-### ExGcd 
+### ExGcd
 <!-- @code ExGcd -->
 
 For the equation$ ax+by=c $, invoking exgcd, get $ x_0 $and$ y_0 $ such that $ ax_0+by_0=\gcd(a, b) $.
@@ -25,23 +27,13 @@ $ x = x_0 \times \frac{c}{\gcd(a, b)}+k\times \frac{b}{\gcd(a, b)}
 y = y_0 \times \frac{c}{\gcd(a, b)}-k\times \frac{a}{\gcd(a, b)}
  $
 
-## Polynomial
-### FastFourierTransform
-<!-- @code FastFourierTransform -->
-
-### NumberTheoreticTransform
+## NumberTheoreticTransform
 <!-- @code NumberTheoreticTransform -->
 
-## Linear Algebra
-### GaussianElimination
-<!-- @code GaussianElimination -->
-
-### LinearBasis
+## LinearBasis
 <!-- @code LinearBasis -->
 
 ## Random Number Algorithm
-### RandomNumber
-<!-- @code RandomNumber -->
 
 ### MillerRabin
 <!-- @code MillerRabin -->
@@ -56,23 +48,19 @@ otherwise return a random factor of$ n $in$ [2,n-1] $.
 Time complexity:$ O(n^{\frac{1}{4}}\log n) $, but fast as$ O(n^{\frac{1}{4}}) $.
 
 # 2. Dynamic Programming
+
 ## MultipleBackpacks
 <!-- @code MultipleBackpacks -->
 
 # 3. Sorting
-## CountingSortOrder
-<!-- @code CountingSortOrder -->
 
 ## Discreter
 <!-- @code Discreter -->
 
-## MoSort
-<!-- @code MoSort -->
-
-In mo processing, use #define add(x) & del(x) for atomic operator.
-
 # 4. String
+
 ## String F4
+
 ### StringHash
 <!-- @code StringHash -->
 
@@ -85,29 +73,21 @@ In mo processing, use #define add(x) & del(x) for atomic operator.
 ### Manacher
 <!-- @code Manacher -->
 
-### MinimalString
-<!-- @code MinimalString -->
-
 ## Advanced Strings
+
 ### AcAutomaton
 <!-- @code AcAutomaton -->
 
 ### SuffixAutomaton
 <!-- @code SuffixAutomaton -->
 
-### ExSuffixAutomaton
-<!-- @code ExSuffixAutomaton -->
-
-### PalindromeAutomaton
-<!-- @code PalindromeAutomaton -->
-
 ### SuffixArray
 <!-- @code SuffixArray -->
 
-
-
 # 5. DataStructures
+
 ## BaseDataStructures
+
 ### HashMap
 <!-- @code HashMap -->
 
@@ -117,10 +97,8 @@ In mo processing, use #define add(x) & del(x) for atomic operator.
 ### RMQ
 <!-- @code RMQ -->
 
-### DeletableHeap
-<!-- @code DeletableHeap -->
-
 ## TreeDataStructures
+
 ### TreeMap
 <!-- @code TreeMap -->
 
@@ -137,13 +115,12 @@ In mo processing, use #define add(x) & del(x) for atomic operator.
 <!-- @code SparseSegTree -->
 
 # 6. Tree Theory
+
 ## Tree
 <!-- @code Tree -->
 
-## CentroidDecomposition
-<!-- @code CentroidDecomposition -->
-
 # 7. Graph Theory
+
 ## GridUtil
 <!-- @code GridUtil -->
 
@@ -157,6 +134,7 @@ In mo processing, use #define add(x) & del(x) for atomic operator.
 <!-- @code TopSort -->
 
 ## Connectivity
+
 ### StronglyConnectedComponent
 <!-- @code StronglyConnectedComponent -->
 
@@ -170,6 +148,7 @@ In mo processing, use #define add(x) & del(x) for atomic operator.
 <!-- @code EdgeBiconnectedComponent -->
 
 ## Flow
+
 ### MaxFlow
 <!-- @code MaxFlow -->
 
@@ -207,7 +186,9 @@ After running the max flow work:
 This minimum cost flow doesn't support negative cost **cycles**. However, meeting negative cost cycles are extremely rare, and it can handle negative **edge** weights.
 
 # 8. Geometry
+
 ## Geo2
+
 ### PointVec
 <!-- @code Geo2/PointVec -->
 
@@ -220,30 +201,28 @@ This minimum cost flow doesn't support negative cost **cycles**. However, meetin
 ### Circle
 <!-- @code Geo2/Circle -->
 
-## Geo3
-<!-- @code Geo3 -->
-
 # 9. Clarketech
-### ListHelper
+
+## ListHelper
 <!-- @code ListHelper -->
 
-### Debuger
+## Debuger
 <!-- @code Debuger -->
 
-### DebugerCore
+## DebugerCore
 Copy it to the tail of `bits/stdc++.h`.
 
 <!-- @code DebugerHeadCopyToBitsStdC++ -->
 
-### FastInputOutput
+## FastInputOutput
 <!-- @code FastInputOutput -->
 
-# last. CTL
-
-### SnippetInstaller
+# last. SnippetInstaller
 
 Save the code below as `install.py` and run it.
 
 Usage tutorial: [Bilibili](https://www.bilibili.com/video/BV1FudhYeE7E/).
 
 <!-- @tool SnippetInstaller -->
+
+Extra templates: [Extra Library](https://www.yuque.com/capps/template/library_extra).

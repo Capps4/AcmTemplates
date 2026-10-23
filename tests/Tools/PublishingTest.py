@@ -67,7 +67,7 @@ class LibraryTest(unittest.TestCase):
 
     def test_complete_library(self):
         result = Library.build()
-        self.assertEqual(result['provenance']['templates'], len(Catalog.catalog()))
+        self.assertEqual(result['provenance']['templates'], len(Catalog.catalog(collection='core')))
         self.assertNotIn('<!-- @code ', result['markdown'])
         self.assertEqual(len(CARD.findall(result['lake'])), sum(t.type == 'fence' for t in Library.markdown_parser().parse(result['markdown'])))
         self.assertIn('id="rNDfs"', result['lake'])
@@ -136,14 +136,14 @@ class LibraryTest(unittest.TestCase):
 class FetcherTest(unittest.TestCase):
     def test_all_snippet_roundtrips(self):
         data = json.loads(json.dumps(Fetcher.snippets()))
-        self.assertEqual(set(data), set(Catalog.catalog()))
+        self.assertEqual(set(data), set(Catalog.catalog(collection='core')))
         for key, entry in data.items():
             body = '\n'.join(entry['body'][:-1]) + '\n'
             raw = re.sub(r'\\([\\$}])', r'\1', body)
             self.assertEqual(raw, Catalog.code_of(Catalog.catalog()[key]['path']))
             self.assertEqual(entry['body'][-1], '$0')
         self.assertNotIn('_T_', [v['prefix'] for v in data.values()])
-        for key, item in Catalog.catalog().items():
+        for key, item in Catalog.catalog(collection='core').items():
             self.assertEqual(Fetcher.prefixes(data[key]), item['prefixes'])
 
     def test_platform_paths(self):
@@ -301,8 +301,8 @@ class PublishTest(unittest.TestCase):
         with patch('tools.Yuque.read_token', return_value=None):
             with self.assertRaisesRegex(YuqueError, 'Token'):
                 YuqueClient()
-            self.assertEqual(set(Fetcher.snippets()), set(Catalog.catalog()))
-            self.assertEqual(Library.build()['provenance']['templates'], len(Catalog.catalog()))
+            self.assertEqual(set(Fetcher.snippets()), set(Catalog.catalog(collection='core')))
+            self.assertEqual(Library.build()['provenance']['templates'], len(Catalog.catalog(collection='core')))
 
     def test_token_redacted_on_auth_failure(self):
         client = object.__new__(YuqueClient);client.token, client.node = 'fake-test-token', 'node'

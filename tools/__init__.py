@@ -7,7 +7,9 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / 'src'
 MANIFEST = ROOT / 'Manifest.json'
 DOCUMENT = ROOT / 'Library.md'
+EXTRA_DOCUMENT = ROOT / 'ExtraLibrary.md'
 RENDER_SETTINGS = ROOT / 'tools/Library.json'  # Stable anchors and card presentation only.
+EXTRA_RENDER_SETTINGS = ROOT / 'tools/ExtraLibrary.json'
 CACHE = ROOT / '.cache'
 REPORTS = CACHE / 'reports'
 GENERATED = CACHE / 'generated'
@@ -19,6 +21,7 @@ MIGRATE_LEGACY_SNIPPETS = True
 SNIPPETS_FILE = 'acm-templates.code-snippets'
 
 YUQUE_DOCUMENT = 'capps/template/library'
+YUQUE_EXTRA_DOCUMENT = 'capps/template/library_extra'
 YUQUE_STATE = ROOT / '.yuque'
 YUQUE_TOKEN = YUQUE_STATE / 'token'  # Never store the token value in this file.
 YUQUE_CLI_VERSION = '1.1.0'
@@ -29,7 +32,8 @@ YUQUE_PROMPT_TOKEN = True
 # After merging remote edits, set this to the exact revision printed by CTL.
 # It acknowledges that snapshot only; clear it after a successful update.
 YUQUE_EXPECTED_REVISION = None
-INITIAL_REVISIONS = {'capps/template/library': '44c53cd4362e24ba599c5ec5f82a6afecc384b276ff7d172bb66e7d50f19b259'}
+YUQUE_EXTRA_EXPECTED_REVISION = None
+INITIAL_REVISIONS = {'capps/template/library': '8ce4a2b78605b7f675568be5dd22acf2b6b83d744654b4a0e71149e7225c7bdc', 'capps/template/library_extra': 'dcf3afa602e110a4dcf3f7b73bf494fa92aba2d62e5c531f455788484fab9276'}
 
 CXX = os.environ.get('CXX') or shutil.which('g++-15') or 'g++'
 SAN_CXX = os.environ.get('SAN_CXX') or shutil.which('clang++') or 'clang++'
@@ -42,6 +46,7 @@ FLAGS = {
 }
 RIGHT_PROFILES = ('strict', 'optimized', 'sanitized')
 TEST_MODULES = None  # None covers every module; a tuple selects a local working scope.
+TEST_COLLECTION = None
 TEST_JOBS = 6
 TEST_RUN_JOBS = 32  # Compiler concurrency stays at TEST_JOBS.
 TEST_CASE = None  # Exact case ID or its module-relative suffix; local reproduction only.

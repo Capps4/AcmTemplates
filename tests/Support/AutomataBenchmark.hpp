@@ -1,9 +1,9 @@
 #pragma once
 #include "BenchmarkSupport.hpp"
-#include "../../src/String/AdvancedStrings/AcAutomaton/code.hpp"
-#include "../../src/String/AdvancedStrings/SuffixAutomaton/code.hpp"
-#include "../../src/String/AdvancedStrings/ExSuffixAutomaton/code.hpp"
-#include "../../src/String/AdvancedStrings/PalindromeAutomaton/code.hpp"
+#include "../../src/core/String/AcAutomaton/code.hpp"
+#include "../../src/core/String/SuffixAutomaton/code.hpp"
+#include "../../src/extra/String/ExSuffixAutomaton/code.hpp"
+#include "../../src/extra/String/PalindromeAutomaton/code.hpp"
 #include <map>
 #include <set>
 

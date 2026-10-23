@@ -5,12 +5,14 @@ Capps Template Library 的唯一命令入口。Python 3.9+。
 | 命令 | 用途 |
 | --- | --- |
 | `ctl --help` | 帮助 |
-| `ctl update --yuque` | 更新语雀完整文档 |
+| `ctl update --yuque --collection core` | 更新 core 语雀文档 |
+| `ctl update --yuque --collection extra` | 更新 extra 语雀文档 |
 | `ctl update --local` | 安装本地 VS Code snippets |
 | `ctl rule` | 严格规则检查 |
 | `ctl test --right` | 正确性测试 |
 | `ctl test --perf` | 性能测试 |
-| `ctl test --all` | 两种测试都执行 |
+| `ctl test --all` | 全仓两种测试都执行 |
+| `ctl test --all --collection extra` | extra 及传递依赖的两种测试 |
 
 更新/规则命令显示阶段；测试每个模板只显示一行结果，失败给出阶段、case、种子与复现命令。终端使用颜色，重定向输出或设置 `NO_COLOR` 时使用普通文本。任意工作目录均可调用。
 
@@ -36,9 +38,11 @@ python3 -m pip install -r tools/requirements.txt
 
 配置集中在 [__init__.py](__init__.py)：
 
+Manifest 为全仓唯一清单；每项声明 `collection: core|extra`，路径必须匹配 `src/<collection>/`。core 禁止依赖 extra；依赖存在且无环。`ctl rule` 同时检查实际 include 的直接依赖和集合边界。
+
 - `SNIPPETS_DIR` / `VSCODE_USER_DATA`：默认自动查找；多候选或自定义目录时配置其中一个。
 - `MIGRATE_LEGACY_SNIPPETS`：自动备份并迁移可识别的旧模板，默认开启。
-- `YUQUE_DOCUMENT`：发布目标；`YUQUE_TOKEN`：Token 文件路径。
+- `YUQUE_DOCUMENT` / `YUQUE_EXTRA_DOCUMENT`：两个固定发布目标；`YUQUE_TOKEN`：Token 文件路径。
 - `CXX` / `SAN_CXX`、`FLAGS`：编译器与严格/优化/Sanitizer 参数；支持环境变量指定编译器。
 - `TEST_MODULES`：默认全库；可配置模块元组作为局部工作范围。
 - `TEST_JOBS`（编译并发默认 6）、`TEST_RUN_JOBS`（正确性运行并发默认 32）、`RIGHT_PROFILES`、`TEST_CASE`、`RIGHT_SEED` / `PERF_SEED`、`TEST_TIMEOUT` / `COMPILE_TIMEOUT`：测试参数。
@@ -55,9 +59,9 @@ ctl update --local
 
 自动查找 macOS、Windows、Linux 的默认 VS Code / Insiders 用户配置、Profiles、便携版与 VS Code Server；WSL 中也会尝试寻找 Windows 配置。snippets 目录尚未创建时会按需创建。交互终端遇到多个候选时输入编号选择；找不到时可输入自定义目录。非交互环境会列出提示，需在 init 中指定 `SNIPPETS_DIR` 或 `VSCODE_USER_DATA`。
 
-只维护 `acm-templates.code-snippets`，个人 snippets 和 `init_`、`init_case` 保留。重复前缀或无法解析的文件会阻止安装。旧模板迁移及受管理文件更新前备份到 `.cache/snippet-backups/`。
+只为 core 维护 `acm-templates.code-snippets`，个人 snippets 和 `init_`、`init_case` 保留。重复前缀或无法解析的文件会阻止安装。旧模板迁移及受管理文件更新前备份到 `.cache/snippet-backups/`。
 
-在 C++ 编辑器输入 `_T_模块名`。兼容前缀由 Manifest 的 `prefixes` 配置；旧文件名由 `aliases` 配置。
+在 C++ 编辑器输入 `_T_模块名`。兼容前缀由 Manifest 的 `prefixes` 配置；旧文件名由 `aliases` 配置。迁入 extra 的原 core 模块保留 `legacySnippets` 历史标记，只用于识别和备份旧文件，不生成 extra Snippet；extra 新导入模块不进入历史删除范围。
 Snippets 只包含模板正文，前置模板按清单和模块 README 插入。
 
 ## 供他人复制运行的安装器
@@ -68,25 +72,23 @@ Snippets 只包含模板正文，前置模板按清单和模块 README 插入。
 
 可用 `--dir` 指定 snippets 目录，或用 `--user-data-dir` 指定 VS Code 用户数据目录。独立脚本的备份保存在系统用户缓存下的 `acm-templates/snippet-backups/`；本地 CTL 继续备份到仓库 `.cache/snippet-backups/`。个人 snippets 与初始化模板保留。
 
-执行 `ctl update --yuque` 时，按已有发布流程自动生成并同步安装器代码卡片。模板或共享安装逻辑更新后，下一次文档生成自动包含变更；用户需重新复制最新脚本以更新。展开后的文档位于 `.cache/generated/Library.md`，根目录 `Library.md` 保留引用标记。
+执行 `ctl update --yuque` 时，按已有发布流程自动生成并同步安装器代码卡片。模板或共享安装逻辑更新后，下一次文档生成自动包含变更；用户需重新复制最新脚本以更新。展开后的 core 文档位于 `.cache/generated/core/Library.md`，根目录 `Library.md` 保留引用标记。
 
 ## 更新语雀
 
-正文、标题和排列顺序维护在根目录 `Library.md`；模板代码维护在 `src/`。用独占一行的标记引用源码：
+正文、标题和排列顺序分别维护在根目录 `Library.md` / `ExtraLibrary.md`，文档目录独立于 `src/core/` / `src/extra/` 的磁盘结构。两份文档均保持简洁，保留原文的短说明、公式与折叠代码卡，core 保留原阅读顺序。SnippetInstaller 仅放在 core 文末；模块契约在仓库 README 中维护，两份文档均不使用 `@readme` 展开。用独占一行的标记引用源码：
 
 ```markdown
 ### 模块名
 
-这里写模块说明。
-
 <!-- @code 模块名 -->
 ```
 
-分层模板使用 `模块名/层名`；模块路径、依赖和有序的 `layers` 在 `Manifest.json`。各层按清单顺序包含前一层，第一层使用模块的 `include` 或公共头入口。每个模板必须引用一次。普通代码围栏用于补充说明，不进入 snippets；`<!-- @tool CTL -->` 展示当前命令入口。
+分层模板使用 `模块名/层名`；模块路径、依赖和有序的 `layers` 在 `Manifest.json`。各层按清单顺序包含前一层，第一层使用模块的 `include` 或公共头入口。所选集合的每个模板必须引用一次，不能引用另一集合的代码卡片。普通代码围栏用于补充说明，不进入 snippets；`<!-- @tool CTL -->` 展示当前命令入口。
 
 `<!-- @tool SnippetInstaller -->` 展示共享安装逻辑与当前模板数据组装的独立安装器。生成来源记录包含安装模块、生成工具、清单及模板源码的指纹，发布前检查来源是否变化。
 
-支持 Markdown 常用结构、表格与公式；原始 HTML 会报错。`Library.json` 只保存标题锚点、卡片 ID 和显示设置。
+支持 Markdown 常用结构、表格与公式；原始 HTML 会报错。`tools/Library.json` / `tools/ExtraLibrary.json` 分别保存标题锚点、卡片 ID 和显示设置。围栏内的示例标记保持字面内容。extra 保留 DigitDP、Block、DsuOnTree 的框架与原公式，不引用 SnippetInstaller。
 
 ```bash
 ctl update --yuque
@@ -94,19 +96,19 @@ ctl update --yuque
 
 需要 Node.js 20+。首次使用会安装固定版本的官方 CLI；缺少 Token 时，在交互终端隐藏输入，非交互环境给出配置提示。Token 在 https://www.yuque.com/settings/tokens 创建，需要文档编辑权限。
 
-流程包括生成正文、认证、检查远端差异和现版测试报告、备份发布、回读验证。生成结果与差异在 `.cache/generated/`；内容不变时跳过写入。更新不会自动运行测试，发布要求全库正确性与性能的有效通过记录。
+流程包括生成正文、认证、检查远端差异和现版集合测试报告、备份发布、回读验证。生成结果与差异在 `.cache/generated/`；内容不变时跳过写入。更新不会自动运行测试，发布要求所选集合及传递依赖的正确性与性能有效通过记录，以及共享工具回归；规则/测试默认仍覆盖全仓。
 
-如果远端被手动修改：先把需要的修改合入 `Library.md`，检查差异文件，再将 init 中的 `YUQUE_EXPECTED_REVISION` 设为输出的精确快照值。成功更新后清空该项。它只确认这一版快照，不自动合并。
+如果远端被手动修改：先把需要的修改合入对应的 `Library.md` / `ExtraLibrary.md`，检查差异文件，再将 init 中的 `YUQUE_EXPECTED_REVISION`（core）或 `YUQUE_EXTRA_EXPECTED_REVISION`（extra）设为输出的精确快照值。成功更新后清空该项。它只确认这一版快照，不自动合并。
 
-备份在 `.yuque/backups/`，发布状态在 `.yuque/publish/`。超时或回读不一致时，写入可能已发生，先检查远端、`after.json` 和备份，避免直接重试。API 读取和写入之间仍存在很短的并发窗口。
+备份在 `.yuque/backups/`，发布状态按目标引用隔离在 `.yuque/publish/`，读写快照分别位于其 `core/` / `extra/` 子目录。超时或回读不一致时，写入可能已发生，先检查远端、对应集合的 `after.json` 和备份，避免直接重试。API 读取和写入之间仍存在很短的并发窗口。
 
 ## 规则与测试
 
 `ctl rule` 严格扫描模板，违规和未处理的候选都返回非零；保留理由在 `RuleExceptions.json`。它不能替代正确性或性能测试。
 
-正确性使用严格调试、优化、ASan/UBSan 三种配置；主入口合并模块内 oracle、边界及回调，仅配置隔离检查保留独立入口。全库范围还运行工具回归。有效编译产物可复用，但每次重新执行测试；证据必须匹配源码、测试数据、依赖、编译器、参数、种子与完整 case 清单。性能先并行编译、并行启动等待中的进程，准备完成后逐个唤醒顺序测量，两档规模、两种形状，每组预热一次、采样三次；同一入口的四组负载合并在一个进程中顺序执行，输入分别重建，峰值 RSS 记录为进程级数据。
+正确性使用严格调试、优化、ASan/UBSan 三种配置；主入口合并模块内 oracle、边界及回调，仅配置隔离检查保留独立入口。全仓或完整集合范围还运行共享工具回归；集合测试包含传递依赖。有效编译产物可复用，但每次重新执行测试；证据必须匹配源码、测试数据、依赖、编译器、参数、种子与完整 case 清单。性能先并行编译、并行启动等待中的进程，准备完成后逐个唤醒顺序测量，两档规模、两种形状，每组预热一次、采样三次；同一入口的四组负载合并在一个进程中顺序执行，输入分别重建，峰值 RSS 记录为进程级数据。
 
-`ctl test --all` 会执行两类测试，即使正确性失败也继续收集性能结果；最终返回失败并保存同一份 `.cache/reports/Verification.md`。只有该测试报告保留，当前二进制及编译元数据保存在 `.cache/compiled/`；对象、依赖文件和临时输出删除；报告内压缩证据继续支撑发布门禁。文档生成、规则报告和其他工作流备份不删除。部分 profile/case 通过不代表完整发布验证通过。
+`ctl test --all` 会执行两类测试，即使正确性失败也继续收集性能结果；最终返回失败并保存同一份 `.cache/reports/Verification.md`。只有该测试报告保留，当前二进制及编译元数据保存在 `.cache/compiled/`；对象、依赖文件和临时输出删除；报告内压缩证据继续支撑发布门禁。文档生成、规则报告和其他工作流备份不删除。部分 profile/case 通过不代表完整发布验证通过；发布只评估目标集合及依赖，报告仍保留全仓记录。共享工具输入变化会使工具回归证据失效。
 
 局部复现示例：
 

@@ -64,6 +64,8 @@ def scan():
     findings = []
     metrics = {}
     inventory = files()
+    modules = manifest()
+    owners = {module_path(name): name for name in modules}
     for path, (module, expected) in inventory.items():
         rel = str(path.relative_to(ROOT))
         text = path.read_text()
@@ -155,6 +157,12 @@ def scan():
             target = (path.parent / include).resolve()
             if not target.is_relative_to(ROOT) or not target.is_file():
                 add('R18', include, 1, 'Missing or external local include', 'error')
+            owner = next((name for folder, name in owners.items() if target.is_relative_to(folder)), None)
+            if owner is not None and owner != module and module in modules:
+                if owner not in modules[module]['dependencies']:
+                    add('R18', include, 1, 'Undeclared direct module dependency', 'error')
+                if modules[module].get('collection', 'core') == 'core' and modules[owner].get('collection', 'core') == 'extra':
+                    add('R18', include, 1, 'core cannot include extra', 'error')
         for (rule, symbol, message, level), numbers in groups.items():
             positions = sorted(set(numbers))
             anchors = [' '.join(WORDS.findall(lines[n - 1])) for n in positions]

@@ -12,7 +12,7 @@ from tools import ROOT, MANIFEST, SNIPPETS_FILE as FILENAME, CACHE
 
 def snippets():
     result = {}
-    for key, item in catalog().items():
+    for key, item in catalog(collection='core').items():
         prefixes = item['prefixes']
         # TextMate escaping first; JSON escaping is handled by json.dumps.
         body = code_of(item['path']).rstrip('\n').replace('\\', '\\\\').replace('$', '\\$').replace('}', '\\}')
@@ -22,7 +22,8 @@ def snippets():
 
 
 def legacy_names():
-    items = list(catalog().values())
+    items = [v for v in catalog().values()
+             if v.get('collection', 'core') == 'core' or v.get('legacySnippets', False)]
     return {item['name'] for item in items} | {alias for item in items for alias in item['aliases']}
 
 
@@ -59,5 +60,5 @@ def standalone():
             "    sys.exit(main(payload['snippets'], payload['legacyNames'], payload['filename']))\n")
     sources = [path, ROOT / 'tools/Fetcher.py', ROOT / 'tools/Catalog.py',
                ROOT / 'tools/__init__.py', MANIFEST]
-    sources.extend(item['path'] for item in catalog().values())
+    sources.extend(item['path'] for item in catalog(collection='core').values())
     return {'code': code, 'sources': sources}

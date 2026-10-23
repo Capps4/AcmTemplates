@@ -10,7 +10,11 @@ ctl test --right --module SegTree --case orderedMerge --profile optimized --seed
 ctl test --right --module Geo2 --case dense-conditioning --profile optimized
 ```
 
-`Correctness/` 按 src 层级维护模块用例。覆盖清单在 [Cases.json](Correctness/Cases.json)，每项记录风险、oracle、算法头和源码位置；没有最低 case 数量。小规模穷举、固定种子随机与手工回归分别验证契约、状态转换和已知故障。相同 API/风险的重复规模不另计覆盖。
+`Correctness/` 和 `Performance/` 按 src 层级镜像，均包含 core/extra 集合及统一算法分类。两套算法遵守相同的严格编译、oracle、边界和性能要求；没有因 extra 身份而降低要求。
+
+`ctl test --all` 默认覆盖全仓；`--collection core|extra` 选择集合及传递依赖，完整集合范围同时执行共享工具回归。发布按目标集合及依赖核对现版证据，单一报告继续保存全仓记录。
+
+`Correctness/` 维护模块用例。覆盖清单在 [Cases.json](Correctness/Cases.json)，每项记录风险、oracle、算法头和源码位置；没有最低 case 数量。小规模穷举、固定种子随机与手工回归分别验证契约、状态转换和已知故障。相同 API/风险的重复规模不另计覆盖。
 
 `Test.cpp` 包含核心 oracle、边界与回调用例。`TestExtra*.cpp` 与主入口一起链接，仅用于实际需要跨翻译单元共享状态的 RandomNumber、FloatPointNumber、StringHash。`TestCase*.cpp` 独立编译，只保留需要独立宏配置、类型/数值边界或头文件包含环境的检查。Demo 保留为可阅读示例，其必要行为归入主入口；Trie 直接复用 demo 查询函数。SegTree 默认 Info/Tag 宏重命名检查保留独立入口。
 
@@ -35,3 +39,9 @@ ctl test --right --module Geo2 --case dense-conditioning --profile optimized
 测试报告保存在 `.cache/reports/Verification.md`，编译产物保存在 `.cache/compiled/`，每个测试入口只保留当前版本。缓存核对源码、依赖、编译器、参数、环境及二进制指纹；文件指纹按 mtime、ctime、大小、inode 和设备号更新，同一阶段去重，测试结束重新校验实际依赖；源码变化或损坏时重新编译。每次重新执行正确性 case 和性能采样，不复用 PASS 或测量结果。报告包含简表、失败详情和压缩的机器证据供发布门禁核对。除当前编译缓存外，对象、dep 文件和临时输出在正常结束、失败及可处理的中断后删除；SIGKILL/断电可能遗留的测试临时目录在下次持锁运行时清理。旧测试 build/benchmarks、历史日志和旧 JSON 报告随新报告保存后清理；文档生成、规则报告、snippets 和语雀备份保留。全库/局部测试都使用同一份报告，局部执行替换所选模块记录，不能保留旧的其他 profile 来凑出完整通过。
 
 测试命令受 `.cache/.test.lock` 串行保护，锁文件保留以维持等待者使用的 inode。`ctl test --all` 在正确性失败后仍收集性能结果。运行中的记录先标为未完成，避免中断后继续沿用旧通过记录。详细命令与发布边界见 [CTL 说明](../tools/README.md)。
+
+## 本次接入的覆盖
+
+extra 原有内容中 20 个独立算法已接入正确性和两档/两种形状的性能入口；DigitDP、Block、DsuOnTree 是题目相关框架说明，不计入编译模块。现版验收状态以 `.cache/reports/Verification.md` 的源码、编译参数及硬件指纹为准；超过工作量目标的项目仍需单独校准。
+
+迁移回归额外检查全仓引号 include 的可解析性，以及两份文档的模块归属、完整覆盖和重复引用拒绝。算法用例补强了 LiChaoTree 的 min/max 独立包络与真实交叉线、WeightedDSU 的反向合并和 BFS 势差、两种 Euler 的精确类型与边消费、Delaunay 的内点及完整空圆三角形集合、TreeHash 的固定碰撞回归和 200 种小规模有根树结构对照。Delaunay 性能场景仍为凸位置抛物线的顺序/乱序插入，内点覆盖目前属于正确性测试。

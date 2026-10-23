@@ -111,7 +111,8 @@ class YuqueClient:
 
     def update(self, ref, body_file, base):
         # Only the configured target is writable; callers cannot pass an arbitrary page.
-        if parse_ref(ref) != parse_ref(config.YUQUE_DOCUMENT) or not base:
+        targets = (config.YUQUE_DOCUMENT, config.YUQUE_EXTRA_DOCUMENT)
+        if parse_ref(ref) not in {parse_ref(target) for target in targets} or not base:
             raise YuqueError('发布目标必须匹配 tools/__init__.py，并提供远端快照。', 2)
         current = self.get(ref)
         if base.get('id') != current['id'] or base.get('_yuque', {}).get('revision') != current['_yuque']['revision']:

@@ -29,9 +29,10 @@ def read_evidence():
         return {}
 
 
-def collect(evidence=None):
+def collect(evidence=None, collection=None):
     evidence = read_evidence() if evidence is None else evidence
-    modules, items = manifest(), catalog()
+    modules = manifest(collection, dependencies=True)
+    items = catalog(modules)
     state = {r['id']: r for r in evidence.get('right', [])}
     benchmarks = {r['id']: r for r in evidence.get('perf', [])}
     actual_digests = include_digests([*state.values(), *benchmarks.values()])
@@ -48,6 +49,8 @@ def collect(evidence=None):
     except (OSError, ValueError, KeyError):
         cases = []
         errors.append('正确性覆盖清单缺失或无效')
+    if collection is not None:
+        cases = [c for c in cases if c['module'] in modules]
     counts = Counter(c['header'] for c in cases)
     if set(counts) != {str(item['path'].relative_to(ROOT)) for item in items.values()}:
         errors.append('覆盖清单与算法头不一致')
@@ -89,7 +92,7 @@ def collect(evidence=None):
     tools_ok = not tools_inputs() or 'Tools/right' in valid
     if not tools_ok:
         errors.append('工具回归缺失、失败或过期：Tools/right')
-    failures = [r for r in [*state.values(), *benchmarks.values()] if r.get('status') != 'passed' and not (r.get('status') == 'skipped' and benchmark_current(r))]
+    failures = [r for r in [*state.values(), *benchmarks.values()] if r['module'] in {*modules, 'Tools', 'Selection'} and r.get('status') != 'passed' and not (r.get('status') == 'skipped' and benchmark_current(r))]
     over_budget = [r['name'] + ': right=' + format(r['correctnessMs']['optimized'], '.2f') + 'ms, perf=' + format(r['performanceMs'], '.2f') + 'ms'
                    for r in rows if (r['right'] and r['correctnessMs']['optimized'] > config.CORRECTNESS_TARGET_MS[1]) or
                    (r['perf'] and r['performanceMs'] > config.PERFORMANCE_TARGET_MS[1])]
@@ -157,7 +160,7 @@ def cleanup_legacy():
                 shutil.rmtree(path)
 
 
-def save(right=None, perf=None):
+def save(right=None, perf=None, collection=None):
     evidence = read_evidence()
     for key, records in (('right', right), ('perf', perf)):
         if records is None:
@@ -179,4 +182,4 @@ def save(right=None, perf=None):
     tmp.replace(dest)
     if right is not None or perf is not None:
         cleanup_legacy()
-    return data, dest
+    return (collect(evidence, collection) if collection is not None else data), dest

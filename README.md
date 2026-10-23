@@ -1,48 +1,51 @@
-[语雀模板库](https://www.yuque.com/capps/template/library)
-
 # ACM Templates
 
-一份持续整理的 C++17 竞赛算法模板库，涵盖数据结构、图论、树论、字符串、数学、几何、排序与动态规划。
+统一维护的 C++17 竞赛模板库：**core 用于常用模板与 VS Code Snippet，extra 用于专题和扩展模板。两者共用规范、依赖管理、正确性和性能验收。**
 
-**源码、说明、测试一起维护。** 语雀文档与 VS Code snippets 由仓库内容生成。
+[语雀 core](https://www.yuque.com/capps/template/library) · [语雀 extra](https://www.yuque.com/capps/template/library_extra)
 
-## 使用模板
+## 使用
 
-按分类浏览 [src/](src/)，每个模块的 README 说明用法、边界与复杂度；现用实现通常在 `code.hpp`，Geo2 按几何层次拆分。
+按 [src/core/](src/core/) 和 [src/extra/](src/extra/) 浏览模块；每个 README 说明支持域、索引、区间、复杂度与依赖。
 
 ```cpp
-#include "src/DataStructures/TreeDataStructures/FenwickTree/code.hpp"
+#include "src/core/DataStructures/FenwickTree/code.hpp"
 ```
 
-也可以安装到 VS Code，在 C++ 文件中输入 `_T_模块名` 插入模板；有前置依赖时按模块说明一并插入。
+core 的 VS Code 前缀保持 `_T_模块名`；已有兼容前缀继续保留。extra 不生成 Snippet。迁出的 11 项会从受管理 Snippet 集合移除，旧独立模板文件先备份再迁移；个人 Snippet 和初始化模板保留。
 
-## 常用命令
+## 命令
 
-`ctl` 是 Capps Template Library 的统一入口，需要 Python 3.9+。安装方式见 [工具说明](tools/README.md)；未安装时可在仓库根目录使用 `./ctl`。
+`ctl` 需要 Python 3.9+；未安装时在仓库根目录使用 `./ctl`。
 
 ```bash
-ctl --help          # 查看帮助
-ctl update --local  # 自动定位并安装 VS Code snippets
-ctl update --yuque  # 生成并更新语雀文档
-ctl rule            # 检查模板规则
-ctl test --right    # 正确性测试
-ctl test --perf     # 性能测试
-ctl test --all      # 两种测试都执行
+ctl update --local
+ctl update --yuque --collection core
+ctl update --yuque --collection extra
+ctl rule
+ctl test --all
+ctl test --all --collection core
+ctl test --all --collection extra
+ctl test --right --module Tree --case chain --profile optimized
 ```
 
-统一配置在 [tools/__init__.py](tools/__init__.py)。语雀更新需要 Token 和有效的全库测试记录；Token 单独保存在忽略的 `.yuque/token`，或通过 `YUQUE_TOKEN` 环境变量提供。
+规则检查和未指定集合的测试覆盖全仓；指定集合的测试包括传递依赖，并保留共享工具回归。语雀发布检查对应集合及依赖的现版正确性、性能和工具证据，不自动启动测试。配置在 [tools/__init__.py](tools/__init__.py)，凭据只放忽略的 `.yuque/token` 或环境变量。
 
-## 仓库结构
+## 结构
 
-| 位置 | 内容 |
+| 路径 | 职责 |
 | --- | --- |
-| [src/](src/) | 算法模板与模块说明 |
-| [Headers/](Headers/) | GCC / Clang 共用的标准头入口 |
-| [Library.md](Library.md) | 语雀正文、分层与源码引用 |
-| [Manifest.json](Manifest.json) | 模块路径、分层及依赖清单 |
-| [tests/](tests/) | 正确性、性能与工具回归用例 |
-| [tools/](tools/) | CTL 的内部实现与配置 |
+| [src/core/](src/core/) | 42 个核心模块，生成 Snippet |
+| [src/extra/](src/extra/) | 31 个扩展模块，不生成 Snippet |
+| [Headers/](Headers/) | 共用标准头入口 |
+| [Manifest.json](Manifest.json) | 全仓唯一模块清单、集合、依赖与分层 |
+| [Library.md](Library.md) / [ExtraLibrary.md](ExtraLibrary.md) | 两份语雀文档的正文与源码引用 |
+| [tests/](tests/) | 按源码集合和分类镜像的正确性、性能测试及共享支持 |
+| [tools/](tools/) | 共用 CTL 执行器与生成/发布逻辑 |
+| [Docs/](Docs/) | 实现规范及 extra 迁移映射 |
 
-生成文件、构建产物与报告保存在忽略的 `.cache/`。
+集合内统一使用 Math、DataStructures、String、Tree、Graph、Geometry、Sequence、DynamicProgramming、Utilities 分类。core 只能依赖 core，extra 可以依赖两套模板，依赖必须无环。示例与伪代码保留在 extra 文档的 Examples and Notes，不计入可编译模块或测试通过数。
 
-[工具说明](tools/README.md) · [测试说明](tests/README.md) · [实现规则](Docs/Rules.md)
+源码、说明、测试一起维护，Git 是唯一内容源；语雀代码卡片与 Snippet 从仓库生成。产物、报告放忽略的 `.cache/`，语雀备份与发布状态放忽略的 `.yuque/`。
+
+[工具说明](tools/README.md) · [测试说明](tests/README.md) · [实现规则](Docs/Rules.md) · [extra 迁移记录](Docs/ExtraMigration.md)

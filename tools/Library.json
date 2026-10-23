@@ -1,315 +1,4 @@
 {
-  "headings": {
-    "1. Math": "a6i3b",
-    "1. Math/MathPackage": "80d6f6b4",
-    "1. Math/MathPackage/Sieve": "ac7c11a9",
-    "1. Math/MathPackage/ModuloInteger": "69c0b657",
-    "1. Math/MathPackage/Combinatorics": "a47kA",
-    "1. Math/MathPackage/FloatPointNumber": "ZMWk8",
-    "1. Math/MathPackage/ExGcd": "ki1fy",
-    "1. Math/Polynomial": "8b9b9392",
-    "1. Math/Polynomial/FastFourierTransform": "p0Hty",
-    "1. Math/Polynomial/NumberTheoreticTransform": "x9bBZ",
-    "1. Math/Linear Algebra": "74659e3e",
-    "1. Math/Linear Algebra/GaussianElimination": "25634846",
-    "1. Math/Linear Algebra/LinearBasis": "D5M3R",
-    "1. Math/Random Number Algorithm": "5599756b",
-    "1. Math/Random Number Algorithm/RandomNumber": "4067b740",
-    "1. Math/Random Number Algorithm/MillerRabin": "51780be9",
-    "1. Math/Random Number Algorithm/PollardRho": "2a0e6bc2",
-    "2. Dynamic Programming": "c46e8dea",
-    "2. Dynamic Programming/MultipleBackpacks": "bc338d83",
-    "3. Sorting": "jySco",
-    "3. Sorting/CountingSortOrder": "cf384e46",
-    "3. Sorting/Discreter": "aFsus",
-    "3. Sorting/MoSort": "TV45X",
-    "4. String": "cb9e5fb0",
-    "4. String/String F4": "FS2nN",
-    "4. String/String F4/StringHash": "eUNpl",
-    "4. String/String F4/Kmp": "567dadb5",
-    "4. String/String F4/Z-Function": "ed84b7ce",
-    "4. String/String F4/Manacher": "237ffca0",
-    "4. String/String F4/MinimalString": "ODLTK",
-    "4. String/Advanced Strings": "M9rbx",
-    "4. String/Advanced Strings/AcAutomaton": "9407a1e0",
-    "4. String/Advanced Strings/SuffixAutomaton": "RmpdO",
-    "4. String/Advanced Strings/ExSuffixAutomaton": "4330dc52",
-    "4. String/Advanced Strings/PalindromeAutomaton": "cUasZ",
-    "4. String/Advanced Strings/SuffixArray": "LHbeT",
-    "5. DataStructures": "LKTD2",
-    "5. DataStructures/BaseDataStructures": "Z8k6X",
-    "5. DataStructures/BaseDataStructures/HashMap": "5d3b92c1",
-    "5. DataStructures/BaseDataStructures/DisjointSetUnion": "kUmj4",
-    "5. DataStructures/BaseDataStructures/RMQ": "GcrNe",
-    "5. DataStructures/BaseDataStructures/DeletableHeap": "f007d20a",
-    "5. DataStructures/TreeDataStructures": "5be3e824",
-    "5. DataStructures/TreeDataStructures/TreeMap": "ihcuc",
-    "5. DataStructures/TreeDataStructures/SegTree": "ec15cfc4",
-    "5. DataStructures/TreeDataStructures/Trie": "JAK5F",
-    "5. DataStructures/TreeDataStructures/FenwickTree": "Hxcmj",
-    "5. DataStructures/TreeDataStructures/SparseSegTree": "440f0c4b",
-    "6. Tree Theory": "LJKxt",
-    "6. Tree Theory/Tree": "ZVO88",
-    "6. Tree Theory/CentroidDecomposition": "RDr69",
-    "7. Graph Theory": "ez7t0",
-    "7. Graph Theory/GridUtil": "TuXVe",
-    "7. Graph Theory/Dijkstra": "ur07d",
-    "7. Graph Theory/RingTree": "NzDoU",
-    "7. Graph Theory/TopSort": "JI2UC",
-    "7. Graph Theory/Connectivity": "LySs0",
-    "7. Graph Theory/Connectivity/StronglyConnectedComponent": "sD3EM",
-    "7. Graph Theory/Connectivity/TwoSat": "gRywk",
-    "7. Graph Theory/Connectivity/VertexBiconnectedComponent": "bKKdd",
-    "7. Graph Theory/Connectivity/EdgeBiconnectedComponent": "AXGB5",
-    "7. Graph Theory/Flow": "vc9GU",
-    "7. Graph Theory/Flow/MaxFlow": "PZfa1",
-    "7. Graph Theory/Flow/CostFlow": "QFNz9",
-    "8. Geometry": "Lvjzp",
-    "8. Geometry/Geo2": "u09afb900181d",
-    "8. Geometry/Geo2/PointVec": "FPRJh",
-    "8. Geometry/Geo2/SegLine": "W0C63",
-    "8. Geometry/Geo2/PolygonConvex": "q247X",
-    "8. Geometry/Geo2/Circle": "kF1TT",
-    "8. Geometry/Geo3": "C418Y",
-    "9. Clarketech": "DuqN0",
-    "9. Clarketech/ListHelper": "afwkF",
-    "9. Clarketech/Debuger": "Ztau5",
-    "9. Clarketech/DebugerCore": "Qn3ff",
-    "9. Clarketech/FastInputOutput": "I9LvY",
-    "last. CTL": "rNDfs"
-  },
-  "cards": {
-    "FastInputOutput": {
-      "search": "FastInputOutput",
-      "id": "wy1FK"
-    },
-    "Debuger": {
-      "search": "debuger",
-      "id": "jenKp"
-    },
-    "ListHelper": {
-      "search": "ListHelper",
-      "id": "dV3qe"
-    },
-    "Geo3": {
-      "search": "geo3",
-      "id": "lK3Re"
-    },
-    "Geo2/Circle": {
-      "search": "Circle",
-      "id": "AICMA"
-    },
-    "Geo2/PolygonConvex": {
-      "search": "PolygonConvex",
-      "id": "fH9cE"
-    },
-    "Geo2/SegLine": {
-      "search": "SegLine",
-      "id": "WFhGr"
-    },
-    "Geo2/PointVec": {
-      "search": "PointVec",
-      "id": "cjnyY"
-    },
-    "CostFlow": {
-      "search": "CostFlow",
-      "id": "Epvx5"
-    },
-    "MaxFlow": {
-      "search": "MaxFlow",
-      "id": "doESE"
-    },
-    "EdgeBiconnectedComponent": {
-      "search": "EdgeBiconnectedComponent",
-      "id": "UsBQi"
-    },
-    "VertexBiconnectedComponent": {
-      "search": "VertexBiconnectedComponent",
-      "id": "RWNX2"
-    },
-    "TwoSat": {
-      "search": "TwoSat",
-      "id": "A5Dmi"
-    },
-    "StronglyConnectedComponent": {
-      "search": "StronglyConnectedComponent",
-      "id": "sWwdD"
-    },
-    "TopSort": {
-      "search": "TopSort",
-      "id": "KQnt7"
-    },
-    "RingTree": {
-      "search": "RingTree",
-      "id": "ga4KW"
-    },
-    "Dijkstra": {
-      "search": "Dijkstra",
-      "id": "bjS1v"
-    },
-    "GridUtil": {
-      "search": "GridUtil",
-      "id": "sLLWC"
-    },
-    "CentroidDecomposition": {
-      "search": "CentroidDecomposition",
-      "id": "JaKgW"
-    },
-    "Tree": {
-      "search": "Tree",
-      "id": "ta9vZ"
-    },
-    "SparseSegTree": {
-      "search": "SparseSegTree",
-      "id": "1fe26ea5"
-    },
-    "FenwickTree": {
-      "search": "Fenwick",
-      "id": "eN4lc"
-    },
-    "Trie": {
-      "search": "Trie",
-      "id": "aNuvs"
-    },
-    "SegTree": {
-      "search": "SegTree",
-      "id": "53bd3779"
-    },
-    "TreeMap": {
-      "search": "TreeMap",
-      "id": "ufxfz"
-    },
-    "DeletableHeap": {
-      "search": "DeletableHeap",
-      "id": "4aa39dfa"
-    },
-    "RMQ": {
-      "search": "SparseTable",
-      "id": "d1ff98a3"
-    },
-    "DisjointSetUnion": {
-      "search": "DisjointSetUnion",
-      "id": "m5iQO"
-    },
-    "HashMap": {
-      "search": "HashMap",
-      "id": "Sfb5n"
-    },
-    "SuffixArray": {
-      "search": "SuffixArray",
-      "id": "al2Lm"
-    },
-    "PalindromeAutomaton": {
-      "search": "PalindromeAutomaton",
-      "id": "b0332f49"
-    },
-    "ExSuffixAutomaton": {
-      "search": "ExSuffixAutomaton",
-      "id": "5ebf983a"
-    },
-    "SuffixAutomaton": {
-      "search": "SuffixAutomaton",
-      "id": "676c1ae4"
-    },
-    "AcAutomaton": {
-      "search": "AcAutomaton",
-      "id": "185427f1"
-    },
-    "MinimalString": {
-      "search": "MinimalString",
-      "id": "FAl0T"
-    },
-    "Manacher": {
-      "search": "Manacher",
-      "id": "3f8b7e2d"
-    },
-    "ZFunction": {
-      "search": "Z-Function",
-      "id": "f6dd1f48"
-    },
-    "Kmp": {
-      "search": "Kmp",
-      "id": "a7e65c66"
-    },
-    "StringHash": {
-      "search": "StringHash",
-      "id": "KbkCd"
-    },
-    "MoSort": {
-      "search": "MoSort",
-      "id": "XiqHL"
-    },
-    "Discreter": {
-      "search": "Discreter",
-      "id": "k16Cu"
-    },
-    "CountingSortOrder": {
-      "search": "CountingSortOrder",
-      "id": "9be54720"
-    },
-    "MultipleBackpacks": {
-      "search": "MultipleBackpacks",
-      "id": "064a772b"
-    },
-    "PollardRho": {
-      "search": "PollardRho",
-      "id": "wdqNW"
-    },
-    "MillerRabin": {
-      "search": "MillerRabin",
-      "id": "lEe7O"
-    },
-    "RandomNumber": {
-      "search": "RandomNumber",
-      "id": "S5krG"
-    },
-    "LinearBasis": {
-      "search": "LinearBasis",
-      "id": "1ff0fb89"
-    },
-    "GaussianElimination": {
-      "search": "GaussianElimination",
-      "id": "2928d4b8"
-    },
-    "NumberTheoreticTransform": {
-      "search": "NumberTheoreticTransform",
-      "id": "9b099fde"
-    },
-    "FastFourierTransform": {
-      "search": "FastFourierTransform",
-      "id": "b703c12c"
-    },
-    "ExGcd": {
-      "search": "ExGcd ",
-      "id": "EujQk"
-    },
-    "FloatPointNumber": {
-      "search": "FloatPointNumber",
-      "id": "m7Jky"
-    },
-    "Combinatorics": {
-      "search": "Combinatorics",
-      "id": "kj9tX"
-    },
-    "ModuloInteger": {
-      "search": "ModuloInteger",
-      "id": "eG9j0"
-    },
-    "Sieve": {
-      "search": "Sieve",
-      "id": "4749e9ee"
-    },
-    "DebugerHeadCopyToBitsStdC++": {
-      "search": "copy to bits/stdc++.h",
-      "theme": "Darcula",
-      "id": "agQ2Y"
-    },
-    "tool/CTL": {
-      "search": "CTL",
-      "id": "rWAzU",
-      "name": "CTL"
-    }
-  },
   "cardDefaults": {
     "__spacing": "both",
     "margin": {
@@ -430,5 +119,1039 @@
     "\\in": [
       "qNMnV"
     ]
+  },
+  "headings": {
+    "1. Math": "a6i3b",
+    "1. Math/MathPackage": "80d6f6b4",
+    "1. Math/MathPackage/Sieve": "ac7c11a9",
+    "1. Math/MathPackage/ModuloInteger": "69c0b657",
+    "1. Math/MathPackage/Combinatorics": "a47kA",
+    "1. Math/MathPackage/FloatPointNumber": "ZMWk8",
+    "1. Math/MathPackage/ExGcd": "ki1fy",
+    "1. Math/NumberTheoreticTransform": "x9bBZ",
+    "1. Math/LinearBasis": "D5M3R",
+    "1. Math/Random Number Algorithm": "5599756b",
+    "1. Math/Random Number Algorithm/MillerRabin": "51780be9",
+    "1. Math/Random Number Algorithm/PollardRho": "2a0e6bc2",
+    "2. Dynamic Programming": "c46e8dea",
+    "2. Dynamic Programming/MultipleBackpacks": "bc338d83",
+    "3. Sorting": "jySco",
+    "3. Sorting/Discreter": "aFsus",
+    "4. String": "cb9e5fb0",
+    "4. String/String F4": "FS2nN",
+    "4. String/String F4/StringHash": "eUNpl",
+    "4. String/String F4/Kmp": "567dadb5",
+    "4. String/String F4/Z-Function": "ed84b7ce",
+    "4. String/String F4/Manacher": "237ffca0",
+    "4. String/Advanced Strings": "M9rbx",
+    "4. String/Advanced Strings/AcAutomaton": "9407a1e0",
+    "4. String/Advanced Strings/SuffixAutomaton": "RmpdO",
+    "4. String/Advanced Strings/SuffixArray": "LHbeT",
+    "5. DataStructures": "LKTD2",
+    "5. DataStructures/BaseDataStructures": "Z8k6X",
+    "5. DataStructures/BaseDataStructures/HashMap": "5d3b92c1",
+    "5. DataStructures/BaseDataStructures/DisjointSetUnion": "kUmj4",
+    "5. DataStructures/BaseDataStructures/RMQ": "GcrNe",
+    "5. DataStructures/TreeDataStructures": "5be3e824",
+    "5. DataStructures/TreeDataStructures/TreeMap": "ihcuc",
+    "5. DataStructures/TreeDataStructures/SegTree": "ec15cfc4",
+    "5. DataStructures/TreeDataStructures/Trie": "JAK5F",
+    "5. DataStructures/TreeDataStructures/FenwickTree": "Hxcmj",
+    "5. DataStructures/TreeDataStructures/SparseSegTree": "440f0c4b",
+    "6. Tree Theory": "LJKxt",
+    "6. Tree Theory/Tree": "ZVO88",
+    "7. Graph Theory": "ez7t0",
+    "7. Graph Theory/GridUtil": "TuXVe",
+    "7. Graph Theory/Dijkstra": "ur07d",
+    "7. Graph Theory/RingTree": "NzDoU",
+    "7. Graph Theory/TopSort": "JI2UC",
+    "7. Graph Theory/Connectivity": "LySs0",
+    "7. Graph Theory/Connectivity/StronglyConnectedComponent": "sD3EM",
+    "7. Graph Theory/Connectivity/TwoSat": "gRywk",
+    "7. Graph Theory/Connectivity/VertexBiconnectedComponent": "bKKdd",
+    "7. Graph Theory/Connectivity/EdgeBiconnectedComponent": "AXGB5",
+    "7. Graph Theory/Flow": "vc9GU",
+    "7. Graph Theory/Flow/MaxFlow": "PZfa1",
+    "7. Graph Theory/Flow/CostFlow": "QFNz9",
+    "8. Geometry": "Lvjzp",
+    "8. Geometry/Geo2": "u09afb900181d",
+    "8. Geometry/Geo2/PointVec": "FPRJh",
+    "8. Geometry/Geo2/SegLine": "W0C63",
+    "8. Geometry/Geo2/PolygonConvex": "q247X",
+    "8. Geometry/Geo2/Circle": "kF1TT",
+    "9. Clarketech": "DuqN0",
+    "9. Clarketech/ListHelper": "afwkF",
+    "9. Clarketech/Debuger": "Ztau5",
+    "9. Clarketech/DebugerCore": "Qn3ff",
+    "9. Clarketech/FastInputOutput": "I9LvY",
+    "last. SnippetInstaller": "rNDfs"
+  },
+  "cards": {
+    "Combinatorics": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "Combinatorics",
+      "id": "kj9tX",
+      "name": "Combinatorics"
+    },
+    "ExGcd": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "ExGcd ",
+      "id": "EujQk",
+      "name": "ExGcd "
+    },
+    "FloatPointNumber": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "FloatPointNumber",
+      "id": "m7Jky",
+      "name": "FloatPointNumber"
+    },
+    "LinearBasis": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "LinearBasis",
+      "id": "1ff0fb89",
+      "name": "LinearBasis"
+    },
+    "MillerRabin": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "MillerRabin",
+      "id": "lEe7O",
+      "name": "MillerRabin"
+    },
+    "ModuloInteger": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "ModuloInteger",
+      "id": "eG9j0",
+      "name": "ModuloInteger"
+    },
+    "NumberTheoreticTransform": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "NumberTheoreticTransform",
+      "id": "9b099fde",
+      "name": "NumberTheoreticTransform"
+    },
+    "PollardRho": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "PollardRho",
+      "id": "wdqNW",
+      "name": "PollardRho"
+    },
+    "Sieve": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "Sieve",
+      "id": "4749e9ee",
+      "name": "Sieve"
+    },
+    "DisjointSetUnion": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "DisjointSetUnion",
+      "id": "m5iQO",
+      "name": "DisjointSetUnion"
+    },
+    "FenwickTree": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "Fenwick",
+      "id": "eN4lc",
+      "name": "Fenwick"
+    },
+    "HashMap": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "HashMap",
+      "id": "Sfb5n",
+      "name": "HashMap"
+    },
+    "SegTree": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "SegTree",
+      "id": "53bd3779",
+      "name": "SegTree"
+    },
+    "SparseSegTree": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "SparseSegTree",
+      "id": "1fe26ea5",
+      "name": "SparseSegTree"
+    },
+    "RMQ": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "SparseTable",
+      "id": "d1ff98a3",
+      "name": "SparseTable"
+    },
+    "TreeMap": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "TreeMap",
+      "id": "ufxfz",
+      "name": "TreeMap"
+    },
+    "Trie": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "Trie",
+      "id": "aNuvs",
+      "name": "Trie"
+    },
+    "AcAutomaton": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "AcAutomaton",
+      "id": "185427f1",
+      "name": "AcAutomaton"
+    },
+    "Kmp": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "Kmp",
+      "id": "a7e65c66",
+      "name": "Kmp"
+    },
+    "Manacher": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "Manacher",
+      "id": "3f8b7e2d",
+      "name": "Manacher"
+    },
+    "StringHash": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "StringHash",
+      "id": "KbkCd",
+      "name": "StringHash"
+    },
+    "SuffixArray": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "SuffixArray",
+      "id": "al2Lm",
+      "name": "SuffixArray"
+    },
+    "SuffixAutomaton": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "SuffixAutomaton",
+      "id": "676c1ae4",
+      "name": "SuffixAutomaton"
+    },
+    "ZFunction": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "Z-Function",
+      "id": "f6dd1f48",
+      "name": "Z-Function"
+    },
+    "Tree": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "Tree",
+      "id": "ta9vZ",
+      "name": "Tree"
+    },
+    "CostFlow": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "CostFlow",
+      "id": "Epvx5",
+      "name": "CostFlow"
+    },
+    "Dijkstra": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "Dijkstra",
+      "id": "bjS1v",
+      "name": "Dijkstra"
+    },
+    "EdgeBiconnectedComponent": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "EdgeBiconnectedComponent",
+      "id": "UsBQi",
+      "name": "EdgeBiconnectedComponent"
+    },
+    "GridUtil": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "GridUtil",
+      "id": "sLLWC",
+      "name": "GridUtil"
+    },
+    "MaxFlow": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "MaxFlow",
+      "id": "doESE",
+      "name": "MaxFlow"
+    },
+    "RingTree": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "RingTree",
+      "id": "ga4KW",
+      "name": "RingTree"
+    },
+    "StronglyConnectedComponent": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "StronglyConnectedComponent",
+      "id": "sWwdD",
+      "name": "StronglyConnectedComponent"
+    },
+    "TopSort": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "TopSort",
+      "id": "KQnt7",
+      "name": "TopSort"
+    },
+    "TwoSat": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "TwoSat",
+      "id": "A5Dmi",
+      "name": "TwoSat"
+    },
+    "VertexBiconnectedComponent": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "VertexBiconnectedComponent",
+      "id": "RWNX2",
+      "name": "VertexBiconnectedComponent"
+    },
+    "Geo2/PointVec": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "PointVec",
+      "id": "cjnyY",
+      "name": "PointVec"
+    },
+    "Geo2/SegLine": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "SegLine",
+      "id": "WFhGr",
+      "name": "SegLine"
+    },
+    "Geo2/PolygonConvex": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "PolygonConvex",
+      "id": "fH9cE",
+      "name": "PolygonConvex"
+    },
+    "Geo2/Circle": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "Circle",
+      "id": "AICMA",
+      "name": "Circle"
+    },
+    "Discreter": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "Discreter",
+      "id": "k16Cu",
+      "name": "Discreter"
+    },
+    "MultipleBackpacks": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "MultipleBackpacks",
+      "id": "064a772b",
+      "name": "MultipleBackpacks"
+    },
+    "Debuger": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "debuger",
+      "id": "jenKp",
+      "name": "debuger"
+    },
+    "DebugerHeadCopyToBitsStdC++": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Darcula",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "copy to bits/stdc++.h",
+      "id": "agQ2Y",
+      "name": "copy to bits/stdc++.h"
+    },
+    "FastInputOutput": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "FastInputOutput",
+      "id": "wy1FK",
+      "name": "FastInputOutput"
+    },
+    "ListHelper": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "search": "ListHelper",
+      "id": "dV3qe",
+      "name": "ListHelper"
+    },
+    "tool/SnippetInstaller": {
+      "__spacing": "both",
+      "margin": {
+        "bottom": true,
+        "top": true
+      },
+      "heightLimit": true,
+      "autoWrap": false,
+      "lineNumbers": true,
+      "customStyle": [],
+      "hideToolbar": false,
+      "indentWithTab": false,
+      "lightLines": [],
+      "theme": "Github Light",
+      "fontSize": 14,
+      "collapsed": true,
+      "tabSize": null,
+      "id": "acm-code-0e31da6279ca770f",
+      "search": "SnippetInstaller",
+      "name": "SnippetInstaller"
+    }
   }
 }

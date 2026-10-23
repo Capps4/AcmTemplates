@@ -158,9 +158,11 @@ def tools_inputs():
     if not list(folder.glob('*Test.py')):
         return []
     return [*folder.glob('*.py'), *(ROOT / 'tools').rglob('*.py'), ROOT / 'ctl',
-            ROOT / 'Manifest.json', ROOT / 'Library.md', ROOT / 'tools/Library.json',
+            ROOT / 'Manifest.json', ROOT / 'Library.md', ROOT / 'ExtraLibrary.md',
+            ROOT / 'tools/Library.json', ROOT / 'tools/ExtraLibrary.json',
             ROOT / 'tools/RuleExceptions.json', ROOT / 'tools/requirements.txt',
-            *config.SOURCE.rglob('*.hpp'), *(ROOT / 'tests/Support').glob('*.hpp')]
+            *config.SOURCE.rglob('*.hpp'), *config.SOURCE.rglob('README.md'),
+            *(ROOT / 'tests/Support').glob('*.hpp')]
 
 
 def tools_signature():
@@ -206,7 +208,9 @@ def run(names=None, progress=None, activity=None):
     names = sorted(modules) if names is None else list(dict.fromkeys(names))
     if not names or set(names) - set(modules):
         raise ValueError('测试模块为空或含未知模块')
-    with_tools = (set(names) == set(modules) and not config.TEST_CASE and
+    full_collection = (config.TEST_COLLECTION is not None and
+                       set(names) == set(manifest(config.TEST_COLLECTION, dependencies=True)))
+    with_tools = ((set(names) == set(modules) or full_collection) and not config.TEST_CASE and
                   set(config.RIGHT_PROFILES) == {'strict', 'optimized', 'sanitized'} and tools_inputs())
     jobs = [job for name in names for profile in config.RIGHT_PROFILES for job in module_jobs(name, profile)]
     total = len(jobs) + int(bool(with_tools))
