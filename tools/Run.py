@@ -13,18 +13,19 @@ from contextlib import nullcontext
 
 import tools as config
 from tools.Common import (ROOT, FLAGS, compiler, digest, execute, headers, manifest,
-                          test_path, snapshot, ProcessError, cached_program, cache_program, include_digests, includes_current)
+                          test_path, snapshot, ProcessError, cached_program, cache_program,
+                          include_digests, includes_current, build_signature)
 
 
-def module_jobs(name, profile):
-    folder = test_path(name)
+def module_jobs(name, profile, modules=None):
+    folder = test_path(name, modules)
     sources = [folder / 'Test.cpp', *sorted(folder.glob('TestExtra*.cpp'))]
     # Demos are included by their module suite; only configuration/containment
     # checks that need an isolated translation unit keep separate entry points.
     groups = [('main', sources)] + [(p.stem, [p]) for p in sorted(folder.glob('TestCase*.cpp'))]
     inventory = [p for p in folder.rglob('*') if p.is_file() and '__pycache__' not in p.parts]
     return [{'id': f'{name}/{profile}/{label}', 'module': name, 'profile': profile,
-             'sources': src, 'inputs': inventory, 'headers': headers(name)}
+             'sources': src, 'inputs': inventory, 'headers': headers(name, modules)}
             for label, src in groups]
 
 
@@ -57,7 +58,9 @@ def current(record, job=None, actual_digests=None):
 
 
 def compile_job(job, comp, build, record, activity=None, compile_limit=None, actual_digests=None):
-    cached = cached_program(job['id'], record['signature'], actual_digests)
+    sig = build_signature(job['sources'], comp, FLAGS[job['profile']], ROOT / 'tools/Run.py')
+    record['buildSignature'] = sig
+    cached = cached_program(job['id'], sig, actual_digests)
     if cached:
         target, includes = cached
         record.update(compileMs=0, compileCached=True, actualIncludes=includes)
@@ -93,7 +96,7 @@ def compile_job(job, comp, build, record, activity=None, compile_limit=None, act
         execute(command, timeout=config.COMPILE_TIMEOUT)
         record['compileMs'] = (time.monotonic() - start) * 1000
         record['actualIncludes'] = {str(p.relative_to(ROOT)) if p.is_relative_to(ROOT) else str(p): digest(p) for p in sorted(actual)}
-        target = cache_program(job['id'], record['signature'], target, record['actualIncludes'])
+        target = cache_program(job['id'], sig, target, record['actualIncludes'])
         record['compileCached'] = False
         return target
 
@@ -212,7 +215,7 @@ def run(names=None, progress=None, activity=None):
                        set(names) == set(manifest(config.TEST_COLLECTION, dependencies=True)))
     with_tools = ((set(names) == set(modules) or full_collection) and not config.TEST_CASE and
                   set(config.RIGHT_PROFILES) == {'strict', 'optimized', 'sanitized'} and tools_inputs())
-    jobs = [job for name in names for profile in config.RIGHT_PROFILES for job in module_jobs(name, profile)]
+    jobs = [job for name in names for profile in config.RIGHT_PROFILES for job in module_jobs(name, profile, modules)]
     total = len(jobs) + int(bool(with_tools))
     if progress:
         progress(0, total, '正确性：准备编译器与测试记录', 'running')
@@ -226,7 +229,7 @@ def run(names=None, progress=None, activity=None):
     from tools.Verification import save, read_evidence
     initial_digests = include_digests(read_evidence().get('right', []))
     # Invalidate older successes before any process starts, including interrupted runs.
-    save(right=pending_records)
+    save(right=pending_records, runs={'right': None}, pending=True)
     config.CACHE.mkdir(parents=True, exist_ok=True)
     try:
         if with_tools:

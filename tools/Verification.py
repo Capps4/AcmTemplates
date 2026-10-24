@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import re
 import shutil
+import statistics
 import zlib
 
 import tools as config
@@ -36,7 +37,7 @@ def collect(evidence=None, collection=None):
     state = {r['id']: r for r in evidence.get('right', [])}
     benchmarks = {r['id']: r for r in evidence.get('perf', [])}
     actual_digests = include_digests([*state.values(), *benchmarks.values()])
-    expected_jobs = {job['id']: job for name in modules for profile in PROFILES for job in module_jobs(name, profile)}
+    expected_jobs = {job['id']: job for name in modules for profile in PROFILES for job in module_jobs(name, profile, modules)}
     expected = set(expected_jobs)
     if tools_inputs():
         expected.add('Tools/right')
@@ -63,12 +64,14 @@ def collect(evidence=None, collection=None):
     for record in valid.values():
         for ident in record.get('caseIds', []):
             named[record.get('profile')].add(ident)
-    expected_bench = {name + '/' + p.stem for name in modules for p in benchmark_path(name).glob('Benchmark*.cpp')}
-    fresh_bench = {ident: r for ident, r in benchmarks.items() if ident in expected_bench and benchmark_current(r)}
+    expected_bench = {name + '/' + p.stem for name in modules for p in benchmark_path(name, modules).glob('Benchmark*.cpp')}
+    fresh_bench = {ident: r for ident, r in benchmarks.items() if ident in expected_bench and
+                   benchmark_current(r, modules, actual_digests)}
     rows = []
     for key, item in sorted(items.items()):
         name = item['module']
-        required = {c['id'] for c in cases if c['header'] == str(item['path'].relative_to(ROOT))}
+        header = str(item['path'].relative_to(ROOT))
+        required = {c['id'] for c in cases if c['header'] == header}
         right_jobs = {ident for ident in expected if ident.startswith(name + '/')}
         right_ok = bool(required) and right_jobs.issubset(valid) and all(required.issubset(named[p]) for p in PROFILES)
         perf_jobs = {ident for ident in expected_bench if ident.startswith(name + '/')}
@@ -96,10 +99,35 @@ def collect(evidence=None, collection=None):
     over_budget = [r['name'] + ': right=' + format(r['correctnessMs']['optimized'], '.2f') + 'ms, perf=' + format(r['performanceMs'], '.2f') + 'ms'
                    for r in rows if (r['right'] and r['correctnessMs']['optimized'] > config.CORRECTNESS_TARGET_MS[1]) or
                    (r['perf'] and r['performanceMs'] > config.PERFORMANCE_TARGET_MS[1])]
+    timing = []
+    for label, group in [*[(p, [r for r in valid.values() if r.get('profile') == p]) for p in PROFILES],
+                         ('performance', [r for r in fresh_bench.values() if r['status'] == 'passed'])]:
+        work = sum(r.get('runMs', 0) if label != 'performance' else
+                   sum(s['warmupMs'] + sum(s['samplesMs']) for s in r['samples']) for r in group)
+        process = sum(r.get('processMs', 0) for r in group)
+        timing.append({'label': label, 'jobs': len(group), 'workMs': work,
+                       'outsideMs': max(0, process - work),
+                       'startupMs': sum(r.get('startupMs', 0) for r in group),
+                       'compileMs': sum(r.get('compileMs', 0) for r in group),
+                       'cached': sum(r.get('compileCached', False) for r in group)})
+    slow_cases = sorted(((ms, ident, r['profile']) for r in valid.values() if r.get('profile')
+                         for ident, ms in r.get('caseMs', {}).items()), reverse=True)[:5]
+    signals = []
+    for r in fresh_bench.values():
+        for s in r['samples']:
+            values = s['samplesMs']
+            median = statistics.median(values)
+            spread = max(values) - min(values)
+            reason = '样本很短' if median < .01 else ('波动较大' if spread > median * .5 else None)
+            if reason:
+                signals.append({'id': r['id'], 'n': s['n'], 'shape': s['shape'],
+                                'medianMs': median, 'spreadMs': spread, 'reason': reason})
     return {'overBudget': over_budget, 'passed': not errors, 'errors': errors, 'rows': rows, 'toolsPassed': tools_ok,
             'failures': failures, 'modules': len(modules), 'headers': len(items),
             'namedCases': len(cases), 'correctnessJobs': len(expected),
-            'freshCorrectnessJobs': len(valid)}
+            'freshCorrectnessJobs': len(valid), 'timing': timing, 'slowCases': slow_cases,
+            'signals': signals, 'runs': evidence.get('runs', {}),
+            'toolsMs': valid.get('Tools/right', {}).get('runMs')}
 
 
 def failure_text(record):
@@ -131,6 +159,40 @@ def report(data):
             result += '（无需性能测试）'
         lines.append(f'| {row["name"]} | {result} |')
     lines.extend(['', 'CTL 工具回归：' + ('✓' if data['toolsPassed'] else '待验证/失败')])
+    if data.get('runs'):
+        lines.extend(['', '## 最近调用', '',
+                      '以下是对应范围上次调用的实际耗时；是否仍然通过以当前验证结果为准。', '',
+                      '| 阶段 | 范围 | 耗时 | 编译缓存 | 时间 |', '| --- | --- | ---: | ---: | --- |'])
+        for kind, run in data['runs'].items():
+            scope = (run.get('collection') or '所选') + ' · ' + str(len(run['modules'])) + ' 个模块'
+            if run.get('profiles'):
+                scope += ' · ' + '/'.join(run['profiles'])
+            if run.get('case'):
+                scope += ' · case=' + run['case']
+            lines.append(f'| {kind} | {scope} | {run["wallMs"] / 1000:.3f}s | '
+                         f'{run["cached"]}/{run["compiled"]} | {run["at"]} |')
+    lines.extend(['', '## 当前有效记录的工作量', '',
+                  '| 配置 | 入口 | 内核累计 | 计时外累计 | 启动累计 | 编译累计 | 缓存命中 |',
+                  '| --- | ---: | ---: | ---: | ---: | ---: | ---: |'])
+    for row in data['timing']:
+        startup = f'{row["startupMs"]:.2f}ms' if row['label'] == 'performance' else '含于计时外'
+        lines.append(f'| {row["label"]} | {row["jobs"]} | {row["workMs"]:.2f}ms | '
+                     f'{row["outsideMs"]:.2f}ms | {startup} | {row["compileMs"]:.2f}ms | '
+                     f'{row["cached"]}/{row["jobs"]} |')
+    lines.extend(['', '累计量可能来自并行进程，不能当作命令耗时；性能计时外包括输入/预期准备、输出和进程收尾。'])
+    if data['toolsMs'] is not None:
+        lines.append(f'工具回归：{data["toolsMs"]:.2f}ms。')
+    if data['slowCases']:
+        lines.extend(['', '最慢正确性用例：', '',
+                      *[f'- {ident} · {profile}：{ms:.2f}ms' for ms, ident, profile in data['slowCases']]])
+    if data['signals']:
+        counts = Counter(s['reason'] for s in data['signals'])
+        lines.extend(['', '性能采样提示（不影响通过状态）：' + '；'.join(f'{k} {v} 组' for k, v in counts.items()) + '。',
+                      '样本中位数不足 0.01ms，或极差超过中位数的 50% 时只提示；不能据此断言性能退化。', '',
+                      '| 场景 | n / shape | 中位数 | 极差 | 提示 |', '| --- | --- | ---: | ---: | --- |'])
+        for s in data['signals']:
+            lines.append(f'| {s["id"]} | {s["n"]} / {s["shape"]} | {s["medianMs"]:.4f}ms | '
+                         f'{s["spreadMs"]:.4f}ms | {s["reason"]} |')
     if data['failures']:
         for record in data['failures']:
             lines.extend(['', '```text', failure_text(record).replace('```', "'''"), '```'])
@@ -139,7 +201,7 @@ def report(data):
         lines.extend(['', *['- ' + error for error in coverage_errors]])
     if data['overBudget']:
         lines.extend(['', '待校准（超过目标上限）：' + '；'.join(data['overBudget'])])
-    lines.extend(['', '耗时以优化版 case 工作量和性能全部预热/采样工作量计；编译、启动、strict/Sanitizer 开销单列在内嵌证据中。'])
+    lines.extend(['', '模块预算以优化版 case 工作量和性能全部预热/采样工作量计；完整样本保存在内嵌证据中。'])
     return '\n'.join(lines) + '\n'
 
 
@@ -160,7 +222,7 @@ def cleanup_legacy():
                 shutil.rmtree(path)
 
 
-def save(right=None, perf=None, collection=None):
+def save(right=None, perf=None, collection=None, runs=None, pending=False):
     evidence = read_evidence()
     for key, records in (('right', right), ('perf', perf)):
         if records is None:
@@ -168,18 +230,25 @@ def save(right=None, perf=None, collection=None):
         replaced = {r['module'] for r in records}
         old = [r for r in evidence.get(key, []) if r['module'] not in replaced and r['module'] != 'Selection']
         evidence[key] = sorted([*old, *records], key=lambda r: r['id'])
+    for key, run in (runs or {}).items():
+        evidence.setdefault('runs', {}).pop(key, None)
+        if run is not None:
+            evidence['runs'][key] = run
     evidence['formatVersion'] = 4
     if right is not None or perf is not None:
         evidence['hardware'] = hardware()
     evidence['generatedAt'] = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))).isoformat(timespec='seconds')
-    data = collect(evidence)
+    # Pending evidence already invalidates the selected modules. Defer the full
+    # dependency walk until completion; readers still validate embedded records.
+    data = None if pending else collect(evidence)
     save_digest_cache()
     encoded = base64.b64encode(zlib.compress(json.dumps(evidence, ensure_ascii=False, separators=(',', ':')).encode())).decode()
     config.REPORTS.mkdir(parents=True, exist_ok=True)
     dest = config.REPORTS / 'Verification.md'
     tmp = dest.with_suffix('.md.tmp')
-    tmp.write_text(report(data) + '\n<!-- ' + MARKER + ' ' + encoded + ' -->\n', encoding='utf-8')
+    body = '# 测试报告\n\n测试进行中，所选范围尚未完成。\n' if pending else report(data)
+    tmp.write_text(body + '\n<!-- ' + MARKER + ' ' + encoded + ' -->\n', encoding='utf-8')
     tmp.replace(dest)
     if right is not None or perf is not None:
         cleanup_legacy()
-    return (collect(evidence, collection) if collection is not None else data), dest
+    return (collect(evidence, collection) if collection is not None and not pending else data), dest

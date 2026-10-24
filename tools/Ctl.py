@@ -1,5 +1,6 @@
 """The only public command surface for Capps Template Library."""
 import argparse
+import datetime
 import platform
 import re
 import shutil
@@ -109,7 +110,7 @@ def test(console, right, perf):
         raise ValueError('当前测试执行器需要 macOS 或 Linux；Windows 可使用 WSL')
     from tools.Common import catalog
     from tools.Verification import failure_text, save
-    results, errors = [], []
+    results, errors, runs = [], [], {}
     for enabled, title, module in [(right, '正确性', 'Run'), (perf, '性能', 'Benchmark')]:
         if not enabled:
             continue
@@ -123,7 +124,15 @@ def test(console, right, perf):
             results.extend(result['records'])
             cached = sum(r.get('compileCached', False) for r in result['records'])
             compiled = sum('compileCached' in r for r in result['records'])
-            console.note(title + '耗时：' + format(time.monotonic() - started, '.2f') +
+            elapsed = time.monotonic() - started
+            runs['right' if module == 'Run' else 'perf'] = {
+                'wallMs': elapsed * 1000, 'collection': config.TEST_COLLECTION,
+                'modules': sorted({r['module'] for r in result['records']} - {'Tools', 'Selection'}),
+                'profiles': list(config.RIGHT_PROFILES) if module == 'Run' else [],
+                'case': config.TEST_CASE if module == 'Run' else None,
+                'cached': cached, 'compiled': compiled,
+                'at': datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))).isoformat(timespec='seconds')}
+            console.note(title + '耗时：' + format(elapsed, '.2f') +
                          's · 编译缓存 ' + str(cached) + '/' + str(compiled))
             if not result['passed']:
                 errors.append(title + '测试失败')
@@ -147,7 +156,7 @@ def test(console, right, perf):
         if record['status'] not in ('passed', 'skipped'):
             console.note(failure_text(record))
     with console.track('汇总：检查并保存报告'):
-        _, path = save()
+        _, path = save(runs=runs)
     console.note('报告：' + str(path))
     if errors:
         raise ValueError('；'.join(errors))

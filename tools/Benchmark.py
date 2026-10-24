@@ -12,12 +12,13 @@ import time
 
 import tools as config
 from tools.Common import (ROOT, FLAGS, compiler, execute, snapshot, headers, manifest,
-                          benchmark_path, ProcessError, hardware, digest, cached_program, cache_program)
+                          benchmark_path, ProcessError, hardware, digest, cached_program, cache_program,
+                          build_signature, includes_current)
 from tools.Run import failure
 
 
-def workload_sizes(name):
-    path = benchmark_path(name) / 'Settings.json'
+def workload_sizes(name, folder=None):
+    path = (folder if folder is not None else benchmark_path(name)) / 'Settings.json'
     data = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
     if not isinstance(data, dict):
         raise ValueError('性能配置须为 JSON 对象：' + str(path))
@@ -29,7 +30,7 @@ def workload_sizes(name):
 
 
 def workload_iterations(name, source):
-    path = benchmark_path(name) / 'Settings.json'
+    path = source.parent / 'Settings.json'
     data = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
     value = data.get('iterations', 1)
     if isinstance(value, dict):
@@ -39,13 +40,13 @@ def workload_iterations(name, source):
     return value
 
 
-def signature(name, source):
-    paths = [source, *headers(name), ROOT / 'tools/Benchmark.py', ROOT / 'tools/Run.py',
+def signature(name, source, modules=None):
+    paths = [source, *headers(name, modules), ROOT / 'tools/Benchmark.py', ROOT / 'tools/Run.py',
              ROOT / 'tools/Common.py', ROOT / 'tools/Catalog.py',
              ROOT / 'tools/__init__.py', ROOT / 'Manifest.json']
     inventory = [p for p in source.parent.rglob('*') if p.is_file()]
     return {'sha256': snapshot(paths, inventory), 'compiler': compiler('optimized'),
-            'flags': FLAGS['optimized'], 'sizes': list(workload_sizes(name)),
+            'flags': FLAGS['optimized'], 'sizes': list(workload_sizes(name, source.parent)),
             'seed': config.PERF_SEED, 'repeats': config.PERF_REPEATS,
             'iterations': workload_iterations(name, source), 'hardware': hardware(), 'mode': 'batched-v1',
             'environment': {key: os.environ.get(key) for key in
@@ -75,19 +76,19 @@ def skipped_record(name, source):
             'signature': {'sha256': snapshot(paths, inventory), 'kind': 'performance-skip'}}
 
 
-def current(record):
+def current(record, modules=None, actual_digests=None):
     try:
         if record['status'] == 'skipped':
             return record == skipped_record(record['module'], ROOT / record['source'])
         if record['status'] != 'passed':
             return False
         source = ROOT / record['source']
-        if record['id'] != record['module'] + '/' + source.stem or signature(record['module'], source) != record['signature']:
+        if record['id'] != record['module'] + '/' + source.stem or signature(record['module'], source, modules) != record['signature']:
             return False
-        if any(digest(ROOT / p) != value for p, value in record.get('actualIncludes', {}).items()):
+        if not includes_current(record.get('actualIncludes', {}), actual_digests):
             return False
         samples = record['samples']
-        expected = {(n, shape) for n in workload_sizes(record['module']) for shape in (0, 1)}
+        expected = {(n, shape) for n in record['signature']['sizes'] for shape in (0, 1)}
         return (len(samples) == len(expected) and
                 {(s['n'], s['shape']) for s in samples} == expected and
                 all(type(s['warmupMs']) in (float, int) and 0 <= s['warmupMs'] < float('inf') and
@@ -199,7 +200,11 @@ def compile_one(name, source, folder, activity=None):
             activity(label, '读取性能依赖')
         sig = signature(name, source)
         record['signature'] = sig
-        cached = cached_program('perf/' + label, sig)
+        flags = [*sig['flags'], '-DBENCHMARK_REPEATS=' + str(sig['repeats']),
+                 '-DBENCHMARK_ITERATIONS=' + str(sig['iterations'])]
+        build = build_signature([source], sig['compiler'], flags, ROOT / 'tools/Benchmark.py')
+        record['buildSignature'] = build
+        cached = cached_program('perf/' + label, build)
         if cached:
             record.update(status='compiled', compileMs=0, compileCached=True, actualIncludes=cached[1])
             return record, cached[0]
@@ -222,9 +227,7 @@ def compile_one(name, source, folder, activity=None):
     return 0;
 }
 ''', encoding='utf-8')
-        command = [sig['compiler']['path'], *sig['flags'],
-                   '-DBENCHMARK_REPEATS=' + str(config.PERF_REPEATS),
-                   '-DBENCHMARK_ITERATIONS=' + str(sig['iterations']), '-MD', '-MF', str(target.parent / 'Batch.d'),
+        command = [sig['compiler']['path'], *flags, '-MD', '-MF', str(target.parent / 'Batch.d'),
                    str(wrapper), '-o', str(target)]
         record.update(phase='compile', command=command)
         if activity:
@@ -236,7 +239,7 @@ def compile_one(name, source, folder, activity=None):
         included = {Path(p).resolve() for p in shlex.split(text.split(':', 1)[1])}
         record['actualIncludes'] = {str(p.relative_to(ROOT)) if p.is_relative_to(ROOT) else str(p): digest(p)
                                    for p in included if p.is_file() and p != wrapper}
-        target = cache_program('perf/' + label, sig, target, record['actualIncludes'])
+        target = cache_program('perf/' + label, build, target, record['actualIncludes'])
         record.pop('command', None)
     except Exception as exc:
         failure(record, exc)
@@ -253,7 +256,7 @@ def run(names=None, progress=None, activity=None):
     names = sorted(modules) if names is None else list(dict.fromkeys(names))
     if not names or set(names) - set(modules):
         raise ValueError('测试模块为空或含未知模块')
-    jobs = [(name, p) for name in names for p in sorted(benchmark_path(name).glob('Benchmark*.cpp'))]
+    jobs = [(name, p) for name in names for p in sorted(benchmark_path(name, modules).glob('Benchmark*.cpp'))]
     missing = set(names) - {name for name, _ in jobs}
     missing_records = [{'id': name + '/Benchmark', 'module': name, 'status': 'failed',
                         'phase': 'discovery', 'error': '模块缺少 Benchmark*.cpp'} for name in sorted(missing)]
@@ -267,7 +270,7 @@ def run(names=None, progress=None, activity=None):
     placeholders.extend([*missing_records, *skipped])
     if progress:
         progress(0, len(jobs), '性能：准备测试记录', 'running')
-    save(perf=placeholders)
+    save(perf=placeholders, runs={'perf': None}, pending=True)
     compiled = []
     prepared = {}
     try:
@@ -295,7 +298,9 @@ def run(names=None, progress=None, activity=None):
                     command = [str(target), *map(str, record['signature']['sizes']), str(config.PERF_SEED)]
                     if activity:
                         activity(record['id'], '启动进程并等待')
+                    start = time.monotonic()
                     prepared[record['id']] = prepare_process(command)
+                    record['startupMs'] = (time.monotonic() - start) * 1000
                 except Exception as exc:
                     failure(record, exc)
                 finally:

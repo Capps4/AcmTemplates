@@ -190,6 +190,16 @@ def snapshot(paths, inventory=()):
     return hashlib.sha256(json.dumps(values, sort_keys=True).encode()).hexdigest()
 
 
+def build_signature(sources, comp, flags, driver):
+    """Only compilation inputs belong in the executable cache key."""
+    return {'sha256': snapshot(sources, [driver, ROOT / 'tools/Common.py']),
+            'sources': [str(p.relative_to(ROOT)) for p in sources],
+            'compiler': comp, 'flags': list(flags),
+            'environment': {key: os.environ.get(key) for key in
+                            ('CPATH', 'CPLUS_INCLUDE_PATH', 'LIBRARY_PATH', 'SDKROOT',
+                             'MACOSX_DEPLOYMENT_TARGET')}}
+
+
 @functools.lru_cache(maxsize=8192)
 def quoted_includes(path, *stamp):
     return tuple(path.parent / name for name in re.findall(

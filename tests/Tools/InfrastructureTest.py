@@ -67,8 +67,10 @@ class InfrastructureTest(unittest.TestCase):
         (self.folder / 'Test.cpp').write_text('#include "Selected.hpp"\nint main() { return selected; }\n')
         job = Run.module_jobs('Tiny', 'optimized')[0]
         before = Run.signature(job, self.comp, config.RIGHT_SEED)
+        build = Common.build_signature(job['sources'], self.comp, config.FLAGS['optimized'], self.root / 'tools/Run.py')
         link.unlink(); link.symlink_to(second)
         self.assertNotEqual(before, Run.signature(job, self.comp, config.RIGHT_SEED))
+        self.assertNotEqual(build, Common.build_signature(job['sources'], self.comp, config.FLAGS['optimized'], self.root / 'tools/Run.py'))
 
     def test_inventory_and_active_dependencies_invalidate_evidence(self):
         job = Run.module_jobs('Tiny', 'optimized')[0]
@@ -297,13 +299,94 @@ class InfrastructureTest(unittest.TestCase):
         binary.unlink()
         self.assertIsNone(Common.cached_program('Tiny/main', sig))
 
+    def test_runtime_selection_changes_evidence_but_reuses_build(self):
+        job = Run.module_jobs('Tiny', 'optimized')[0]
+        record = {'signature': Run.signature(job, self.comp, config.RIGHT_SEED)}
+        build = Common.build_signature(job['sources'], self.comp, config.FLAGS['optimized'], self.root / 'tools/Run.py')
+        target = self.root / 'program'
+        target.write_text('#!/bin/sh\nexit 0\n'); target.chmod(0o755)
+        Common.cache_program(job['id'], build, target, {})
+        (self.folder / 'Input.bin').write_bytes(b'new runtime data')
+        with patch.object(config, 'TEST_CASE', 'value'):
+            changed = Run.signature(Run.module_jobs('Tiny', 'optimized')[0], self.comp, 42)
+            self.assertNotEqual(record['signature'], changed)
+            with patch.object(Run, 'execute') as execute:
+                Run.compile_job(job, self.comp, self.root / 'build', record)
+                execute.assert_not_called()
+        self.assertTrue(record['compileCached'])
+        self.assertEqual(record['buildSignature'], build)
+        # Translation-unit membership, active headers, flags and environment affect the binary.
+        (self.folder / 'TestExtra.cpp').write_text('int witness() { return 7; }\n')
+        expanded = Run.module_jobs('Tiny', 'optimized')[0]
+        self.assertNotEqual(build, Common.build_signature(expanded['sources'], self.comp, config.FLAGS['optimized'], self.root / 'tools/Run.py'))
+        with patch.dict('os.environ', {'CPATH': '/changed/include'}):
+            self.assertNotEqual(build, Common.build_signature(job['sources'], self.comp, config.FLAGS['optimized'], self.root / 'tools/Run.py'))
+        (self.root / 'src/Tiny/code.hpp').write_text('inline int value() { return 8; }\n')
+        self.assertNotEqual(build, Common.build_signature(job['sources'], self.comp, config.FLAGS['optimized'], self.root / 'tools/Run.py'))
+
+    def test_benchmark_build_uses_compile_time_settings_only(self):
+        source = self.root / 'tests/Performance/Tiny/Benchmark.cpp'
+        settings = source.with_name('Settings.json')
+        signatures = []
+        def cached(label, signature):
+            signatures.append(signature)
+            return self.root / 'program', {}
+        with patch.object(Benchmark, 'cached_program', side_effect=cached):
+            first, _ = Benchmark.compile_one('Tiny', source, self.root / 'build1')
+            settings.write_text(json.dumps({'sizes': [17, 123], 'iterations': 1}))
+            with patch.object(config, 'PERF_SEED', 42), patch.object(Benchmark, 'hardware', return_value={'machine': 'other'}):
+                second, _ = Benchmark.compile_one('Tiny', source, self.root / 'build2')
+            self.assertNotEqual(first['signature'], second['signature'])
+            self.assertEqual(signatures[0], signatures[1])
+            settings.write_text(json.dumps({'sizes': [17, 123], 'iterations': 2}))
+            Benchmark.compile_one('Tiny', source, self.root / 'build3')
+            self.assertNotEqual(signatures[1], signatures[2])
+            with patch.object(config, 'PERF_REPEATS', 5):
+                Benchmark.compile_one('Tiny', source, self.root / 'build4')
+            self.assertNotEqual(signatures[2], signatures[3])
+
+    def test_report_distinguishes_accumulated_work_from_wall_time(self):
+        right, perf = self.right_records(), self.perf_record()
+        for record in right:
+            record.update(compileMs=3, processMs=5, compileCached=False)
+        perf.update(compileMs=0, compileCached=True, processMs=10, startupMs=2)
+        perf['samples'][0]['samplesMs'] = [0, 0, .001]
+        run = dict(wallMs=12, modules=['Tiny'], collection=None, profiles=['optimized'],
+                   case=None, cached=1, compiled=1, at='fixture')
+        data, path = Verification.save(right=right, perf=[perf], runs={'perf': run})
+        self.assertTrue(data['passed'])  # No timing lower bound or noise gate.
+        timing = {r['label']: r for r in data['timing']}
+        self.assertEqual(timing['strict']['outsideMs'], 4)
+        self.assertEqual(timing['performance']['startupMs'], 2)
+        self.assertEqual(timing['performance']['cached'], 1)
+        self.assertEqual(data['runs']['perf']['wallMs'], 12)
+        self.assertEqual(data['signals'][0]['reason'], '样本很短')
+        self.assertIn('0.012s', path.read_text())
+        with patch.object(Verification, 'collect', side_effect=AssertionError('pending report must not revalidate')):
+            Verification.save(perf=[{'id': 'Tiny/Benchmark', 'module': 'Tiny', 'status': 'interrupted'}],
+                              runs={'perf': None}, pending=True)
+        self.assertIn('尚未完成', path.read_text())
+        self.assertNotIn('perf', Verification.read_evidence()['runs'])
+        self.assertFalse(Verification.collect()['passed'])
+
     def test_tiny_compiler_link_and_dependency_integration(self):
         # Only six jobs, unlike the old monolith's repeated full miniature builds.
         (self.folder / 'TestExtra.cpp').write_text('int witness() { return 7; }\n')
-        (self.folder / 'Test.cpp').write_text('#include "../../../src/Tiny/code.hpp"\n#include <iostream>\n#include <fstream>\nint witness();\nint main() { std::ofstream("runs.txt", std::ios::app) << "run\\n"; std::cout << "CASE_PASS Tiny/value\\nCASE_TIME Tiny/value 0.1\\n"; return value() != witness(); }\n')
+        (self.folder / 'Test.cpp').write_text('''#include "../../../src/Tiny/code.hpp"
+#include <cstdio>
+int witness();
+int main() {
+    auto *log = std::fopen("runs.txt", "a");
+    if (!log) return 2;
+    std::fputs("run\\n", log);
+    std::fclose(log);
+    std::puts("CASE_PASS Tiny/value\\nCASE_TIME Tiny/value 0.1");
+    return value() != witness();
+}
+''')
         (self.folder / 'TestCaseBroken.cpp').write_text('#include "missing.hpp"\n')
-        script = ('from tools.Run import run; from tools.Verification import read_evidence; import json; '
-                  'r=run(["Tiny"]); cold=read_evidence(); r=run(["Tiny"]); '
+        script = ('from tools.Run import run; from tools.Verification import read_evidence; import json; import tools as config; '
+                  'r=run(["Tiny"]); cold=read_evidence(); config.RIGHT_SEED += 1; config.TEST_CASE="value"; r=run(["Tiny"]); '
                   'print(json.dumps({"cold": cold, "warm": read_evidence()}))')
         process = subprocess.run([sys.executable, '-B', '-c', script], cwd=self.root, capture_output=True, text=True, timeout=90)
         self.assertEqual(process.returncode, 0, process.stdout + process.stderr)

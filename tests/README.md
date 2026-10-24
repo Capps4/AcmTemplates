@@ -36,12 +36,26 @@ ctl test --right --module Geo2 --case dense-conditioning --profile optimized
 
 模块文件清单按原始字节纳入证据；include 依赖只从当前编译入口遍历，所以一个独立坏 case 不会污染同模块的正常入口。编译器生成的依赖列表还记录当前实际 include。所有证据随源码、数据、工具、编译参数和种子失效；旧 PASS 不能证明现版通过。全库正确性另运行 `Tools/` 回归，执行器集成测试仅编译一个极小模块。
 
-测试报告保存在 `.cache/reports/Verification.md`，编译产物保存在 `.cache/compiled/`，每个测试入口只保留当前版本。缓存核对源码、依赖、编译器、参数、环境及二进制指纹；文件指纹按 mtime、ctime、大小、inode 和设备号更新，同一阶段去重，测试结束重新校验实际依赖；源码变化或损坏时重新编译。每次重新执行正确性 case 和性能采样，不复用 PASS 或测量结果。报告包含简表、失败详情和压缩的机器证据供发布门禁核对。除当前编译缓存外，对象、dep 文件和临时输出在正常结束、失败及可处理的中断后删除；SIGKILL/断电可能遗留的测试临时目录在下次持锁运行时清理。旧测试 build/benchmarks、历史日志和旧 JSON 报告随新报告保存后清理；文档生成、规则报告、snippets 和语雀备份保留。全库/局部测试都使用同一份报告，局部执行替换所选模块记录，不能保留旧的其他 profile 来凑出完整通过。
+测试报告保存在 `.cache/reports/Verification.md`，编译产物保存在 `.cache/compiled/`，每个测试入口只保留当前版本。编译缓存核对入口及翻译单元集合、include、编译器、编译参数、环境、构建工具和二进制指纹；种子、case 选择、输入数据和运行规模只使验证证据失效，未改变编译输入时复用二进制。性能的采样次数和固定批次目前是编译宏，改变它们仍须重新编译。文件指纹按 mtime、ctime、大小、inode 和设备号更新，同一阶段去重，测试结束重新校验实际依赖。每次重新执行正确性 case 和性能采样，不复用 PASS 或测量结果。
+
+报告显示最近调用的范围、实际耗时和缓存命中，另按 strict/O2/Sanitizer/性能汇总当前有效记录的内核、计时外和编译工作量，并列出最慢用例。进程累计量可能相互重叠，不能代替命令总耗时；性能的启动与计时外准备分别记录。样本中位数不足 0.01 ms 或极差超过中位数的 50% 时提示测量信号不足或波动，不影响通过状态，也不代表性能退化。完整样本、失败详情和指纹保存在压缩的机器证据中，供发布门禁核对。
+
+除当前编译缓存外，对象、dep 文件和临时输出在正常结束、失败及可处理的中断后删除；SIGKILL/断电可能遗留的测试临时目录在下次持锁运行时清理。旧测试 build/benchmarks、历史日志和旧 JSON 报告随新报告保存后清理；文档生成、规则报告、snippets 和语雀备份保留。全库/局部测试都使用同一份报告，局部执行替换所选模块记录，不能保留旧的其他 profile 来凑出完整通过。
 
 测试命令受 `.cache/.test.lock` 串行保护，锁文件保留以维持等待者使用的 inode。`ctl test --all` 在正确性失败后仍收集性能结果。运行中的记录先标为未完成，避免中断后继续沿用旧通过记录。详细命令与发布边界见 [CTL 说明](../tools/README.md)。
 
-## 本次接入的覆盖
+## extra 测评
 
-extra 原有内容中 20 个独立算法已接入正确性和两档/两种形状的性能入口；DigitDP、Block、DsuOnTree 是题目相关框架说明，不计入编译模块。现版验收状态以 `.cache/reports/Verification.md` 的源码、编译参数及硬件指纹为准；超过工作量目标的项目仍需单独校准。
+extra 的可编译模块以 Manifest 为准；DigitDP、Block、DsuOnTree 是题目相关框架说明，不计入编译模块。常规验证运行 `ctl test --all --collection extra`，覆盖 extra、传递依赖和共享工具回归。无需为整理测评扩大到其他 core 模块。现版验收状态以报告中的源码、编译参数及硬件指纹为准。
 
 迁移回归额外检查全仓引号 include 的可解析性，以及两份文档的模块归属、完整覆盖和重复引用拒绝。算法用例补强了 LiChaoTree 的 min/max 独立包络与真实交叉线、WeightedDSU 的反向合并和 BFS 势差、两种 Euler 的精确类型与边消费、Delaunay 的内点及完整空圆三角形集合、TreeHash 的固定碰撞回归和 200 种小规模有根树结构对照。Delaunay 性能场景仍为凸位置抛物线的顺序/乱序插入，内点覆盖目前属于正确性测试。
+
+本轮新增 FloorSum、BitwiseTransform、LinearRecurrence、RollbackDSU、SlidingWindowAggregation、SparseMatBIT、BipartiteMatching、LowerBoundFlow、Rerooting 九个 extra 模块。矩形消元用 GF(3) 解空间穷举；上下界流用边流穷举；匹配与最小覆盖各自穷举；换根 DP 用逐根 BFS 与保持邻接顺序的字符串 oracle。回滚、非交换队列和稀疏二维树状数组分别对照重建连通分量、逐函数应用与原始坐标求和。额外覆盖 UINT64_MAX、128 位结果溢出、LLONG_MIN 逆变换、非默认构造值及深链。
+
+性能对照包含 ClosestPair 的逐层排序旧实现、Mo 的固定平方根块长、二分图匹配的 core Dinic 归约、线性递推的伴随矩阵幂和换根 DP 的专用距离和实现。成对基准使用相同输入，按相同结果顺序核对 checksum；不同场景分别报告。SparseMatBIT 的常规结构用例固定 512 点，查询首尾、二次幂邻域及分层位置；优化性能场景仍覆盖 10000 点。SlopeTrick 保留每步网格 DP 对照，减少重复强制最优点探测，median 结构用例为 512 项。WeightedDSU 和动态连通性复用同一状态的独立 BFS 结果，保留所有点对断言。
+
+后续新增的 14 项包括 ModSqrt、DiscreteLog、LagrangeInterpolation、SlopeTrick、SegmentTreeBeats、ImplicitTreap、LyndonFactorization、RunEnumeration、LinkCutTree、BellmanFord、OfflineDynamicConnectivity、GeneralMatching、DirectedMST、MinimumEnclosingCircle。它们分别对照全根/幂状态枚举、Horner 求值、网格 DP、普通数组、字符串拼接、全部分解/周期枚举、BFS 路径、Floyd、逐时刻重建、子集匹配、入边组合穷举和支撑圆枚举。圆的 oracle 先归一化坐标，避免绝对容差掩盖小尺度半径错误。
+
+较重的离散对数全状态、Runs 完整二进制串枚举和长周期串、六点全图匹配、20K 嵌套缩环保留为显式 stress case，可用 `ctl test --right --module <模块> --case <完整 ID>` 运行。常规用例保留每类风险的小规模 oracle、固定回归、随机和结构检查；性能维持两档规模、两种形状及预热/三次采样。RunEnumeration 另外对照 Nyaan 的分治实现，并在小输入上逐项比较完整结果。最终是否通过及实测工作量以当前 Verification 报告为准。
+
+性能的暖机 checksum 只验证后续执行的一致性。结果正确性由独立预期或合法性检查补足：最小表示核对已知最小旋转，FFT 核对直接卷积系数及冲激结果，堆核对排序后的剩余序列，BIT 对照普通数组/离线差分，图结果核对恢复边和连通结构。顺序有意义时使用顺序敏感校验。输入须触发目标操作：动态连通性包含真实断开/重连，匹配包含多层增广，矩形操作包含内部边界，最小覆盖圆包含三点支撑。参考答案准备放在计时外，报告仍记录其进程成本。
