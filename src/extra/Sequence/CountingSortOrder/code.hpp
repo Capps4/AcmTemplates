@@ -20,6 +20,8 @@ std::vector<int> countingSortOrder(const std::vector<T> &a, Key key = {}) {
         assert(k >= 0);
         mx = std::max(mx, k);
     }
+    if (mx == std::numeric_limits<int>::max())
+        throw std::length_error("CountingSortOrder: key range exceeds int capacity");
     std::vector<int> cnt(mx + 1), res(a.size());
     for (const auto &x : a)
         ++cnt[key(x)];

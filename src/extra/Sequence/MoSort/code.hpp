@@ -8,18 +8,21 @@ struct Query {
 
     Query(int l, int r, int id) : l(l), r(r), id(id) {}
 
-    friend bool operator<(const Query &a, const Query &b) {
-        int x = a.l / B, y = b.l / B;
-        if (x != y)
-            return x < y;
-        return x % 2 == 0 ? a.r < b.r : a.r > b.r;
+};
+
+class MoSort {
+    int b;
+
+public:
+    MoSort(int n, int q) : b(1) {
+        assert(n >= 0 and q >= 0);
+        b = std::max(1, int(n / std::sqrt(double(std::max(1, q)))));
     }
 
-    static void rangeScale(int n) {
-        assert(n >= 0);
-        B = int(std::sqrt(2.0 * n)) + 1;
+    bool operator()(const Query &x, const Query &y) const {
+        int l = x.l / b, r = y.l / b;
+        if (l != r)
+            return l < r;
+        return l % 2 == 0 ? x.r < y.r : x.r > y.r;
     }
-
-private:
-    inline static int B = 500;
 };

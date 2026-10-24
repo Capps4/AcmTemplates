@@ -7,24 +7,28 @@ int main() {
             int n = int(pot.size());
             WeightedDSU<long long> d(n);
             std::vector<std::vector<std::pair<int, long long>>> graph(n);
+            std::vector<std::vector<std::optional<long long>>> cache(n);
+            std::vector<int> stamps(n, -1);
+            int version = 0;
             auto difference = [&](int start, int finish) -> std::optional<long long> {
-                std::vector<int> seen(n, 0), queue{start};
-                std::vector<long long> dist(n, 0);
-                seen[start] = 1;
-                for (std::size_t i = 0; i < queue.size(); ++i) {
-                    int x = queue[i];
-                    if (x == finish) {
-                        return dist[x];
-                    }
-                    for (const auto& [y, weight] : graph[x]) {
-                        if (!seen[y]) {
-                            seen[y] = 1;
-                            dist[y] = dist[x] + weight;
-                            queue.push_back(y);
+                // The oracle graph changes only when an independent constraint joins components.
+                if (stamps[start] != version) {
+                    auto& dist = cache[start];
+                    dist.assign(n, std::nullopt);
+                    std::vector<int> queue{start};
+                    dist[start] = 0;
+                    for (std::size_t i = 0; i < queue.size(); ++i) {
+                        int x = queue[i];
+                        for (const auto& [y, weight] : graph[x]) {
+                            if (not dist[y]) {
+                                dist[y] = *dist[x] + weight;
+                                queue.push_back(y);
+                            }
                         }
                     }
+                    stamps[start] = version;
                 }
-                return std::nullopt;
+                return cache[start][finish];
             };
             auto join = [&](int x, int y, long long delta) {
                 auto known = difference(x, y);
@@ -33,6 +37,7 @@ int main() {
                 if (!known) {
                     graph[x].push_back({y, delta});
                     graph[y].push_back({x, -delta});
+                    ++version;
                 }
             };
             auto link = [&](int x, int y) { join(x, y, pot[y] - pot[x]); };
@@ -122,6 +127,57 @@ int main() {
                 value = randomInt(-100, 100);
             }
             exercise(pot, false);
+        }
+    });
+    runCase("WeightedDisjointSetUnion/info-oracle", [] {
+        constexpr int n = 16;
+        WeightedDSU<Info> d(n);
+        std::vector<std::vector<std::pair<int, long long>>> graph(n);
+        std::vector<std::vector<std::optional<long long>>> cache(n);
+        std::vector<int> stamps(n, -1);
+        int version = 0;
+        auto distances = [&](int start) -> const std::vector<std::optional<long long>>& {
+            if (stamps[start] != version) {
+                auto& dist = cache[start];
+                dist.assign(n, std::nullopt);
+                std::vector<int> queue{start};
+                dist[start] = 0;
+                for (std::size_t i = 0; i < queue.size(); ++i) {
+                    int x = queue[i];
+                    for (auto [y, delta] : graph[x]) {
+                        if (not dist[y]) {
+                            dist[y] = *dist[x] + delta;
+                            queue.push_back(y);
+                        }
+                    }
+                }
+                stamps[start] = version;
+            }
+            return cache[start];
+        };
+        CHECK(Info{} == Info(0));
+        for (int step = 0; step < 300; ++step) {
+            test_context::step = step;
+            int x = randomInt(0, n - 1), y = randomInt(0, n - 1);
+            auto known = distances(x)[y];
+            long long delta = known and step % 2 ? *known : randomInt(-100, 100);
+            bool valid = not known or *known == delta;
+            CHECK(d.Union(x, y, Info(delta)) == valid);
+            if (not known) {
+                graph[x].push_back({y, delta});
+                graph[y].push_back({x, -delta});
+                ++version;
+            }
+            for (int from = 0; from < n; ++from) {
+                const auto& expected = distances(from);
+                for (int to = 0; to < n; ++to) {
+                    bool connected = d.find(from) == d.find(to);
+                    CHECK(connected == bool(expected[to]));
+                    if (connected) {
+                        CHECK((d.w[to] - d.w[from]).val == *expected[to]);
+                    }
+                }
+            }
         }
     });
     return 0;

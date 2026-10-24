@@ -4896,6 +4896,198 @@
       "source": "tests/Correctness/extra/Geometry/DelaunayTriangulation/Test.cpp",
       "scenario": "独立 oracle、边界和固定种子随机对照",
       "oracle": "对应 Test.cpp 中的朴素实现或穷举"
+    },
+    {
+      "id": "CountingSortOrder/key-capacity",
+      "module": "CountingSortOrder",
+      "header": "src/extra/Sequence/CountingSortOrder/code.hpp",
+      "scenario": "key capacity",
+      "oracle": "INT_MAX key rejected by length_error before range allocation or signed overflow",
+      "source": "tests/Correctness/extra/Sequence/CountingSortOrder/Test.cpp"
+    },
+    {
+      "id": "LiChaoTree/line-contracts",
+      "module": "LiChaoTree",
+      "header": "src/extra/DataStructures/LiChaoTree/code.hpp",
+      "scenario": "line contracts",
+      "oracle": "Direct evaluation of all covering half-open line segments; custom non-default Line and captured comparator",
+      "source": "tests/Correctness/extra/DataStructures/LiChaoTree/Test.cpp"
+    },
+    {
+      "id": "MoSort/query-counts",
+      "module": "MoSort",
+      "header": "src/extra/Sequence/MoSort/code.hpp",
+      "scenario": "query counts",
+      "oracle": "Direct accumulate for each range across Q=0,1,3,N,8N; independent block/snake ordering and multiple comparator instances",
+      "source": "tests/Correctness/extra/Sequence/MoSort/Test.cpp"
+    },
+    {
+      "id": "RollbackDSU/balanced-large",
+      "module": "RollbackDSU",
+      "header": "src/extra/DataStructures/RollbackDSU/code.hpp",
+      "scenario": "balanced large",
+      "oracle": "Rebuilt graph connectivity and component sizes after snapshot/rollback; balanced merge and restoration invariants",
+      "source": "tests/Correctness/extra/DataStructures/RollbackDSU/Test.cpp"
+    },
+    {
+      "id": "RollbackDSU/corners",
+      "module": "RollbackDSU",
+      "header": "src/extra/DataStructures/RollbackDSU/code.hpp",
+      "scenario": "corners",
+      "oracle": "Rebuilt graph connectivity and component sizes after snapshot/rollback; balanced merge and restoration invariants",
+      "source": "tests/Correctness/extra/DataStructures/RollbackDSU/Test.cpp"
+    },
+    {
+      "id": "RollbackDSU/oracle",
+      "module": "RollbackDSU",
+      "header": "src/extra/DataStructures/RollbackDSU/code.hpp",
+      "scenario": "oracle",
+      "oracle": "Rebuilt graph connectivity and component sizes after snapshot/rollback; balanced merge and restoration invariants",
+      "source": "tests/Correctness/extra/DataStructures/RollbackDSU/Test.cpp"
+    },
+    {
+      "id": "SlidingWindowAggregation/corners",
+      "module": "SlidingWindowAggregation",
+      "header": "src/extra/DataStructures/SlidingWindowAggregation/code.hpp",
+      "scenario": "corners",
+      "oracle": "Deque fold using ordered string concatenation and direct modular affine application; empty/singleton/transfer lifecycle",
+      "source": "tests/Correctness/extra/DataStructures/SlidingWindowAggregation/Test.cpp"
+    },
+    {
+      "id": "SlidingWindowAggregation/large",
+      "module": "SlidingWindowAggregation",
+      "header": "src/extra/DataStructures/SlidingWindowAggregation/code.hpp",
+      "scenario": "large",
+      "oracle": "Deque fold using ordered string concatenation and direct modular affine application; empty/singleton/transfer lifecycle",
+      "source": "tests/Correctness/extra/DataStructures/SlidingWindowAggregation/Test.cpp"
+    },
+    {
+      "id": "SlidingWindowAggregation/order-oracle",
+      "module": "SlidingWindowAggregation",
+      "header": "src/extra/DataStructures/SlidingWindowAggregation/code.hpp",
+      "scenario": "order oracle",
+      "oracle": "Deque fold using ordered string concatenation and direct modular affine application; empty/singleton/transfer lifecycle",
+      "source": "tests/Correctness/extra/DataStructures/SlidingWindowAggregation/Test.cpp"
+    },
+    {
+      "id": "SparseMatBIT/corners",
+      "module": "SparseMatBIT",
+      "header": "src/extra/DataStructures/SparseMatBIT/code.hpp",
+      "scenario": "corners",
+      "oracle": "Map of registered points and direct rectangle sum; duplicate, negative and extreme coordinates",
+      "source": "tests/Correctness/extra/DataStructures/SparseMatBIT/Test.cpp"
+    },
+    {
+      "id": "SparseMatBIT/oracle",
+      "module": "SparseMatBIT",
+      "header": "src/extra/DataStructures/SparseMatBIT/code.hpp",
+      "scenario": "oracle",
+      "oracle": "Map of registered points and direct rectangle sum; duplicate, negative and extreme coordinates",
+      "source": "tests/Correctness/extra/DataStructures/SparseMatBIT/Test.cpp"
+    },
+    {
+      "id": "SparseMatBIT/sparse-large",
+      "module": "SparseMatBIT",
+      "header": "src/extra/DataStructures/SparseMatBIT/code.hpp",
+      "scenario": "sparse large",
+      "oracle": "512 widely spaced antidiagonal points; power-of-two neighbors and regular probes verify singleton rectangles, plus the full total.",
+      "source": "tests/Correctness/extra/DataStructures/SparseMatBIT/Test.cpp"
+    },
+    {
+      "id": "WeightedDisjointSetUnion/info-oracle",
+      "module": "WeightedDisjointSetUnion",
+      "header": "src/extra/DataStructures/WeightedDisjointSetUnion/code.hpp",
+      "scenario": "info oracle",
+      "oracle": "Independent graph traversal potentials and connectivity for additive Info differences and inconsistent cycles",
+      "source": "tests/Correctness/extra/DataStructures/WeightedDisjointSetUnion/Test.cpp"
+    },
+    {
+      "id": "SlopeTrick/corners",
+      "module": "SlopeTrick",
+      "header": "src/extra/DynamicProgramming/SlopeTrick/code.hpp",
+      "scenario": "corners",
+      "oracle": "Independent finite-grid dynamic programming evaluates hinge additions, shifts and prefix/suffix minima; track the valid grid domain.",
+      "source": "tests/Correctness/extra/DynamicProgramming/SlopeTrick/Test.cpp"
+    },
+    {
+      "id": "SlopeTrick/grid-oracle",
+      "module": "SlopeTrick",
+      "header": "src/extra/DynamicProgramming/SlopeTrick/code.hpp",
+      "scenario": "grid oracle",
+      "oracle": "Independent finite-grid dynamic programming evaluates hinge additions, shifts and prefix/suffix minima; track the valid grid domain.",
+      "source": "tests/Correctness/extra/DynamicProgramming/SlopeTrick/Test.cpp"
+    },
+    {
+      "id": "SlopeTrick/large-median",
+      "module": "SlopeTrick",
+      "header": "src/extra/DynamicProgramming/SlopeTrick/code.hpp",
+      "scenario": "large median",
+      "oracle": "Sorted 512-point sample: any median minimizes the direct sum of absolute distances.",
+      "source": "tests/Correctness/extra/DynamicProgramming/SlopeTrick/Test.cpp"
+    },
+    {
+      "id": "SegmentTreeBeats/exhaustive-small",
+      "module": "SegmentTreeBeats",
+      "header": "src/extra/DataStructures/SegmentTreeBeats/code.hpp",
+      "scenario": "exhaustive small",
+      "oracle": "Plain vector chmin/chmax/add and direct sum/min/max; mixed operations, equal/second extrema, empty ranges and wide-intermediate regressions.",
+      "source": "tests/Correctness/extra/DataStructures/SegmentTreeBeats/Test.cpp"
+    },
+    {
+      "id": "SegmentTreeBeats/random-oracle",
+      "module": "SegmentTreeBeats",
+      "header": "src/extra/DataStructures/SegmentTreeBeats/code.hpp",
+      "scenario": "random oracle",
+      "oracle": "Plain vector chmin/chmax/add and direct sum/min/max; mixed operations, equal/second extrema, empty ranges and wide-intermediate regressions.",
+      "source": "tests/Correctness/extra/DataStructures/SegmentTreeBeats/Test.cpp"
+    },
+    {
+      "id": "SegmentTreeBeats/extreme-values",
+      "module": "SegmentTreeBeats",
+      "header": "src/extra/DataStructures/SegmentTreeBeats/code.hpp",
+      "scenario": "extreme values",
+      "oracle": "Plain vector chmin/chmax/add and direct sum/min/max; mixed operations, equal/second extrema, empty ranges and wide-intermediate regressions.",
+      "source": "tests/Correctness/extra/DataStructures/SegmentTreeBeats/Test.cpp"
+    },
+    {
+      "id": "SegmentTreeBeats/wide-lazy-regression",
+      "module": "SegmentTreeBeats",
+      "header": "src/extra/DataStructures/SegmentTreeBeats/code.hpp",
+      "scenario": "wide lazy regression",
+      "oracle": "Plain vector chmin/chmax/add and direct sum/min/max; mixed operations, equal/second extrema, empty ranges and wide-intermediate regressions.",
+      "source": "tests/Correctness/extra/DataStructures/SegmentTreeBeats/Test.cpp"
+    },
+    {
+      "id": "SegmentTreeBeats/structured",
+      "module": "SegmentTreeBeats",
+      "header": "src/extra/DataStructures/SegmentTreeBeats/code.hpp",
+      "scenario": "structured",
+      "oracle": "Plain vector chmin/chmax/add and direct sum/min/max; mixed operations, equal/second extrema, empty ranges and wide-intermediate regressions.",
+      "source": "tests/Correctness/extra/DataStructures/SegmentTreeBeats/Test.cpp"
+    },
+    {
+      "id": "ImplicitTreap/corners",
+      "module": "ImplicitTreap",
+      "header": "src/extra/Sequence/ImplicitTreap/code.hpp",
+      "scenario": "corners",
+      "oracle": "Plain vector and noncommutative string concatenation; positional inserts, deletes, reversals and queries, nondefault Info and pool reuse.",
+      "source": "tests/Correctness/extra/Sequence/ImplicitTreap/Test.cpp"
+    },
+    {
+      "id": "ImplicitTreap/noncommutative-oracle",
+      "module": "ImplicitTreap",
+      "header": "src/extra/Sequence/ImplicitTreap/code.hpp",
+      "scenario": "noncommutative oracle",
+      "oracle": "Plain vector and noncommutative string concatenation; positional inserts, deletes, reversals and queries, nondefault Info and pool reuse.",
+      "source": "tests/Correctness/extra/Sequence/ImplicitTreap/Test.cpp"
+    },
+    {
+      "id": "ImplicitTreap/large-recycle",
+      "module": "ImplicitTreap",
+      "header": "src/extra/Sequence/ImplicitTreap/code.hpp",
+      "scenario": "large recycle",
+      "oracle": "Plain vector and noncommutative string concatenation; positional inserts, deletes, reversals and queries, nondefault Info and pool reuse.",
+      "source": "tests/Correctness/extra/Sequence/ImplicitTreap/Test.cpp"
     }
   ],
   "stressCases": [

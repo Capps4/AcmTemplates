@@ -9,8 +9,8 @@
 
 int coreCases() {
     for (int n : {0, 1, 2, 100, 100000, INT_MAX}) {
-        Query::rangeScale(n);
-        int blockSize = int(std::sqrt(2.0 * n)) + 1;
+        MoSort cmp(n, 32);
+        int blockSize = std::max(1, int(n / std::sqrt(32.0)));
         std::vector<Query> queries;
         for (int i = 0; i < 32; ++i) {
             int l = randomInt(0, n), r = randomInt(l, n);
@@ -20,16 +20,18 @@ int coreCases() {
             int block = q.l / blockSize;
             return std::pair{block, block % 2 == 0 ? q.r : -q.r};
         };
-        std::sort(queries.begin(), queries.end());
+        MoSort other(1, 1000);
+        CHECK(!other(queries[0], queries[0]));
+        std::sort(queries.begin(), queries.end(), cmp);
         for (int i = 0; i < int(queries.size()); ++i) {
-            CHECK(!(queries[i] < queries[i]));
+            CHECK(!cmp(queries[i], queries[i]));
             if (i) CHECK(key(queries[i - 1]) <= key(queries[i]));
         }
         for (int trial = 0; trial < 16; ++trial) {
         test_context::step = trial;
             const auto& a = queries[randomInt(0, 31)];
             const auto& b = queries[randomInt(0, 31)];
-            CHECK((a < b) == (key(a) < key(b)));
+            CHECK(cmp(a, b) == (key(a) < key(b)));
         }
     }
     std::cout << "Snake-order oracle, strict weak order and INT_MAX scaling passed\n";
@@ -41,7 +43,6 @@ int coreCases() {
 
 namespace boundary_cases {
 void verifyAdded(int n, int shape) {
-    Query::rangeScale(n);
     std::vector<Query> q;
     std::vector<int> a(n);
     std::iota(a.begin(), a.end(), 1);
@@ -50,7 +51,7 @@ void verifyAdded(int n, int shape) {
             if (!shape or l == r or r == n)
                 q.emplace_back(l, r, int(q.size()));
     int count = int(q.size());
-    std::sort(q.begin(), q.end());
+    std::sort(q.begin(), q.end(), MoSort(n, count));
     std::vector<bool> seen(count);
     int l = 0, r = 0;
     long long sum = 0;
@@ -84,6 +85,33 @@ int run() {
     });
     runCase("MoSort/mixed-window", [] {
         verifyAdded(17, 0);
+    });
+    runCase("MoSort/query-counts", [] {
+        const int n = 41;
+        std::vector<int> a(n);
+        for (auto& x : a)
+            x = randomInt(-30, 30);
+        for (int count : {0, 1, 3, n, 8 * n}) {
+            std::vector<Query> q;
+            for (int i = 0; i < count; ++i) {
+                int l = randomInt(0, n), r = randomInt(l, n);
+                q.emplace_back(l, r, i);
+            }
+            std::sort(q.begin(), q.end(), MoSort(n, count));
+            int l = 0, r = 0;
+            long long sum = 0;
+            for (auto x : q) {
+                while (l > x.l)
+                    sum += a[--l];
+                while (r < x.r)
+                    sum += a[r++];
+                while (l < x.l)
+                    sum -= a[l++];
+                while (r > x.r)
+                    sum -= a[--r];
+                CHECK(sum == std::accumulate(a.begin() + x.l, a.begin() + x.r, 0LL));
+            }
+        }
     });
     return 0;
 }

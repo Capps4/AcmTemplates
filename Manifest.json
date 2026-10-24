@@ -523,5 +523,41 @@
       "Geo2"
     ],
     "include": "src/extra/Geometry/DelaunayTriangulation/Include.hpp"
+  },
+  {
+    "module": "RollbackDSU",
+    "path": "src/extra/DataStructures/RollbackDSU",
+    "dependencies": [],
+    "collection": "extra"
+  },
+  {
+    "module": "SlidingWindowAggregation",
+    "path": "src/extra/DataStructures/SlidingWindowAggregation",
+    "dependencies": [],
+    "collection": "extra"
+  },
+  {
+    "module": "SparseMatBIT",
+    "path": "src/extra/DataStructures/SparseMatBIT",
+    "dependencies": [],
+    "collection": "extra"
+  },
+  {
+    "module": "SlopeTrick",
+    "path": "src/extra/DynamicProgramming/SlopeTrick",
+    "dependencies": [],
+    "collection": "extra"
+  },
+  {
+    "module": "SegmentTreeBeats",
+    "path": "src/extra/DataStructures/SegmentTreeBeats",
+    "dependencies": [],
+    "collection": "extra"
+  },
+  {
+    "module": "ImplicitTreap",
+    "path": "src/extra/Sequence/ImplicitTreap",
+    "dependencies": [],
+    "collection": "extra"
   }
 ]

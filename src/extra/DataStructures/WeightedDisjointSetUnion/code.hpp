@@ -45,3 +45,22 @@ struct WeightedDSU {
         return true;
     }
 };
+
+// replace me: additive potential.
+struct Info {
+    long long val;
+
+    explicit Info(long long val = 0) : val(val) {}
+
+    Info operator+(const Info& v) const {
+        return Info(val + v.val);
+    }
+
+    Info operator-(const Info& v) const {
+        return Info(val - v.val);
+    }
+
+    bool operator==(const Info& v) const {
+        return val == v.val;
+    }
+};

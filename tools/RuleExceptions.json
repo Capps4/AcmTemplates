@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-10-24",
+  "date": "2026-10-25",
   "scope": "active template headers only; semantic exceptions, not correctness evidence",
   "reviews": [
     {
@@ -1024,11 +1024,6 @@
       "reason": "auto&& 是管道操作的转发引用，交由 materialize 处理借用/拥有。"
     },
     {
-      "id": "src/extra/Sequence/MoSort/code.hpp:R04:rangeScale",
-      "fingerprint": "3403d901ff059f6ad0a2bd6a1aa912a4814574a804b9263f438ed8908402f714",
-      "reason": "rangeScale 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
-    },
-    {
       "id": "src/core/Math/Numeric/ModuloInteger/code.hpp:R09:is_same_v",
       "fingerprint": "7d150be93cb41d7789c99ccba8ab183cd77bf4ae44d7626d4e24cb7eca3ed7f0",
       "reason": "模数底层和输入限定整型；符号归一化与宽乘按位宽分派，禁止浮点输入误入构造重载。"
@@ -1215,8 +1210,8 @@
     },
     {
       "id": "src/core/DataStructures/RangeQuery/SegTree/code.hpp:R04:apply",
-      "fingerprint": "89f5549da0df1c232e2d92ea2ae5932f999300cd69f8d001c00d1a2c7c24e113",
-      "reason": "Info / Tag 的公开应用协议；用户指定保留 SegTree 实现并适度压行。"
+      "fingerprint": "6780a2d58e5f252862f666ba8181158d185b7f4107a016f3b8c9b2bcb09a37d9",
+      "reason": "Info/Tag 的现有 apply 更新协议；类内同名辅助函数同时更新聚合与懒标记，保留一致含义。"
     },
     {
       "id": "src/core/DataStructures/RangeQuery/SegTree/code.hpp:R04:modify",
@@ -1942,6 +1937,286 @@
       "id": "src/extra/Math/ExCrt/code.hpp:R09:is_signed_v",
       "fingerprint": "fe390a1e1799aa16a05fb500098798cc716e168db6e5bf68eb48fbf7e482f870",
       "reason": "ExCrt 用 -1 表示无解，使用至多 64 位有符号整型并以 __int128 保存乘法/扩展欧几里得中间值；该约束是返回协议和表示范围要求。"
+    },
+    {
+      "id": "src/extra/DataStructures/RollbackDSU/code.hpp:R04:snapshot",
+      "fingerprint": "a767d2a964ea1797d7aa80c58a863c875ed5b3ec9b28584659d03ca232eb9913",
+      "reason": "公开历史位置接口，用于后续 rollback，名称表达快照语义。"
+    },
+    {
+      "id": "src/extra/DataStructures/RollbackDSU/code.hpp:R04:rollback",
+      "fingerprint": "ef003baed3ab1e7b0febae2000eff63e61f6532ce189859801cda63c03120078",
+      "reason": "可撤销并查集的公共操作，将状态回退到 snapshot 返回的位置。"
+    },
+    {
+      "id": "src/extra/DataStructures/SlidingWindowAggregation/code.hpp:R04:query",
+      "fingerprint": "5c33209c34074b129e73667dc8b1f6332224ebdcea22a791c53217cac5ebac9c",
+      "reason": "窗口聚合的公开查询接口，与本库数据结构 query 命名一致。"
+    },
+    {
+      "id": "src/extra/DataStructures/SparseMatBIT/code.hpp:R04:first",
+      "fingerprint": "fb6e74f11796784e325cdcd2b92ac88db8026a19651eb1236765114631e17c59",
+      "reason": "std::pair 的标准成员，存储预登记点的横坐标，不能缩写外部协议。"
+    },
+    {
+      "id": "src/extra/DataStructures/SparseMatBIT/code.hpp:R04:modify",
+      "fingerprint": "bdf3b57d38245a4cba8b20598d685b059c1c09bfcfa8f194292e84cb229cdfdc",
+      "reason": "二维树状数组的公开单点累加接口，与 MatBIT/RangeMatBIT 一致。"
+    },
+    {
+      "id": "src/extra/DataStructures/SparseMatBIT/code.hpp:R04:prefixQuery",
+      "fingerprint": "c45c5caea92ec37e67b5dbf5631842548c2310bf340cb8bce708820c885c7d76",
+      "reason": "公开二维严格前缀查询，名称区分矩形 rangeQuery。"
+    },
+    {
+      "id": "src/extra/DataStructures/SparseMatBIT/code.hpp:R04:rangeQuery",
+      "fingerprint": "fc59a7ed882c716af2c32f950cd4abccafb50c627e0614e6cb569f44a5971f39",
+      "reason": "公开半开矩形查询接口，与 prefixQuery 明确区分。"
+    },
+    {
+      "id": "src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp:R04:debuger",
+      "fingerprint": "edf6f89d272910b8346839b70319e0035276dc42ba9fa83c64ac0161b860b9c2",
+      "reason": "debuger 是现有调试宏调用的公共命名空间，保留配置与输出协议。"
+    },
+    {
+      "id": "src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp:R04:remove_prefix",
+      "fingerprint": "1e5318bc471be365a200698a21d1b7cd61ac4a0cc680a57499babb40eec06c78",
+      "reason": "std::string_view 的标准成员函数，用于无分配裁去首尾空白。"
+    },
+    {
+      "id": "src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp:R04:remove_suffix",
+      "fingerprint": "70d055aa18a0f4b969b1183da8deec2eaddb42520e1cdf94413450923a09bce6",
+      "reason": "std::string_view 的标准成员函数，用于无分配裁去首尾空白。"
+    },
+    {
+      "id": "src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp:R04:size_t",
+      "fingerprint": "29a48a7c7382e4db8b25badd50fc2f992448009fdb1aba6401e9ae1eb11ac144",
+      "reason": "标准 size_t 类型，承载容器下标、参数包计数与聚合字段数。"
+    },
+    {
+      "id": "src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp:R09:void_t",
+      "fingerprint": "6cff6a7d12be4d1a58b570d32c3994b259dc678ac23ec4a1e707d47545ae9479",
+      "reason": "分别检测流输出、迭代、key/mapped 类型和 tuple 协议，选择已支持对象的打印表示，不改变所有权。"
+    },
+    {
+      "id": "src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp:R04:key_type",
+      "fingerprint": "68cf6a3b4e47c281b2f7459a1c14de2fb06a6cc97e03abcc44455fed985cd6fe",
+      "reason": "标准关联容器的类型协议；用于区分集合和映射的输出形式。"
+    },
+    {
+      "id": "src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp:R04:mapped_type",
+      "fingerprint": "d6fdfbc81e052deb248ec630601c669dc868a35decb49ef7db04d119a20d6224",
+      "reason": "标准关联容器的类型协议；用于区分集合和映射的输出形式。"
+    },
+    {
+      "id": "src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp:R04:maybe_unused",
+      "fingerprint": "46d3c7ec8209ab17200152c3a80fb58ab9b0eac6394e751be37c4f1a24bf3d39",
+      "reason": "C++17 标准属性，空参数包时 one 未调用仍须严格编译。"
+    },
+    {
+      "id": "src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp:R09:is_same_v",
+      "fingerprint": "b17a44f5385448d2e6399bb0466fc370db0cd6d67e05f137b9cfe3567bac2abe",
+      "reason": "区分单字符、字符数组、C 字符串及普通数组，保留转义和有界字符数组访问；不能统一按指针打印。"
+    },
+    {
+      "id": "src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp:R09:is_array_v",
+      "fingerprint": "4c5fc9032cdc042b492b5ae3591f6efb4c1c3017013adf5ded243eacd55cb04f",
+      "reason": "区分单字符、字符数组、C 字符串及普通数组，保留转义和有界字符数组访问；不能统一按指针打印。"
+    },
+    {
+      "id": "src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp:R09:is_null_pointer_v",
+      "fingerprint": "7cf24a5e4c035e6aa4cdd8f335829ca232e71905cd7e9f25bc6a971ad54c9173",
+      "reason": "区分 nullptr、对象指针和函数指针；选择合法地址转换，避免把函数指针当对象指针。"
+    },
+    {
+      "id": "src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp:R09:is_pointer_v",
+      "fingerprint": "100c51ce8f4e7aeb5292a626c20aa29506bd01b43d4b0f43dbb7ace8bc2468a7",
+      "reason": "区分 nullptr、对象指针和函数指针；选择合法地址转换，避免把函数指针当对象指针。"
+    },
+    {
+      "id": "src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp:R09:is_function_v",
+      "fingerprint": "09de67f6059a59013e87b1347a883dedefc457ef336f2b39fc72055df4e5ef8d",
+      "reason": "区分 nullptr、对象指针和函数指针；选择合法地址转换，避免把函数指针当对象指针。"
+    },
+    {
+      "id": "src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp:R04:valueless_by_exception",
+      "fingerprint": "21949c9b4dd2a1a1b6c2039e31f590b09ad529d449b90ab1062a7028cb88cf97",
+      "reason": "std::variant 的标准成员；区分异常无值状态并输出当前分支编号。"
+    },
+    {
+      "id": "src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp:R04:index",
+      "fingerprint": "79d405b7f3b2a322809759a1396e5dc52d795b280dac40ac5915c8270d7bdb0c",
+      "reason": "std::variant 的标准成员；区分异常无值状态并输出当前分支编号。"
+    },
+    {
+      "id": "src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp:R09:is_aggregate_v",
+      "fingerprint": "d621af8048c1ab07971fbc217100fa43783281e7ba7cbdee782f6bbd8f004870",
+      "reason": "C++17 聚合字段展开仅用于非 union 的受支持聚合类型；其他类型回退 unprintable，避免非法结构化绑定。"
+    },
+    {
+      "id": "src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp:R09:is_union_v",
+      "fingerprint": "d621af8048c1ab07971fbc217100fa43783281e7ba7cbdee782f6bbd8f004870",
+      "reason": "C++17 聚合字段展开仅用于非 union 的受支持聚合类型；其他类型回退 unprintable，避免非法结构化绑定。"
+    },
+    {
+      "id": "src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp:R04:write",
+      "fingerprint": "db1270fbb4251cecf2440436747ce4e56c201541d4453468472824a96ad22f23",
+      "reason": "std::ostream::write 标准接口，一次写入已组装的调试行。"
+    },
+    {
+      "id": "src/core/DataStructures/Map/HashMap/code.hpp:R04:key_type",
+      "fingerprint": "3cdf52d2e7a173031ab768caf80751288834916cb85f39eba642485ab0a722e5",
+      "reason": "关联容器的公开类型别名，供泛型调用方和调试器检测 key/value 协议。"
+    },
+    {
+      "id": "src/core/DataStructures/Map/HashMap/code.hpp:R04:mapped_type",
+      "fingerprint": "31a21640973f2288b8be4bb3b620ec01f34763fa82f7fba7ddfebe419116b794",
+      "reason": "关联容器的公开类型别名，供泛型调用方和调试器检测 key/value 协议。"
+    },
+    {
+      "id": "src/core/DataStructures/Map/TreeMap/code.hpp:R04:key_type",
+      "fingerprint": "dd92c322d8a4bdc8bf98089174a015a49fb251fbfa7986337187d38e4465ffe9",
+      "reason": "关联容器的公开类型别名，供泛型调用方和调试器检测 key/value 协议。"
+    },
+    {
+      "id": "src/core/DataStructures/Map/TreeMap/code.hpp:R04:mapped_type",
+      "fingerprint": "d6e0e8536e80b6aca107d4d6a9b044a7e0d878d8accf8145a67b8a8b5424b90b",
+      "reason": "关联容器的公开类型别名，供泛型调用方和调试器检测 key/value 协议。"
+    },
+    {
+      "id": "src/extra/DataStructures/MonotonyStack/code.hpp:R04:first",
+      "fingerprint": "dfa180908c7a9c9d56be52fcbe84defc74adaa9ecd22439e0560cfa27e7294aa",
+      "reason": "std::pair 的标准成员名称；分别访问既有二元结果或关联容器键值，不是内部自定义长名。"
+    },
+    {
+      "id": "src/extra/DataStructures/MonotonyStack/code.hpp:R04:second",
+      "fingerprint": "28e5411b8d4b1e3e3fbf419b06338f55b453c513dc2b9d7e4985566669ec46e9",
+      "reason": "std::pair 的标准成员名称；分别访问既有二元结果或关联容器键值，不是内部自定义长名。"
+    },
+    {
+      "id": "src/extra/Sequence/PartialOrder3D/code.hpp:R06:packed",
+      "fingerprint": "0bdcb520d1cecad3465ca88afa345db8359c1f4f2c37f82eb0363aec60522d9f",
+      "reason": "此处为仅返回一次比较结果的短排序 lambda，没有多步执行或控制流；符合 R05/R06 的短纯返回例外。"
+    },
+    {
+      "id": "src/extra/Sequence/PartialOrder3D/code.hpp:R04:modify",
+      "fingerprint": "ed59b9c37daea571a012a5f00ae79f37858f1207026575907ad71d36908815fb",
+      "reason": "调用本仓 Fenwick/二维 Fenwick 的既有公开 modify 接口；保持依赖契约。"
+    },
+    {
+      "id": "src/extra/DataStructures/RangeBIT/code.hpp:R04:modify",
+      "fingerprint": "4956dfaabb01a9ab0a6b17369354fff6ab32975417b67fb9d426c3c8afb5b11a",
+      "reason": "调用本仓 Fenwick/二维 Fenwick 的既有公开 modify 接口；保持依赖契约。"
+    },
+    {
+      "id": "src/extra/DataStructures/MatBIT/code.hpp:R04:modify",
+      "fingerprint": "f0d133ec64683f5c573d3f4916454ffb3238e3456a5adf1412cf9acbb3414896",
+      "reason": "调用本仓 Fenwick/二维 Fenwick 的既有公开 modify 接口；保持依赖契约。"
+    },
+    {
+      "id": "src/extra/DataStructures/RangeMatBIT/code.hpp:R04:modify",
+      "fingerprint": "13e345d1b94a412923afaa2a0ee90669f0d0a462cfca0cd74afc3c2a76b5986f",
+      "reason": "调用本仓 Fenwick/二维 Fenwick 的既有公开 modify 接口；保持依赖契约。"
+    },
+    {
+      "id": "src/extra/DynamicProgramming/SlopeTrick/code.hpp:R04:addConstant",
+      "fingerprint": "41c6c7449ca17ffe8b41d9794da9bd898cd8c1809f032c9b50aaf59da53ae86e",
+      "reason": "公开的常数项增量接口，直接表达对凸分段线性函数的操作。"
+    },
+    {
+      "id": "src/extra/DynamicProgramming/SlopeTrick/code.hpp:R04:addLeft",
+      "fingerprint": "1c29dffda187a660142ccc191f5fa7dc1b1975414fdad05831577396c834c1fc",
+      "reason": "公开的三种 hinge/绝对值增量操作；左右名称对应 max(a-x,0) 与 max(x-a,0)。"
+    },
+    {
+      "id": "src/extra/DynamicProgramming/SlopeTrick/code.hpp:R04:addRight",
+      "fingerprint": "0038b51a1b573d058bcbd110573c4055ccd82bc7e3dbf972176ddcbaeb619ed2",
+      "reason": "公开的三种 hinge/绝对值增量操作；左右名称对应 max(a-x,0) 与 max(x-a,0)。"
+    },
+    {
+      "id": "src/extra/DynamicProgramming/SlopeTrick/code.hpp:R04:addAbs",
+      "fingerprint": "6d1fbc2fbb675b1dd68e05cb54c25c61092f6bb23dcf8e048a77f8cb49925dd1",
+      "reason": "公开的三种 hinge/绝对值增量操作；左右名称对应 max(a-x,0) 与 max(x-a,0)。"
+    },
+    {
+      "id": "src/extra/DynamicProgramming/SlopeTrick/code.hpp:R04:shift",
+      "fingerprint": "dbcacfd32fc5ca6bb7aadac1d04de1f33c54582471b8bb97aa0e9402e5c64804",
+      "reason": "公开的平移/滑动最小值操作，单点和平移区间重载共用含义。"
+    },
+    {
+      "id": "src/extra/DynamicProgramming/SlopeTrick/code.hpp:R04:prefixMin",
+      "fingerprint": "5e0036095afad8724066438418eebc6e0728a2810d38766ac5486025ae0b01af",
+      "reason": "公开的前后缀最小化操作及最小值/极小点查询，名称区分不同变换。"
+    },
+    {
+      "id": "src/extra/DynamicProgramming/SlopeTrick/code.hpp:R04:suffixMin",
+      "fingerprint": "a92f6b66592ef90d19b40f8cec161c4e4a8335c26087bbd75b4a4f7d9f8dee69",
+      "reason": "公开的前后缀最小化操作及最小值/极小点查询，名称区分不同变换。"
+    },
+    {
+      "id": "src/extra/DynamicProgramming/SlopeTrick/code.hpp:R04:minimum",
+      "fingerprint": "93b4c33f11846a9278fb0940192d093e703e8ffb6bc10bd4a3165d5bd5b21f73",
+      "reason": "公开的前后缀最小化操作及最小值/极小点查询，名称区分不同变换。"
+    },
+    {
+      "id": "src/extra/DataStructures/SegmentTreeBeats/code.hpp:R04:lowest",
+      "fingerprint": "cd3a2ecbbd2d5c893c693415dd0bd88233ca62da0f2f3f001984862a14f03ffe",
+      "reason": "std::numeric_limits 的标准成员，表示不存在严格次大值的边界。"
+    },
+    {
+      "id": "src/extra/DataStructures/SegmentTreeBeats/code.hpp:R04:chmin",
+      "fingerprint": "0a2413fdc98555b0968212bea4721a28955322a688df8c919a10832fe82dcb69",
+      "reason": "经典 Segment Tree Beats 的公开区间操作，名称与逐元素 min/max 及聚合查询对应。"
+    },
+    {
+      "id": "src/extra/DataStructures/SegmentTreeBeats/code.hpp:R04:chmax",
+      "fingerprint": "d36f5e5f0af390c8434ce11863fea498cac9ea89ce8f69463f267d8ff8114674",
+      "reason": "经典 Segment Tree Beats 的公开区间操作，名称与逐元素 min/max 及聚合查询对应。"
+    },
+    {
+      "id": "src/extra/DataStructures/SegmentTreeBeats/code.hpp:R04:query",
+      "fingerprint": "d51852a528c28e8fe670991912c2912e8bf146d54c28c277449c7ba1e765459c",
+      "reason": "经典 Segment Tree Beats 的公开区间操作，名称与逐元素 min/max 及聚合查询对应。"
+    },
+    {
+      "id": "src/extra/Sequence/ImplicitTreap/code.hpp:R04:x9e3779b97f4a7c15ULL",
+      "fingerprint": "bc08d0a4fcf14a4d393cc3c92a6ac3c8745fee3804273e7824132e4a1bdc55db",
+      "reason": "扫描器将十六进制数值字面量拆成候选；这是 SplitMix64 的固定混合常数，不是变量名。"
+    },
+    {
+      "id": "src/extra/Sequence/ImplicitTreap/code.hpp:R04:xbf58476d1ce4e5b9ULL",
+      "fingerprint": "aac8d305cee9b9df8ae3c6b62431f65e61926adedc1be06f690abdfe8b5502d0",
+      "reason": "扫描器将十六进制数值字面量拆成候选；这是 SplitMix64 的固定混合常数，不是变量名。"
+    },
+    {
+      "id": "src/extra/Sequence/ImplicitTreap/code.hpp:R04:x94d049bb133111ebULL",
+      "fingerprint": "35e86364a5de35cb983b39ce32e025cce5a1be2952e9bce52dfc03aedb21f5c6",
+      "reason": "扫描器将十六进制数值字面量拆成候选；这是 SplitMix64 的固定混合常数，不是变量名。"
+    },
+    {
+      "id": "src/extra/Sequence/ImplicitTreap/code.hpp:R04:steady_clock",
+      "fingerprint": "d85c7e5fd5f15571edc418b5fe61bdfb73ffdda030ae0d3cd025123c88d9c691",
+      "reason": "std::chrono 的标准时钟与 duration 接口，用于默认随机种子；调用方仍可传固定种子复现。"
+    },
+    {
+      "id": "src/extra/Sequence/ImplicitTreap/code.hpp:R04:time_since_epoch",
+      "fingerprint": "d85c7e5fd5f15571edc418b5fe61bdfb73ffdda030ae0d3cd025123c88d9c691",
+      "reason": "std::chrono 的标准时钟与 duration 接口，用于默认随机种子；调用方仍可传固定种子复现。"
+    },
+    {
+      "id": "src/extra/Sequence/ImplicitTreap/code.hpp:R04:reverse",
+      "fingerprint": "fa7268dea17df719b7bf6ba0b9d2d386f2d93905a5f28e5f3f46371273b163c2",
+      "reason": "公开的区间反转与按序聚合接口。"
+    },
+    {
+      "id": "src/extra/Sequence/ImplicitTreap/code.hpp:R04:query",
+      "fingerprint": "81a64bd3ec54184d7b60cb4fbfe27400a92476030a6ba0ceb80b259c1925a08f",
+      "reason": "公开的区间反转与按序聚合接口。"
+    },
+    {
+      "id": "src/extra/Sequence/ImplicitTreap/code.hpp:R04:first",
+      "fingerprint": "92704b859eca2fcc58f304adb327a2487ac99b340678cf432a53cd06ecce3f24",
+      "reason": "std::pair 的标准成员名称；分别访问既有二元结果或关联容器键值，不是内部自定义长名。"
     }
   ]
 }

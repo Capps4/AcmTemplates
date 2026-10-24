@@ -66,14 +66,14 @@ public:
         }
     }
 
-    // Inclusive indices in the registered key set; l > r is a no-op.
+    // Half-open indices [l, r) in the registered key set.
     void insert(int l, int r, Line line) {
-        if (l > r) {
+        assert(0 <= l and l <= r and r <= int(keys.size()));
+        if (l == r) {
             return;
         }
-        assert(l >= 0 and r < int(keys.size()));
         a.push_back(std::move(line));
-        insert(1, 0, int(keys.size()) - 1, l, r, int(a.size()));
+        insert(1, 0, int(keys.size()) - 1, l, r - 1, int(a.size()));
     }
 
     Line queryLine(Key key) const {

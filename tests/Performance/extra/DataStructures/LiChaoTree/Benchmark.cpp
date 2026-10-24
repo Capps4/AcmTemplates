@@ -20,7 +20,7 @@ int main(int argc, char** argv) {
     return measure(in, "parallel / in-domain crossing Li Chao lines", [&]() -> std::uint64_t {
         LiChaoTree<Line> t(xs);
         for (int i = 0; i < in.n; ++i) {
-            t.insert(0, in.n - 1, {in.shape ? 2LL * i : 0, in.shape ? -1LL * i * i : i});
+            t.insert(0, in.n, {in.shape ? 2LL * i : 0, in.shape ? -1LL * i * i : i});
         }
         std::uint64_t sum = 0;
         for (int i = 0; i < in.n; ++i) {

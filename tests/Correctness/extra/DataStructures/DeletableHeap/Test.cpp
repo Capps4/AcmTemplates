@@ -35,7 +35,7 @@ int coreCases() {
     strings.emplace(1000, 'x'); strings.push(std::string(1000, 'y'));
     const auto& top = strings.top(); CHECK(top == std::string(1000, 'y'));
     CHECK(&top == &strings.top()); strings.erase(std::string(1000, 'y')); CHECK(strings.top() == std::string(1000, 'x'));
-    std::cout << "50K multiset oracle operations, duplicates, captured comparator/CTAD, bulk build and string emplace passed\n";
+    std::cout << "256 multiset oracle operations, duplicates, captured comparator/CTAD, bulk build and string emplace passed\n";
     return 0;
 }
 

@@ -24,6 +24,12 @@
 
 <!-- @code RangePrimeCount -->
 
+# DynamicProgramming
+
+## SlopeTrick
+
+<!-- @code SlopeTrick -->
+
 # DataStructures
 
 ## DeletableHeap
@@ -57,6 +63,22 @@
 ## LiChaoTree
 
 <!-- @code LiChaoTree -->
+
+## RollbackDSU
+
+<!-- @code RollbackDSU -->
+
+## SlidingWindowAggregation
+
+<!-- @code SlidingWindowAggregation -->
+
+## SparseMatBIT
+
+<!-- @code SparseMatBIT -->
+
+## SegmentTreeBeats
+
+<!-- @code SegmentTreeBeats -->
 
 # String
 
@@ -137,6 +159,10 @@ In mo processing, use #define add(x) & del(x) for atomic operator.
 ## PartialOrder3D
 
 <!-- @code PartialOrder3D -->
+
+## ImplicitTreap
+
+<!-- @code ImplicitTreap -->
 
 # Examples and Notes
 

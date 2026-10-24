@@ -66,6 +66,15 @@ int run() {
     runCase("CountingSortOrder/interleaved", [] {
         verifyAdded({7, 4, 7, 2, 4, 0});
     });
+    runCase("CountingSortOrder/key-capacity", [] {
+        bool rejected = false;
+        try {
+            countingSortOrder(std::vector<int>{0, std::numeric_limits<int>::max()});
+        } catch (const std::length_error&) {
+            rejected = true;
+        }
+        CHECK(rejected);
+    });
     return 0;
 }
 }
