@@ -90,6 +90,8 @@ Snippets 只包含模板正文，前置模板按清单和模块 README 插入。
 
 支持 Markdown 常用结构、表格与公式；原始 HTML 会报错。`tools/Library.json` / `tools/ExtraLibrary.json` 分别保存标题锚点、卡片 ID 和显示设置。围栏内的示例标记保持字面内容。extra 保留 DigitDP、Block、DsuOnTree 的框架与原公式，不引用 SnippetInstaller。
 
+示例卡片使用 `example/<节内序号>/<完整标题路径>` 查找显示设置，序号从 1 开始；在前文插入模块或说明不会改变卡片 ID。
+
 ```bash
 ctl update --yuque
 ```

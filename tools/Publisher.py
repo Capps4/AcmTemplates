@@ -55,13 +55,13 @@ def publish(console, client=None, collection='core'):
         report, current = prepare(client, result, collection)
         console.note('目标：' + report['ref'])
         console.note('差异：' + report['diff'])
+        saved = state_path(report['ref'])
+        if not report['changed']:
+            write_json(saved, {'ref': report['ref'], 'revision': current['_yuque']['revision']})
+            return dict(report, applied=False, verified=True)
         if report['remoteChanged']:
             raise YuqueError('远端已被修改，未覆盖。先把需要的变更合入对应集合的文档源，检查差异文件；'
                              '确认后将 tools/__init__.py 的 ' + ('YUQUE_EXPECTED_REVISION' if collection == 'core' else 'YUQUE_EXTRA_EXPECTED_REVISION') + ' 设置为：\n' + report['revision'], 6)
-    saved = state_path(report['ref'])
-    if not report['changed']:
-        write_json(saved, {'ref': report['ref'], 'revision': current['_yuque']['revision']})
-        return dict(report, applied=False, verified=True)
     with console.step('检查现版正确性与性能报告'):
         from tools.Verification import save
         evidence, path = save(collection=collection)

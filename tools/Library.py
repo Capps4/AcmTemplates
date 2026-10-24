@@ -104,7 +104,7 @@ def build(source=None, config=None, require_all=True, collection='core'):
     text = ''.join(lines)
     tokens = md.parse(text)
     seen, replacements, heading_ids = set(), [], set()
-    headings = []
+    headings, example_counts = [], {}
     # Only standalone HTML comment tokens are directives. Examples in fences stay literal.
     for i, token in enumerate(tokens):
         if token.type == 'html_block':
@@ -157,7 +157,9 @@ def build(source=None, config=None, require_all=True, collection='core'):
             token.attrSet('id', identity)
             token.attrSet('data-lake-id', identity)
         elif token.type == 'fence':
-            token.meta = {'key': 'example/' + str(token.map[0])}
+            section = '/'.join(entry[1] for entry in headings) or 'Example'
+            example_counts[section] = example_counts.get(section, 0) + 1
+            token.meta = {'key': 'example/' + str(example_counts[section]) + '/' + section}
             token.info = token.info or 'plain'
     if require_all and seen != set(paths):
         raise ValueError('文档未引用模板：' + ', '.join(sorted(set(paths) - seen)))

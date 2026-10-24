@@ -96,7 +96,8 @@
       "tabSize": null,
       "search": "FastFourierTransform",
       "id": "b703c12c",
-      "name": "FastFourierTransform"
+      "name": "FastFourierTransform",
+      "foldLines": []
     },
     "GaussianElimination": {
       "__spacing": "both",
@@ -117,7 +118,8 @@
       "tabSize": null,
       "search": "GaussianElimination",
       "id": "2928d4b8",
-      "name": "GaussianElimination"
+      "name": "GaussianElimination",
+      "foldLines": []
     },
     "RandomNumber": {
       "__spacing": "both",
@@ -138,7 +140,8 @@
       "tabSize": null,
       "search": "RandomNumber",
       "id": "S5krG",
-      "name": "RandomNumber"
+      "name": "RandomNumber",
+      "foldLines": []
     },
     "DeletableHeap": {
       "__spacing": "both",
@@ -159,7 +162,8 @@
       "tabSize": null,
       "search": "DeletableHeap",
       "id": "4aa39dfa",
-      "name": "DeletableHeap"
+      "name": "DeletableHeap",
+      "foldLines": []
     },
     "ExSuffixAutomaton": {
       "__spacing": "both",
@@ -180,7 +184,8 @@
       "tabSize": null,
       "search": "ExSuffixAutomaton",
       "id": "5ebf983a",
-      "name": "ExSuffixAutomaton"
+      "name": "ExSuffixAutomaton",
+      "foldLines": []
     },
     "MinimalString": {
       "__spacing": "both",
@@ -201,7 +206,8 @@
       "tabSize": null,
       "search": "MinimalString",
       "id": "FAl0T",
-      "name": "MinimalString"
+      "name": "MinimalString",
+      "foldLines": []
     },
     "PalindromeAutomaton": {
       "__spacing": "both",
@@ -222,7 +228,8 @@
       "tabSize": null,
       "search": "PalindromeAutomaton",
       "id": "b0332f49",
-      "name": "PalindromeAutomaton"
+      "name": "PalindromeAutomaton",
+      "foldLines": []
     },
     "CentroidDecomposition": {
       "__spacing": "both",
@@ -243,7 +250,8 @@
       "tabSize": null,
       "search": "CentroidDecomposition",
       "id": "JaKgW",
-      "name": "CentroidDecomposition"
+      "name": "CentroidDecomposition",
+      "foldLines": []
     },
     "Geo3": {
       "__spacing": "both",
@@ -264,7 +272,8 @@
       "tabSize": null,
       "search": "geo3",
       "id": "lK3Re",
-      "name": "geo3"
+      "name": "geo3",
+      "foldLines": []
     },
     "CountingSortOrder": {
       "__spacing": "both",
@@ -285,7 +294,8 @@
       "tabSize": null,
       "search": "CountingSortOrder",
       "id": "9be54720",
-      "name": "CountingSortOrder"
+      "name": "CountingSortOrder",
+      "foldLines": []
     },
     "MoSort": {
       "__spacing": "both",
@@ -306,7 +316,8 @@
       "tabSize": null,
       "search": "MoSort",
       "id": "XiqHL",
-      "name": "MoSort"
+      "name": "MoSort",
+      "foldLines": []
     },
     "ExCrt": {
       "search": "ExCrt",
@@ -734,7 +745,7 @@
         "bottom": true
       }
     },
-    "example/146": {
+    "example/1/Examples and Notes/DigitDP": {
       "search": "DigitDP",
       "autoWrap": false,
       "lineNumbers": true,
@@ -756,7 +767,7 @@
         "bottom": true
       }
     },
-    "example/196": {
+    "example/1/Examples and Notes/Block": {
       "search": "Block",
       "autoWrap": false,
       "lineNumbers": true,
@@ -778,7 +789,7 @@
         "bottom": true
       }
     },
-    "example/289": {
+    "example/1/Examples and Notes/DsuOnTree": {
       "search": "DsuOnTree",
       "autoWrap": false,
       "lineNumbers": true,

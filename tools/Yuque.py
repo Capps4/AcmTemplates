@@ -88,7 +88,8 @@ class YuqueClient:
         env = os.environ.copy()
         env.update(YUQUE_TOKEN=self.token, YUQUE_HOST='https://www.yuque.com', YUQUE_TIMEOUT_MS='30000')
         try:
-            result = subprocess.run([self.node, str(CLI), '--json', *map(str, args)],
+            result = subprocess.run([self.node, str(Path(__file__).with_name('YuqueCli.mjs')),
+                                     str(CLI), '--json', *map(str, args)],
                                     env=env, capture_output=True, text=True, timeout=config.YUQUE_REQUEST_TIMEOUT)
         except subprocess.TimeoutExpired:
             raise YuqueError('请求超时；写入可能已经生效，请先检查远端和本地备份，勿直接重试。', 6) from None

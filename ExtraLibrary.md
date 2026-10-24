@@ -144,7 +144,7 @@ Problem-specific sketches.
 
 ## DigitDP
 
-```text
+```latex
 // 求[0, X] 的方案数/xx和
 // function calc(X)
 //     if X == 0 then
@@ -194,7 +194,7 @@ Problem-specific sketches.
 
 ## Block
 
-```text
+```latex
 template <class T>
 class Block {
     const int n;
@@ -287,7 +287,7 @@ public:
 
 ## DsuOnTree
 
-```text
+```latex
 //	先递归轻子树
     
 //	if(当前节点有重子树:big!=-1){

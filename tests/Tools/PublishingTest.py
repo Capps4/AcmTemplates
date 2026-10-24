@@ -113,6 +113,30 @@ class LibraryTest(unittest.TestCase):
         data = decode(CARD.findall(result['lake'])[0])
         self.assertEqual(data['code'], '<!-- @code Missing -->\n')
 
+    def test_example_cards_survive_preceding_content_changes(self):
+        source = '# Notes\n\n## Sketch\n\n```text\nfirst\n```\n\n```cpp\nsecond\n```\n'
+        config = {'cards': {'example/1/Notes/Sketch': {
+            'id': 'existing-card', 'name': 'Sketch', 'collapsed': False, 'theme': 'custom'}}}
+        original = [decode(c) for c in CARD.findall(self.build(source, config)['lake'])]
+        shifted = '# Earlier\n\n```text\nunrelated\n```\n\n' + source.replace(
+            '## Sketch\n', '## Sketch\n\nAdditional explanation.\n')
+        updated = [decode(c) for c in CARD.findall(self.build(shifted, config)['lake'])]
+        self.assertEqual(original, updated[1:])
+        self.assertEqual(original[0]['id'], 'existing-card')
+        self.assertFalse(original[0]['collapsed'])
+        self.assertEqual(original[0]['theme'], 'custom')
+        self.assertEqual(len({c['id'] for c in updated}), 3)
+
+    def test_extra_keeps_existing_example_cards(self):
+        result = Library.build(collection='extra')
+        cards = {data['id']: data for c in CARD.findall(result['lake']) for data in [decode(c)]}
+        for ident, name in [('d5WvV', 'DigitDP'), ('oBGPg', 'Block'), ('nGr8M', 'DsuOnTree')]:
+            with self.subTest(name=name):
+                self.assertEqual(cards[ident]['name'], name)
+                self.assertEqual(cards[ident]['search'], name)
+                self.assertEqual(cards[ident]['mode'], 'latex')
+                self.assertTrue(cards[ident]['collapsed'])
+
     def test_markdown_features(self):
         result = self.build('# Title\n\n**加粗** [link](https://example.com)\n\n- one\n- two\n\n| a | b |\n| - | - |\n| x | y |\n\n$a+b$\n\n$$\nx^2\n$$\n')
         for tag in ['<strong>', '<a ', '<ul>', '<table>', 'name="math"']:
@@ -267,12 +291,41 @@ class PublishTest(unittest.TestCase):
         return report, {'id': 1, '_yuque': {'revision': 'old'}}
 
     def test_conflict_prevents_write(self):
-        values = self.fixture();values[0]['remoteChanged'] = True
-        client = Mock()
-        with patch.object(Publisher, 'prepare', return_value=values), patch.object(Publisher, 'build', return_value={'provenance': {'templates': 55}}):
-            with self.assertRaisesRegex(YuqueError, '远端'):
-                Publisher.publish(self.console(), client)
-        client.update.assert_not_called()
+        for collection in ('core', 'extra'):
+            with self.subTest(collection=collection):
+                values = self.fixture();values[0]['remoteChanged'] = True
+                client = Mock()
+                with patch.object(Publisher, 'prepare', return_value=values), patch.object(Publisher, 'build', return_value={'provenance': {'templates': 55}}), patch.object(Publisher, 'write_json') as write, patch('tools.Verification.save') as verify:
+                    with self.assertRaisesRegex(YuqueError, '远端'):
+                        Publisher.publish(self.console(), client, collection)
+                client.update.assert_not_called()
+                write.assert_not_called()
+                verify.assert_not_called()
+
+    def test_remote_change_without_body_change_updates_baseline(self):
+        for collection in ('core', 'extra'):
+            with self.subTest(collection=collection), tempfile.TemporaryDirectory() as tmp:
+                ref = (Publisher.config.YUQUE_DOCUMENT if collection == 'core' else
+                       Publisher.config.YUQUE_EXTRA_DOCUMENT)
+                expected = ('YUQUE_EXPECTED_REVISION' if collection == 'core' else
+                            'YUQUE_EXTRA_EXPECTED_REVISION')
+                result = {'provenance': {'templates': 1}, 'lake': 'test lake', 'markdown': 'test markdown'}
+                client = Mock()
+                client.get.return_value = {'id': 1, 'body_lake': result['lake'], 'body': result['markdown'],
+                                           '_yuque': {'revision': 'current'}}
+                with patch.object(Publisher, 'STATE', Path(tmp) / 'state'), patch.object(Publisher.config, 'GENERATED', Path(tmp) / 'generated'), patch.object(Publisher.config, expected, None), patch.object(Publisher, 'build', return_value=result) as build, patch('tools.Verification.save') as verify:
+                    saved = Publisher.state_path(ref)
+                    Common.write_json(saved, {'ref': ref, 'revision': 'previous'})
+                    report = Publisher.publish(self.console(), client, collection)
+                    self.assertFalse(report['changed'])
+                    self.assertTrue(report['remoteChanged'])
+                    self.assertFalse(report['applied'])
+                    self.assertTrue(report['verified'])
+                    self.assertEqual(json.loads(saved.read_text()), {'ref': ref, 'revision': 'current'})
+                    client.get.assert_called_once_with(ref)
+                    client.update.assert_not_called()
+                    build.assert_called_once_with(collection=collection)
+                    verify.assert_not_called()
 
     def test_fresh_verification_required(self):
         client = Mock()
