@@ -275,8 +275,8 @@
     },
     {
       "id": "src/extra/Math/GaussianElimination/code.hpp:R04:gauss",
-      "fingerprint": "e840d96affaef4e16b38d2c9287f711f519e7f94febdc9fae360c9db3c3a84a2",
-      "reason": "gauss 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+      "fingerprint": "7370adaa5b306d546cf15efacb4a2c55dfbe409a4b0cf29c9de1570c1eb2d49d",
+      "reason": "经典 Gaussian elimination 公共函数名；方阵兼容重载与矩形重载共用这一入口。"
     },
     {
       "id": "src/extra/Math/GaussianElimination/code.hpp:R09:is_integral_v",
@@ -290,8 +290,8 @@
     },
     {
       "id": "src/extra/Math/GaussianElimination/code.hpp:R04:status",
-      "fingerprint": "71fbb252295a1629d644b49ee1386f2959d8f9faab5774e2f1892fb322eb4241",
-      "reason": "status 是本文件使用的既有公共接口/公开字段或跨模块协议；保留调用兼容，接口改名需另行确认。"
+      "fingerprint": "fa6ee9da5cff8b506b7a84e1ead7b0ff64a5b6409f72c29c4505190a301a9474",
+      "reason": "GaussResult 的逐 RHS 状态与既有 MatrixUtil.status 使用同一公开协议，保留可读的结果字段名。"
     },
     {
       "id": "src/core/Geometry/Geo2/PointVec.hpp:R04:toVec",
@@ -1939,6 +1939,41 @@
       "reason": "ExCrt 用 -1 表示无解，使用至多 64 位有符号整型并以 __int128 保存乘法/扩展欧几里得中间值；该约束是返回协议和表示范围要求。"
     },
     {
+      "id": "src/extra/Math/FloorSum/code.hpp:R04:floorSum",
+      "fingerprint": "66bd4744d7e30c923fab0f1de62a88ff263f95132b640097a039df28489c271d",
+      "reason": "整除求和的公共算法入口，名称与数学问题对应。"
+    },
+    {
+      "id": "src/extra/Math/BitwiseTransform/code.hpp:R04:bitwiseTransform",
+      "fingerprint": "e1ca59628aad10b64393ab5efb6780c0f0bfca44185ce60b14a0de88a48239a9",
+      "reason": "三种位运算变换的公共入口，通过 BitwiseOp 指定 XOR、AND、OR。"
+    },
+    {
+      "id": "src/extra/Math/BitwiseTransform/code.hpp:R09:is_integral_v",
+      "fingerprint": "550600076214b49e557e87ee91316dcc3c81379b23bcccc24acb2cb59f187efc",
+      "reason": "XOR 逆变换对整数逐项整除，域则只求一次长度的乘法逆元；二者归一化语义不同。"
+    },
+    {
+      "id": "src/extra/Math/BitwiseTransform/code.hpp:R04:bitwiseConvolution",
+      "fingerprint": "10a5c100beeb1a8cba0566a746551e3df19938e1ce661e4adfe2f28efdae0fa3",
+      "reason": "按位卷积的公共入口，和原地变换接口明确区分。"
+    },
+    {
+      "id": "src/extra/Math/LinearRecurrence/code.hpp:R04:linearRecurrence",
+      "fingerprint": "b1f55300ff34fcd5d90777c7eccdf31171c0a037d418f506c6df5ac7210a48a4",
+      "reason": "线性递推求第 k 项的公共算法入口，保持经典可识别命名。"
+    },
+    {
+      "id": "src/extra/Math/LinearRecurrence/code.hpp:R04:berlekampMassey",
+      "fingerprint": "d0d43f65717c0295e3e51bd17fcd0d0c700184b3df64c2908d0a88a31cbc6152",
+      "reason": "经典 Berlekamp–Massey 算法名；从序列恢复最短线性递推。"
+    },
+    {
+      "id": "src/extra/Math/LinearRecurrence/code.hpp:R09:is_integral_v",
+      "fingerprint": "ba59bc985a0eaaf16fdd69c5fe33014fa5666046742b833b1a0bf208b642a277",
+      "reason": "BM 的差值商要求域除法，拒绝普通内置整数的截断除法；精确域契约另在 README 约束。"
+    },
+    {
       "id": "src/extra/DataStructures/RollbackDSU/code.hpp:R04:snapshot",
       "fingerprint": "a767d2a964ea1797d7aa80c58a863c875ed5b3ec9b28584659d03ca232eb9913",
       "reason": "公开历史位置接口，用于后续 rollback，名称表达快照语义。"
@@ -2084,6 +2119,11 @@
       "reason": "关联容器的公开类型别名，供泛型调用方和调试器检测 key/value 协议。"
     },
     {
+      "id": "src/extra/Math/RangePrimeCount/code.hpp:R04:cntPrimeLessEqual",
+      "fingerprint": "6227f2fcd0aadb6163745faf7e7365620005e07b5510b518a0eb460fd91c56cb",
+      "reason": "现有公共入口明确表示统计不超过上界的素数个数，保留调用契约。"
+    },
+    {
       "id": "src/extra/DataStructures/MonotonyStack/code.hpp:R04:first",
       "fingerprint": "dfa180908c7a9c9d56be52fcbe84defc74adaa9ecd22439e0560cfa27e7294aa",
       "reason": "std::pair 的标准成员名称；分别访问既有二元结果或关联容器键值，不是内部自定义长名。"
@@ -2117,6 +2157,36 @@
       "id": "src/extra/DataStructures/RangeMatBIT/code.hpp:R04:modify",
       "fingerprint": "13e345d1b94a412923afaa2a0ee90669f0d0a462cfca0cd74afc3c2a76b5986f",
       "reason": "调用本仓 Fenwick/二维 Fenwick 的既有公开 modify 接口；保持依赖契约。"
+    },
+    {
+      "id": "src/extra/Math/ModSqrt/code.hpp:R04:modSqrt",
+      "fingerprint": "13389093068cad52dcc1d18b3176b931cdd0b6cbf92ef8125c6e2ab1d12ee311",
+      "reason": "公开的模平方根入口，名称对应标准数论操作。"
+    },
+    {
+      "id": "src/extra/Math/DiscreteLog/code.hpp:R04:discreteLog",
+      "fingerprint": "ddcaab5c2b7404a0595fc899bbf97bf74b70796162c342b42f8c1dd1e20414d2",
+      "reason": "公开的离散对数入口，返回满足同余式的最小非负指数。"
+    },
+    {
+      "id": "src/extra/Math/DiscreteLog/code.hpp:R04:second",
+      "fingerprint": "a77cc973a6a5dc242ceb709c8810e0bc7118ea31b771a1de72aa4221f3eda71a",
+      "reason": "std::pair 的标准成员名称；分别访问既有二元结果或关联容器键值，不是内部自定义长名。"
+    },
+    {
+      "id": "src/extra/Math/LagrangeInterpolation/code.hpp:R04:lagrangeInterpolation",
+      "fingerprint": "3e852a5323b3195c5548850cbda9aa851e636a333b05a12d439a52d2ef898c71",
+      "reason": "公开的连续采样点插值入口，保留经典算法名称。"
+    },
+    {
+      "id": "src/extra/Math/LagrangeInterpolation/code.hpp:R04:getMod",
+      "fingerprint": "bd6cfec897203abfd7681709e5b067fc305942fa28531f865f1e2aeedb3512d6",
+      "reason": "调用 core ModuloInteger::getMod 和 Comb::shared 的既有协议，复用素模约束和随模数失效的阶乘缓存。"
+    },
+    {
+      "id": "src/extra/Math/LagrangeInterpolation/code.hpp:R04:shared",
+      "fingerprint": "3d28b008d5961d091d02fbe35c82ffa76842eee6b799ab2278e5c643933f3c67",
+      "reason": "调用 core ModuloInteger::getMod 和 Comb::shared 的既有协议，复用素模约束和随模数失效的阶乘缓存。"
     },
     {
       "id": "src/extra/DynamicProgramming/SlopeTrick/code.hpp:R04:addConstant",
@@ -2212,6 +2282,31 @@
       "id": "src/extra/Sequence/ImplicitTreap/code.hpp:R04:query",
       "fingerprint": "81a64bd3ec54184d7b60cb4fbfe27400a92476030a6ba0ceb80b259c1925a08f",
       "reason": "公开的区间反转与按序聚合接口。"
+    },
+    {
+      "id": "src/extra/String/LyndonFactorization/code.hpp:R04:lyndonFactorization",
+      "fingerprint": "ad64bc5e27038f4f1a540e77c34949c7ae5ae9229193b67aa0541c34f37047d2",
+      "reason": "公开的 Lyndon 分解入口，直接使用经典算法名称。"
+    },
+    {
+      "id": "src/extra/String/RunEnumeration/code.hpp:R04:runEnumeration",
+      "fingerprint": "3fe199904b8a0c9bb8435086ae82c3dfdbfe68e8a68b1f0d0fba57e5dc12c898",
+      "reason": "公开的极大周期子串枚举入口，直接使用经典算法名称。"
+    },
+    {
+      "id": "src/extra/String/RunEnumeration/code.hpp:R04:second",
+      "fingerprint": "e6948fd4ecb071ce83410722611834973cc147bd99ebc864076fd1cf2ceaebb8",
+      "reason": "std::pair 的标准成员名称；分别访问既有二元结果或关联容器键值，不是内部自定义长名。"
+    },
+    {
+      "id": "src/extra/String/RunEnumeration/code.hpp:R04:zFunction",
+      "fingerprint": "edd02bbdc022017a076a1e3d5d3b185e11c81b3cf362932f411c9938bd98f53c",
+      "reason": "调用 core ZFunction 的既有公开函数，复用前缀匹配内核。"
+    },
+    {
+      "id": "src/extra/String/RunEnumeration/code.hpp:R04:xffffffffULL",
+      "fingerprint": "edf368bbde7db4a009e7076d0011db0095e046d9b8f99e207f3257eae502860c",
+      "reason": "扫描器拆出的十六进制数值字面量；这是精确区间键的低 32 位掩码，不是变量名。"
     },
     {
       "id": "src/extra/Sequence/ImplicitTreap/code.hpp:R04:first",

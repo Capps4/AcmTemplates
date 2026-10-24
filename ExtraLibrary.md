@@ -24,6 +24,30 @@
 
 <!-- @code RangePrimeCount -->
 
+## FloorSum
+
+<!-- @code FloorSum -->
+
+## BitwiseTransform
+
+<!-- @code BitwiseTransform -->
+
+## LinearRecurrence
+
+<!-- @code LinearRecurrence -->
+
+## ModSqrt
+
+<!-- @code ModSqrt -->
+
+## DiscreteLog
+
+<!-- @code DiscreteLog -->
+
+## LagrangeInterpolation
+
+<!-- @code LagrangeInterpolation -->
+
 # DynamicProgramming
 
 ## SlopeTrick
@@ -93,6 +117,14 @@
 ## PalindromeAutomaton
 
 <!-- @code PalindromeAutomaton -->
+
+## LyndonFactorization
+
+<!-- @code LyndonFactorization -->
+
+## RunEnumeration
+
+<!-- @code RunEnumeration -->
 
 # Tree
 

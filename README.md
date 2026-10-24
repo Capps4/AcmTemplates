@@ -36,7 +36,7 @@ ctl test --right --module Tree --case chain --profile optimized
 | 路径 | 职责 |
 | --- | --- |
 | [src/core/](src/core/) | 42 个核心模块，生成 Snippet |
-| [src/extra/](src/extra/) | 37 个扩展模块，不生成 Snippet |
+| [src/extra/](src/extra/) | 45 个扩展模块，不生成 Snippet |
 | [Headers/](Headers/) | 共用标准头入口 |
 | [Manifest.json](Manifest.json) | 全仓唯一模块清单、集合、依赖与分层 |
 | [Library.md](Library.md) / [ExtraLibrary.md](ExtraLibrary.md) | 两份语雀文档的正文与源码引用 |

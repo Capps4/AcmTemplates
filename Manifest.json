@@ -525,6 +525,24 @@
     "include": "src/extra/Geometry/DelaunayTriangulation/Include.hpp"
   },
   {
+    "module": "FloorSum",
+    "path": "src/extra/Math/FloorSum",
+    "dependencies": [],
+    "collection": "extra"
+  },
+  {
+    "module": "BitwiseTransform",
+    "path": "src/extra/Math/BitwiseTransform",
+    "dependencies": [],
+    "collection": "extra"
+  },
+  {
+    "module": "LinearRecurrence",
+    "path": "src/extra/Math/LinearRecurrence",
+    "dependencies": [],
+    "collection": "extra"
+  },
+  {
     "module": "RollbackDSU",
     "path": "src/extra/DataStructures/RollbackDSU",
     "dependencies": [],
@@ -543,6 +561,27 @@
     "collection": "extra"
   },
   {
+    "module": "ModSqrt",
+    "path": "src/extra/Math/ModSqrt",
+    "dependencies": [],
+    "collection": "extra"
+  },
+  {
+    "module": "DiscreteLog",
+    "path": "src/extra/Math/DiscreteLog",
+    "dependencies": [],
+    "collection": "extra"
+  },
+  {
+    "module": "LagrangeInterpolation",
+    "path": "src/extra/Math/LagrangeInterpolation",
+    "dependencies": [
+      "Combinatorics"
+    ],
+    "collection": "extra",
+    "include": "src/extra/Math/LagrangeInterpolation/Include.hpp"
+  },
+  {
     "module": "SlopeTrick",
     "path": "src/extra/DynamicProgramming/SlopeTrick",
     "dependencies": [],
@@ -559,5 +598,20 @@
     "path": "src/extra/Sequence/ImplicitTreap",
     "dependencies": [],
     "collection": "extra"
+  },
+  {
+    "module": "LyndonFactorization",
+    "path": "src/extra/String/LyndonFactorization",
+    "dependencies": [],
+    "collection": "extra"
+  },
+  {
+    "module": "RunEnumeration",
+    "path": "src/extra/String/RunEnumeration",
+    "dependencies": [
+      "ZFunction"
+    ],
+    "collection": "extra",
+    "include": "src/extra/String/RunEnumeration/Include.hpp"
   }
 ]

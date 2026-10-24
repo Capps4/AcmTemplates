@@ -4898,6 +4898,30 @@
       "oracle": "对应 Test.cpp 中的朴素实现或穷举"
     },
     {
+      "id": "BitwiseTransform/field-random-oracle",
+      "module": "BitwiseTransform",
+      "header": "src/extra/Math/BitwiseTransform/code.hpp",
+      "scenario": "field random oracle",
+      "oracle": "Independent O(n^2) XOR/AND/OR convolution, transform round trips, and large impulse identities",
+      "source": "tests/Correctness/extra/Math/BitwiseTransform/Test.cpp"
+    },
+    {
+      "id": "BitwiseTransform/integer-exhaustive",
+      "module": "BitwiseTransform",
+      "header": "src/extra/Math/BitwiseTransform/code.hpp",
+      "scenario": "integer exhaustive",
+      "oracle": "Independent O(n^2) XOR/AND/OR convolution, transform round trips, and large impulse identities",
+      "source": "tests/Correctness/extra/Math/BitwiseTransform/Test.cpp"
+    },
+    {
+      "id": "BitwiseTransform/large-impulse",
+      "module": "BitwiseTransform",
+      "header": "src/extra/Math/BitwiseTransform/code.hpp",
+      "scenario": "large impulse",
+      "oracle": "Independent O(n^2) XOR/AND/OR convolution, transform round trips, and large impulse identities",
+      "source": "tests/Correctness/extra/Math/BitwiseTransform/Test.cpp"
+    },
+    {
       "id": "CountingSortOrder/key-capacity",
       "module": "CountingSortOrder",
       "header": "src/extra/Sequence/CountingSortOrder/code.hpp",
@@ -4906,12 +4930,76 @@
       "source": "tests/Correctness/extra/Sequence/CountingSortOrder/Test.cpp"
     },
     {
+      "id": "FloorSum/exhaustive-small",
+      "module": "FloorSum",
+      "header": "src/extra/Math/FloorSum/code.hpp",
+      "scenario": "exhaustive small",
+      "oracle": "Direct unsigned-128 summation on exhaustive small and fixed-seed wide operands; closed forms at UINT64_MAX and explicit overflow rejection",
+      "source": "tests/Correctness/extra/Math/FloorSum/Test.cpp"
+    },
+    {
+      "id": "FloorSum/random-wide-oracle",
+      "module": "FloorSum",
+      "header": "src/extra/Math/FloorSum/code.hpp",
+      "scenario": "random wide oracle",
+      "oracle": "Direct unsigned-128 summation on exhaustive small and fixed-seed wide operands; closed forms at UINT64_MAX and explicit overflow rejection",
+      "source": "tests/Correctness/extra/Math/FloorSum/Test.cpp"
+    },
+    {
+      "id": "FloorSum/uint64-and-overflow",
+      "module": "FloorSum",
+      "header": "src/extra/Math/FloorSum/code.hpp",
+      "scenario": "uint64 and overflow",
+      "oracle": "Direct unsigned-128 summation on exhaustive small and fixed-seed wide operands; closed forms at UINT64_MAX and explicit overflow rejection",
+      "source": "tests/Correctness/extra/Math/FloorSum/Test.cpp"
+    },
+    {
+      "id": "GaussianElimination/rectangular-field-oracle",
+      "module": "GaussianElimination",
+      "header": "src/extra/Math/GaussianElimination/code.hpp",
+      "scenario": "rectangular field oracle",
+      "oracle": "Exhaustive GF(3) assignment enumeration and solution counts for rectangular rank, consistency and particular solutions; floating and complex substitution",
+      "source": "tests/Correctness/extra/Math/GaussianElimination/Test.cpp"
+    },
+    {
       "id": "LiChaoTree/line-contracts",
       "module": "LiChaoTree",
       "header": "src/extra/DataStructures/LiChaoTree/code.hpp",
       "scenario": "line contracts",
       "oracle": "Direct evaluation of all covering half-open line segments; custom non-default Line and captured comparator",
       "source": "tests/Correctness/extra/DataStructures/LiChaoTree/Test.cpp"
+    },
+    {
+      "id": "LinearRecurrence/empty-and-uint64-index",
+      "module": "LinearRecurrence",
+      "header": "src/extra/Math/LinearRecurrence/code.hpp",
+      "scenario": "empty and uint64 index",
+      "oracle": "Naive recurrence extension, exhaustive GF(3) coefficient search for minimal order, and independent Fibonacci fast doubling at UINT64_MAX",
+      "source": "tests/Correctness/extra/Math/LinearRecurrence/Test.cpp"
+    },
+    {
+      "id": "LinearRecurrence/minimal-order-oracle",
+      "module": "LinearRecurrence",
+      "header": "src/extra/Math/LinearRecurrence/code.hpp",
+      "scenario": "minimal order oracle",
+      "oracle": "Naive recurrence extension, exhaustive GF(3) coefficient search for minimal order, and independent Fibonacci fast doubling at UINT64_MAX",
+      "source": "tests/Correctness/extra/Math/LinearRecurrence/Test.cpp"
+    },
+    {
+      "id": "LinearRecurrence/random-recovery",
+      "module": "LinearRecurrence",
+      "header": "src/extra/Math/LinearRecurrence/code.hpp",
+      "scenario": "random recovery",
+      "oracle": "Naive recurrence extension, exhaustive GF(3) coefficient search for minimal order, and independent Fibonacci fast doubling at UINT64_MAX",
+      "source": "tests/Correctness/extra/Math/LinearRecurrence/Test.cpp"
+    },
+    {
+      "id": "LinearRecurrence/small-field-exhaustive",
+      "module": "LinearRecurrence",
+      "header": "src/extra/Math/LinearRecurrence/code.hpp",
+      "scenario": "small field exhaustive",
+      "oracle": "Naive recurrence extension, exhaustive GF(3) coefficient search for minimal order, and independent Fibonacci fast doubling at UINT64_MAX",
+      "source": "tests/Correctness/extra/Math/LinearRecurrence/Test.cpp"
     },
     {
       "id": "MoSort/query-counts",
@@ -5002,6 +5090,70 @@
       "source": "tests/Correctness/extra/DataStructures/WeightedDisjointSetUnion/Test.cpp"
     },
     {
+      "id": "ModSqrt/small-primes-exhaustive",
+      "module": "ModSqrt",
+      "header": "src/extra/Math/ModSqrt/code.hpp",
+      "scenario": "small primes exhaustive",
+      "oracle": "All roots for small primes; constructed squares with canonical smaller root for large primes, signed extrema and nonresidues.",
+      "source": "tests/Correctness/extra/Math/ModSqrt/Test.cpp"
+    },
+    {
+      "id": "ModSqrt/large-primes-and-extremes",
+      "module": "ModSqrt",
+      "header": "src/extra/Math/ModSqrt/code.hpp",
+      "scenario": "large primes and extremes",
+      "oracle": "All roots for small primes; constructed squares with canonical smaller root for large primes, signed extrema and nonresidues.",
+      "source": "tests/Correctness/extra/Math/ModSqrt/Test.cpp"
+    },
+    {
+      "id": "DiscreteLog/small-moduli-exhaustive",
+      "module": "DiscreteLog",
+      "header": "src/extra/Math/DiscreteLog/code.hpp",
+      "scenario": "small moduli exhaustive",
+      "oracle": "Enumerate powers until first repeated residue; compare the earliest exponent including noncoprime moduli, zero and signed extrema.",
+      "source": "tests/Correctness/extra/Math/DiscreteLog/Test.cpp"
+    },
+    {
+      "id": "DiscreteLog/signed-input-and-random",
+      "module": "DiscreteLog",
+      "header": "src/extra/Math/DiscreteLog/code.hpp",
+      "scenario": "signed input and random",
+      "oracle": "Enumerate powers until first repeated residue; compare the earliest exponent including noncoprime moduli, zero and signed extrema.",
+      "source": "tests/Correctness/extra/Math/DiscreteLog/Test.cpp"
+    },
+    {
+      "id": "DiscreteLog/large-moduli-minimality",
+      "module": "DiscreteLog",
+      "header": "src/extra/Math/DiscreteLog/code.hpp",
+      "scenario": "large moduli minimality",
+      "oracle": "Enumerate powers until first repeated residue; compare the earliest exponent including noncoprime moduli, zero and signed extrema.",
+      "source": "tests/Correctness/extra/Math/DiscreteLog/Test.cpp"
+    },
+    {
+      "id": "LagrangeInterpolation/small-field-exhaustive",
+      "module": "LagrangeInterpolation",
+      "header": "src/extra/Math/LagrangeInterpolation/code.hpp",
+      "scenario": "small field exhaustive",
+      "oracle": "Independent Horner evaluation of coefficient polynomials, exhaustive small fields, runtime-modulus switching and long sample arrays.",
+      "source": "tests/Correctness/extra/Math/LagrangeInterpolation/Test.cpp"
+    },
+    {
+      "id": "LagrangeInterpolation/random-polynomials",
+      "module": "LagrangeInterpolation",
+      "header": "src/extra/Math/LagrangeInterpolation/code.hpp",
+      "scenario": "random polynomials",
+      "oracle": "Independent Horner evaluation of coefficient polynomials, exhaustive small fields, runtime-modulus switching and long sample arrays.",
+      "source": "tests/Correctness/extra/Math/LagrangeInterpolation/Test.cpp"
+    },
+    {
+      "id": "LagrangeInterpolation/modulus-switch-and-large",
+      "module": "LagrangeInterpolation",
+      "header": "src/extra/Math/LagrangeInterpolation/code.hpp",
+      "scenario": "modulus switch and large",
+      "oracle": "Independent Horner evaluation of coefficient polynomials, exhaustive small fields, runtime-modulus switching and long sample arrays.",
+      "source": "tests/Correctness/extra/Math/LagrangeInterpolation/Test.cpp"
+    },
+    {
       "id": "SlopeTrick/corners",
       "module": "SlopeTrick",
       "header": "src/extra/DynamicProgramming/SlopeTrick/code.hpp",
@@ -5088,6 +5240,54 @@
       "scenario": "large recycle",
       "oracle": "Plain vector and noncommutative string concatenation; positional inserts, deletes, reversals and queries, nondefault Info and pool reuse.",
       "source": "tests/Correctness/extra/Sequence/ImplicitTreap/Test.cpp"
+    },
+    {
+      "id": "LyndonFactorization/exhaustive-partitions",
+      "module": "LyndonFactorization",
+      "header": "src/extra/String/LyndonFactorization/code.hpp",
+      "scenario": "exhaustive partitions",
+      "oracle": "Enumerate all partitions, test each factor against every proper suffix and enforce nonincreasing factors; arbitrary unsigned bytes.",
+      "source": "tests/Correctness/extra/String/LyndonFactorization/Test.cpp"
+    },
+    {
+      "id": "LyndonFactorization/random-bytes",
+      "module": "LyndonFactorization",
+      "header": "src/extra/String/LyndonFactorization/code.hpp",
+      "scenario": "random bytes",
+      "oracle": "Enumerate all partitions, test each factor against every proper suffix and enforce nonincreasing factors; arbitrary unsigned bytes.",
+      "source": "tests/Correctness/extra/String/LyndonFactorization/Test.cpp"
+    },
+    {
+      "id": "LyndonFactorization/large-extreme-factors",
+      "module": "LyndonFactorization",
+      "header": "src/extra/String/LyndonFactorization/code.hpp",
+      "scenario": "large extreme factors",
+      "oracle": "Enumerate all partitions, test each factor against every proper suffix and enforce nonincreasing factors; arbitrary unsigned bytes.",
+      "source": "tests/Correctness/extra/String/LyndonFactorization/Test.cpp"
+    },
+    {
+      "id": "RunEnumeration/exhaustive-substrings",
+      "module": "RunEnumeration",
+      "header": "src/extra/String/RunEnumeration/code.hpp",
+      "scenario": "exhaustive substrings",
+      "oracle": "Enumerate every substring and candidate period, then require least period and both maximal ends; full output comparison and reversal/byte-remapping invariants.",
+      "source": "tests/Correctness/extra/String/RunEnumeration/Test.cpp"
+    },
+    {
+      "id": "RunEnumeration/random-bytes-and-symmetry",
+      "module": "RunEnumeration",
+      "header": "src/extra/String/RunEnumeration/code.hpp",
+      "scenario": "random bytes and symmetry",
+      "oracle": "Enumerate every substring and candidate period, then require least period and both maximal ends; full output comparison and reversal/byte-remapping invariants.",
+      "source": "tests/Correctness/extra/String/RunEnumeration/Test.cpp"
+    },
+    {
+      "id": "RunEnumeration/large-periodic-and-nested",
+      "module": "RunEnumeration",
+      "header": "src/extra/String/RunEnumeration/code.hpp",
+      "scenario": "large periodic and nested",
+      "oracle": "Enumerate every substring and candidate period, then require least period and both maximal ends; full output comparison and reversal/byte-remapping invariants.",
+      "source": "tests/Correctness/extra/String/RunEnumeration/Test.cpp"
     }
   ],
   "stressCases": [
@@ -5096,6 +5296,22 @@
       "module": "Geo2",
       "source": "tests/Correctness/core/Geometry/Geo2/Test.cpp",
       "scenario": "65536-vertex conditioning; explicit --case only"
+    },
+    {
+      "id": "DiscreteLog/full-state-and-large-stress",
+      "module": "DiscreteLog",
+      "header": "src/extra/Math/DiscreteLog/code.hpp",
+      "scenario": "full state and large stress (explicit --case)",
+      "oracle": "Enumerate powers until first repeated residue; compare the earliest exponent including noncoprime moduli, zero and signed extrema.",
+      "source": "tests/Correctness/extra/Math/DiscreteLog/Test.cpp"
+    },
+    {
+      "id": "RunEnumeration/full-enumeration-and-periodic-stress",
+      "module": "RunEnumeration",
+      "header": "src/extra/String/RunEnumeration/code.hpp",
+      "scenario": "full enumeration and periodic stress (explicit --case)",
+      "oracle": "Enumerate every substring and candidate period, then require least period and both maximal ends; full output comparison and reversal/byte-remapping invariants.",
+      "source": "tests/Correctness/extra/String/RunEnumeration/Test.cpp"
     }
   ]
 }

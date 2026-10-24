@@ -9,20 +9,20 @@ struct HasInverse : std::false_type {};
 template <class T>
 struct HasInverse<T, std::void_t<decltype(std::declval<const T &>().inv())>>
     : std::is_convertible<decltype(std::declval<const T &>().inv()), T> {};
-} // namespace gaussDetail
 
 template <class T>
-std::string gauss(std::vector<std::vector<T>> &a) {
+std::vector<int> elim(std::vector<std::vector<T>> &a, int m) {
     static_assert(!std::is_integral_v<T>,
                   "Gaussian elimination needs a field or floating-point type");
-    if (a.empty())
-        return "OK";
-    int n = int(a.size()), m = int(a[0].size());
-    assert(m > n);
+    assert(m >= 0);
+    int n = int(a.size()), w = n == 0 ? m : int(a[0].size());
+    assert(w >= m);
     for (const auto &row : a)
-        assert(int(row.size()) == m);
+        assert(int(row.size()) == w);
+    std::vector<int> piv;
+    piv.reserve(std::min(n, m));
     int r = 0;
-    for (int c = 0; c < n and r < n; ++c) {
+    for (int c = 0; c < m and r < n; ++c) {
         int p = -1;
         for (int row = r; row < n; ++row)
             if (a[row][c] != T{}) {
@@ -40,10 +40,10 @@ std::string gauss(std::vector<std::vector<T>> &a) {
         u[c] = T(1);
         if constexpr (_ge::HasInverse<T>::value) {
             T iv = d.inv();
-            for (int j = c + 1; j < m; ++j)
+            for (int j = c + 1; j < w; ++j)
                 u[j] *= iv;
         } else {
-            for (int j = c + 1; j < m; ++j)
+            for (int j = c + 1; j < w; ++j)
                 u[j] /= d;
         }
         for (int row = r + 1; row < n; ++row) {
@@ -52,11 +52,58 @@ std::string gauss(std::vector<std::vector<T>> &a) {
             if (v == T{})
                 continue;
             cur[c] = T{};
-            for (int j = c + 1; j < m; ++j)
+            for (int j = c + 1; j < w; ++j)
                 cur[j] -= u[j] * v;
         }
+        piv.push_back(c);
         ++r;
     }
+    return piv;
+}
+} // namespace _ge
+
+template <class T>
+struct GaussResult {
+    int rank = 0;
+    std::vector<int> piv{};
+    std::vector<std::string> status{};
+    std::vector<std::vector<T>> sol{};
+};
+
+template <class T>
+GaussResult<T> gauss(std::vector<std::vector<T>> &a, int m) {
+    GaussResult<T> res;
+    res.piv = _ge::elim(a, m);
+    res.rank = int(res.piv.size());
+    int n = int(a.size()), w = n == 0 ? m : int(a[0].size());
+    for (int k = m; k < w; ++k) {
+        bool ok = true;
+        for (int i = res.rank; i < n; ++i)
+            if (a[i][k] != T{})
+                ok = false;
+        res.status.push_back(!ok ? "NoSolution" : res.rank == m ? "OK" : "InfSolution");
+        res.sol.emplace_back(ok ? m : 0);
+        if (!ok)
+            continue;
+        auto &x = res.sol.back();
+        for (int i = res.rank - 1; i >= 0; --i) {
+            T v = a[i][k];
+            for (int j = res.piv[i] + 1; j < m; ++j)
+                v -= a[i][j] * x[j];
+            x[res.piv[i]] = v;
+        }
+    }
+    return res;
+}
+
+template <class T>
+std::string gauss(std::vector<std::vector<T>> &a) {
+    if (a.empty())
+        return "OK";
+    int n = int(a.size()), m = int(a[0].size());
+    assert(m > n);
+    auto piv = _ge::elim(a, n);
+    int r = int(piv.size());
     if (r < n) {
         for (int row = r; row < n; ++row)
             for (int c = n; c < m; ++c)
