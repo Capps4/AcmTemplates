@@ -10,7 +10,7 @@ ctl test --right --module SegTree --case orderedMerge --profile optimized --seed
 ctl test --right --module Geo2 --case dense-conditioning --profile optimized
 ```
 
-`Correctness/` 和 `Performance/` 按 src 层级镜像，均包含 core/extra 集合及统一算法分类。两套算法遵守相同的严格编译、oracle、边界和性能要求；没有因 extra 身份而降低要求。
+`Correctness/` 和 `Performance/` 按 src 的集合、分类及主题层级镜像。两套算法遵守相同的严格编译、oracle、边界和性能要求；没有因 extra 身份而降低要求。
 
 `ctl test --all` 默认覆盖全仓；`--collection core|extra` 选择集合及传递依赖，完整集合范围同时执行共享工具回归。发布按目标集合及依赖核对现版证据，单一报告继续保存全仓记录。
 

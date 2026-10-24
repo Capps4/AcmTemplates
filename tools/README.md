@@ -76,7 +76,7 @@ Snippets 只包含模板正文，前置模板按清单和模块 README 插入。
 
 ## 更新语雀
 
-正文、标题和排列顺序分别维护在根目录 `Library.md` / `ExtraLibrary.md`，文档目录独立于 `src/core/` / `src/extra/` 的磁盘结构。两份文档均保持简洁，保留原文的短说明、公式与折叠代码卡，core 保留原阅读顺序。SnippetInstaller 仅放在 core 文末；模块契约在仓库 README 中维护，两份文档均不使用 `@readme` 展开。用独占一行的标记引用源码：
+正文、标题和排列顺序分别维护在根目录 `Library.md` / `ExtraLibrary.md`。core 文档使用与 `src/core/` 一致的七个大类及主题分组；大类用一级标题，主题或直属模块用二级标题，主题下的模块用三级标题，Geo2 的四层源码继续使用三级标题。extra 保留现有分组。两份文档均使用简洁的英文标题，保留原文的短说明、公式与折叠代码卡。SnippetInstaller 仅放在 core 文末；模块契约在仓库 README 中维护，两份文档均不使用 `@readme` 展开。用独占一行的标记引用源码：
 
 ```markdown
 ### 模块名

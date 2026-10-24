@@ -4,7 +4,7 @@
 
 ## 适用范围与判定
 
-现用算法实现由 Manifest.json 确定，包括 code.hpp、Geo2 的四层源码、直接前置 Include.hpp 和 Headers 头。测试及工具沿用各自语言和职责的命名习惯；仅在算法接口变化确实需要时修改引用。算法按 src/core/<分类>/<模块>/ 与 src/extra/<分类>/<模块>/ 维护，公共头放根目录 Headers/，正确性放 tests/Correctness/，性能放 tests/Performance/，工具放 tools/。
+现用算法实现由 Manifest.json 确定，包括 code.hpp、Geo2 的四层源码、直接前置 Include.hpp 和 Headers 头。测试及工具沿用各自语言和职责的命名习惯；接口或目录变化时同步更新引用。core 按 src/core/<分类>/<模块>/ 维护，明确的多模块主题使用 src/core/<分类>/<主题>/<模块>/；七个大类与主题划分见根目录 README。extra 保留 src/extra/<分类>/<模块>/。公共头放根目录 Headers/，正确性放 tests/Correctness/，性能放 tests/Performance/，工具放 tools/。
 
 - **error（确定违规）**：例如逻辑 `||`、公共头入口错误、本仓 include 丢失、严格编译参数缺失或被降低，必须修复。
 - **review（待审候选）**：长名、压行、typedef、模板判断和 `&&`。先区分公共接口/局部名字、语法及所有权，再修复或记录保留理由。候选数量不是违规数量。
@@ -87,7 +87,7 @@ enable_if、void_t、conditional_t 等必须有重载、所有权、表示或性
 
 ## R16 决定与同步
 
-每模块记录差异、保留理由、拟简化项及验证计划。公共头和等价风格整理不替代模块定版。涉及算法/接口/支持域的选择由用户逐项确定。语雀同步仅替换已确认卡片的 code，保留标题、ID、折叠及其他属性；当前任务未明确授权时不写正式代码、不 Git commit/push。
+每模块记录差异、保留理由、拟简化项及验证计划。公共头和等价风格整理不替代模块定版。涉及算法/接口/支持域的选择由用户逐项确定。语雀代码更新仅替换已确认卡片的 code，保留 ID、折叠及其他属性；标题与分组调整按用户确认的方案维护，保留模块锚点。core 文档的大类和主题与磁盘结构一致，extra 保留现有分组；两份文档均保持简洁英文标题、原有短说明和公式，不展开模块 README，SnippetInstaller 仅放在 core 文末。当前任务未明确授权时不写正式代码、不 Git commit/push。
 
 ## R17 严格编译要求
 

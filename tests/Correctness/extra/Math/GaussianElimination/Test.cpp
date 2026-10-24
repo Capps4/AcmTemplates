@@ -1,7 +1,7 @@
 #include "../../../../Support/CaseSupport.hpp"
 #include "../../../../../src/extra/Math/GaussianElimination/code.hpp"
 #include "../../../../Support/TestSupport.hpp"
-#include "../../../../../src/core/Math/ModuloInteger/code.hpp"
+#include "../../../../../src/core/Math/Numeric/ModuloInteger/code.hpp"
 #include <complex>
 
 using Small = ModuloInteger<int, 3>;

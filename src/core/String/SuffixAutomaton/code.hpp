@@ -1,10 +1,6 @@
 #pragma once
 #include "../../../../Headers/Headers.hpp"
 
-// 0 为根，根 link=-1；缺边为 0，连续字节字母表。
-// 只维护结构；每次字符扩展后回调 fn(p, i)，克隆不调用，外部数组按节点数扩展。
-// V<=2n+1：构建 O(Dn)，getOrder O(n+V)，空间 O(DV)，回调成本另计。
-// 整串下标从本次字符串的 0 开始；追加后重新取得顺序和外部汇总。
 template <int D = 26, char Base = 'a'>
 class Sam {
     static_assert(D > 0 and int(static_cast<unsigned char>(Base)) + D <= 256);

@@ -1,18 +1,17 @@
 # 1. Math
 
-## MathPackage
-
-### Sieve
-<!-- @code Sieve -->
+## Numeric
 
 ### ModuloInteger
 <!-- @code ModuloInteger -->
 
-### Combinatorics
-<!-- @code Combinatorics -->
-
 ### FloatPointNumber
 <!-- @code FloatPointNumber -->
+
+## NumberTheory
+
+### Sieve
+<!-- @code Sieve -->
 
 ### ExGcd
 <!-- @code ExGcd -->
@@ -27,14 +26,6 @@ $ x = x_0 \times \frac{c}{\gcd(a, b)}+k\times \frac{b}{\gcd(a, b)}
 y = y_0 \times \frac{c}{\gcd(a, b)}-k\times \frac{a}{\gcd(a, b)}
  $
 
-## NumberTheoreticTransform
-<!-- @code NumberTheoreticTransform -->
-
-## LinearBasis
-<!-- @code LinearBasis -->
-
-## Random Number Algorithm
-
 ### MillerRabin
 <!-- @code MillerRabin -->
 
@@ -47,91 +38,82 @@ otherwise return a random factor of$ n $in$ [2,n-1] $.
 
 Time complexity:$ O(n^{\frac{1}{4}}\log n) $, but fast as$ O(n^{\frac{1}{4}}) $.
 
+## Combinatorics
+<!-- @code Combinatorics -->
+
+## NumberTheoreticTransform
+<!-- @code NumberTheoreticTransform -->
+
+## LinearBasis
+<!-- @code LinearBasis -->
+
 # 2. Dynamic Programming
 
 ## MultipleBackpacks
 <!-- @code MultipleBackpacks -->
 
-# 3. Sorting
+# 3. String
 
-## Discreter
-<!-- @code Discreter -->
-
-# 4. String
-
-## String F4
-
-### StringHash
+## StringHash
 <!-- @code StringHash -->
 
-### Kmp
+## Kmp
 <!-- @code Kmp -->
 
-### Z-Function
+## Z-Function
 <!-- @code ZFunction -->
 
-### Manacher
+## Manacher
 <!-- @code Manacher -->
 
-## Advanced Strings
-
-### AcAutomaton
+## AcAutomaton
 <!-- @code AcAutomaton -->
 
-### SuffixAutomaton
+## SuffixAutomaton
 <!-- @code SuffixAutomaton -->
 
-### SuffixArray
+## SuffixArray
 <!-- @code SuffixArray -->
 
-# 5. DataStructures
+# 4. DataStructures
 
-## BaseDataStructures
+## Map
 
 ### HashMap
 <!-- @code HashMap -->
 
-### DisjointSetUnion
-<!-- @code DisjointSetUnion -->
+### TreeMap
+<!-- @code TreeMap -->
+
+## RangeQuery
 
 ### RMQ
 <!-- @code RMQ -->
 
-## TreeDataStructures
-
-### TreeMap
-<!-- @code TreeMap -->
+### FenwickTree
+<!-- @code FenwickTree -->
 
 ### SegTree
 <!-- @code SegTree -->
 
-### Trie
-<!-- @code Trie -->
-
-### FenwickTree
-<!-- @code FenwickTree -->
-
 ### SparseSegTree
 <!-- @code SparseSegTree -->
 
-# 6. Tree Theory
+## DisjointSetUnion
+<!-- @code DisjointSetUnion -->
 
-## Tree
+## Trie
+<!-- @code Trie -->
+
+# 5. Graph
+
+## Trees
+
+### Tree
 <!-- @code Tree -->
 
-# 7. Graph Theory
-
-## GridUtil
-<!-- @code GridUtil -->
-
-## Dijkstra
-<!-- @code Dijkstra -->
-
-## RingTree
+### RingTree
 <!-- @code RingTree -->
-
-## TopSort
-<!-- @code TopSort -->
 
 ## Connectivity
 
@@ -185,7 +167,16 @@ After running the max flow work:
 
 This minimum cost flow doesn't support negative cost **cycles**. However, meeting negative cost cycles are extremely rare, and it can handle negative **edge** weights.
 
-# 8. Geometry
+## Dijkstra
+<!-- @code Dijkstra -->
+
+## TopSort
+<!-- @code TopSort -->
+
+## GridUtil
+<!-- @code GridUtil -->
+
+# 6. Geometry
 
 ## Geo2
 
@@ -201,10 +192,13 @@ This minimum cost flow doesn't support negative cost **cycles**. However, meetin
 ### Circle
 <!-- @code Geo2/Circle -->
 
-# 9. Clarketech
+# 7. Utilities
 
 ## ListHelper
 <!-- @code ListHelper -->
+
+## Discreter
+<!-- @code Discreter -->
 
 ## Debuger
 <!-- @code Debuger -->

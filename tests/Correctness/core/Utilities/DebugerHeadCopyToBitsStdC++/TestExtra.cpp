@@ -1,7 +1,7 @@
 // Debugger first: generic traits need no container declarations or definitions.
 #include "../../../../../src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp"
-#include "../../../../../src/core/DataStructures/HashMap/code.hpp"
-#include "../../../../../src/core/DataStructures/TreeMap/code.hpp"
+#include "../../../../../src/core/DataStructures/Map/HashMap/code.hpp"
+#include "../../../../../src/core/DataStructures/Map/TreeMap/code.hpp"
 #include "../../../../../src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp"
 
 static_assert(std::is_same_v<_hashmap::Impl<int, 17, 8>::key_type, u64>);

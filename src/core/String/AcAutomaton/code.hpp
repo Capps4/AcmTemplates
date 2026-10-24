@@ -1,10 +1,6 @@
 #pragma once
 #include "../../../../Headers/Headers.hpp"
 
-// 0 为根，son 缺边为 0。连续字节字母表，节点编号用 int。
-// add 只构建 Trie；build 补全转移，此后不能插入。重复 build 无副作用。
-// 只维护结构；每次字符扩展后回调 fn(p, i)，i 从本串的 0 开始。
-// V 为节点数：build O(DV)，step O(1)，空间 O(DV)，回调成本另计。
 template <int D = 26, char Base = 'a'>
 class AcAutomaton {
     static_assert(D > 0 and int(static_cast<unsigned char>(Base)) + D <= 256);

@@ -20,8 +20,8 @@
 - 标准头入口为 Headers/Headers.hpp，同目录 Std.hpp 是本仓的 C++17 标准头清单。有直接模块依赖时经过 Include.hpp；不要引入整个算法库。
 - 维持语雀/原模板的算法流程与使用习惯。保留宽整数、字节编码、深链、生命周期和动态缓存等修复，结构及支持域的取舍逐模块确认。
 - 每个模块说明索引、区间、类型/值域、单位元、误差、容量、重置和复杂度。注释解释不变量和必要例外。
-- 算法按集合放 src/core/ 与 src/extra/，标准头放 Headers/，正确性测试放 tests/Correctness/，性能用例放 tests/Performance/，工具放 tools/。src/ 只保留现用模板与说明；不生成 .code-snippets。产物放忽略的 .cache/，语雀凭据与本地状态放忽略的 .yuque/，token 单独保存。
-- core 与 extra 执行同一套 C++17、规则、契约和测试要求；仅 core 生成 Snippet。core 不得依赖或 include extra；extra 可依赖 core/extra，依赖必须无环。两份语雀文档分别由 Library.md / ExtraLibrary.md 生成，@code 引用源码。文档目录独立于磁盘结构；两份文档均保持简洁，保留原文的短说明、公式与折叠代码卡，core 保留原阅读顺序。模块契约留在仓库 README，两份文档均不使用 @readme 展开。SnippetInstaller 仅放在 core 文末。
+- 算法按集合放 src/core/ 与 src/extra/；core 使用 Math、DynamicProgramming、String、DataStructures、Graph、Geometry、Utilities 七类，明确的多模块主题增加一层目录，具体分类见 README。标准头放 Headers/，正确性测试放 tests/Correctness/，性能用例放 tests/Performance/，两套测试按源码相对 src 的路径镜像；工具放 tools/。src/ 只保留现用模板与说明；不生成 .code-snippets。产物放忽略的 .cache/，语雀凭据与本地状态放忽略的 .yuque/，token 单独保存。
+- core 与 extra 执行同一套 C++17、规则、契约和测试要求；仅 core 生成 Snippet。core 不得依赖或 include extra；extra 可依赖 core/extra，依赖必须无环。两份语雀文档分别由 Library.md / ExtraLibrary.md 生成，@code 引用源码。core 文档的大类和主题与磁盘结构一致；extra 保留现有分组。两份文档均使用简洁的英文标题，保留原文的短说明、公式与折叠代码卡。模块契约留在仓库 README，两份文档均不使用 @readme 展开。SnippetInstaller 仅放在 core 文末。
 - tools 只实现通用流程，不按具体算法模块名分支、不生成算法专属测试或改写模板源码。结构、依赖和前缀来自 Manifest；具体 case 与性能规模在对应 tests 模块目录维护，新增模块不修改通用执行器。
 - 每次交付写明改动、保留理由、验证范围和未验证项。原结果或过期缓存不能作为现版 PASS。
 - 当前任务未授权时，不提交/推送 Git，不写语雀正式代码。明确的用户授权优先；不要把编码口令解释成同步或提交授权。

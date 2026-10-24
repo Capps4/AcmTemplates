@@ -1,5 +1,5 @@
-#include "../../../../../src/core/DataStructures/HashMap/code.hpp"
-#include "../../../../../src/core/DataStructures/TreeMap/code.hpp"
+#include "../../../../../src/core/DataStructures/Map/HashMap/code.hpp"
+#include "../../../../../src/core/DataStructures/Map/TreeMap/code.hpp"
 #include "../../../../../src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp"
 #include "../../../../../src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp"
 #include "../../../../Support/CaseSupport.hpp"

@@ -9,7 +9,7 @@
 按 [src/core/](src/core/) 和 [src/extra/](src/extra/) 浏览模块；每个 README 说明支持域、索引、区间、复杂度与依赖。
 
 ```cpp
-#include "src/core/DataStructures/FenwickTree/code.hpp"
+#include "src/core/DataStructures/RangeQuery/FenwickTree/code.hpp"
 ```
 
 core 的 VS Code 前缀保持 `_T_模块名`；已有兼容前缀继续保留。extra 不生成 Snippet。迁出的 11 项会从受管理 Snippet 集合移除，旧独立模板文件先备份再迁移；个人 Snippet 和初始化模板保留。
@@ -40,11 +40,23 @@ ctl test --right --module Tree --case chain --profile optimized
 | [Headers/](Headers/) | 共用标准头入口 |
 | [Manifest.json](Manifest.json) | 全仓唯一模块清单、集合、依赖与分层 |
 | [Library.md](Library.md) / [ExtraLibrary.md](ExtraLibrary.md) | 两份语雀文档的正文与源码引用 |
-| [tests/](tests/) | 按源码集合和分类镜像的正确性、性能测试及共享支持 |
+| [tests/](tests/) | 按源码相对 src 的路径镜像的正确性、性能测试及共享支持 |
 | [tools/](tools/) | 共用 CTL 执行器与生成/发布逻辑 |
 | [Docs/](Docs/) | 实现规范及 extra 迁移映射 |
 
-集合内统一使用 Math、DataStructures、String、Tree、Graph、Geometry、Sequence、DynamicProgramming、Utilities 分类。core 只能依赖 core，extra 可以依赖两套模板，依赖必须无环。示例与伪代码保留在 extra 文档的 Examples and Notes，不计入可编译模块或测试通过数。
+core 的目录与语雀按以下七类组织；包含多个模块的明确主题增加一层目录，其他模块直接放在大类下。
+
+| 分类 | 主题与模块 |
+| --- | --- |
+| Math | Numeric、NumberTheory；Combinatorics、NumberTheoreticTransform、LinearBasis |
+| DynamicProgramming | MultipleBackpacks |
+| String | StringHash、Kmp、ZFunction、Manacher、AcAutomaton、SuffixAutomaton、SuffixArray |
+| DataStructures | Map、RangeQuery；DisjointSetUnion、Trie |
+| Graph | Trees、Connectivity、Flow；Dijkstra、TopSort、GridUtil |
+| Geometry | Geo2 |
+| Utilities | ListHelper、Discreter、Debuger、DebugerHeadCopyToBitsStdC++、FastInputOutput |
+
+extra 保留现有分类。core 只能依赖 core，extra 可以依赖两套模板，依赖必须无环。示例与伪代码保留在 extra 文档的 Examples and Notes，不计入可编译模块或测试通过数。
 
 源码、说明、测试一起维护，Git 是唯一内容源；语雀代码卡片与 Snippet 从仓库生成。产物、报告放忽略的 `.cache/`，语雀备份与发布状态放忽略的 `.yuque/`。
 
