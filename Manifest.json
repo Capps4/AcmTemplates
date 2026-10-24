@@ -561,6 +561,27 @@
     "collection": "extra"
   },
   {
+    "module": "BipartiteMatching",
+    "path": "src/extra/Graph/BipartiteMatching",
+    "dependencies": [],
+    "collection": "extra"
+  },
+  {
+    "module": "LowerBoundFlow",
+    "path": "src/extra/Graph/LowerBoundFlow",
+    "dependencies": [
+      "MaxFlow"
+    ],
+    "collection": "extra",
+    "include": "src/extra/Graph/LowerBoundFlow/Include.hpp"
+  },
+  {
+    "module": "Rerooting",
+    "path": "src/extra/Tree/Rerooting",
+    "dependencies": [],
+    "collection": "extra"
+  },
+  {
     "module": "ModSqrt",
     "path": "src/extra/Math/ModSqrt",
     "dependencies": [],
@@ -613,5 +634,50 @@
     ],
     "collection": "extra",
     "include": "src/extra/String/RunEnumeration/Include.hpp"
+  },
+  {
+    "module": "LinkCutTree",
+    "path": "src/extra/Tree/LinkCutTree",
+    "dependencies": [],
+    "collection": "extra"
+  },
+  {
+    "module": "BellmanFord",
+    "path": "src/extra/Graph/BellmanFord",
+    "dependencies": [],
+    "collection": "extra"
+  },
+  {
+    "module": "OfflineDynamicConnectivity",
+    "path": "src/extra/Graph/OfflineDynamicConnectivity",
+    "dependencies": [
+      "RollbackDSU"
+    ],
+    "collection": "extra",
+    "include": "src/extra/Graph/OfflineDynamicConnectivity/Include.hpp"
+  },
+  {
+    "module": "GeneralMatching",
+    "path": "src/extra/Graph/GeneralMatching",
+    "dependencies": [],
+    "collection": "extra"
+  },
+  {
+    "module": "DirectedMST",
+    "path": "src/extra/Graph/DirectedMST",
+    "dependencies": [
+      "RollbackDSU"
+    ],
+    "collection": "extra",
+    "include": "src/extra/Graph/DirectedMST/Include.hpp"
+  },
+  {
+    "module": "MinimumEnclosingCircle",
+    "path": "src/extra/Geometry/MinimumEnclosingCircle",
+    "dependencies": [
+      "Geo2"
+    ],
+    "collection": "extra",
+    "include": "src/extra/Geometry/MinimumEnclosingCircle/Include.hpp"
   }
 ]

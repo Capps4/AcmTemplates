@@ -14,7 +14,17 @@ std::vector<int> component(const std::vector<std::vector<int>>& adj, int start,
     return queue;
 }
 void check(const std::vector<std::vector<int>>& adj) {
-    CentroidDecomposition tree(adj);
+    std::vector<std::vector<int>> cdt{{-1}};
+    CentroidDecomposition tree(adj, &cdt);
+    CentroidDecomposition plain(adj);
+    CHECK(tree.dfsOrder == plain.dfsOrder);
+    CHECK(cdt.size() == adj.size());
+    std::vector<int> parent(adj.size(), -1), want(adj.size(), -1);
+    for (int x = 0; x < int(cdt.size()); ++x)
+        for (int y : cdt[x]) {
+            CHECK(0 <= y and y < int(adj.size()) and parent[y] == -1);
+            parent[y] = x;
+        }
     auto sorted = tree.dfsOrder;
     std::sort(sorted.begin(), sorted.end());
     std::vector<int> all(adj.size()); std::iota(all.begin(), all.end(), 0);
@@ -22,6 +32,10 @@ void check(const std::vector<std::vector<int>>& adj) {
     std::vector<bool> excluded(adj.size());
     for (int x : tree.dfsOrder) {
         auto part = component(adj, x, excluded);
+        CHECK(parent[x] == want[x]);
+        for (int y : part)
+            if (y != x)
+                want[y] = x;
         excluded[x] = true;
         for (int y : adj[x]) if (!excluded[y])
             CHECK(component(adj, y, excluded).size() <= part.size() / 2);
@@ -48,7 +62,7 @@ int coreCases() {
     CHECK(longChain.dfsOrder[0] == n / 2 - 1);
     auto owned = CentroidDecomposition(std::vector<std::vector<int>>{{1}, {0}});
     CHECK(owned.dfsOrder.size() == 2);
-    std::cout << "CentroidDecomposition independent component balance oracle, forests/empty, 200K chain PASS\n";
+    std::cout << "CentroidDecomposition independent component balance oracle, forests/empty, 128-node chain PASS\n";
     return 0;
 }
 
@@ -73,7 +87,17 @@ std::vector<int> component(const std::vector<std::vector<int>> &adj, int start,
     return queue;
 }
 void check(const std::vector<std::vector<int>> &adj) {
-    CentroidDecomposition tree(adj);
+    std::vector<std::vector<int>> cdt{{-1}};
+    CentroidDecomposition tree(adj, &cdt);
+    CentroidDecomposition plain(adj);
+    CHECK(tree.dfsOrder == plain.dfsOrder);
+    CHECK(cdt.size() == adj.size());
+    std::vector<int> parent(adj.size(), -1), want(adj.size(), -1);
+    for (int x = 0; x < int(cdt.size()); ++x)
+        for (int y : cdt[x]) {
+            CHECK(0 <= y and y < int(adj.size()) and parent[y] == -1);
+            parent[y] = x;
+        }
     auto sorted = tree.dfsOrder;
     std::sort(sorted.begin(), sorted.end());
     std::vector<int> all(adj.size());
@@ -82,6 +106,10 @@ void check(const std::vector<std::vector<int>> &adj) {
     std::vector<bool> excluded(adj.size());
     for (int x : tree.dfsOrder) {
         auto part = component(adj, x, excluded);
+        CHECK(parent[x] == want[x]);
+        for (int y : part)
+            if (y != x)
+                want[y] = x;
         excluded[x] = true;
         for (int y : adj[x])
             if (!excluded[y])
@@ -127,5 +155,26 @@ int run() {
 int main() {
     runCase("CentroidDecomposition/oracle-and-contracts", [] { CHECK(coreCases() == 0); });
     CHECK(boundary_cases::run() == 0);
+    runCase("CentroidDecomposition/deep-chain", [] {
+        const int n = 20000;
+        std::vector<std::vector<int>> g(n), cdt;
+        for (int x = 1; x < n; ++x) {
+            g[x].push_back(x - 1);
+            g[x - 1].push_back(x);
+        }
+        CentroidDecomposition a(g, &cdt);
+        CHECK(a.dfsOrder.size() == std::size_t(n));
+        CHECK(a.dfsOrder[0] == n / 2 - 1);
+        std::vector<int> dep(n);
+        int cnt = 0;
+        for (int x : a.dfsOrder)
+            for (int y : cdt[x]) {
+                CHECK(dep[y] == 0);
+                dep[y] = dep[x] + 1;
+                CHECK(dep[y] <= 15);
+                ++cnt;
+            }
+        CHECK(cnt == n - 1);
+    });
     return 0;
 }

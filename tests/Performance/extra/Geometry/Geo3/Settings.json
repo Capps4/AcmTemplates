@@ -1,3 +1,4 @@
 {
-  "iterations": 25
+  "sizes": [10000, 100000],
+  "iterations": 1
 }

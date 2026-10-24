@@ -144,6 +144,14 @@
 
 <!-- @code TreeHash -->
 
+## Rerooting
+
+<!-- @code Rerooting -->
+
+## LinkCutTree
+
+<!-- @code LinkCutTree -->
+
 # Graph
 
 ## BiGraphColor
@@ -157,6 +165,30 @@
 ## UndirectedEulerRoad
 
 <!-- @code UndirectedEulerRoad -->
+
+## BipartiteMatching
+
+<!-- @code BipartiteMatching -->
+
+## LowerBoundFlow
+
+<!-- @code LowerBoundFlow -->
+
+## BellmanFord
+
+<!-- @code BellmanFord -->
+
+## OfflineDynamicConnectivity
+
+<!-- @code OfflineDynamicConnectivity -->
+
+## GeneralMatching
+
+<!-- @code GeneralMatching -->
+
+## DirectedMST
+
+<!-- @code DirectedMST -->
 
 # Geometry
 
@@ -175,6 +207,10 @@
 ## DelaunayTriangulation
 
 <!-- @code DelaunayTriangulation -->
+
+## MinimumEnclosingCircle
+
+<!-- @code MinimumEnclosingCircle -->
 
 # Sequence
 

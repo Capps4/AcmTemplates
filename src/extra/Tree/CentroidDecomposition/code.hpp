@@ -5,24 +5,25 @@
 class CentroidDecomposition {
 public:
     std::vector<int> dfsOrder{};
-    // std::vector<std::vector<int>> cdt{}; // 点分树；同时启用下面的相关注释。
 
-    explicit CentroidDecomposition(const std::vector<std::vector<int>> &adj) {
+    explicit CentroidDecomposition(const std::vector<std::vector<int>> &adj,
+                                   std::vector<std::vector<int>> *cdt = nullptr) {
         int n = int(adj.size());
-        // cdt.resize(n);
-        // std::vector<int> fa(n, -1);
+        assert(cdt != &adj);
+        if (cdt != nullptr)
+            cdt->assign(n, {});
         std::vector<char> ban(n);
         std::vector<int> fa(n), siz(n), vs;
-        std::vector<int> q;
+        std::vector<std::pair<int, int>> q;
         vs.reserve(n);
         q.reserve(n);
         dfsOrder.reserve(n);
         for (int root = 0; root < n; ++root) {
             if (ban[root])
                 continue;
-            q.push_back(root);
+            q.emplace_back(root, -1);
             while (!q.empty()) {
-                int s = q.back();
+                auto [s, p] = q.back();
                 q.pop_back();
                 vs.clear();
                 vs.push_back(s);
@@ -59,11 +60,11 @@ public:
                 }
                 ban[rt] = true;
                 dfsOrder.push_back(rt);
-                // if (fa[s] != -1) cdt[fa[s]].push_back(rt);
+                if (cdt != nullptr and p != -1)
+                    (*cdt)[p].push_back(rt);
                 for (auto it = adj[rt].rbegin(); it != adj[rt].rend(); ++it)
                     if (!ban[*it]) {
-                        q.push_back(*it);
-                        // fa[*it] = rt;
+                        q.emplace_back(*it, rt);
                     }
             }
         }

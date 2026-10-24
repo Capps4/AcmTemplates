@@ -1939,6 +1939,11 @@
       "reason": "ExCrt 用 -1 表示无解，使用至多 64 位有符号整型并以 __int128 保存乘法/扩展欧几里得中间值；该约束是返回协议和表示范围要求。"
     },
     {
+      "id": "src/extra/Geometry/ClosestPair/code.hpp:R04:closestPair",
+      "fingerprint": "f7108e0ac9a2dc3a1beebe695d601426514ae76823cb97015b525620fde3e669",
+      "reason": "经典最近点对公共函数名；保持原有按值输入及平方距离返回接口。"
+    },
+    {
       "id": "src/extra/Math/FloorSum/code.hpp:R04:floorSum",
       "fingerprint": "66bd4744d7e30c923fab0f1de62a88ff263f95132b640097a039df28489c271d",
       "reason": "整除求和的公共算法入口，名称与数学问题对应。"
@@ -2007,6 +2012,46 @@
       "id": "src/extra/DataStructures/SparseMatBIT/code.hpp:R04:rangeQuery",
       "fingerprint": "fc59a7ed882c716af2c32f950cd4abccafb50c627e0614e6cb569f44a5971f39",
       "reason": "公开半开矩形查询接口，与 prefixQuery 明确区分。"
+    },
+    {
+      "id": "src/extra/Graph/BipartiteMatching/code.hpp:R04:matchL",
+      "fingerprint": "5a603640a8639d016a4cb2189c602bcbe0a857c47baccaf817146510372dfef9",
+      "reason": "公开左侧匹配点数组，L 明确下标所属分区。"
+    },
+    {
+      "id": "src/extra/Graph/BipartiteMatching/code.hpp:R04:matchR",
+      "fingerprint": "85c2590212291d7b82ec867e301054096b10dc8c6a8fe90e513c249122862016",
+      "reason": "公开右侧匹配点数组，R 明确下标所属分区。"
+    },
+    {
+      "id": "src/extra/Graph/BipartiteMatching/code.hpp:R04:minCover",
+      "fingerprint": "76c859b6d5ec307d4c97347c90bca0df24a28d5b1ade70bcc7cf645ff677f0d6",
+      "reason": "公开最小点覆盖接口，通过最大匹配和交错可达性恢复两侧覆盖。"
+    },
+    {
+      "id": "src/extra/Graph/BipartiteMatching/code.hpp:R04:first",
+      "fingerprint": "50392459e445a5cc9b06bb5e6649cb3b514940df9729d5119caf0d0c4134c0f4",
+      "reason": "std::pair 的标准成员，返回左侧最小点覆盖，保留标准协议。"
+    },
+    {
+      "id": "src/extra/Graph/BipartiteMatching/code.hpp:R04:second",
+      "fingerprint": "f037724f5ad7479d2e09943c4ef4acecd602be3414347df554879ad081353700",
+      "reason": "std::pair 的标准成员，返回右侧最小点覆盖，保留标准协议。"
+    },
+    {
+      "id": "src/extra/Graph/LowerBoundFlow/code.hpp:R09:is_integral_v",
+      "fingerprint": "c9d529a0b5ffe9080990cf00ac5fd074695b24be962cc43e9c68da5b51b29e5c",
+      "reason": "上下界流要求精确整数容量，避免浮点误差改变需求是否可行。"
+    },
+    {
+      "id": "src/extra/Graph/LowerBoundFlow/code.hpp:R09:is_signed_v",
+      "fingerprint": "c9d529a0b5ffe9080990cf00ac5fd074695b24be962cc43e9c68da5b51b29e5c",
+      "reason": "需求余额可为负数；要求有符号容量以表示流入流出差，容量总和可表示由契约约束。"
+    },
+    {
+      "id": "src/extra/Graph/LowerBoundFlow/code.hpp:R04:second",
+      "fingerprint": "34e529abc08f8fb3348ae6cd9689013ee63cacd4924de8c4fd0a0b66ef9d50a3",
+      "reason": "core Flow::add 返回正反边的 std::pair；second 为反边 ID，用于读取已送流量。"
     },
     {
       "id": "src/core/Utilities/DebugerHeadCopyToBitsStdC++/code.hpp:R04:debuger",
@@ -2134,6 +2179,16 @@
       "reason": "std::pair 的标准成员名称；分别访问既有二元结果或关联容器键值，不是内部自定义长名。"
     },
     {
+      "id": "src/extra/Tree/DecareTree/code.hpp:R04:first",
+      "fingerprint": "38c6c23c7ab7baa5647448e207956702762100cac32c5d6c99588e7dc86bea96",
+      "reason": "std::pair 的标准成员名称；分别访问既有二元结果或关联容器键值，不是内部自定义长名。"
+    },
+    {
+      "id": "src/extra/Tree/DecareTree/code.hpp:R04:second",
+      "fingerprint": "644707d361b17eb580689f37fd8c46a74d3a3442651d3e5ecb8ad6a144f91305",
+      "reason": "std::pair 的标准成员名称；分别访问既有二元结果或关联容器键值，不是内部自定义长名。"
+    },
+    {
       "id": "src/extra/Sequence/PartialOrder3D/code.hpp:R06:packed",
       "fingerprint": "0bdcb520d1cecad3465ca88afa345db8359c1f4f2c37f82eb0363aec60522d9f",
       "reason": "此处为仅返回一次比较结果的短排序 lambda，没有多步执行或控制流；符合 R05/R06 的短纯返回例外。"
@@ -2157,6 +2212,41 @@
       "id": "src/extra/DataStructures/RangeMatBIT/code.hpp:R04:modify",
       "fingerprint": "13e345d1b94a412923afaa2a0ee90669f0d0a462cfca0cd74afc3c2a76b5986f",
       "reason": "调用本仓 Fenwick/二维 Fenwick 的既有公开 modify 接口；保持依赖契约。"
+    },
+    {
+      "id": "src/extra/Tree/TreeDiameter/code.hpp:R04:first",
+      "fingerprint": "e07a999ab05e89af447208e95689a0f404ed4e16db5dd6fd639fd377a6ca0029",
+      "reason": "std::pair 的标准成员名称；分别访问既有二元结果或关联容器键值，不是内部自定义长名。"
+    },
+    {
+      "id": "src/extra/Tree/TreeDiameter/code.hpp:R04:second",
+      "fingerprint": "e07a999ab05e89af447208e95689a0f404ed4e16db5dd6fd639fd377a6ca0029",
+      "reason": "std::pair 的标准成员名称；分别访问既有二元结果或关联容器键值，不是内部自定义长名。"
+    },
+    {
+      "id": "src/extra/Tree/TreeHash/code.hpp:R04:steady_clock",
+      "fingerprint": "52a8b2c1681df43844f277ed4e54d55e6e25895bcb8ebe5f43f8978eb64bcdce",
+      "reason": "std::chrono 的标准时钟与 duration 接口，用于默认随机种子；调用方仍可传固定种子复现。"
+    },
+    {
+      "id": "src/extra/Tree/TreeHash/code.hpp:R04:time_since_epoch",
+      "fingerprint": "52a8b2c1681df43844f277ed4e54d55e6e25895bcb8ebe5f43f8978eb64bcdce",
+      "reason": "std::chrono 的标准时钟与 duration 接口，用于默认随机种子；调用方仍可传固定种子复现。"
+    },
+    {
+      "id": "src/extra/Tree/TreeHash/code.hpp:R04:x9e3779b97f4a7c15ULL",
+      "fingerprint": "f44d8d2cc1bf0a5436b6610106025046912f4243ebb3eae74542fd863a5c592f",
+      "reason": "扫描器将十六进制数值字面量拆成候选；这是 SplitMix64 的固定混合常数，不是变量名。"
+    },
+    {
+      "id": "src/extra/Tree/TreeHash/code.hpp:R04:xbf58476d1ce4e5b9ULL",
+      "fingerprint": "aac8d305cee9b9df8ae3c6b62431f65e61926adedc1be06f690abdfe8b5502d0",
+      "reason": "扫描器将十六进制数值字面量拆成候选；这是 SplitMix64 的固定混合常数，不是变量名。"
+    },
+    {
+      "id": "src/extra/Tree/TreeHash/code.hpp:R04:x94d049bb133111ebULL",
+      "fingerprint": "35e86364a5de35cb983b39ce32e025cce5a1be2952e9bce52dfc03aedb21f5c6",
+      "reason": "扫描器将十六进制数值字面量拆成候选；这是 SplitMix64 的固定混合常数，不是变量名。"
     },
     {
       "id": "src/extra/Math/ModSqrt/code.hpp:R04:modSqrt",
@@ -2307,6 +2397,111 @@
       "id": "src/extra/String/RunEnumeration/code.hpp:R04:xffffffffULL",
       "fingerprint": "edf368bbde7db4a009e7076d0011db0095e046d9b8f99e207f3257eae502860c",
       "reason": "扫描器拆出的十六进制数值字面量；这是精确区间键的低 32 位掩码，不是变量名。"
+    },
+    {
+      "id": "src/extra/Tree/LinkCutTree/code.hpp:R04:connected",
+      "fingerprint": "3b7060c7285d718047962145cb490e8c080c736759ea4837c7118a26c77af5ac",
+      "reason": "公开的连通性、点修改、路径有向聚合接口；名字与 core 的查询/修改习惯一致。"
+    },
+    {
+      "id": "src/extra/Tree/LinkCutTree/code.hpp:R04:modify",
+      "fingerprint": "6b2da0b0c7d97f6b12294a1419734a9f59dadb6efb214b8e84c8157c95b37e91",
+      "reason": "公开的连通性、点修改、路径有向聚合接口；名字与 core 的查询/修改习惯一致。"
+    },
+    {
+      "id": "src/extra/Tree/LinkCutTree/code.hpp:R04:query",
+      "fingerprint": "316486ffc9f884939276690657a5b79db3c5da6a4a4840eac8ffefa78382b687",
+      "reason": "公开的连通性、点修改、路径有向聚合接口；名字与 core 的查询/修改习惯一致。"
+    },
+    {
+      "id": "src/extra/Graph/BellmanFord/code.hpp:R09:is_integral_v",
+      "fingerprint": "fe390a1e1799aa16a05fb500098798cc716e168db6e5bf68eb48fbf7e482f870",
+      "reason": "边权限定为不超过64位的有符号整数；宽整数距离/缩环权差和返回费用依赖此表示，防止浮点截断或无符号负权。"
+    },
+    {
+      "id": "src/extra/Graph/BellmanFord/code.hpp:R09:is_signed_v",
+      "fingerprint": "fe390a1e1799aa16a05fb500098798cc716e168db6e5bf68eb48fbf7e482f870",
+      "reason": "边权限定为不超过64位的有符号整数；宽整数距离/缩环权差和返回费用依赖此表示，防止浮点截断或无符号负权。"
+    },
+    {
+      "id": "src/extra/Graph/BellmanFord/code.hpp:R04:state",
+      "fingerprint": "986ea1e679425e3e4a743d128537ec4c7d1fcb93116591d70d9ce570ba1dce01",
+      "reason": "公开结果分别返回三态可达性和按行走顺序排列的负环原边 ID；避免把无穷状态混入普通距离哨兵。"
+    },
+    {
+      "id": "src/extra/Graph/BellmanFord/code.hpp:R04:cycle",
+      "fingerprint": "c6989718c0038ed4a847fb6606e7bfb56792174055046943d8b7504c968826ff",
+      "reason": "公开结果分别返回三态可达性和按行走顺序排列的负环原边 ID；避免把无穷状态混入普通距离哨兵。"
+    },
+    {
+      "id": "src/extra/Graph/OfflineDynamicConnectivity/code.hpp:R04:snapshot",
+      "fingerprint": "17f7dfd91bc03d0fde14fb0c803b2a540d328cf61df618ff9c276c00fc531301",
+      "reason": "调用本仓 RollbackDSU 的既有回滚接口，分别恢复时间树分支或缩环前的分量。"
+    },
+    {
+      "id": "src/extra/Graph/OfflineDynamicConnectivity/code.hpp:R04:rollback",
+      "fingerprint": "1c393c7eca961d8a97f1fbe50442f4be225bc76bfcb9b6fe00f94065e597d690",
+      "reason": "调用本仓 RollbackDSU 的既有回滚接口，分别恢复时间树分支或缩环前的分量。"
+    },
+    {
+      "id": "src/extra/Graph/DirectedMST/code.hpp:R09:is_integral_v",
+      "fingerprint": "fe390a1e1799aa16a05fb500098798cc716e168db6e5bf68eb48fbf7e482f870",
+      "reason": "边权限定为不超过64位的有符号整数；宽整数距离/缩环权差和返回费用依赖此表示，防止浮点截断或无符号负权。"
+    },
+    {
+      "id": "src/extra/Graph/DirectedMST/code.hpp:R09:is_signed_v",
+      "fingerprint": "fe390a1e1799aa16a05fb500098798cc716e168db6e5bf68eb48fbf7e482f870",
+      "reason": "边权限定为不超过64位的有符号整数；宽整数距离/缩环权差和返回费用依赖此表示，防止浮点截断或无符号负权。"
+    },
+    {
+      "id": "src/extra/Graph/DirectedMST/code.hpp:R04:edges",
+      "fingerprint": "42300076078f19b4ddd464d544042cd7084cdf62baad0aa24f5d515947d47f53",
+      "reason": "公开结果中的原边 ID 列表，按非根终点编号输出，用于恢复树形图。"
+    },
+    {
+      "id": "src/extra/Graph/DirectedMST/code.hpp:R04:snapshot",
+      "fingerprint": "def44018c28707b99efd713661981ee8fa626b00ec00779bda4db1f717202f06",
+      "reason": "调用本仓 RollbackDSU 的既有回滚接口，分别恢复时间树分支或缩环前的分量。"
+    },
+    {
+      "id": "src/extra/Graph/DirectedMST/code.hpp:R04:rollback",
+      "fingerprint": "c37a845ece839ad18f60713a35b9b975577bcd587f1a91bb267d62a064ce1718",
+      "reason": "调用本仓 RollbackDSU 的既有回滚接口，分别恢复时间树分支或缩环前的分量。"
+    },
+    {
+      "id": "src/extra/Geometry/MinimumEnclosingCircle/code.hpp:R04:minimumEnclosingCircle",
+      "fingerprint": "5a195b64e1497d8b74db585069bc5af9c8711a1d34b151e0eb6635bb29043eb3",
+      "reason": "公开的最小覆盖圆入口，直接使用几何算法名称。"
+    },
+    {
+      "id": "src/extra/Geometry/MinimumEnclosingCircle/code.hpp:R04:steady_clock",
+      "fingerprint": "ebb8a54004fbb56a5cb722616a406f6475dd04bd39e130f966ef58347ef35ecf",
+      "reason": "std::chrono 的标准时钟与 duration 接口，用于默认随机种子；调用方仍可传固定种子复现。"
+    },
+    {
+      "id": "src/extra/Geometry/MinimumEnclosingCircle/code.hpp:R04:time_since_epoch",
+      "fingerprint": "ebb8a54004fbb56a5cb722616a406f6475dd04bd39e130f966ef58347ef35ecf",
+      "reason": "std::chrono 的标准时钟与 duration 接口，用于默认随机种子；调用方仍可传固定种子复现。"
+    },
+    {
+      "id": "src/extra/Geometry/MinimumEnclosingCircle/code.hpp:R09:is_integral_v",
+      "fingerprint": "ba59bc985a0eaaf16fdd69c5fe33014fa5666046742b833b1a0bf208b642a277",
+      "reason": "外接圆除法和半径平方根需要浮点坐标；拒绝原生整数截断，同时保留 FloatPointNumber 包装类型。"
+    },
+    {
+      "id": "src/extra/Geometry/MinimumEnclosingCircle/code.hpp:R04:dist2",
+      "fingerprint": "ae87b738e2d4abe805ca8a5592ca39eb52f2af429745091a4b3af9e5e0078235",
+      "reason": "core Geo2 的既有向量/点公开协议，用于距离平方、叉积和垂直向量，不重复几何类型实现。"
+    },
+    {
+      "id": "src/extra/Geometry/MinimumEnclosingCircle/code.hpp:R04:cross",
+      "fingerprint": "3512383626e5b7316e74ea350a599fd4c20b2d562c75093e4ffe3fe0850b3317",
+      "reason": "core Geo2 的既有向量/点公开协议，用于距离平方、叉积和垂直向量，不重复几何类型实现。"
+    },
+    {
+      "id": "src/extra/Geometry/MinimumEnclosingCircle/code.hpp:R04:rot90",
+      "fingerprint": "aec5144cb3e4f20c7de1392309890eb3a16a486d8caa40039cb0a53bcaef7711",
+      "reason": "core Geo2 的既有向量/点公开协议，用于距离平方、叉积和垂直向量，不重复几何类型实现。"
     },
     {
       "id": "src/extra/Sequence/ImplicitTreap/code.hpp:R04:first",
