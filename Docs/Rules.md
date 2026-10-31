@@ -81,7 +81,7 @@ enable_if、void_t、conditional_t 等必须有重载、所有权、表示或性
 
 ## R14 迭代和递归
 
-按目标规模和最大深度选直接实现。不能为短代码删除树/图的深链显式栈；用户指定 SCC / EdgeBC / VertexBC 使用直接递归 DFS，这三个模块按该要求实现，保留 Tarjan 分量栈并记录调用栈限制。保留递归时需说明并验证支持的最大深度。MaxFlow 的深路径风险单列，未验证不宣称安全。
+按目标规模和最大深度选直接实现。不能仅为短代码删除树/图的深链显式栈；用户指定 SCC / EdgeBC / VertexBC / Tree 使用直接递归 DFS，这四个模块按该要求实现，连通性模块保留 Tarjan 分量栈，并记录调用栈限制。Tree 本地深链测试使用测试专用大栈线程，不在算法头中调整系统栈。保留递归时需说明并验证支持的最大深度。MaxFlow 的深路径风险单列，未验证不宣称安全。
 
 ## R15 实现与验证隔离
 
@@ -109,7 +109,7 @@ tools/__init__.py 的 strict 配置包含这些参数，并保留诊断用的 `-
 
 ## 模块实现约束
 
-Debuger 严格使用 strdup 配置和 COMPETITION_DEBUGER 宏；FastInputOutput 使用 Qinput/Qoutput 接口并保留 cin/cout 两个 ref 宏。ListHelper / Discreter / Tree 维持既有接口和算法，只补实际正确性问题。图论类直接用 SCC / EdgeBC / VertexBC，连通性 DFS 直接递归，不保存 Frame；MaxFlow / GridUtil / RingTree / TopSort 保留现用实现。
+Debuger 严格使用 strdup 配置和 COMPETITION_DEBUGER 宏；FastInputOutput 使用 Qinput/Qoutput 接口并保留 cin/cout 两个 ref 宏。ListHelper / Discreter 维持既有接口和算法，只补实际正确性问题。Tree 按用户确认使用 enter/leave 入边钩子和直接递归 DFS，保留 dep/dist 的边数语义，LcaTree/FullTree 增加 wtDep/wtDist。图论类直接用 SCC / EdgeBC / VertexBC，连通性 DFS 直接递归，不保存 Frame；MaxFlow / GridUtil / RingTree / TopSort 保留现用实现。
 
 HashMap 的 Impl / Pool 保持共享池和 owner 隔离实现，允许适度排版到 200–210 行；SegTree 目标 230 行，允许合并连续的对称下标更新及短函数，人工统计压行仍不得超过 30%。其他位置继续默认展开。
 

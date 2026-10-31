@@ -1,4 +1,5 @@
 #include "../../../../../Support/CaseSupport.hpp"
+#include "../../../../../Support/TestStack.hpp"
 #include "../../../../../../src/core/Graph/Trees/Tree/code.hpp"
 #include "../../../../../Support/TestSupport.hpp"
 #include <memory>
@@ -36,9 +37,8 @@ void checkVirtual(const FullTree<int>& tree, const std::vector<int>& keys, const
 }
 struct Trace { inline static std::vector<std::tuple<int, int, int, int>> events; };
 template<int Id> struct Hook : _tree::TreeAttribute {
-    template<class Core> void enter(Core&, int x, int p) { Trace::events.emplace_back(Id, x, -1, p); }
-    template<class Core> void leave(Core&, int x, int p) { Trace::events.emplace_back(Id + 2, x, -1, p); }
-    template<class Core, class Edge> void afterChild(Core&, int x, int y, int p, Edge&) { Trace::events.emplace_back(Id + 4, x, y, p); }
+    template<class Core, class Edge> void enter(Core&, int pt, const Edge& e) { Trace::events.emplace_back(Id, _tree::endOf(e), -1, pt); }
+    template<class Core, class Edge> void leave(Core&, int pt, const Edge& e) { Trace::events.emplace_back(Id + 2, _tree::endOf(e), -1, pt); }
 };
 int coreCases() {
     std::vector<std::vector<int>> empty;
@@ -47,8 +47,8 @@ int coreCases() {
     std::vector<std::vector<int>> fixture{{1, 2}, {0}, {0}};
     _tree::TreeCore<int, _tree::Stage<Hook<0>, Hook<1>>> traced(fixture);
     CHECK(Trace::events == std::vector<std::tuple<int,int,int,int>>({
-        {0,0,-1,-1},{1,0,-1,-1},{0,1,-1,0},{1,1,-1,0},{2,1,-1,0},{3,1,-1,0},{4,0,1,-1},{5,0,1,-1},
-        {0,2,-1,0},{1,2,-1,0},{2,2,-1,0},{3,2,-1,0},{4,0,2,-1},{5,0,2,-1},{2,0,-1,-1},{3,0,-1,-1}}));
+        {0,0,-1,-1},{1,0,-1,-1},{0,1,-1,0},{1,1,-1,0},{2,1,-1,0},{3,1,-1,0},
+        {0,2,-1,0},{1,2,-1,0},{2,2,-1,0},{3,2,-1,0},{2,0,-1,-1},{3,0,-1,-1}}));
     for (int trial = 0; trial < 8; ++trial) {
         test_context::step = trial;
         int n = randomInt(1, 70), root = randomInt(0, n - 1);
@@ -63,6 +63,7 @@ int coreCases() {
         for (int x = 0; x < n; ++x) for (int y = x; y != -1; y = parent[y]) ++size[y];
         FullTree<int> tree(graph, root);
         CHECK(tree.fa == parent && tree.dep == depth && tree.size == size);
+        CHECK(std::vector<long long>(depth.begin(), depth.end()) == tree.wtDep);
         for (int x = 0; x < n; ++x) {
             CHECK(tree.idfn[tree.dfn[x]] == x);
             for (int y = 0; y < n; ++y) CHECK(tree.isAncestor(x, y) == isAncestor(x, y, parent));
@@ -106,7 +107,7 @@ int coreCases() {
     FullTree<int> deep(chain);
     CHECK(deep.size[0] == n && deep.kthAncestor(n - 1, n - 1) == 0 && deep.kthAncestor(n - 1, n) == -1);
     CHECK(deep.lca(0, n - 1) == 0 && deep.dist(0, n - 1) == n - 1);
-    std::cout << "Tree independent parent/path/LCA/virtual closure oracle, stage hook order, move-only weights, empty, 200K chain PASS\n";
+    std::cout << "Tree independent parent/path/LCA/virtual closure oracle, stage hook order, move-only weights, empty, small chain PASS\n";
     return 0;
 }
 
@@ -170,17 +171,13 @@ struct Trace {
 };
 template <int Id>
 struct Hook : _tree::TreeAttribute {
-    template <class Core>
-    void enter(Core &, int x, int p) {
-        Trace::events.emplace_back(Id, x, -1, p);
-    }
-    template <class Core>
-    void leave(Core &, int x, int p) {
-        Trace::events.emplace_back(Id + 2, x, -1, p);
+    template <class Core, class Edge>
+    void enter(Core &, int pt, const Edge& e) {
+        Trace::events.emplace_back(Id, _tree::endOf(e), -1, pt);
     }
     template <class Core, class Edge>
-    void afterChild(Core &, int x, int y, int p, Edge &) {
-        Trace::events.emplace_back(Id + 4, x, y, p);
+    void leave(Core &, int pt, const Edge& e) {
+        Trace::events.emplace_back(Id + 2, _tree::endOf(e), -1, pt);
     }
 };
 void verifyAdded(std::vector<std::vector<int>> g) {
@@ -247,8 +244,13 @@ int run() {
 }
 }
 
+#include "TestWeighted.hpp"
+
 int main() {
-    runCase("Tree/oracle-and-contracts", [] { CHECK(coreCases() == 0); });
-    CHECK(boundary_cases::run() == 0);
-    return 0;
+    return withTestStack([] {
+        runCase("Tree/oracle-and-contracts", [] { CHECK(coreCases() == 0); });
+        CHECK(boundary_cases::run() == 0);
+        runCase("Tree/weighted-and-custom-hooks", weightedCases);
+        runCase("Tree/deep-chain", deepChain);
+    });
 }

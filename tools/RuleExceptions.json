@@ -1399,34 +1399,19 @@
       "reason": "现用公开拓扑排序对象，用户指定采用 code；无状态常量已去掉无必要的 inline。"
     },
     {
-      "id": "src/core/Graph/Trees/Tree/code.hpp:R04:endPoint",
-      "fingerprint": "4783855a474a58a941fb4f30fa3a179220fe3659a95f0c11113c9b3ff1e81867",
-      "reason": "既有模板 的边端点协议，兼容整数边和带权 pair。"
-    },
-    {
       "id": "src/core/Graph/Trees/Tree/code.hpp:R04:first",
-      "fingerprint": "16727997ff401ac5710ef520c88f3ae16c58719ffb365f3e3529ff31602a7980",
-      "reason": "std::pair 第一成员，以及 既有模板 的重儿子首边引用。"
+      "fingerprint": "75fbd0114386a72b5872cd9faac0e60578d7825a105c89e4e43a6461f7ea0c02",
+      "reason": "std::pair::first 标准成员，用于边端点与虚树点编号；Heavy 的旧局部 first 已删除。"
     },
     {
       "id": "src/core/Graph/Trees/Tree/code.hpp:R04:enter",
-      "fingerprint": "3ce0dfb780c6413383f2cd501e755c98d54799413d0bc59152f1c7457a9f88ed",
-      "reason": "既有模板 属性进入顶点的 hook。"
+      "fingerprint": "45bf5000f0711f9f62fe6e6c75814ec96f8e1d793e04e46a313fb30292d394ee",
+      "reason": "用户确认的遍历公开钩子；在处理孩子前接收父节点 pt 与当前入边，根使用 int 占位边。"
     },
     {
       "id": "src/core/Graph/Trees/Tree/code.hpp:R04:leave",
-      "fingerprint": "519e7fa57c76478bae87ac3dac78fc196ec98c5eefcc2c9dc1835df0a082616c",
-      "reason": "既有模板 属性离开顶点的 hook。"
-    },
-    {
-      "id": "src/core/Graph/Trees/Tree/code.hpp:R04:afterChild",
-      "fingerprint": "624fc415315106a9f608555a288d504de06c89c1c6cc71b3a51018c8e89fe8cc",
-      "reason": "既有模板 子树返回后属性 hook；显式 DFS 栈严格保留执行顺序。"
-    },
-    {
-      "id": "src/core/Graph/Trees/Tree/code.hpp:R04:parent",
-      "fingerprint": "10d3ce54bc9c8387223b6fe64d78f6fef1b71cb53508611740d90558dab28592",
-      "reason": "既有模板 的父顶点参数；用户建议采用 既有模板，本轮保留命名和结构。"
+      "fingerprint": "5a0f2669b242ba2c8b92345fcbc50a16ff55e7521b0cc7459bb43b5a910b9daa",
+      "reason": "用户确认的遍历公开钩子；孩子处理完成后接收原入边，替代原 afterChild；Heavy 仅重排自身已完成的邻接表。"
     },
     {
       "id": "src/core/Graph/Trees/Tree/code.hpp:R04:stageIndex",
@@ -1545,8 +1530,8 @@
     },
     {
       "id": "src/core/Graph/Trees/Tree/code.hpp:R04:second",
-      "fingerprint": "6fa5c38f4dc7fdc49de7b69f87469c46cf5473c576ba79f13477dac00e67cb14",
-      "reason": "std::pair 第二成员。"
+      "fingerprint": "b513e3a22e9a46ffc9877623b3b4d47fa5dcff0e0a6892a398feef829c9fe9b3",
+      "reason": "std::pair::second 标准成员，用于按常量引用读取权值与虚树输入编号。"
     },
     {
       "id": "src/core/Graph/Trees/Tree/code.hpp:R04:stack",
@@ -2507,6 +2492,26 @@
       "id": "src/extra/Sequence/ImplicitTreap/code.hpp:R04:first",
       "fingerprint": "92704b859eca2fcc58f304adb327a2487ac99b340678cf432a53cd06ecce3f24",
       "reason": "std::pair 的标准成员名称；分别访问既有二元结果或关联容器键值，不是内部自定义长名。"
+    },
+    {
+      "id": "src/core/Graph/Trees/Tree/code.hpp:R04:endOf",
+      "fingerprint": "32545bd0527752541133ada8b9e8721c3ff9e47965e2063a59391071ed10e01b",
+      "reason": "用户指定的通用边端点访问接口，支持 int/pair 与自定义边 ADL；不能按内部短名改写。"
+    },
+    {
+      "id": "src/core/Graph/Trees/Tree/code.hpp:R09:void_t",
+      "fingerprint": "9e4065846631d90e5371f0bc99e37f86a37c49d17688ecf0c9373fac1c996066",
+      "reason": "仅检测边权与 long long 的共同累计类型；无数值共同类型时保留 opaque/move-only 载荷的原有拓扑能力，不实例化加权属性。显式 W 可覆盖默认类型。"
+    },
+    {
+      "id": "src/core/Graph/Trees/Tree/code.hpp:R04:wtDep",
+      "fingerprint": "28b4bd415be0ce48a417235abb88a989e779b811337b3658e91f00e72d29574f",
+      "reason": "用户明确指定的公开加权深度属性名，与原 dep 的边数语义区分。"
+    },
+    {
+      "id": "src/core/Graph/Trees/Tree/code.hpp:R04:wtDist",
+      "fingerprint": "5be80987384de7e5beff5ff797a2143bcf27b0cd1178c3e2579e5c1aa8bd29e9",
+      "reason": "用户明确指定的公开加权距离能力名，与原 dist 的边数语义区分。"
     }
   ]
 }

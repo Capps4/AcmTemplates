@@ -5,9 +5,9 @@
 #include <utility>
 
 // This is test infrastructure, not an algorithm workaround. Recursive Tarjan
-// deliberately needs a larger stack for 200K-chain stress tests on macOS.
+// and Tree deliberately need a larger stack for 200K-chain tests on macOS.
 template <class F>
-int withTestStack(F work) {
+int withTestStack(F work, bool log = true) {
     struct Context {
         F work;
         std::exception_ptr error{};
@@ -34,6 +34,7 @@ int withTestStack(F work) {
     CHECK(pthread_join(thread, nullptr) == 0);
     if (context.error)
         std::rethrow_exception(context.error);
-    std::cout << "TEST_STACK_BYTES=" << bytes << '\n';
+    if (log)
+        std::cout << "TEST_STACK_BYTES=" << bytes << '\n';
     return 0;
 }
